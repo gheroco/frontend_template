@@ -17,6 +17,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: read
   security-events: write
 
@@ -39,19 +40,37 @@ jobs:
           push: false
           load: true
           tags: ${{ inputs.image }}:ci
-      - uses: aquasecurity/trivy-action@v0.36.0
+      - name: Scan runtime image
+        id: image_scan
+        continue-on-error: true
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: ${{ inputs.image }}:ci
+          format: table
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+      - name: Generate image scan SARIF
+        if: always()
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: ${{ inputs.image }}:ci
           format: sarif
           output: component-trivy.sarif
           severity: HIGH,CRITICAL
           ignore-unfixed: true
-          exit-code: "1"
+          exit-code: "0"
       - uses: github/codeql-action/upload-sarif@v4
         if: always()
         with: { sarif_file: component-trivy.sarif }
       - uses: anchore/sbom-action@v0.20.8
+        if: always()
         with: { image: "${{ inputs.image }}:ci", artifact-name: "${{ inputs.image }}-sbom.spdx.json" }
       - uses: azure/setup-helm@v4
+        if: always()
         with: { version: v3.18.6 }
-      - run: helm lint "${{ inputs.chart }}"
+      - if: always()
+        run: helm lint "${{ inputs.chart }}"
+      - name: Enforce image vulnerability policy
+        if: always() && steps.image_scan.outcome == 'failure'
+        run: exit 1

@@ -4,6 +4,7 @@ on:
     paths: ["services/inventory/**", "packages/**", "package-lock.json", ".github/workflows/_component.yml", ".github/workflows/inventory.yml"]
   workflow_dispatch:
 permissions:
+  actions: read
   contents: read
   security-events: write
 jobs:

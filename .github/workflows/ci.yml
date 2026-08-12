@@ -64,11 +64,12 @@ jobs:
             helm template atlas-audit services/audit/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/audit.yaml > rendered/${environment_name}-audit.yaml
           done
       - uses: stackrox/kube-linter-action@v1
-        with: { directory: rendered, version: 0.8.3 }
+        with: { directory: rendered, version: v0.8.3 }
 
   filesystem-security:
     runs-on: ubuntu-24.04
     permissions:
+      actions: read
       contents: read
       security-events: write
     steps:
