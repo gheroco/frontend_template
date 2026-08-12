@@ -15,3 +15,9 @@ jobs:
       - uses: github/codeql-action/init@v4
         with: { languages: javascript-typescript, queries: security-extended }
       - uses: github/codeql-action/analyze@v4
+        with:
+          upload: never
+          upload-database: false
+          output: codeql-results
+      - uses: actions/upload-artifact@v4
+        with: { name: codeql-sarif, path: codeql-results, retention-days: 30 }
