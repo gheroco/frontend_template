@@ -24,7 +24,8 @@ case "${action}" in
     docker build -f apps/extension-registry/Dockerfile -t atlas/extension-registry:1.0.0 .
     docker build -f services/inventory/Dockerfile -t atlas/inventory:1.0.0 .
     docker build -f services/audit/Dockerfile -t atlas/audit:1.0.0 .
-    kind load docker-image --name "${cluster_name}" atlas/portal-shell:1.0.0 atlas/extension-registry:1.0.0 atlas/inventory:1.0.0 atlas/audit:1.0.0
+    docker build -f services/github-webhooks/Dockerfile -t atlas/github-webhooks:1.0.0 .
+    kind load docker-image --name "${cluster_name}" atlas/portal-shell:1.0.0 atlas/extension-registry:1.0.0 atlas/inventory:1.0.0 atlas/audit:1.0.0 atlas/github-webhooks:1.0.0
     set -a; source ./.env; set +a
     kubectl create namespace "${namespace}" --dry-run=client -o yaml | kubectl apply -f -
     kubectl -n "${namespace}" create secret generic atlas-platform-secrets \
@@ -32,7 +33,12 @@ case "${action}" in
       --from-literal=DEV_JWT_SECRET="${DEV_JWT_SECRET}" \
       --from-literal=REGISTRY_API_TOKEN="${REGISTRY_API_TOKEN}" \
       --from-literal=OIDC_CLIENT_SECRET="development-not-used" \
+      --from-literal=DATABASE_URL="postgresql://atlas:atlas-dev-only@github-webhooks-postgres:5432/atlas" \
+      --from-literal=AMQP_URL="amqp://atlas:atlas-dev-only@github-webhooks-rabbitmq:5672" \
+      --from-literal=GITHUB_WEBHOOK_SECRET="${GITHUB_WEBHOOK_SECRET}" \
       --dry-run=client -o yaml | kubectl apply -f -
+    kubectl apply -f "${root_dir}/deploy/kind/github-webhooks-dependencies.yaml"
+    kubectl -n "${namespace}" rollout status deployment/github-webhooks-postgres deployment/github-webhooks-rabbitmq --timeout=5m
     "${root_dir}/scripts/install-platform.sh" dev
     echo "Run scripts/port-forward.sh, then open http://localhost:8080"
     ;;

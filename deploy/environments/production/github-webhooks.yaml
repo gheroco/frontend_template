@@ -1,0 +1,10 @@
+replicaCount: 3
+receiver:
+  autoscaling: { enabled: true, minReplicas: 3, maxReplicas: 20, targetCPUUtilizationPercentage: 60 }
+  pdb: { enabled: true, minAvailable: 2 }
+worker: { replicas: 2, prefetch: 8, databasePoolSize: 4 }
+keda: { enabled: true, minReplicaCount: 2, maxReplicaCount: 12, queueLength: 20, activationQueueLength: 1, pollingInterval: 10, cooldownPeriod: 180, fallback: { failureThreshold: 3, replicas: 2 } }
+auth: { mode: oidc, issuer: https://identity.example.com, audience: portal-api, permissionsClaim: permissions, rolesClaim: roles }
+observability: { otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318, environment: production }
+gateway: { enabled: true, name: atlas-gateway, sectionName: https, webhookPath: /webhooks/github, extensionPath: /extensions/github-webhooks }
+networkPolicy: { enabled: true, gatewayNamespace: envoy-gateway-system, databaseNamespace: data, brokerNamespace: messaging, observabilityNamespace: observability }

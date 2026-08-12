@@ -1,0 +1,43 @@
+apiVersion: portal.atlas.dev/v1alpha1
+kind: PortalService
+metadata:
+  name: github-webhooks
+  labels:
+    portal.atlas.dev/owner: developer-platform
+spec:
+  service:
+    id: github-webhooks
+    displayName: GitHub Webhooks
+    owner: developer-platform
+    version: 1.0.0
+    enabled: true
+  backend:
+    apiBasePath: /api/services/github-webhooks
+    upstream: http://localhost:4203
+    apiVersion: 1.0.0
+    requiredPermissions: [github-webhooks:read]
+  health:
+    url: http://localhost:4203/health/api-ready
+    intervalSeconds: 10
+    timeoutMilliseconds: 1500
+  security:
+    allowedOrigins: [http://localhost:4203]
+    integrityRequired: true
+  extensions:
+    - id: github-webhook-deliveries
+      displayName: GitHub Webhooks
+      description: Delivery health and event activity for direct GitHub webhooks.
+      icon: activity
+      route: /github-webhooks
+      order: 30
+      elementName: github-webhook-deliveries-v1
+      entry:
+        url: http://localhost:4203/mfe/entry.js?v=1.0.0
+        type: module
+        integrity: sha384-K7GmnXl0HPEeYhXpLEK+jivI1YDixcXDDWfpk6F8WQPbYGe1BI730zTdNtXsve9R
+        crossOrigin: anonymous
+      extensionVersion: 1.0.0
+      apiVersion: 1.0.0
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [github-webhooks:read]
+      featureFlags: {}

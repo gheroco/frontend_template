@@ -36,15 +36,15 @@ type PortalAppOptions = {
 
 const devIdentities: Record<string, PortalIdentity> = {
   viewer: {
-    subject: 'dev-viewer', displayName: 'Alex Viewer', email: 'viewer@atlas.local', roles: ['viewer'], permissions: ['inventory:read']
+    subject: 'dev-viewer', displayName: 'Alex Viewer', email: 'viewer@atlas.local', roles: ['viewer'], permissions: ['inventory:read', 'github-webhooks:read']
   },
   operator: {
     subject: 'dev-operator', displayName: 'Maya Operator', email: 'operator@atlas.local', roles: ['operator'],
-    permissions: ['inventory:read', 'inventory:write', 'audit:read']
+    permissions: ['inventory:read', 'inventory:write', 'audit:read', 'github-webhooks:read']
   },
   admin: {
     subject: 'dev-admin', displayName: 'Sam Administrator', email: 'admin@atlas.local', roles: ['admin'],
-    permissions: ['inventory:read', 'inventory:write', 'audit:read', 'portal:admin']
+    permissions: ['inventory:read', 'inventory:write', 'audit:read', 'github-webhooks:read', 'github-webhooks:manage', 'portal:admin']
   }
 };
 
@@ -324,7 +324,7 @@ function entryOriginAllowed(value: string, origins: readonly string[]): boolean 
 
 function upstreamAllowed(service: CatalogService): boolean {
   const url = new URL(service.spec.backend.upstream);
-  if (process.env.NODE_ENV !== 'production' && ['localhost', '127.0.0.1', 'inventory', 'audit'].includes(url.hostname)) return true;
+  if (process.env.NODE_ENV !== 'production' && ['localhost', '127.0.0.1', 'inventory', 'audit', 'github-webhooks'].includes(url.hostname)) return true;
   const suffixes = parseList(process.env.SERVICE_UPSTREAM_SUFFIXES ?? '.svc.cluster.local');
   return suffixes.some((suffix) => url.hostname.endsWith(suffix)) || /^[a-z][a-z0-9-]{1,62}$/.test(url.hostname);
 }

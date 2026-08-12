@@ -86,7 +86,7 @@ Required cluster capabilities:
 - an existing TLS Secret for staging/production
 - an existing `atlas-platform-secrets` Secret; no chart creates credentials
 
-Create a local cluster and install five independent Helm releases:
+Create a local cluster and install six independent Helm releases:
 
 ```bash
 npm run kind:create
@@ -134,6 +134,7 @@ helm uninstall atlas-inventory -n atlas-platform
 | `apps/extension-registry` | Filesystem/Kubernetes catalog adapters, health, audit lifecycle events | `extension-registry` image/chart |
 | `services/inventory` | Inventory API and two versioned Web Component tabs | `inventory` image/chart |
 | `services/audit` | Protected audit API and tab | `audit` image/chart |
+| `services/github-webhooks` | Direct GitHub receiver, RabbitMQ worker, delivery store/recovery, and portal tab | `github-webhooks` image/chart |
 | `packages/contracts` | Versioned manifest and browser element contract | shared build-time package |
 | `packages/service-kit` | auth, metrics, traces, retries, circuit breaker, health | shared build-time package |
 | `deploy/charts/platform` | Gateway and namespace default-deny policy only | foundation Helm release |

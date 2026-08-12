@@ -19,6 +19,14 @@ const components = [
   {
     entry: 'services/audit/dist/public/mfe/entry.js',
     files: ['catalog/local/audit.yaml', 'catalog/docker/audit.yaml', 'services/audit/deploy/chart/values.yaml']
+  },
+  {
+    entry: 'services/github-webhooks/dist/public/mfe/entry.js',
+    files: [
+      'catalog/local/github-webhooks.yaml',
+      'catalog/docker/github-webhooks.yaml',
+      'services/github-webhooks/deploy/chart/values.yaml'
+    ]
   }
 ];
 

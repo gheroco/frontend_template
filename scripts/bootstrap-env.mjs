@@ -10,7 +10,8 @@ if (!(await exists(envPath))) {
   template = template
     .replace(/^SESSION_KEY=.*$/m, `SESSION_KEY=${randomBytes(32).toString('hex')}`)
     .replace(/^DEV_JWT_SECRET=.*$/m, `DEV_JWT_SECRET=${randomBytes(48).toString('base64url')}`)
-    .replace(/^REGISTRY_API_TOKEN=.*$/m, `REGISTRY_API_TOKEN=${randomBytes(32).toString('base64url')}`);
+    .replace(/^REGISTRY_API_TOKEN=.*$/m, `REGISTRY_API_TOKEN=${randomBytes(32).toString('base64url')}`)
+    .replace(/^GITHUB_WEBHOOK_SECRET=.*$/m, `GITHUB_WEBHOOK_SECRET=${randomBytes(48).toString('base64url')}`);
   await writeFile(envPath, template, { encoding: 'utf8', mode: 0o600 });
   console.log('Created .env with random local-only secrets.');
 }

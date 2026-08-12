@@ -53,6 +53,7 @@ jobs:
           helm lint deploy/charts/portal-shell -f deploy/environments/dev/portal-shell.yaml
           helm lint services/inventory/deploy/chart -f deploy/environments/dev/inventory.yaml
           helm lint services/audit/deploy/chart -f deploy/environments/dev/audit.yaml
+          helm lint services/github-webhooks/deploy/chart -f deploy/environments/dev/github-webhooks.yaml
       - name: Render all environments
         run: |
           mkdir -p rendered
@@ -62,6 +63,7 @@ jobs:
             helm template atlas-portal deploy/charts/portal-shell -n atlas-platform -f deploy/environments/${environment_name}/portal-shell.yaml > rendered/${environment_name}-portal.yaml
             helm template atlas-inventory services/inventory/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/inventory.yaml > rendered/${environment_name}-inventory.yaml
             helm template atlas-audit services/audit/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/audit.yaml > rendered/${environment_name}-audit.yaml
+            helm template atlas-github-webhooks services/github-webhooks/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/github-webhooks.yaml > rendered/${environment_name}-github-webhooks.yaml
           done
       - uses: stackrox/kube-linter-action@v1
         with: { directory: rendered, version: v0.8.3 }

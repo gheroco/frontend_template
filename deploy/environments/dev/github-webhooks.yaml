@@ -1,0 +1,13 @@
+image: { repository: atlas/github-webhooks, tag: "1.0.0", pullPolicy: Never }
+replicaCount: 1
+receiver:
+  autoscaling: { enabled: false, minReplicas: 1, maxReplicas: 2, targetCPUUtilizationPercentage: 70 }
+  pdb: { enabled: false, minAvailable: 1 }
+worker: { replicas: 1, prefetch: 4, databasePoolSize: 2 }
+keda: { enabled: false }
+auth: { mode: dev, issuer: "", audience: portal-api, permissionsClaim: permissions, rolesClaim: roles }
+secret: { existingName: atlas-platform-secrets }
+observability: { otelEndpoint: "", environment: development }
+gateway: { enabled: true, name: atlas-gateway, sectionName: http, webhookPath: /webhooks/github, extensionPath: /extensions/github-webhooks }
+networkPolicy: { enabled: true, gatewayNamespace: envoy-gateway-system, databaseNamespace: atlas-platform, brokerNamespace: atlas-platform, observabilityNamespace: observability }
+topologySpread: { enabled: false }
