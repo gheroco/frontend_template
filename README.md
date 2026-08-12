@@ -1,8 +1,8 @@
 # Atlas Runtime Service Portal
 
-Atlas is a working Kubernetes-native portal in which independently released services contribute tabs at runtime. The portal shell is never rebuilt when a service is registered, upgraded, disabled, or removed.
+Atlas is a working Kubernetes-native portal in which independently released services may contribute tabs at runtime. API-only services can register without contributing UI. The portal shell is never rebuilt when a service is registered, upgraded, disabled, or removed.
 
-The repository includes the authenticated React shell/BFF, a Kubernetes-backed extension registry, a versioned extension contract, Inventory and Audit example services, self-contained Web Component microfrontends, four independent images and Helm charts, Gateway API routing, local lifecycle demonstrations, CI/CD, observability assets, and automated tests.
+The repository includes the authenticated React shell/BFF, a Kubernetes-backed extension registry, a versioned extension contract, Inventory, Audit, and GitHub webhook services, self-contained Web Component microfrontends, five independent component images and charts, Gateway API routing, local lifecycle demonstrations, CI/CD, observability assets, and automated tests.
 
 ## What works
 
@@ -30,7 +30,7 @@ flowchart TB
 
 The browser never accesses Kubernetes. Gateway routes are owned by each service release. The registry has read-only RBAC for `PortalService` resources. The BFF is the only public API path and prevents tokens from entering frontend JavaScript.
 
-See [architecture](docs/architecture.md), [extension contract](docs/extension-contract.md), and [ADRs](docs/adr/README.md).
+See [architecture](docs/architecture.md), [service boundaries and future evolution](docs/service-boundaries-and-evolution.md), [extension contract](docs/extension-contract.md), and [ADRs](docs/adr/README.md).
 
 ## Quick start
 
@@ -41,7 +41,7 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:4000`. `npm run dev` generates random local-only secrets in ignored `.env`, builds every workspace, computes remote-entry SRI values, and starts all four processes.
+Open `http://localhost:4000`. `npm run dev` generates random local-only secrets in ignored `.env`, builds every workspace, computes remote-entry SRI values, and starts all five component processes.
 
 Docker is an alternative:
 
@@ -162,4 +162,3 @@ Detailed runbooks are in [operations](docs/operations.md), [testing](docs/testin
 - Production identity claim names vary by provider; `PERMISSIONS_CLAIM` and `ROLES_CLAIM` are configurable and must be mapped in the IdP.
 - The reference uses a five-second Kubernetes catalog poll instead of a long-lived watch. This bounds reconnect complexity and API load for a low-churn catalog; an informer can replace the adapter without changing the public contract.
 - Cross-origin remote entries are supported for local development. Production examples use same-origin Gateway routes, which simplify CSP, SRI, cookies, and operations.
-
