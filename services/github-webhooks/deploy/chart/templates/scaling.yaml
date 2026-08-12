@@ -19,7 +19,7 @@ kind: PodDisruptionBudget
 metadata: { name: github-webhooks }
 spec:
   unhealthyPodEvictionPolicy: AlwaysAllow
-  minAvailable: {{ .Values.receiver.pdb.minAvailable }}
+  maxUnavailable: {{ .Values.receiver.pdb.maxUnavailable }}
   selector:
     matchLabels:
       {{- include "github-webhooks.selectorLabels" . | nindent 6 }}
