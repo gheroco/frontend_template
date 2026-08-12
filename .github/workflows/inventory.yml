@@ -3,8 +3,10 @@ on:
   pull_request:
     paths: ["services/inventory/**", "packages/**", "package-lock.json", ".github/workflows/_component.yml", ".github/workflows/inventory.yml"]
   workflow_dispatch:
+permissions:
+  contents: read
+  security-events: write
 jobs:
   ci:
     uses: ./.github/workflows/_component.yml
     with: { workspace: "@atlas/inventory-service", dockerfile: services/inventory/Dockerfile, image: atlas-inventory, chart: services/inventory/deploy/chart }
-

@@ -19,9 +19,9 @@ apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata: { name: extension-registry }
 spec:
+  unhealthyPodEvictionPolicy: AlwaysAllow
   minAvailable: {{ .Values.pdb.minAvailable }}
   selector:
     matchLabels:
       {{- include "extension-registry.selectorLabels" . | nindent 6 }}
 {{- end }}
-

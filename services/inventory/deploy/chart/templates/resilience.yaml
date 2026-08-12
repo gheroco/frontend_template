@@ -19,9 +19,9 @@ apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata: { name: inventory }
 spec:
+  unhealthyPodEvictionPolicy: AlwaysAllow
   minAvailable: {{ .Values.pdb.minAvailable }}
   selector:
     matchLabels:
       {{- include "inventory.selectorLabels" . | nindent 6 }}
 {{- end }}
-

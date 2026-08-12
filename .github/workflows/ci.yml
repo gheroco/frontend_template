@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 24, cache: npm }
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium webkit
       - run: npm run test:e2e
         env: { CI: "true" }
       - uses: actions/upload-artifact@v4
@@ -64,7 +64,7 @@ jobs:
             helm template atlas-audit services/audit/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/audit.yaml > rendered/${environment_name}-audit.yaml
           done
       - uses: stackrox/kube-linter-action@v1
-        with: { directory: rendered }
+        with: { directory: rendered, version: 0.8.3 }
 
   filesystem-security:
     runs-on: ubuntu-24.04
@@ -73,7 +73,7 @@ jobs:
       security-events: write
     steps:
       - uses: actions/checkout@v4
-      - uses: aquasecurity/trivy-action@0.33.1
+      - uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
           scan-ref: .

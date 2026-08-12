@@ -25,9 +25,9 @@ kind: PodDisruptionBudget
 metadata:
   name: {{ include "portal-shell.fullname" . }}
 spec:
+  unhealthyPodEvictionPolicy: AlwaysAllow
   minAvailable: {{ .Values.pdb.minAvailable }}
   selector:
     matchLabels:
       {{- include "portal-shell.selectorLabels" . | nindent 6 }}
 {{- end }}
-

@@ -3,8 +3,10 @@ on:
   pull_request:
     paths: ["services/audit/**", "packages/**", "package-lock.json", ".github/workflows/_component.yml", ".github/workflows/audit.yml"]
   workflow_dispatch:
+permissions:
+  contents: read
+  security-events: write
 jobs:
   ci:
     uses: ./.github/workflows/_component.yml
     with: { workspace: "@atlas/audit-service", dockerfile: services/audit/Dockerfile, image: atlas-audit, chart: services/audit/deploy/chart }
-
