@@ -1,0 +1,81 @@
+{{- if .Values.serviceAccount.create }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "inventory.serviceAccountName" . }}
+  labels:
+    {{- include "inventory.labels" . | nindent 4 }}
+automountServiceAccountToken: false
+{{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory
+  labels:
+    {{- include "inventory.labels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "inventory.selectorLabels" . | nindent 4 }}
+  ports: [{ name: http, port: {{ .Values.service.port }}, targetPort: http }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory
+  labels:
+    {{- include "inventory.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+  strategy: { type: RollingUpdate, rollingUpdate: { maxUnavailable: 0, maxSurge: 1 } }
+  selector:
+    matchLabels:
+      {{- include "inventory.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "inventory.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/part-of: atlas-platform
+    spec:
+      serviceAccountName: {{ include "inventory.serviceAccountName" . }}
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 30
+      securityContext: { runAsNonRoot: true, runAsUser: 10001, runAsGroup: 10001, fsGroup: 10001, seccompProfile: { type: RuntimeDefault } }
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.topologySpread.enabled }}
+      topologySpreadConstraints:
+        - { maxSkew: 1, topologyKey: kubernetes.io/hostname, whenUnsatisfiable: DoNotSchedule, labelSelector: { matchLabels: { app.kubernetes.io/name: inventory } } }
+        - { maxSkew: 1, topologyKey: topology.kubernetes.io/zone, whenUnsatisfiable: ScheduleAnyway, labelSelector: { matchLabels: { app.kubernetes.io/name: inventory } } }
+      {{- end }}
+      containers:
+        - name: inventory
+          image: {{ include "inventory.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports: [{ name: http, containerPort: {{ .Values.service.port }} }]
+          env:
+            - { name: AUTH_MODE, value: {{ .Values.auth.mode | quote }} }
+            - { name: OIDC_ISSUER, value: {{ .Values.auth.issuer | quote }} }
+            - { name: OIDC_AUDIENCE, value: {{ .Values.auth.audience | quote }} }
+            - { name: PERMISSIONS_CLAIM, value: {{ .Values.auth.permissionsClaim | quote }} }
+            - { name: ROLES_CLAIM, value: {{ .Values.auth.rolesClaim | quote }} }
+            - { name: OTEL_EXPORTER_OTLP_ENDPOINT, value: {{ .Values.observability.otelEndpoint | quote }} }
+            - { name: DEPLOYMENT_ENVIRONMENT, value: {{ .Values.observability.environment | quote }} }
+            - { name: SERVICE_VERSION, value: {{ .Values.portalRegistration.serviceVersion | quote }} }
+            - { name: PORT, value: {{ .Values.service.port | quote }} }
+            - name: DEV_JWT_SECRET
+              valueFrom: { secretKeyRef: { name: {{ .Values.secret.existingName }}, key: {{ .Values.secret.devJwtSecretKey }} } }
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          startupProbe: { httpGet: { path: /health/startup, port: http }, failureThreshold: 30, periodSeconds: 2 }
+          readinessProbe: { httpGet: { path: /health/ready, port: http }, initialDelaySeconds: 2, periodSeconds: 5, timeoutSeconds: 2 }
+          livenessProbe: { httpGet: { path: /health/live, port: http }, initialDelaySeconds: 10, periodSeconds: 10, timeoutSeconds: 2 }
+          lifecycle: { preStop: { exec: { command: ["/bin/sh", "-c", "sleep 5"] } } }
+          resources: {{ toYaml .Values.resources | nindent 12 }}
+          volumeMounts: [{ name: tmp, mountPath: /tmp }]
+      volumes: [{ name: tmp, emptyDir: { sizeLimit: 32Mi } }]
+

@@ -1,0 +1,15 @@
+config:
+  authMode: oidc
+  cookieSecure: "true"
+  publicUrl: https://portal.staging.example.com
+  registryUrl: http://extension-registry:4100
+  microfrontendOrigins: ""
+  oidcIssuer: https://identity.staging.example.com
+  oidcClientId: atlas-portal-staging
+  oidcAudience: portal-api
+  serviceUpstreamSuffixes: .svc.cluster.local
+  otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318
+  deploymentEnvironment: staging
+gateway: { enabled: true, name: atlas-gateway, sectionName: https }
+networkPolicy: { enabled: true, gatewayNamespace: envoy-gateway-system }
+

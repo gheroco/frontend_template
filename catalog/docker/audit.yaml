@@ -1,0 +1,28 @@
+apiVersion: portal.atlas.dev/v1alpha1
+kind: PortalService
+metadata:
+  name: audit
+spec:
+  service: { id: audit, displayName: Audit, owner: security-platform, version: 1.0.0, enabled: true }
+  backend:
+    apiBasePath: /api/services/audit
+    upstream: http://audit:4202
+    apiVersion: 1.0.0
+    requiredPermissions: [audit:read]
+  health: { url: http://audit:4202/health/ready, intervalSeconds: 10, timeoutMilliseconds: 1500 }
+  security: { allowedOrigins: [http://localhost:4202], integrityRequired: true }
+  extensions:
+    - id: audit-timeline
+      displayName: Audit
+      description: Security, authorization, and service lifecycle events.
+      icon: clipboard
+      route: /audit
+      order: 20
+      elementName: audit-timeline-v1
+      entry: { url: "http://localhost:4202/mfe/entry.js?v=1.0.0", type: module, integrity: "sha384-Mfsk6seQDfL8ecM7Itfqodtid+NPwkmtDigkosQzX81awizMfDGRxZIfQMRG6fSF", crossOrigin: anonymous }
+      extensionVersion: 1.0.0
+      apiVersion: 1.0.0
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [audit:read]
+      featureFlags: { export: false }
+

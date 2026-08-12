@@ -1,0 +1,87 @@
+name: Platform CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci --ignore-scripts
+      - run: npm run typecheck
+      - run: npm run test:unit
+      - run: npm run build
+      - run: npm run integrity:check
+      - run: npm audit --omit=dev --audit-level=high
+
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+        env: { CI: "true" }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: playwright-report, path: playwright-report, if-no-files-found: ignore, retention-days: 7 }
+
+  kubernetes:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+        with: { version: v3.18.6 }
+      - name: Lint independent charts
+        run: |
+          helm lint deploy/charts/platform -f deploy/environments/dev/platform.yaml
+          helm lint deploy/charts/extension-registry -f deploy/environments/dev/registry.yaml
+          helm lint deploy/charts/portal-shell -f deploy/environments/dev/portal-shell.yaml
+          helm lint services/inventory/deploy/chart -f deploy/environments/dev/inventory.yaml
+          helm lint services/audit/deploy/chart -f deploy/environments/dev/audit.yaml
+      - name: Render all environments
+        run: |
+          mkdir -p rendered
+          for environment_name in dev staging production; do
+            helm template atlas-foundation deploy/charts/platform -n atlas-platform -f deploy/environments/${environment_name}/platform.yaml > rendered/${environment_name}-foundation.yaml
+            helm template atlas-registry deploy/charts/extension-registry -n atlas-platform -f deploy/environments/${environment_name}/registry.yaml --include-crds > rendered/${environment_name}-registry.yaml
+            helm template atlas-portal deploy/charts/portal-shell -n atlas-platform -f deploy/environments/${environment_name}/portal-shell.yaml > rendered/${environment_name}-portal.yaml
+            helm template atlas-inventory services/inventory/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/inventory.yaml > rendered/${environment_name}-inventory.yaml
+            helm template atlas-audit services/audit/deploy/chart -n atlas-platform -f deploy/environments/${environment_name}/audit.yaml > rendered/${environment_name}-audit.yaml
+          done
+      - uses: stackrox/kube-linter-action@v1
+        with: { directory: rendered }
+
+  filesystem-security:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@0.33.1
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: sarif
+          output: trivy-results.sarif
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+      - uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with: { sarif_file: trivy-results.sarif }

@@ -1,0 +1,45 @@
+apiVersion: portal.atlas.dev/v1alpha1
+kind: PortalService
+metadata:
+  name: inventory
+  labels:
+    portal.atlas.dev/owner: supply-platform
+spec:
+  service:
+    id: inventory
+    displayName: Inventory
+    owner: supply-platform
+    version: 1.0.0
+    enabled: true
+  backend:
+    apiBasePath: /api/services/inventory
+    upstream: http://localhost:4201
+    apiVersion: 1.0.0
+    requiredPermissions: [inventory:read]
+  health:
+    url: http://localhost:4201/health/ready
+    intervalSeconds: 10
+    timeoutMilliseconds: 1500
+  security:
+    allowedOrigins: [http://localhost:4201]
+    integrityRequired: true
+  extensions:
+    - id: inventory-overview
+      displayName: Inventory
+      description: Stock levels, locations, and replenishment health.
+      icon: boxes
+      route: /inventory
+      order: 10
+      elementName: inventory-overview-v1
+      entry:
+        url: http://localhost:4201/mfe/entry.js?v=1.0.0
+        type: module
+        integrity: sha384-qL6eNiDpDiaT6H+s9/yodUGxadnz5/2++eyr3t265uPZwsGdkLy0hZziu/xmlF+2
+        crossOrigin: anonymous
+      extensionVersion: 1.0.0
+      apiVersion: 1.0.0
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [inventory:read]
+      featureFlags:
+        reservations: true
+

@@ -1,0 +1,61 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: atlas-platform
+  namespace: observability
+  labels:
+    app.kubernetes.io/part-of: atlas-platform
+spec:
+  groups:
+    - name: atlas.slo
+      rules:
+        - alert: AtlasFastErrorBudgetBurn
+          expr: |
+            (
+              sum by (service) (rate(atlas_http_requests_total{status_code=~"5.."}[5m]))
+              /
+              clamp_min(sum by (service) (rate(atlas_http_requests_total[5m])), 0.001)
+            ) > 0.05
+          for: 10m
+          labels: { severity: page }
+          annotations:
+            summary: "{{ $labels.service }} is burning its availability budget quickly"
+            description: "5xx ratio has exceeded 5% for ten minutes. Correlate with request IDs and deployment version."
+        - alert: AtlasSlowErrorBudgetBurn
+          expr: |
+            (
+              sum by (service) (rate(atlas_http_requests_total{status_code=~"5.."}[1h]))
+              /
+              clamp_min(sum by (service) (rate(atlas_http_requests_total[1h])), 0.001)
+            ) > 0.01
+          for: 2h
+          labels: { severity: ticket }
+          annotations:
+            summary: "{{ $labels.service }} has sustained elevated errors"
+        - alert: AtlasHighP95Latency
+          expr: |
+            histogram_quantile(0.95, sum by (le, service) (rate(atlas_http_request_duration_seconds_bucket[10m]))) > 0.75
+          for: 15m
+          labels: { severity: ticket }
+          annotations:
+            summary: "{{ $labels.service }} p95 latency exceeds 750 ms"
+        - alert: AtlasRegisteredServiceUnavailable
+          expr: atlas_registry_service_available == 0
+          for: 5m
+          labels: { severity: ticket }
+          annotations:
+            summary: "Registered service {{ $labels.registered_service }} is unavailable"
+            description: "The registry health checker has observed consecutive failures. Only this service tab/API should be affected."
+        - alert: AtlasDeploymentUnavailable
+          expr: kube_deployment_status_replicas_available{namespace="atlas-platform"} < 1
+          for: 5m
+          labels: { severity: page }
+          annotations:
+            summary: "Atlas deployment {{ $labels.deployment }} has no available replicas"
+        - alert: AtlasPodRestarting
+          expr: increase(kube_pod_container_status_restarts_total{namespace="atlas-platform"}[15m]) > 3
+          for: 5m
+          labels: { severity: ticket }
+          annotations:
+            summary: "Atlas pod {{ $labels.pod }} is restarting repeatedly"
+

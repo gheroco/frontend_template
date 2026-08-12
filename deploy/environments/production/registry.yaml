@@ -1,0 +1,4 @@
+replicaCount: 3
+autoscaling: { enabled: true, minReplicas: 3, maxReplicas: 8, targetCPUUtilizationPercentage: 65, targetMemoryUtilizationPercentage: 75 }
+config: { refreshMilliseconds: 5000, otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318, deploymentEnvironment: production }
+

@@ -1,0 +1,53 @@
+{
+  "name": "@atlas/platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kubernetes-native runtime microfrontend platform",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "setup": "npm run build && npm run integrity:sync && node scripts/bootstrap-env.mjs",
+    "dev": "npm run setup && concurrently --kill-others-on-fail --names registry,inventory,audit,portal --prefix-colors blue,green,magenta,cyan \"npm start -w @atlas/extension-registry\" \"npm start -w @atlas/inventory-service\" \"npm start -w @atlas/audit-service\" \"npm start -w @atlas/portal-shell\"",
+    "build": "npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit && npm run build -w @atlas/extension-registry && npm run build -w @atlas/inventory-service && npm run build -w @atlas/audit-service && npm run build -w @atlas/portal-shell",
+    "typecheck": "npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit && npm run typecheck --workspaces --if-present",
+    "test": "vitest run --coverage",
+    "test:unit": "vitest run --exclude tests/e2e/**",
+    "test:e2e": "playwright test",
+    "test:watch": "vitest",
+    "integrity:sync": "node scripts/sync-integrity.mjs",
+    "integrity:check": "node scripts/sync-integrity.mjs --check",
+    "smoke:lifecycle": "vitest run tests/integration/lifecycle.test.ts",
+    "smoke:lifecycle:http": "node scripts/smoke-lifecycle.mjs",
+    "validate": "npm run typecheck && npm run test:unit && npm run build && npm run integrity:check",
+    "compose:up": "npm run setup && docker compose up --build --wait",
+    "compose:down": "docker compose down --remove-orphans",
+    "kind:create": "bash scripts/kind.sh create",
+    "kind:install": "bash scripts/kind.sh install",
+    "kind:delete": "bash scripts/kind.sh delete"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.5",
+    "@vitest/coverage-v8": "4.1.10",
+    "concurrently": "9.2.1",
+    "jsdom": "28.1.0",
+    "tsx": "4.23.12",
+    "typescript": "7.0.2",
+    "vite": "8.2.1",
+    "vitest": "4.1.10"
+  }
+}

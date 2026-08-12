@@ -1,0 +1,10 @@
+name: Extension registry
+on:
+  pull_request:
+    paths: ["apps/extension-registry/**", "packages/**", "deploy/charts/extension-registry/**", "package-lock.json", ".github/workflows/_component.yml", ".github/workflows/extension-registry.yml"]
+  workflow_dispatch:
+jobs:
+  ci:
+    uses: ./.github/workflows/_component.yml
+    with: { workspace: "@atlas/extension-registry", dockerfile: apps/extension-registry/Dockerfile, image: atlas-extension-registry, chart: deploy/charts/extension-registry }
+

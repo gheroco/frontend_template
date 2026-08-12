@@ -1,0 +1,103 @@
+name: atlas-platform
+services:
+  registry:
+    build:
+      context: .
+      dockerfile: apps/extension-registry/Dockerfile
+    environment:
+      REGISTRY_SOURCE: filesystem
+      CATALOG_DIR: /catalog
+      REGISTRY_API_TOKEN: ${REGISTRY_API_TOKEN:?Run npm run setup first}
+      SERVICE_VERSION: 1.0.0
+    volumes:
+      - ./catalog/docker:/catalog:ro
+    ports: ["4100:4100"]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4100/health/ready"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
+  inventory:
+    build:
+      context: .
+      dockerfile: services/inventory/Dockerfile
+    environment:
+      AUTH_MODE: dev
+      DEV_JWT_SECRET: ${DEV_JWT_SECRET:?Run npm run setup first}
+      OIDC_AUDIENCE: portal-api
+      PORTAL_PUBLIC_URL: http://localhost:4000
+      SERVICE_VERSION: 1.0.0
+    ports: ["4201:4201"]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4201/health/ready"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
+  audit:
+    build:
+      context: .
+      dockerfile: services/audit/Dockerfile
+    environment:
+      AUTH_MODE: dev
+      DEV_JWT_SECRET: ${DEV_JWT_SECRET:?Run npm run setup first}
+      OIDC_AUDIENCE: portal-api
+      PORTAL_PUBLIC_URL: http://localhost:4000
+      SERVICE_VERSION: 1.0.0
+    ports: ["4202:4202"]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4202/health/ready"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
+  portal:
+    build:
+      context: .
+      dockerfile: apps/portal-shell/Dockerfile
+    depends_on:
+      registry: { condition: service_healthy }
+      inventory: { condition: service_healthy }
+      audit: { condition: service_healthy }
+    environment:
+      AUTH_MODE: dev
+      COOKIE_SECURE: "false"
+      SESSION_KEY: ${SESSION_KEY:?Run npm run setup first}
+      DEV_JWT_SECRET: ${DEV_JWT_SECRET:?Run npm run setup first}
+      REGISTRY_API_TOKEN: ${REGISTRY_API_TOKEN:?Run npm run setup first}
+      REGISTRY_URL: http://registry:4100
+      MICROFRONTEND_ORIGINS: http://localhost:4201,http://localhost:4202
+      PORTAL_PUBLIC_URL: http://localhost:4000
+      OIDC_AUDIENCE: portal-api
+      SERVICE_VERSION: 1.0.0
+    ports: ["4000:4000"]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4000/health/ready"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+      start_period: 5s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
+networks:
+  default:
+    name: atlas-platform

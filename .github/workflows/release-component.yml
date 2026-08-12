@@ -1,0 +1,101 @@
+name: Release one component
+
+on:
+  workflow_dispatch:
+    inputs:
+      component:
+        description: Independent release unit
+        required: true
+        type: choice
+        options: [portal-shell, extension-registry, inventory, audit]
+      version:
+        description: Immutable SemVer image tag
+        required: true
+        type: string
+      environment:
+        description: GitHub deployment environment
+        required: true
+        type: choice
+        options: [staging, production]
+      deploy:
+        description: Deploy after publishing
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+  attestations: write
+  security-events: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve release unit
+        id: component
+        shell: bash
+        run: |
+          [[ "${{ inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+([+-][A-Za-z0-9.-]+)?$ ]] || { echo "version must be SemVer" >&2; exit 2; }
+          case "${{ inputs.component }}" in
+            portal-shell) echo "release=atlas-portal" >> "$GITHUB_OUTPUT"; echo "dockerfile=apps/portal-shell/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/portal-shell" >> "$GITHUB_OUTPUT"; echo "chart=deploy/charts/portal-shell" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/portal-shell.yaml" >> "$GITHUB_OUTPUT" ;;
+            extension-registry) echo "release=atlas-registry" >> "$GITHUB_OUTPUT"; echo "dockerfile=apps/extension-registry/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/extension-registry" >> "$GITHUB_OUTPUT"; echo "chart=deploy/charts/extension-registry" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/registry.yaml" >> "$GITHUB_OUTPUT" ;;
+            inventory) echo "release=atlas-inventory" >> "$GITHUB_OUTPUT"; echo "dockerfile=services/inventory/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/inventory-service" >> "$GITHUB_OUTPUT"; echo "chart=services/inventory/deploy/chart" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/inventory.yaml" >> "$GITHUB_OUTPUT" ;;
+            audit) echo "release=atlas-audit" >> "$GITHUB_OUTPUT"; echo "dockerfile=services/audit/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/audit-service" >> "$GITHUB_OUTPUT"; echo "chart=services/audit/deploy/chart" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/audit.yaml" >> "$GITHUB_OUTPUT" ;;
+          esac
+          echo "image=ghcr.io/${GITHUB_REPOSITORY,,}/${{ inputs.component }}" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci --ignore-scripts
+      - run: npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit && npm run build -w "${{ steps.component.outputs.workspace }}"
+      - run: npm run test -w "${{ steps.component.outputs.workspace }}"
+      - name: Calculate remote SRI
+        id: sri
+        shell: bash
+        run: |
+          entry=""
+          if [[ "${{ inputs.component }}" == "inventory" || "${{ inputs.component }}" == "audit" ]]; then entry="services/${{ inputs.component }}/dist/public/mfe/entry.js"; fi
+          if [[ -n "$entry" ]]; then echo "value=sha384-$(openssl dgst -sha384 -binary "$entry" | openssl base64 -A)" >> "$GITHUB_OUTPUT"; fi
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        id: build
+        with:
+          context: .
+          file: ${{ steps.component.outputs.dockerfile }}
+          push: true
+          tags: ${{ steps.component.outputs.image }}:${{ inputs.version }}
+          provenance: mode=max
+          sbom: true
+      - uses: aquasecurity/trivy-action@0.33.1
+        with: { image-ref: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", severity: "HIGH,CRITICAL", ignore-unfixed: true, exit-code: "1" }
+      - uses: anchore/sbom-action@v0.20.8
+        with: { image: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", artifact-name: "${{ inputs.component }}-${{ inputs.version }}.spdx.json" }
+      - uses: actions/attest-build-provenance@v3
+        with: { subject-name: "${{ steps.component.outputs.image }}", subject-digest: "${{ steps.build.outputs.digest }}", push-to-registry: true }
+      - uses: sigstore/cosign-installer@v3.10.1
+      - run: cosign sign --yes "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}"
+      - uses: azure/setup-helm@v4
+        if: inputs.deploy
+        with: { version: v3.18.6 }
+      - uses: azure/setup-kubectl@v4
+        if: inputs.deploy
+      - name: Deploy only this release unit
+        if: inputs.deploy
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG }}
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/kube"
+          echo "$KUBE_CONFIG_DATA" | base64 --decode > "$RUNNER_TEMP/kube/config"
+          export KUBECONFIG="$RUNNER_TEMP/kube/config"
+          extra=()
+          if [[ -n "${{ steps.sri.outputs.value }}" ]]; then
+            extra+=(--set-string portalRegistration.serviceVersion="${{ inputs.version }}" --set-string portalRegistration.extensionVersion="${{ inputs.version }}" --set-string portalRegistration.integrity="${{ steps.sri.outputs.value }}")
+          fi
+          helm upgrade --install "${{ steps.component.outputs.release }}" "${{ steps.component.outputs.chart }}" --namespace atlas-platform --values "${{ steps.component.outputs.values }}" --set-string image.repository="${{ steps.component.outputs.image }}" --set-string image.tag="${{ inputs.version }}" "${extra[@]}" --atomic --cleanup-on-fail --wait --timeout 5m

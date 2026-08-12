@@ -1,0 +1,5 @@
+auth: { mode: oidc, issuer: https://identity.staging.example.com, audience: portal-api, permissionsClaim: permissions, rolesClaim: roles }
+observability: { otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318, environment: staging }
+gateway: { enabled: true, name: atlas-gateway, sectionName: https, pathPrefix: /extensions/audit }
+networkPolicy: { enabled: true, gatewayNamespace: envoy-gateway-system }
+

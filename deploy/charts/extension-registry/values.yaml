@@ -1,0 +1,15 @@
+replicaCount: 2
+image: { repository: ghcr.io/gheroco/frontend_template/extension-registry, tag: "1.0.0", digest: "", pullPolicy: IfNotPresent }
+imagePullSecrets: []
+service: { port: 4100 }
+serviceAccount: { create: true, name: "" }
+resources:
+  requests: { cpu: 75m, memory: 128Mi }
+  limits: { cpu: 400m, memory: 384Mi }
+autoscaling: { enabled: true, minReplicas: 2, maxReplicas: 6, targetCPUUtilizationPercentage: 70, targetMemoryUtilizationPercentage: 80 }
+pdb: { enabled: true, minAvailable: 1 }
+secret: { existingName: atlas-platform-secrets, registryApiTokenKey: REGISTRY_API_TOKEN }
+config: { refreshMilliseconds: 5000, otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318, deploymentEnvironment: production }
+networkPolicy: { enabled: true }
+topologySpread: { enabled: true }
+

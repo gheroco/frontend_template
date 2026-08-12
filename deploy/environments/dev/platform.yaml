@@ -1,0 +1,6 @@
+gateway:
+  className: eg
+  http: { enabled: true, port: 80 }
+  tls: { enabled: false }
+defaultDenyNetworkPolicy: true
+
