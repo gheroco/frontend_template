@@ -72,7 +72,7 @@ jobs:
           tags: ${{ steps.component.outputs.image }}:${{ inputs.version }}
           provenance: mode=max
           sbom: true
-      - uses: aquasecurity/trivy-action@0.33.1
+      - uses: aquasecurity/trivy-action@v0.36.0
         with: { image-ref: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", severity: "HIGH,CRITICAL", ignore-unfixed: true, exit-code: "1" }
       - uses: anchore/sbom-action@v0.20.8
         with: { image: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", artifact-name: "${{ inputs.component }}-${{ inputs.version }}.spdx.json" }
