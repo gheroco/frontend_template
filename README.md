@@ -28,7 +28,7 @@ flowchart TB
   M -->|same-origin service API| P
 ```
 
-The browser never accesses Kubernetes. Gateway routes are owned by each service release. The registry has read-only RBAC for `PortalService` resources. The BFF is the only public API path and prevents tokens from entering frontend JavaScript.
+The browser never accesses Kubernetes. Gateway routes are owned by each service release. The registry has read-only RBAC for `PortalService` resources. Browser-facing service APIs use the BFF so tokens never enter frontend JavaScript. Protocol-authenticated machine endpoints, such as `/webhooks/github`, may use a dedicated service-owned Gateway route.
 
 See [architecture](docs/architecture.md), [service boundaries and future evolution](docs/service-boundaries-and-evolution.md), [extension contract](docs/extension-contract.md), and [ADRs](docs/adr/README.md).
 
