@@ -83,7 +83,7 @@ jobs:
       - uses: azure/setup-helm@v4
         if: inputs.deploy
         with: { version: v3.18.6 }
-      - uses: azure/setup-kubectl@v4
+      - uses: azure/setup-kubectl@v5
         if: inputs.deploy
       - name: Deploy only this release unit
         if: inputs.deploy
