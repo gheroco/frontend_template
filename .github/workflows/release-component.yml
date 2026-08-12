@@ -78,7 +78,7 @@ jobs:
         with: { image: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", artifact-name: "${{ inputs.component }}-${{ inputs.version }}.spdx.json" }
       - uses: actions/attest-build-provenance@v3
         with: { subject-name: "${{ steps.component.outputs.image }}", subject-digest: "${{ steps.build.outputs.digest }}", push-to-registry: true }
-      - uses: sigstore/cosign-installer@v3.10.1
+      - uses: sigstore/cosign-installer@v4.1.2
       - run: cosign sign --yes "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}"
       - uses: azure/setup-helm@v4
         if: inputs.deploy
