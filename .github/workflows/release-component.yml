@@ -76,7 +76,7 @@ jobs:
         with: { image-ref: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", severity: "HIGH,CRITICAL", ignore-unfixed: true, exit-code: "1" }
       - uses: anchore/sbom-action@v0.20.8
         with: { image: "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}", artifact-name: "${{ inputs.component }}-${{ inputs.version }}.spdx.json" }
-      - uses: actions/attest-build-provenance@v3
+      - uses: actions/attest-build-provenance@v4
         with: { subject-name: "${{ steps.component.outputs.image }}", subject-digest: "${{ steps.build.outputs.digest }}", push-to-registry: true }
       - uses: sigstore/cosign-installer@v3.10.1
       - run: cosign sign --yes "${{ steps.component.outputs.image }}@${{ steps.build.outputs.digest }}"
