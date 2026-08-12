@@ -1,0 +1,39 @@
+{{- if .Values.portalRegistration.create }}
+apiVersion: portal.atlas.dev/v1alpha1
+kind: PortalService
+metadata:
+  name: audit
+  labels:
+    {{- include "audit.labels" . | nindent 4 }}
+spec:
+  service: { id: audit, displayName: Audit, owner: {{ .Values.portalRegistration.owner | quote }}, version: {{ .Values.portalRegistration.serviceVersion | quote }}, enabled: {{ .Values.portalRegistration.enabled }} }
+  backend:
+    apiBasePath: /api/services/audit
+    upstream: {{ printf "http://audit.%s.svc.cluster.local:%v" .Release.Namespace .Values.service.port | quote }}
+    apiVersion: "1.0.0"
+    requiredPermissions: [audit:read]
+  health:
+    url: {{ printf "http://audit.%s.svc.cluster.local:%v/health/ready" .Release.Namespace .Values.service.port | quote }}
+    intervalSeconds: 10
+    timeoutMilliseconds: 1500
+  security: { allowedOrigins: [self], integrityRequired: true }
+  extensions:
+    - id: audit-timeline
+      displayName: Audit
+      description: Security, authorization, and service lifecycle events.
+      icon: clipboard
+      route: /audit
+      order: 20
+      elementName: audit-timeline-v1
+      entry:
+        url: {{ printf "%s/mfe/entry.js?v=%s" .Values.gateway.pathPrefix .Values.portalRegistration.extensionVersion | quote }}
+        type: module
+        integrity: {{ .Values.portalRegistration.integrity | quote }}
+        crossOrigin: anonymous
+      extensionVersion: {{ .Values.portalRegistration.extensionVersion | quote }}
+      apiVersion: "1.0.0"
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [audit:read]
+      featureFlags: { export: false }
+{{- end }}
+

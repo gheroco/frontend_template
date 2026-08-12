@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist/server",
+    "rootDir": "src/server",
+    "tsBuildInfoFile": "dist/server/.tsbuildinfo"
+  },
+  "include": ["src/server/**/*.ts"]
+}
+

@@ -1,0 +1,7 @@
+replicaCount: 1
+image: { repository: atlas/inventory, tag: "1.0.0", pullPolicy: IfNotPresent }
+autoscaling: { enabled: false }
+pdb: { enabled: false }
+auth: { mode: dev, issuer: https://identity.example.com, audience: portal-api, permissionsClaim: permissions, rolesClaim: roles }
+observability: { otelEndpoint: "", environment: development }
+networkPolicy: { enabled: true, gatewayNamespace: envoy-gateway-system }

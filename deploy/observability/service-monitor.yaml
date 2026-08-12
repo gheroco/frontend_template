@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: atlas-platform
+  namespace: observability
+  labels:
+    app.kubernetes.io/part-of: atlas-platform
+spec:
+  namespaceSelector:
+    matchNames: [atlas-platform]
+  selector:
+    matchLabels:
+      app.kubernetes.io/part-of: atlas-platform
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s
+      scrapeTimeout: 5s
+      scheme: http
+

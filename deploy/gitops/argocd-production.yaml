@@ -1,0 +1,80 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atlas-foundation
+  namespace: argocd
+  annotations: { argocd.argoproj.io/sync-wave: "0" }
+spec:
+  project: atlas
+  source:
+    repoURL: https://github.com/gheroco/frontend_template.git
+    targetRevision: main
+    path: deploy/charts/platform
+    helm: { valueFiles: [../../environments/production/platform.yaml] }
+  destination: { server: https://kubernetes.default.svc, namespace: atlas-platform }
+  syncPolicy: { automated: { prune: true, selfHeal: true }, syncOptions: [CreateNamespace=true] }
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atlas-registry
+  namespace: argocd
+  annotations: { argocd.argoproj.io/sync-wave: "1" }
+spec:
+  project: atlas
+  source:
+    repoURL: https://github.com/gheroco/frontend_template.git
+    targetRevision: main
+    path: deploy/charts/extension-registry
+    helm: { valueFiles: [../../environments/production/registry.yaml] }
+  destination: { server: https://kubernetes.default.svc, namespace: atlas-platform }
+  syncPolicy: { automated: { prune: true, selfHeal: true } }
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atlas-portal
+  namespace: argocd
+  annotations: { argocd.argoproj.io/sync-wave: "1" }
+spec:
+  project: atlas
+  source:
+    repoURL: https://github.com/gheroco/frontend_template.git
+    targetRevision: main
+    path: deploy/charts/portal-shell
+    helm: { valueFiles: [../../environments/production/portal-shell.yaml] }
+  destination: { server: https://kubernetes.default.svc, namespace: atlas-platform }
+  syncPolicy: { automated: { prune: true, selfHeal: true } }
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atlas-inventory
+  namespace: argocd
+  annotations: { argocd.argoproj.io/sync-wave: "2" }
+spec:
+  project: atlas
+  source:
+    repoURL: https://github.com/gheroco/frontend_template.git
+    targetRevision: main
+    path: services/inventory/deploy/chart
+    helm: { valueFiles: [../../../../deploy/environments/production/inventory.yaml] }
+  destination: { server: https://kubernetes.default.svc, namespace: atlas-platform }
+  syncPolicy: { automated: { prune: true, selfHeal: true } }
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atlas-audit
+  namespace: argocd
+  annotations: { argocd.argoproj.io/sync-wave: "2" }
+spec:
+  project: atlas
+  source:
+    repoURL: https://github.com/gheroco/frontend_template.git
+    targetRevision: main
+    path: services/audit/deploy/chart
+    helm: { valueFiles: [../../../../deploy/environments/production/audit.yaml] }
+  destination: { server: https://kubernetes.default.svc, namespace: atlas-platform }
+  syncPolicy: { automated: { prune: true, selfHeal: true } }
+

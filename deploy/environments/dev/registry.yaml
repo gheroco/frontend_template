@@ -1,0 +1,5 @@
+replicaCount: 1
+image: { repository: atlas/extension-registry, tag: "1.0.0", pullPolicy: IfNotPresent }
+autoscaling: { enabled: false }
+pdb: { enabled: false }
+config: { refreshMilliseconds: 2000, otelEndpoint: "", deploymentEnvironment: development }

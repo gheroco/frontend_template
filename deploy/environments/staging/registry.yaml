@@ -1,0 +1,2 @@
+config: { refreshMilliseconds: 5000, otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318, deploymentEnvironment: staging }
+

@@ -1,0 +1,83 @@
+name: Reusable component CI
+
+on:
+  workflow_call:
+    inputs:
+      workspace:
+        required: true
+        type: string
+      dockerfile:
+        required: true
+        type: string
+      image:
+        required: true
+        type: string
+      chart:
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
+jobs:
+  component:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci --ignore-scripts
+      - run: npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit
+      - run: npm run typecheck -w "${{ inputs.workspace }}"
+      - run: npm run test -w "${{ inputs.workspace }}"
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ${{ inputs.dockerfile }}
+          push: false
+          load: true
+          tags: ${{ inputs.image }}:ci
+      - name: Scan runtime image
+        id: image_scan
+        continue-on-error: true
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: ${{ inputs.image }}:ci
+          format: table
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+      - name: Generate image scan SARIF
+        if: always()
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: ${{ inputs.image }}:ci
+          format: sarif
+          output: component-trivy.sarif
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "0"
+      - uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        continue-on-error: true
+        with: { sarif_file: component-trivy.sarif }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ inputs.image }}-trivy-sarif
+          path: component-trivy.sarif
+          retention-days: 30
+      - uses: anchore/sbom-action@v0.20.8
+        if: always()
+        with: { image: "${{ inputs.image }}:ci", artifact-name: "${{ inputs.image }}-sbom.spdx.json" }
+      - uses: azure/setup-helm@v4
+        if: always()
+        with: { version: v3.18.6 }
+      - if: always()
+        run: helm lint "${{ inputs.chart }}"
+      - name: Enforce image vulnerability policy
+        if: always() && steps.image_scan.outcome == 'failure'
+        run: exit 1

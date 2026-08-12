@@ -1,0 +1,8 @@
+apiVersion: v2
+name: audit
+description: Independently releasable Audit backend and microfrontend
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+kubeVersion: ">=1.30.0-0"
+

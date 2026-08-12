@@ -1,0 +1,53 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "graphTooltip": 1,
+  "links": [],
+  "panels": [
+    {
+      "type": "stat", "title": "Registered services", "id": 1, "gridPos": { "h": 5, "w": 6, "x": 0, "y": 0 },
+      "targets": [{ "expr": "max(atlas_registry_services)", "legendFormat": "services", "refId": "A" }]
+    },
+    {
+      "type": "stat", "title": "Runtime extensions", "id": 2, "gridPos": { "h": 5, "w": 6, "x": 6, "y": 0 },
+      "targets": [{ "expr": "max(atlas_registry_extensions)", "legendFormat": "extensions", "refId": "A" }]
+    },
+    {
+      "type": "stat", "title": "Unavailable services", "id": 3, "gridPos": { "h": 5, "w": 6, "x": 12, "y": 0 },
+      "targets": [{ "expr": "count(atlas_registry_service_available == 0)", "legendFormat": "unavailable", "refId": "A" }]
+    },
+    {
+      "type": "stat", "title": "Running versions", "id": 4, "gridPos": { "h": 5, "w": 6, "x": 18, "y": 0 },
+      "targets": [{ "expr": "count by (service, version) (atlas_build_info)", "legendFormat": "{{service}} {{version}}", "refId": "A" }]
+    },
+    {
+      "type": "timeseries", "title": "Request rate", "id": 5, "gridPos": { "h": 8, "w": 12, "x": 0, "y": 5 },
+      "targets": [{ "expr": "sum by (service) (rate(atlas_http_requests_total[5m]))", "legendFormat": "{{service}}", "refId": "A" }]
+    },
+    {
+      "type": "timeseries", "title": "5xx ratio", "id": 6, "gridPos": { "h": 8, "w": 12, "x": 12, "y": 5 },
+      "targets": [{ "expr": "sum by (service) (rate(atlas_http_requests_total{status_code=~\"5..\"}[5m])) / clamp_min(sum by (service) (rate(atlas_http_requests_total[5m])), 0.001)", "legendFormat": "{{service}}", "refId": "A" }]
+    },
+    {
+      "type": "timeseries", "title": "p95 request latency", "id": 7, "gridPos": { "h": 8, "w": 12, "x": 0, "y": 13 },
+      "targets": [{ "expr": "histogram_quantile(0.95, sum by (le, service) (rate(atlas_http_request_duration_seconds_bucket[5m])))", "legendFormat": "{{service}}", "refId": "A" }]
+    },
+    {
+      "type": "timeseries", "title": "CPU and memory saturation", "id": 8, "gridPos": { "h": 8, "w": 12, "x": 12, "y": 13 },
+      "targets": [
+        { "expr": "sum by (service) (rate(atlas_process_cpu_user_seconds_total[5m]))", "legendFormat": "CPU {{service}}", "refId": "A" },
+        { "expr": "sum by (service) (atlas_process_resident_memory_bytes)", "legendFormat": "RSS {{service}}", "refId": "B" }
+      ]
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 41,
+  "tags": ["atlas", "portal", "microfrontends"],
+  "templating": { "list": [] },
+  "time": { "from": "now-6h", "to": "now" },
+  "timezone": "browser",
+  "title": "Atlas Platform / Services",
+  "uid": "atlas-platform-services",
+  "version": 1
+}
+

@@ -1,0 +1,6 @@
+gateway:
+  className: eg
+  http: { enabled: false }
+  tls: { enabled: true, port: 443, hostname: portal.staging.example.com, existingSecret: portal-staging-tls }
+defaultDenyNetworkPolicy: true
+

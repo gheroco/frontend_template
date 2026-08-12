@@ -1,0 +1,31 @@
+replicaCount: 2
+image: { repository: ghcr.io/gheroco/frontend_template/inventory, tag: "1.0.0", digest: "", pullPolicy: IfNotPresent }
+imagePullSecrets: []
+service: { port: 4201 }
+serviceAccount: { create: true, name: "" }
+resources:
+  requests: { cpu: 75m, memory: 96Mi }
+  limits: { cpu: 400m, memory: 256Mi }
+autoscaling: { enabled: true, minReplicas: 2, maxReplicas: 10, targetCPUUtilizationPercentage: 70, targetMemoryUtilizationPercentage: 80 }
+pdb: { enabled: true, minAvailable: 1 }
+auth:
+  mode: oidc
+  issuer: https://identity.example.com
+  audience: portal-api
+  permissionsClaim: permissions
+  rolesClaim: roles
+secret: { existingName: atlas-platform-secrets, devJwtSecretKey: DEV_JWT_SECRET }
+observability: { otelEndpoint: http://otel-collector.observability.svc.cluster.local:4318, environment: production }
+portalRegistration:
+  create: true
+  enabled: true
+  owner: supply-platform
+  serviceVersion: "1.0.0"
+  extensionVersion: "1.0.0"
+  elementName: inventory-overview-v1
+  integrity: sha384-qL6eNiDpDiaT6H+s9/yodUGxadnz5/2++eyr3t265uPZwsGdkLy0hZziu/xmlF+2
+  suppliersTab: false
+gateway: { enabled: true, name: atlas-gateway, sectionName: http, pathPrefix: /extensions/inventory }
+networkPolicy: { enabled: true, gatewayNamespace: gateway-system }
+topologySpread: { enabled: true }
+

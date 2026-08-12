@@ -1,0 +1,65 @@
+{{- if .Values.portalRegistration.create }}
+apiVersion: portal.atlas.dev/v1alpha1
+kind: PortalService
+metadata:
+  name: inventory
+  labels:
+    {{- include "inventory.labels" . | nindent 4 }}
+spec:
+  service:
+    id: inventory
+    displayName: Inventory
+    owner: {{ .Values.portalRegistration.owner | quote }}
+    version: {{ .Values.portalRegistration.serviceVersion | quote }}
+    enabled: {{ .Values.portalRegistration.enabled }}
+  backend:
+    apiBasePath: /api/services/inventory
+    upstream: {{ printf "http://inventory.%s.svc.cluster.local:%v" .Release.Namespace .Values.service.port | quote }}
+    apiVersion: "1.0.0"
+    requiredPermissions: [inventory:read]
+  health:
+    url: {{ printf "http://inventory.%s.svc.cluster.local:%v/health/ready" .Release.Namespace .Values.service.port | quote }}
+    intervalSeconds: 10
+    timeoutMilliseconds: 1500
+  security:
+    allowedOrigins: [self]
+    integrityRequired: true
+  extensions:
+    - id: inventory-overview
+      displayName: Inventory
+      description: Stock levels, locations, and replenishment health.
+      icon: boxes
+      route: /inventory
+      order: 10
+      elementName: {{ .Values.portalRegistration.elementName }}
+      entry:
+        url: {{ printf "%s/mfe/entry.js?v=%s" .Values.gateway.pathPrefix .Values.portalRegistration.extensionVersion | quote }}
+        type: module
+        integrity: {{ .Values.portalRegistration.integrity | quote }}
+        crossOrigin: anonymous
+      extensionVersion: {{ .Values.portalRegistration.extensionVersion | quote }}
+      apiVersion: "1.0.0"
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [inventory:read]
+      featureFlags: { reservations: true, enhancedView: {{ eq .Values.portalRegistration.elementName "inventory-overview-v2" }} }
+    {{- if .Values.portalRegistration.suppliersTab }}
+    - id: inventory-suppliers
+      displayName: Suppliers
+      description: Supplier health and lead-time risk.
+      icon: database
+      route: /suppliers
+      order: 15
+      elementName: inventory-suppliers-v1
+      entry:
+        url: {{ printf "%s/mfe/entry.js?v=%s" .Values.gateway.pathPrefix .Values.portalRegistration.extensionVersion | quote }}
+        type: module
+        integrity: {{ .Values.portalRegistration.integrity | quote }}
+        crossOrigin: anonymous
+      extensionVersion: {{ .Values.portalRegistration.extensionVersion | quote }}
+      apiVersion: "1.0.0"
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [inventory:read]
+      featureFlags: {}
+    {{- end }}
+{{- end }}
+

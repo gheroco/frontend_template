@@ -1,0 +1,13 @@
+gateway:
+  name: atlas-gateway
+  className: eg
+  http:
+    enabled: true
+    port: 80
+  tls:
+    enabled: false
+    port: 443
+    hostname: portal.example.com
+    existingSecret: portal-tls
+defaultDenyNetworkPolicy: true
+

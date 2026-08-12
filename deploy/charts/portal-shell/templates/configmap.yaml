@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "portal-shell.fullname" . }}
+  labels:
+    {{- include "portal-shell.labels" . | nindent 4 }}
+data:
+  AUTH_MODE: {{ .Values.config.authMode | quote }}
+  COOKIE_SECURE: {{ .Values.config.cookieSecure | quote }}
+  PORTAL_PUBLIC_URL: {{ .Values.config.publicUrl | quote }}
+  REGISTRY_URL: {{ .Values.config.registryUrl | quote }}
+  MICROFRONTEND_ORIGINS: {{ .Values.config.microfrontendOrigins | quote }}
+  OIDC_ISSUER: {{ .Values.config.oidcIssuer | quote }}
+  OIDC_CLIENT_ID: {{ .Values.config.oidcClientId | quote }}
+  OIDC_AUDIENCE: {{ .Values.config.oidcAudience | quote }}
+  SERVICE_UPSTREAM_SUFFIXES: {{ .Values.config.serviceUpstreamSuffixes | quote }}
+  OTEL_EXPORTER_OTLP_ENDPOINT: {{ .Values.config.otelEndpoint | quote }}
+  DEPLOYMENT_ENVIRONMENT: {{ .Values.config.deploymentEnvironment | quote }}
+  SERVICE_VERSION: {{ .Values.image.tag | quote }}
+  PORT: {{ .Values.service.port | quote }}
+
