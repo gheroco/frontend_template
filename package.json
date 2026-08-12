@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "setup": "npm run build && npm run integrity:sync && node scripts/bootstrap-env.mjs",
-    "dev": "npm run setup && concurrently --kill-others-on-fail --names registry,inventory,audit,portal --prefix-colors blue,green,magenta,cyan \"npm start -w @atlas/extension-registry\" \"npm start -w @atlas/inventory-service\" \"npm start -w @atlas/audit-service\" \"npm start -w @atlas/portal-shell\"",
-    "build": "npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit && npm run build -w @atlas/extension-registry && npm run build -w @atlas/inventory-service && npm run build -w @atlas/audit-service && npm run build -w @atlas/portal-shell",
+    "dev": "npm run setup && concurrently --kill-others-on-fail --names registry,inventory,audit,webhooks,portal --prefix-colors blue,green,magenta,yellow,cyan \"npm start -w @atlas/extension-registry\" \"npm start -w @atlas/inventory-service\" \"npm start -w @atlas/audit-service\" \"npm start -w @atlas/github-webhooks-service\" \"npm start -w @atlas/portal-shell\"",
+    "build": "npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit && npm run build -w @atlas/extension-registry && npm run build -w @atlas/inventory-service && npm run build -w @atlas/audit-service && npm run build -w @atlas/github-webhooks-service && npm run build -w @atlas/portal-shell",
     "typecheck": "npm run build -w @atlas/contracts && npm run build -w @atlas/service-kit && npm run typecheck --workspaces --if-present",
     "test": "vitest run --coverage",
     "test:unit": "vitest run --exclude tests/e2e/**",

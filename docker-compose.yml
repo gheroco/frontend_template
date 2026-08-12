@@ -67,6 +67,85 @@ services:
     security_opt: ["no-new-privileges:true"]
     cap_drop: [ALL]
 
+  postgres:
+    image: postgres:17.6-alpine3.22
+    environment:
+      POSTGRES_DB: atlas
+      POSTGRES_USER: atlas
+      POSTGRES_PASSWORD: atlas-dev-only
+    volumes: [github-webhooks-postgres:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U atlas -d atlas"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    security_opt: ["no-new-privileges:true"]
+
+  rabbitmq:
+    image: rabbitmq:4.1.4-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: atlas
+      RABBITMQ_DEFAULT_PASS: atlas-dev-only
+    volumes:
+      - github-webhooks-rabbitmq:/var/lib/rabbitmq
+      - ./services/github-webhooks/deploy/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    security_opt: ["no-new-privileges:true"]
+
+  github-webhooks:
+    build:
+      context: .
+      dockerfile: services/github-webhooks/Dockerfile
+    depends_on:
+      postgres: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+    environment:
+      AUTH_MODE: dev
+      DEV_JWT_SECRET: ${DEV_JWT_SECRET:?Run npm run setup first}
+      OIDC_AUDIENCE: portal-api
+      PORTAL_PUBLIC_URL: http://localhost:4000
+      SERVICE_VERSION: 1.0.0
+      WEBHOOK_RUNTIME: external
+      RUN_MIGRATIONS: "true"
+      DATABASE_URL: postgresql://atlas:atlas-dev-only@postgres:5432/atlas
+      AMQP_URL: amqp://atlas:atlas-dev-only@rabbitmq:5672
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET:?Run npm run setup first}
+    ports: ["4203:4203"]
+    healthcheck:
+      test: ["CMD", "/nodejs/bin/node", "-e", "fetch('http://localhost:4203/health/api-ready').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 2s
+      retries: 20
+      start_period: 10s
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
+  github-webhooks-worker:
+    build:
+      context: .
+      dockerfile: services/github-webhooks/Dockerfile
+    command: ["services/github-webhooks/dist/server/worker.js"]
+    depends_on:
+      github-webhooks: { condition: service_healthy }
+    environment:
+      SERVICE_VERSION: 1.0.0
+      WEBHOOK_RUNTIME: external
+      DATABASE_URL: postgresql://atlas:atlas-dev-only@postgres:5432/atlas
+      AMQP_URL: amqp://atlas:atlas-dev-only@rabbitmq:5672
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET:?Run npm run setup first}
+    read_only: true
+    tmpfs: [/tmp]
+    restart: unless-stopped
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
   portal:
     build:
       context: .
@@ -75,6 +154,7 @@ services:
       registry: { condition: service_healthy }
       inventory: { condition: service_healthy }
       audit: { condition: service_healthy }
+      github-webhooks: { condition: service_healthy }
     environment:
       AUTH_MODE: dev
       COOKIE_SECURE: "false"
@@ -82,7 +162,7 @@ services:
       DEV_JWT_SECRET: ${DEV_JWT_SECRET:?Run npm run setup first}
       REGISTRY_API_TOKEN: ${REGISTRY_API_TOKEN:?Run npm run setup first}
       REGISTRY_URL: http://registry:4100
-      MICROFRONTEND_ORIGINS: http://localhost:4201,http://localhost:4202
+      MICROFRONTEND_ORIGINS: http://localhost:4201,http://localhost:4202,http://localhost:4203
       PORTAL_PUBLIC_URL: http://localhost:4000
       OIDC_AUDIENCE: portal-api
       SERVICE_VERSION: 1.0.0
@@ -101,3 +181,7 @@ services:
 networks:
   default:
     name: atlas-platform
+
+volumes:
+  github-webhooks-postgres:
+  github-webhooks-rabbitmq:

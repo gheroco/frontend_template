@@ -7,6 +7,7 @@ COPY packages/service-kit/package.json packages/service-kit/package.json
 COPY apps/extension-registry/package.json apps/extension-registry/package.json
 COPY services/inventory/package.json services/inventory/package.json
 COPY services/audit/package.json services/audit/package.json
+COPY services/github-webhooks/package.json services/github-webhooks/package.json
 COPY apps/portal-shell/package.json apps/portal-shell/package.json
 RUN npm ci --ignore-scripts
 COPY packages/contracts packages/contracts

@@ -1,0 +1,59 @@
+{{- if .Values.receiver.autoscaling.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: { name: github-webhooks }
+spec:
+  scaleTargetRef: { apiVersion: apps/v1, kind: Deployment, name: github-webhooks }
+  minReplicas: {{ .Values.receiver.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.receiver.autoscaling.maxReplicas }}
+  behavior:
+    scaleDown: { stabilizationWindowSeconds: 300, policies: [{ type: Percent, value: 25, periodSeconds: 60 }] }
+    scaleUp: { stabilizationWindowSeconds: 0, policies: [{ type: Pods, value: 4, periodSeconds: 30 }] }
+  metrics:
+    - { type: Resource, resource: { name: cpu, target: { type: Utilization, averageUtilization: {{ .Values.receiver.autoscaling.targetCPUUtilizationPercentage }} } } }
+{{- end }}
+{{- if .Values.receiver.pdb.enabled }}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: { name: github-webhooks }
+spec:
+  unhealthyPodEvictionPolicy: AlwaysAllow
+  maxUnavailable: {{ .Values.receiver.pdb.maxUnavailable }}
+  selector:
+    matchLabels:
+      {{- include "github-webhooks.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: receiver
+{{- end }}
+{{- if .Values.keda.enabled }}
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: github-webhooks-worker
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef: { name: github-webhooks-worker }
+  pollingInterval: {{ .Values.keda.pollingInterval }}
+  cooldownPeriod: {{ .Values.keda.cooldownPeriod }}
+  minReplicaCount: {{ .Values.keda.minReplicaCount }}
+  maxReplicaCount: {{ .Values.keda.maxReplicaCount }}
+  fallback:
+    failureThreshold: {{ .Values.keda.fallback.failureThreshold }}
+    replicas: {{ .Values.keda.fallback.replicas }}
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown: { stabilizationWindowSeconds: 180, policies: [{ type: Percent, value: 50, periodSeconds: 60 }] }
+        scaleUp: { stabilizationWindowSeconds: 0, policies: [{ type: Pods, value: 4, periodSeconds: 15 }] }
+  triggers:
+    - type: rabbitmq
+      metadata:
+        protocol: amqp
+        hostFromEnv: AMQP_URL
+        queueName: {{ .Values.queue.name | quote }}
+        mode: QueueLength
+        value: {{ .Values.keda.queueLength | quote }}
+        activationValue: {{ .Values.keda.activationQueueLength | quote }}
+{{- end }}

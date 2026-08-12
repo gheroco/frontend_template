@@ -1,0 +1,45 @@
+{{- if .Values.portalRegistration.create }}
+apiVersion: portal.atlas.dev/v1alpha1
+kind: PortalService
+metadata:
+  name: github-webhooks
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+spec:
+  service:
+    id: github-webhooks
+    displayName: GitHub Webhooks
+    owner: {{ .Values.portalRegistration.owner | quote }}
+    version: {{ .Values.portalRegistration.serviceVersion | quote }}
+    enabled: {{ .Values.portalRegistration.enabled }}
+  backend:
+    apiBasePath: /api/services/github-webhooks
+    upstream: {{ printf "http://github-webhooks.%s.svc.cluster.local:%v" .Release.Namespace .Values.service.port | quote }}
+    apiVersion: "1.0.0"
+    requiredPermissions: [github-webhooks:read]
+  health:
+    url: {{ printf "http://github-webhooks.%s.svc.cluster.local:%v/health/api-ready" .Release.Namespace .Values.service.port | quote }}
+    intervalSeconds: 10
+    timeoutMilliseconds: 1500
+  security:
+    allowedOrigins: [self]
+    integrityRequired: true
+  extensions:
+    - id: github-webhook-deliveries
+      displayName: GitHub Webhooks
+      description: Delivery health and event activity for direct GitHub webhooks.
+      icon: activity
+      route: /github-webhooks
+      order: 30
+      elementName: {{ .Values.portalRegistration.elementName }}
+      entry:
+        url: {{ printf "%s/mfe/entry.js?v=%s" .Values.gateway.extensionPath .Values.portalRegistration.extensionVersion | quote }}
+        type: module
+        integrity: {{ .Values.portalRegistration.integrity | quote }}
+        crossOrigin: anonymous
+      extensionVersion: {{ .Values.portalRegistration.extensionVersion | quote }}
+      apiVersion: "1.0.0"
+      portalCompatibility: ">=1.0.0 <2.0.0"
+      requiredPermissions: [github-webhooks:read]
+      featureFlags: {}
+{{- end }}

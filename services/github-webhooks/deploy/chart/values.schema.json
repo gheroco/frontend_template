@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["image", "secret", "payload", "portalRegistration"],
+  "properties": {
+    "image": { "type": "object", "required": ["repository", "tag"], "properties": { "repository": { "type": "string", "minLength": 3 }, "tag": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$", "not": { "const": "latest" } }, "digest": { "type": "string", "pattern": "^$|^sha256:[a-f0-9]{64}$" } } },
+    "payload": { "type": "object", "required": ["maxBytes"], "properties": { "maxBytes": { "type": "integer", "minimum": 1024, "maximum": 26214400 } } },
+    "secret": { "type": "object", "required": ["existingName", "databaseUrlKey", "amqpUrlKey", "webhookSecretKey"], "properties": { "existingName": { "type": "string", "minLength": 1 }, "databaseUrlKey": { "type": "string", "minLength": 1 }, "amqpUrlKey": { "type": "string", "minLength": 1 }, "webhookSecretKey": { "type": "string", "minLength": 1 } } },
+    "portalRegistration": { "type": "object", "required": ["serviceVersion", "extensionVersion", "elementName", "integrity"], "properties": { "serviceVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-+].*)?$" }, "extensionVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-+].*)?$" }, "elementName": { "const": "github-webhook-deliveries-v1" }, "integrity": { "type": "string", "pattern": "^sha384-[A-Za-z0-9+/]{64}$" } } },
+    "keda": { "type": "object", "properties": { "maxReplicaCount": { "type": "integer", "minimum": 1, "maximum": 100 }, "queueLength": { "type": "integer", "minimum": 1 } } },
+    "recovery": { "type": "object", "properties": { "lookbackHours": { "type": "integer", "minimum": 1, "maximum": 72 }, "minimumIntervalSeconds": { "type": "integer", "minimum": 60 } } }
+  }
+}

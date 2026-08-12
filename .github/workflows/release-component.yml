@@ -7,7 +7,7 @@ on:
         description: Independent release unit
         required: true
         type: choice
-        options: [portal-shell, extension-registry, inventory, audit]
+        options: [portal-shell, extension-registry, inventory, audit, github-webhooks]
       version:
         description: Immutable SemVer image tag
         required: true
@@ -46,6 +46,7 @@ jobs:
             extension-registry) echo "release=atlas-registry" >> "$GITHUB_OUTPUT"; echo "dockerfile=apps/extension-registry/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/extension-registry" >> "$GITHUB_OUTPUT"; echo "chart=deploy/charts/extension-registry" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/registry.yaml" >> "$GITHUB_OUTPUT" ;;
             inventory) echo "release=atlas-inventory" >> "$GITHUB_OUTPUT"; echo "dockerfile=services/inventory/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/inventory-service" >> "$GITHUB_OUTPUT"; echo "chart=services/inventory/deploy/chart" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/inventory.yaml" >> "$GITHUB_OUTPUT" ;;
             audit) echo "release=atlas-audit" >> "$GITHUB_OUTPUT"; echo "dockerfile=services/audit/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/audit-service" >> "$GITHUB_OUTPUT"; echo "chart=services/audit/deploy/chart" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/audit.yaml" >> "$GITHUB_OUTPUT" ;;
+            github-webhooks) echo "release=atlas-github-webhooks" >> "$GITHUB_OUTPUT"; echo "dockerfile=services/github-webhooks/Dockerfile" >> "$GITHUB_OUTPUT"; echo "workspace=@atlas/github-webhooks-service" >> "$GITHUB_OUTPUT"; echo "chart=services/github-webhooks/deploy/chart" >> "$GITHUB_OUTPUT"; echo "values=deploy/environments/${{ inputs.environment }}/github-webhooks.yaml" >> "$GITHUB_OUTPUT" ;;
           esac
           echo "image=ghcr.io/${GITHUB_REPOSITORY,,}/${{ inputs.component }}" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
@@ -58,7 +59,7 @@ jobs:
         shell: bash
         run: |
           entry=""
-          if [[ "${{ inputs.component }}" == "inventory" || "${{ inputs.component }}" == "audit" ]]; then entry="services/${{ inputs.component }}/dist/public/mfe/entry.js"; fi
+          if [[ "${{ inputs.component }}" == "inventory" || "${{ inputs.component }}" == "audit" || "${{ inputs.component }}" == "github-webhooks" ]]; then entry="services/${{ inputs.component }}/dist/public/mfe/entry.js"; fi
           if [[ -n "$entry" ]]; then echo "value=sha384-$(openssl dgst -sha384 -binary "$entry" | openssl base64 -A)" >> "$GITHUB_OUTPUT"; fi
       - uses: docker/login-action@v3
         with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }

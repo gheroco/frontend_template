@@ -1,0 +1,87 @@
+{{- if .Values.migration.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ printf "%s-schema-%s" .Release.Name .Chart.Version | trunc 63 | trimSuffix "-" }}
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+    app.kubernetes.io/component: migration
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "-5"
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+spec:
+  backoffLimit: {{ .Values.migration.backoffLimit }}
+  ttlSecondsAfterFinished: 600
+  template:
+    metadata:
+      labels:
+        {{- include "github-webhooks.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: migration
+    spec:
+      restartPolicy: OnFailure
+      automountServiceAccountToken: false
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext: { runAsNonRoot: true, runAsUser: 10001, runAsGroup: 10001, fsGroup: 10001, seccompProfile: { type: RuntimeDefault } }
+      containers:
+        - name: migration
+          image: {{ include "github-webhooks.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ["services/github-webhooks/dist/server/migrate.js"]
+          env:
+            - name: DATABASE_URL
+              valueFrom: { secretKeyRef: { name: {{ .Values.secret.existingName }}, key: {{ .Values.secret.databaseUrlKey }} } }
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          resources: { requests: { cpu: 25m, memory: 64Mi }, limits: { cpu: 250m, memory: 128Mi } }
+{{- end }}
+{{- if .Values.recovery.enabled }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: github-webhooks-recovery
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.recovery.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      activeDeadlineSeconds: 300
+      template:
+        metadata:
+          labels:
+            {{- include "github-webhooks.selectorLabels" . | nindent 12 }}
+            app.kubernetes.io/component: recovery
+        spec:
+          restartPolicy: Never
+          serviceAccountName: {{ include "github-webhooks.serviceAccountName" . }}
+          automountServiceAccountToken: false
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets: {{ toYaml . | nindent 12 }}
+          {{- end }}
+          securityContext: { runAsNonRoot: true, runAsUser: 10001, runAsGroup: 10001, fsGroup: 10001, seccompProfile: { type: RuntimeDefault } }
+          containers:
+            - name: recovery
+              image: {{ include "github-webhooks.image" . | quote }}
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              args: ["services/github-webhooks/dist/server/reconciler.js"]
+              env:
+                - { name: WEBHOOK_RUNTIME, value: external }
+                - { name: GITHUB_API_URL, value: {{ .Values.recovery.apiUrl | quote }} }
+                - { name: GITHUB_API_VERSION, value: {{ .Values.recovery.apiVersion | quote }} }
+                - { name: GITHUB_RECOVERY_LOOKBACK_HOURS, value: {{ .Values.recovery.lookbackHours | quote }} }
+                - { name: GITHUB_RECOVERY_MIN_INTERVAL_SECONDS, value: {{ .Values.recovery.minimumIntervalSeconds | quote }} }
+                - { name: GITHUB_WEBHOOK_TARGETS, value: {{ toJson .Values.recovery.targets | quote }} }
+                - name: DATABASE_URL
+                  valueFrom: { secretKeyRef: { name: {{ .Values.secret.existingName }}, key: {{ .Values.secret.databaseUrlKey }} } }
+                - name: GITHUB_RECOVERY_TOKEN
+                  valueFrom: { secretKeyRef: { name: {{ .Values.secret.existingName }}, key: {{ .Values.secret.recoveryTokenKey }} } }
+              securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+              resources: { requests: { cpu: 25m, memory: 64Mi }, limits: { cpu: 250m, memory: 128Mi } }
+{{- end }}

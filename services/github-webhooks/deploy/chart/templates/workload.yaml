@@ -1,0 +1,143 @@
+{{- if .Values.serviceAccount.create }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "github-webhooks.serviceAccountName" . }}
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+automountServiceAccountToken: false
+{{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: github-webhooks
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "github-webhooks.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: receiver
+  ports: [{ name: http, port: {{ .Values.service.port }}, targetPort: http }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-webhooks
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.receiver.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+  strategy: { type: RollingUpdate, rollingUpdate: { maxUnavailable: 0, maxSurge: 1 } }
+  selector:
+    matchLabels:
+      {{- include "github-webhooks.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: receiver
+  template:
+    metadata:
+      labels:
+        {{- include "github-webhooks.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: receiver
+        app.kubernetes.io/part-of: atlas-platform
+    spec:
+      serviceAccountName: {{ include "github-webhooks.serviceAccountName" . }}
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 30
+      securityContext: { runAsNonRoot: true, runAsUser: 10001, runAsGroup: 10001, fsGroup: 10001, seccompProfile: { type: RuntimeDefault } }
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.topologySpread.enabled }}
+      topologySpreadConstraints:
+        - { maxSkew: 1, topologyKey: kubernetes.io/hostname, whenUnsatisfiable: DoNotSchedule, labelSelector: { matchLabels: { app.kubernetes.io/name: github-webhooks, app.kubernetes.io/component: receiver } } }
+        - { maxSkew: 1, topologyKey: topology.kubernetes.io/zone, whenUnsatisfiable: ScheduleAnyway, labelSelector: { matchLabels: { app.kubernetes.io/name: github-webhooks, app.kubernetes.io/component: receiver } } }
+      {{- end }}
+      containers:
+        - name: receiver
+          image: {{ include "github-webhooks.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports: [{ name: http, containerPort: {{ .Values.service.port }} }]
+          env:
+            - { name: WEBHOOK_RUNTIME, value: external }
+            - { name: AUTH_MODE, value: {{ .Values.auth.mode | quote }} }
+            - { name: OIDC_ISSUER, value: {{ .Values.auth.issuer | quote }} }
+            - { name: OIDC_AUDIENCE, value: {{ .Values.auth.audience | quote }} }
+            - { name: PERMISSIONS_CLAIM, value: {{ .Values.auth.permissionsClaim | quote }} }
+            - { name: ROLES_CLAIM, value: {{ .Values.auth.rolesClaim | quote }} }
+            - { name: SERVICE_VERSION, value: {{ .Values.portalRegistration.serviceVersion | quote }} }
+            - { name: PORT, value: {{ .Values.service.port | quote }} }
+            - { name: GITHUB_MAX_PAYLOAD_BYTES, value: {{ printf "%.0f" .Values.payload.maxBytes | quote }} }
+            - { name: GITHUB_WEBHOOK_QUEUE, value: {{ .Values.queue.name | quote }} }
+            - { name: DATABASE_POOL_SIZE, value: "2" }
+            - { name: OTEL_EXPORTER_OTLP_ENDPOINT, value: {{ .Values.observability.otelEndpoint | quote }} }
+            - { name: DEPLOYMENT_ENVIRONMENT, value: {{ .Values.observability.environment | quote }} }
+            - name: DEV_JWT_SECRET
+              valueFrom: { secretKeyRef: { name: {{ .Values.secret.existingName }}, key: {{ .Values.secret.devJwtSecretKey }}, optional: true } }
+            {{- include "github-webhooks.secretEnv" . | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          startupProbe: { httpGet: { path: /health/startup, port: http }, failureThreshold: 30, periodSeconds: 2 }
+          readinessProbe: { httpGet: { path: /health/ready, port: http }, initialDelaySeconds: 2, periodSeconds: 5, timeoutSeconds: 2 }
+          livenessProbe: { httpGet: { path: /health/live, port: http }, initialDelaySeconds: 10, periodSeconds: 10, timeoutSeconds: 2 }
+          lifecycle: { preStop: { exec: { command: ["/nodejs/bin/node", "-e", "setTimeout(()=>{},5000)"] } } }
+          resources: {{ toYaml .Values.receiver.resources | nindent 12 }}
+          volumeMounts: [{ name: tmp, mountPath: /tmp }]
+      volumes: [{ name: tmp, emptyDir: { sizeLimit: 32Mi } }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-webhooks-worker
+  labels:
+    {{- include "github-webhooks.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.keda.enabled }}
+  replicas: {{ .Values.worker.replicas }}
+  {{- end }}
+  revisionHistoryLimit: 10
+  strategy: { type: RollingUpdate, rollingUpdate: { maxUnavailable: 0, maxSurge: 1 } }
+  selector:
+    matchLabels:
+      {{- include "github-webhooks.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: worker
+  template:
+    metadata:
+      labels:
+        {{- include "github-webhooks.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: worker
+        app.kubernetes.io/part-of: atlas-platform
+    spec:
+      serviceAccountName: {{ include "github-webhooks.serviceAccountName" . }}
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 60
+      securityContext: { runAsNonRoot: true, runAsUser: 10001, runAsGroup: 10001, fsGroup: 10001, seccompProfile: { type: RuntimeDefault } }
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: worker
+          image: {{ include "github-webhooks.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ["services/github-webhooks/dist/server/worker.js"]
+          ports: [{ name: health, containerPort: 4204 }]
+          env:
+            - { name: WEBHOOK_RUNTIME, value: external }
+            - { name: SERVICE_VERSION, value: {{ .Values.portalRegistration.serviceVersion | quote }} }
+            - { name: GITHUB_WEBHOOK_QUEUE, value: {{ .Values.queue.name | quote }} }
+            - { name: WORKER_PREFETCH, value: {{ .Values.worker.prefetch | quote }} }
+            - { name: DATABASE_POOL_SIZE, value: {{ .Values.worker.databasePoolSize | quote }} }
+            - { name: WORKER_HEALTH_PORT, value: "4204" }
+            - { name: WEBHOOK_RETENTION_DAYS, value: {{ .Values.retentionDays | quote }} }
+            - { name: OTEL_EXPORTER_OTLP_ENDPOINT, value: {{ .Values.observability.otelEndpoint | quote }} }
+            - { name: DEPLOYMENT_ENVIRONMENT, value: {{ .Values.observability.environment | quote }} }
+            {{- include "github-webhooks.secretEnv" . | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          startupProbe: { exec: { command: ["/nodejs/bin/node", "-e", "fetch('http://127.0.0.1:4204/health/startup').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"] }, failureThreshold: 30, periodSeconds: 2 }
+          readinessProbe: { exec: { command: ["/nodejs/bin/node", "-e", "fetch('http://127.0.0.1:4204/health/ready').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"] }, initialDelaySeconds: 2, periodSeconds: 5, timeoutSeconds: 2 }
+          livenessProbe: { exec: { command: ["/nodejs/bin/node", "-e", "fetch('http://127.0.0.1:4204/health/live').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"] }, initialDelaySeconds: 10, periodSeconds: 10, timeoutSeconds: 2 }
+          resources: {{ toYaml .Values.worker.resources | nindent 12 }}
+          volumeMounts: [{ name: tmp, mountPath: /tmp }]
+      volumes: [{ name: tmp, emptyDir: { sizeLimit: 32Mi } }]
