@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f3ee" />
+  <meta name="description" content="Explore Yerevan's new residential developments in 3D. Compare published prices, apartment offers, locations, and sources." />
+  <title>Yerevan Atlas · Find your place</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23265344'/%3E%3Cpath d='M12 32V19l12-7 12 7v13M24 12v24M12 19l12 7 12-7' fill='none' stroke='%23eee9db' stroke-width='3'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Yerevan Atlas home"><span class="brand-mark" data-icon="building"></span><span>Yerevan <b>Atlas</b><small>Նոր տուն · Նոր սկիզբ</small></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><button data-view="explore" class="nav-link active">Explore</button><button data-view="saved" class="nav-link">Saved <span id="savedCount" class="count">0</span></button><button id="compareTop" class="nav-link">Compare <span id="compareCount" class="count">0</span></button></nav>
+    <div class="header-actions"><button class="icon-button" id="languageButton" aria-label="Switch between English and Armenian" title="Project names: English / Armenian">ՀԱՅ</button><button id="coverageButton" class="text-button"><span class="live-dot"></span><span>About the data</span></button><button id="preferencesButton" class="button dark small"><span data-icon="sliders"></span><span>My preferences</span></button></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar" id="sidebar" aria-label="Development results">
+      <div class="sidebar-intro"><div class="eyebrow">A HOME IN YEREVAN</div><h1>Find your place.</h1><p>Explore the city. Compare the details.<br>Choose with a clearer picture.</p>
+        <label class="search-field"><span data-icon="search"></span><input id="searchInput" type="search" placeholder="Project, street, developer…" autocomplete="off" aria-label="Search projects" /><kbd>/</kbd></label>
+        <div class="quick-filters"><select id="districtFilter" aria-label="Filter by district"><option value="">All districts</option></select><select id="statusFilter" aria-label="Filter by construction status"><option value="">All stages</option><option value="under_construction">Under construction</option><option value="completed">Reported complete</option><option value="unknown">Status unverified</option></select><button class="filter-more icon-button" id="filtersButton" aria-label="More filters" title="More filters"><span data-icon="sliders"></span></button></div>
+        <div class="preference-summary"><span data-icon="sparkles"></span><span id="preferenceSummary">80–100 m² · ֏50–75M</span><button id="editPreferences" aria-label="Edit preferences">Edit</button></div>
+        <div class="chip-row"><button id="matchToggle" class="chip" aria-pressed="false">Potential matches</button><button id="preferredToggle" class="chip" aria-pressed="false">Ajapnyak + Arabkir</button><button id="offersToggle" class="chip" aria-pressed="false">Apartment offers</button></div>
+      </div>
+      <div class="results-toolbar"><span id="resultCount" role="status">Loading projects…</span><select id="sortSelect" aria-label="Sort results"><option value="match">Best fit</option><option value="price">Lowest starting price</option><option value="date">Target completion</option><option value="name">A–Z</option></select></div>
+      <div id="resultsList" class="results-list" aria-label="Projects"><div class="loading-placeholder">Preparing your city atlas…</div></div>
+      <div class="sidebar-footer"><span class="live-dot"></span><span id="checkedLabel">Research snapshot · 13 Oct 2026</span><button id="exportButton" title="Export currently filtered projects">Export CSV <span data-icon="download"></span></button></div>
+    </aside>
+    <section class="map-panel" aria-label="Interactive 3D map">
+      <div id="map" aria-label="Yerevan new residential developments"></div>
+      <div class="map-top"><div class="map-heading"><span data-icon="pin"></span><div><strong>Yerevan, Armenia</strong><small id="mapSubheading">A city of possibilities</small></div></div><div class="map-view-switch"><button id="view3d" class="active" aria-pressed="true">3D</button><button id="view2d" aria-pressed="false">2D</button></div></div>
+      <div id="mapNotice" class="map-notice" role="status" hidden></div>
+      <div class="map-tools"><button id="fitMap" class="icon-button" title="Show all results" aria-label="Show all results"><span data-icon="expand"></span></button><button id="resetNorth" class="icon-button" title="Reset north" aria-label="Reset north"><span class="north-icon">N</span></button><button id="zoomIn" class="icon-button" aria-label="Zoom in">+</button><button id="zoomOut" class="icon-button" aria-label="Zoom out">−</button></div>
+      <div class="map-bottom"><div class="map-legend"><span><i class="legend-dot matched"></i>Potential budget fit</span><span><i class="legend-dot other"></i>Other projects</span><button id="geometryButton"><span data-icon="info"></span>3D geometry</button></div><div class="map-hint">Drag to explore · Right-drag to tilt</div></div>
+      <div class="map-count"><strong id="mapProjectCount">—</strong><span>mapped projects</span></div>
+      <button id="mobileResults" class="button dark mobile-results"><span data-icon="list"></span><span>View projects</span></button>
+    </section>
+    <aside id="detailPanel" class="detail-panel" aria-label="Selected project" hidden></aside>
+  </main>
+  <div id="compareTray" class="compare-tray" hidden><div><strong id="trayTitle">Compare projects</strong><span id="trayNames"></span></div><button id="openCompare" class="button dark small">Compare side by side <span data-icon="arrow"></span></button><button id="clearCompare" class="icon-button" aria-label="Clear comparison">×</button></div>
+  <dialog id="preferencesDialog" class="modal preferences-modal"><div class="modal-header"><div><div class="eyebrow">YOUR NEXT HOME</div><h2>What matters to you?</h2></div><button class="close-dialog icon-button" aria-label="Close preferences">×</button></div><form id="preferencesForm">
+    <p class="muted">Set a search range. Budget is for the apartment purchase; parking, renovation and fees are separate.</p>
+    <label class="field-title">Purchase budget · million AMD</label><div class="input-pair"><label>From<input name="budgetMin" type="number" min="0" step="0.5" required /></label><span>—</span><label>To<input name="budgetMax" type="number" min="1" step="0.5" required /></label></div>
+    <label class="field-title">Apartment size · m²</label><div class="input-pair"><label>From<input name="areaMin" type="number" min="15" max="1500" required /></label><span>—</span><label>To<input name="areaMax" type="number" min="15" max="1500" required /></label></div>
+    <label class="field-title">Planning exchange rate · AMD per USD</label><input name="fx" type="number" step="0.01" min="1" required /><p class="field-help">Default: 362.21, CBA 12 Oct 2026. Used only for comparisons. Change this to your bank or seller’s rate.</p>
+    <label class="check-row"><input name="nearby" type="checkbox" />Include developments outside Yerevan</label>
+    <label class="check-row"><input name="includeUnknown" type="checkbox" />Keep projects with missing prices in potential matches</label>
+    <p id="preferencesError" class="error-text" role="alert"></p><button type="submit" class="button dark full">Apply preferences <span data-icon="arrow"></span></button>
+  </form></dialog>
+  <dialog id="infoDialog" class="modal"><div class="modal-header"><h2 id="infoTitle">About this atlas</h2><button class="close-dialog icon-button" aria-label="Close information">×</button></div><div id="infoContent"></div></dialog>
+  <dialog id="compareDialog" class="modal compare-modal"><div class="modal-header"><div><div class="eyebrow">MAKE THE DETAILS COUNT</div><h2>Compare your possibilities.</h2></div><button class="close-dialog icon-button" aria-label="Close comparison">×</button></div><div id="compareContent"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript>This atlas needs JavaScript for the interactive map. Source data is available in <a href="data/projects.json">projects.json</a>.</noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
