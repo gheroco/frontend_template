@@ -31,25 +31,51 @@ Map models are rendered through a MapLibre custom layer with Three.js. The Three
 
 - 3D OSM city footprints and clickable project markers, with a 2D toggle.
 - Search across English, Armenian and Russian project names, addresses and developers.
-- District, construction status, budget, area, specific-offer and preferred-district filters.
+- Unified faceted filters with result counts, same-unit matching, saved searches and shareable criteria.
 - Published apartment prices, floor plans, floor and room filters, and booked-unit labels.
 - Four-project comparison, favourites, notes, checklists, share links and CSV export.
 - Source links, cross-source differences, developer contacts, dated progress images and further research links.
 - Editable purchase budget, size and USD/AMD planning exchange rate.
 
-## Research snapshot and coverage
+## Filtering and current source coverage
 
-`public/data/projects.json` was compiled on 13 October 2026. It contains 276 project/building/source-inventory records: 179 in Yerevan (177 mapped) and 97 outside Yerevan, hidden by default. Eleven Yerevan districts are represented; these sources did not establish a Nubarashen project.
+The filter dialog previews result counts before applying. Multi-select facets use OR within a group and AND across groups. Project estimates and individual apartment matching are explicitly separate. Rooms, floors, finish, balcony and top-floor criteria always require a single actual unit to satisfy all conditions; missing values never qualify. Selecting a finish checks that finish's own price against the budget, area and per-m² ceiling. Top-floor exclusion requires the individual unit's published building height; a complex-wide maximum is not substituted.
 
-The underlying catalogues returned 150 Karucapatoxic and 131 MyHome records. All returned detail pages were collected. Ten manually reviewed same-address cross-source duplicates were merged. Distinct phases and separately published inventories remain separate and are identified in notes; record counts are not counts of physical towers.
+Filters include multi-district, multi-developer, construction status, purchase budget or budget with planned extras, area, rooms, floors, finish, balcony, per-m² ceiling, target handover deadline, straight-line distance, source-check recency, mapped footprints and known source conflicts. Sold-out projects and booked/sold units are excluded by default. Below-minimum budgets fail the range. Unknown project prices are an explicit opt-in for estimates only. Quarantined prices never generate unit matches. Year-only handover targets use 31 December; a past date never establishes completion.
 
-The snapshot includes 91 individual apartment offers: 82 MyHome offers in the original 80–100 m² / AMD50–75M range (77 marked not booked and 5 booked), two matching official Defanse offers, and seven ArmConstruct alternatives near that range. Changing preferences filters these captured offers; it does not fetch additional inventory. Prices and availability require seller confirmation.
+The map, cards, apartment detail tab, comparison counts and cost scenarios use the same filter criteria. Active chips can be removed individually. Empty results offer counted relaxation choices. Searches can be named and saved locally, restored against the latest loaded data, or shared by URL. A shared search includes its reference point and cost assumptions, but not personal notes or saved projects. Draft filters are applied only after validation and submission.
 
-Primary catalogues: https://karucapatoxic.am/ and https://myhome.am/en/buildings. Targeted developer cross-checks include Defanse, Bedeck, Mikshin/Yeraz, Premium Home, Cascade Hills, Jermuk Group and ArmConstruct. Each record and offer carries its own source URL and checked date. Website links merely supplied by a directory are distinguished from read sources. Conflicting dates and pins are retained rather than silently resolved. Published contact details are business contacts.
+The 13 October 2026 refresh contains **278 project/source-inventory records: 180 in Yerevan and 98 outside**, with outside records hidden by default. The two directories returned **150 Karucapatoxic + 133 MyHome records**, all successfully parsed. Ten reviewed cross-source aliases remain merged; separate blocks and inventories remain separate. New source IDs are MyHome361 (outside Yerevan) and367 (Arabkir). Eleven Yerevan districts are represented. These counts are not physical tower counts or exhaustive official coverage.
 
-Default preferences are 80–100 m² and AMD50–75M for purchase. USD conversions use an editable reference rate of AMD362.21 per USD from the [Central Bank of Armenia, 12 October 2026](https://www.cba.am/en/exchange-rates-archive/). Estimates exclude renovation, parking and fees unless explicitly included by an offer.
+Apartment inventory expanded from91 to **2,500 listing records**: **2,456 apartments from all150 pages of the public MyHome unit-list endpoint, plus44 selected official developer listings**. MyHome queries did not restrict price, size, room count or booking status. Another51 houses/townhouses were collected in research and excluded from apartment inventory. Of the2,500 listings,1,185 are in Yerevan. Fifty MyHome units received extra detail enrichment for finish prices, balconies and unit-specific building floors; unknown details are retained as unknown. Developer capture is bounded, not exhaustive. Separate sources may still advertise the same physical apartment.
 
-This is a dated research catalogue, not an exhaustive official construction register or a live inventory feed. It does not certify construction quality, ownership, permits or completion. Update the curated JSON with newly checked sources, preserve per-field provenance and conflicts, update metadata/counts and the coverage text in `src/main.js`, then run `npm run check` before deploying. Never infer completed status simply because a target date has passed.
+All283 catalogue detail records were read successfully, with checks from16:01–16:04UTC. MyHome list checks ran16:03–16:06UTC, followed by50 detail checks. Two direct Bedeck requests returned403; a readable official web page independently corroborated its2028 target and18 floors. A JavaScript portal returning HTTP200 is not treated as verified current stock. Each source and unit retains its own successful check time; publisher dates are separate. The downloadable `public/data/refresh-audit.json` records completeness, scope, changes and failures.
+
+The refresh corrected MyHome235's published minimum to905,048AMD/m² and quarantined MyHome361's implausible2,000AMD unit/34AMD per-m² rate without inventing replacement values. A cached830,300AMD/m² single-unit Bedeck rate was removed from the complex-wide headline; individual block rates remain attributed to their own source. Two explicitly sold Defanse units retain historical prices and are excluded from normal matching. Unreconciled directory/detail/unit-list counts are displayed separately. Booking flags mean only what the source reported, not seller-confirmed availability.
+
+Default planning preferences remain80–100m² andAMD50–75M. New users receive the CBA13October2026 reference of**361.73AMD/USD**; an existing user-selected planning rate remains unchanged. Finish conditionIDs5/6/7 are renovated / not renovated / partially renovated, verified from source unit-detail labels. They are not financing codes. Specific developer mortgage/installment variants keep their explicit source labels.
+
+This is a dated source snapshot, not a live stock feed. The interface shows successful source-check dates, stale checks, known conflicts and seller-confirmation language. It does not certify construction quality, legal status, ownership, permits or completion.
+
+### Repeatable refresh
+
+Collectors use Python's standard library and public source endpoints. They write reviewable evidence and patches under ignored `research-output/`, and do not mutate the app. Run from the app directory:
+
+```sh
+python scripts/sources/refresh_public_catalogues.py
+python scripts/sources/collect_full_myhome_inventory.py --projects research-output/catalogue/RUN/myhome-live-catalogue.json --output research-output/units --details yerevan --detail-limit 50 --detail-strategy default-preferences
+python scripts/sources/refresh_official.py
+```
+
+Replace `RUN` with the timestamped run from the first command. Review `catalogue-patch.json`, additions, failures, source-count discrepancies, price-quality flags and unit-page completeness. Apply the reviewed patch with:
+
+```sh
+python scripts/apply-refresh.py --catalogue research-output/catalogue --units research-output/units --official research-output/official
+npm run check
+npm run build
+```
+
+The apply step requires the catalogue patch's base-data hash to match, refuses an incomplete unit-page capture, preserves reviewed aliases and separate geometry, and applies only reviewed direct field changes. It preserves raw anomalous values and provenance. New localized strings and newly changed official facts still require review before publication. No background schedule is configured; freshness ages remain visible between deployments.
 
 ## Map geometry and attribution
 
@@ -78,4 +104,4 @@ Project navigation uses hash links, so no SPA rewrite is needed.
 
 ## Verification
 
-The automated suite additionally checks multilingual interface and content coverage, placeholder consistency, language switching with saved notes, projective facade corner mapping, invalid geometry rejection, GLB resource validation, model scale normalization, total-cost calculations, straight-line distances and catalogue statistics. It checks budget and size matching, sold-out/unknown data handling, exchange conversion, filters, no invented geometry, safe links and CSV export, date semantics, catalogue provenance, apartment offer identity, and DOM interactions for search/save/compare/notes. Additional accuracy checks cover Mercator metre scale against MapLibre, cardinal headings, handedness, rotated click-volume alignment, polygon dimensions/courtyard area, source identity, no fake height, saved model anchoring, Bedeck source preservation and geodesic radius. CARTO returned real Yerevan building footprints and heights during collection. A real browser/WebGL rendering and mobile device check was not available in the build environment; DOM tests do not replace that visual check.
+The 43 automated checks cover strict same-unit filter combinations, finish-price coupling, inclusive ranges, missing values, freshness, anomalies, source status, facet counts, saved-search round trips, map/list consistency, and multilingual interface behavior. The suite additionally checks multilingual interface and content coverage, placeholder consistency, language switching with saved notes, projective facade corner mapping, invalid geometry rejection, GLB resource validation, model scale normalization, total-cost calculations, straight-line distances and catalogue statistics. It checks budget and size matching, sold-out/unknown data handling, exchange conversion, filters, no invented geometry, safe links and CSV export, date semantics, catalogue provenance, apartment offer identity, and DOM interactions for search/save/compare/notes. Additional accuracy checks cover Mercator metre scale against MapLibre, cardinal headings, handedness, rotated click-volume alignment, polygon dimensions/courtyard area, source identity, no fake height, saved model anchoring, Bedeck source preservation and geodesic radius. CARTO returned real Yerevan building footprints and heights during collection. A real browser/WebGL rendering and mobile device check was not available in the build environment; DOM tests do not replace that visual check.

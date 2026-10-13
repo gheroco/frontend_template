@@ -1,0 +1,146 @@
+[
+  {
+    "id": 2,
+    "name": "New City Projects",
+    "url": "new-city-projects",
+    "link": "https://www.newcity.am"
+  },
+  {
+    "id": 3,
+    "name": "ML Mining",
+    "url": "ml-mining",
+    "link": "https://mlmining.am",
+    "phones": [
+      "+37499410009",
+      "+37495510009",
+      "+37495880009",
+      "+37433410009"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Arm Construct",
+    "url": "arm-construct",
+    "link": "https://armconstruct.am"
+  },
+  {
+    "id": 5,
+    "name": "Zeytoun Build",
+    "url": "zeytoun-build",
+    "link": "http://zeytunbuild.am/"
+  },
+  {
+    "id": 6,
+    "name": "Faith Built",
+    "url": "faith-built",
+    "link": "https://faithbuilt.am"
+  },
+  {
+    "id": 7,
+    "name": "Zoar",
+    "url": "zoar",
+    "link": "https://zoar.am"
+  },
+  {
+    "id": 8,
+    "name": "Venni Group",
+    "url": "venni-group",
+    "link": "http://www.vennigroup.am"
+  },
+  {
+    "id": 9,
+    "name": "Bedeck Construction",
+    "url": "bedeck",
+    "link": "http://www.bedeck.am"
+  },
+  {
+    "id": 10,
+    "name": "Art Company",
+    "url": "art-company",
+    "link": "https://artco.am"
+  },
+  {
+    "id": 11,
+    "name": "National Group",
+    "url": "national-group",
+    "link": "http://www.nationalgroup.am"
+  },
+  {
+    "id": 12,
+    "name": "ԱՐԱՐԷ",
+    "url": "arare",
+    "link": "https://arare.am"
+  },
+  {
+    "id": 13,
+    "name": "V&B Construction",
+    "url": "vb-construction",
+    "link": "https://vbconstruction.am"
+  },
+  {
+    "id": 14,
+    "name": "TechnoTun",
+    "url": "techno-tun",
+    "link": "https://www.pullmanyerevan.com"
+  },
+  {
+    "id": 15,
+    "name": "Art-Residence",
+    "url": "art-residence",
+    "link": "https://artresidence.am/hy/home"
+  },
+  {
+    "id": 16,
+    "name": "Metrum Invest",
+    "url": "metrum-invest",
+    "link": "https://metruminvest.am/hy"
+  },
+  {
+    "id": 17,
+    "name": "Nut Construction",
+    "url": "nut-construction",
+    "link": "https://townhouse.am"
+  },
+  {
+    "id": 18,
+    "name": "Elite Group",
+    "url": "elite-group",
+    "link": "http://elitegroup.am/am/menu/1/"
+  },
+  {
+    "id": 19,
+    "name": "Amanoo",
+    "url": "amanoo",
+    "link": "https://www.amanoo.am"
+  },
+  {
+    "id": 20,
+    "name": "Elitar Shin",
+    "url": "elitar-shin",
+    "link": "dga-realty.am"
+  },
+  {
+    "id": 21,
+    "name": "Jacobs Shen LLC",
+    "url": "jacobs-shen-llc",
+    "link": "https://sophene.am"
+  },
+  {
+    "id": 22,
+    "name": "Shin-Stroy House",
+    "url": "shin-stroy-house",
+    "link": ""
+  },
+  {
+    "id": 23,
+    "name": "Capital Build",
+    "url": "capital-build",
+    "link": "https://www.capitalbuild.am"
+  },
+  {
+    "id": 24,
+    "name": "Zover Estates",
+    "url": "zover-estates",
+    "link": "https://zover.am"
+  }
+]
