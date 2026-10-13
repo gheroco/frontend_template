@@ -1,3 +1,4 @@
+import {footprintHeight} from './geo.js';
 export const DEFAULT_PREFS = Object.freeze({budgetMin:50,budgetMax:75,areaMin:80,areaMax:100,fx:362.21,nearby:false,includeUnknown:true});
 export function validPreferences(p){return [p.budgetMin,p.budgetMax,p.areaMin,p.areaMax,p.fx].every(Number.isFinite)&&p.budgetMin>=0&&p.budgetMax>0&&p.budgetMin<=p.budgetMax&&p.areaMin>=15&&p.areaMax>=p.areaMin&&p.areaMax<=1500&&p.fx>0;}
 export function rateAMD(p,prefs){if(!p.price||!Number.isFinite(p.price.min)||p.price.min<=0||p.price.basis==='total')return null;return p.price.min*(p.price.currency==='AMD'?1:p.price.currency==='USD'?prefs.fx:NaN)||null;}
@@ -40,10 +41,9 @@ export function features(projects,prefs,selectedId){
  const points=[],buildings=[];
  for(const p of projects){if(!hasCoordinates(p))continue;const fit=matchInfo(p,prefs);const selected=p.id===selectedId;const props={id:p.id,name:p.name,fit:fit.level,color:selected?'#dc8b55':['potential','offer','below'].includes(fit.level)?'#326351':'#7c8e98',selected:selected?1:0};
   points.push({type:'Feature',id:p.id,properties:props,geometry:{type:'Point',coordinates:p.coordinates}});
-  // Published coordinates locate the project; these rectangular extrusions are explicitly schematic markers.
-  const [lng,lat]=p.coordinates,dx=15/(111320*Math.cos(lat*Math.PI/180)),dy=11/110540;
-  const floors=p.floors&&p.floors>0?p.floors:null;
-  buildings.push({type:'Feature',id:p.id,properties:{...props,height:floors?Math.min(180,floors*3.2):32,geometryKind:'schematic'},geometry:{type:'Polygon',coordinates:[[[lng-dx,lat-dy],[lng+dx,lat-dy],[lng+dx,lat+dy],[lng-dx,lat+dy],[lng-dx,lat-dy]]]}});
+  // A source pin is a point, never an invented building footprint.
+  for(const footprint of p.spatial?.footprints||[]){const height=footprintHeight(footprint);buildings.push({type:'Feature',id:p.id+':'+footprint.id,properties:{...props,buildingId:footprint.id,buildingLabel:footprint.label||'',height:height.height,heightBasis:height.basis,geometryKind:'mapped_footprint'},geometry:footprint.geometry});}
+
  }
  return {points:{type:'FeatureCollection',features:points},buildings:{type:'FeatureCollection',features:buildings}};
 }
