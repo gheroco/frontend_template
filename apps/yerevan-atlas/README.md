@@ -15,6 +15,18 @@ npm run dev
 
 The production output is `dist/`. The app uses Vite, MapLibre GL JS and a static JSON catalogue. There is no application server, private API key or account system. Favourites, comparisons, notes, preferences and checklists use localStorage. Users can export and import a research backup.
 
+## October 2026 upgrade
+
+The interface, project names/addresses, research notes, dates, numeric formatting, accessibility labels and CSV headings support Armenian, Russian and English. Armenian is the default; language and existing saved research persist across reloads. Provider-owned map labels and external websites retain available source language coverage.
+
+The expanded project workspace separates overview, apartment offers, source evidence and personal research. A total-cost calculator separates purchase, renovation, parking and percentage-based fees. Users can set a reference place on the map, see a 1 km straight-line radius, and sort/compare distances. Distances are not travel times.
+
+The 3D studio rectifies user-marked facade quadrilaterals from an image using a projective homography and maps them onto a dimensioned building volume. Two visually reviewed, source-attributed presets (one Defanse tower and a Bedeck corner section) are available on the map and in the studio. These are partial visual approximations. Hidden geometry, facade recesses, adjoining wings and unmeasured dimensions are not recovered from a single image. Users can edit dimensions/heading, mark front/right facade corners, inspect the model, export GLB and save it locally with map offsets.
+
+The studio also imports self-contained, uncompressed GLB files with embedded textures (up to 40 MB), preserving supplied mesh geometry while allowing height calibration and heading. External resource references and unsupported compressed formats are rejected. Model provenance is embedded in generated GLB metadata. Photo uploads and models stay on-device in IndexedDB; GLB export is separate from research JSON backups.
+
+Map models are rendered through a MapLibre custom layer with Three.js. The Three.js/model studio chunks load on demand. Source material for the presets and all localized data are stored with the app.
+
 ## Features
 
 - 3D OSM city footprints and clickable project markers, with a 2D toggle.
@@ -58,4 +70,4 @@ Project navigation uses hash links, so no SPA rewrite is needed.
 
 ## Verification
 
-The automated suite checks budget and size matching, sold-out/unknown data handling, exchange conversion, filters, schematic geometry, safe links and CSV export, date semantics, catalogue provenance, apartment offer identity, and DOM interactions for search/save/compare/notes. The production build and MapLibre style validation pass. CARTO returned real Yerevan building footprints and heights during collection. A real browser/WebGL rendering and mobile device check was not available in the build environment; DOM tests do not replace that visual check.
+The automated suite additionally checks multilingual interface and content coverage, placeholder consistency, language switching with saved notes, projective facade corner mapping, invalid geometry rejection, GLB resource validation, model scale normalization, total-cost calculations, straight-line distances and catalogue statistics. It checks budget and size matching, sold-out/unknown data handling, exchange conversion, filters, schematic geometry, safe links and CSV export, date semantics, catalogue provenance, apartment offer identity, and DOM interactions for search/save/compare/notes. The production build and MapLibre style validation pass. CARTO returned real Yerevan building footprints and heights during collection. A real browser/WebGL rendering and mobile device check was not available in the build environment; DOM tests do not replace that visual check.

@@ -1,0 +1,132 @@
+[
+  {
+    "projectId": "karu-1",
+    "title": {
+      "en": "Defanse · brick-faced tower",
+      "hy": "Դեֆանս · աղյուսապատ աշտարակ",
+      "ru": "Дефанс · башня с кирпичным фасадом"
+    },
+    "width": 32,
+    "depth": 18,
+    "height": 51.2,
+    "floors": 16,
+    "basis": {
+      "en": "Two visible faces of the brick-clad tower at the right of the published architectural rendering. The 32 × 18 m footprint is an illustrative estimate. Height is an editable 16-floor scenario × 3.2 m = 51.2 m; the developer publishes 15-, 16- and 23-floor types, but this particular tower is not individually identified. Roof steps and facade recesses are flattened; unseen faces have no source texture. This represents one tower, not the whole district, and is not an exact or as-built model.",
+      "hy": "Հրապարակված ճարտարապետական պատկերում աջ կողմի աղյուսապատ աշտարակի երկու տեսանելի ճակատներն են։ 32 × 18 մ հիմքի չափերը մոտավոր են՝ միայն պատկերման համար։ Բարձրությունը փոփոխելի ենթադրություն է՝ 16 հարկ × 3,2 մ = 51,2 մ։ Կառուցապատողը նշում է 15, 16 և 23 հարկանի տեսակներ, սակայն այս աշտարակի տեսակը առանձին հաստատված չէ։ Տանիքի աստիճանաձև հատվածներն ու ճակատի խորությունները պարզեցված են, իսկ չերևացող կողմերի համար աղբյուրային պատկեր չկա։ Մոդելը ներկայացնում է մեկ աշտարակ, ոչ ամբողջ թաղամասը, և ճշգրիտ կամ փաստացի կառուցված շենքի մոդել չէ։",
+      "ru": "Две видимые стороны башни с кирпичной облицовкой справа на опубликованной архитектурной визуализации. Размер основания 32 × 18 м оценочный. Высота — изменяемое допущение: 16 этажей × 3,2 м = 51,2 м. Застройщик указывает типы в 15, 16 и 23 этажа, но тип этой башни отдельно не подтвержден. Ступени кровли и углубления фасада упрощены; для невидимых сторон исходной текстуры нет. Показана одна башня, а не весь район; модель не является точной или исполнительной."
+    },
+    "rotation": 0,
+    "sourceUrl": "https://karucapatoxic.s3.eu-west-3.amazonaws.com/1/95adf2fd-1f47-4c94-8920-eb831ff1987c.webp",
+    "projectSourceUrl": "https://karucapatoxic.am/1",
+    "imagePath": "/model-references/karu-1.jpg",
+    "facades": {
+      "front": [
+        [
+          0.6351562,
+          0.316947
+        ],
+        [
+          0.8289062,
+          0.240621
+        ],
+        [
+          0.8351563,
+          0.9029754
+        ],
+        [
+          0.6359375,
+          0.9055627
+        ]
+      ],
+      "right": [
+        [
+          0.8289062,
+          0.240621
+        ],
+        [
+          0.8609375,
+          0.3337646
+        ],
+        [
+          0.8609375,
+          0.8939198
+        ],
+        [
+          0.8351563,
+          0.9029754
+        ]
+      ]
+    },
+    "checkedAt": "2026-10-13",
+    "geometryStatus": "approximate_from_publisher_render",
+    "sourceImageSize": {
+      "width": 1280,
+      "height": 773
+    }
+  },
+  {
+    "projectId": "karu-66",
+    "title": {
+      "en": "Bedeck Davtashen · corner section",
+      "hy": "Բիդեք Դավթաշեն · անկյունային հատված",
+      "ru": "Бидек Давташен · угловая секция"
+    },
+    "width": 18,
+    "depth": 18,
+    "height": 57.6,
+    "floors": 18,
+    "basis": {
+      "en": "Two visible faces of the central corner section in the published architectural rendering, bounded by the Bedeck roof sign and the ground-level entrance. This section is attached to the adjoining wings, which are not modeled here. The 18 × 18 m footprint is estimated; the developer reports 18 above-ground floors, while 57.6 m height assumes 3.2 m per floor and excludes a measured roof structure. Overhangs, recesses and the courtyard are not reconstructed; unseen faces have no source texture. This is a partial visual approximation, not an exact or as-built model.",
+      "hy": "Հրապարակված ճարտարապետական պատկերում կենտրոնական անկյունային հատվածի երկու տեսանելի ճակատներն են՝ տանիքի Bedeck ցուցանակից մինչև գետնամերձ մուտք։ Հատվածը միանում է հարակից թևերին, որոնք այստեղ մոդելավորված չեն։ 18 × 18 մ հիմքի չափերը մոտավոր են։ Կառուցապատողը նշում է 18 վերգետնյա հարկ, իսկ 57,6 մ բարձրությունը հաշվարկված է՝ յուրաքանչյուր հարկի համար ենթադրելով 3,2 մ․ տանիքի կառուցվածքը չափագրված չէ։ Կախված հատվածները, խորությունները և բակը վերականգնված չեն, իսկ չերևացող կողմերի համար աղբյուրային պատկեր չկա։ Սա մասնակի, մոտավոր պատկերում է, ոչ ճշգրիտ կամ փաստացի կառուցված շենքի մոդել։",
+      "ru": "Две видимые стороны центральной угловой секции на опубликованной архитектурной визуализации, от вывески Bedeck на крыше до входа у земли. Секция соединена с соседними крыльями, которые здесь не смоделированы. Размер основания 18 × 18 м оценочный. Застройщик указывает 18 надземных этажей; высота 57,6 м рассчитана исходя из 3,2 м на этаж, без измеренной конструкции кровли. Выступы, углубления и двор не восстановлены; для невидимых сторон исходной текстуры нет. Это частичная визуальная аппроксимация, не точная или исполнительная модель."
+    },
+    "rotation": 0,
+    "sourceUrl": "https://karucapatoxic.s3.eu-west-3.amazonaws.com/66/10552b4c-b422-4f68-b311-e2b1737a0bdb.jpeg",
+    "projectSourceUrl": "https://karucapatoxic.am/66",
+    "imagePath": "/model-references/karu-66.jpg",
+    "facades": {
+      "front": [
+        [
+          0.4195298,
+          0.1484258
+        ],
+        [
+          0.5207957,
+          0.113943
+        ],
+        [
+          0.5207957,
+          0.9550225
+        ],
+        [
+          0.4195298,
+          0.9385307
+        ]
+      ],
+      "right": [
+        [
+          0.5207957,
+          0.113943
+        ],
+        [
+          0.6184448,
+          0.149925
+        ],
+        [
+          0.6184448,
+          0.9265367
+        ],
+        [
+          0.5207957,
+          0.9550225
+        ]
+      ]
+    },
+    "checkedAt": "2026-10-13",
+    "geometryStatus": "approximate_from_publisher_render",
+    "sourceImageSize": {
+      "width": 1106,
+      "height": 667
+    }
+  }
+]

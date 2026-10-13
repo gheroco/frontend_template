@@ -3,26 +3,18 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {Window} from 'happy-dom';
 import * as model from '../src/model.js';
+import * as analysis from '../src/analysis.js';
 import * as icons from '../src/icons.js';
-test('rendered UI searches, saves, compares, opens sources and persists notes',async()=>{
- const win=new Window({url:'https://atlas.test/'});
- try{
-  win.document.write(readFileSync(new URL('../index.html',import.meta.url),'utf8').replace(/<script[\s\S]*?<\/script>/g,''));
-  const data=JSON.parse(readFileSync(new URL('../public/data/projects.json',import.meta.url)));
-  win.fetch=async()=>({ok:true,json:async()=>data});
-  win.matchMedia=()=>({matches:false,addListener(){},removeListener(){}});
-  class MockMap{on(){}resize(){}flyTo(){}easeTo(){}setPadding(){}}
-  Object.assign(win,model,icons,{e:model.escapeHTML,Map:MockMap,Popup:class{},workerUrl:'worker.js',setWorkerUrl(){},hydrateIcons:(root=win.document)=>icons.hydrateIcons(root)});
-  const code=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
-  win.eval(code);await new Promise(r=>setImmediate(r));await new Promise(r=>setImmediate(r));
-  const doc=win.document,select=(s)=>doc.querySelector(s);
-  assert.ok(select('#resultCount').textContent.includes('projects'));assert.ok(doc.querySelectorAll('[data-open]').length>=100);
-  select('#searchInput').value='Defanse';select('#searchInput').dispatchEvent(new win.Event('input'));
-  assert.ok(doc.querySelectorAll('[data-open]').length>=1);select('[data-open="karu-1"]').click();assert.ok(!select('#detailPanel').hidden);assert.ok(select('#detailPanel').textContent.includes('82.35'));
-  select('#detailPanel [data-save]').click();assert.equal(select('#savedCount').textContent,'1');
-  select('#projectNotes').value='Check afternoon light';select('#projectNotes').dispatchEvent(new win.Event('input'));assert.ok(win.localStorage.getItem('yerevan-atlas-v1').includes('Check afternoon light'));
-  select('#detailPanel [data-compare]').click();assert.equal(select('#compareCount').textContent,'1');
-  select('#searchInput').value='';select('#searchInput').dispatchEvent(new win.Event('input'));select('[data-open="karu-66"]').click();select('#detailPanel [data-compare]').click();select('#openCompare').click();assert.ok(select('#compareContent').textContent.includes('2028'));
-  assert.ok(select('#detailPanel a[href*="bedeck.am"]'));assert.equal(select('#compareDialog').open,true);
- }finally{await win.happyDOM.close();}
+const file=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
+async function app(){const win=new Window({url:'https://atlas.test/'});win.console.error=(...args)=>console.error(...args);win.document.write(file('index.html').replace(/<script[\s\S]*?<\/script>/g,''));win.fetch=async path=>({ok:true,json:async()=>JSON.parse(file('public'+path))});win.matchMedia=()=>({matches:false,addListener(){},removeListener(){}});class MockMap{on(){}resize(){}flyTo(){}easeTo(){}setPadding(){}}
+Object.assign(win,model,analysis,icons,{e:model.escapeHTML,MapLibreMap:MockMap,Popup:class{},workerUrl:'worker.js',setWorkerUrl(){},hydrateIcons:(root=win.document)=>icons.hydrateIcons(root),ui:JSON.parse(file('src/locales.json'))});win.eval(file('src/i18n.js').replace(/^import .*;\n/gm,'').replace(/\bexport /g,'')+';Object.assign(globalThis,{getLanguage,locale});');win.eval(file('src/main.js').replace(/^import .*;\n/gm,''));await new Promise(r=>setImmediate(r));await new Promise(r=>setImmediate(r));return win;}
+test('localized workspace searches, saves, compares and persists research across language changes',async()=>{const win=await app();try{const doc=win.document,$=id=>doc.getElementById(id);assert.equal(doc.documentElement.lang,'hy');assert.ok(doc.querySelectorAll('[data-open]').length>=100);assert.ok(!doc.querySelector('h1').textContent.includes('A place'));
+$('searchInput').value='Դեֆանս';$('searchInput').dispatchEvent(new win.Event('input'));doc.querySelector('[data-open="karu-1"]').click();assert.equal($('detailPanel').hidden,false);assert.ok($('launchStudio'));doc.querySelector('[data-tab="offers"]').click();assert.ok($('unitResults').textContent.includes('82,35')||$('unitResults').textContent.includes('82.35'));assert.equal(doc.querySelectorAll('.offer-card').length,2);
+doc.querySelector('#detailPanel [data-save]').click();assert.equal($('savedCount').textContent,'1');doc.querySelector('[data-tab="notes"]').click();$('projectNotes').value='Check afternoon light';$('projectNotes').dispatchEvent(new win.Event('input'));assert.ok(win.localStorage.getItem('yerevan-atlas-v1').includes('Check afternoon light'));
+$('languageSelect').value='ru';$('languageSelect').dispatchEvent(new win.Event('change'));assert.equal(doc.documentElement.lang,'ru');assert.equal($('projectNotes').value,'Check afternoon light');assert.ok(doc.querySelector('h1').textContent.match(/[А-Яа-я]/));doc.querySelector('#detailPanel [data-compare]').click();$('searchInput').value='';$('searchInput').dispatchEvent(new win.Event('input'));doc.querySelector('[data-open="karu-66"]').click();doc.querySelector('#detailPanel [data-compare]').click();$('openCompare').click();assert.equal($('compareDialog').open,true);assert.ok($('compareContent').textContent.includes('2028'));assert.ok($('exportComparison'));
+$('languageSelect').value='en';$('languageSelect').dispatchEvent(new win.Event('change'));assert.equal(doc.documentElement.lang,'en');assert.ok($('compareContent').textContent.includes('Total-cost scenario'));doc.querySelector('[data-tab="sources"]').click();assert.ok(doc.querySelector('#detailPanel a[href*="bedeck.am"]'));
+}finally{await win.happyDOM.close();}});
+test('whole static interface and research content have Armenian and Russian translations',()=>{const ui=JSON.parse(file('src/locales.json')),research=JSON.parse(file('public/data/research-translations.json')),locales=JSON.parse(file('public/data/project-locales.json')),projects=JSON.parse(file('public/data/projects.json')).projects;const keys=[...file('index.html').matchAll(/data-i18n(?:-placeholder|-label|-title)?="([^"]+)"/g)].map(m=>m[1]);for(const source of ['src/main.js','src/studio.js','src/i18n.js'])for(const m of file(source).matchAll(/\bt\('((?:\\.|[^'\\\n])*)'/g))keys.push(m[1].replace(/\\'/g,"'"));for(const key of keys)for(const lang of ['hy','ru'])assert.ok(ui[key]?.[lang],`${lang}: ${key}`);
+for(const [key,value]of Object.entries(ui))for(const lang of ['hy','ru'])assert.deepEqual((value[lang].match(/\{\w+\}/g)||[]).sort(),(key.match(/\{\w+\}/g)||[]).sort(),key);
+for(const p of projects){assert.ok(locales[p.id],p.id);for(const field of ['notes','amenities','statusNote','priceNote']){const value=p[field];for(const phrase of Array.isArray(value)?value:value?[value]:[])for(const lang of ['hy','ru'])assert.ok(research[phrase]?.[lang]||ui[phrase]?.[lang],`${p.id}: ${phrase}`);}}
 });
