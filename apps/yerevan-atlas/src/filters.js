@@ -127,3 +127,15 @@ export function searchMatchInfo(p,prefs,raw={},entries=null){
  if(!rateAMD(p,prefs))return {level:'unknown',label:'Price to confirm'};
  return projectScenarioMatches(p,prefs,f)?{level:'potential',label:'Project price scenario only'}:{level:'outside',label:'Does not match current apartment filters'};
 }
+
+export function offerEvidenceGaps(offers){
+ const gaps={rooms:0,floor:0,buildingFloors:0,finish:0,balcony:0,checkedAt:0};
+ for(const o of offers){
+  if(!positive(o.rooms))gaps.rooms++;
+  if(!Number.isFinite(o.floor))gaps.floor++;
+  if(!positive(o.buildingFloors))gaps.buildingFloors++;
+  if(!(o.priceVariants?.length?o.priceVariants:[{conditionId:o.pricingConditionId}]).some(v=>['5','6','7'].includes(String(v.conditionId))))gaps.finish++;
+  if(o.balconies==null&&o.balconyAreaM2==null)gaps.balcony++;
+  if(ageDays(o.checkedAt)==null)gaps.checkedAt++;
+ }return gaps;
+}
