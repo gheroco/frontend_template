@@ -6,16 +6,16 @@ Created 17 October 2026. Baseline: `df7e9a4`, 43 passing checks. Scope: the exis
 
 | # | Improvement | Acceptance criteria | Status |
 | --- | --- | --- | --- |
-| 1 | Trustworthy search and saved state | Invalid dates/ranges/fees cannot silently broaden a shared search; untrusted backups are validated before replacing state; unknown preference keys are discarded. | Planned |
-| 2 | Consistent apartment matching | Cards, map colours, detail panels, comparisons and CSV use the same selected price variant and filters; unavailable/quarantined variants never count; total-cost sort uses total cost. | Planned |
-| 3 | Explainable filtering | Explain matches and missing facts; offer counted ways to relax empty searches; include unknown-price opt-in in active chips; labels do not imply all offers fit the default budget. | Planned |
-| 4 | Search performance | Render project cards in batches while map and counts retain all results; reuse match entries during a render; avoid unnecessary work on each keystroke. | Planned |
-| 5 | Data health and freshness | A localized quality panel distinguishes project checks, unit checks, missing fields, price review, source conflicts, and footprint coverage; dates age against the current clock. | Planned |
-| 6 | Geographic search and geometry | Search the current map extent with an explicit frozen boundary; save/share it; fit all matched footprint extents; no fabricated tower geometry. | Planned |
-| 7 | Resilience and accessibility | Optional geometry/presets/translations cannot hide a usable catalogue; keyboard tabs have focus semantics; mobile hidden panels cannot trap focus; preserve map layer choices on load. | Planned |
-| 8 | Useful research exports | Export matching apartment rows with exact selected price/finish, extras, source timestamps and URLs; comparison includes evidence gaps. | Planned |
-| 9 | Safe repeatable source updates | Explicit dry-run/output staging, hash/completeness checks and failed-record preservation; no new freshness date without successful retrieval. | Planned |
-| 10 | Release verification | Run regression suite and production build; add an app-scoped CI workflow; publish a reviewable branch/PR and document deployment verification limits. | Planned |
+| 1 | Trustworthy search and saved state | Invalid dates/ranges/fees cannot silently broaden a shared search; untrusted backups are validated before replacing state; unknown preference keys are discarded. | Implemented |
+| 2 | Consistent apartment matching | Cards, map colours, detail panels, comparisons and CSV use the same selected price variant and filters; unavailable/quarantined variants never count; total-cost sort uses total cost. | Implemented |
+| 3 | Explainable filtering | Explain matches and missing facts; offer counted ways to relax empty searches; include unknown-price opt-in in active chips; labels do not imply all offers fit the default budget. | Implemented |
+| 4 | Search performance | Render project cards in batches while map and counts retain all results; reuse match entries during a render; avoid unnecessary work on each keystroke. | Implemented |
+| 5 | Data health and freshness | A localized quality panel distinguishes project checks, unit checks, missing fields, price review, source conflicts, and footprint coverage; dates age against the current clock. | Implemented |
+| 6 | Geographic search and geometry | Search the current map extent with an explicit frozen boundary; save/share it; fit all matched footprint extents; no fabricated tower geometry. | Implemented |
+| 7 | Resilience and accessibility | Optional geometry/presets/translations cannot hide a usable catalogue; keyboard tabs have focus semantics; mobile hidden panels cannot trap focus; preserve map layer choices on load. | Implemented |
+| 8 | Useful research exports | Export matching apartment rows with exact selected price/finish, extras, source timestamps and URLs; comparison includes evidence gaps. | Implemented |
+| 9 | Safe repeatable source updates | Explicit dry-run/output staging, hash/completeness checks and failed-record preservation; no new freshness date without successful retrieval. | Implemented |
+| 10 | Release verification | Run regression suite and production build; add an app-scoped CI workflow; publish a reviewable branch/PR and document deployment verification limits. | Implemented |
 
 Each step is a separate commit with its evidence recorded below. Changes to unrelated repository applications are out of scope.
 
@@ -33,9 +33,19 @@ These are part of the product roadmap, but require new evidence or services rath
 
 ## Implementation record
 
+### Completed implementation
+
+- All ten implementation steps are complete in ordered commits.
+- Validation: 56 JavaScript/DOM/data/model checks, 2 Python refresh-safety checks, and the Vite production build pass.
+- A fresh source review read 285 catalogue records and 152 MyHome unit pages; 79 apartment details were enriched. The catalogue now retains 281 projects and 2,480 apartment records, including 11 historical offers under an unlisted project.
+- Reappearing MyHome records 49/83/84 are retained as source inventories; MyHome367 is retained as unlisted and excluded from default matches.
+- MyHome361 and unit36954 now carry the corrected source prices and preserved prior anomalous values. Reserved developer units with withdrawn prices keep null prices and are unavailable for normal matches.
+- Two Bedeck requests failed with HTTP403; prior direct facts were preserved with failed-request evidence.
+- Production deployment is pending Render workspace selection. Browser/WebGL/mobile visual QA was unavailable; the build still reports the existing large MapLibre/Three chunks.
+
 ### Baseline audit
 
 - Source located in `gheroco/frontend_template`, branch `apps/yerevan-atlas`, app directory `apps/yerevan-atlas`.
-- Source snapshot remains 13 October 2026; no later check is asserted by this development work.
+- The baseline source snapshot was 13 October 2026; the later refresh is separately documented above.
 - Confirmed risks: permissive shared preferences, contradictory badges/map colours, expensive full-list rerenders, stale open detail panels after quick filters, coupled optional resource loading, and no app-specific CI gate.
 - Render connector requires explicit workspace selection before deployment. Prepare and validate the code before requesting that selection.
