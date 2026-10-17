@@ -1,5 +1,5 @@
 import {footprintHeight} from './geo.js';
-export const DEFAULT_PREFS = Object.freeze({budgetMin:50,budgetMax:75,areaMin:80,areaMax:100,fx:361.73,nearby:false,includeUnknown:false});
+export const DEFAULT_PREFS = Object.freeze({budgetMin:50,budgetMax:75,areaMin:80,areaMax:100,fx:362.34,nearby:false,includeUnknown:false});
 export function validPreferences(p){return !!p&&[p.budgetMin,p.budgetMax,p.areaMin,p.areaMax,p.fx].every(Number.isFinite)&&p.budgetMin>=0&&p.budgetMax>0&&p.budgetMax<=100000&&p.budgetMin<=p.budgetMax&&p.areaMin>=15&&p.areaMax>=p.areaMin&&p.areaMax<=1500&&p.fx>0&&p.fx<=100000&&[['renovation',5000000],['parking',500],['feePercent',100]].every(([k,max])=>p[k]===undefined||Number.isFinite(p[k])&&p[k]>=0&&p[k]<=max)&&['nearby','includeUnknown'].every(k=>p[k]===undefined||typeof p[k]==='boolean');}
 export function normalizePreferences(raw={}) {
  if(!raw||typeof raw!=='object'||Array.isArray(raw))return null;
@@ -9,7 +9,7 @@ export function normalizePreferences(raw={}) {
 }
 export function rateAMD(p,prefs){if(p.priceQuality?.status==='review_required'||!p.price||!Number.isFinite(p.price.min)||p.price.min<=0||p.price.basis==='total')return null;return p.price.min*(p.price.currency==='AMD'?1:p.price.currency==='USD'?prefs.fx:NaN)||null;}
 export function estimate(p,prefs){const rate=rateAMD(p,prefs);if(!rate)return null;const upper=(p.price.max||p.price.min)*(p.price.currency==='USD'?prefs.fx:1);return {min:rate*prefs.areaMin,max:upper*prefs.areaMax,target:rate*(prefs.areaMin+prefs.areaMax)/2,rate};}
-export function offerMatches(o,prefs){return o.priceQuality?.status!=='review_required'&&!o.isBooked&&o.sourceIsActive!==false&&!['booked','sold','reserved','unavailable'].includes(o.availability)&&o.availabilityStatus!=='sold'&&o.area>=prefs.areaMin&&o.area<=prefs.areaMax&&(o.priceVariants?.length?o.priceVariants:[{totalAMD:o.totalAMD}]).filter(v=>v.priceQuality?.status!=='review_required').map(v=>v.totalAMD).some(n=>Number.isFinite(n)&&n>0&&n>=prefs.budgetMin*1e6&&n<=prefs.budgetMax*1e6);}
+export function offerMatches(o,prefs){return o.priceQuality?.status!=='review_required'&&!o.isBooked&&o.sourceIsActive!==false&&!['booked','sold','reserved','unavailable'].includes(o.availability)&&!['booked','sold','reserved','unavailable'].includes(String(o.availabilityStatus||'').toLowerCase())&&o.area>=prefs.areaMin&&o.area<=prefs.areaMax&&(o.priceVariants?.length?o.priceVariants:[{totalAMD:o.totalAMD}]).filter(v=>v.priceQuality?.status!=='review_required').map(v=>v.totalAMD).some(n=>Number.isFinite(n)&&n>0&&n>=prefs.budgetMin*1e6&&n<=prefs.budgetMax*1e6);}
 export function matchInfo(p,prefs){
  if(p.soldOut)return {level:'unavailable',label:'Source marks sold out',score:5,reason:'A source marks this project sold out. Published prices do not establish current availability.'};
  const offers=(p.offers||[]).filter(o=>offerMatches(o,prefs));

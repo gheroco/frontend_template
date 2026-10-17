@@ -31,6 +31,16 @@ The implementation roadmap and evidence-dependent follow-up work are in [IMPROVE
 - Source refreshes stage by default. Publication requires `--apply`, a matching base hash and complete catalogue/unit-list capture. Withdrawn projects remain historical but are excluded from normal searches. Corrected anomalous unit prices retain previous evidence.
 - The app-specific GitHub Actions workflow runs UI/data/model checks, refresh safety checks and a production build. No browser/WebGL or real-device visual pass was available in this environment.
 
+### Current source snapshot
+
+The **17 October 2026** refresh successfully read **285 directory detail records** (150 Karucapatoxic + 135 MyHome) and all **152 MyHome unit-list pages**. The retained catalogue contains **281 project records**, including **183 in Yerevan**, after reviewed cross-source merges and retaining a withdrawn record. The three reappearing MyHome records (49, 83, 84) are distinct source inventories, not asserted to be three unique new buildings.
+
+There are **2,480 retained apartment listing records**: **2,424 newly captured MyHome apartments**, **45 selected developer listings**, and **11 historical MyHome listings** retained under a project no longer listed by that source. Historical/unlisted records are excluded from default matches. 1,180 retained listings belong to Yerevan projects. **79** unit details were enriched successfully; the remaining units retain unknown detail fields. The source-reported total was 2,475 units including 51 houses/townhouses, which are excluded from apartment inventory.
+
+MyHome367 is now unlisted; it was not labelled sold or deleted. MyHome361 and unit36954 now publish plausible corrected prices; their prior anomalous values remain in price-quality/history evidence. MyHome235's source minimum is 906,575 AMD/m². Existing Bedeck 2028/18-floor evidence is preserved; both direct Bedeck requests again returned403 and their old facts were not marked newly verified. The CBA reference is 362.34 AMD/USD dated16October2026; existing user-selected rates stay unchanged. Source snapshots are not seller-confirmed stock.
+
+The October13 figures below document the earlier baseline, not the current inventory.
+
 ## October 2026 upgrade
 
 The interface, project names/addresses, research notes, dates, numeric formatting, accessibility labels and CSV headings support Armenian, Russian and English. Armenian is the default; language and existing saved research persist across reloads. Provider-owned map labels and external websites retain available source language coverage.

@@ -69,7 +69,7 @@ for q in official['projectPatches']:
  if not p.get('catalogueCheckedAt'):p['catalogueCheckedAt']=official['generatedAt'];p['catalogueRefresh']={'status':'success','checkedAt':official['generatedAt']}
 for rawoffer in official['offerUpserts']:
  p=byid[rawoffer['projectId']];o={k:v for k,v in rawoffer.items() if k not in ['address','rateBasis','availabilityOriginal','availabilityVerified']};o['checkedAt']=o.get('sourceFetchedAt') or o['checkedAt'];o['unitKind']='apartment'
- if o.get('availabilityStatus')=='sold':o['isBooked']=True;o['availability']='sold'
+ if o.get('availabilityStatus') in ('sold','reserved','booked','unavailable'):o['isBooked']=True
  p['offers']=[old for old in p['offers'] if old['id']!=o['id']]+[o]
  p['inventoryRefresh']={'status':'success','checkedAt':official['generatedAt'],'scope':'selected_public_developer_units','sourceUrl':p.get('website') or p['sourceUrl'],'captured':len(p['offers'])}
  for source in p['sources']:
