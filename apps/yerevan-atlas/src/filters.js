@@ -1,7 +1,7 @@
 import {rateAMD, targetEnd, hasCoordinates, validDate, normalizePreferences} from './model.js';
 import {EARTH_RADIUS} from './geo.js';
 
-export const FILTER_DEFAULTS = Object.freeze({mode:'projects',districts:[],statuses:[],developers:[],rooms:[],finishes:[],hasBalcony:false,useBudget:false,useArea:false,floorMin:null,floorMax:null,excludeGround:false,excludeTop:false,rateMax:null,completionBefore:'',availability:'unbooked',freshnessDays:null,location:'all',radiusKm:null,hideConflicts:false,budgetBasis:'purchase'});
+export const FILTER_DEFAULTS = Object.freeze({mode:'projects',districts:[],statuses:[],developers:[],rooms:[],finishes:[],hasBalcony:false,useBudget:false,useArea:false,floorMin:null,floorMax:null,excludeGround:false,excludeTop:false,rateMax:null,completionBefore:'',availability:'unbooked',freshnessDays:null,location:'all',radiusKm:null,hideConflicts:false,budgetBasis:'purchase',bounds:null});
 const positive = n => typeof n==='number' && Number.isFinite(n) && n>0;
 const optional = (n,min,max) => n==null||n===''?null:Number.isFinite(Number(n))&&Number(n)>=min&&Number(n)<=max?Number(n):null;
 export function normalizeFilters(raw={}) {
@@ -13,8 +13,10 @@ export function normalizeFilters(raw={}) {
  f.finishes=f.finishes.filter(x=>['5','6','7'].includes(x));
  for(const [k,min,max]of [['floorMin',0,150],['floorMax',0,150],['rateMax',1,100000000],['radiusKm',.1,100],['freshnessDays',1,365]])f[k]=optional(raw[k],min,max);
  f.mode=raw.mode==='units'?'units':'projects';f.availability=raw.availability==='all'?'all':'unbooked';f.location=['mapped','footprint'].includes(raw.location)?raw.location:'all';f.budgetBasis=raw.budgetBasis==='total'?'total':'purchase';
+ f.bounds=validBounds(raw.bounds)?[...raw.bounds]:null;
  f.completionBefore=validDate(raw.completionBefore)?raw.completionBefore:'';return f;
 }
+export function validBounds(b){return Array.isArray(b)&&b.length===4&&b.every(Number.isFinite)&&b[0]>=-180&&b[2]<=180&&b[1]>=-90&&b[3]<=90&&b[0]<b[2]&&b[1]<b[3];}
 export function normalizeSearch(value){return String(value||'').normalize('NFKC').toLocaleLowerCase().replaceAll('ё','е').replaceAll('և','եւ').replace(/[^\p{L}\p{N}]+/gu,' ').trim();}
 export function searchMatches(p,query){const hay=normalizeSearch([p.name,p.nameHy,p.nameRu,p.address,p.addressHy,p.addressRu,p.developer,p.developerHy,p.developerRu,p.district,p.districtHy,p._searchText].join(' '));return normalizeSearch(query).split(' ').filter(Boolean).every(word=>hay.includes(word));}
 export function ageDays(value,now=Date.now()){const stamp=Date.parse(value);if(!Number.isFinite(stamp)||stamp>now+300000)return null;return Math.max(0,(now-stamp)/86400000);}
@@ -64,6 +66,7 @@ export function projectPasses(p,state,prefs,raw={},now=Date.now(),entryCache=nul
  if(f.availability!=='all'&&p.soldOut)return false;
  if(f.completionBefore){const deadline=Date.parse(f.completionBefore+'T23:59:59Z'),end=targetEnd(p.completion);if(p.status!=='completed'&&(!Number.isFinite(end)||end>deadline))return false;}
  if(f.location==='mapped'&&!hasCoordinates(p)||f.location==='footprint'&&!p.spatial?.footprints?.length)return false;
+ if(f.bounds&&(!hasCoordinates(p)||p.coordinates[0]<f.bounds[0]||p.coordinates[0]>f.bounds[2]||p.coordinates[1]<f.bounds[1]||p.coordinates[1]>f.bounds[3]))return false;
  if(f.hideConflicts&&hasSourceConflict(p))return false;
  if(f.radiusKm!=null){const d=hasCoordinates(p)?distanceFrom(state.reference,p.coordinates):null;if(d==null||d>f.radiusKm)return false;}
  if(f.freshnessDays!=null&&(!checkedRecently(p.catalogueCheckedAt||p.checkedAt,f.freshnessDays,now)||p.catalogueRefresh?.status==='failed'))return false;
@@ -98,6 +101,7 @@ export function searchPayload(state,prefs,filters){return {v:1,query:String(stat
 export function validFilterInput(raw={}) {
  if(!raw||typeof raw!=='object'||Array.isArray(raw))return false;
  const f=normalizeFilters(raw);
+ if(raw.bounds!=null&&!validBounds(raw.bounds))return false;
  for(const key of ['floorMin','floorMax','rateMax','radiusKm','freshnessDays'])if(raw[key]!=null&&raw[key]!==''&&(typeof raw[key]!=='number'||f[key]!==raw[key]))return false;
  for(const key of ['floorMin','floorMax','freshnessDays'])if(f[key]!=null&&!Number.isInteger(f[key]))return false;
  if(f.floorMin!=null&&f.floorMax!=null&&f.floorMin>f.floorMax)return false;

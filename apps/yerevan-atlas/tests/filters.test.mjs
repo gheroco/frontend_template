@@ -25,3 +25,10 @@ test('finish facet counts never advertise quarantined price variants',()=>{
  assert.deepEqual(facetCounts([p],state,prefs,filters,'finishes',now),{'6':1});
  const result=matchingOfferEntries(p,prefs,filters,now)[0];assert.equal(result.conditionId,6);assert.equal(result.variants.length,1);
 });
+
+test('map-area searches retain a frozen boundary in shared searches and exclude unknown pins',()=>{
+ const bounds=[44.49,40.19,44.51,40.21];const f={...filters,bounds};
+ assert.deepEqual(searchProjects([project,{...project,id:'outside',coordinates:[44.6,40.2]},{...project,id:'unknown',coordinates:null}],state,prefs,f,now).map(p=>p.id),['p1']);
+ assert.deepEqual(parseSearch(searchPayload(state,prefs,f)).filters.bounds,bounds);
+ assert.equal(parseSearch({v:1,prefs,filters:{bounds:[44.51,40.19,44.49,40.21]}}),null);
+});

@@ -28,3 +28,12 @@ export function applySpatialData(projects,data){return projects.map(p=>{const re
 export function migrateModel(record,project){if(record.placementVersion>=2)return record;return {...record,anchor:record.anchor||project.sourceCoordinates||project.coordinates,placementVersion:2};}
 
 export function destinationCoordinate([lng,lat],meters,bearing){const d=meters/EARTH_RADIUS,b=bearing*RAD,p=lat*RAD,l=lng*RAD,p2=Math.asin(Math.sin(p)*Math.cos(d)+Math.cos(p)*Math.sin(d)*Math.cos(b)),l2=l+Math.atan2(Math.sin(b)*Math.sin(d)*Math.cos(p),Math.cos(d)-Math.sin(p)*Math.sin(p2));return [l2/RAD,p2/RAD];}
+
+export function projectBounds(projects){
+ const points=[];
+ for(const p of projects){if(p.coordinates?.length===2&&p.coordinates.every(Number.isFinite))points.push(p.coordinates);for(const f of p.spatial?.footprints||[])points.push(...geometryBounds(f.geometry));}
+ return points.length?points.reduce((b,p)=>[[Math.min(b[0][0],p[0]),Math.min(b[0][1],p[1])],[Math.max(b[1][0],p[0]),Math.max(b[1][1],p[1])]],[[180,90],[-180,-90]]):null;
+}
+export function boundsGeoJSON(bounds){
+ return {type:'FeatureCollection',features:bounds?[{type:'Feature',properties:{},geometry:{type:'Polygon',coordinates:[[[bounds[0],bounds[1]],[bounds[2],bounds[1]],[bounds[2],bounds[3]],[bounds[0],bounds[3]],[bounds[0],bounds[1]]]]}}]:[]};
+}
