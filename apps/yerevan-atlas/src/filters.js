@@ -1,10 +1,11 @@
-import {rateAMD, targetEnd, hasCoordinates} from './model.js';
+import {rateAMD, targetEnd, hasCoordinates, validDate, normalizePreferences} from './model.js';
 import {EARTH_RADIUS} from './geo.js';
 
 export const FILTER_DEFAULTS = Object.freeze({mode:'projects',districts:[],statuses:[],developers:[],rooms:[],finishes:[],hasBalcony:false,useBudget:false,useArea:false,floorMin:null,floorMax:null,excludeGround:false,excludeTop:false,rateMax:null,completionBefore:'',availability:'unbooked',freshnessDays:null,location:'all',radiusKm:null,hideConflicts:false,budgetBasis:'purchase'});
 const positive = n => typeof n==='number' && Number.isFinite(n) && n>0;
 const optional = (n,min,max) => n==null||n===''?null:Number.isFinite(Number(n))&&Number(n)>=min&&Number(n)<=max?Number(n):null;
 export function normalizeFilters(raw={}) {
+ if(!raw||typeof raw!=='object'||Array.isArray(raw))raw={};
  const f={...FILTER_DEFAULTS};
  for(const k of ['districts','statuses','developers','rooms','finishes'])f[k]=Array.isArray(raw[k])?[...new Set(raw[k].filter(v=>typeof v==='string').map(v=>v.slice(0,160)))].slice(0,160):[];
  f.statuses=f.statuses.filter(x=>['completed','under_construction','unknown'].includes(x));f.rooms=f.rooms.filter(x=>['1','2','3','4+'].includes(x));
@@ -12,7 +13,7 @@ export function normalizeFilters(raw={}) {
  f.finishes=f.finishes.filter(x=>['5','6','7'].includes(x));
  for(const [k,min,max]of [['floorMin',0,150],['floorMax',0,150],['rateMax',1,100000000],['radiusKm',.1,100],['freshnessDays',1,365]])f[k]=optional(raw[k],min,max);
  f.mode=raw.mode==='units'?'units':'projects';f.availability=raw.availability==='all'?'all':'unbooked';f.location=['mapped','footprint'].includes(raw.location)?raw.location:'all';f.budgetBasis=raw.budgetBasis==='total'?'total':'purchase';
- f.completionBefore=/^\d{4}-\d{2}-\d{2}$/.test(raw.completionBefore||'')&&Number.isFinite(Date.parse(raw.completionBefore))?raw.completionBefore:'';return f;
+ f.completionBefore=validDate(raw.completionBefore)?raw.completionBefore:'';return f;
 }
 export function normalizeSearch(value){return String(value||'').normalize('NFKC').toLocaleLowerCase().replaceAll('ё','е').replaceAll('և','եւ').replace(/[^\p{L}\p{N}]+/gu,' ').trim();}
 export function searchMatches(p,query){const hay=normalizeSearch([p.name,p.nameHy,p.nameRu,p.address,p.addressHy,p.addressRu,p.developer,p.developerHy,p.developerRu,p.district,p.districtHy,p._searchText].join(' '));return normalizeSearch(query).split(' ').filter(Boolean).every(word=>hay.includes(word));}
@@ -89,4 +90,27 @@ export function facetCounts(projects,state,prefs,raw,key,now=Date.now()){
  for(const p of projects.filter(p=>projectPasses(p,state,prefs,f,now))){let values=key==='finishes'?[...new Set(matchingOfferEntries(p,prefs,f,now).flatMap(x=>(x.offer.priceVariants?.length?x.offer.priceVariants:[{conditionId:x.offer.pricingConditionId}]).filter(v=>(!f.useBudget||((f.budgetBasis==='total'?plannedTotal(v.totalAMD??x.offer.totalAMD,x.offer.area,prefs):(v.totalAMD??x.offer.totalAMD))>=prefs.budgetMin*1e6&&(f.budgetBasis==='total'?plannedTotal(v.totalAMD??x.offer.totalAMD,x.offer.area,prefs):(v.totalAMD??x.offer.totalAMD))<=prefs.budgetMax*1e6))&&(f.rateMax==null||(v.totalAMD??x.offer.totalAMD)/x.offer.area<=f.rateMax)).map(v=>String(v.conditionId))).filter(x=>['5','6','7'].includes(x)))]:key==='rooms'?[...new Set(matchingOfferEntries(p,prefs,f,now).map(x=>x.offer.rooms>=4?'4+':String(x.offer.rooms)).filter(x=>['1','2','3','4+'].includes(x)))]:[p[{districts:'district',statuses:'status',developers:'developer'}[key]]];for(const value of values)if(value)result[value]=(result[value]||0)+1;}return result;
 }
 export function searchPayload(state,prefs,filters){return {v:1,query:String(state.query||'').slice(0,200),sort:state.sort,reference:state.reference,filters:normalizeFilters(filters),prefs:Object.fromEntries(['budgetMin','budgetMax','areaMin','areaMax','fx','nearby','includeUnknown','renovation','parking','feePercent'].map(k=>[k,prefs[k]]))};}
-export function parseSearch(value){try{const raw=typeof value==='string'?JSON.parse(value):value;if(raw?.v!==1||typeof raw.prefs!=='object')return null;return {...raw,query:String(raw.query||'').slice(0,200),filters:normalizeFilters(raw.filters),reference:Array.isArray(raw.reference)&&hasCoordinates({coordinates:raw.reference})?raw.reference:null};}catch{return null;}}
+export function validFilterInput(raw={}) {
+ if(!raw||typeof raw!=='object'||Array.isArray(raw))return false;
+ const f=normalizeFilters(raw);
+ for(const key of ['floorMin','floorMax','rateMax','radiusKm','freshnessDays'])if(raw[key]!=null&&raw[key]!==''&&(typeof raw[key]!=='number'||f[key]!==raw[key]))return false;
+ for(const key of ['floorMin','floorMax','freshnessDays'])if(f[key]!=null&&!Number.isInteger(f[key]))return false;
+ if(f.floorMin!=null&&f.floorMax!=null&&f.floorMin>f.floorMax)return false;
+ if(raw.completionBefore&&!validDate(raw.completionBefore))return false;
+ for(const key of ['districts','statuses','developers','rooms','finishes'])if(raw[key]!==undefined&&(!Array.isArray(raw[key])||raw[key].some(v=>typeof v!=='string'||!f[key].includes(v))))return false;
+ for(const key of ['useBudget','useArea','excludeGround','excludeTop','hideConflicts','hasBalcony'])if(raw[key]!==undefined&&typeof raw[key]!=='boolean')return false;
+ for(const key of ['mode','availability','location','budgetBasis'])if(raw[key]!==undefined&&raw[key]!==f[key])return false;
+ return true;
+}
+export function parseSearch(value){
+ try {
+  if(typeof value==='string'&&value.length>32000)return null;
+  const raw=typeof value==='string'?JSON.parse(value):value;
+  if(!raw||raw.v!==1||!raw.prefs||!validFilterInput(raw.filters))return null;
+  const prefs=normalizePreferences(raw.prefs);if(!prefs)return null;
+  if(raw.reference!=null&&!hasCoordinates({coordinates:raw.reference}))return null;
+  const filters=normalizeFilters(raw.filters),reference=raw.reference||null;
+  if(filters.radiusKm!=null&&!reference)return null;
+  return {v:1,query:String(raw.query||'').slice(0,200),sort:['match','price','unitPrice','date','distance','freshness','name'].includes(raw.sort)?raw.sort:'match',prefs,filters,reference};
+ }catch{return null;}
+}
