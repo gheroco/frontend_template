@@ -42,7 +42,7 @@ export function matchingOfferEntries(p,prefs,raw={},now=Date.now()) {
   if(f.freshnessDays!=null&&(!checkedRecently(o.checkedAt,f.freshnessDays,now)||p.inventoryRefresh?.status==='failed'))return [];
   const variants=(o.priceVariants?.length?o.priceVariants:[{totalAMD:o.totalAMD,basis:o.priceBasis||'',conditionId:o.pricingConditionId}]).filter(v=>positive(v.totalAMD)&&v.priceQuality?.status!=='review_required'&&(!f.finishes.length||f.finishes.includes(String(v.conditionId))));
   const prices=variants.map(v=>({...v,budgetPrice:f.budgetBasis==='total'?plannedTotal(v.totalAMD,o.area,prefs):v.totalAMD})).filter(v=>(!f.useBudget||v.budgetPrice>=prefs.budgetMin*1e6&&v.budgetPrice<=prefs.budgetMax*1e6)&&(f.rateMax==null||v.totalAMD/o.area<=f.rateMax)).sort((a,b)=>a.budgetPrice-b.budgetPrice);
-  if(!prices.length)return [];return [{offer:o,price:prices[0].totalAMD,budgetPrice:prices[0].budgetPrice,priceBasis:prices[0].basis||o.priceBasis||'',rate:prices[0].totalAMD/o.area}];
+  if(!prices.length)return [];return [{offer:o,price:prices[0].totalAMD,budgetPrice:prices[0].budgetPrice,priceBasis:prices[0].basis||o.priceBasis||'',rate:prices[0].totalAMD/o.area,conditionId:prices[0].conditionId,variants:prices}];
  });
 }
 export function projectScenarioMatches(p,prefs,f){
@@ -87,7 +87,11 @@ export function searchProjects(projects,state,prefs,raw={},now=Date.now()){
 }
 export function facetCounts(projects,state,prefs,raw,key,now=Date.now()){
  const f=normalizeFilters(raw);f[key]=[];const result={};
- for(const p of projects.filter(p=>projectPasses(p,state,prefs,f,now))){let values=key==='finishes'?[...new Set(matchingOfferEntries(p,prefs,f,now).flatMap(x=>(x.offer.priceVariants?.length?x.offer.priceVariants:[{conditionId:x.offer.pricingConditionId}]).filter(v=>(!f.useBudget||((f.budgetBasis==='total'?plannedTotal(v.totalAMD??x.offer.totalAMD,x.offer.area,prefs):(v.totalAMD??x.offer.totalAMD))>=prefs.budgetMin*1e6&&(f.budgetBasis==='total'?plannedTotal(v.totalAMD??x.offer.totalAMD,x.offer.area,prefs):(v.totalAMD??x.offer.totalAMD))<=prefs.budgetMax*1e6))&&(f.rateMax==null||(v.totalAMD??x.offer.totalAMD)/x.offer.area<=f.rateMax)).map(v=>String(v.conditionId))).filter(x=>['5','6','7'].includes(x)))]:key==='rooms'?[...new Set(matchingOfferEntries(p,prefs,f,now).map(x=>x.offer.rooms>=4?'4+':String(x.offer.rooms)).filter(x=>['1','2','3','4+'].includes(x)))]:[p[{districts:'district',statuses:'status',developers:'developer'}[key]]];for(const value of values)if(value)result[value]=(result[value]||0)+1;}return result;
+ for(const p of projects.filter(p=>projectPasses(p,state,prefs,f,now))){
+  const entries=matchingOfferEntries(p,prefs,f,now);
+  const values=key==='finishes'?[...new Set(entries.flatMap(x=>x.variants.map(v=>String(v.conditionId))).filter(x=>['5','6','7'].includes(x)))]:key==='rooms'?[...new Set(entries.map(x=>x.offer.rooms>=4?'4+':String(x.offer.rooms)).filter(x=>['1','2','3','4+'].includes(x)))]:[p[{districts:'district',statuses:'status',developers:'developer'}[key]]];
+  for(const value of values)if(value)result[value]=(result[value]||0)+1;
+ }return result;
 }
 export function searchPayload(state,prefs,filters){return {v:1,query:String(state.query||'').slice(0,200),sort:state.sort,reference:state.reference,filters:normalizeFilters(filters),prefs:Object.fromEntries(['budgetMin','budgetMax','areaMin','areaMax','fx','nearby','includeUnknown','renovation','parking','feePercent'].map(k=>[k,prefs[k]]))};}
 export function validFilterInput(raw={}) {
@@ -113,4 +117,13 @@ export function parseSearch(value){
   if(filters.radiusKm!=null&&!reference)return null;
   return {v:1,query:String(raw.query||'').slice(0,200),sort:['match','price','unitPrice','date','distance','freshness','name'].includes(raw.sort)?raw.sort:'match',prefs,filters,reference};
  }catch{return null;}
+}
+
+export function searchMatchInfo(p,prefs,raw={},entries=null){
+ const f=normalizeFilters(raw),units=entries||matchingOfferEntries(p,prefs,f);
+ if(p.soldOut)return {level:'unavailable',label:'Source marks sold out'};
+ if(units.length)return {level:'offer',label:f.useBudget?'Published apartments match':'Published apartments · budget not filtered'};
+ if(needsUnit(f))return {level:'outside',label:'Does not match current apartment filters'};
+ if(!rateAMD(p,prefs))return {level:'unknown',label:'Price to confirm'};
+ return projectScenarioMatches(p,prefs,f)?{level:'potential',label:'Project price scenario only'}:{level:'outside',label:'Does not match current apartment filters'};
 }

@@ -9,7 +9,7 @@ export function normalizePreferences(raw={}) {
 }
 export function rateAMD(p,prefs){if(p.priceQuality?.status==='review_required'||!p.price||!Number.isFinite(p.price.min)||p.price.min<=0||p.price.basis==='total')return null;return p.price.min*(p.price.currency==='AMD'?1:p.price.currency==='USD'?prefs.fx:NaN)||null;}
 export function estimate(p,prefs){const rate=rateAMD(p,prefs);if(!rate)return null;const upper=(p.price.max||p.price.min)*(p.price.currency==='USD'?prefs.fx:1);return {min:rate*prefs.areaMin,max:upper*prefs.areaMax,target:rate*(prefs.areaMin+prefs.areaMax)/2,rate};}
-export function offerMatches(o,prefs){return o.priceQuality?.status!=='review_required'&&!o.isBooked&&!['booked','sold','reserved','unavailable'].includes(o.availability)&&o.availabilityStatus!=='sold'&&o.area>=prefs.areaMin&&o.area<=prefs.areaMax&&[o.totalAMD,...(o.priceVariants||[]).map(v=>v.totalAMD)].some(n=>n>=prefs.budgetMin*1e6&&n<=prefs.budgetMax*1e6);}
+export function offerMatches(o,prefs){return o.priceQuality?.status!=='review_required'&&!o.isBooked&&o.sourceIsActive!==false&&!['booked','sold','reserved','unavailable'].includes(o.availability)&&o.availabilityStatus!=='sold'&&o.area>=prefs.areaMin&&o.area<=prefs.areaMax&&(o.priceVariants?.length?o.priceVariants:[{totalAMD:o.totalAMD}]).filter(v=>v.priceQuality?.status!=='review_required').map(v=>v.totalAMD).some(n=>Number.isFinite(n)&&n>0&&n>=prefs.budgetMin*1e6&&n<=prefs.budgetMax*1e6);}
 export function matchInfo(p,prefs){
  if(p.soldOut)return {level:'unavailable',label:'Source marks sold out',score:5,reason:'A source marks this project sold out. Published prices do not establish current availability.'};
  const offers=(p.offers||[]).filter(o=>offerMatches(o,prefs));
@@ -44,9 +44,9 @@ export function filterProjects(projects,state,prefs){
  });
 }
 export function hasCoordinates(p){return Array.isArray(p.coordinates)&&p.coordinates.length===2&&p.coordinates.every(Number.isFinite)&&p.coordinates[0]>=43&&p.coordinates[0]<=47&&p.coordinates[1]>=38&&p.coordinates[1]<=42;}
-export function features(projects,prefs,selectedId){
+export function features(projects,prefs,selectedId,matchResolver=null){
  const points=[],buildings=[];
- for(const p of projects){if(!hasCoordinates(p))continue;const fit=matchInfo(p,prefs);const selected=p.id===selectedId;const props={id:p.id,name:p.name,fit:fit.level,color:selected?'#dc8b55':['potential','offer','below'].includes(fit.level)?'#326351':'#7c8e98',selected:selected?1:0};
+ for(const p of projects){if(!hasCoordinates(p))continue;const fit=matchResolver?matchResolver(p):matchInfo(p,prefs);const selected=p.id===selectedId;const props={id:p.id,name:p.name,fit:fit.level,color:selected?'#dc8b55':['potential','offer','below'].includes(fit.level)?'#326351':'#7c8e98',selected:selected?1:0};
   points.push({type:'Feature',id:p.id,properties:props,geometry:{type:'Point',coordinates:p.coordinates}});
   // A source pin is a point, never an invented building footprint.
   for(const footprint of p.spatial?.footprints||[]){const height=footprintHeight(footprint);buildings.push({type:'Feature',id:p.id+':'+footprint.id,properties:{...props,buildingId:footprint.id,buildingLabel:footprint.label||'',height:height.height,heightBasis:height.basis,geometryKind:'mapped_footprint'},geometry:footprint.geometry});}

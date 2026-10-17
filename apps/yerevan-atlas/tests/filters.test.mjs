@@ -19,3 +19,9 @@ test('multilingual token search and shared search round-trip preserve only publi
 
 
 test('a finish price must meet budget itself and quarantined prices never qualify',()=>{const o={...offer,priceVariants:[{conditionId:6,totalAMD:60e6,basis:'Not renovated'},{conditionId:5,totalAMD:82e6,basis:'Renovated'}]};assert.equal(matchingOfferEntries({...project,offers:[o]},prefs,{...filters,finishes:['5']},now).length,0);assert.equal(matchingOfferEntries({...project,offers:[o]},prefs,{...filters,finishes:['6']},now).length,1);assert.equal(matchingOfferEntries({...project,offers:[{...offer,priceQuality:{status:'review_required'}}]},prefs,{},now).length,0);assert.equal(matchingOfferEntries(project,prefs,{hasBalcony:true},now).length,0);});
+
+test('finish facet counts never advertise quarantined price variants',()=>{
+ const p={...project,offers:[{...offer,priceVariants:[{conditionId:6,totalAMD:60e6},{conditionId:5,totalAMD:65e6,priceQuality:{status:'review_required'}}]}]};
+ assert.deepEqual(facetCounts([p],state,prefs,filters,'finishes',now),{'6':1});
+ const result=matchingOfferEntries(p,prefs,filters,now)[0];assert.equal(result.conditionId,6);assert.equal(result.variants.length,1);
+});
