@@ -7,9 +7,10 @@ A 3D discovery map and apartment comparison workspace for publicly advertised ne
 Requires Node.js 22.12 or newer.
 
 ```sh
-npm ci
-npm run check
-npm run build
+npm ci --workspaces=false
+npm run check --workspaces=false
+python -m unittest discover -s tests -p '*_test.py'
+npm run build --workspaces=false
 npm run dev
 ```
 
@@ -121,7 +122,7 @@ Map attribution: [© OpenStreetMap contributors](https://www.openstreetmap.org/c
 
 ## Render deployment
 
-Deploy as a Render Static Site from the `apps/yerevan-atlas` branch of `gheroco/frontend_template`. The app occupies only `apps/yerevan-atlas/`; the repository's existing application files remain unchanged.
+Deploy as a Render Static Site from the `apps/yerevan-atlas` branch of `gheroco/frontend_template`. The app occupies `apps/yerevan-atlas/` and has its own lockfile. The root npm workspace list explicitly includes the two platform apps so this standalone app's dependencies do not collide with the platform lockfile.
 
 - Build: `npm --prefix apps/yerevan-atlas ci --workspaces=false && npm --prefix apps/yerevan-atlas run check --workspaces=false && npm --prefix apps/yerevan-atlas run build --workspaces=false`
 - Publish directory: `apps/yerevan-atlas/dist`

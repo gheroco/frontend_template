@@ -43,6 +43,12 @@ These are part of the product roadmap, but require new evidence or services rath
 - Two Bedeck requests failed with HTTP403; prior direct facts were preserved with failed-request evidence.
 - Production deployment is pending Render workspace selection. Browser/WebGL/mobile visual QA was unavailable; the build still reports the existing large MapLibre/Three chunks.
 
+### Repository integration checks
+
+- The app-specific GitHub Actions workflow passed on commit `919f4de` (run `39013629079`). The app's lockfile audit reported zero known vulnerabilities on 17 October 2026.
+- The first repository-wide run (`39013628953`) exposed a pre-existing workspace collision: the root `apps/*` pattern included this standalone app, whose dependencies have their own lockfile. The root workspace list now explicitly includes the two platform apps; the matching root lockfile metadata changed without changing dependency versions. `npm ci --ignore-scripts --dry-run` now accepts the root lockfile.
+- The same run's security artifact contains 32 findings, all in the pre-existing root lockfile, across `@grpc/grpc-js`, `brace-expansion`, `fast-uri`, `fastify`, `ip-address` and `js-yaml`. None target the Atlas lockfile. Platform dependency upgrades remain a separate repository maintenance task; the security gate has not been disabled or weakened.
+
 ### Baseline audit
 
 - Source located in `gheroco/frontend_template`, branch `apps/yerevan-atlas`, app directory `apps/yerevan-atlas`.
