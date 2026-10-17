@@ -10,7 +10,7 @@ export function evidenceSummary(projects,now=Date.now()){
   projectChecks:checks(projects.map(p=>p.catalogueCheckedAt||p.checkedAt)),unitChecks:checks(units.map(o=>o.checkedAt)),
   oldestUnitCheck:stamps[0]||null,newestUnitCheck:stamps.at(-1)||null,
   conflicts:projects.filter(hasSourceConflict).length,
-  failedRefreshes:projects.filter(p=>p.catalogueRefresh?.status==='failed'||p.inventoryRefresh?.status==='failed').length,
+  failedRefreshes:projects.filter(p=>p.catalogueRefresh?.status==='failed'||p.inventoryRefresh?.status==='failed'||p.sourceFailures?.length).length,
   mapped:projects.filter(hasCoordinates).length,
   withFootprints:projects.filter(p=>p.spatial?.footprints?.length).length,
   footprints:new Set(projects.flatMap(p=>(p.spatial?.footprints||[]).map(f=>f.id))).size,

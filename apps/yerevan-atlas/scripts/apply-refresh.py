@@ -15,6 +15,7 @@ def read(p):return json.loads(p.read_text())
 def save(p,d):p.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')
 path=root/'public/data/projects.json';raw=path.read_bytes();data=json.loads(raw);patch=read(args.catalogue/'catalogue-patch.json');units=read(args.units/'offers-by-project.json');official=read(args.official/'normalized-patches.json')
 validate_refresh(raw,patch,units)
+previous_offers={o['id']:copy.deepcopy(o) for p in data['projects'] for o in p.get('offers',[])}
 byid={p['id']:p for p in data['projects']};aliases=data['metadata']['reviewedCrossSourceMerges']
 for p in read(args.catalogue/'new-projects.json')['projects']:
  if p['id'] not in byid:
@@ -74,6 +75,11 @@ for rawoffer in official['offerUpserts']:
  for source in p['sources']:
   if source['url']==o['url']:source['checkedAt']=o['checkedAt']
 for p in data['projects']:
+ p['sourceFailures']=[{'url':failure['url'],'attemptedAt':failure.get('fetchedAt'),'status':'failed'} for failure in official.get('failures',[]) if any(s['url']==failure['url'] for s in p.get('sources',[])) or failure['url']==p.get('website')]
+ for offer in p['offers']:
+  old=previous_offers.get(offer['id'],{})
+  if old.get('priceQuality',{}).get('status')=='review_required' and offer.get('priceQuality',{}).get('status')!='review_required':
+   offer['priceHistory']=old.get('priceHistory',[])+[{'totalAMD':old.get('totalAMD'),'priceQuality':old['priceQuality'],'checkedAt':old.get('checkedAt')}]
  p['offers'].sort(key=lambda o:o['id'])
  if p.get('dataQuality',{}).get('conflicts'):p['dataQuality']['conflicts']=sorted(set(p['dataQuality']['conflicts']))
 # The source-specific date is stored separately from the date this file was assembled.

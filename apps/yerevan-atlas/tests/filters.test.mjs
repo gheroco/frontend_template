@@ -32,3 +32,10 @@ test('map-area searches retain a frozen boundary in shared searches and exclude 
  assert.deepEqual(parseSearch(searchPayload(state,prefs,f)).filters.bounds,bounds);
  assert.equal(parseSearch({v:1,prefs,filters:{bounds:[44.51,40.19,44.49,40.21]}}),null);
 });
+
+test('withdrawn source projects remain historical and do not produce default matches',()=>{
+ const p={...project,catalogueListing:{status:'unlisted'}};
+ assert.equal(searchProjects([p],state,prefs,filters,now).length,0);
+ assert.equal(searchProjects([p],state,prefs,{...filters,availability:'all'},now).length,1);
+ assert.equal(matchingOfferEntries({...project,offers:[{...offer,sourceListed:false}]},prefs,filters,now).length,0);
+});

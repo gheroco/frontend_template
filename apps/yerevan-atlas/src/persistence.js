@@ -13,6 +13,7 @@ export function parseResearchBackup(value) {
   if(!record(raw)||raw.version!=null&&![1,2,3].includes(raw.version)||!ids(raw.saved))return null;
   const prefs=normalizePreferences(raw.prefs);if(!prefs||!validFilterInput(raw.filters))return null;
   if(raw.compare!=null&&!ids(raw.compare)||raw.reference!=null&&!hasCoordinates({coordinates:raw.reference}))return null;
+  if(raw.filters?.radiusKm!=null&&!raw.reference)return null;
   if(raw.notes!=null&&!record(raw.notes)||raw.checks!=null&&!record(raw.checks))return null;
   const notes={},checks={};
   for(const [key,text]of Object.entries(raw.notes||{})){

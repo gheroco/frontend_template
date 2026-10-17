@@ -15,6 +15,22 @@ npm run dev
 
 The production output is `dist/`. The app uses Vite, MapLibre GL JS and a static JSON catalogue. There is no application server, private API key or account system. Favourites, comparisons, notes, preferences and checklists use localStorage. Users can export and import a research backup.
 
+## 3.1 improvements — 17 October 2026
+
+The implementation roadmap and evidence-dependent follow-up work are in [IMPROVEMENTS.md](IMPROVEMENTS.md).
+
+- Search cards, map colours, open detail panels, comparisons and exports use the same active apartment criteria and price variant. Total-cost scenarios select the lowest total including the user's extras.
+- Shared searches and imported research validate ranges, calendar dates, extra costs, reference locations and known fields before applying state. Existing local research is preserved.
+- Project cards render 30 at a time. The map, counters and exports still include all matches; apartment evaluations are cached during each render.
+- Apartment results explain matching and missing source fields. Empty searches offer counted filter or text relaxations.
+- **Data health** distinguishes project and apartment check ages, source conflicts, failed source requests, missing fields, price review and footprint coverage. Evidence reports can be exported as JSON.
+- **Search this map area** captures a fixed geographic rectangle around the current viewport; only published project pins inside that rectangle pass. Panning does not change the search. The dashed outline, saved searches and shared URLs preserve the boundary. A tilted/rotated viewport uses its bounding rectangle, not an exact visible-screen polygon.
+- Fit-to-results includes complete building footprints. No new building geometry is inferred by these UI changes.
+- Optional model, geometry or translation failures no longer hide a valid catalogue. Tabs support arrow/Home/End navigation and focus return; hidden mobile surfaces are inert and touch targets are larger.
+- Apartment CSV exports include the selected finish/payment basis, purchase and budget amounts, source availability, separate check timestamps and original listing URL. Project exports retain research notes; shared search links still exclude them.
+- Source refreshes stage by default. Publication requires `--apply`, a matching base hash and complete catalogue/unit-list capture. Withdrawn projects remain historical but are excluded from normal searches. Corrected anomalous unit prices retain previous evidence.
+- The app-specific GitHub Actions workflow runs UI/data/model checks, refresh safety checks and a production build. No browser/WebGL or real-device visual pass was available in this environment.
+
 ## October 2026 upgrade
 
 The interface, project names/addresses, research notes, dates, numeric formatting, accessibility labels and CSV headings support Armenian, Russian and English. Armenian is the default; language and existing saved research persist across reloads. Provider-owned map labels and external websites retain available source language coverage.
@@ -70,12 +86,14 @@ python scripts/sources/refresh_official.py
 Replace `RUN` with the timestamped run from the first command. Review `catalogue-patch.json`, additions, failures, source-count discrepancies, price-quality flags and unit-page completeness. Apply the reviewed patch with:
 
 ```sh
-python scripts/apply-refresh.py --catalogue research-output/catalogue --units research-output/units --official research-output/official
+python scripts/apply-refresh.py --catalogue research-output/catalogue/RUN --units research-output/units --official research-output/official --output research-output/prepared
+# Inspect staged JSON and source changes, then apply the reviewed patch:
+python scripts/apply-refresh.py --catalogue research-output/catalogue/RUN --units research-output/units --official research-output/official --apply
 npm run check
 npm run build
 ```
 
-The apply step requires the catalogue patch's base-data hash to match, refuses an incomplete unit-page capture, preserves reviewed aliases and separate geometry, and applies only reviewed direct field changes. It preserves raw anomalous values and provenance. New localized strings and newly changed official facts still require review before publication. No background schedule is configured; freshness ages remain visible between deployments.
+The default/dry-run path stages complete output without modifying public data. The explicit apply step requires the catalogue patch's base-data hash to match, refuses an incomplete unit-page capture, preserves reviewed aliases and separate geometry, and applies only reviewed direct field changes. It preserves raw anomalous values and provenance. New localized strings and newly changed official facts still require review before publication. No background schedule is configured; freshness ages remain visible between deployments.
 
 ## Map geometry and attribution
 

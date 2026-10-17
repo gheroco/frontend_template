@@ -13,7 +13,7 @@ import * as exports from '../src/export.js';
 import {validateStyleMin} from '@maplibre/maplibre-gl-style-spec';
 import * as icons from '../src/icons.js';
 const file=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
-async function app(){const win=new Window({url:'https://atlas.test/'});win.console.error=(...args)=>console.error(...args);win.document.write(file('index.html').replace(/<script[\s\S]*?<\/script>/g,''));win.fetch=async path=>({ok:true,json:async()=>JSON.parse(file('public'+path))});win.matchMedia=()=>({matches:false,addListener(){},removeListener(){}});class MockMap{constructor(){this.style=JSON.parse(file('public/map-style.json'));this.sources={};win.atlasTestMap=this;}on(event,...args){if(event==='load')queueMicrotask(args[0]);}resize(){}flyTo(){}fitBounds(){}easeTo(){}setPadding(){}setLight(){}setFilter(id,filter){this.style.layers.find(l=>l.id===id).filter=filter||undefined;}setLayoutProperty(id,k,v){const l=this.style.layers.find(l=>l.id===id);(l.layout||={})[k]=v;}getStyle(){return this.style;}addSource(id,s){this.style.sources[id]=s;this.sources[id]={...s,setData(data){this.data=data;}};}getSource(id){return this.sources[id];}addLayer(l,before){const i=this.style.layers.findIndex(x=>x.id===before);if(i>=0)this.style.layers.splice(i,0,l);else this.style.layers.push(l);}}
+async function app(options={}){const win=new Window({url:'https://atlas.test/'});win.console.error=(...args)=>console.error(...args);win.document.write(file('index.html').replace(/<script[\s\S]*?<\/script>/g,''));win.fetch=async path=>{if(options.failedPaths?.includes(path))throw Error('offline');return {ok:true,json:async()=>JSON.parse(file('public'+path))};};win.matchMedia=()=>({matches:false,addListener(){},removeListener(){}});class MockMap{constructor(){this.style=JSON.parse(file('public/map-style.json'));this.sources={};win.atlasTestMap=this;}on(event,...args){if(event==='load')queueMicrotask(args[0]);}resize(){}getBounds(){return {toArray:()=>[[44.48,40.18],[44.53,40.24]]};}flyTo(){}fitBounds(){}easeTo(){}setPadding(){}setLight(){}setFilter(id,filter){this.style.layers.find(l=>l.id===id).filter=filter||undefined;}setLayoutProperty(id,k,v){const l=this.style.layers.find(l=>l.id===id);(l.layout||={})[k]=v;}getStyle(){return this.style;}addSource(id,s){this.style.sources[id]=s;this.sources[id]={...s,setData(data){this.data=data;}};}getSource(id){return this.sources[id];}addLayer(l,before){const i=this.style.layers.findIndex(x=>x.id===before);if(i>=0)this.style.layers.splice(i,0,l);else this.style.layers.push(l);}}
 
 Object.assign(win,model,analysis,geo,icons,filters,persistence,evidence,exports,{fetchJSON:(path)=>loader.fetchJSON(path,win.fetch),loadCatalogueFiles:()=>loader.loadCatalogueFiles(win.fetch),e:model.escapeHTML,MapLibreMap:MockMap,Popup:class{},workerUrl:'worker.js',setWorkerUrl(){},hydrateIcons:(root=win.document)=>icons.hydrateIcons(root),ui:JSON.parse(file('src/locales.json'))});win.eval(file('src/i18n.js').replace(/^import .*;\n/gm,'').replace(/\bexport /g,'')+';Object.assign(globalThis,{getLanguage,locale});');win.eval(file('src/evidence-ui.js').replace(/^import .*;\n/gm,'').replace(/\bexport /g,''));win.eval(file('src/spatial-ui.js').replace(/^import .*;\n/gm,'').replace(/\bexport /g,''));win.eval(file('src/filter-ui.js').replace(/^import .*;\n/gm,'').replace(/\bexport /g,''));win.eval(file('src/main.js').replace(/^import .*;\n/gm,''));await new Promise(r=>setImmediate(r));await new Promise(r=>setImmediate(r));return win;}
 test('localized workspace searches, saves, compares and persists research across language changes',async()=>{const win=await app();try{const doc=win.document,$=id=>doc.getElementById(id);assert.equal(doc.documentElement.lang,'hy');assert.ok(doc.querySelectorAll('[data-open]').length>=30);assert.ok(!doc.querySelector('h1').textContent.includes('A place'));
@@ -32,3 +32,40 @@ test('map geometry layers and exclusion filters validate against the MapLibre st
 
 test('advanced filters preview, apply, clear, save and restore with identical map results',async()=>{const win=await app();try{const doc=win.document,$=id=>doc.getElementById(id);$('languageSelect').value='en';$('languageSelect').dispatchEvent(new win.Event('change'));$('filtersButton').click();assert.equal($('filtersDialog').open,true);const form=$('filtersForm');const mode=doc.querySelector('[name="mode"][value="units"]');mode.checked=true;mode.dispatchEvent(new win.Event('change',{bubbles:true}));const room=doc.querySelector('[name="rooms"][value="3"]');room.checked=true;room.dispatchEvent(new win.Event('input',{bubbles:true}));const floor=form.elements.floorMin;floor.value='5';floor.dispatchEvent(new win.Event('input',{bubbles:true}));assert.equal($('applyFilters').disabled,false,JSON.stringify([...form.elements].filter(el=>el.checkValidity&&!el.checkValidity()).map(el=>({name:el.name,value:el.value,validity:el.validationMessage})))+' '+$('filterError').textContent);const preview=$('filterPreviewCount').textContent;form.dispatchEvent(new win.Event('submit',{bubbles:true,cancelable:true}));assert.equal($('filtersDialog').open,false);assert.equal($('resultCount').textContent,preview);const saved=JSON.parse(win.localStorage.getItem('yerevan-atlas-v1'));assert.equal(saved.filters.floorMin,5);assert.deepEqual(saved.filters.rooms,['3']);const visible=[...doc.querySelectorAll('[data-open]')].map(el=>el.dataset.open),mapped=win.atlasTestMap.getSource('projects').data.features.map(x=>x.properties.id);assert.ok(visible.every(id=>mapped.includes(id)||!JSON.parse(file('public/data/projects.json')).projects.find(p=>p.id===id)?.coordinates));assert.ok(mapped.length>=visible.length);assert.ok(visible.length>0);$('saveSearch').click();$('searchName').value='Three rooms';$('saveSearchForm').dispatchEvent(new win.Event('submit',{bubbles:true,cancelable:true}));assert.equal($('savedSearchSelect').options.length,2);const searchId=$('savedSearchSelect').value;doc.querySelector('[data-reset]').click();assert.equal($('activeFilterCount').textContent,'0');$('savedSearchSelect').value=searchId;$('savedSearchSelect').dispatchEvent(new win.Event('change'));assert.equal($('resultCount').textContent,preview);$('filtersButton').click();const bad=$('filtersForm');bad.elements.floorMin.value='20';bad.elements.floorMax.value='3';bad.dispatchEvent(new win.Event('input',{bubbles:true}));assert.equal($('applyFilters').disabled,true);assert.ok($('filterError').textContent.length>0);
 }finally{await win.happyDOM.close();}});
+
+test('paged cards preserve every map match and the map-area filter survives the dialog',async()=>{
+ const win=await app();try{
+  const doc=win.document,$=id=>doc.getElementById(id),map=win.atlasTestMap;
+  const mapped=map.getSource('projects').data.features.map(f=>f.properties.id);
+  assert.equal(doc.querySelectorAll('#resultsList [data-open]').length,30);assert.ok(mapped.length>30);
+  $('moreProjects').click();assert.equal(doc.querySelectorAll('#resultsList [data-open]').length,60);assert.deepEqual(map.getSource('projects').data.features.map(f=>f.properties.id),mapped);
+  $('searchMapArea').click();assert.deepEqual(JSON.parse(win.localStorage.getItem('yerevan-atlas-v1')).filters.bounds,[44.48,40.18,44.53,40.24]);
+  assert.ok(map.getSource('projects').data.features.every(f=>f.geometry.coordinates[0]>=44.48&&f.geometry.coordinates[0]<=44.53));
+  $('filtersButton').click();$('filtersForm').dispatchEvent(new win.Event('submit',{cancelable:true}));
+  assert.equal(map.getSource('search-area').data.features.length,1);
+ }finally{await win.happyDOM.close();}
+});
+
+test('quick apartment filters refresh the open detail, tabs support keyboard navigation, and evidence opens',async()=>{
+ const win=await app();try{
+  const doc=win.document,$=id=>doc.getElementById(id);
+  $('searchInput').value='Դեֆանս';$('searchInput').dispatchEvent(new win.Event('input'));$('searchInput').dispatchEvent(new win.KeyboardEvent('keydown',{key:'Enter'}));
+  doc.querySelector('[data-open="karu-1"]').click();
+  $('tab-overview').dispatchEvent(new win.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
+  assert.equal($('tab-geometry').getAttribute('aria-selected'),'true');assert.equal(doc.activeElement.id,'tab-geometry');assert.equal($('detailTab').getAttribute('aria-labelledby'),'tab-geometry');
+  $('tab-offers').click();$('offersToggle').click();
+  const saved=JSON.parse(win.localStorage.getItem('yerevan-atlas-v1')),project=JSON.parse(file('public/data/projects.json')).projects.find(p=>p.id==='karu-1');
+  assert.equal(doc.querySelectorAll('.offer-card').length,Math.min(24,filters.matchingOfferEntries(project,saved.prefs,saved.filters).length));
+  assert.ok($('exportProjectUnits'));$('closeDetail').click();$('dataHealthButton').click();assert.ok($('exportEvidence'));assert.ok(doc.querySelector('.evidence-table'));
+  $('infoDialog').close();$('exportButton').click();assert.ok($('exportUnitsCSV'));
+ }finally{await win.happyDOM.close();}
+});
+
+test('supporting geometry and translation failures leave searchable project cards available',async()=>{
+ const win=await app({failedPaths:['/data/project-geometry.json','/data/model-presets.json','/data/project-locales.json']});try{
+  assert.equal(win.document.getElementById('supportingNotice').hidden,false);
+  assert.equal(win.document.querySelectorAll('#resultsList [data-open]').length,30);
+  assert.equal(win.atlasTestMap.getSource('project-buildings').data.features.length,0);
+  assert.ok(win.atlasTestMap.getSource('projects').data.features.length>30);
+ }finally{await win.happyDOM.close();}
+});
