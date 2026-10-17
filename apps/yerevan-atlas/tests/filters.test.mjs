@@ -8,7 +8,7 @@ const project={id:'p1',name:'Alpha',nameHy:'Նոր տուն',nameRu:'Новый 
 const filters=normalizeFilters({mode:'units',useBudget:true,useArea:true});
 test('all apartment conditions must apply to one unit, including its price variant',()=>{const p={...project,offers:[{...offer,id:'a',rooms:2},{...offer,id:'b',area:110,rooms:3},{...offer,id:'c',rooms:3,totalAMD:90e6}]};assert.equal(searchProjects([p],state,prefs,{...filters,rooms:['3']},now).length,0);assert.equal(searchProjects([{...p,offers:[...p.offers,offer]}],state,prefs,{...filters,rooms:['3']},now).length,1);const conditional={...offer,totalAMD:60e6,priceVariants:[{basis:'A',totalAMD:60e6},{basis:'B',totalAMD:72e6}]};assert.equal(matchingOfferEntries({...p,offers:[conditional]},prefs,{...filters,rateMax:650000},now).length,0);});
 test('multi-facets use OR within a group and AND between groups',()=>{const other={...project,id:'p2',district:'Ajapnyak',status:'completed'},third={...project,id:'p3',district:'Kentron'};assert.deepEqual(searchProjects([project,other,third],state,prefs,{districts:['Arabkir','Ajapnyak'],statuses:['completed']},now).map(p=>p.id),['p2']);const counts=facetCounts([project,other,third],state,prefs,{districts:['Arabkir'],statuses:['completed']},'districts',now);assert.deepEqual(counts,{Ajapnyak:1});});
-test('sold-out projects and booked/sold units cannot produce normal matches',()=>{assert.equal(searchProjects([{...project,soldOut:true}],state,prefs,filters,now).length,0);assert.equal(matchInfo({...project,soldOut:true},prefs).level,'unavailable');for(const unit of [{...offer,isBooked:true},{...offer,availability:'sold'},{...offer,availability:'reserved'}])assert.equal(matchingOfferEntries({...project,offers:[unit]},prefs,filters,now).length,0);assert.equal(matchingOfferEntries({...project,soldOut:true},prefs,{...filters,availability:'all'},now).length,1);});
+test('sold-out projects and booked/sold units cannot produce normal matches',()=>{assert.equal(searchProjects([{...project,soldOut:true}],state,prefs,filters,now).length,0);assert.equal(matchInfo({...project,soldOut:true},prefs).level,'unavailable');for(const unit of [{...offer,isBooked:true},{...offer,availability:'sold'},{...offer,availability:'reserved'},{...offer,availabilityStatus:'reserved',availability:'Reserved according to developer website'}])assert.equal(matchingOfferEntries({...project,offers:[unit]},prefs,filters,now).length,0);assert.equal(matchingOfferEntries({...project,soldOut:true},prefs,{...filters,availability:'all'},now).length,1);});
 test('missing room, floor, price and building-specific height never satisfy strict criteria',()=>{for(const [patch,f]of [[{rooms:null},{rooms:['3']}],[{floor:null},{floorMin:1}],[{buildingFloors:null},{excludeTop:true}],[{floor:12},{excludeTop:true}],[{totalAMD:null},{}]])assert.equal(matchingOfferEntries({...project,offers:[{...offer,...patch}]},prefs,{...filters,...f},now).length,0);assert.equal(matchingOfferEntries(project,prefs,{...filters,excludeTop:true},now).length,1);});
 test('budget and size bounds are inclusive; above and below ranges do not pass',()=>{for(const [area,price]of [[80,50e6],[100,75e6]])assert.equal(matchingOfferEntries({...project,offers:[{...offer,area,totalAMD:price}]},prefs,filters,now).length,1);for(const price of [49999999,75000001])assert.equal(matchingOfferEntries({...project,offers:[{...offer,totalAMD:price}]},prefs,filters,now).length,0);assert.equal(searchProjects([{...project,offers:[],price:{min:100000,currency:'AMD'}}],state,prefs,{useBudget:true,useArea:true},now).length,0);});
 test('planned extras are applied to the same apartment when filtering total budget',()=>{const p={...prefs,renovation:200000,parking:2,feePercent:2};const results=matchingOfferEntries(project,p,{...filters,budgetBasis:'total'},now);assert.equal(results.length,0);assert.equal(matchingOfferEntries(project,p,filters,now).length,1);});
@@ -19,3 +19,23 @@ test('multilingual token search and shared search round-trip preserve only publi
 
 
 test('a finish price must meet budget itself and quarantined prices never qualify',()=>{const o={...offer,priceVariants:[{conditionId:6,totalAMD:60e6,basis:'Not renovated'},{conditionId:5,totalAMD:82e6,basis:'Renovated'}]};assert.equal(matchingOfferEntries({...project,offers:[o]},prefs,{...filters,finishes:['5']},now).length,0);assert.equal(matchingOfferEntries({...project,offers:[o]},prefs,{...filters,finishes:['6']},now).length,1);assert.equal(matchingOfferEntries({...project,offers:[{...offer,priceQuality:{status:'review_required'}}]},prefs,{},now).length,0);assert.equal(matchingOfferEntries(project,prefs,{hasBalcony:true},now).length,0);});
+
+test('finish facet counts never advertise quarantined price variants',()=>{
+ const p={...project,offers:[{...offer,priceVariants:[{conditionId:6,totalAMD:60e6},{conditionId:5,totalAMD:65e6,priceQuality:{status:'review_required'}}]}]};
+ assert.deepEqual(facetCounts([p],state,prefs,filters,'finishes',now),{'6':1});
+ const result=matchingOfferEntries(p,prefs,filters,now)[0];assert.equal(result.conditionId,6);assert.equal(result.variants.length,1);
+});
+
+test('map-area searches retain a frozen boundary in shared searches and exclude unknown pins',()=>{
+ const bounds=[44.49,40.19,44.51,40.21];const f={...filters,bounds};
+ assert.deepEqual(searchProjects([project,{...project,id:'outside',coordinates:[44.6,40.2]},{...project,id:'unknown',coordinates:null}],state,prefs,f,now).map(p=>p.id),['p1']);
+ assert.deepEqual(parseSearch(searchPayload(state,prefs,f)).filters.bounds,bounds);
+ assert.equal(parseSearch({v:1,prefs,filters:{bounds:[44.51,40.19,44.49,40.21]}}),null);
+});
+
+test('withdrawn source projects remain historical and do not produce default matches',()=>{
+ const p={...project,catalogueListing:{status:'unlisted'}};
+ assert.equal(searchProjects([p],state,prefs,filters,now).length,0);
+ assert.equal(searchProjects([p],state,prefs,{...filters,availability:'all'},now).length,1);
+ assert.equal(matchingOfferEntries({...project,offers:[{...offer,sourceListed:false}]},prefs,filters,now).length,0);
+});

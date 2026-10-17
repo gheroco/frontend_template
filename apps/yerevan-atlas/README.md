@@ -7,13 +7,40 @@ A 3D discovery map and apartment comparison workspace for publicly advertised ne
 Requires Node.js 22.12 or newer.
 
 ```sh
-npm ci
-npm run check
-npm run build
+npm ci --workspaces=false
+npm run check --workspaces=false
+python -m unittest discover -s tests -p '*_test.py'
+npm run build --workspaces=false
 npm run dev
 ```
 
 The production output is `dist/`. The app uses Vite, MapLibre GL JS and a static JSON catalogue. There is no application server, private API key or account system. Favourites, comparisons, notes, preferences and checklists use localStorage. Users can export and import a research backup.
+
+## 3.1 improvements — 17 October 2026
+
+The implementation roadmap and evidence-dependent follow-up work are in [IMPROVEMENTS.md](IMPROVEMENTS.md).
+
+- Search cards, map colours, open detail panels, comparisons and exports use the same active apartment criteria and price variant. Total-cost scenarios select the lowest total including the user's extras.
+- Shared searches and imported research validate ranges, calendar dates, extra costs, reference locations and known fields before applying state. Existing local research is preserved.
+- Project cards render 30 at a time. The map, counters and exports still include all matches; apartment evaluations are cached during each render.
+- Apartment results explain matching and missing source fields. Empty searches offer counted filter or text relaxations.
+- **Data health** distinguishes project and apartment check ages, source conflicts, failed source requests, missing fields, price review and footprint coverage. Evidence reports can be exported as JSON.
+- **Search this map area** captures a fixed geographic rectangle around the current viewport; only published project pins inside that rectangle pass. Panning does not change the search. The dashed outline, saved searches and shared URLs preserve the boundary. A tilted/rotated viewport uses its bounding rectangle, not an exact visible-screen polygon.
+- Fit-to-results includes complete building footprints. No new building geometry is inferred by these UI changes.
+- Optional model, geometry or translation failures no longer hide a valid catalogue. Tabs support arrow/Home/End navigation and focus return; hidden mobile surfaces are inert and touch targets are larger.
+- Apartment CSV exports include the selected finish/payment basis, purchase and budget amounts, source availability, separate check timestamps and original listing URL. Project exports retain research notes; shared search links still exclude them.
+- Source refreshes stage by default. Publication requires `--apply`, a matching base hash and complete catalogue/unit-list capture. Withdrawn projects remain historical but are excluded from normal searches. Corrected anomalous unit prices retain previous evidence.
+- The app-specific GitHub Actions workflow runs UI/data/model checks, refresh safety checks and a production build. No browser/WebGL or real-device visual pass was available in this environment.
+
+### Current source snapshot
+
+The **17 October 2026** refresh successfully read **285 directory detail records** (150 Karucapatoxic + 135 MyHome) and all **152 MyHome unit-list pages**. The retained catalogue contains **281 project records**, including **183 in Yerevan**, after reviewed cross-source merges and retaining a withdrawn record. The three reappearing MyHome records (49, 83, 84) are distinct source inventories, not asserted to be three unique new buildings.
+
+There are **2,480 retained apartment listing records**: **2,424 newly captured MyHome apartments**, **45 selected developer listings**, and **11 historical MyHome listings** retained under a project no longer listed by that source. Historical/unlisted records are excluded from default matches. 1,180 retained listings belong to Yerevan projects. **79** unit details were enriched successfully; the remaining units retain unknown detail fields. The source-reported total was 2,475 units including 51 houses/townhouses, which are excluded from apartment inventory.
+
+MyHome367 is now unlisted; it was not labelled sold or deleted. MyHome361 and unit36954 now publish plausible corrected prices; their prior anomalous values remain in price-quality/history evidence. MyHome235's source minimum is 906,575 AMD/m². Existing Bedeck 2028/18-floor evidence is preserved; both direct Bedeck requests again returned403 and their old facts were not marked newly verified. The CBA reference is 362.34 AMD/USD dated16October2026; existing user-selected rates stay unchanged. Source snapshots are not seller-confirmed stock.
+
+The October13 figures below document the earlier baseline, not the current inventory.
 
 ## October 2026 upgrade
 
@@ -70,12 +97,14 @@ python scripts/sources/refresh_official.py
 Replace `RUN` with the timestamped run from the first command. Review `catalogue-patch.json`, additions, failures, source-count discrepancies, price-quality flags and unit-page completeness. Apply the reviewed patch with:
 
 ```sh
-python scripts/apply-refresh.py --catalogue research-output/catalogue --units research-output/units --official research-output/official
+python scripts/apply-refresh.py --catalogue research-output/catalogue/RUN --units research-output/units --official research-output/official --output research-output/prepared
+# Inspect staged JSON and source changes, then apply the reviewed patch:
+python scripts/apply-refresh.py --catalogue research-output/catalogue/RUN --units research-output/units --official research-output/official --apply
 npm run check
 npm run build
 ```
 
-The apply step requires the catalogue patch's base-data hash to match, refuses an incomplete unit-page capture, preserves reviewed aliases and separate geometry, and applies only reviewed direct field changes. It preserves raw anomalous values and provenance. New localized strings and newly changed official facts still require review before publication. No background schedule is configured; freshness ages remain visible between deployments.
+The default/dry-run path stages complete output without modifying public data. The explicit apply step requires the catalogue patch's base-data hash to match, refuses an incomplete unit-page capture, preserves reviewed aliases and separate geometry, and applies only reviewed direct field changes. It preserves raw anomalous values and provenance. New localized strings and newly changed official facts still require review before publication. No background schedule is configured; freshness ages remain visible between deployments.
 
 ## Map geometry and attribution
 
@@ -93,7 +122,7 @@ Map attribution: [© OpenStreetMap contributors](https://www.openstreetmap.org/c
 
 ## Render deployment
 
-Deploy as a Render Static Site from the `apps/yerevan-atlas` branch of `gheroco/frontend_template`. The app occupies only `apps/yerevan-atlas/`; the repository's existing application files remain unchanged.
+Deploy as a Render Static Site from the `apps/yerevan-atlas` branch of `gheroco/frontend_template`. The app occupies `apps/yerevan-atlas/` and has its own lockfile. The root npm workspace list explicitly includes the two platform apps so this standalone app's dependencies do not collide with the platform lockfile.
 
 - Build: `npm --prefix apps/yerevan-atlas ci --workspaces=false && npm --prefix apps/yerevan-atlas run check --workspaces=false && npm --prefix apps/yerevan-atlas run build --workspaces=false`
 - Publish directory: `apps/yerevan-atlas/dist`
@@ -104,4 +133,4 @@ Project navigation uses hash links, so no SPA rewrite is needed.
 
 ## Verification
 
-The 43 automated checks cover strict same-unit filter combinations, finish-price coupling, inclusive ranges, missing values, freshness, anomalies, source status, facet counts, saved-search round trips, map/list consistency, and multilingual interface behavior. The suite additionally checks multilingual interface and content coverage, placeholder consistency, language switching with saved notes, projective facade corner mapping, invalid geometry rejection, GLB resource validation, model scale normalization, total-cost calculations, straight-line distances and catalogue statistics. It checks budget and size matching, sold-out/unknown data handling, exchange conversion, filters, no invented geometry, safe links and CSV export, date semantics, catalogue provenance, apartment offer identity, and DOM interactions for search/save/compare/notes. Additional accuracy checks cover Mercator metre scale against MapLibre, cardinal headings, handedness, rotated click-volume alignment, polygon dimensions/courtyard area, source identity, no fake height, saved model anchoring, Bedeck source preservation and geodesic radius. CARTO returned real Yerevan building footprints and heights during collection. A real browser/WebGL rendering and mobile device check was not available in the build environment; DOM tests do not replace that visual check.
+The 56 JavaScript checks and 2 Python refresh-safety checks cover strict same-unit filter combinations, finish-price coupling, inclusive ranges, missing values, freshness, anomalies, source status, facet counts, saved-search round trips, map/list consistency, and multilingual interface behavior. The suite additionally checks multilingual interface and content coverage, placeholder consistency, language switching with saved notes, projective facade corner mapping, invalid geometry rejection, GLB resource validation, model scale normalization, total-cost calculations, straight-line distances and catalogue statistics. It checks budget and size matching, sold-out/unknown data handling, exchange conversion, filters, no invented geometry, safe links and CSV export, date semantics, catalogue provenance, apartment offer identity, and DOM interactions for search/save/compare/notes. Additional accuracy checks cover Mercator metre scale against MapLibre, cardinal headings, handedness, rotated click-volume alignment, polygon dimensions/courtyard area, source identity, no fake height, saved model anchoring, Bedeck source preservation and geodesic radius. CARTO returned real Yerevan building footprints and heights during collection. A real browser/WebGL rendering and mobile device check was not available in the build environment; DOM tests do not replace that visual check.
