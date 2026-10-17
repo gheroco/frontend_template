@@ -54,7 +54,7 @@ export function features(projects,prefs,selectedId,matchResolver=null){
  }
  return {points:{type:'FeatureCollection',features:points},buildings:{type:'FeatureCollection',features:buildings}};
 }
-export function csvCell(v){let s=String(v??'');if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}
+export function csvCell(v){let s=String(v??'');if(/^[\s\x00-\x1f]*[=+@-]|^[\t\r\n]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}
 export function toCSV(projects,prefs){const keys=['Project','District','Address','Published min rate','Published max rate','Currency','Target completion','Status','Budget fit','Sources'];return '\uFEFF'+[keys,...projects.map(p=>[p.name,p.district,p.address,p.price?.min,p.price?.max,p.price?.currency,p.completion,p.status,matchInfo(p,prefs).label,(p.sources||[]).map(s=>s.url).join(' | ')])].map(r=>r.map(csvCell).join(',')).join('\r\n');}
 export function escapeHTML(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 export function safeURL(url){try{const u=new URL(url);return ['https:','http:'].includes(u.protocol)?u.href:'#';}catch{return '#';}}
