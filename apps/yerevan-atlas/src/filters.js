@@ -22,13 +22,13 @@ export function searchMatches(p,query){const hay=normalizeSearch([p.name,p.nameH
 export function ageDays(value,now=Date.now()){const stamp=Date.parse(value);if(!Number.isFinite(stamp)||stamp>now+300000)return null;return Math.max(0,(now-stamp)/86400000);}
 export function checkedRecently(value,days,now=Date.now()){const age=ageDays(value,now);return age!==null&&age<=days;}
 export function hasSourceConflict(p){return !!p.soldOut&&(p.offers||[]).some(o=>!o.isBooked)||!!p.dataQuality?.conflicts?.length||!!p.sourceComparisons?.some(s=>(s.status&&s.status!==p.status)||(s.completion&&p.completion&&s.completion!==p.completion)||(s.price?.min&&p.price?.min&&s.price.currency===p.price.currency&&s.price.min!==p.price.min))||!!p.spatial?.issues?.some(x=>/conflict|mismatch|other_structure/.test(x));}
-export function unavailable(o){return o.isBooked===true||o.availabilityStatus==='sold'||o.sourceIsActive===false||['booked','sold','reserved','unavailable'].includes(String(o.availability||'').toLowerCase());}
+export function unavailable(o){return o.sourceListed===false||o.isBooked===true||o.availabilityStatus==='sold'||o.sourceIsActive===false||['booked','sold','reserved','unavailable'].includes(String(o.availability||'').toLowerCase());}
 export function distanceFrom(a,b){if(!a||!b)return null;const r=Math.PI/180,dy=(b[1]-a[1])*r,dx=(b[0]-a[0])*r,h=Math.sin(dy/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(dx/2)**2;return EARTH_RADIUS/1000*2*Math.atan2(Math.sqrt(h),Math.sqrt(Math.max(0,1-h)));}
 export function needsUnit(f){return f.mode==='units'||f.rooms.length>0||f.finishes.length>0||f.hasBalcony||f.floorMin!=null||f.floorMax!=null||f.excludeGround||f.excludeTop;}
 export function plannedTotal(price,area,prefs){return price*(1+Math.max(0,Number(prefs.feePercent)||0)/100)+area*Math.max(0,Number(prefs.renovation)||0)+Math.max(0,Number(prefs.parking)||0)*1e6;}
 export function matchingOfferEntries(p,prefs,raw={},now=Date.now()) {
  const f=normalizeFilters(raw);
- if(p.soldOut&&f.availability!=='all')return [];
+ if((p.soldOut||p.catalogueListing?.status==='unlisted')&&f.availability!=='all')return [];
  return (p.offers||[]).flatMap(o=>{
   if(f.availability!=='all'&&unavailable(o))return [];
   if(o.priceQuality?.status==='review_required')return [];
@@ -48,7 +48,7 @@ export function matchingOfferEntries(p,prefs,raw={},now=Date.now()) {
  });
 }
 export function projectScenarioMatches(p,prefs,f){
- if(f.availability!=='all'&&p.soldOut)return false;
+ if(f.availability!=='all'&&(p.soldOut||p.catalogueListing?.status==='unlisted'))return false;
  const areaMin=f.useArea?Math.max(prefs.areaMin,p.area?.min||0):p.area?.min,areaMax=f.useArea?Math.min(prefs.areaMax,p.area?.max||Infinity):p.area?.max;
  if(f.useArea&&(!positive(p.area?.min)||!positive(p.area?.max)||areaMin>areaMax))return false;
  const rate=rateAMD(p,prefs),maxRate=p.price?.max?rate*p.price.max/p.price.min:rate;
@@ -63,7 +63,7 @@ export function projectPasses(p,state,prefs,raw={},now=Date.now(),entryCache=nul
  if(!prefs.nearby&&!p.inYerevan||state.view==='saved'&&!state.saved?.has(p.id))return false;
  if(!searchMatches(p,state.query))return false;
  if(f.districts.length&&!f.districts.includes(p.district)||f.statuses.length&&!f.statuses.includes(p.status)||f.developers.length&&!f.developers.includes(p.developer||''))return false;
- if(f.availability!=='all'&&p.soldOut)return false;
+ if(f.availability!=='all'&&(p.soldOut||p.catalogueListing?.status==='unlisted'))return false;
  if(f.completionBefore){const deadline=Date.parse(f.completionBefore+'T23:59:59Z'),end=targetEnd(p.completion);if(p.status!=='completed'&&(!Number.isFinite(end)||end>deadline))return false;}
  if(f.location==='mapped'&&!hasCoordinates(p)||f.location==='footprint'&&!p.spatial?.footprints?.length)return false;
  if(f.bounds&&(!hasCoordinates(p)||p.coordinates[0]<f.bounds[0]||p.coordinates[0]>f.bounds[2]||p.coordinates[1]<f.bounds[1]||p.coordinates[1]>f.bounds[3]))return false;
@@ -126,6 +126,7 @@ export function parseSearch(value){
 
 export function searchMatchInfo(p,prefs,raw={},entries=null){
  const f=normalizeFilters(raw),units=entries||matchingOfferEntries(p,prefs,f);
+ if(p.catalogueListing?.status==='unlisted')return {level:'unavailable',label:'Unlisted by source'};
  if(p.soldOut)return {level:'unavailable',label:'Source marks sold out'};
  if(units.length)return {level:'offer',label:f.useBudget?'Published apartments match':'Published apartments · budget not filtered'};
  if(needsUnit(f))return {level:'outside',label:'Does not match current apartment filters'};
