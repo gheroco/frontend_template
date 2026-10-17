@@ -56,7 +56,7 @@ export function projectScenarioMatches(p,prefs,f){
  let min=rate*areaMin,max=maxRate*areaMax;if(f.budgetBasis==='total'){min=plannedTotal(min,areaMin,prefs);max=plannedTotal(max,areaMax,prefs);}
  return min<=prefs.budgetMax*1e6&&max>=prefs.budgetMin*1e6;
 }
-export function projectPasses(p,state,prefs,raw={},now=Date.now()){
+export function projectPasses(p,state,prefs,raw={},now=Date.now(),entryCache=null){
  const f=normalizeFilters(raw);
  if(!prefs.nearby&&!p.inYerevan||state.view==='saved'&&!state.saved?.has(p.id))return false;
  if(!searchMatches(p,state.query))return false;
@@ -67,11 +67,12 @@ export function projectPasses(p,state,prefs,raw={},now=Date.now()){
  if(f.hideConflicts&&hasSourceConflict(p))return false;
  if(f.radiusKm!=null){const d=hasCoordinates(p)?distanceFrom(state.reference,p.coordinates):null;if(d==null||d>f.radiusKm)return false;}
  if(f.freshnessDays!=null&&(!checkedRecently(p.catalogueCheckedAt||p.checkedAt,f.freshnessDays,now)||p.catalogueRefresh?.status==='failed'))return false;
- const units=matchingOfferEntries(p,prefs,f,now);
+ if(entryCache&&!entryCache.has(p.id))entryCache.set(p.id,matchingOfferEntries(p,prefs,f,now));
+ const units=entryCache?entryCache.get(p.id):matchingOfferEntries(p,prefs,f,now);
  return needsUnit(f)?units.length>0:units.length>0||projectScenarioMatches(p,prefs,f);
 }
-export function searchProjects(projects,state,prefs,raw={},now=Date.now()){
- const f=normalizeFilters(raw),out=projects.filter(p=>projectPasses(p,state,prefs,f,now)),cache=new Map();
+export function searchProjects(projects,state,prefs,raw={},now=Date.now(),cache=new Map()){
+ const f=normalizeFilters(raw),out=projects.filter(p=>projectPasses(p,state,prefs,f,now,cache));
  const entries=p=>{if(!cache.has(p.id))cache.set(p.id,matchingOfferEntries(p,prefs,f,now));return cache.get(p.id);};
  const price=p=>{const u=entries(p);return u.length?Math.min(...u.map(x=>x.budgetPrice)):Infinity;};
  out.sort((a,b)=>{
