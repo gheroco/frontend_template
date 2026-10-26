@@ -1,0 +1,7 @@
+{
+  "name": "vv8-home-threejs",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "description": "Dimensioned-plan Three.js home reconstruction with realistic materials and furnishing budget"
+}

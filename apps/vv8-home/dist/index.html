@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="Explore your VV8 home from its dimensioned plan, compare drawing measurements with the 3D model, and view your $80,000 furniture budget with Armenian price sources.">
+  <title>VV8 — Your home in 3D</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./budget.css">
+  <link rel="stylesheet" href="./plan.css">
+  <script type="importmap">{"imports":{"three":"./vendor/build/three.module.js","three/addons/":"./vendor/examples/jsm/"}}</script>
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true"><defs>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Z M3 8l9 5 9-5 M12 13v8 M7.5 5.5l9 5"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3Zm0 8h8V3 M11 11v10 M11 15h10 M16 11h5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><path d="m3 16 13-13 5 5L8 21l-5-5Z m9-9 2 2 m-5 1 2 2 m-5 1 2 2 m-3 1 2 2"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8 M4 4v6h6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M17 4h4v4 M21 4l-4 4 M19 12a7 7 0 1 1-7-7h4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 6"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M8 5 9.5 3h5L16 5h4a1 1 0 0 1 1 1v13H3V6a1 1 0 0 1 1-1h4Z"/><circle cx="12" cy="12" r="4"/><path d="M17.5 8h.5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5 M4 16v5h16v-5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h16M4 18h16M9 3v6m6 6v6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </defs></svg>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">VV8</span><span class="brand-divider"></span><div class="brand-copy"><strong>Your home, in 3D</strong><span>DIMENSIONED PLAN EDITION</span></div></div>
+    <div class="topbar-actions">
+      <span class="total-area"><strong>81.4</strong><span>m²</span><small>brochure area</small></span>
+      <span class="topbar-separator"></span>
+      <button class="text-button reference-button" data-reference aria-label="View dimensioned drawing and original brochure" title="Source plans"><svg><use href="#i-image"/></svg><span>Source plans</span></button>
+      <button class="text-button studio-button" id="open-studio" aria-label="Open rendered studio views of your home" title="Studio views"><svg><use href="#i-camera"/></svg><span>Studio views</span></button>
+      <button class="primary-button export-button" data-action="export" title="Export 3D model (.glb)" aria-label="Export 3D model as a GLB file"><svg><use href="#i-download"/></svg><span>Export 3D</span></button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <button id="sidebar-backdrop" class="sidebar-backdrop" aria-label="Close room panel" hidden></button>
+    <aside class="sidebar" id="sidebar" aria-label="Apartment rooms and information">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <div class="sidebar-heading"><div><p class="eyebrow">VV8 RESIDENCE</p><h1>Your apartment</h1><p class="subtle">3 rooms · 2 balconies · 1 home</p></div><button id="close-sidebar" class="icon-button mobile-only" aria-label="Close room panel"><svg><use href="#i-close"/></svg></button></div>
+      <div class="rooms-heading"><span>ROOMS · CALCULATED AREAS</span><span class="count">08</span></div>
+      <div id="room-list" class="room-list" aria-label="Select a room"></div>
+      <section class="selection-card" id="selection-card" aria-live="polite">
+        <div class="selection-heading"><span class="selection-dot" id="selection-dot"></span><span id="selected-room-name">Whole apartment</span><strong id="selected-room-area">— m²</strong></div>
+        <p id="selected-room-size">Select any room to see its model dimensions.</p>
+        <p id="selected-room-basis" class="selection-basis">Area calculated from model outlines</p>
+        <p id="selected-room-description" class="selection-description">Click a room in the model or choose one above.</p>
+        <button id="selected-room-proof" class="selection-proof" type="button">Dimension evidence<svg><use href="#i-arrow"/></svg></button>
+      </section>
+      <div class="sidebar-footer"><p><span class="tiny-dot"></span><span id="plan-status-text">Dimensioned drawing supplied</span></p><button class="accuracy-link" id="open-accuracy">Dimensions & source<svg><use href="#i-arrow"/></svg></button></div>
+    </aside>
+
+    <main class="stage" aria-label="Interactive three dimensional apartment model">
+      <div id="viewport" class="viewport" aria-label="3D view. Drag to orbit, pinch or scroll to zoom."><div id="labels" class="labels"></div></div>
+      <div id="loader" class="loader"><div class="loader-cube"><svg><use href="#i-cube"/></svg></div><strong>Opening your home</strong><span>Preparing the 3D model…</span></div>
+      <div class="stage-heading"><p class="eyebrow">YOUR PLAN. YOUR PERSPECTIVE.</p><h2 id="stage-caption">Your home, in detail.</h2><span class="plan-status"><span></span>Dimensioned plan</span></div>
+      <nav class="view-switch" aria-label="View mode">
+        <button class="active" data-mode="dollhouse" aria-pressed="true"><svg><use href="#i-cube"/></svg><span>3D model</span></button>
+        <button data-mode="plan" aria-pressed="false"><svg><use href="#i-plan"/></svg><span>Floor plan</span></button>
+        <button data-mode="walk" aria-pressed="false"><svg><use href="#i-eye"/></svg><span>Inside</span></button>
+      </nav>
+      <div class="stage-tools">
+        <button class="tool-button" data-toggle="dimensions" aria-pressed="false" title="Show drawing dimensions and derived model measurements"><svg><use href="#i-ruler"/></svg><span>Dimensions</span></button>
+        <button class="tool-button" id="settings-button" aria-label="Display options" title="Display options" aria-expanded="false" aria-controls="settings-panel"><svg><use href="#i-sliders"/></svg><span>Display</span></button>
+        <div class="settings-panel" id="settings-panel" hidden>
+          <div class="popover-heading">Make it your view<button class="icon-button small" id="close-settings" aria-label="Close display options"><svg><use href="#i-close"/></svg></button></div>
+          <label class="switch-row"><span>Furniture</span><input type="checkbox" data-toggle-input="furniture" checked><span class="switch"></span></label>
+          <label class="switch-row"><span>Room labels</span><input type="checkbox" data-toggle-input="labels" checked><span class="switch"></span></label>
+          <label class="setting-row"><span>Light</span><select id="lighting-mode" aria-label="Lighting atmosphere"><option value="daylight">Daylight</option><option value="evening">Warm evening</option></select></label>
+          <label class="setting-row"><span>Walls</span><select id="wall-mode" aria-label="Wall visibility"><option value="cutaway">Cutaway</option><option value="full">Full height</option><option value="hidden">Hidden</option></select></label>
+          <label class="setting-row height-row"><span>Ceiling height<small>User specified · editable</small></span><span class="number-field"><input id="ceiling-height" type="number" value="3.00" min="2.2" max="4.5" step="0.05" inputmode="decimal" aria-label="User-specified ceiling height in metres"><span>m</span></span></label>
+          <button type="button" class="clean-view-button" id="clean-view-button"><svg><use href="#i-eye"/></svg>Clean view<span>Hide labels & dimensions</span></button>
+          <p class="popover-note">Drawing dimensions guide the plan. The ceiling height is user specified; unlabelled details remain assumptions.</p>
+        </div>
+      </div>
+      <div class="camera-tools" aria-label="Camera controls">
+        <button class="icon-button" data-action="zoom" data-value="1" aria-label="Zoom in" title="Zoom in"><svg><use href="#i-plus"/></svg></button>
+        <button class="icon-button" data-action="zoom" data-value="-1" aria-label="Zoom out" title="Zoom out"><svg><use href="#i-minus"/></svg></button>
+        <span class="tool-divider"></span>
+        <button class="icon-button" data-action="rotate" data-value="1" aria-label="Rotate view" title="Rotate view"><svg><use href="#i-rotate"/></svg></button>
+        <button class="icon-button" data-action="reset" aria-label="Reset camera" title="Reset camera"><svg><use href="#i-reset"/></svg></button>
+      </div>
+      <div class="measure-tools"><button class="measure-button" id="measure-button" data-action="measure" aria-pressed="false"><svg><use href="#i-ruler"/></svg><span>Measure</span></button><div id="measurement-status" class="measurement-status" aria-live="polite" hidden></div><button class="clear-measure" data-action="clear-measure" id="clear-measure" hidden>Clear</button></div>
+      <div id="walk-help" class="walk-help" hidden><strong>Step inside</strong><span>Drag to look · W A S D / arrow keys to move</span><span class="mobile-only">Choose a room to move there.</span></div>
+      <button class="mobile-rooms-button" id="open-sidebar"><svg><use href="#i-grid"/></svg><span id="mobile-room-label">Explore rooms</span><span class="room-button-count">8</span><svg class="room-button-chevron"><use href="#i-chevron"/></svg></button>
+      <div class="stage-footer"><span class="scale-note"><span class="scale-line"></span>1 scene unit = 1 metre</span><span class="interaction-hint">Drag to orbit<span>·</span>Scroll to zoom<span>·</span>Click a room</span><span class="estimate-note">Drawing · derived · assumed · user specified</span></div>
+    </main>
+  </div>
+
+  <dialog id="reference-dialog" class="reference-dialog">
+    <div class="dialog-heading"><div><p class="eyebrow">TWO SOURCES. ONE HOME.</p><h2>Your source plans</h2></div><button class="icon-button" data-close-dialog aria-label="Close source plans"><svg><use href="#i-close"/></svg></button></div>
+    <div class="reference-toolbar"><div class="reference-tabs" role="tablist" aria-label="Source plan"><button type="button" id="source-tab-drawing" role="tab" aria-selected="true" aria-controls="source-plan-panel" data-plan-source="drawing">Dimensioned drawing</button><button type="button" id="source-tab-brochure" role="tab" aria-selected="false" aria-controls="source-plan-panel" data-plan-source="brochure">Original brochure</button></div><div class="reference-zoom" role="group" aria-label="Plan image zoom"><button type="button" data-plan-zoom="fit" aria-pressed="true">Fit</button><button type="button" data-plan-zoom="actual" aria-pressed="false">100%</button></div></div>
+    <div class="reference-plan-panel" id="source-plan-panel" role="tabpanel" aria-labelledby="source-tab-drawing"><div id="reference-image-stage" class="reference-image-stage" tabindex="0" aria-label="Source drawing. Choose 100 percent to read dimensions and scroll to inspect."><img id="source-plan-image" src="./assets/dimensioned-plan.jpeg" alt="Dimensioned VV8 architectural drawing with room spans, wall offsets, door openings and balcony dimensions."></div></div>
+    <div class="reference-caption"><div><strong id="reference-source-heading">The measurement reference</strong><p id="reference-source-note">Dimensions are read from the annotations. Unlabelled details are interpreted separately; image pixels are not treated as survey measurements.</p></div><a id="reference-open-image" href="./assets/dimensioned-plan.jpeg" target="_blank" rel="noopener" aria-label="Open dimensioned drawing at full size">Open image<span aria-hidden="true">↗</span></a></div>
+  </dialog>
+
+  <dialog id="accuracy-dialog" class="accuracy-dialog">
+    <div class="dialog-heading"><div><p class="eyebrow">DIMENSIONS & SOURCE</p><h2>See what the model follows.</h2></div><button class="icon-button" data-close-dialog aria-label="Close dimension evidence"><svg><use href="#i-close"/></svg></button></div>
+    <div class="accuracy-body"><p class="accuracy-intro">The dimensioned drawing guides the walls and openings. Every measurement has a basis.</p>
+      <div class="measurement-basis-key"><section><span class="basis-badge drawing">Drawing</span><p>A number printed on the drawing, with identified endpoints.</p></section><section><span class="basis-badge derived">Derived</span><p>Calculated from dimension chains or interpreted outlines.</p></section><section><span class="basis-badge assumed">Assumed</span><p>Unlabelled heights and details interpreted for the model.</p></section><section><span class="basis-badge provided">User specified</span><p>The 3.00 m ceiling height supplied by you.</p></section></div>
+      <section class="evidence-section"><div class="evidence-heading"><div><h3>Dimension checks</h3><span id="measurement-evidence-count">Source comparisons</span></div><label><span class="sr-only">Filter dimension checks by room</span><select id="evidence-room-filter"><option value="all">Whole apartment</option></select></label></div><p class="evidence-description">Drawing values are interpreted in millimetres and shown here in metres. Differences and unresolved interpretations remain visible.</p><p id="evidence-room-note" class="evidence-room-note" hidden></p><div id="measurement-evidence" class="measurement-evidence"><p>Dimension comparisons will appear with the model data.</p></div></section>
+      <section id="drawing-conflicts" class="drawing-conflicts" hidden><div class="evidence-heading"><div><h3>Unresolved drawing interpretations</h3></div></div><p class="evidence-description">These annotations use uncertain or conflicting endpoints. The chosen interpretation is recorded with the remaining difference.</p><div id="drawing-conflict-list"></div></section>
+      <section class="area-basis-section"><div class="evidence-heading"><div><h3>Areas have different bases.</h3></div></div><div class="area-comparison"><div><span>Calculated model</span><strong id="evidence-model-area">— <small>m²</small></strong></div><div><span>Brochure headline</span><strong>81.4 <small>m²</small></strong></div><div><span>Brochure room sum</span><strong>81.6 <small>m²</small></strong></div></div><p id="evidence-area-basis">The model area is calculated from its current room outlines. The brochure figures are retained as references; drawing dimensions are not stretched to force the brochure total.</p><p class="brochure-discrepancy">The original brochure's room labels sum to 81.6 m², which is 0.2 m² above its 81.4 m² headline. Balcony-label assignments in that illustration remain a reference interpretation.</p></section>
+      <p class="accuracy-bottom">These checks compare the digital model with the supplied drawing. The 3.00 m ceiling is user specified. Materials and unlabelled details remain design assumptions; these references do not establish an as-built survey.</p><button class="secondary-button" id="accuracy-to-reference"><svg><use href="#i-image"/></svg>View source drawing</button>
+    </div>
+  </dialog>
+  <dialog id="studio-dialog" class="studio-dialog" aria-labelledby="studio-title">
+    <div class="dialog-heading"><div><p class="eyebrow">MATERIALS. LIGHT. ATMOSPHERE.</p><h2 id="studio-title">Studio views</h2></div><button class="icon-button" data-close-dialog aria-label="Close studio views"><svg><use href="#i-close"/></svg></button></div>
+    <div class="studio-tabs" role="tablist" aria-label="Rendered viewpoint"><button type="button" role="tab" id="studio-tab-dollhouse" aria-selected="true" aria-controls="studio-view-panel" data-studio-view="dollhouse">Whole apartment</button><button type="button" role="tab" id="studio-tab-living" aria-selected="false" aria-controls="studio-view-panel" data-studio-view="living">Living room</button><button type="button" role="tab" id="studio-tab-primary" aria-selected="false" aria-controls="studio-view-panel" data-studio-view="primary">Primary bedroom</button></div>
+    <div class="studio-view-panel" id="studio-view-panel" role="tabpanel" aria-labelledby="studio-tab-dollhouse"><img id="studio-view-image" src="./assets/render-dollhouse.jpg" loading="lazy" alt="Rendered dollhouse view of the apartment from its updated 3D model."></div>
+    <div class="studio-caption"><div><strong id="studio-view-name">The whole apartment</strong><p>Rendered from this model · 3.00 m user-specified ceiling</p></div><a id="studio-open-image" href="./assets/render-dollhouse.jpg" target="_blank" rel="noopener">Open full size<span aria-hidden="true">↗</span></a></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

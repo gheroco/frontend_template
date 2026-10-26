@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+# Publish the prepared viewer directly; there is no dependency install or build.
+services:
+  - type: web
+    runtime: static
+    name: vv8-home-3m
+    rootDir: apps/vv8-home
+    buildCommand: "test -f dist/index.html"
+    staticPublishPath: dist
+    autoDeployTrigger: "off"
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"

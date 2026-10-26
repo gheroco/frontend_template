@@ -1,0 +1,38 @@
+{
+  "views": [
+    {
+      "shot": "dollhouse",
+      "path": "render-dollhouse.jpg",
+      "width": 1800,
+      "height": 1476,
+      "engine": "Blender Cycles",
+      "samples": 48,
+      "source": "Exported viewer geometry",
+      "ceilingHeight": 3.0,
+      "ceilingHeightBasis": "provided"
+    },
+    {
+      "shot": "living",
+      "path": "render-living.jpg",
+      "width": 1800,
+      "height": 1125,
+      "engine": "Blender Cycles",
+      "samples": 48,
+      "source": "Exported viewer geometry",
+      "ceilingHeight": 3.0,
+      "ceilingHeightBasis": "provided"
+    },
+    {
+      "shot": "primary",
+      "path": "render-primary.jpg",
+      "width": 1800,
+      "height": 1125,
+      "engine": "Blender Cycles",
+      "samples": 48,
+      "source": "Exported viewer geometry",
+      "ceilingHeight": 3.0,
+      "ceilingHeightBasis": "provided"
+    }
+  ],
+  "note": "Rendered from the interactive model. Ceiling height is user specified at 3.00 m; lighting and cutaway styling are presentation choices. Drawing evidence is documented in Dimensions & source."
+}

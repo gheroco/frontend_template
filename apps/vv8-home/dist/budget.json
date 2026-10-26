@@ -1,0 +1,641 @@
+{
+  "title": "Your $80,000 furniture plan.",
+  "asOf": "2026-10-26",
+  "currency": "AMD",
+  "usdToAmd": 360.88,
+  "budgetUSD": 80000,
+  "reserveAMD": 2887040,
+  "summary": "Warm, carefully fitted furniture for your VV8 home. Your $80,000 is a maximum; the unused balance stays available.",
+  "scope": "Furniture, fitted cabinetry, mattresses, rugs, curtains and portable lamps, with delivery allowances. Renovation, appliances, sanitaryware and building services are outside this budget.",
+  "notes": [
+    "This is a planning schedule, not a supplier quotation or a completed purchase. Listed retail prices and stock statements were checked online on 26 October 2026; stock is not reserved.",
+    "The conversion uses the Central Bank of Armenia reference rate for 26 October 2026: 1 USD = 360.88 AMD. Bank or card conversion and delivery-day prices can differ.",
+    "Custom amounts are deliberately generous design allowances for premium finishes and compact made-to-measure furniture. They are not verified market quotes. Request itemised quotations using measured dimensions before committing.",
+    "Links on allowance rows are comparative price benchmarks; they do not offer the custom design at the allowance price. Retail products are never resized and presented as the same purchasable SKU.",
+    "Retail prices are recorded as displayed. No extra VAT or discount has been assumed. Supplier quotes should explicitly confirm taxes, materials, hardware, carrying, assembly and warranty.",
+    "The 8,000 USD reserve is held separately for final quotes, stock substitutions, measurements and exchange-rate variation. Unallocated funds are additional to this reserve.",
+    "Room geometry now follows the supplied dimensioned architectural drawing. Areas are calculated from its reconstructed clear polygons (81.8975 m² total including balconies); the original 81.4 m² brochure total and 81.6 m² label sum remain separate references. Unresolved dimension chains, recess endpoints and assumed heights are documented in Dimensions & source.",
+    "The model shows schematic furniture forms, not manufacturer CAD. Retail footprints are based on listed external dimensions where verified; mattress heights, cabinetry and other custom dimensions are planning estimates.",
+    "Kitchen pricing includes furniture and its worktop. Appliances, sink and tap, permanent electrical work, plumbing, tiles, floors, doors, windows, heating and air conditioning are not charged to this furniture budget.",
+    "Delivery and assembly are allowances. Remove overlapping services where retailers or furniture makers already include them.",
+    "Totals are calculated from the original AMD amounts. Individually rounded USD line items may differ from converted totals by a few cents."
+  ],
+  "rooms": [
+    {
+      "id": "living",
+      "name": "Living & dining"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen"
+    },
+    {
+      "id": "primary",
+      "name": "Primary bedroom"
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom 2"
+    },
+    {
+      "id": "hall",
+      "name": "Entrance & hall"
+    },
+    {
+      "id": "bathroom",
+      "name": "Bathroom furniture"
+    },
+    {
+      "id": "balcony-kitchen",
+      "name": "Kitchen balcony"
+    },
+    {
+      "id": "balcony-bedroom",
+      "name": "Bedroom balcony"
+    },
+    {
+      "id": "whole",
+      "name": "Textiles & services"
+    }
+  ],
+  "sources": [
+    {
+      "id": "cba",
+      "title": "Central Bank of Armenia · exchange archive",
+      "url": "https://www.cba.am/en/exchange-rates-archive/",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "novelda",
+      "title": "Ashley Armenia · Novelda A3000081",
+      "url": "https://ashleyhome.am/en/collections/accent-armchairs/products/swivel-chair-novelda",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "isanti-coffee",
+      "title": "Ashley Armenia · Isanti T652-8",
+      "url": "https://ashleyhome.am/en/collections/coffee-tables/products/isanti-cocktail-table",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "isanti-side",
+      "title": "Ashley Armenia · Isanti T652-6",
+      "url": "https://ashleyhome.am/en/products/isanti-end-table",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "oriengo",
+      "title": "Ashley Armenia · Oriengo 171144C",
+      "url": "https://ashleyhome.am/en/collections/outdoor-table-and-chair-sets/products/oriengo-outdoor-chair-grey",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "altari-benchmark",
+      "title": "Ashley Armenia · Altari price benchmark, out of stock",
+      "url": "https://ashleyhome.am/en/products/altari-sofa",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "lyncott-benchmark",
+      "title": "Ashley Armenia · Lyncott set price benchmark",
+      "url": "https://ashleyhome.am/en/collections/kitchen-tables/products/lyncott-dining-table-and-chairs-set",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "duson180",
+      "title": "DUSON · Opera Diva 180×200",
+      "url": "https://duson.am/product/opera-diva-180x200",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "duson160",
+      "title": "DUSON · Opera Diva 160×200",
+      "url": "https://duson.am/product/opera-diva-160x200",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "shelter",
+      "title": "NERA · Normann Copenhagen Shelter table lamp",
+      "url": "https://www.nera.am/product-page/shelter-table-lamp-eu-white",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "hay-layout",
+      "title": "NERA · HAY Layout Chair 132",
+      "url": "https://www.nera.am/product-page/layout-chair-132",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "lucerne200",
+      "title": "JYSK Armenia · LUCERNE rug 200×300",
+      "url": "https://jysk.am/en/product/gorg-lucerne-200x300-bezh_118906",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "lucerne160",
+      "title": "JYSK Armenia · LUCERNE rug 160×230",
+      "url": "https://jysk.am/en/product/gorg-lucerne-160x230-bezh_118432",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "rypestarr",
+      "title": "JYSK Armenia · RYPESTARR rug 200×300",
+      "url": "https://jysk.am/en/product/gorg-rypestarr-200x300-bezh_121033",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "kitchen-benchmark",
+      "title": "AllDecor · MDF kitchen price basis, code 2602",
+      "url": "https://alldecor.am/product/khvohanvoci-kahvouyq/xohanoci-kahuyq-mdf/xohanoci-kahuyq-mdf-kwe",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "bed-benchmark",
+      "title": "JYSK Armenia · KONGSBERG 160×200 frame benchmark",
+      "url": "https://jysk.am/hy/product/mahchakali-karkas-kongsberg-160x200-bezh-gortsvatsq_120712",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "wardrobe-benchmark",
+      "title": "JYSK Armenia · LINTRUP wardrobe benchmark",
+      "url": "https://jysk.am/hy/product/zgestapaharan-lintrup-157x220-3-dur-gujn-kaxnu_118421",
+      "checked": "2026-10-26"
+    },
+    {
+      "id": "curtain-benchmark",
+      "title": "JYSK Armenia · LEKA ready-made blackout curtain benchmark",
+      "url": "https://jysk.am/en/product/varagujr-mtnecnox-leka-1x140x300-taq-moxragujn_117800",
+      "checked": "2026-10-26"
+    }
+  ],
+  "items": [
+    {
+      "id": "living-sofa",
+      "room": "living",
+      "name": "Compact sofa · ivory performance upholstery",
+      "qty": 1,
+      "unitAMD": 1200000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": "altari-benchmark",
+      "dimensions": "~226 W × 86 D cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Premium custom design allowance including cushions. Altari is a 780,000 ֏ retail comparison only; it is out of stock and has a different footprint."
+    },
+    {
+      "id": "living-chairs",
+      "room": "living",
+      "name": "Ashley Novelda accent chair · A3000081",
+      "qty": 2,
+      "unitAMD": 480000,
+      "kind": "retail",
+      "supplier": "Ashley HomeStore Armenia",
+      "sourceId": "novelda",
+      "dimensions": "65 W × 84 D × 81 H cm",
+      "availability": "Listed in stock; quantity of two to confirm",
+      "note": "Neutral upholstery and exposed timber. The viewer uses the listed envelope with a schematic shape."
+    },
+    {
+      "id": "living-coffee",
+      "room": "living",
+      "name": "Ashley Isanti marble coffee table · T652-8",
+      "qty": 1,
+      "unitAMD": 389000,
+      "kind": "retail",
+      "supplier": "Ashley HomeStore Armenia",
+      "sourceId": "isanti-coffee",
+      "dimensions": "Ø83 × 46 H cm",
+      "availability": "Listed in stock",
+      "note": "White marble and mango wood. The lounge zone is retained; the table is positioned for approximately 40 cm clear space in front of the sofa."
+    },
+    {
+      "id": "living-side",
+      "room": "living",
+      "name": "Ashley Isanti marble end table · T652-6",
+      "qty": 1,
+      "unitAMD": 280000,
+      "kind": "retail",
+      "supplier": "Ashley HomeStore Armenia",
+      "sourceId": "isanti-side",
+      "dimensions": "Ø56 × 57 H cm",
+      "availability": "Listed in stock",
+      "note": "Placed beside the sofa; this is a taller end table, not a nested coffee table."
+    },
+    {
+      "id": "living-dining",
+      "room": "living",
+      "name": "Compact dining table + four upholstered chairs",
+      "qty": 1,
+      "unitAMD": 950000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": "lyncott-benchmark",
+      "dimensions": "Table ~123 W × 80 D cm; 4 compact chairs",
+      "availability": "Made to measure · quotation required",
+      "note": "One complete custom set, sized for the existing dining zone. Lyncott's 698,000 ֏ five-piece set is a price benchmark; the model is not a resized Lyncott product."
+    },
+    {
+      "id": "living-media",
+      "room": "living",
+      "name": "Floating media console + timber furniture back panel",
+      "qty": 1,
+      "unitAMD": 800000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "Console ~237 W × 40 D cm; back panel ~235 W cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Smoked oak veneer, ivory fronts and concealed hardware. Includes furniture back panel; TV, wiring and building work are excluded."
+    },
+    {
+      "id": "living-rug",
+      "room": "living",
+      "name": "JYSK RYPESTARR beige rug",
+      "qty": 1,
+      "unitAMD": 101090,
+      "kind": "retail",
+      "supplier": "JYSK Armenia",
+      "sourceId": "rypestarr",
+      "dimensions": "200 × 300 cm",
+      "availability": "Page lists one at Megamall",
+      "note": "Polypropylene pile; no wool claim. Oriented with the 3 m side across the lounge."
+    },
+    {
+      "id": "living-lamp",
+      "room": "living",
+      "name": "Normann Copenhagen Shelter table lamp",
+      "qty": 1,
+      "unitAMD": 189000,
+      "kind": "retail",
+      "supplier": "NERA Yerevan",
+      "sourceId": "shelter",
+      "dimensions": "Ø41 × 41 H cm",
+      "availability": "Page lists one remaining",
+      "note": "Portable white steel lamp on the living end table. Electrical installation is outside scope."
+    },
+    {
+      "id": "kitchen-cabinetry",
+      "room": "kitchen",
+      "name": "Bespoke kitchen furniture + worktop",
+      "qty": 1,
+      "unitAMD": 3000000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": "kitchen-benchmark",
+      "dimensions": "Base run ~353 W × 62 D cm; tall housing ~72 W cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Premium allowance for fitted carcasses, ivory fronts, oak shelves, quality hardware, worktop and furniture fitting. Appliances, sink, tap, splashback tiling and service work excluded. AllDecor's 85,000 ֏/m² MDF listing is a basic benchmark only; its measurement basis and inclusions require confirmation, and it is not multiplied by floor area."
+    },
+    {
+      "id": "kitchen-breakfast",
+      "room": "kitchen",
+      "name": "Breakfast table + two compact chairs",
+      "qty": 1,
+      "unitAMD": 500000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "Table ~128 W × 56 D cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Complete custom furniture set with pale stone-look top and timber frame; compact footprint kept."
+    },
+    {
+      "id": "primary-bed",
+      "room": "primary",
+      "name": "Compact upholstered king bed frame",
+      "qty": 1,
+      "unitAMD": 700000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "Mattress 180 × 200 cm; compact outer frame ~197 × 211 cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Custom headboard, frame and slatted support included. Mattress priced separately. Long imported bed frames were avoided to preserve the foot clearance."
+    },
+    {
+      "id": "primary-mattress",
+      "room": "primary",
+      "name": "DUSON Opera Diva mattress · 00-00022136",
+      "qty": 1,
+      "unitAMD": 474200,
+      "kind": "retail",
+      "supplier": "DUSON Armenia",
+      "sourceId": "duson180",
+      "dimensions": "180 × 200 cm",
+      "availability": "Orderable listing; stock quantity not stated",
+      "note": "Price is the direct product-page amount; no additional discount applied. Mattress thickness is unverified and schematic in the model."
+    },
+    {
+      "id": "primary-wardrobe",
+      "room": "primary",
+      "name": "Fitted smoked-oak wardrobe",
+      "qty": 1,
+      "unitAMD": 950000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": "wardrobe-benchmark",
+      "dimensions": "~170 W × 64 D × 220 H cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Premium veneer, fitted internals and soft-close hardware. Design allowance, not a quote. JYSK's 255,990 ֏ LINTRUP is a foil-finished retail comparison of different dimensions."
+    },
+    {
+      "id": "primary-bedsides",
+      "room": "primary",
+      "name": "Compact oak bedside table",
+      "qty": 2,
+      "unitAMD": 140000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~Ø41 × 48 H cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Two bespoke pieces with pale tops and fine fluted oak detail. Lamps are separate."
+    },
+    {
+      "id": "primary-vanity",
+      "room": "primary",
+      "name": "Dressing table with round mirror",
+      "qty": 1,
+      "unitAMD": 400000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~114 W × 48 D cm; mirror Ø64 cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Custom furniture and mirror; chair priced separately."
+    },
+    {
+      "id": "primary-chair",
+      "room": "primary",
+      "name": "HAY Layout Chair 132",
+      "qty": 1,
+      "unitAMD": 160000,
+      "kind": "retail",
+      "supplier": "NERA Yerevan",
+      "sourceId": "hay-layout",
+      "dimensions": "47.5 W × 55 D × 79 H cm",
+      "availability": "Page lists one remaining",
+      "note": "Single compact vanity chair; schematic model with the listed external envelope."
+    },
+    {
+      "id": "primary-rug",
+      "room": "primary",
+      "name": "JYSK LUCERNE beige rug",
+      "qty": 1,
+      "unitAMD": 84000,
+      "kind": "retail",
+      "supplier": "JYSK Armenia",
+      "sourceId": "lucerne200",
+      "dimensions": "200 × 300 cm",
+      "availability": "Page lists one at Erebuni",
+      "note": "Displayed offer 84,000 ֏; crossed-out regular price 119,990 ֏. 40% wool / 60% polyester face. Reconfirm offer before ordering."
+    },
+    {
+      "id": "primary-lamps",
+      "room": "primary",
+      "name": "Portable bedside lamp",
+      "qty": 2,
+      "unitAMD": 120000,
+      "kind": "allowance",
+      "supplier": "Local retail selection · allowance",
+      "sourceId": null,
+      "dimensions": "Compact lamps to suit Ø41 cm tables",
+      "availability": "Final product selection and price required",
+      "note": "Design allowance for two matching bedside lamps, including bulbs."
+    },
+    {
+      "id": "primary-bedding",
+      "room": "primary",
+      "name": "King bedding, pillows and throw",
+      "qty": 1,
+      "unitAMD": 180000,
+      "kind": "allowance",
+      "supplier": "Local retail selection · allowance",
+      "sourceId": null,
+      "dimensions": "For 180 × 200 cm mattress",
+      "availability": "Final product selection and price required",
+      "note": "Coordinated ivory and warm-grey bedding package; final textile selection pending."
+    },
+    {
+      "id": "bedroom-bed",
+      "room": "bedroom",
+      "name": "Compact upholstered double bed frame",
+      "qty": 1,
+      "unitAMD": 600000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": "bed-benchmark",
+      "dimensions": "Mattress 160 × 200 cm; compact outer frame ~177 × 211 cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Custom headboard, frame and slatted support included. Mattress separate. JYSK KONGSBERG 147,890 ֏ is an entry-price frame benchmark only, not the custom item."
+    },
+    {
+      "id": "bedroom-mattress",
+      "room": "bedroom",
+      "name": "DUSON Opera Diva mattress · 00-00022132",
+      "qty": 1,
+      "unitAMD": 420400,
+      "kind": "retail",
+      "supplier": "DUSON Armenia",
+      "sourceId": "duson160",
+      "dimensions": "160 × 200 cm",
+      "availability": "Orderable listing; stock quantity not stated",
+      "note": "Direct product-page amount. Mattress thickness is unverified and schematic in the model."
+    },
+    {
+      "id": "bedroom-wardrobe",
+      "room": "bedroom",
+      "name": "Compact fitted smoked-oak wardrobe",
+      "qty": 1,
+      "unitAMD": 500000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~95 W × 50 D × 212 H cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Sliding fronts and shallow storage sized to the drawing-based corner. Internal rail layout and final joinery survey required; the planning allowance is unchanged."
+    },
+    {
+      "id": "bedroom-bedsides",
+      "room": "bedroom",
+      "name": "Compact oak bedside table",
+      "qty": 2,
+      "unitAMD": 140000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~Ø41 × 48 H cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Two bespoke pieces; lamps separate."
+    },
+    {
+      "id": "bedroom-rug",
+      "room": "bedroom",
+      "name": "JYSK LUCERNE beige rug",
+      "qty": 1,
+      "unitAMD": 87290,
+      "kind": "retail",
+      "supplier": "JYSK Armenia",
+      "sourceId": "lucerne160",
+      "dimensions": "160 × 230 cm",
+      "availability": "Page lists one at Dalma",
+      "note": "40% wool / 60% polyester face. Smaller footprint keeps the bedroom's circulation clear."
+    },
+    {
+      "id": "bedroom-lamps",
+      "room": "bedroom",
+      "name": "Portable bedside lamp",
+      "qty": 2,
+      "unitAMD": 120000,
+      "kind": "allowance",
+      "supplier": "Local retail selection · allowance",
+      "sourceId": null,
+      "dimensions": "Compact lamps to suit Ø41 cm tables",
+      "availability": "Final product selection and price required",
+      "note": "Design allowance for two matching bedside lamps, including bulbs."
+    },
+    {
+      "id": "bedroom-bedding",
+      "room": "bedroom",
+      "name": "Double bedding, pillows and throw",
+      "qty": 1,
+      "unitAMD": 180000,
+      "kind": "allowance",
+      "supplier": "Local retail selection · allowance",
+      "sourceId": null,
+      "dimensions": "For 160 × 200 cm mattress",
+      "availability": "Final product selection and price required",
+      "note": "Coordinated ivory and warm-grey textile package; selection pending."
+    },
+    {
+      "id": "hall-console",
+      "room": "hall",
+      "name": "Entry console with mirror",
+      "qty": 1,
+      "unitAMD": 300000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~116 L × 45 D cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Custom shallow console and wall mirror, sized for the entrance."
+    },
+    {
+      "id": "hall-storage",
+      "room": "hall",
+      "name": "Fitted entry storage",
+      "qty": 1,
+      "unitAMD": 550000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~115 W × 43 D × 212 H cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Shallow shoe/coat storage positioned before the narrow corridor, with fitted internal shelving."
+    },
+    {
+      "id": "bathroom-vanity",
+      "room": "bathroom",
+      "name": "Floating bathroom cabinet + mirror",
+      "qty": 1,
+      "unitAMD": 250000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "Cabinet ~49 W × 61 D cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Furniture carcass, top and mirror only. Basin, tap, shower, toilet and plumbing excluded."
+    },
+    {
+      "id": "balcony-kitchen-chair",
+      "room": "balcony-kitchen",
+      "name": "Oriengo outdoor chair · 171144C",
+      "qty": 1,
+      "unitAMD": 110000,
+      "kind": "retail",
+      "supplier": "Ashley HomeStore Armenia",
+      "sourceId": "oriengo",
+      "dimensions": "62 W × 56 D × 75 H cm",
+      "availability": "Listed in stock; two total to confirm",
+      "note": "One chair for this balcony. Metal base and grey finish; source arrangement retained."
+    },
+    {
+      "id": "balcony-kitchen-table",
+      "room": "balcony-kitchen",
+      "name": "Small outdoor side table",
+      "qty": 1,
+      "unitAMD": 80000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~Ø44 cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Weather-suitable table allowance, preserving the existing compact table footprint."
+    },
+    {
+      "id": "balcony-bedroom-chair",
+      "room": "balcony-bedroom",
+      "name": "Oriengo outdoor chair · 171144C",
+      "qty": 1,
+      "unitAMD": 110000,
+      "kind": "retail",
+      "supplier": "Ashley HomeStore Armenia",
+      "sourceId": "oriengo",
+      "dimensions": "62 W × 56 D × 75 H cm",
+      "availability": "Listed in stock; two total to confirm",
+      "note": "One chair for this balcony. Metal base and grey finish; source arrangement retained."
+    },
+    {
+      "id": "balcony-bedroom-table",
+      "room": "balcony-bedroom",
+      "name": "Small outdoor side table",
+      "qty": 1,
+      "unitAMD": 80000,
+      "kind": "allowance",
+      "supplier": "Local workshop · quote required",
+      "sourceId": null,
+      "dimensions": "~Ø42 cm",
+      "availability": "Made to measure · quotation required",
+      "note": "Weather-suitable table allowance, preserving the existing compact table footprint."
+    },
+    {
+      "id": "whole-curtains",
+      "room": "whole",
+      "name": "Made-to-measure sheers, drapes and tracks",
+      "qty": 1,
+      "unitAMD": 950000,
+      "kind": "allowance",
+      "supplier": "Local textile studio · quote required",
+      "sourceId": "curtain-benchmark",
+      "dimensions": "Window widths and drops to be surveyed",
+      "availability": "Quotation required",
+      "note": "Planning allowance for made-to-measure sheers, lined drapes, tracks and fitting across the glazed rooms. LEKA at 18,690 ֏ per 140×300 cm ready-made panel is a lower-cost benchmark, not a quote for custom drapery."
+    },
+    {
+      "id": "whole-decor",
+      "room": "whole",
+      "name": "Cushions, ceramics and plants",
+      "qty": 1,
+      "unitAMD": 300000,
+      "kind": "allowance",
+      "supplier": "Local selection · allowance",
+      "sourceId": null,
+      "dimensions": "Whole apartment",
+      "availability": "Selection pending",
+      "note": "Allowance for the decorative accessories represented in the model."
+    },
+    {
+      "id": "whole-delivery",
+      "room": "whole",
+      "name": "Furniture delivery, carrying and assembly",
+      "qty": 1,
+      "unitAMD": 450000,
+      "kind": "allowance",
+      "supplier": "Service allowance · confirm with suppliers",
+      "sourceId": null,
+      "dimensions": "One apartment",
+      "availability": "Final delivery terms required",
+      "note": "Budget buffer for transport, carrying and loose-furniture assembly. Deduct free retailer services and any fitting already included in a joinery quote; do not pay twice."
+    }
+  ]
+}
