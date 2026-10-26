@@ -1,5 +1,5 @@
 // Offline export of the exact viewer model. Requires @napi-rs/canvas in Node.
-// Usage: node export-model.mjs [output.glb]
+// Usage: node export-model.mjs [output.glb] [--layout proposed|original] [--cutaway]
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -8,8 +8,24 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(projectRoot, 'dist');
-const output = path.resolve(process.argv[2] || path.join(projectRoot, '..', 'VV8-home-area-calibrated.glb'));
-const exportCutaway = process.argv.includes('--cutaway');
+function parseArguments(args) {
+  let filename, layout = 'proposed', cutaway = false;
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+    if (arg === '--cutaway') cutaway = true;
+    else if (arg === '--layout') layout = args[++i];
+    else if (arg.startsWith('--layout=')) layout = arg.slice('--layout='.length);
+    else if (arg.startsWith('-')) throw new Error('Unknown export option: ' + arg);
+    else if (filename) throw new Error('Specify only one output GLB path.');
+    else filename = arg;
+  }
+  if (!['proposed', 'original'].includes(layout)) throw new Error('--layout must be proposed or original.');
+  return { output: path.resolve(filename || path.join(projectRoot, '..', `VV8-${layout}-layout.glb`)), layout, cutaway };
+}
+let options;
+try { options = parseArguments(process.argv.slice(2)); }
+catch (error) { console.error('Model export failed: ' + error.message); process.exit(1); }
+const { output, layout: requestedLayout, cutaway: exportCutaway } = options;
 let canvasPackage;
 try { canvasPackage = require('@napi-rs/canvas'); }
 catch (error) {
@@ -79,16 +95,31 @@ async function resolveViewerModule(relativePath) {
 async function importViewerModule(relativePath) { return import(await resolveViewerModule(relativePath)); }
 
 try {
-  const [THREE, { createArchitecture }, { createFurnishings }, { GLTFExporter }] = await Promise.all([
+  const [THREE, { createArchitecture }, { createFurnishings }, { createLayoutModel }, { GLTFExporter }] = await Promise.all([
     import(threeURL), importViewerModule('architecture.js'), importViewerModule('furnishings.js'),
+    importViewerModule('layout-model.js'),
     importViewerModule('vendor/examples/jsm/exporters/GLTFExporter.js')
   ]);
   const data = JSON.parse(fs.readFileSync(path.join(dist, 'geometry.json'), 'utf8'));
   const budget = JSON.parse(fs.readFileSync(path.join(dist, 'budget.json'), 'utf8'));
   const { attachFurnitureBudget } = await import(pathToFileURL(path.join(dist, 'budget-model.js')).href);
   const architecture = createArchitecture(data);
-  architecture.root.add(createFurnishings(data));
-  attachFurnitureBudget(architecture.root, budget);
+  const furnishings = createFurnishings(data);
+  const layout = createLayoutModel({ data, furnishings });
+  const preset = layout.presets.find(preset => preset.id === requestedLayout);
+  if (!preset) throw new Error('The viewer does not define the requested layout: ' + requestedLayout);
+  const layoutValidation = layout.validate(preset.state);
+  if (!layoutValidation.valid) throw new Error('Requested layout is invalid: ' + layoutValidation.errors.join(' '));
+  const acceptedLayout = layout.apply(preset.state);
+  if (!acceptedLayout) throw new Error('The viewer rejected the requested layout.');
+  architecture.root.add(furnishings);
+  // Keep this schema identical to app.js: exported poses describe the accepted
+  // scene state, with the existing walls/piers/openings policy carried alongside.
+  architecture.root.userData.layoutPlan = {
+    ...JSON.parse(JSON.stringify(acceptedLayout)), units: 'metres', rotationUnits: 'degrees',
+    architecturePolicy: data.structurePolicy
+  };
+  const budgetSummary = attachFurnitureBudget(architecture.root, budget);
   architecture.update({ walls: exportCutaway ? 'cutaway' : 'full', height: data.wallHeight || 3, mode: 'dollhouse' });
   architecture.root.userData.roomAreas = Object.fromEntries(Object.entries(data.rooms).map(([id, room]) => [id, { brochureArea: room.brochureArea ?? room.targetArea, modelArea: room.modelArea }]));
   architecture.root.userData.dimensionChecks = data.dimensionChecks || [];
@@ -107,7 +138,29 @@ try {
   const modelNode = json.nodes.find(node => node.extras?.roomAreas && node.extras?.units === 'metres');
   if (!modelNode || modelNode.extras.ceilingHeight !== (data.wallHeight || 3)) throw new Error('Export lost model dimensions or height metadata.');
   const roomIds = [...new Set(json.nodes.map(node => node.extras?.roomId).filter(Boolean))];
-  if (roomIds.length !== 8) throw new Error('Export does not contain all eight room IDs.');
+  if (roomIds.length !== 8 || JSON.stringify([...roomIds].sort()) !== JSON.stringify(Object.keys(data.rooms).sort())) throw new Error('Export does not contain all eight room IDs.');
+  const exportedPlan = modelNode.extras.layoutPlan;
+  if (!exportedPlan || JSON.stringify(exportedPlan) !== JSON.stringify(architecture.root.userData.layoutPlan)) throw new Error('Export lost the accepted layout or architecture policy.');
+  if (JSON.stringify(modelNode.extras.furnitureBudget) !== JSON.stringify(budgetSummary)) throw new Error('Export lost the furniture budget summary.');
+  const expectedFacade = architecture.root.userData.facadeProfile;
+  if (JSON.stringify(modelNode.extras.facadeProfile) !== JSON.stringify(expectedFacade) || Math.abs(expectedFacade.head - ((data.wallHeight || 3) - expectedFacade.headClearance)) > 1e-6) throw new Error('Export lost the near-full-height facade profile.');
+  const placementNodes = json.nodes.filter(node => node.extras?.layoutItem);
+  if (placementNodes.length !== layout.items.length) throw new Error('Export lost furniture placement assemblies.');
+  let maxPlacementMatrixError = 0;
+  for (const item of layout.items) {
+    const nodes = placementNodes.filter(node => node.extras.layoutItem.id === item.id);
+    const node = nodes[0], pose = acceptedLayout.placements[item.id];
+    if (nodes.length !== 1 || JSON.stringify(node.extras.layoutPose) !== JSON.stringify(pose)) throw new Error('Exported placement metadata differs for ' + item.id);
+    const matrix = node.matrix ? new THREE.Matrix4().fromArray(node.matrix) : new THREE.Matrix4().compose(
+      new THREE.Vector3().fromArray(node.translation || [0, 0, 0]),
+      new THREE.Quaternion().fromArray(node.rotation || [0, 0, 0, 1]),
+      new THREE.Vector3().fromArray(node.scale || [1, 1, 1])
+    );
+    const expectedMatrix = layout.findItem(item.id).object.matrix;
+    const difference = Math.max(...matrix.elements.map((value, i) => Math.abs(value - expectedMatrix.elements[i])));
+    maxPlacementMatrixError = Math.max(maxPlacementMatrixError, difference);
+    if (difference > 1e-6) throw new Error('Exported transform differs from the accepted layout for ' + item.id);
+  }
   // Validate decoded image content, not just the presence of texture records.
   const binaryStart = 20 + bytes.readUInt32LE(12) + 8;
   for (const [index, imageDef] of (json.images || []).entries()) {
@@ -120,7 +173,16 @@ try {
     if (!pixels.some((value, i) => i % 4 === 3 && value > 0)) throw new Error('Embedded texture ' + index + ' is empty.');
   }
   fs.writeFileSync(output, bytes);
-  console.log(JSON.stringify({ file: output, bytes: bytes.length, megabytes: +(bytes.length / 1e6).toFixed(3), magic: bytes.subarray(0, 4).toString(), version: bytes.readUInt32LE(4), meshes: json.meshes?.length, nodes: json.nodes?.length, materials: json.materials?.length, images: json.images?.length, roomIds, modelMetadata: modelNode.extras }, null, 2));
+  console.log(JSON.stringify({
+    file: output, bytes: bytes.length, megabytes: +(bytes.length / 1e6).toFixed(3),
+    magic: bytes.subarray(0, 4).toString(), version: bytes.readUInt32LE(4),
+    meshes: json.meshes?.length, nodes: json.nodes?.length, materials: json.materials?.length,
+    images: json.images?.length, roomIds,
+    layout: { preset: exportedPlan.preset, assemblies: placementNodes.length, movable: layout.items.filter(item => !item.locked).length, maxPlacementMatrixError, validation: layoutValidation },
+    ceilingHeight: modelNode.extras.ceilingHeight, ceilingHeightBasis: modelNode.extras.ceilingHeightBasis,
+    facadeProfile: modelNode.extras.facadeProfile, structurePolicy: exportedPlan.architecturePolicy,
+    furnitureBudget: modelNode.extras.furnitureBudget
+  }, null, 2));
 } catch (error) {
   console.error('Model export failed: ' + error.message);
   process.exitCode = 1;

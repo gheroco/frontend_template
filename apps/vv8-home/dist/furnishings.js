@@ -532,6 +532,68 @@ export function createFurnishings(data) {
     o.userData.roomId=id;
     if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}
   });
+  // Editor assemblies preserve every generated mesh, material and budget item.
+  // Their local axes start at zero; existing chair angles remain inside the wrapper.
+  const sceneChildren=Object.fromEntries(Object.entries(roomGroups).map(([id,g])=>[id,[...g.children]]));
+  const claimed=new Set(),layoutIds=[];
+  const tagged=(room,id)=>sceneChildren[room].filter(o=>o.userData.budgetItemId===id);
+  const named=(room,text)=>sceneChildren[room].filter(o=>o.name===text);
+  function assembly(id,name,roomId,objects,options={}){
+    objects=[...new Set(objects.filter(Boolean))];if(!objects.length)return null;
+    for(const o of objects)if(claimed.has(o))throw new Error('Furniture assigned twice: '+id);
+    root.updateMatrixWorld(true);
+    const bounds=new THREE.Box3();for(const o of objects)bounds.union(new THREE.Box3().setFromObject(o));
+    const center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());
+    const wrapper=new THREE.Group();wrapper.name='Layout · '+id;wrapper.position.set(center.x,0,center.z);root.add(wrapper);
+    root.updateMatrixWorld(true);for(const o of objects){wrapper.attach(o);claimed.add(o);}root.updateMatrixWorld(true);
+    const inverse=new THREE.Matrix4().copy(wrapper.matrixWorld).invert(),parts=[];
+    wrapper.traverse(o=>{
+      o.userData.layoutItemId=id;
+      if(!o.isMesh)return;
+      o.geometry.computeBoundingBox();
+      const box=o.geometry.boundingBox.clone().applyMatrix4(new THREE.Matrix4().multiplyMatrices(inverse,o.matrixWorld));
+      parts.push({minX:box.min.x,maxX:box.max.x,minZ:box.min.z,maxZ:box.max.z,minY:box.min.y,maxY:box.max.y});
+    });
+    const budgetIds=[...new Set(objects.flatMap(o=>{const result=[];o.traverse(child=>{if(child.userData.budgetItemId)result.push(child.userData.budgetItemId);});return result;}))];
+    const round=n=>Math.round(n*1e6)/1e6;
+    wrapper.userData.layoutItem={id,name,roomId,width:round(size.x),depth:round(size.z),height:round(size.y),
+      locked:!!options.locked,kind:options.kind||'furniture',
+      allowedRoomIds:options.allowedRoomIds||(['living','hall'].includes(roomId)?['living','hall']:[roomId]),
+      footprint:[[-size.x/2,-size.z/2],[size.x/2,-size.z/2],[size.x/2,size.z/2],[-size.x/2,size.z/2]],
+      clearanceNote:options.clearanceNote||'Չափերը պահպանված են։ Ամբողջ հավաքածուն տեղափոխվում է միասին։',
+      budgetItemIds:budgetIds,original:{x:round(center.x),z:round(center.z),rotation:0},collisionParts:parts};
+    wrapper.userData.roomId=roomId;layoutIds.push(id);return wrapper;
+  }
+  const fixedNote='Ամրացված կահույք կամ ինժեներական հանգույց․ տեղը այս խմբագրիչում չի փոխվում։';
+  assembly('kitchen-breakfast','Նախաճաշի սեղան և երկու աթոռ','kitchen',tagged('kitchen','kitchen-breakfast'));
+  const northAssembly=sceneChildren.kitchen.filter(o=>!claimed.has(o)&&new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3()).z<1.45);
+  assembly('kitchen-fixed','Խոհանոցի ամրացված կահույք և սարքավորումներ','kitchen',northAssembly,{locked:true,kind:'fixed',clearanceNote:fixedNote});
+  assembly('living-sofa','Եռատեղ բազմոց','living',tagged('living','living-sofa'));
+  tagged('living','living-chairs').forEach((o,i)=>assembly('living-chair-'+(i+1),'Novelda բազկաթոռ '+(i+1),'living',[o],{clearanceNote:'Պահպանված են ապրանքի չափերն ու սկզբնական թեքությունը։ Ցուցադրված է հատակին զբաղեցրած ամբողջ ուղղանկյունը։'}));
+  assembly('living-coffee','Isanti սուրճի սեղան և պարագաներ','living',[...tagged('living','living-coffee'),...named('living','Coffee table accessories')]);
+  assembly('living-side','Isanti կողասեղան և Shelter լամպ','living',[...tagged('living','living-side'),...tagged('living','living-lamp')]);
+  assembly('living-media','Հեռուստացույցի ամրացված կահույք','living',tagged('living','living-media'),{locked:true,kind:'fixed',clearanceNote:fixedNote});
+  assembly('living-dining','Ճաշասեղան և չորս աթոռ','living',tagged('living','living-dining'),{clearanceNote:'Սեղանն ու չորս աթոռները մեկ հավաքածու են։ Նրանց հետևում անհրաժեշտ է լրացուցիչ տարածք՝ նստելու համար։'});
+  assembly('living-rug','Հյուրասենյակի գորգ','living',tagged('living','living-rug'),{kind:'rug'});
+  assembly('hall-console','Մուտքի պահոց, հայելի և բույս','hall',[...tagged('hall','hall-console'),...named('hall','Potted plant')]);
+  assembly('hall-storage','Մուտքի հագուստի պահարան','hall',tagged('hall','hall-storage'),{clearanceNote:'Պահարանի տեղափոխումը չի փոխում պատերը։ Ամրացման աշխատանքները պետք է ճշտել պատրաստողի հետ։'});
+  for(const roomId of ['primary','bedroom']){
+    assembly(roomId+'-bed',roomId==='primary'?'Հիմնական ննջասենյակի մահճակալ':'Երկրորդ ննջասենյակի մահճակալ',roomId,tagged(roomId,roomId+'-bed'));
+    const tables=tagged(roomId,roomId+'-bedsides').sort((a,b)=>a.position.x-b.position.x),lamps=tagged(roomId,roomId+'-lamps');
+    tables.forEach((table,i)=>{const lamp=lamps.reduce((best,o)=>!best||o.position.distanceToSquared(table.position)<best.position.distanceToSquared(table.position)?o:best,null);assembly(roomId+'-bedside-'+(i+1),'Կողասեղան և լամպ '+(i+1),roomId,[table,lamp]);});
+    assembly(roomId+'-wardrobe',roomId==='primary'?'Հիմնական ննջասենյակի պահարան':'Երկրորդ ննջասենյակի սահող պահարան',roomId,tagged(roomId,roomId+'-wardrobe'),{clearanceNote:roomId==='bedroom'?'Սահող դռներով պահարան․ առջևի ազատ տարածքը ստուգեք տեղում։':'Պահարանի բացվող դռների առջև պետք է ազատ տարածք պահել։'});
+    assembly(roomId+'-rug',roomId==='primary'?'Հիմնական ննջասենյակի գորգ':'Երկրորդ ննջասենյակի գորգ',roomId,tagged(roomId,roomId+'-rug'),{kind:'rug'});
+  }
+  assembly('primary-workspace','Աշխատանքային և հարդարման անկյուն՝ սեղանով ու աթոռով','primary',[...tagged('primary','primary-vanity'),...tagged('primary','primary-chair')],{kind:'workspace',clearanceNote:'Օգտագործվում են նույն սեղանը, հայելին և HAY աթոռը։ Նոր աշխատասեղան կամ հավելյալ գնման տող չի ավելացվել։'});
+  assembly('bathroom-fixed','Սանհանգույցի ամրացված կահույք և սարքավորումներ','bathroom',sceneChildren.bathroom,{locked:true,kind:'fixed',clearanceNote:fixedNote});
+  for(const roomId of ['balcony-kitchen','balcony-bedroom']){
+    assembly(roomId+'-chair','Պատշգամբի Oriengo աթոռ',roomId,tagged(roomId,roomId+'-chair'));
+    assembly(roomId+'-table','Պատշգամբի փոքր սեղան և պարագաներ',roomId,[...tagged(roomId,roomId+'-table'),...sceneChildren[roomId].filter(o=>o.userData.budgetItemId==='whole-decor')]);
+  }
+  for(const roomId of ['kitchen','living']){
+    sceneChildren[roomId].filter(o=>!claimed.has(o)&&o.name==='Potted plant').forEach((o,i)=>assembly(roomId+'-plant-'+(i+1),'Դեկորատիվ բույս',roomId,[o],{locked:true,kind:'decor',clearanceNote:'Բույսը պահպանված է նախնական անկյունում։ Սաղարթը չի համարվում անցումը փակող կահույք։'}));
+  }
+  root.userData.layoutItemIds=layoutIds;
   root.userData.units='metres';
   root.userData.note='Furniture-only plan: listed retail dimensions and estimated custom sizes are distinguished in item metadata. Furnishings fit the supplied dimensioned plan without scaling retail products. Forms are reference-informed reconstructions, not manufacturer CAD. Mattress heights and sanitary positions remain estimates.';
   return root;

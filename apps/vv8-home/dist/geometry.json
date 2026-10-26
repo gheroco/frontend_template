@@ -5,6 +5,8 @@
   "listedAreaSum": 81.6,
   "modelAreaSum": 81.8975,
   "wallHeight": 3.0,
+  "wallHeightBasis": "provided",
+  "wallHeightSource": "Այս զրույցում Դուք նշել եք առաստաղի 3.00 մ բարձրություն։",
   "exteriorWallThickness": 0.35,
   "interiorWallThickness": 0.1,
   "wallThicknesses": {
@@ -831,14 +833,15 @@
         7.25,
         2.35
       ],
-      "sill": 0.025,
-      "head": 2.35,
+      "sill": 0.03,
+      "head": 2.93,
       "opening": {
         "from": 0,
         "to": 0.8
       },
       "panels": 2,
-      "basis": "drawing whole opening; leaf division inferred"
+      "basis": "drawing whole opening; leaf division inferred",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
     },
     {
       "name": "Living to upper balcony opening",
@@ -850,14 +853,15 @@
         8.85,
         2.35
       ],
-      "sill": 0.025,
-      "head": 2.35,
+      "sill": 0.03,
+      "head": 2.93,
       "opening": {
         "from": 0,
         "to": 0.8
       },
       "panels": 2,
-      "basis": "derived complete bay"
+      "basis": "derived complete bay",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
     },
     {
       "name": "Living east facade glazing",
@@ -869,10 +873,11 @@
         8.8,
         5.75
       ],
-      "sill": 0.1,
-      "head": 2.5,
+      "sill": 0.03,
+      "head": 2.93,
       "panels": 4,
-      "basis": "reconciled facade: 3400 outer chain, 3000 marked inner span has ambiguous endpoints"
+      "basis": "reconciled facade: 3400 outer chain, 3000 marked inner span has ambiguous endpoints",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
     },
     {
       "name": "Bedroom balcony opening · 1800 mm",
@@ -884,14 +889,15 @@
         7.25,
         8.65
       ],
-      "sill": 0.025,
-      "head": 2.35,
+      "sill": 0.03,
+      "head": 2.93,
       "opening": {
         "from": 0.9,
         "to": 1.8
       },
       "panels": 2,
-      "basis": "drawing whole opening; leaf division inferred"
+      "basis": "drawing whole opening; leaf division inferred",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
     },
     {
       "name": "Primary to lower balcony opening",
@@ -903,14 +909,15 @@
         8.55,
         9.05
       ],
-      "sill": 0.025,
-      "head": 2.35,
+      "sill": 0.03,
+      "head": 2.93,
       "opening": {
         "from": 0,
         "to": 0.8
       },
       "panels": 2,
-      "basis": "1150 mm inset; leaf division inferred"
+      "basis": "1150 mm inset; leaf division inferred",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
     },
     {
       "name": "Primary east facade glazing",
@@ -922,10 +929,11 @@
         8.8,
         11.95
       ],
-      "sill": 0.1,
-      "head": 2.5,
+      "sill": 0.03,
+      "head": 2.93,
       "panels": 3,
-      "basis": "2100 mm reconstructed; printed 2150 mm differs 50 mm under selected room depths"
+      "basis": "2100 mm reconstructed; printed 2150 mm differs 50 mm under selected room depths",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
     }
   ],
   "doors": [
@@ -1771,7 +1779,7 @@
     }
   ],
   "assumptions": [
-    "Դռան փեղկի 2.08 մ բարձրությունը, ապակեպատ բացվածքների վերին եզրերի 2.35/2.50 մ բարձրություններն ու բազրիքի 1.05 մ բարձրությունը գծագրում նշված չեն։",
+    "3.00 մ առաստաղի դեպքում ապակեպատման ստորին եզրը ընտրված է 0.03 մ, վերին եզրը՝ 2.93 մ։ Սրանք ճակատի ձեր տրամադրած պատկերից արված տեսողական ենթադրություններ են, ոչ թե չափագրված բարձրություններ։ Դռան բացվող փեղկը 2.08 մ է՝ վերևում անշարժ ապակիով։ Բազրիքի 1.05 մ բարձրությունն էլ ենթադրված է։",
     "Գծագրի չափերը կարդացվել են միլիմետրերով և վերածվել մետրերի։ Պատկերի համար մեկ ընդհանուր մասշտաբ չի կիրառվել։",
     "Սանհանգույցի հաղորդակցությունների գոտու 320 մմ հաստությունը և պատշգամբի շրջանակների ու խորշերի մի քանի շեղումները հաշվարկային համադրումներ են, ոչ թե գծագրում նշված պատերի հաստություններ։",
     "Մուտքի և հյուրասենյակի հատակի գոտիների սահմանը պայմանական է․ այդտեղ նոր պատ չի ավելացվել։",
@@ -1779,6 +1787,22 @@
     "Սենյակների մակերեսները հաշվարկված են վերակառուցված մաքուր եզրագծերից և կարող են տարբերվել բրոշյուրի նշումներից։"
   ],
   "accuracy": "Վերակառուցման հիմքը գծագրի չափերն են՝ տեղային երկարություններն ու դռների լայնությունները։ Չճշտված ծայրակետերը, խորշերի ենթադրված շեղումներն ու բացվածքների ենթադրված բարձրությունները բացահայտ նշված են։ Սա տեղում կատարված շինարարական չափագրում չէ։",
-  "wallHeightBasis": "provided",
-  "wallHeightSource": "Այս զրույցում Դուք նշել եք առաստաղի 3.00 մ բարձրություն։"
+  "facadeProfile": {
+    "sill": 0.03,
+    "headClearance": 0.07,
+    "transomHeight": 2.1,
+    "mullionWidth": 0.045,
+    "mullionDepth": 0.075,
+    "frameColor": "#2d3333",
+    "verticalBasis": "Ճակատի տրամադրված պատկերից տեսողական մեկնաբանություն․ պատուհանների չափագրման փաստաթուղթ չէ։",
+    "sourceImage": "./assets/exterior-building.jpg"
+  },
+  "structurePolicy": {
+    "existingWallsLocked": true,
+    "piersLocked": true,
+    "outlineLocked": true,
+    "wetServicesLocked": true,
+    "bearingStatus": "unverified",
+    "note": "Պատերն ու մույթերը ֆիքսված են։ Տրամադրված հատակագիծը չի հաստատում յուրաքանչյուր պատի կրող նշանակությունը․ դրա համար անհրաժեշտ է կոնստրուկտիվ գծագիր։ Առաջարկը փոխում է կահավորումն ու գոտևորումը։"
+  }
 }

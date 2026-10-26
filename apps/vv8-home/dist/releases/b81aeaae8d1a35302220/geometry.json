@@ -1,0 +1,1808 @@
+{
+  "units": "metres",
+  "source": "Ձեր տրամադրած չափագրված ճարտարապետական հատակագիծը՝ e3e507fe-2afd-4f5f-8c77-245715029f08.jpeg",
+  "sourceReportedTotal": 81.4,
+  "listedAreaSum": 81.6,
+  "modelAreaSum": 81.8975,
+  "wallHeight": 3.0,
+  "wallHeightBasis": "provided",
+  "wallHeightSource": "Այս զրույցում Դուք նշել եք առաստաղի 3.00 մ բարձրություն։",
+  "exteriorWallThickness": 0.35,
+  "interiorWallThickness": 0.1,
+  "wallThicknesses": {
+    "westExterior": 0.35,
+    "northExteriorAssumed": 0.35,
+    "lowerWestExterior": 0.2,
+    "southExteriorAssumed": 0.2,
+    "partitions": 0.1,
+    "bathroomServiceZoneDerived": 0.32,
+    "balconyPierWidth": 0.6
+  },
+  "axes": {
+    "bathX": 2.21,
+    "stepX": 2.15,
+    "hallX": 3.5,
+    "balX": 7.05,
+    "balconyGlazingX": 7.25,
+    "rightX": 8.8,
+    "outerRightX": 9.0,
+    "dividerY": 2.9,
+    "livingY": 6.3,
+    "stepY": 6.75,
+    "masterDoorY": 8.1,
+    "smallBottomY": 9.2,
+    "bottomY": 12.05,
+    "foyerY": 4.95,
+    "balconyStartY": 0.15,
+    "rail1X": 8.95,
+    "rail2X": 8.9,
+    "clearWestX": 0.35,
+    "lowerClearWestX": 2.25,
+    "clearEastX": 8.75,
+    "kitchenWestX": 2.37,
+    "bedroomWestX": 3.55,
+    "pierWestX": 6.75,
+    "pierEastX": 7.35,
+    "northClearY": 0.35,
+    "bottomClearY": 11.95
+  },
+  "rooms": {
+    "living": {
+      "polygon": [
+        [
+          0.75,
+          2.95
+        ],
+        [
+          6.75,
+          2.95
+        ],
+        [
+          6.75,
+          3.15
+        ],
+        [
+          7.35,
+          3.15
+        ],
+        [
+          7.35,
+          2.45
+        ],
+        [
+          8.75,
+          2.45
+        ],
+        [
+          8.75,
+          5.75
+        ],
+        [
+          8.55,
+          5.75
+        ],
+        [
+          8.55,
+          6.2
+        ],
+        [
+          7.05,
+          6.2
+        ],
+        [
+          7.05,
+          6.25
+        ],
+        [
+          2.25,
+          6.25
+        ],
+        [
+          2.25,
+          4.95
+        ],
+        [
+          0.35,
+          4.95
+        ],
+        [
+          0.35,
+          3.15
+        ],
+        [
+          0.75,
+          3.15
+        ]
+      ],
+      "brochureArea": 23.6,
+      "targetArea": 23.6,
+      "modelArea": 25.575,
+      "area": 25.575,
+      "labelAnchor": [
+        5.15,
+        4.7
+      ],
+      "walkAnchor": [
+        5.3,
+        5.4,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "Հյուրասենյակի և միջանցքի սահմանը պայմանական գոտևորում է․ գծագրում դրանք միացած են բաց անցումով։ Արևելյան ճակատում կա 450 մմ խորությամբ հետընկած հատված։"
+    },
+    "kitchen": {
+      "polygon": [
+        [
+          2.37,
+          0.35
+        ],
+        [
+          7.05,
+          0.35
+        ],
+        [
+          7.05,
+          0.9
+        ],
+        [
+          7.2,
+          0.9
+        ],
+        [
+          7.2,
+          2.35
+        ],
+        [
+          6.75,
+          2.35
+        ],
+        [
+          6.75,
+          2.85
+        ],
+        [
+          2.37,
+          2.85
+        ]
+      ],
+      "brochureArea": 11.4,
+      "targetArea": 11.4,
+      "modelArea": 11.7675,
+      "area": 11.7675,
+      "labelAnchor": [
+        4.65,
+        1.55
+      ],
+      "walkAnchor": [
+        4.4,
+        1.6,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "4.68 մ-ը հիմնական հեռավորությունն է մինչև վարագույրի հաշվարկային գիծը՝ X7.05։ Ապակեպատման խորշը հասնում է մինչև X7.20, իսկ 600 × 800 մմ կրող սյունը զբաղեցնում է հարավարևելյան անկյան մի մասը։"
+    },
+    "primary": {
+      "polygon": [
+        [
+          2.25,
+          8.15
+        ],
+        [
+          3.45,
+          8.15
+        ],
+        [
+          3.45,
+          9.25
+        ],
+        [
+          6.75,
+          9.25
+        ],
+        [
+          6.75,
+          9.45
+        ],
+        [
+          7.35,
+          9.45
+        ],
+        [
+          7.35,
+          9.1
+        ],
+        [
+          8.55,
+          9.1
+        ],
+        [
+          8.55,
+          9.85
+        ],
+        [
+          8.75,
+          9.85
+        ],
+        [
+          8.75,
+          11.95
+        ],
+        [
+          2.25,
+          11.95
+        ]
+      ],
+      "brochureArea": 18.6,
+      "targetArea": 18.6,
+      "modelArea": 18.81,
+      "area": 18.81,
+      "labelAnchor": [
+        5.5,
+        10.7
+      ],
+      "walkAnchor": [
+        6.7,
+        10.4,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "6.50 մ-ը ստորին հատվածի մաքուր լայնությունն է։ 2.70 մ-ը հիմնական կենտրոնական հատվածի խորությունն է։ Մուտքի նեղ հատվածը, պատշգամբի կրող սյունը և ճակատային պատի ելուստը սենյակին տալիս են անկանոն եզրագիծ։"
+    },
+    "bedroom": {
+      "polygon": [
+        [
+          3.55,
+          6.35
+        ],
+        [
+          7.05,
+          6.35
+        ],
+        [
+          7.05,
+          6.85
+        ],
+        [
+          7.2,
+          6.85
+        ],
+        [
+          7.2,
+          8.65
+        ],
+        [
+          6.75,
+          8.65
+        ],
+        [
+          6.75,
+          9.15
+        ],
+        [
+          3.55,
+          9.15
+        ]
+      ],
+      "brochureArea": 9.9,
+      "targetArea": 9.9,
+      "modelArea": 9.92,
+      "area": 9.92,
+      "labelAnchor": [
+        5.15,
+        7.75
+      ],
+      "walkAnchor": [
+        4.1,
+        7.1,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "Պատի ստորին մաքուր երկարությունը մինչև կրող սյան եզրը 3.20 մ է։ Սա սենյակի առավելագույն լայնությունը չէ․ վերին և միջին հատվածները շարունակվում են դեպի պատշգամբի ապակեպատման խորշը։"
+    },
+    "hall": {
+      "polygon": [
+        [
+          0.35,
+          4.95
+        ],
+        [
+          2.25,
+          4.95
+        ],
+        [
+          2.25,
+          6.25
+        ],
+        [
+          3.45,
+          6.25
+        ],
+        [
+          3.45,
+          8.05
+        ],
+        [
+          2.25,
+          8.05
+        ],
+        [
+          2.25,
+          6.65
+        ],
+        [
+          0.35,
+          6.65
+        ]
+      ],
+      "brochureArea": 7.2,
+      "targetArea": 7.2,
+      "modelArea": 5.39,
+      "area": 5.39,
+      "labelAnchor": [
+        2.9,
+        6.9
+      ],
+      "walkAnchor": [
+        2.85,
+        7.1,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "Միջանցքը բաց անցումով միանում է հյուրասենյակին։ Դրա հաշվարկված մակերեսը կախված է այս պայմանական գոտևորումից․ հատակի բաժանման գիծը միջնապատ չի նշանակում։"
+    },
+    "bathroom": {
+      "polygon": [
+        [
+          0.35,
+          0.35
+        ],
+        [
+          2.05,
+          0.35
+        ],
+        [
+          2.05,
+          2.85
+        ],
+        [
+          0.75,
+          2.85
+        ],
+        [
+          0.75,
+          2.35
+        ],
+        [
+          0.35,
+          2.35
+        ]
+      ],
+      "brochureArea": 4.3,
+      "targetArea": 4.3,
+      "modelArea": 4.05,
+      "area": 4.05,
+      "labelAnchor": [
+        1.23,
+        1.35
+      ],
+      "walkAnchor": [
+        1.35,
+        1.75,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "Ստորին ձախ կրող սյունը զբաղեցնում է պայմանական 1.70 × 2.50 մ ուղղանկյան մի մասը։ Սանհանգույցի և խոհանոցի միջև հաղորդակցությունների հատվածը վերակառուցված է որպես 320 մմ հաստությամբ համակցված գոտի։"
+    },
+    "balcony-kitchen": {
+      "polygon": [
+        [
+          7.5,
+          0.15
+        ],
+        [
+          8.85,
+          0.15
+        ],
+        [
+          8.85,
+          2.3
+        ],
+        [
+          7.3,
+          2.3
+        ],
+        [
+          7.3,
+          0.9
+        ],
+        [
+          7.5,
+          0.9
+        ]
+      ],
+      "brochureArea": 3.1,
+      "targetArea": 3.1,
+      "modelArea": 3.1825,
+      "area": 3.1825,
+      "labelAnchor": [
+        8.08,
+        1.27
+      ],
+      "walkAnchor": [
+        8.05,
+        1.3,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "Գծագրի 1.35 մ լայնությունը վերաբերում է հյուսիսային նեղ հատվածին՝ պատի ելուստի և արևելյան բազրիքի միջև։ Ելուստից հետո պատշգամբը լայնանում է։ Բազրիքի բարձրությունը ենթադրված է։"
+    },
+    "balcony-bedroom": {
+      "polygon": [
+        [
+          7.45,
+          6.65
+        ],
+        [
+          8.55,
+          6.65
+        ],
+        [
+          8.55,
+          6.9
+        ],
+        [
+          8.75,
+          6.9
+        ],
+        [
+          8.75,
+          8.55
+        ],
+        [
+          8.55,
+          8.55
+        ],
+        [
+          8.55,
+          9.0
+        ],
+        [
+          7.4,
+          9.0
+        ],
+        [
+          7.4,
+          8.65
+        ],
+        [
+          7.3,
+          8.65
+        ],
+        [
+          7.3,
+          6.85
+        ],
+        [
+          7.45,
+          6.85
+        ]
+      ],
+      "brochureArea": 3.5,
+      "targetArea": 3.5,
+      "modelArea": 3.2025,
+      "area": 3.2025,
+      "labelAnchor": [
+        8.05,
+        7.7
+      ],
+      "walkAnchor": [
+        8.05,
+        7.6,
+        0
+      ],
+      "areaBasis": "Հաշվարկված է գծագրի չափերով կառուցված եզրագծից․ բրոշյուրի մակերեսին համապատասխանեցնելու համար չափերը չեն փոփոխվել։",
+      "note": "1.10/1.15 մ չափերը վերաբերում են հյուսիսային և հարավային խորշերի տարբեր եզրերին։ Արևելյան բազրիքի 1.65 մ հատվածը և արևմտյան ապակեպատման 1.80 մ բացվածքը տարբեր ծայրակետեր ունեն։ Խորշերի միացման հատվածներում մնում է 50–100 մմ անորոշություն։"
+    }
+  },
+  "outline": [
+    [
+      0,
+      0
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      12.15
+    ],
+    [
+      2.05,
+      12.15
+    ],
+    [
+      2.05,
+      6.85
+    ],
+    [
+      0,
+      6.85
+    ]
+  ],
+  "structuralWalls": [
+    {
+      "name": "Exterior north Wall",
+      "start": [
+        0,
+        0.175
+      ],
+      "end": [
+        7.5,
+        0.175
+      ],
+      "thickness": 0.35,
+      "openings": [],
+      "basis": "assumed thickness"
+    },
+    {
+      "name": "Exterior west Wall",
+      "start": [
+        0.175,
+        0.35
+      ],
+      "end": [
+        0.175,
+        6.85
+      ],
+      "thickness": 0.35,
+      "openings": [],
+      "basis": "drawing 350 mm"
+    },
+    {
+      "name": "Entrance Wall",
+      "start": [
+        0.35,
+        6.75
+      ],
+      "end": [
+        2.25,
+        6.75
+      ],
+      "thickness": 0.2,
+      "openings": [
+        {
+          "from": 0.5,
+          "to": 1.5,
+          "head": 2.1
+        }
+      ],
+      "basis": "drawing 500 + 1000 + 200 mm to the outside step"
+    },
+    {
+      "name": "Lower exterior west Wall",
+      "start": [
+        2.15,
+        6.85
+      ],
+      "end": [
+        2.15,
+        12.15
+      ],
+      "thickness": 0.2,
+      "openings": [],
+      "basis": "drawing/derived 200 mm"
+    },
+    {
+      "name": "Exterior south Wall",
+      "start": [
+        2.05,
+        12.05
+      ],
+      "end": [
+        9,
+        12.05
+      ],
+      "thickness": 0.2,
+      "openings": [],
+      "basis": "assumed thickness"
+    },
+    {
+      "name": "Bathroom service partition Wall",
+      "start": [
+        2.21,
+        0.35
+      ],
+      "end": [
+        2.21,
+        2.85
+      ],
+      "thickness": 0.32,
+      "openings": [],
+      "basis": "reconciled service/chase thickness; not a printed wall thickness"
+    },
+    {
+      "name": "Bathroom entrance Wall",
+      "start": [
+        0.75,
+        2.9
+      ],
+      "end": [
+        2.37,
+        2.9
+      ],
+      "thickness": 0.1,
+      "openings": [
+        {
+          "from": 0,
+          "to": 0.8,
+          "head": 2.1
+        }
+      ],
+      "basis": "drawing 800 mm opening"
+    },
+    {
+      "name": "Kitchen living partition Wall",
+      "start": [
+        2.37,
+        2.9
+      ],
+      "end": [
+        6.75,
+        2.9
+      ],
+      "thickness": 0.1,
+      "openings": [
+        {
+          "from": 0.48,
+          "to": 1.38,
+          "head": 2.1
+        }
+      ],
+      "basis": "drawing local 480 + 900 mm; broad-chain conflict disclosed"
+    },
+    {
+      "name": "Living bedroom partition Wall",
+      "start": [
+        3.45,
+        6.3
+      ],
+      "end": [
+        7.05,
+        6.3
+      ],
+      "thickness": 0.1,
+      "openings": [],
+      "basis": "drawing/derived 100 mm"
+    },
+    {
+      "name": "Bedroom west Wall",
+      "start": [
+        3.5,
+        6.35
+      ],
+      "end": [
+        3.5,
+        9.25
+      ],
+      "thickness": 0.1,
+      "openings": [
+        {
+          "from": 0.2,
+          "to": 1.1,
+          "head": 2.1
+        }
+      ],
+      "basis": "drawing 200 + 900 mm opening"
+    },
+    {
+      "name": "Bedroom south Wall",
+      "start": [
+        3.55,
+        9.2
+      ],
+      "end": [
+        6.75,
+        9.2
+      ],
+      "thickness": 0.1,
+      "openings": [],
+      "basis": "drawing 3200 mm clear length"
+    },
+    {
+      "name": "Primary bedroom entrance Wall",
+      "start": [
+        2.25,
+        8.1
+      ],
+      "end": [
+        3.45,
+        8.1
+      ],
+      "thickness": 0.1,
+      "openings": [
+        {
+          "from": 0.3,
+          "to": 1.2,
+          "head": 2.1
+        }
+      ],
+      "basis": "drawing 300 + 900 mm"
+    }
+  ],
+  "structuralPiers": [
+    {
+      "name": "Northwest 400 mm internal projection",
+      "bounds": [
+        0,
+        2.35,
+        0.75,
+        3.15
+      ],
+      "basis": "400 mm beyond 350 mm west wall; 800 mm structural depth"
+    },
+    {
+      "name": "Upper balcony 600 × 800 mm structural pier",
+      "bounds": [
+        6.75,
+        2.35,
+        7.35,
+        3.15
+      ],
+      "basis": "drawing 600 × 800 mm"
+    },
+    {
+      "name": "Lower balcony 600 × 800 mm structural pier",
+      "bounds": [
+        6.75,
+        8.65,
+        7.35,
+        9.45
+      ],
+      "basis": "drawing 600 mm width; repeated 800 mm depth inferred"
+    },
+    {
+      "name": "Kitchen north balcony wall stub",
+      "bounds": [
+        7.05,
+        0.35,
+        7.5,
+        0.9
+      ],
+      "basis": "derived from 750 mm balcony inset and 4.68 m kitchen reference"
+    },
+    {
+      "name": "Bedroom upper balcony west return",
+      "bounds": [
+        7.05,
+        6.25,
+        7.35,
+        6.85
+      ],
+      "basis": "500 mm drop below bedroom north clear line"
+    },
+    {
+      "name": "Lower balcony north recessed beam",
+      "bounds": [
+        7.35,
+        6.25,
+        8.55,
+        6.65
+      ],
+      "basis": "reconstructed stepped return; depth inferred"
+    },
+    {
+      "name": "Living east facade stepped return",
+      "bounds": [
+        8.55,
+        5.75,
+        9,
+        6.9
+      ],
+      "basis": "drawing 450 mm width / 1150 mm exterior chain"
+    },
+    {
+      "name": "Living south facade shallow return",
+      "bounds": [
+        7.05,
+        6.2,
+        8.55,
+        6.25
+      ],
+      "basis": "drawing 450 mm drop from 5.75 m facade corner"
+    },
+    {
+      "name": "Primary east facade lower pier",
+      "bounds": [
+        8.55,
+        8.55,
+        9,
+        9.85
+      ],
+      "basis": "drawing 1300 mm exterior chain; face offset inferred"
+    }
+  ],
+  "glazing": [
+    {
+      "name": "Kitchen balcony opening · 1450 mm",
+      "start": [
+        7.25,
+        0.9
+      ],
+      "end": [
+        7.25,
+        2.35
+      ],
+      "sill": 0.03,
+      "head": 2.93,
+      "opening": {
+        "from": 0,
+        "to": 0.8
+      },
+      "panels": 2,
+      "basis": "drawing whole opening; leaf division inferred",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
+    },
+    {
+      "name": "Living to upper balcony opening",
+      "start": [
+        7.35,
+        2.35
+      ],
+      "end": [
+        8.85,
+        2.35
+      ],
+      "sill": 0.03,
+      "head": 2.93,
+      "opening": {
+        "from": 0,
+        "to": 0.8
+      },
+      "panels": 2,
+      "basis": "derived complete bay",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
+    },
+    {
+      "name": "Living east facade glazing",
+      "start": [
+        8.8,
+        2.45
+      ],
+      "end": [
+        8.8,
+        5.75
+      ],
+      "sill": 0.03,
+      "head": 2.93,
+      "panels": 4,
+      "basis": "reconciled facade: 3400 outer chain, 3000 marked inner span has ambiguous endpoints",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
+    },
+    {
+      "name": "Bedroom balcony opening · 1800 mm",
+      "start": [
+        7.25,
+        6.85
+      ],
+      "end": [
+        7.25,
+        8.65
+      ],
+      "sill": 0.03,
+      "head": 2.93,
+      "opening": {
+        "from": 0.9,
+        "to": 1.8
+      },
+      "panels": 2,
+      "basis": "drawing whole opening; leaf division inferred",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
+    },
+    {
+      "name": "Primary to lower balcony opening",
+      "start": [
+        7.4,
+        9.05
+      ],
+      "end": [
+        8.55,
+        9.05
+      ],
+      "sill": 0.03,
+      "head": 2.93,
+      "opening": {
+        "from": 0,
+        "to": 0.8
+      },
+      "panels": 2,
+      "basis": "1150 mm inset; leaf division inferred",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
+    },
+    {
+      "name": "Primary east facade glazing",
+      "start": [
+        8.8,
+        9.85
+      ],
+      "end": [
+        8.8,
+        11.95
+      ],
+      "sill": 0.03,
+      "head": 2.93,
+      "panels": 3,
+      "basis": "2100 mm reconstructed; printed 2150 mm differs 50 mm under selected room depths",
+      "verticalBasis": "Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։"
+    }
+  ],
+  "doors": [
+    {
+      "name": "Main entrance · 1000 mm",
+      "x": 1.85,
+      "z": 6.75,
+      "width": 1.0,
+      "closedAngle": 3.141592653589793,
+      "openAngle": -1.5707963267948966,
+      "glass": false,
+      "sourceMM": 1000
+    },
+    {
+      "name": "Bathroom door · 800 mm",
+      "x": 0.75,
+      "z": 2.9,
+      "width": 0.8,
+      "closedAngle": 0,
+      "openAngle": 1.5707963267948966,
+      "glass": false,
+      "sourceMM": 800
+    },
+    {
+      "name": "Kitchen door · 900 mm",
+      "x": 2.85,
+      "z": 2.9,
+      "width": 0.9,
+      "closedAngle": 0,
+      "openAngle": 1.5707963267948966,
+      "glass": false,
+      "sourceMM": 900
+    },
+    {
+      "name": "Bedroom door · 900 mm",
+      "x": 3.5,
+      "z": 6.55,
+      "width": 0.9,
+      "closedAngle": -1.5707963267948966,
+      "openAngle": 1.5707963267948966,
+      "glass": false,
+      "sourceMM": 900
+    },
+    {
+      "name": "Primary bedroom door · 900 mm",
+      "x": 2.55,
+      "z": 8.1,
+      "width": 0.9,
+      "closedAngle": 0,
+      "openAngle": -1.5707963267948966,
+      "glass": false,
+      "sourceMM": 900
+    },
+    {
+      "name": "Kitchen balcony glass door",
+      "x": 7.25,
+      "z": 0.9,
+      "width": 0.8,
+      "closedAngle": -1.5707963267948966,
+      "openAngle": -1.15,
+      "glass": true,
+      "sourceMM": null,
+      "note": "1450 mm is the complete opening, not a verified single-leaf width."
+    },
+    {
+      "name": "Living balcony glass door",
+      "x": 7.35,
+      "z": 2.35,
+      "width": 0.8,
+      "closedAngle": 0,
+      "openAngle": -0.8,
+      "glass": true,
+      "sourceMM": null,
+      "note": "Leaf split inferred from symbols; complete bay width 1500 mm."
+    },
+    {
+      "name": "Bedroom balcony glass door",
+      "x": 7.25,
+      "z": 8.65,
+      "width": 0.9,
+      "closedAngle": 1.5707963267948966,
+      "openAngle": 1.15,
+      "glass": true,
+      "sourceMM": null,
+      "note": "1800 mm is the whole opening; individual leaf width inferred."
+    },
+    {
+      "name": "Primary balcony glass door",
+      "x": 7.4,
+      "z": 9.05,
+      "width": 0.8,
+      "closedAngle": 0,
+      "openAngle": -0.8,
+      "glass": true,
+      "sourceMM": null,
+      "note": "Individual leaf width inferred in the south balcony opening."
+    }
+  ],
+  "balconyGuards": [
+    {
+      "start": [
+        7.5,
+        0.1
+      ],
+      "end": [
+        8.95,
+        0.1
+      ]
+    },
+    {
+      "start": [
+        8.95,
+        0.1
+      ],
+      "end": [
+        8.95,
+        2.35
+      ]
+    },
+    {
+      "start": [
+        8.9,
+        6.9
+      ],
+      "end": [
+        8.9,
+        8.55
+      ]
+    }
+  ],
+  "dimensionChecks": [
+    {
+      "id": "outer-main",
+      "label": "Հյուսիսային արտաքին հիմնական երկարություն",
+      "roomId": null,
+      "sourceMM": 7500,
+      "modelMetres": 7.5,
+      "basis": "drawing",
+      "to": [
+        7.5,
+        0
+      ],
+      "note": "",
+      "from": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "outer-balcony",
+      "label": "Պատշգամբի հյուսիսային արտաքին հատված",
+      "roomId": "balcony-kitchen",
+      "sourceMM": 1500,
+      "modelMetres": 1.5,
+      "basis": "drawing",
+      "to": [
+        9,
+        0
+      ],
+      "note": "",
+      "from": [
+        7.5,
+        0
+      ]
+    },
+    {
+      "id": "outer-width",
+      "label": "Արտաքին ընդհանուր լայնություն",
+      "roomId": null,
+      "sourceMM": null,
+      "modelMetres": 9.0,
+      "basis": "derived",
+      "to": [
+        9,
+        0
+      ],
+      "note": "7500 + 1500 մմ։ Պատկերը չի չափագրվել պիքսելների մեկ ընդհանուր մասշտաբով։",
+      "from": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "kitchen-width",
+      "label": "Խոհանոցի հիմնական լայնությունը մինչև վարագույրի հաշվարկային գիծը",
+      "roomId": "kitchen",
+      "sourceMM": 4680,
+      "modelMetres": 4.68,
+      "basis": "drawing",
+      "to": [
+        7.05,
+        1.8
+      ],
+      "note": "X7.05-ը կրող սյան միջով անցնող հաշվարկային գիծն է։ Ապակեպատումը գտնվում է X7.25-ում, իսկ դրա ներքին եզրը՝ X7.20-ում։",
+      "from": [
+        2.37,
+        1.8
+      ]
+    },
+    {
+      "id": "kitchen-depth",
+      "label": "Խոհանոցի կենտրոնական մաքուր խորություն",
+      "roomId": "kitchen",
+      "sourceMM": 2500,
+      "modelMetres": 2.5,
+      "basis": "drawing",
+      "to": [
+        4.6,
+        2.85
+      ],
+      "note": "Գծագրում այս խորությունը ներկայացված է նաև 2000 + 500 մմ հատվածներով։",
+      "from": [
+        4.6,
+        0.35
+      ]
+    },
+    {
+      "id": "bath-width",
+      "label": "Սանհանգույցի վերին մաքուր լայնություն",
+      "roomId": "bathroom",
+      "sourceMM": 1700,
+      "modelMetres": 1.7,
+      "basis": "drawing",
+      "to": [
+        2.05,
+        1.1
+      ],
+      "note": "Ստորին ձախ հատվածում կրող սյան 400 մմ ելուստը զբաղեցնում է պայմանական ուղղանկյան մի մասը։",
+      "from": [
+        0.35,
+        1.1
+      ]
+    },
+    {
+      "id": "living-depth",
+      "label": "Հյուրասենյակի կենտրոնական մաքուր խորություն",
+      "roomId": "living",
+      "sourceMM": 3300,
+      "modelMetres": 3.3,
+      "basis": "drawing",
+      "to": [
+        6.25,
+        6.25
+      ],
+      "note": "",
+      "from": [
+        6.25,
+        2.95
+      ]
+    },
+    {
+      "id": "bedroom-width",
+      "label": "Երկրորդ ննջասենյակի ստորին լայնությունը մինչև կրող սյան եզրը",
+      "roomId": "bedroom",
+      "sourceMM": 3200,
+      "modelMetres": 3.2,
+      "basis": "drawing",
+      "to": [
+        6.75,
+        9.15
+      ],
+      "note": "Չի ներառում արևելյան ապակեպատման խորշը։",
+      "from": [
+        3.55,
+        9.15
+      ]
+    },
+    {
+      "id": "bedroom-depth",
+      "label": "Երկրորդ ննջասենյակի կենտրոնական մաքուր խորություն",
+      "roomId": "bedroom",
+      "sourceMM": 2800,
+      "modelMetres": 2.8,
+      "basis": "drawing",
+      "to": [
+        4.25,
+        9.15
+      ],
+      "note": "",
+      "from": [
+        4.25,
+        6.35
+      ]
+    },
+    {
+      "id": "primary-width",
+      "label": "Հիմնական ննջասենյակի ստորին մաքուր լայնություն",
+      "roomId": "primary",
+      "sourceMM": 6500,
+      "modelMetres": 6.5,
+      "basis": "drawing",
+      "to": [
+        8.75,
+        11.6
+      ],
+      "note": "",
+      "from": [
+        2.25,
+        11.6
+      ]
+    },
+    {
+      "id": "primary-depth",
+      "label": "Հիմնական ննջասենյակի կենտրոնական խորություն",
+      "roomId": "primary",
+      "sourceMM": 2700,
+      "modelMetres": 2.7,
+      "basis": "drawing",
+      "to": [
+        4.0,
+        11.95
+      ],
+      "note": "",
+      "from": [
+        4.0,
+        9.25
+      ]
+    },
+    {
+      "id": "bath-door",
+      "label": "Սանհանգույցի դռան բացվածք",
+      "roomId": "bathroom",
+      "sourceMM": 800,
+      "modelMetres": 0.8,
+      "basis": "drawing",
+      "to": [
+        1.55,
+        2.9
+      ],
+      "note": "",
+      "from": [
+        0.75,
+        2.9
+      ]
+    },
+    {
+      "id": "kitchen-door",
+      "label": "Խոհանոցի դռան բացվածք",
+      "roomId": "kitchen",
+      "sourceMM": 900,
+      "modelMetres": 0.9,
+      "basis": "drawing",
+      "to": [
+        3.75,
+        2.9
+      ],
+      "note": "",
+      "from": [
+        2.85,
+        2.9
+      ]
+    },
+    {
+      "id": "entrance-door",
+      "label": "Մուտքի դռան բացվածք",
+      "roomId": "hall",
+      "sourceMM": 1000,
+      "modelMetres": 1.0,
+      "basis": "drawing",
+      "to": [
+        1.85,
+        6.75
+      ],
+      "note": "",
+      "from": [
+        0.85,
+        6.75
+      ]
+    },
+    {
+      "id": "bedroom-door",
+      "label": "Երկրորդ ննջասենյակի դռան բացվածք",
+      "roomId": "bedroom",
+      "sourceMM": 900,
+      "modelMetres": 0.9,
+      "basis": "drawing",
+      "to": [
+        3.5,
+        7.45
+      ],
+      "note": "",
+      "from": [
+        3.5,
+        6.55
+      ]
+    },
+    {
+      "id": "primary-door",
+      "label": "Հիմնական ննջասենյակի դռան բացվածք",
+      "roomId": "primary",
+      "sourceMM": 900,
+      "modelMetres": 0.9,
+      "basis": "drawing",
+      "to": [
+        3.45,
+        8.1
+      ],
+      "note": "",
+      "from": [
+        2.55,
+        8.1
+      ]
+    },
+    {
+      "id": "entry-depth",
+      "label": "Մուտքի հատվածի խորությունը՝ կրող սյունից",
+      "roomId": "hall",
+      "sourceMM": 3500,
+      "modelMetres": 3.5,
+      "basis": "drawing",
+      "to": [
+        0.85,
+        6.65
+      ],
+      "note": "Չափման սկիզբը կրող սյան հարավային եզրն է, ոչ թե հյուրասենյակի հյուսիսային պատը։",
+      "from": [
+        0.85,
+        3.15
+      ]
+    },
+    {
+      "id": "hall-corridor",
+      "label": "Միջանցքի մաքուր երկարությունը մինչև հիմնական ննջասենյակի մուտքի պատը",
+      "roomId": "hall",
+      "sourceMM": 1400,
+      "modelMetres": 1.4,
+      "basis": "drawing",
+      "to": [
+        2.85,
+        8.05
+      ],
+      "note": "",
+      "from": [
+        2.85,
+        6.65
+      ]
+    },
+    {
+      "id": "primary-leg",
+      "label": "Հիմնական ննջասենյակի մուտքի նեղ հատվածի խորություն",
+      "roomId": "primary",
+      "sourceMM": 1000,
+      "modelMetres": 1.0,
+      "basis": "drawing",
+      "to": [
+        2.85,
+        9.15
+      ],
+      "note": "",
+      "from": [
+        2.85,
+        8.15
+      ]
+    },
+    {
+      "id": "kitchen-opening",
+      "label": "Խոհանոցի պատշգամբի ամբողջ բացվածք",
+      "roomId": "kitchen",
+      "sourceMM": 1450,
+      "modelMetres": 1.45,
+      "basis": "drawing",
+      "to": [
+        7.25,
+        2.35
+      ],
+      "note": "Ամբողջ բացվածքի ներսում բացվող փեղկի 800 մմ լայնությունը ենթադրված է։",
+      "from": [
+        7.25,
+        0.9
+      ]
+    },
+    {
+      "id": "bedroom-opening",
+      "label": "Երկրորդ ննջասենյակից պատշգամբ տանող ամբողջ բացվածք",
+      "roomId": "bedroom",
+      "sourceMM": 1800,
+      "modelMetres": 1.8,
+      "basis": "drawing",
+      "to": [
+        7.25,
+        8.65
+      ],
+      "note": "",
+      "from": [
+        7.25,
+        6.85
+      ]
+    },
+    {
+      "id": "upper-balcony-inset",
+      "label": "Խոհանոցի պատշգամբի հյուսիսային խորշի լայնություն",
+      "roomId": "balcony-kitchen",
+      "sourceMM": 1350,
+      "modelMetres": 1.35,
+      "basis": "drawing",
+      "to": [
+        8.85,
+        0.4
+      ],
+      "note": "",
+      "from": [
+        7.5,
+        0.4
+      ]
+    },
+    {
+      "id": "lower-balcony-inset",
+      "label": "Ննջասենյակի պատշգամբի հարավային խորշի լայնություն",
+      "roomId": "balcony-bedroom",
+      "sourceMM": 1150,
+      "modelMetres": 1.15,
+      "basis": "drawing",
+      "to": [
+        8.55,
+        8.85
+      ],
+      "note": "",
+      "from": [
+        7.4,
+        8.85
+      ]
+    },
+    {
+      "id": "lower-balcony-north",
+      "label": "Ննջասենյակի պատշգամբի հյուսիսային խորշի լայնություն",
+      "roomId": "balcony-bedroom",
+      "sourceMM": 1100,
+      "modelMetres": 1.1,
+      "basis": "drawing",
+      "to": [
+        8.55,
+        6.7
+      ],
+      "note": "",
+      "from": [
+        7.45,
+        6.7
+      ]
+    },
+    {
+      "id": "pier-width",
+      "label": "Պատշգամբի կրող սյան լայնություն",
+      "roomId": "living",
+      "sourceMM": 600,
+      "modelMetres": 0.6,
+      "basis": "drawing",
+      "to": [
+        7.35,
+        2.7
+      ],
+      "note": "",
+      "from": [
+        6.75,
+        2.7
+      ]
+    },
+    {
+      "id": "pier-depth",
+      "label": "Խոհանոցի պատշգամբի կրող սյան խորություն",
+      "roomId": "living",
+      "sourceMM": 800,
+      "modelMetres": 0.8,
+      "basis": "drawing",
+      "to": [
+        7.0,
+        3.15
+      ],
+      "note": "",
+      "from": [
+        7.0,
+        2.35
+      ]
+    },
+    {
+      "id": "kitchen-chain-conflict",
+      "label": "Խոհանոցի դռան դիրքը՝ ընդհանուր չափաշղթայով",
+      "roomId": "kitchen",
+      "sourceMM": 1500,
+      "modelMetres": 1.3,
+      "basis": "derived",
+      "to": [
+        2.85,
+        2.9
+      ],
+      "note": "Հակասություն․ 400+800+1500 ընդհանուր չափաշղթան դռան այս եզրը տեղադրում է X3.05-ում, իսկ 480+900 տեղային չափերն ու 4680 լայնությունը՝ X2.85-ում։ Մոդելի հատվածը 1300 մմ է՝ 200 մմ-ով ավելի կարճ։ Անհրաժեշտ է տեղում չափագրում։",
+      "from": [
+        1.55,
+        2.9
+      ]
+    },
+    {
+      "id": "living-glazing-conflict",
+      "label": "Հյուրասենյակի արևելյան ապակեպատման երկարություն",
+      "roomId": "living",
+      "sourceMM": 3000,
+      "modelMetres": 3.3,
+      "basis": "derived",
+      "to": [
+        8.8,
+        5.75
+      ],
+      "note": "Գծագրի ներքին չափը 3000 է, իսկ արտաքին չափաշղթայինը՝ 3400․ դրանց ծայրակետերը տարբեր են կամ անորոշ։ Մոդելում ապակեպատման երկարությունը 3300 մմ է, և 300 մմ տարբերությունը բացահայտ նշված է։",
+      "from": [
+        8.8,
+        2.45
+      ]
+    },
+    {
+      "id": "primary-glazing-conflict",
+      "label": "Հիմնական ննջասենյակի արևելյան ապակեպատման երկարություն",
+      "roomId": "primary",
+      "sourceMM": 2150,
+      "modelMetres": 2.1,
+      "basis": "derived",
+      "to": [
+        8.8,
+        11.95
+      ],
+      "note": "Գծագրի կենտրոնական խորություններն ու ճակատի արտաքին չափաշղթան կիրառելիս ստացվում է 2100 մմ՝ 50 մմ-ով պակաս, քան 2150-ը։ Խորշի ծայրակետը պետք է ճշտել տեղում։",
+      "from": [
+        8.8,
+        9.85
+      ]
+    },
+    {
+      "id": "lower-right-chain",
+      "label": "Ննջասենյակի պատշգամբի արևելյան մաքուր հատված",
+      "roomId": "balcony-bedroom",
+      "sourceMM": 1650,
+      "modelMetres": 1.65,
+      "basis": "drawing",
+      "to": [
+        8.75,
+        8.55
+      ],
+      "note": "",
+      "from": [
+        8.75,
+        6.9
+      ]
+    },
+    {
+      "id": "primary-facade-pier",
+      "label": "Հիմնական ննջասենյակի արևելյան կրող սյան արտաքին երկարություն",
+      "roomId": "primary",
+      "sourceMM": 1300,
+      "modelMetres": 1.3,
+      "basis": "drawing",
+      "to": [
+        9,
+        9.85
+      ],
+      "note": "",
+      "from": [
+        9,
+        8.55
+      ]
+    },
+    {
+      "id": "ceiling",
+      "label": "Առաստաղի բարձրություն",
+      "roomId": null,
+      "sourceMM": null,
+      "modelMetres": 3.0,
+      "basis": "provided",
+      "to": [
+        0,
+        3.0
+      ],
+      "note": "Այս զրույցում Դուք նշել եք առաստաղի 3.00 մ բարձրություն։ Սա Ձեր նշած ուղղահայաց չափն է, ոչ թե հատակագծում նշված չափը։",
+      "from": [
+        0,
+        0
+      ]
+    }
+  ],
+  "drawingDimensions": [
+    {
+      "group": "Հյուսիսային արտաքին չափեր",
+      "millimetres": [
+        7500,
+        1500
+      ]
+    },
+    {
+      "group": "Արևելյան արտաքին չափաշղթա",
+      "millimetres": [
+        2350,
+        3400,
+        1150,
+        1650,
+        1300
+      ],
+      "note": "Այս չափերը վերաբերում են ճակատի հաջորդական անկյուններին և կրող սյուներին, ոչ թե սենյակների բարձրություններին։"
+    },
+    {
+      "group": "Վերին ներքին հորիզոնական չափաշղթա",
+      "millimetres": [
+        400,
+        800,
+        1500,
+        900,
+        2800,
+        600,
+        1400
+      ],
+      "note": "Նույն հաշվարկային կետերն ընդունելիս 1500 հատվածը խոհանոցի 4680/480 տեղային չափերի հետ տալիս է 200 մմ անհամապատասխանություն։"
+    },
+    {
+      "group": "Ստորին ներքին հորիզոնական չափաշղթա",
+      "millimetres": [
+        300,
+        900,
+        100,
+        3200,
+        600,
+        1300
+      ],
+      "note": "6400 մմ գումարը տարբերվում է ստորին 6500 մմ մաքուր լայնությունից․ չափման եզրերը տարբեր են, կամ մնում է չճշտված 100 մմ տարբերություն։"
+    },
+    {
+      "group": "Մուտքի հորիզոնական չափաշղթա",
+      "millimetres": [
+        350,
+        500,
+        1000,
+        200
+      ]
+    },
+    {
+      "group": "Սանհանգույցի վերին հատվածի և խորշի չափեր",
+      "millimetres": [
+        1700,
+        2000,
+        1300,
+        650,
+        550,
+        800,
+        500
+      ],
+      "note": "1300/650/550 չափերը վերաբերում են հաղորդակցությունների, պահարանի և դռան հատվածներին։ Դրանք պահպանված են առանձին․ յուրաքանչյուր նշում չի դիտարկվում որպես սենյակի մաքուր եզրագծի մաս։"
+    },
+    {
+      "group": "Խոհանոցի տեղային չափեր",
+      "millimetres": [
+        4680,
+        2500,
+        2000,
+        500,
+        480,
+        900
+      ]
+    },
+    {
+      "group": "Հյուրասենյակի և միջանցքի տեղային չափեր",
+      "millimetres": [
+        3500,
+        2450,
+        1350,
+        3300,
+        3000,
+        1100,
+        3700,
+        1400,
+        450,
+        1400,
+        1000
+      ]
+    },
+    {
+      "group": "Երկրորդ ննջասենյակի տեղային չափեր",
+      "millimetres": [
+        3200,
+        2800,
+        200,
+        900,
+        800,
+        1800,
+        500,
+        400
+      ]
+    },
+    {
+      "group": "Հիմնական ննջասենյակի տեղային չափեր",
+      "millimetres": [
+        6500,
+        2700,
+        2400,
+        2150,
+        300,
+        1300,
+        550
+      ]
+    },
+    {
+      "group": "Խոհանոցի պատշգամբ",
+      "millimetres": [
+        750,
+        1350,
+        1450,
+        2350
+      ]
+    },
+    {
+      "group": "Ննջասենյակի պատշգամբ",
+      "millimetres": [
+        350,
+        1100,
+        450,
+        1650,
+        1150,
+        400,
+        550,
+        1800
+      ]
+    }
+  ],
+  "sourceAreaNote": "Սկզբնական բրոշյուրում ընդհանուր մակերեսը նշված է 81.4 մ²։ Ութ հատվածների մակերեսների գումարը 81.6 մ² է։ Գծագրի չափերով վերակառուցված մոդելը չի հարմարեցվել այս թվերից որևէ մեկին։",
+  "dimensionalConflicts": [
+    {
+      "id": "kitchen-horizontal-chain",
+      "severity": "survey-required",
+      "differenceMM": 200,
+      "message": "Գծագրի խոհանոցի 4680 մմ լայնությունն ու պատի 480 մմ հատվածը 900 մմ դուռը տեղադրում են 200 մմ ավելի արևմուտք, քան ստացվում է 400/800/1500 ընդհանուր չափաշղթայով։ Առաջնահերթ են սենյակի և դռան տեղային չափերը․ երկու ընթերցումներն էլ պահպանված են։"
+    },
+    {
+      "id": "lower-horizontal-chain",
+      "severity": "survey-required",
+      "differenceMM": 100,
+      "message": "300+900+100+3200+600+1300 գումարը 6400 մմ է, իսկ ստորին մաքուր լայնությունը՝ 6500 մմ։ Ամենաաջ նշումները, հավանաբար, վերաբերում են վարագույրի կամ կրող սյան տարբեր եզրերին, ոչ թե մեկ ընդհանուր ծայրակետի։"
+    },
+    {
+      "id": "living-east-glazing",
+      "severity": "survey-required",
+      "differenceMM": 300,
+      "message": "Ապակեպատման ներքին 3000 մմ նշման և արտաքին 3400 մմ չափաշղթայի ծայրակետերը ճշտված չեն։ Մոդելում ընդունված ապակեպատման երկարությունը 3300 մմ է։"
+    },
+    {
+      "id": "primary-east-glazing",
+      "severity": "survey-required",
+      "differenceMM": 50,
+      "message": "Սենյակների խորություններն ու աջ արտաքին չափաշղթան կիրառելիս ապակեպատման բաց հատվածը ստացվում է 2100 մմ՝ գծագրի 2150 մմ-ի փոխարեն։"
+    }
+  ],
+  "assumptions": [
+    "3.00 մ առաստաղի դեպքում ապակեպատման ստորին եզրը ընտրված է 0.03 մ, վերին եզրը՝ 2.93 մ։ Սրանք ճակատի ձեր տրամադրած պատկերից արված տեսողական ենթադրություններ են, ոչ թե չափագրված բարձրություններ։ Դռան բացվող փեղկը 2.08 մ է՝ վերևում անշարժ ապակիով։ Բազրիքի 1.05 մ բարձրությունն էլ ենթադրված է։",
+    "Գծագրի չափերը կարդացվել են միլիմետրերով և վերածվել մետրերի։ Պատկերի համար մեկ ընդհանուր մասշտաբ չի կիրառվել։",
+    "Սանհանգույցի հաղորդակցությունների գոտու 320 մմ հաստությունը և պատշգամբի շրջանակների ու խորշերի մի քանի շեղումները հաշվարկային համադրումներ են, ոչ թե գծագրում նշված պատերի հաստություններ։",
+    "Մուտքի և հյուրասենյակի հատակի գոտիների սահմանը պայմանական է․ այդտեղ նոր պատ չի ավելացվել։",
+    "Պատշգամբների ապակե դռների փեղկերի բաժանումը ենթադրված է գծագրի ամբողջ բացվածքների ներսում։ Դռների բացման ուղղությունները համապատասխանում են գծագրի նշաններին։",
+    "Սենյակների մակերեսները հաշվարկված են վերակառուցված մաքուր եզրագծերից և կարող են տարբերվել բրոշյուրի նշումներից։"
+  ],
+  "accuracy": "Վերակառուցման հիմքը գծագրի չափերն են՝ տեղային երկարություններն ու դռների լայնությունները։ Չճշտված ծայրակետերը, խորշերի ենթադրված շեղումներն ու բացվածքների ենթադրված բարձրությունները բացահայտ նշված են։ Սա տեղում կատարված շինարարական չափագրում չէ։",
+  "facadeProfile": {
+    "sill": 0.03,
+    "headClearance": 0.07,
+    "transomHeight": 2.1,
+    "mullionWidth": 0.045,
+    "mullionDepth": 0.075,
+    "frameColor": "#2d3333",
+    "verticalBasis": "Ճակատի տրամադրված պատկերից տեսողական մեկնաբանություն․ պատուհանների չափագրման փաստաթուղթ չէ։",
+    "sourceImage": "./assets/exterior-building.jpg"
+  },
+  "structurePolicy": {
+    "existingWallsLocked": true,
+    "piersLocked": true,
+    "outlineLocked": true,
+    "wetServicesLocked": true,
+    "bearingStatus": "unverified",
+    "note": "Պատերն ու մույթերը ֆիքսված են։ Տրամադրված հատակագիծը չի հաստատում յուրաքանչյուր պատի կրող նշանակությունը․ դրա համար անհրաժեշտ է կոնստրուկտիվ գծագիր։ Առաջարկը փոխում է կահավորումն ու գոտևորումը։"
+  }
+}

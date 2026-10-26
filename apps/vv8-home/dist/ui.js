@@ -3,6 +3,8 @@ let toastTimer;
 let geometryData = {}, roomList = [], selectedRoom = null, evidenceRoom = 'all';
 let planSource = 'drawing', planZoom = 'fit';
 let studioView = 'living';
+let studioRenderer = null;
+export function setStudioRenderer(render) { studioRenderer = render; }
 const state = { mode: 'dollhouse', dimensions: false, labels: false, furniture: true, walls: 'cutaway', height: 3, measuring: false, lighting: 'daylight' };
 const $ = (id) => document.getElementById(id);
 const icon = (name) => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
@@ -95,7 +97,7 @@ export function initUI(rooms, onAction, data = {}) {
   document.querySelectorAll('[data-plan-source]').forEach(button=>{
     button.addEventListener('click',()=>setPlanSource(button.dataset.planSource));
     button.addEventListener('keydown',event=>{
-      if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();setPlanSource(planSource==='drawing'?'brochure':'drawing');document.querySelector(`[data-plan-source="${planSource}"]`).focus();}
+      if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();const sources=['drawing','brochure','facade'],step=event.key==='ArrowRight'?1:2;setPlanSource(sources[(sources.indexOf(planSource)+step)%3]);document.querySelector(`[data-plan-source="${planSource}"]`).focus();}
     });
   });
   document.querySelectorAll('[data-plan-zoom]').forEach(button=>button.addEventListener('click',()=>setPlanZoom(button.dataset.planZoom)));
@@ -213,6 +215,8 @@ export function updateSettings(settings = {}) {
   $('wall-mode').value = state.walls;
   $('lighting-mode').value = state.lighting || 'daylight';
   $('ceiling-height').value = Number(state.height).toFixed(2);
+  const profile=geometryData.facadeProfile||{},sill=Number(profile.sill??.03),head=Number(state.height)-Number(profile.headClearance??.07);
+  if($('facade-evidence-note'))$('facade-evidence-note').textContent=`${Number(state.height).toFixed(2)} մ առաստաղի դեպքում ապակեպատման ընտրված միջակայքը ${sill.toFixed(2)}–${head.toFixed(2)} մ է։ Մուգ շրջանակներն ու բաժանումները մեկնաբանված են ճակատի պատկերից․ դրանք չափագրված բարձրություններ չեն։`;
   $('measure-button').setAttribute('aria-pressed', String(!!state.measuring));
   if (settings.mode) setMode(settings.mode);
 }
@@ -226,25 +230,35 @@ function setPlanZoom(mode) {
 }
 
 function setPlanSource(source) {
-  planSource=source==='brochure'?'brochure':'drawing';
-  const drawing=planSource==='drawing';
-  const image=$('source-plan-image');image.src=drawing?'./assets/dimensioned-plan.jpeg':'./assets/source-plan.jpg';
-  image.alt=drawing?'VV8-ի ճարտարապետական գծագիրը՝ սենյակների չափերով, պատերի ելուստներով, դռների բացվածքներով և պատշգամբների չափերով։':'VV8-ի սկզբնական բուկլետը՝ կահավորված բնակարանի տարածական պատկերով, սենյակների մակերեսներով և կահույքի դասավորությամբ։';
-  $('reference-source-heading').textContent=drawing?'Չափերի սկզբնաղբյուրը':'Կահավորման և մակերեսների սկզբնական աղբյուրը';
-  $('reference-source-note').textContent=drawing?'Չափերը վերցված են գծագրի չափանշումներից։ Չնշված մանրամասները մեկնաբանվում են առանձին, իսկ պատկերի պիքսելները չեն ընդունվում որպես տեղում կատարված չափագրում։':'Տարածական պատկերը տեղեկություն է տալիս սենյակների նշանակության և դասավորության մասին։ Դրա մակերեսների նշումները պահպանված են որպես տեղեկանք՝ չափերով գծագրի կողքին։';
-  $('reference-open-image').href=image.src;
-  $('reference-open-image').setAttribute('aria-label',drawing?'Բացել չափերով գծագիրը լրիվ չափով':'Բացել սկզբնական բուկլետը լրիվ չափով');
-  $('source-plan-panel').setAttribute('aria-labelledby',drawing?'source-tab-drawing':'source-tab-brochure');
+  const sources={
+    drawing:{path:'./assets/dimensioned-plan.jpeg',heading:'Չափերի սկզբնաղբյուրը',alt:'VV8-ի ճարտարապետական գծագիրը՝ սենյակների չափերով, պատերի ելուստներով, դռների բացվածքներով և պատշգամբների չափերով։',note:'Չափերը վերցված են գծագրի չափանշումներից։ Չնշված մանրամասները մեկնաբանվում են առանձին, իսկ պատկերի պիքսելները չեն ընդունվում որպես տեղում կատարված չափագրում։'},
+    brochure:{path:'./assets/source-plan.jpg',heading:'Կահավորման և մակերեսների սկզբնական աղբյուրը',alt:'VV8-ի սկզբնական բուկլետը՝ կահավորված բնակարանի տարածական պատկերով և սենյակների մակերեսներով։',note:'Սկզբնական պատկերը պահպանված է որպես տեղեկանք։ Նոր կահավորման տարբերակը դիտեք «Դասավորություն» բաժնում։ Բուկլետի մակերեսները չեն փոխարինում չափերով գծագրին։'},
+    facade:{path:'./assets/exterior-building.jpg',heading:'Ձեր տրամադրած շենքի արտաքին պատկերը',alt:'Շենքի արտաքին պատկեր՝ մուգ շրջանակներով, բարձր ապակեպատ ճակատներով և սպիտակ միջհարկային գոտիներով։',note:'Պատկերը հուշում է գրեթե հատակից առաստաղ ապակեպատում։ 3.00 մ առաստաղի համար ընտրված են 0.03 մ ստորին եզր և 2.93 մ վերին եզր։ Բացվածքների հորիզոնական չափերը վերցված են հատակագծից․ բարձրություններն ու շրջանակների բաժանումները տեսողական ենթադրություններ են։'}
+  };
+  planSource=Object.hasOwn(sources,source)?source:'drawing';
+  const entry=sources[planSource],image=$('source-plan-image');image.src=entry.path;image.alt=entry.alt;
+  $('reference-source-heading').textContent=entry.heading;$('reference-source-note').textContent=entry.note;
+  $('reference-open-image').href=entry.path;$('reference-open-image').setAttribute('aria-label','Բացել սկզբնաղբյուրի պատկերը լրիվ չափով');
+  $('source-plan-panel').setAttribute('aria-labelledby',`source-tab-${planSource}`);
   document.querySelectorAll('[data-plan-source]').forEach(button=>{const selected=button.dataset.planSource===planSource;button.setAttribute('aria-selected',String(selected));button.tabIndex=selected?0:-1;});
   setPlanZoom('fit');
 }
 
 function setStudioView(view) {
-  const views={dollhouse:{name:'Ամբողջ բնակարանը',alt:'Բնակարանի ամբողջական տեսքը վերևից՝ ստեղծված թարմացված 3D մոդելից։'},living:{name:'Հյուրասենյակ',alt:'Հյուրասենյակի իրատեսական պատկերը՝ ստեղծված բնակարանի մոդելից՝ ընտրված կահույքով և նյութերով։'},primary:{name:'Հիմնական ննջասենյակ',alt:'Հիմնական ննջասենյակի իրատեսական պատկերը՝ ստեղծված բնակարանի մոդելից՝ ընտրված մահճակալով, կահույքով և նյութերով։'}};
+  const views={dollhouse:'Ամբողջ բնակարանը',living:'Հյուրասենյակ',primary:'Հիմնական ննջասենյակ'};
   studioView=Object.hasOwn(views,view)?view:'dollhouse';
-  const current=views[studioView],path=`./assets/render-${studioView}.jpg`;
-  $('studio-view-image').src=path;$('studio-view-image').alt=current.alt;
-  $('studio-view-name').textContent=current.name;$('studio-open-image').href=path;
+  const image=$('studio-view-image'),link=$('studio-open-image');
+  try {
+    if(!studioRenderer) throw new Error('not-ready');
+    const result=studioRenderer(studioView);
+    image.src=result.url;image.hidden=false;image.alt=`${views[studioView]}՝ ընթացիկ կահավորմամբ և պատուհաններով։`;
+    link.href=result.url;link.download=`VV8-${studioView}-current-plan.jpg`;link.textContent='Ներբեռնել պատկերը ↗';link.hidden=false;
+    $('studio-render-note').textContent=result.note;
+  } catch(error) {
+    image.hidden=true;link.hidden=true;
+    $('studio-render-note').textContent='Պատկերը դեռ պատրաստ չէ։ Սպասեք մոդելի բեռնմանը և կրկին ընտրեք դիտանկյունը։';
+  }
+  $('studio-view-name').textContent=views[studioView];
   $('studio-view-panel').setAttribute('aria-labelledby',`studio-tab-${studioView}`);
   document.querySelectorAll('[data-studio-view]').forEach(button=>{const active=button.dataset.studioView===studioView;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;});
 }
@@ -267,7 +281,7 @@ function renderEvidence() {
     const hasDifference=difference!==null&&Math.abs(difference)>=1;
     const basis=basisOf(check),name={drawing:'Գծագրից',derived:'Հաշվարկված',assumed:'Ենթադրված',provided:'Ձեր նշած'}[basis];
     const ceilingEdited=check.id==='ceiling'&&finite(check.modelMetres)&&Math.abs(model-Number(check.modelMetres))>.0001;
-    const note=[check.note,ceilingEdited?`Ցուցադրվող բարձրությունը փոխվել է ${model.toFixed(2)} մ-ի։ Պահպանված իրատեսական պատկերներում առաստաղը մնում է ձեր նշած 3.00 մ բարձրությամբ։`:''].filter(Boolean).join(' ');
+    const note=[check.note,ceilingEdited?`Ցուցադրվող բարձրությունը փոխվել է ${model.toFixed(2)} մ-ի։ Պատկերներն ու արտահանվող մոդելը օգտագործում են ընթացիկ բարձրությունը։`:''].filter(Boolean).join(' ');
     return `<tr class="${hasDifference?'has-difference':''}"><th scope="row">${escape(check.label||check.id||'Չափ')}</th><td>${source===null?'—':metres(source)}</td><td>${model===null?'—':metres(model)}${hasDifference?`<small class="evidence-delta">${difference>0?'+':''}${difference} մմ</small>`:''}</td><td><span class="basis-badge ${basis}">${name}</span></td></tr>${note?`<tr class="evidence-note-row"><td colspan="4">${escape(note)}</td></tr>`:''}`;
   }).join('')}</tbody></table>`;
 }

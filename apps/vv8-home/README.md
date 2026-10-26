@@ -4,8 +4,9 @@ The public interface is in Eastern Armenian (`hy`). Room labels and dimension an
 
 An interactive reconstruction of the supplied VV8 Residence dimensioned plan,
 with the earlier furnished brochure retained as a separate visual reference.
-The browser application is buildless and includes a pinned, local copy of
-Three.js r180. No CDN, analytics, external fonts or model services are required.
+The browser application includes a pinned, local copy of Three.js r180.
+A dependency-free Node packaging step creates immutable release URLs so HTML,
+modules and geometry data remain consistent through CDN updates. No CDN, analytics, external fonts or model services are required.
 
 ## Explore
 
@@ -15,11 +16,64 @@ Three.js r180. No CDN, analytics, external fonts or model services are required.
 - **Measure** switches to plan view and measures two floor points, snapping nearby corners.
 - **Inside** uses eye-height navigation. Drag to look and use WASD, arrow keys or the on-screen pad to move. Select any room to move directly there.
 - **Display** controls furniture, labels, cutaway/full/hidden walls, daylight or warm evening light, and the editable user-specified ceiling height. **Clean view** hides room labels and dimension annotations.
-- **Source plans** switches between the dimensioned architectural drawing and the original furnished brochure. **Fit / 100%** lets the annotations be inspected without treating image pixels as measurements.
+- **Source plans** switches between the dimensioned architectural drawing, the original furnished brochure, and the user-supplied building exterior render. **Fit / 100%** lets the annotations be inspected without treating image pixels as measurements.
 - **Dimensions & source** shows drawing-to-model comparisons, signed differences, interpretation notes and area provenance. The selected-room card opens this evidence filtered to that room.
-- **Studio views** opens three physically rendered stills generated from the furnished model: dollhouse, living room and primary bedroom. These saved images use the **3.00 m ceiling height supplied by the user**; they do not regenerate when the interactive height setting changes.
+- **Studio views** displays the current layout, windows and ceiling height. The proposed 3.00 m daylight layout has matching Cycles stills; edited layouts use fresh snapshots of the actual viewer model, with download links. A static reference is never presented as an updated custom plan.
 - **Export 3D** prepares a full-height furnished binary glTF (.glb), in metres; use the download button in the resulting dialog.
 - **Furniture · $80k** opens the dated furniture budget with USD/AMD switching, room filters, listed retail prices, custom planning allowances, source links and a CSV download. The sidebar follows the selected room.
+
+## Editable layout and facade revision
+
+The default proposal keeps the measured stepped outline, every existing wall and
+pier, room polygon, wet-service location and horizontal opening unchanged. The
+source drawing does not establish which thin walls may be safely removed. All
+existing architecture therefore remains locked; this is a furnishing and zoning
+proposal, not a demolition or structural construction plan.
+
+Open **Դասավորություն** to compare the original and proposed arrangements, or
+create a custom one. There are 30 logical assemblies, including 25 movable groups.
+Chairs, lamps, bedding and accessories travel with their associated furniture.
+Drag in the precise SVG plan with a 5 cm grid, edit centre coordinates in metres,
+or rotate in 90° steps. The editor rejects out-of-room placement, new furniture
+intersections, door-swing obstruction and changes to locked assemblies. It offers
+undo/redo, per-item restore, an original-layout reset, browser-local saving, and
+validated JSON import/export. The file never contains editable structural geometry.
+
+The proposed arrangement frees the modeled entry route, turns the dining set,
+adds an east-window reading position, moves the primary bed west and its wardrobe
+north, and reuses the existing vanity and chair as a work/dressing nook. The
+smaller bedroom retains the bed orientation to preserve the balcony-door sweep;
+its wardrobe moves north to improve access. Product sizes, quantities, budget
+IDs and prices stay the same. Circulation checks describe this model, not a survey
+or a claim of accessibility-code compliance.
+
+The exterior render supports near-floor-to-ceiling glazing and charcoal frames.
+At the user's 3.00 m ceiling, the chosen sill/head are 0.03 m and 2.93 m, with a
+2.10 m transom band. Balcony operable leaves retain their 2.08 m height under
+fixed glass transoms. These vertical dimensions and frame details are explicitly
+visual assumptions. They scale with the editable ceiling; horizontal opening
+widths retain the dimensioned-plan coordinates and disclosed endpoint conflicts.
+
+Room labels remain off initially. Measurements, room selection, the $80,000
+budget, inside navigation, lighting, source evidence and GLB export work with
+every accepted layout. Furniture contact shadows and practical lamp positions
+follow edited objects.
+
+## Build and preview
+
+Edit `index.template.html` for markup and root files in `dist` for source code.
+Do not hand-edit generated `dist/index.html` or files under `dist/releases`.
+
+```bash
+node build-static.mjs
+node build-static.mjs --check
+python3 -m http.server 4173 --directory dist
+```
+
+The builder validates local resources and copies matching JS/CSS/JSON files into
+`dist/releases/<content-hash>/`, then writes the entry HTML last. It preserves
+previous releases for clients with cached HTML. The committed `dist` directory
+is ready for the existing Render static-site publishing configuration.
 
 ## Furniture edition · 26 October 2026
 
@@ -51,9 +105,10 @@ all taxes, stock, dimensions, finish samples, carrying and installation terms
 before ordering, and deduct services already included by a supplier.
 
 `node export-budget.mjs` validates the schedule and regenerates the UTF-8 CSV.
-`node export-model.mjs` regenerates the furnished GLB including the same dated
-budget summary and item-price metadata. Copy the resulting GLB to the download
-asset configured in `dist/app.js`, and keep its displayed byte size current.
+`node export-model.mjs output.glb --layout proposed` regenerates the proposed
+furnished GLB from the same modules as the viewer, including the dated budget
+and accepted layout poses. Use `--layout original` for the original arrangement.
+The viewer exports its current layout dynamically, including custom edits.
 
 ## Source and dimensional accuracy
 

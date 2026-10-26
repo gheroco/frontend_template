@@ -5,6 +5,18 @@ const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
 const temp = new THREE.Vector3();
 const material = (color, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness: .82, ...extra });
 
+// Vertical proportions are a design interpretation of the supplied facade render.
+// The measured plan owns the bay widths, positions and retained structural piers.
+export const DEFAULT_FACADE_PROFILE = Object.freeze({
+  sill: .03,
+  headClearance: .07,
+  transomHeight: 2.10,
+  mullionWidth: .045,
+  mullionDepth: .075,
+  frameColor: '#2d3333',
+  verticalBasis: 'Visual interpretation of the supplied exterior render; not a measured window schedule'
+});
+
 function seededRandom(seed = 143) {
   return () => { seed = (1664525 * seed + 1013904223) >>> 0; return seed / 4294967296; };
 }
@@ -93,9 +105,14 @@ export function boundsOf(points) {
   return {minX, maxX, minZ, maxZ, width: maxX - minX, depth: maxZ - minZ, x: (minX + maxX) / 2, z: (minZ + maxZ) / 2};
 }
 
-export function createArchitecture(data) {
+export function createArchitecture(data, options = {}) {
+  const facadeProfile = {...DEFAULT_FACADE_PROFILE,...data.facadeProfile,...options.facadeProfile};
+  const referenceHeight = Number(data.wallHeight) || 3;
+  const facadeHead = height => Math.max(facadeProfile.sill + .25, height - facadeProfile.headClearance);
+  const transomHead = height => Math.min(facadeProfile.transomHeight,facadeHead(height)-.025);
   const root = new THREE.Group(); root.name = 'VV8 Residence | metres';
   root.userData = {source:data.source, reportedArea:data.sourceReportedTotal, brochureRoomAreaSum:data.listedAreaSum, modelAreaSum:data.modelAreaSum, dimensionStatus:'dimension-first with disclosed endpoint conflicts', units:'metres', dimensionalConflicts:data.dimensionalConflicts, assumptions:data.assumptions};
+  root.userData.facadeProfile = {...facadeProfile,referenceImage:'assets/exterior-building.jpg',head:facadeHead(referenceHeight),horizontalBasis:'Existing dimensioned plan coordinates; unchanged'};
   const a = data.axes;
   const B = a.bathX, S = a.stepX, H = a.hallX, P = a.balX, R = a.rightX;
   const D = a.dividerY, L = a.livingY, E = a.stepY, M = a.masterDoorY, Q = a.smallBottomY, Z = a.bottomY;
@@ -109,10 +126,10 @@ export function createArchitecture(data) {
   const cut = material('#333734');
   const wallMats = [white, white, cut, white, white, white];
   const dark = material('#353a37', {roughness: .52});
-  const frame = createSurfaceMaterial('metal',{color:'#5f665e',name:'Bronze charcoal window frames',metalness:.42,roughness:.36});
+  const frame = createSurfaceMaterial('metal',{color:facadeProfile.frameColor,name:'Facade reference · slim charcoal aluminium frames',metalness:.52,roughness:.32});
   const oak = createSurfaceMaterial('oak',{color:'#85705a',name:'Warm oak interior doors',roughness:.62,grain:'y',tile:[.28,1.4]});
   const brass = createSurfaceMaterial('metal',{color:'#9b8050',name:'Brushed brass door hardware',metalness:.75,roughness:.28});
-  const glass = new THREE.MeshPhysicalMaterial({color:'#f5f7f6',metalness:0,roughness:.055,transmission:.88,ior:1.50,thickness:.012,transparent:true,opacity:.42,side:THREE.DoubleSide,depthWrite:false});
+  const glass = new THREE.MeshPhysicalMaterial({color:'#e6eef0',metalness:0,roughness:.055,transmission:.88,ior:1.50,thickness:.012,transparent:true,opacity:.42,side:THREE.DoubleSide,depthWrite:false});
   glass.name='Clear architectural glass · IOR 1.50';
   const gasket=material('#202622',{roughness:.82});gasket.name='Window glazing gaskets';
   const floorMats = {
@@ -139,6 +156,16 @@ export function createArchitecture(data) {
     if((Array.isArray(mat)?mat[0]:mat)?.userData?.surface)setPhysicalUV(mesh,{clone:true});
     parent.add(mesh); return mesh;
   }
+  function windowBounds(mesh,bottom,top) {
+    mesh.userData.verticalBasis=facadeProfile.verticalBasis;
+    windows.push({mesh,bottom,top});
+    return mesh;
+  }
+  function windowLevel(mesh,center) {
+    mesh.userData.verticalBasis=facadeProfile.verticalBasis;
+    windows.push({mesh,center,thickness:mesh.scale.y});
+    return mesh;
+  }
   function segment(start, end, thickness, bottom = 0, top = null, name = 'Wall', mats = wallMats, collidable = true) {
     const dx = end[0]-start[0], dz = end[1]-start[1], length = Math.hypot(dx,dz);
     if (length < .004) return;
@@ -146,7 +173,7 @@ export function createArchitecture(data) {
     const rec = {mesh,start,end,thickness,bottom,top}; walls.push(rec);
     if (collidable) collision.push(rec);
     // A quiet skirting strip on both faces survives cutaway mode.
-    if (bottom === 0 && thickness >= .09 && name.includes('Wall')) {
+    if (bottom === 0 && thickness >= .09 && name.includes('Wall') && !name.endsWith(' sill')) {
       const skirt = box(structure,'Painted skirting',mesh.position.x,.055,mesh.position.z,length,.11,thickness+.016,white,mesh.rotation.y);
       skirt.castShadow = false;
     }
@@ -196,59 +223,74 @@ export function createArchitecture(data) {
   }
   /** A complete measured bay, with only fixed glass included in the collision mask. */
   function glazedOpening(spec) {
-    const {start,end,name,sill=.025,head=2.35,opening=null,panels=2}=spec;
+    const {start,end,name,opening=null,panels=2}=spec;
+    const sill=facadeProfile.sill,head=facadeHead(referenceHeight);
     const dx=end[0]-start[0],dz=end[1]-start[1],length=Math.hypot(dx,dz),rotation=-Math.atan2(dz,dx);
     const at=t=>[start[0]+dx*t/length,start[1]+dz*t/length];
+    const first=walls.length;
     wall(start,end,.10,[{from:0,to:length,sill,head}],name+' Wall');
+    for(const rec of walls.slice(first)){
+      rec.facadeHead=rec.bottom===head;
+      rec.mesh.userData.verticalBasis=facadeProfile.verticalBasis;
+      rec.mesh.userData.horizontalBasis=spec.basis;
+    }
     const fixed=opening?[[0,opening.from],[opening.to,length]]:[[0,length]];
     const stiles=new Set([0,length]);
     if(opening){stiles.add(opening.from);stiles.add(opening.to);}
     function pane(from,to,bottom,top,part='fixed glazing'){
       if(to-from<.005)return;
+      const bottomY=typeof bottom==='function'?bottom(referenceHeight):bottom;
+      const topY=typeof top==='function'?top(referenceHeight):top;
       const p=at((from+to)/2);
-      const m=box(structure,name+' '+part,p[0],(bottom+top)/2,p[1],to-from,top-bottom,.024,glass,rotation);
-      m.castShadow=false;m.userData.windowReferenceHeight=head;m.userData.dimensionBasis=spec.basis;windows.push(m);
+      const m=box(structure,name+' '+part,p[0],(bottomY+topY)/2,p[1],to-from,topY-bottomY,.024,glass,rotation);
+      m.castShadow=false;m.userData.dimensionBasis=spec.basis;m.userData.glazingBay=name;
+      windowBounds(m,bottom,top);
     }
     for(const [from,to] of fixed){
       if(to-from<.005)continue;
       const n=Math.max(1,Math.ceil((to-from)/Math.max(.75,length/panels)));
       for(let i=0;i<n;i++){
         const lo=from+(to-from)*i/n,hi=from+(to-from)*(i+1)/n;
-        pane(lo+.02,hi-.02,sill+.02,head-.02);stiles.add(lo);stiles.add(hi);
+        pane(lo+.025,hi-.025,sill+.025,h=>facadeHead(h)-.025);stiles.add(lo);stiles.add(hi);
       }
       collision.push({start:at(from),end:at(to),thickness:.07,bottom:0,top:head});
+      // The render shows a continuous horizontal frame band near the door heads.
+      const p=at((from+to)/2);
+      const rail=box(structure,name+' fixed transom rail',p[0],transomHead(referenceHeight),p[1],to-from,.035,.065,frame,rotation);
+      windowLevel(rail,transomHead);
     }
     if(opening){
-      pane(opening.from+.02,opening.to-.02,2.10,head-.02,'door transom');
+      pane(opening.from+.025,opening.to-.025,h=>transomHead(h)+.02,h=>facadeHead(h)-.025,'door transom');
       const p=at((opening.from+opening.to)/2);
-      const m=box(structure,name+' door transom rail',p[0],2.10,p[1],opening.to-opening.from,.04,.065,frame,rotation);
-      m.userData.windowReferenceHeight=head;windows.push(m);
+      const m=box(structure,name+' door transom rail',p[0],transomHead(referenceHeight),p[1],opening.to-opening.from,.04,.065,frame,rotation);
+      windowLevel(m,transomHead);
     }
     for(const t of stiles){
-      const p=at(t),m=box(structure,name+' mullion',p[0],(sill+head)/2,p[1],.045,head-sill+.04,.075,frame,rotation);
-      m.userData.windowReferenceHeight=head;windows.push(m);
+      const p=at(t),m=box(structure,name+' mullion',p[0],(sill+head)/2,p[1],facadeProfile.mullionWidth,head-sill+.04,facadeProfile.mullionDepth,frame,rotation);
+      windowBounds(m,sill-.02,h=>facadeHead(h)+.02);
       // Thin recessed seals on both faces make the clear glazing readable without tinting it.
       for(const side of [-1,1]){
         const gx=p[0]-dz/length*.042*side,gz=p[1]+dx/length*.042*side;
         const seal=box(structure,name+' dark vertical gasket',gx,(sill+head)/2,gz,.012,head-sill,.008,gasket,rotation);
-        seal.userData.windowReferenceHeight=head;windows.push(seal);
+        windowBounds(seal,sill,facadeHead);
       }
     }
     const mid=at(length/2);
-    for(const y of [sill,head]){
+    for(const upper of [false,true]){
+      const y=upper?head:sill,level=upper?facadeHead:sill;
       const m=box(structure,name+' perimeter rail',mid[0],y,mid[1],length,.045,.075,frame,rotation);
-      m.userData.windowReferenceHeight=head;windows.push(m);
+      windowLevel(m,level);
       for(const side of [-1,1]){
-        const seal=box(structure,name+' horizontal gasket',mid[0]-dz/length*.042*side,y+(y===sill?.018:-.018),mid[1]+dx/length*.042*side,length-.045,.009,.008,gasket,rotation);
-        seal.userData.windowReferenceHeight=head;windows.push(seal);
+        const seal=box(structure,name+' horizontal gasket',mid[0]-dz/length*.042*side,y+(upper?-.018:.018),mid[1]+dx/length*.042*side,length-.045,.009,.008,gasket,rotation);
+        windowLevel(seal,upper?h=>facadeHead(h)-.018:sill+.018);
       }
     }
   }
   function curtain(x,z0,z1){
     const fabric=createSurfaceMaterial('linen',{color:'#ece9df',name:'Continuous pleated linen drapery',roughness:.96,side:THREE.DoubleSide});
-    const length=z1-z0,width=THREE.MathUtils.clamp(length*.16,.30,.48),top=2.60,bottom=.028,height=top-bottom;
+    const length=z1-z0,width=THREE.MathUtils.clamp(length*.16,.30,.48),top=referenceHeight-.06,bottom=.028,height=top-bottom;
     const track=box(structure,'Slim ceiling curtain track',x-.14,top+.028,(z0+z1)/2,.022,.026,length+.08,white);
-    track.userData.windowReferenceHeight=top+.05;windows.push(track);
+    windowLevel(track,h=>h-.032);
     for(const [index,start] of [z0,z1-width].entries()){
       const columns=48,rows=30,positions=[],uvs=[],indices=[],folds=5;
       for(let row=0;row<=rows;row++)for(let col=0;col<=columns;col++){
@@ -263,13 +305,14 @@ export function createArchitecture(data) {
       }
       const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uvs,2));geometry.setIndex(indices);geometry.computeVertexNormals();
       const panel=new THREE.Mesh(geometry,fabric);panel.name=`Gathered linen curtain · ${index?'right':'left'} continuous panel`;
-      panel.castShadow=true;panel.receiveShadow=true;panel.userData.windowReferenceHeight=top+.05;
+      panel.castShadow=true;panel.receiveShadow=true;
       panel.userData.dimensionBasis='Design allowance; fabric drops and track height require site measurement';
-      structure.add(panel);windows.push(panel);
+      panel.userData.verticalBasis=facadeProfile.verticalBasis;
+      structure.add(panel);windows.push({mesh:panel,curtain:true,referenceBottom:bottom,referenceTop:top});
       // Small carriers sit in the track, above every gathered pleat.
       for(let i=0;i<=folds;i++){
         const clip=box(structure,'Curtain track carrier',x-.15,top+.006,start+width*i/folds,.015,.026,.018,white);
-        clip.userData.windowReferenceHeight=top+.05;windows.push(clip);
+        windowLevel(clip,h=>h-.054);
       }
     }
   }
@@ -312,15 +355,24 @@ export function createArchitecture(data) {
     const cutHeight = mode==='cutaway' ? .82 : height;
     for(const rec of walls){
       const top=Math.min(rec.top ?? height,cutHeight);
-      const bottom=rec.bottom>2?Math.min(rec.bottom,height-.12):rec.bottom;
+      const bottom=rec.facadeHead?facadeHead(height):rec.bottom>2?Math.min(rec.bottom,height-.12):rec.bottom;
       rec.mesh.visible=top>bottom+.002;
       rec.mesh.scale.y=Math.max(.001,top-bottom);rec.mesh.position.y=(top+bottom)/2;
       if(rec.mesh.geometry.userData.physicalUV)setPhysicalUV(rec.mesh,{clone:false});
     }
-    for(const mesh of windows){
-      const base=mesh.userData.originalWindowTransform||(mesh.userData.originalWindowTransform={y:mesh.position.y,scaleY:mesh.scale.y});
-      const factor=Math.min(1,(height-.12)/(mesh.userData.windowReferenceHeight||2.5));
-      mesh.position.y=base.y*factor;mesh.scale.y=base.scaleY*factor;
+    const value=v=>typeof v==='function'?v(height):v;
+    for(const rec of windows){
+      const mesh=rec.mesh;
+      if(rec.curtain){
+        const factor=(height-.06-rec.referenceBottom)/(rec.referenceTop-rec.referenceBottom);
+        mesh.scale.y=factor;mesh.position.y=rec.referenceBottom*(1-factor);
+      }else if(rec.center!==undefined){
+        mesh.position.y=value(rec.center);mesh.scale.y=rec.thickness;
+      }else{
+        const bottom=value(rec.bottom),top=value(rec.top);
+        mesh.visible=top>bottom+.002;
+        mesh.position.y=(top+bottom)/2;mesh.scale.y=Math.max(.001,top-bottom);
+      }
     }
     // Glazing and door leaves use clipping so cutaway remains legible.
     const clipping = mode==='cutaway' ? [new THREE.Plane(new THREE.Vector3(0,-1,0),1.10)] : [];
@@ -330,6 +382,8 @@ export function createArchitecture(data) {
     });
     for(const mat of clipMaterials) {mat.clippingPlanes=clipping;mat.needsUpdate=true;}
     root.userData.ceilingHeight=height;
+    root.userData.facadeProfile.head=facadeHead(height);
+    root.userData.facadeProfile.transomHeight=transomHead(height);
     root.userData.ceilingHeightBasis=height===data.wallHeight ? (data.wallHeightBasis || 'provided') : 'viewer adjustment';
     root.userData.ceilingHeightSource=data.wallHeightSource || 'User specified a 3.00 m ceiling in this conversation.';
   }
@@ -345,5 +399,5 @@ export function createArchitecture(data) {
     return false;
   }
   update({});
-  return {root,floors,structure,trim,walls,doors,outline,update,blocked,floorMats,doorArcs};
+  return {root,floors,structure,trim,walls,doors,outline,update,blocked,floorMats,doorArcs,facadeProfile};
 }

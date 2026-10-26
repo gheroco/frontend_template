@@ -8,6 +8,8 @@ import * as ui from './ui.js';
 import { initBudgetUI, setBudgetRoom } from './budget-ui.js';
 import { attachFurnitureBudget } from './budget-model.js';
 import { createSceneQuality } from './scene-quality.js';
+import { createLayoutModel } from './layout-model.js';
+import { initPlanEditor } from './plan-editor.js';
 
 const $ = id => document.getElementById(id);
 const areaText = n => (Math.round((Number(n)+1e-8)*10)/10).toFixed(1);
@@ -16,6 +18,8 @@ const viewport=$('viewport'), labelRoot=$('labels');
 let renderer,scene,camera,ortho,perspective,controls,architecture,furnishings,model,data,rooms,budgetData,sceneQuality;
 let dimGroup=new THREE.Group(),selectionGroup=new THREE.Group(),measurementGroup=new THREE.Group();
 let labels=[],dimensionLabels=[],measurementLabels=[],measurementPoints=[];
+let layoutEngine,planEditor,layoutState,layoutRevision=0,photoRenders=null;
+const studioCache=new Map();
 let walkYaw=0,walkPitch=0,drag=null,previousTime=0,transition=null,frameHandle;
 const downKeys=new Set(),raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 const plane=new THREE.Plane(new THREE.Vector3(0,1,0),-.025);
@@ -52,6 +56,8 @@ async function start(){
   const budgetResponse=await fetch('./budget.json');
   if(!budgetResponse.ok)throw new Error('Չհաջողվեց բեռնել կահույքի բյուջեն։');
   budgetData=await budgetResponse.json();
+  const photoResponse=await fetch('./render-presets.json');
+  if(photoResponse.ok)photoRenders=await photoResponse.json();
   rooms=Object.entries(data.rooms).map(([id,r])=>{
     const [name,armenian,color,description]=roomDescriptions[id];
     return {...r,id,name,armenian,color,description,area:polygonArea(r.polygon),brochureArea:r.brochureArea??r.targetArea,bounds:boundsOf(r.polygon)};
@@ -93,6 +99,18 @@ async function start(){
   camera=ortho;setDollhouseCamera(false);
   setupControls();resize();new ResizeObserver(resize).observe(viewport);
   createRoomLabels();bindCanvas();createWalkPad();rebuildDimensions();
+  layoutEngine=createLayoutModel({data,furnishings});
+  const proposed=layoutEngine.presets.find(preset=>preset.id==='proposed');
+  layoutState=layoutEngine.getState();
+  if(proposed)applyLayout(proposed.state);
+  planEditor=initPlanEditor({
+    data,items:layoutEngine.items,presets:layoutEngine.presets,
+    getState:layoutEngine.getState,validate:layoutEngine.validate,
+    onChange:applyLayout,onMode:setMode,
+    onSelect:id=>{const item=layoutEngine.findItem(id);if(item?.roomId)selectRoom(item.roomId);},
+    onOpen:()=>{$('settings-panel').hidden=true;$('settings-button').setAttribute('aria-expanded','false');}
+  });
+  ui.setStudioRenderer(captureStudioView);
   applySettings();ui.setSelectedRoom(null);ui.setReady();
   renderer.compile(scene,camera);
   window.__homeDiagnostics=()=>({ready:true,three:THREE.REVISION,renderer:renderer.isSoftwareRenderer?'software geometry fallback':'WebGL',mode:state.mode,selected:state.selected,measuring:state.measuring,dimensions:state.dimensions,furniture:state.furniture,walls:state.walls,height:state.height,lighting:state.lighting,modelArea:rooms.reduce((n,r)=>n+polygonArea(r.polygon),0),dimensionChecks:data.dimensionChecks||[],roomCount:rooms.length,meshes:countMeshes(model),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,camera:camera.position.toArray(),viewport:{width:viewport.clientWidth,height:viewport.clientHeight}});
@@ -292,7 +310,7 @@ function bindCanvas(){
   });
   renderer.domElement.addEventListener('pointercancel',()=>{drag=null;});
   addEventListener('keydown',event=>{
-    if(event.target.matches('input,select,textarea')||document.querySelector('dialog[open]'))return;
+    if(event.target.matches('input,select,textarea')||event.target.closest('#plan-editor')||document.querySelector('dialog[open]'))return;
     if(['w','a','s','d','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)){downKeys.add(event.key);if(state.mode==='walk')event.preventDefault();}
     if(event.key==='Escape'&&state.measuring)clearMeasurement();
   });
@@ -326,33 +344,97 @@ function createWalkPad(){
   document.querySelector('.stage').append(pad);
 }
 
+function applyLayout(next){
+  const accepted=layoutEngine.apply(next);
+  if(!accepted)return false;
+  layoutState=accepted;layoutRevision++;
+  model.userData.layoutPlan={...JSON.parse(JSON.stringify(accepted)),units:'metres',rotationUnits:'degrees',architecturePolicy:data.structurePolicy};
+  const title={original:'Սկզբնական դասավորություն',proposed:'Առաջարկվող դասավորություն',custom:'Ձեր դասավորությունը'}[accepted.preset]||'Ձեր դասավորությունը';
+  const badge=document.querySelector('.plan-status');if(badge)badge.innerHTML='<span></span>'+title;
+  sceneQuality?.refreshLayout();clearStudioCache();renderer.invalidate?.();
+  return accepted;
+}
+
+function clearStudioCache(){
+  for(const entry of studioCache.values())URL.revokeObjectURL(entry.url);
+  studioCache.clear();
+}
+function matchingPhoto(view){
+  if(!photoRenders?.available||!photoRenders.views?.[view]||!layoutState||Math.abs(state.height-photoRenders.height)>.00001||state.lighting!==photoRenders.lighting)return null;
+  const expected=photoRenders.placements||{},actual=layoutState.placements||{};
+  if(Object.keys(expected).length!==Object.keys(actual).length)return null;
+  if(!Object.entries(expected).every(([id,p])=>actual[id]&&['x','z','rotation'].every(key=>Math.abs(p[key]-actual[id][key])<.00001)))return null;
+  const profile=data.facadeProfile||{};
+  if(!['sill','headClearance','transomHeight','mullionWidth','mullionDepth','frameColor'].every(key=>profile[key]===photoRenders.facadeProfile?.[key]))return null;
+  return {url:photoRenders.views[view],note:`Առաջարկվող դասավորություն · ${state.height.toFixed(2)} մ առաստաղ · նույն մոդելի իրատեսական պատկեր`};
+}
+function captureStudioView(view){
+  const photo=matchingPhoto(view);if(photo)return photo;
+  const key=[view,layoutRevision,state.height,state.lighting].join(':');
+  if(studioCache.has(key))return studioCache.get(key);
+  const size=renderer.getSize(new THREE.Vector2()),ratio=renderer.getPixelRatio();
+  const hidden=[dimGroup,selectionGroup,measurementGroup].map(group=>({group,visible:group.visible}));
+  const full={...state,walls:view==='dollhouse'?'cutaway':'full',mode:view==='dollhouse'?'dollhouse':'walk',furniture:true};
+  try{
+    architecture.update(full);furnishings.visible=true;sceneQuality.update(full);
+    for(const {group}of hidden)group.visible=false;
+    let shot;
+    if(view==='dollhouse'){
+      shot=new THREE.OrthographicCamera(-12,12,8,-8,.1,100);
+      const target=new THREE.Vector3(4.5,.15,6.05);shot.position.copy(target).add(new THREE.Vector3(9.3,18.5,14));shot.lookAt(target);
+    }else{
+      shot=new THREE.PerspectiveCamera(72,1.5,.04,100);
+      const eye=Math.min(1.62,state.height-.3);
+      if(view==='primary'){shot.position.set(8.05,eye,11.35);shot.lookAt(4.65,1.1,10.15);}
+      else{shot.position.set(2.7,eye,5.75);shot.lookAt(6.8,1.25,3.8);}
+    }
+    shot.updateProjectionMatrix();renderer.setPixelRatio(1);renderer.setSize(1440,960,false);
+    renderer.invalidate?.();renderer.render(scene,shot);
+    const encoded=renderer.domElement.toDataURL('image/jpeg',.92).split(',')[1];
+    const bytes=Uint8Array.from(atob(encoded),char=>char.charCodeAt(0));
+    const url=URL.createObjectURL(new Blob([bytes],{type:'image/jpeg'}));
+    const name={original:'Սկզբնական դասավորություն',proposed:'Առաջարկվող դասավորություն',custom:'Ձեր դասավորությունը'}[layoutState?.preset]||'Ընթացիկ դասավորություն';
+    const result={url,note:`${name} · ${state.height.toFixed(2)} մ առաստաղ · ընթացիկ պատուհաններ և կահույք`};
+    studioCache.set(key,result);return result;
+  }finally{
+    renderer.setPixelRatio(ratio);renderer.setSize(size.x,size.y,false);
+    for(const {group,visible}of hidden)group.visible=visible;
+    applySettings();renderer.invalidate?.();renderer.render(scene,camera);
+  }
+}
+
 function showExportDialog(url,size){
   let dialog=$('export-dialog');
   if(!dialog){
     dialog=document.createElement('dialog');dialog.id='export-dialog';dialog.className='export-dialog';
-    dialog.innerHTML='<div class="dialog-heading"><div><p class="eyebrow">Պահպանեք ձեր տան մոդելը</p><h2>Ձեր 3D մոդելը պատրաստ է։</h2></div><button class="icon-button" aria-label="Փակել ներբեռնման պատուհանը">×</button></div><div class="export-body"><p>Ամբողջ բարձրությամբ պատեր, մանրամասն կահույք և ներկառուցված նյութեր։ Մեկ միավորը հավասար է մեկ մետրի։</p><p id="export-file-size"></p><a id="download-glb" class="primary-button" download="VV8-home-area-calibrated.glb">Ներբեռնել 3D մոդելը (.glb)</a><small>Սենյակների ուրվագծերը հետևում են չափագրված գծագրին։ Ձեր նշած առաստաղի բարձրությունը, հաշվարկված խորշերն ու իրար չհամապատասխանող չափերը ներկայացված են «Չափեր և աղբյուրներ» բաժնում։</small></div>';
+    dialog.innerHTML='<div class="dialog-heading"><div><p class="eyebrow">Պահպանեք ձեր տան մոդելը</p><h2>Ձեր 3D մոդելը պատրաստ է։</h2></div><button class="icon-button" aria-label="Փակել ներբեռնման պատուհանը">×</button></div><div class="export-body"><p>Ամբողջ բարձրությամբ պատեր, մանրամասն կահույք և ներկառուցված նյութեր։ Մեկ միավորը հավասար է մեկ մետրի։</p><p id="export-file-size"></p><a id="download-glb" class="primary-button" download="VV8-current-layout.glb">Ներբեռնել 3D մոդելը (.glb)</a><small>Սենյակների ուրվագծերը հետևում են չափագրված գծագրին։ Ձեր նշած առաստաղի բարձրությունը, հաշվարկված խորշերն ու իրար չհամապատասխանող չափերը ներկայացված են «Չափեր և աղբյուրներ» բաժնում։</small></div>';
     document.body.append(dialog);dialog.querySelector('button').addEventListener('click',()=>dialog.close());
   }
   const link=$('download-glb');if(link.href.startsWith('blob:'))URL.revokeObjectURL(link.href);
-  link.href=url;link.download='VV8-home-area-calibrated.glb';
-  $('export-file-size').textContent=`GLB · ${(size/1048576).toFixed(1)} ՄԲ · ${state.height.toFixed(2)} մ առաստաղ · 8 տարածքի ուրվագիծ`;
+  link.href=url;link.download='VV8-current-layout.glb';
+  $('export-file-size').textContent=`GLB · ${(size/1048576).toFixed(1)} ՄԲ · ${state.height.toFixed(2)} մ առաստաղ · ընթացիկ դասավորություն`;
   dialog.showModal();
 }
 async function exportModel(){
   ui.toast('Պատրաստվում է ամբողջական մոդելը՝ մետրերով…');
   const exportButton=document.querySelector('[data-action="export"]');exportButton.disabled=true;
+  const temporaryGeometry=[];
   try{
-    if(Math.abs(state.height-3)<.0001){
-      showExportDialog('./assets/VV8-home-area-calibrated.glb',11304372);
-      return;
-    }
     const full={...state,walls:'full',furniture:true,mode:'dollhouse'};architecture.update(full);furnishings.visible=true;
     architecture.doorArcs.visible=false;model.updateMatrixWorld(true);
-    const exported=await new GLTFExporter().parseAsync(model,{binary:true,onlyVisible:true,maxTextureSize:1024});
+    const snapshot=model.clone(true),geometryCopies=new Map();
+    snapshot.getObjectByName('Walls, columns, doors and glazing')?.traverse(object=>{
+      const geometry=object.geometry;if(!geometry?.userData?.physicalUV)return;
+      if(!geometryCopies.has(geometry)){const copy=geometry.clone();geometryCopies.set(geometry,copy);temporaryGeometry.push(copy);}
+      object.geometry=geometryCopies.get(geometry);
+    });
+    snapshot.updateMatrixWorld(true);
+    applySettings();
+    const exported=await new GLTFExporter().parseAsync(snapshot,{binary:true,onlyVisible:true,maxTextureSize:1024});
     const blob=new Blob([exported],{type:'model/gltf-binary'}),url=URL.createObjectURL(blob);
     showExportDialog(url,blob.size);
   }catch(error){console.error(error);ui.toast('Չհաջողվեց ավարտել մոդելի արտահանումը։ Խնդրում ենք կրկին փորձել։');}
-  finally{applySettings();exportButton.disabled=false;}
+  finally{for(const geometry of temporaryGeometry)geometry.dispose();applySettings();exportButton.disabled=false;}
 }
 function handleAction({action,value}){
   if(!architecture)return;
@@ -361,8 +443,8 @@ function handleAction({action,value}){
     case 'room':selectRoom(value);break;
     case 'toggle':state[value]=!state[value];applySettings();break;
     case 'walls':state.walls=value;applySettings();break;
-    case 'height':state.height=value;applySettings();break;
-    case 'lighting':state.lighting=value;applySettings();break;
+    case 'height':state.height=value;clearStudioCache();applySettings();break;
+    case 'lighting':state.lighting=value;clearStudioCache();applySettings();break;
     case 'reset':state.selected=null;ui.setSelectedRoom(null);setBudgetRoom(null);removeGroup(selectionGroup);for(const l of labels)l.el.classList.remove('selected');rebuildDimensions();clearMeasurement();setMode('dollhouse');break;
     case 'zoom':
       if(state.mode==='walk')moveWalk(value,0,.35);

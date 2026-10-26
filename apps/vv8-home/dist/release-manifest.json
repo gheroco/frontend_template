@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "release": "b81aeaae8d1a35302220",
+  "base": "./releases/b81aeaae8d1a35302220/",
+  "entry": "./releases/b81aeaae8d1a35302220/app.js",
+  "template": "index.template.html",
+  "files": [
+    {
+      "name": "SoftwareRenderer.js",
+      "bytes": 21562,
+      "sha256": "77dd804502cac7c67aaed8d39445396480d5c3dd869e2c55b7c430b1a716554a"
+    },
+    {
+      "name": "app.js",
+      "bytes": 34615,
+      "sha256": "0b02c4f5dbf1a551864b204df152f9157ad68b629f6c112a9ac5efa56ccd78a7"
+    },
+    {
+      "name": "architecture.js",
+      "bytes": 23255,
+      "sha256": "9f77d6677e8682f5d9538d43fc9420e4848a80eadd005d4bfc3d0a51aabb0ba6"
+    },
+    {
+      "name": "budget-model.js",
+      "bytes": 1524,
+      "sha256": "70ed4ab1469ef946c71bb10a57d74763fc8f38881b160f2a7bac16fd729f03f0"
+    },
+    {
+      "name": "budget-ui.js",
+      "bytes": 18089,
+      "sha256": "25140b930ea447fe4ab196594c143c0b487631b0e3e955b664afb0510a267505"
+    },
+    {
+      "name": "budget.css",
+      "bytes": 14618,
+      "sha256": "707edfb141b4ab20bc80fed7e6a25e3c93eb0e59a7691a29b6b6e9b4c1ccd7e8"
+    },
+    {
+      "name": "budget.json",
+      "bytes": 38881,
+      "sha256": "665f4aef53202387e94bc6fbc4bf4747a9ef201139db32dd34d4f428d860b9d5"
+    },
+    {
+      "name": "facade-reference.json",
+      "bytes": 1925,
+      "sha256": "3fe1715f1b077fac5034ceea0cf41691a0e50134ddecaad4e6f909235a8524d0"
+    },
+    {
+      "name": "furnishings.js",
+      "bytes": 46605,
+      "sha256": "885fc505f69230e4459533cfefc246c382e037b5a21f5ce61dd8278a91812653"
+    },
+    {
+      "name": "geometry.json",
+      "bytes": 46628,
+      "sha256": "8ad6a7c2931b8c0dddfa7dcee8ededa38d9d679ae8d4395a671809da8443d9a5"
+    },
+    {
+      "name": "layout-model.js",
+      "bytes": 10935,
+      "sha256": "1caeac8faf1ff115a27376206d9386c5aa2f397ca1d76a67077c9b6dbf017dd4"
+    },
+    {
+      "name": "materials.js",
+      "bytes": 8199,
+      "sha256": "2e6c6fe67027c775d55eb6fb11d22c4fe44c6a809be617fa8bab788545a4f6b1"
+    },
+    {
+      "name": "plan-editor.css",
+      "bytes": 8548,
+      "sha256": "336eb1290ca701fbdb12c2eb5eb9847b2d23ac1ccc4b6a6381242e6de60da19c"
+    },
+    {
+      "name": "plan-editor.js",
+      "bytes": 26621,
+      "sha256": "14264aebbaa044bc2d670b6437d58826e319009b94e09e995c6e25ec0bce9e20"
+    },
+    {
+      "name": "plan.css",
+      "bytes": 16341,
+      "sha256": "3c5a13dc8116407ef1f765a16785751614fab7f0ecd31cdbee1b27e8e596af12"
+    },
+    {
+      "name": "render-presets.json",
+      "bytes": 3747,
+      "sha256": "c3beb1221557c650b900052b99165b5a95e4a5cb7e5f16fa5dbcfe34cd87e325"
+    },
+    {
+      "name": "scene-quality.js",
+      "bytes": 6137,
+      "sha256": "f9193b4ab91aa972d2217cad71372bc714cf08d53bfe2e70ea0c5d35dfd8e9e9"
+    },
+    {
+      "name": "styles.css",
+      "bytes": 25941,
+      "sha256": "87bd21b9a512f059ceaa5f8484d8e47528ab929add1ea2faa43a3ca3225d4e3e"
+    },
+    {
+      "name": "ui.js",
+      "bytes": 24160,
+      "sha256": "f930004f7f1d8f5ffbece033854335c049ddde2f0bf28e70e0f6900e40be6543"
+    }
+  ]
+}

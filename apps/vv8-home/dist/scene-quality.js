@@ -21,7 +21,7 @@ export function createSceneQuality({ scene, renderer, data, furnishings }) {
     const p = new THREE.Vector3(); object.getWorldPosition(p);
     const key = [p.x.toFixed(2),p.z.toFixed(2)].join(':'); if (seen.has(key)) return; seen.add(key);
     const light = new THREE.PointLight('#ffd99e', 0, 3.6, 2); light.position.copy(p).add(new THREE.Vector3(0,.22,0));
-    light.castShadow = false; studio.add(light); practical.push(light);
+    light.castShadow = false; studio.add(light); practical.push({light,object});
   });
   const ceilings = new THREE.Group(); ceilings.name = 'Assumed ceiling surfaces'; scene.add(ceilings);
   const ceilingMat = new THREE.MeshStandardMaterial({color:'#f3efe6',roughness:.94,side:THREE.DoubleSide});
@@ -30,7 +30,13 @@ export function createSceneQuality({ scene, renderer, data, furnishings }) {
     const ceiling = polygonMesh(room.polygon, ceilingMat, data.wallHeight || 3);
     ceiling.name = id + ' ceiling · user-specified height'; ceiling.castShadow = false; ceilings.add(ceiling);
   }
-  const contacts = makeContactShadows(furnishings); scene.add(contacts);
+  const contactData = makeContactShadows(furnishings), contacts=contactData.group; scene.add(contacts);
+  function refreshLayout(){
+    furnishings.updateMatrixWorld(true);
+    for(const {light,object} of practical){object.getWorldPosition(light.position);light.position.y+=.22;}
+    contactData.refresh();
+    renderer.invalidate?.();
+  }
   let currentLighting;
   function update(state) {
     ceilings.visible = state.mode === 'walk' && state.walls === 'full';
@@ -42,7 +48,7 @@ export function createSceneQuality({ scene, renderer, data, furnishings }) {
     sun.color.set(evening ? '#e6ebff' : '#fff2d9');
     fill.intensity = evening ? .16 : .45;
     bounce.intensity = evening ? .28 : .23;
-    for (const light of practical) light.intensity = evening ? 38 : 1.2;
+    for (const {light} of practical) light.intensity = evening ? 38 : 1.2;
     scene.environmentIntensity = evening ? .35 : .62;
     renderer.toneMappingExposure = evening ? 1.05 : .96;
     if (currentLighting !== state.lighting) {
@@ -57,12 +63,13 @@ export function createSceneQuality({ scene, renderer, data, furnishings }) {
     }
     renderer.invalidate?.();
   }
-  return { update, studio, ceilings, contacts };
+  return { update, refreshLayout, studio, ceilings, contacts };
 }
 function viewportIsSmall(){ return typeof window !== 'undefined' && window.innerWidth < 700; }
 
 function makeContactShadows(root) {
   const group = new THREE.Group(); group.name = 'Soft furniture contact shadows';
+  const bindings=[];
   const c = document.createElement('canvas'); c.width = c.height = 128;
   const ctx = c.getContext('2d');
   const image = ctx.createImageData(128,128);
@@ -80,9 +87,17 @@ function makeContactShadows(root) {
     let ancestor=object.parent; while(ancestor&&ancestor!==root){if(ancestor.userData.budgetItemId===object.userData.budgetItemId)return;ancestor=ancestor.parent;}
     const b = new THREE.Box3().setFromObject(object),size=b.getSize(new THREE.Vector3()),center=b.getCenter(new THREE.Vector3());
     if (!Number.isFinite(size.x) || size.x < .2 || b.min.y > .6) return;
-    const plane = new THREE.Mesh(new THREE.PlaneGeometry(size.x+.16,size.z+.16),mat);
+    const plane = new THREE.Mesh(new THREE.PlaneGeometry(1,1),mat);
+    plane.scale.set(size.x+.16,size.z+.16,1);
     plane.rotation.x=-Math.PI/2;plane.position.set(center.x,.012,center.z);
-    plane.name='Contact shadow';plane.userData.kind='contact-shadow';plane.renderOrder=1;group.add(plane);
+    plane.name='Contact shadow';plane.userData.kind='contact-shadow';plane.renderOrder=1;group.add(plane);bindings.push({plane,object});
   });
-  return group;
+  function refresh(){
+    root.updateMatrixWorld(true);
+    for(const {plane,object} of bindings){
+      const box=new THREE.Box3().setFromObject(object),size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
+      plane.position.set(center.x,.012,center.z);plane.scale.set(size.x+.16,size.z+.16,1);
+    }
+  }
+  return {group,refresh};
 }

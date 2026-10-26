@@ -1,0 +1,38 @@
+{
+  "views": [
+    {
+      "shot": "dollhouse",
+      "path": "dist/assets/proposed-layout-20261026/render-dollhouse.jpg",
+      "width": 1400,
+      "height": 1148,
+      "engine": "Blender Cycles",
+      "samples": 32,
+      "source": "Exported viewer geometry",
+      "ceilingHeight": 3.0,
+      "ceilingHeightBasis": "provided"
+    },
+    {
+      "shot": "living",
+      "path": "dist/assets/proposed-layout-20261026/render-living.jpg",
+      "width": 1400,
+      "height": 875,
+      "engine": "Blender Cycles",
+      "samples": 32,
+      "source": "Exported viewer geometry",
+      "ceilingHeight": 3.0,
+      "ceilingHeightBasis": "provided"
+    },
+    {
+      "shot": "primary",
+      "path": "dist/assets/proposed-layout-20261026/render-primary.jpg",
+      "width": 1400,
+      "height": 875,
+      "engine": "Blender Cycles",
+      "samples": 32,
+      "source": "Exported viewer geometry",
+      "ceilingHeight": 3.0,
+      "ceilingHeightBasis": "provided"
+    }
+  ],
+  "note": "Rendered from the interactive model. Ceiling height is user specified; lighting and cutaway styling are presentation choices."
+}

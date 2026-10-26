@@ -181,7 +181,7 @@ def prepare_scene(shot):
             camera.location=pos(3.05,1.52,5.65);point_camera(camera,pos(6.25,1.05,3.9))
         else:
             camera_data.lens=24
-            camera.location=pos(7.2,1.54,9.63);point_camera(camera,pos(4.8,.95,11.2))
+            camera.location=pos(2.48,1.62,9.40);point_camera(camera,pos(6.20,1.08,11.76))
     scene.render.filepath=str(output/f'render-{shot}.jpg')
     bpy.ops.render.render(write_still=True)
     return {'shot':shot,'path':scene.render.filepath,'width':scene.render.resolution_x,'height':scene.render.resolution_y,

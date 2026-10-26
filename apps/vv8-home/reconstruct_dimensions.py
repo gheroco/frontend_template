@@ -73,12 +73,12 @@ doors=[
  dict(name='Primary balcony glass door',x=7.40,z=9.05,width=.80,closedAngle=0,openAngle=-.80,glass=True,sourceMM=None,note='Individual leaf width inferred in the south balcony opening.')
 ]
 glazing=[
- dict(name='Kitchen balcony opening · 1450 mm',start=[7.25,.90],end=[7.25,2.35],sill=.025,head=2.35,opening={'from':0,'to':.8},panels=2,basis='drawing whole opening; leaf division inferred'),
- dict(name='Living to upper balcony opening',start=[7.35,2.35],end=[8.85,2.35],sill=.025,head=2.35,opening={'from':0,'to':.8},panels=2,basis='derived complete bay'),
- dict(name='Living east facade glazing',start=[8.80,2.45],end=[8.80,5.75],sill=.10,head=2.50,panels=4,basis='reconciled facade: 3400 outer chain, 3000 marked inner span has ambiguous endpoints'),
- dict(name='Bedroom balcony opening · 1800 mm',start=[7.25,6.85],end=[7.25,8.65],sill=.025,head=2.35,opening={'from':.90,'to':1.80},panels=2,basis='drawing whole opening; leaf division inferred'),
- dict(name='Primary to lower balcony opening',start=[7.40,9.05],end=[8.55,9.05],sill=.025,head=2.35,opening={'from':0,'to':.8},panels=2,basis='1150 mm inset; leaf division inferred'),
- dict(name='Primary east facade glazing',start=[8.80,9.85],end=[8.80,11.95],sill=.10,head=2.50,panels=3,basis='2100 mm reconstructed; printed2150 mm differs50 mm under selected room depths')
+ dict(name='Kitchen balcony opening · 1450 mm',start=[7.25,.90],end=[7.25,2.35],sill=.03,head=2.93,opening={'from':0,'to':.8},panels=2,basis='drawing whole opening; leaf division inferred'),
+ dict(name='Living to upper balcony opening',start=[7.35,2.35],end=[8.85,2.35],sill=.03,head=2.93,opening={'from':0,'to':.8},panels=2,basis='derived complete bay'),
+ dict(name='Living east facade glazing',start=[8.80,2.45],end=[8.80,5.75],sill=.03,head=2.93,panels=4,basis='reconciled facade: 3400 outer chain, 3000 marked inner span has ambiguous endpoints'),
+ dict(name='Bedroom balcony opening · 1800 mm',start=[7.25,6.85],end=[7.25,8.65],sill=.03,head=2.93,opening={'from':.90,'to':1.80},panels=2,basis='drawing whole opening; leaf division inferred'),
+ dict(name='Primary to lower balcony opening',start=[7.40,9.05],end=[8.55,9.05],sill=.03,head=2.93,opening={'from':0,'to':.8},panels=2,basis='1150 mm inset; leaf division inferred'),
+ dict(name='Primary east facade glazing',start=[8.80,9.85],end=[8.80,11.95],sill=.03,head=2.93,panels=3,basis='2100 mm reconstructed; printed2150 mm differs50 mm under selected room depths')
 ]
 checks=[]
 def check(id,label,roomid,mm,p,q,basis='drawing',note=''):
@@ -145,7 +145,7 @@ data=dict(units='metres',source='Ձեր տրամադրած չափագրված ճ
       {'id':'lower-horizontal-chain','severity':'survey-required','differenceMM':100,'message':'300+900+100+3200+600+1300 գումարը 6400 մմ է, իսկ ստորին մաքուր լայնությունը՝ 6500 մմ։ Ամենաաջ նշումները, հավանաբար, վերաբերում են վարագույրի կամ կրող սյան տարբեր եզրերին, ոչ թե մեկ ընդհանուր ծայրակետի։'},
       {'id':'living-east-glazing','severity':'survey-required','differenceMM':300,'message':'Ապակեպատման ներքին 3000 մմ նշման և արտաքին 3400 մմ չափաշղթայի ծայրակետերը ճշտված չեն։ Մոդելում ընդունված ապակեպատման երկարությունը 3300 մմ է։'},
       {'id':'primary-east-glazing','severity':'survey-required','differenceMM':50,'message':'Սենյակների խորություններն ու աջ արտաքին չափաշղթան կիրառելիս ապակեպատման բաց հատվածը ստացվում է 2100 մմ՝ գծագրի 2150 մմ-ի փոխարեն։'}],
-    assumptions=['Դռան փեղկի 2.08 մ բարձրությունը, ապակեպատ բացվածքների վերին եզրերի 2.35/2.50 մ բարձրություններն ու բազրիքի 1.05 մ բարձրությունը գծագրում նշված չեն։',
+    assumptions=['3.00 մ առաստաղի դեպքում ապակեպատման ստորին եզրը ընտրված է 0.03 մ, վերին եզրը՝ 2.93 մ։ Սրանք ճակատի ձեր տրամադրած պատկերից արված տեսողական ենթադրություններ են, ոչ թե չափագրված բարձրություններ։ Դռան բացվող փեղկը 2.08 մ է՝ վերևում անշարժ ապակիով։ Բազրիքի 1.05 մ բարձրությունն էլ ենթադրված է։',
       'Գծագրի չափերը կարդացվել են միլիմետրերով և վերածվել մետրերի։ Պատկերի համար մեկ ընդհանուր մասշտաբ չի կիրառվել։',
       'Սանհանգույցի հաղորդակցությունների գոտու 320 մմ հաստությունը և պատշգամբի շրջանակների ու խորշերի մի քանի շեղումները հաշվարկային համադրումներ են, ոչ թե գծագրում նշված պատերի հաստություններ։',
       'Մուտքի և հյուրասենյակի հատակի գոտիների սահմանը պայմանական է․ այդտեղ նոր պատ չի ավելացվել։',
@@ -161,6 +161,12 @@ def tidy(value,key=''):
         value=value.replace(' mm,',' mm, ').replace(' m,',' m, ')
         value=re.sub(' +',' ',value)
     return value
+
+# Exterior rendering informs appearance only; structural capacity is unverified.
+data['facadeProfile'] = dict(sill=.03,headClearance=.07,transomHeight=2.10,mullionWidth=.045,mullionDepth=.075,frameColor='#2d3333',verticalBasis='Ճակատի տրամադրված պատկերից տեսողական մեկնաբանություն․ պատուհանների չափագրման փաստաթուղթ չէ։',sourceImage='./assets/exterior-building.jpg')
+data['structurePolicy'] = dict(existingWallsLocked=True,piersLocked=True,outlineLocked=True,wetServicesLocked=True,bearingStatus='unverified',note='Պատերն ու մույթերը ֆիքսված են։ Տրամադրված հատակագիծը չի հաստատում յուրաքանչյուր պատի կրող նշանակությունը․ դրա համար անհրաժեշտ է կոնստրուկտիվ գծագիր։ Առաջարկը փոխում է կահավորումն ու գոտևորումը։')
+for pane in data['glazing']:
+    pane['verticalBasis'] = 'Ճակատի պատկերից ենթադրված՝ 3.00 մ առաստաղի համար։ Հորիզոնական բացվածքը պահպանված է չափագրված հատակագծից։'
 
 data=tidy(data)
 (ROOT/'dist/geometry.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
