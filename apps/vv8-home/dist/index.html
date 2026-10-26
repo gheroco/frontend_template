@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="hy">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f5f3ee">
-  <meta name="description" content="Explore your VV8 home from its dimensioned plan, compare drawing measurements with the 3D model, and view your $80,000 furniture budget with Armenian price sources.">
-  <title>VV8 — Your home in 3D</title>
+  <meta name="description" content="Ուսումնասիրեք ձեր VV8 տան 3D մոդելը՝ ըստ չափերով հատակագծի, համեմատեք գծագրի չափերը և դիտեք կահավորման $80,000 բյուջեն՝ Հայաստանի խանութների գներով։">
+  <title>VV8 — Ձեր տունը 3D-ում</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./budget.css">
   <link rel="stylesheet" href="./plan.css">
@@ -34,92 +34,92 @@
   </defs></svg>
 
   <header class="topbar">
-    <div class="brand"><span class="brand-mark">VV8</span><span class="brand-divider"></span><div class="brand-copy"><strong>Your home, in 3D</strong><span>DIMENSIONED PLAN EDITION</span></div></div>
+    <div class="brand"><span class="brand-mark">VV8</span><span class="brand-divider"></span><div class="brand-copy"><strong>Ձեր տունը՝ 3D-ում</strong><span>ՉԱՓԵՐՈՎ ՀԱՏԱԿԱԳԻԾ</span></div></div>
     <div class="topbar-actions">
-      <span class="total-area"><strong>81.4</strong><span>m²</span><small>brochure area</small></span>
+      <span class="total-area"><strong>81.4</strong><span>մ²</span><small>ըստ բուկլետի</small></span>
       <span class="topbar-separator"></span>
-      <button class="text-button reference-button" data-reference aria-label="View dimensioned drawing and original brochure" title="Source plans"><svg><use href="#i-image"/></svg><span>Source plans</span></button>
-      <button class="text-button studio-button" id="open-studio" aria-label="Open rendered studio views of your home" title="Studio views"><svg><use href="#i-camera"/></svg><span>Studio views</span></button>
-      <button class="primary-button export-button" data-action="export" title="Export 3D model (.glb)" aria-label="Export 3D model as a GLB file"><svg><use href="#i-download"/></svg><span>Export 3D</span></button>
+      <button class="text-button reference-button" data-reference aria-label="Դիտել չափերով գծագիրն ու սկզբնական բուկլետը" title="Աղբյուրներ"><svg><use href="#i-image"/></svg><span>Աղբյուրներ</span></button>
+      <button class="text-button studio-button" id="open-studio" aria-label="Բացել ձեր տան իրատեսական պատկերները" title="Իրատեսական պատկերներ"><svg><use href="#i-camera"/></svg><span>Իրատեսական պատկերներ</span></button>
+      <button class="primary-button export-button" data-action="export" title="Արտահանել 3D մոդելը (.glb)" aria-label="Արտահանել 3D մոդելը GLB ձևաչափով"><svg><use href="#i-download"/></svg><span>Արտահանել 3D</span></button>
     </div>
   </header>
 
   <div class="workspace">
-    <button id="sidebar-backdrop" class="sidebar-backdrop" aria-label="Close room panel" hidden></button>
-    <aside class="sidebar" id="sidebar" aria-label="Apartment rooms and information">
+    <button id="sidebar-backdrop" class="sidebar-backdrop" aria-label="Փակել սենյակների ցանկը" hidden></button>
+    <aside class="sidebar" id="sidebar" aria-label="Բնակարանի սենյակներն ու տեղեկությունները">
       <div class="sheet-handle" aria-hidden="true"></div>
-      <div class="sidebar-heading"><div><p class="eyebrow">VV8 RESIDENCE</p><h1>Your apartment</h1><p class="subtle">3 rooms · 2 balconies · 1 home</p></div><button id="close-sidebar" class="icon-button mobile-only" aria-label="Close room panel"><svg><use href="#i-close"/></svg></button></div>
-      <div class="rooms-heading"><span>ROOMS · CALCULATED AREAS</span><span class="count">08</span></div>
-      <div id="room-list" class="room-list" aria-label="Select a room"></div>
+      <div class="sidebar-heading"><div><p class="eyebrow">VV8 ԲՆԱԿԱՐԱՆ</p><h1>Ձեր բնակարանը</h1><p class="subtle">3 սենյակ · 2 պատշգամբ · 1 տուն</p></div><button id="close-sidebar" class="icon-button mobile-only" aria-label="Փակել սենյակների ցանկը"><svg><use href="#i-close"/></svg></button></div>
+      <div class="rooms-heading"><span>ՍԵՆՅԱԿՆԵՐ · ՀԱՇՎԱՐԿՎԱԾ ՄԱԿԵՐԵՍՆԵՐ</span><span class="count">08</span></div>
+      <div id="room-list" class="room-list" aria-label="Ընտրել սենյակ"></div>
       <section class="selection-card" id="selection-card" aria-live="polite">
-        <div class="selection-heading"><span class="selection-dot" id="selection-dot"></span><span id="selected-room-name">Whole apartment</span><strong id="selected-room-area">— m²</strong></div>
-        <p id="selected-room-size">Select any room to see its model dimensions.</p>
-        <p id="selected-room-basis" class="selection-basis">Area calculated from model outlines</p>
-        <p id="selected-room-description" class="selection-description">Click a room in the model or choose one above.</p>
-        <button id="selected-room-proof" class="selection-proof" type="button">Dimension evidence<svg><use href="#i-arrow"/></svg></button>
+        <div class="selection-heading"><span class="selection-dot" id="selection-dot"></span><span id="selected-room-name">Ամբողջ բնակարանը</span><strong id="selected-room-area">— մ²</strong></div>
+        <p id="selected-room-size">Ընտրեք սենյակ՝ մոդելում դրա չափերը տեսնելու համար։</p>
+        <p id="selected-room-basis" class="selection-basis">Մակերեսը հաշվարկված է մոդելի ուրվագծերով</p>
+        <p id="selected-room-description" class="selection-description">Սեղմեք սենյակին մոդելի վրա կամ ընտրեք այն ցանկից։</p>
+        <button id="selected-room-proof" class="selection-proof" type="button">Չափերի հիմնավորում<svg><use href="#i-arrow"/></svg></button>
       </section>
-      <div class="sidebar-footer"><p><span class="tiny-dot"></span><span id="plan-status-text">Dimensioned drawing supplied</span></p><button class="accuracy-link" id="open-accuracy">Dimensions & source<svg><use href="#i-arrow"/></svg></button></div>
+      <div class="sidebar-footer"><p><span class="tiny-dot"></span><span id="plan-status-text">Չափերով գծագիրը տրամադրված է</span></p><button class="accuracy-link" id="open-accuracy">Չափեր և աղբյուրներ<svg><use href="#i-arrow"/></svg></button></div>
     </aside>
 
-    <main class="stage" aria-label="Interactive three dimensional apartment model">
-      <div id="viewport" class="viewport" aria-label="3D view. Drag to orbit, pinch or scroll to zoom."><div id="labels" class="labels"></div></div>
-      <div id="loader" class="loader"><div class="loader-cube"><svg><use href="#i-cube"/></svg></div><strong>Opening your home</strong><span>Preparing the 3D model…</span></div>
-      <div class="stage-heading"><p class="eyebrow">YOUR PLAN. YOUR PERSPECTIVE.</p><h2 id="stage-caption">Your home, in detail.</h2><span class="plan-status"><span></span>Dimensioned plan</span></div>
-      <nav class="view-switch" aria-label="View mode">
-        <button class="active" data-mode="dollhouse" aria-pressed="true"><svg><use href="#i-cube"/></svg><span>3D model</span></button>
-        <button data-mode="plan" aria-pressed="false"><svg><use href="#i-plan"/></svg><span>Floor plan</span></button>
-        <button data-mode="walk" aria-pressed="false"><svg><use href="#i-eye"/></svg><span>Inside</span></button>
+    <main class="stage" aria-label="Բնակարանի ինտերակտիվ եռաչափ մոդել">
+      <div id="viewport" class="viewport" aria-label="3D տեսք։ Քաշեք՝ պտտելու, երկու մատով կամ մկնիկի անիվով՝ մասշտաբը փոխելու համար։"><div id="labels" class="labels"></div></div>
+      <div id="loader" class="loader"><div class="loader-cube"><svg><use href="#i-cube"/></svg></div><strong>Բեռնվում է ձեր տան մոդելը</strong><span>Պատրաստվում է 3D տեսքը…</span></div>
+      <div class="stage-heading"><p class="eyebrow">ՁԵՐ ՀԱՏԱԿԱԳԻԾԸ։ ՁԵՐ ԴԻՏԱՆԿՅՈՒՆԸ։</p><h2 id="stage-caption">Ձեր տունը՝ մանրամասն։</h2><span class="plan-status"><span></span>Չափերով հատակագիծ</span></div>
+      <nav class="view-switch" aria-label="Դիտման ռեժիմ">
+        <button class="active" data-mode="dollhouse" aria-pressed="true"><svg><use href="#i-cube"/></svg><span>3D մոդել</span></button>
+        <button data-mode="plan" aria-pressed="false"><svg><use href="#i-plan"/></svg><span>Հատակագիծ</span></button>
+        <button data-mode="walk" aria-pressed="false"><svg><use href="#i-eye"/></svg><span>Ներսից</span></button>
       </nav>
       <div class="stage-tools">
-        <button class="tool-button" data-toggle="dimensions" aria-pressed="false" title="Show drawing dimensions and derived model measurements"><svg><use href="#i-ruler"/></svg><span>Dimensions</span></button>
-        <button class="tool-button" id="settings-button" aria-label="Display options" title="Display options" aria-expanded="false" aria-controls="settings-panel"><svg><use href="#i-sliders"/></svg><span>Display</span></button>
+        <button class="tool-button" data-toggle="dimensions" aria-pressed="false" title="Ցույց տալ գծագրի չափերն ու մոդելի հաշվարկված չափերը"><svg><use href="#i-ruler"/></svg><span>Չափեր</span></button>
+        <button class="tool-button" id="settings-button" aria-label="Տեսքի կարգավորումներ" title="Տեսքի կարգավորումներ" aria-expanded="false" aria-controls="settings-panel"><svg><use href="#i-sliders"/></svg><span>Տեսք</span></button>
         <div class="settings-panel" id="settings-panel" hidden>
-          <div class="popover-heading">Make it your view<button class="icon-button small" id="close-settings" aria-label="Close display options"><svg><use href="#i-close"/></svg></button></div>
-          <label class="switch-row"><span>Furniture</span><input type="checkbox" data-toggle-input="furniture" checked><span class="switch"></span></label>
-          <label class="switch-row"><span>Room labels</span><input type="checkbox" data-toggle-input="labels" checked><span class="switch"></span></label>
-          <label class="setting-row"><span>Light</span><select id="lighting-mode" aria-label="Lighting atmosphere"><option value="daylight">Daylight</option><option value="evening">Warm evening</option></select></label>
-          <label class="setting-row"><span>Walls</span><select id="wall-mode" aria-label="Wall visibility"><option value="cutaway">Cutaway</option><option value="full">Full height</option><option value="hidden">Hidden</option></select></label>
-          <label class="setting-row height-row"><span>Ceiling height<small>User specified · editable</small></span><span class="number-field"><input id="ceiling-height" type="number" value="3.00" min="2.2" max="4.5" step="0.05" inputmode="decimal" aria-label="User-specified ceiling height in metres"><span>m</span></span></label>
-          <button type="button" class="clean-view-button" id="clean-view-button"><svg><use href="#i-eye"/></svg>Clean view<span>Hide labels & dimensions</span></button>
-          <p class="popover-note">Drawing dimensions guide the plan. The ceiling height is user specified; unlabelled details remain assumptions.</p>
+          <div class="popover-heading">Կարգավորեք տեսքը<button class="icon-button small" id="close-settings" aria-label="Փակել տեսքի կարգավորումները"><svg><use href="#i-close"/></svg></button></div>
+          <label class="switch-row"><span>Կահույք</span><input type="checkbox" data-toggle-input="furniture" checked><span class="switch"></span></label>
+          <label class="switch-row"><span>Սենյակների պիտակներ</span><input type="checkbox" data-toggle-input="labels"><span class="switch"></span></label>
+          <label class="setting-row"><span>Լույս</span><select id="lighting-mode" aria-label="Լուսավորության միջավայր"><option value="daylight">Ցերեկային լույս</option><option value="evening">Ջերմ երեկոյան լույս</option></select></label>
+          <label class="setting-row"><span>Պատեր</span><select id="wall-mode" aria-label="Պատերի տեսանելիություն"><option value="cutaway">Կտրվածքով</option><option value="full">Ամբողջ բարձրությամբ</option><option value="hidden">Թաքցված</option></select></label>
+          <label class="setting-row height-row"><span>Առաստաղի բարձրություն<small>Ձեր նշած · փոփոխելի</small></span><span class="number-field"><input id="ceiling-height" type="number" value="3.00" min="2.2" max="4.5" step="0.05" inputmode="decimal" aria-label="Ձեր նշած առաստաղի բարձրությունը՝ մետրերով"><span>մ</span></span></label>
+          <button type="button" class="clean-view-button" id="clean-view-button"><svg><use href="#i-eye"/></svg>Մաքուր տեսք<span>Թաքցնել պիտակներն ու չափերը</span></button>
+          <p class="popover-note">Հատակագիծը հիմնված է գծագրի չափերի վրա։ Առաստաղի բարձրությունը նշել եք դուք, իսկ գծագրում չնշված մանրամասները ենթադրված են։</p>
         </div>
       </div>
-      <div class="camera-tools" aria-label="Camera controls">
-        <button class="icon-button" data-action="zoom" data-value="1" aria-label="Zoom in" title="Zoom in"><svg><use href="#i-plus"/></svg></button>
-        <button class="icon-button" data-action="zoom" data-value="-1" aria-label="Zoom out" title="Zoom out"><svg><use href="#i-minus"/></svg></button>
+      <div class="camera-tools" aria-label="Դիտման կառավարում">
+        <button class="icon-button" data-action="zoom" data-value="1" aria-label="Մոտեցնել" title="Մոտեցնել"><svg><use href="#i-plus"/></svg></button>
+        <button class="icon-button" data-action="zoom" data-value="-1" aria-label="Հեռացնել" title="Հեռացնել"><svg><use href="#i-minus"/></svg></button>
         <span class="tool-divider"></span>
-        <button class="icon-button" data-action="rotate" data-value="1" aria-label="Rotate view" title="Rotate view"><svg><use href="#i-rotate"/></svg></button>
-        <button class="icon-button" data-action="reset" aria-label="Reset camera" title="Reset camera"><svg><use href="#i-reset"/></svg></button>
+        <button class="icon-button" data-action="rotate" data-value="1" aria-label="Պտտել տեսքը" title="Պտտել տեսքը"><svg><use href="#i-rotate"/></svg></button>
+        <button class="icon-button" data-action="reset" aria-label="Վերադարձնել սկզբնական տեսքը" title="Վերադարձնել սկզբնական տեսքը"><svg><use href="#i-reset"/></svg></button>
       </div>
-      <div class="measure-tools"><button class="measure-button" id="measure-button" data-action="measure" aria-pressed="false"><svg><use href="#i-ruler"/></svg><span>Measure</span></button><div id="measurement-status" class="measurement-status" aria-live="polite" hidden></div><button class="clear-measure" data-action="clear-measure" id="clear-measure" hidden>Clear</button></div>
-      <div id="walk-help" class="walk-help" hidden><strong>Step inside</strong><span>Drag to look · W A S D / arrow keys to move</span><span class="mobile-only">Choose a room to move there.</span></div>
-      <button class="mobile-rooms-button" id="open-sidebar"><svg><use href="#i-grid"/></svg><span id="mobile-room-label">Explore rooms</span><span class="room-button-count">8</span><svg class="room-button-chevron"><use href="#i-chevron"/></svg></button>
-      <div class="stage-footer"><span class="scale-note"><span class="scale-line"></span>1 scene unit = 1 metre</span><span class="interaction-hint">Drag to orbit<span>·</span>Scroll to zoom<span>·</span>Click a room</span><span class="estimate-note">Drawing · derived · assumed · user specified</span></div>
+      <div class="measure-tools"><button class="measure-button" id="measure-button" data-action="measure" aria-pressed="false"><svg><use href="#i-ruler"/></svg><span>Չափել</span></button><div id="measurement-status" class="measurement-status" aria-live="polite" hidden></div><button class="clear-measure" data-action="clear-measure" id="clear-measure" hidden>Մաքրել</button></div>
+      <div id="walk-help" class="walk-help" hidden><strong>Դիտել ներսից</strong><span>Քաշեք՝ նայելու համար · W A S D / սլաքներ՝ տեղաշարժվելու համար</span><span class="mobile-only">Ընտրեք սենյակ՝ այնտեղ տեղափոխվելու համար։</span></div>
+      <button class="mobile-rooms-button" id="open-sidebar"><svg><use href="#i-grid"/></svg><span id="mobile-room-label">Դիտել սենյակները</span><span class="room-button-count">8</span><svg class="room-button-chevron"><use href="#i-chevron"/></svg></button>
+      <div class="stage-footer"><span class="scale-note"><span class="scale-line"></span>Տեսարանի 1 միավոր = 1 մետր</span><span class="interaction-hint">Քաշեք՝ պտտելու համար<span>·</span>Անիվով՝ մասշտաբը փոխելու համար<span>·</span>Սեղմեք սենյակին</span><span class="estimate-note">Գծագրից · հաշվարկված · ենթադրված · ձեր նշած</span></div>
     </main>
   </div>
 
   <dialog id="reference-dialog" class="reference-dialog">
-    <div class="dialog-heading"><div><p class="eyebrow">TWO SOURCES. ONE HOME.</p><h2>Your source plans</h2></div><button class="icon-button" data-close-dialog aria-label="Close source plans"><svg><use href="#i-close"/></svg></button></div>
-    <div class="reference-toolbar"><div class="reference-tabs" role="tablist" aria-label="Source plan"><button type="button" id="source-tab-drawing" role="tab" aria-selected="true" aria-controls="source-plan-panel" data-plan-source="drawing">Dimensioned drawing</button><button type="button" id="source-tab-brochure" role="tab" aria-selected="false" aria-controls="source-plan-panel" data-plan-source="brochure">Original brochure</button></div><div class="reference-zoom" role="group" aria-label="Plan image zoom"><button type="button" data-plan-zoom="fit" aria-pressed="true">Fit</button><button type="button" data-plan-zoom="actual" aria-pressed="false">100%</button></div></div>
-    <div class="reference-plan-panel" id="source-plan-panel" role="tabpanel" aria-labelledby="source-tab-drawing"><div id="reference-image-stage" class="reference-image-stage" tabindex="0" aria-label="Source drawing. Choose 100 percent to read dimensions and scroll to inspect."><img id="source-plan-image" src="./assets/dimensioned-plan.jpeg" alt="Dimensioned VV8 architectural drawing with room spans, wall offsets, door openings and balcony dimensions."></div></div>
-    <div class="reference-caption"><div><strong id="reference-source-heading">The measurement reference</strong><p id="reference-source-note">Dimensions are read from the annotations. Unlabelled details are interpreted separately; image pixels are not treated as survey measurements.</p></div><a id="reference-open-image" href="./assets/dimensioned-plan.jpeg" target="_blank" rel="noopener" aria-label="Open dimensioned drawing at full size">Open image<span aria-hidden="true">↗</span></a></div>
+    <div class="dialog-heading"><div><p class="eyebrow">ԵՐԿՈՒ ԱՂԲՅՈՒՐ։ ՄԵԿ ՏՈՒՆ։</p><h2>Ձեր սկզբնաղբյուրները</h2></div><button class="icon-button" data-close-dialog aria-label="Փակել աղբյուրները"><svg><use href="#i-close"/></svg></button></div>
+    <div class="reference-toolbar"><div class="reference-tabs" role="tablist" aria-label="Գծագրի աղբյուր"><button type="button" id="source-tab-drawing" role="tab" aria-selected="true" aria-controls="source-plan-panel" data-plan-source="drawing">Չափերով գծագիր</button><button type="button" id="source-tab-brochure" role="tab" aria-selected="false" aria-controls="source-plan-panel" data-plan-source="brochure">Սկզբնական բուկլետ</button></div><div class="reference-zoom" role="group" aria-label="Գծագրի պատկերի մասշտաբ"><button type="button" data-plan-zoom="fit" aria-pressed="true">Տեղավորել</button><button type="button" data-plan-zoom="actual" aria-pressed="false">100%</button></div></div>
+    <div class="reference-plan-panel" id="source-plan-panel" role="tabpanel" aria-labelledby="source-tab-drawing"><div id="reference-image-stage" class="reference-image-stage" tabindex="0" aria-label="Սկզբնական գծագիր։ Ընտրեք 100 տոկոսը՝ չափերը կարդալու համար, և ոլորեք՝ մանրամասները դիտելու համար։"><img id="source-plan-image" src="./assets/dimensioned-plan.jpeg" alt="VV8-ի ճարտարապետական գծագիրը՝ սենյակների չափերով, պատերի ելուստներով, դռների բացվածքներով և պատշգամբների չափերով։"></div></div>
+    <div class="reference-caption"><div><strong id="reference-source-heading">Չափերի սկզբնաղբյուրը</strong><p id="reference-source-note">Չափերը վերցված են գծագրի չափանշումներից։ Չնշված մանրամասները մեկնաբանվում են առանձին, իսկ պատկերի պիքսելները չեն ընդունվում որպես տեղում կատարված չափագրում։</p></div><a id="reference-open-image" href="./assets/dimensioned-plan.jpeg" target="_blank" rel="noopener" aria-label="Բացել չափերով գծագիրը լրիվ չափով">Բացել պատկերը<span aria-hidden="true">↗</span></a></div>
   </dialog>
 
   <dialog id="accuracy-dialog" class="accuracy-dialog">
-    <div class="dialog-heading"><div><p class="eyebrow">DIMENSIONS & SOURCE</p><h2>See what the model follows.</h2></div><button class="icon-button" data-close-dialog aria-label="Close dimension evidence"><svg><use href="#i-close"/></svg></button></div>
-    <div class="accuracy-body"><p class="accuracy-intro">The dimensioned drawing guides the walls and openings. Every measurement has a basis.</p>
-      <div class="measurement-basis-key"><section><span class="basis-badge drawing">Drawing</span><p>A number printed on the drawing, with identified endpoints.</p></section><section><span class="basis-badge derived">Derived</span><p>Calculated from dimension chains or interpreted outlines.</p></section><section><span class="basis-badge assumed">Assumed</span><p>Unlabelled heights and details interpreted for the model.</p></section><section><span class="basis-badge provided">User specified</span><p>The 3.00 m ceiling height supplied by you.</p></section></div>
-      <section class="evidence-section"><div class="evidence-heading"><div><h3>Dimension checks</h3><span id="measurement-evidence-count">Source comparisons</span></div><label><span class="sr-only">Filter dimension checks by room</span><select id="evidence-room-filter"><option value="all">Whole apartment</option></select></label></div><p class="evidence-description">Drawing values are interpreted in millimetres and shown here in metres. Differences and unresolved interpretations remain visible.</p><p id="evidence-room-note" class="evidence-room-note" hidden></p><div id="measurement-evidence" class="measurement-evidence"><p>Dimension comparisons will appear with the model data.</p></div></section>
-      <section id="drawing-conflicts" class="drawing-conflicts" hidden><div class="evidence-heading"><div><h3>Unresolved drawing interpretations</h3></div></div><p class="evidence-description">These annotations use uncertain or conflicting endpoints. The chosen interpretation is recorded with the remaining difference.</p><div id="drawing-conflict-list"></div></section>
-      <section class="area-basis-section"><div class="evidence-heading"><div><h3>Areas have different bases.</h3></div></div><div class="area-comparison"><div><span>Calculated model</span><strong id="evidence-model-area">— <small>m²</small></strong></div><div><span>Brochure headline</span><strong>81.4 <small>m²</small></strong></div><div><span>Brochure room sum</span><strong>81.6 <small>m²</small></strong></div></div><p id="evidence-area-basis">The model area is calculated from its current room outlines. The brochure figures are retained as references; drawing dimensions are not stretched to force the brochure total.</p><p class="brochure-discrepancy">The original brochure's room labels sum to 81.6 m², which is 0.2 m² above its 81.4 m² headline. Balcony-label assignments in that illustration remain a reference interpretation.</p></section>
-      <p class="accuracy-bottom">These checks compare the digital model with the supplied drawing. The 3.00 m ceiling is user specified. Materials and unlabelled details remain design assumptions; these references do not establish an as-built survey.</p><button class="secondary-button" id="accuracy-to-reference"><svg><use href="#i-image"/></svg>View source drawing</button>
+    <div class="dialog-heading"><div><p class="eyebrow">ՉԱՓԵՐ ԵՎ ԱՂԲՅՈՒՐՆԵՐ</p><h2>Տեսեք՝ ինչի վրա է հիմնված մոդելը։</h2></div><button class="icon-button" data-close-dialog aria-label="Փակել չափերի հիմնավորումը"><svg><use href="#i-close"/></svg></button></div>
+    <div class="accuracy-body"><p class="accuracy-intro">Պատերն ու բացվածքները հիմնված են չափերով գծագրի վրա։ Յուրաքանչյուր չափ ունի իր հիմքը։</p>
+      <div class="measurement-basis-key"><section><span class="basis-badge drawing">Գծագրից</span><p>Գծագրում նշված չափ՝ որոշակի վերջնակետերով։</p></section><section><span class="basis-badge derived">Հաշվարկված</span><p>Հաշվարկված է չափային շղթաներից կամ մեկնաբանված ուրվագծերից։</p></section><section><span class="basis-badge assumed">Ենթադրված</span><p>Մոդելի համար ենթադրված բարձրություններ և մանրամասներ, որոնք գծագրում նշված չեն։</p></section><section><span class="basis-badge provided">Ձեր նշած</span><p>Ձեր նշած 3.00 մ առաստաղի բարձրությունը։</p></section></div>
+      <section class="evidence-section"><div class="evidence-heading"><div><h3>Չափերի ստուգումներ</h3><span id="measurement-evidence-count">Համեմատություն աղբյուրի հետ</span></div><label><span class="sr-only">Զտել չափերի ստուգումներն ըստ սենյակի</span><select id="evidence-room-filter"><option value="all">Ամբողջ բնակարանը</option></select></label></div><p class="evidence-description">Գծագրի չափերը մեկնաբանվում են միլիմետրերով, իսկ այստեղ ներկայացված են մետրերով։ Տարբերություններն ու չճշտված մեկնաբանությունները նշված են։</p><p id="evidence-room-note" class="evidence-room-note" hidden></p><div id="measurement-evidence" class="measurement-evidence"><p>Չափերի համեմատությունները կցուցադրվեն մոդելի տվյալների հետ։</p></div></section>
+      <section id="drawing-conflicts" class="drawing-conflicts" hidden><div class="evidence-heading"><div><h3>Գծագրի չճշտված մեկնաբանություններ</h3></div></div><p class="evidence-description">Այս չափանշումները վերաբերում են ոչ հստակ կամ հակասական վերջնակետերի։ Նշված են ընտրված մեկնաբանությունն ու մնացած տարբերությունը։</p><div id="drawing-conflict-list"></div></section>
+      <section class="area-basis-section"><div class="evidence-heading"><div><h3>Մակերեսների հաշվարկման հիմքերը տարբեր են։</h3></div></div><div class="area-comparison"><div><span>Մոդելի մակերեսը</span><strong id="evidence-model-area">— <small>մ²</small></strong></div><div><span>Բուկլետի ընդհանուր մակերեսը</span><strong>81.4 <small>մ²</small></strong></div><div><span>Սենյակների գումարը բուկլետում</span><strong>81.6 <small>մ²</small></strong></div></div><p id="evidence-area-basis">Մոդելի մակերեսը հաշվարկված է սենյակների ընթացիկ ուրվագծերով։ Բուկլետի թվերը պահպանված են որպես տեղեկանք․ գծագրի չափերը չեն փոփոխվում՝ այդ ընդհանուր մակերեսին համապատասխանեցնելու համար։</p><p class="brochure-discrepancy">Սկզբնական բուկլետում սենյակների մակերեսների գումարը 81.6 մ² է՝ ընդհանուր նշված 81.4 մ²-ից 0.2 մ²-ով ավելի։ Այդ պատկերում պատշգամբների մակերեսների վերագրումները պահպանված են որպես աղբյուրի մեկնաբանություն։</p></section>
+      <p class="accuracy-bottom">Այս ստուգումները թվային մոդելը համեմատում են տրամադրված գծագրի հետ։ 3.00 մ առաստաղի բարձրությունը նշել եք դուք։ Նյութերն ու գծագրում չնշված մանրամասները նախագծային ենթադրություններ են․ այս տվյալները չեն փոխարինում տեղում կատարված չափագրմանը։</p><button class="secondary-button" id="accuracy-to-reference"><svg><use href="#i-image"/></svg>Դիտել սկզբնական գծագիրը</button>
     </div>
   </dialog>
   <dialog id="studio-dialog" class="studio-dialog" aria-labelledby="studio-title">
-    <div class="dialog-heading"><div><p class="eyebrow">MATERIALS. LIGHT. ATMOSPHERE.</p><h2 id="studio-title">Studio views</h2></div><button class="icon-button" data-close-dialog aria-label="Close studio views"><svg><use href="#i-close"/></svg></button></div>
-    <div class="studio-tabs" role="tablist" aria-label="Rendered viewpoint"><button type="button" role="tab" id="studio-tab-dollhouse" aria-selected="true" aria-controls="studio-view-panel" data-studio-view="dollhouse">Whole apartment</button><button type="button" role="tab" id="studio-tab-living" aria-selected="false" aria-controls="studio-view-panel" data-studio-view="living">Living room</button><button type="button" role="tab" id="studio-tab-primary" aria-selected="false" aria-controls="studio-view-panel" data-studio-view="primary">Primary bedroom</button></div>
-    <div class="studio-view-panel" id="studio-view-panel" role="tabpanel" aria-labelledby="studio-tab-dollhouse"><img id="studio-view-image" src="./assets/render-dollhouse.jpg" loading="lazy" alt="Rendered dollhouse view of the apartment from its updated 3D model."></div>
-    <div class="studio-caption"><div><strong id="studio-view-name">The whole apartment</strong><p>Rendered from this model · 3.00 m user-specified ceiling</p></div><a id="studio-open-image" href="./assets/render-dollhouse.jpg" target="_blank" rel="noopener">Open full size<span aria-hidden="true">↗</span></a></div>
+    <div class="dialog-heading"><div><p class="eyebrow">ՆՅՈՒԹԵՐ։ ԼՈՒՅՍ։ ՄԹՆՈԼՈՐՏ։</p><h2 id="studio-title">Իրատեսական պատկերներ</h2></div><button class="icon-button" data-close-dialog aria-label="Փակել իրատեսական պատկերները"><svg><use href="#i-close"/></svg></button></div>
+    <div class="studio-tabs" role="tablist" aria-label="Պատկերի դիտանկյուն"><button type="button" role="tab" id="studio-tab-dollhouse" aria-selected="true" aria-controls="studio-view-panel" data-studio-view="dollhouse">Ամբողջ բնակարանը</button><button type="button" role="tab" id="studio-tab-living" aria-selected="false" aria-controls="studio-view-panel" data-studio-view="living">Հյուրասենյակ</button><button type="button" role="tab" id="studio-tab-primary" aria-selected="false" aria-controls="studio-view-panel" data-studio-view="primary">Հիմնական ննջասենյակ</button></div>
+    <div class="studio-view-panel" id="studio-view-panel" role="tabpanel" aria-labelledby="studio-tab-dollhouse"><img id="studio-view-image" src="./assets/render-dollhouse.jpg" loading="lazy" alt="Բնակարանի ամբողջական տեսքը վերևից՝ ստեղծված թարմացված 3D մոդելից։"></div>
+    <div class="studio-caption"><div><strong id="studio-view-name">Ամբողջ բնակարանը</strong><p>Ստեղծված է այս մոդելից · ձեր նշած 3.00 մ առաստաղ</p></div><a id="studio-open-image" href="./assets/render-dollhouse.jpg" target="_blank" rel="noopener">Բացել լրիվ չափով<span aria-hidden="true">↗</span></a></div>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script type="module" src="./app.js"></script>

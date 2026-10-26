@@ -19,3 +19,16 @@
 @media(max-width:760px){.room-label{padding:4px 6px;gap:1px;border-radius:5px}.room-label span{font-size:8px}.room-label strong{font-size:11px}.room-label small{font-size:8px}.dimension-label{font-size:9px;padding:2px 4px}.walk-pad{left:auto;right:20px;transform:none;bottom:114px}.measure-tools{max-width:calc(100% - 24px)}.measurement-status{max-width:240px;font-size:10px}}
 .export-dialog{width:470px}.export-body{padding:24px 27px 28px;font-size:13px;color:#74806f;line-height:1.6}.export-body .primary-button{color:white;text-decoration:none;margin:18px 0 14px;font-size:13px;min-height:44px}.export-body small{font-size:11px;display:block}.export-body #export-file-size{font-size:12px;font-weight:600;color:#41553c}
 @media(max-width:760px){.camera-tools{top:auto;bottom:96px;right:19px;display:flex;transform:none;padding:2px}.camera-tools .icon-button{width:32px;height:32px}.camera-tools .tool-divider{width:1px;height:20px;margin:6px 2px}.stage:has(.viewport.measuring) .camera-tools,.stage:has(.viewport.walking) .camera-tools{display:none}}
+
+/* Armenian text keeps its natural spacing and can wrap in compact controls. */
+html:lang(hy){font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Armenian","Segoe UI",Arial,sans-serif}
+html:lang(hy) h1,html:lang(hy) h2,html:lang(hy) .loader strong,html:lang(hy) .evidence-heading h3,html:lang(hy) .studio-caption strong,html:lang(hy) .budget-section-heading h3{font-family:"Noto Serif Armenian",Georgia,"Times New Roman",serif;line-height:1.35;letter-spacing:0}
+html:lang(hy) .eyebrow,html:lang(hy) .brand-copy span{letter-spacing:.025em;text-transform:none;line-height:1.6}
+html:lang(hy) .brand-copy strong{letter-spacing:0;line-height:1.4}
+html:lang(hy) .room-copy strong{white-space:normal;line-height:1.5}
+html:lang(hy) .room-area{flex-shrink:0;white-space:nowrap}
+html:lang(hy) .settings-panel{width:min(310px,calc(100vw - 32px))}
+html:lang(hy) .setting-row>span:first-child{min-width:0;line-height:1.45}
+html:lang(hy) .budget-metric>span{line-height:1.5;min-height:3em}
+html:lang(hy) .budget-allocation-note{flex-wrap:wrap}
+html:lang(hy) .basis-badge{white-space:normal;line-height:1.35}

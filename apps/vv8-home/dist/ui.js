@@ -3,14 +3,14 @@ let toastTimer;
 let geometryData = {}, roomList = [], selectedRoom = null, evidenceRoom = 'all';
 let planSource = 'drawing', planZoom = 'fit';
 let studioView = 'living';
-const state = { mode: 'dollhouse', dimensions: false, labels: true, furniture: true, walls: 'cutaway', height: 3, measuring: false, lighting: 'daylight' };
+const state = { mode: 'dollhouse', dimensions: false, labels: false, furniture: true, walls: 'cutaway', height: 3, measuring: false, lighting: 'daylight' };
 const $ = (id) => document.getElementById(id);
 const icon = (name) => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const emit = (action, value) => callback(value === undefined ? { action } : { action, value });
 const escape = (text) => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const finite = value => value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
 const areaText = value => finite(value) ? (Math.round((Number(value)+1e-8)*10)/10).toFixed(1) : '—';
-const metres = value => `${Number(value).toFixed(3)} m`;
+const metres = value => `${Number(value).toFixed(3)} մ`;
 const checks = () => Array.isArray(geometryData.dimensionChecks) ? geometryData.dimensionChecks : [];
 const basisOf = check => ['drawing','derived','assumed','provided'].includes(check.basis) ? check.basis : finite(check.sourceMM) ? 'drawing' : 'derived';
 const polygonArea = points => Array.isArray(points) ? Math.abs(points.reduce((sum,p,i)=>{const q=points[(i+1)%points.length];return sum+p[0]*q[1]-q[0]*p[1];},0))/2 : 0;
@@ -43,7 +43,7 @@ function closeSettings() {
 export function initUI(rooms, onAction, data = {}) {
   callback = onAction;
   roomList = rooms;geometryData = data || {};
-  $('room-list').innerHTML = rooms.map(room => `<button class="room-row" data-room="${escape(room.id)}" aria-pressed="false" title="${escape(room.name)} · calculated model area ${areaText(room.area)} m²"><span class="room-dot" style="background:${escape(typeof room.color === 'number' ? '#' + room.color.toString(16).padStart(6, '0') : room.color || '#93a185')}"></span><span class="room-copy"><strong>${escape(room.name)}</strong><small lang="hy">${escape(room.armenian)}</small></span><span class="room-area">${areaText(room.area)}<small>m²</small></span>${icon('chevron')}</button>`).join('');
+  $('room-list').innerHTML = rooms.map(room => `<button class="room-row" data-room="${escape(room.id)}" aria-pressed="false" title="${escape(room.name)} · մոդելի հաշվարկված մակերեսը՝ ${areaText(room.area)} մ²"><span class="room-dot" style="background:${escape(typeof room.color === 'number' ? '#' + room.color.toString(16).padStart(6, '0') : room.color || '#93a185')}"></span><span class="room-copy"><strong>${escape(room.name)}</strong></span><span class="room-area">${areaText(room.area)}<small>մ²</small></span>${icon('chevron')}</button>`).join('');
   document.querySelectorAll('.room-row svg').forEach(el => el.classList.add('room-chevron'));
   document.querySelectorAll('[data-room]').forEach(button => button.addEventListener('click', () => {
     emit('room', button.dataset.room);
@@ -71,7 +71,7 @@ export function initUI(rooms, onAction, data = {}) {
     if (action === 'measure') {
       state.measuring = !state.measuring;
       button.setAttribute('aria-pressed', String(state.measuring));
-      if (state.measuring) setStatus('Select two points on the floor.');
+      if (state.measuring) setStatus('Ընտրեք հատակի երկու կետ։');
       else setStatus('');
     }
     if (action === 'clear-measure') setStatus('');
@@ -121,13 +121,13 @@ export function initUI(rooms, onAction, data = {}) {
   $('lighting-mode').addEventListener('change',event=>{state.lighting=event.target.value;emit('lighting',state.lighting);});
   $('clean-view-button').addEventListener('click',()=>{
     for(const name of ['labels','dimensions'])if(state[name]){state[name]=false;emit('toggle',name);}
-    updateSettings(state);closeSettings();toast('Labels and dimensions hidden. Restore them in Display.');
+    updateSettings(state);closeSettings();toast('Պիտակներն ու չափերը թաքցված են։ Դրանք կարող եք միացնել «Տեսք» բաժնում։');
   });
   $('ceiling-height').addEventListener('change', event => {
     const n = Number(event.target.value);
     if (!Number.isFinite(n) || n < 2.2 || n > 4.5) {
       event.target.value = state.height.toFixed(2);
-      toast('Choose a ceiling height between 2.20 and 4.50 metres.');
+      toast('Ընտրեք առաստաղի բարձրություն՝ 2.20-ից 4.50 մետր։');
       return;
     }
     state.height = n;
@@ -150,30 +150,30 @@ export function setSelectedRoom(room, dimensions) {
     button.setAttribute('aria-pressed', String(selected));
   });
   if (!room) {
-    $('selected-room-name').textContent = 'Whole apartment';
-    $('selected-room-area').textContent = `${areaText(modelArea())} m²`;
-    $('selected-room-size').textContent = 'Select any room to see its model dimensions.';
-    $('selected-room-basis').textContent = 'Calculated room outlines · includes balconies';
-    $('selected-room-description').textContent = 'Click a room in the model or choose one above.';
+    $('selected-room-name').textContent = 'Ամբողջ բնակարանը';
+    $('selected-room-area').textContent = `${areaText(modelArea())} մ²`;
+    $('selected-room-size').textContent = 'Ընտրեք սենյակ՝ մոդելում դրա չափերը տեսնելու համար։';
+    $('selected-room-basis').textContent = 'Հաշվարկված է ուրվագծերով · պատշգամբները ներառված են';
+    $('selected-room-description').textContent = 'Սեղմեք սենյակին մոդելի վրա կամ ընտրեք այն ցանկից։';
     $('selected-room-description').classList.remove('has-source-note');
     $('selected-room-description').removeAttribute('title');
     $('selection-dot').style.display = 'none';
-    $('mobile-room-label').textContent = 'Explore rooms';
+    $('mobile-room-label').textContent = 'Դիտել սենյակները';
     return;
   }
   $('selected-room-name').textContent = room.name;
-  $('selected-room-area').textContent = `${areaText(room.area)} m²`;
+  $('selected-room-area').textContent = `${areaText(room.area)} մ²`;
   const w = Number(dimensions?.width), d = Number(dimensions?.depth);
-  $('selected-room-size').textContent = Number.isFinite(w) && Number.isFinite(d) ? `~ ${w.toFixed(2)} × ${d.toFixed(2)} m · model bounds` : 'Dimensions interpreted from the drawing';
-  $('selected-room-basis').textContent = finite(room.brochureArea) ? `Calculated area · brochure reference ${areaText(room.brochureArea)} m²` : 'Area calculated from the current room outline';
-  $('selected-room-description').textContent = room.note || room.description || 'Select floor plan view to inspect this room.';
+  $('selected-room-size').textContent = Number.isFinite(w) && Number.isFinite(d) ? `~ ${w.toFixed(2)} × ${d.toFixed(2)} մ · մոդելի եզրաչափեր` : 'Չափերը մեկնաբանված են ըստ գծագրի';
+  $('selected-room-basis').textContent = finite(room.brochureArea) ? `Հաշվարկված մակերես · ըստ բուկլետի՝ ${areaText(room.brochureArea)} մ²` : 'Մակերեսը հաշվարկված է սենյակի ընթացիկ ուրվագծով';
+  $('selected-room-description').textContent = room.note || room.description || 'Այս սենյակը մանրամասն դիտելու համար ընտրեք հատակագծի տեսքը։';
   $('selected-room-description').classList.toggle('has-source-note',!!room.note);
   if(room.note)$('selected-room-description').title=room.note;
   else $('selected-room-description').removeAttribute('title');
   const color = typeof room.color === 'number' ? '#' + room.color.toString(16).padStart(6, '0') : room.color;
   $('selection-dot').style.display = 'block';
   $('selection-dot').style.background = color || '#93a185';
-  $('mobile-room-label').textContent = `${room.name} · ${areaText(room.area)} m²`;
+  $('mobile-room-label').textContent = `${room.name} · ${areaText(room.area)} մ²`;
 }
 
 export function setMode(mode) {
@@ -183,9 +183,9 @@ export function setMode(mode) {
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
   });
-  $('stage-caption').textContent = mode === 'plan' ? 'Dimensions, made clear.' : mode === 'walk' ? 'A closer look at home.' : 'Your home, in detail.';
+  $('stage-caption').textContent = mode === 'plan' ? 'Չափերը՝ հստակ։' : mode === 'walk' ? 'Ձեր տունը՝ ներսից։' : 'Ձեր տունը՝ մանրամասն։';
   $('walk-help').hidden = mode !== 'walk';
-  $('viewport').setAttribute('aria-label', mode === 'walk' ? 'Inside view. Drag to look; use W A S D or arrow keys to move.' : mode === 'plan' ? 'Top-down floor plan. Drag to pan; pinch or scroll to zoom.' : '3D view. Drag to orbit; pinch or scroll to zoom.');
+  $('viewport').setAttribute('aria-label', mode === 'walk' ? 'Տեսք ներսից։ Քաշեք՝ նայելու համար, իսկ տեղաշարժվելու համար օգտագործեք W A S D կամ սլաքները։' : mode === 'plan' ? 'Հատակագիծ՝ վերևից։ Քաշեք՝ տեղաշարժելու, երկու մատով կամ մկնիկի անիվով՝ մասշտաբը փոխելու համար։' : '3D տեսք։ Քաշեք՝ պտտելու, երկու մատով կամ մկնիկի անիվով՝ մասշտաբը փոխելու համար։');
 }
 
 export function setStatus(message) {
@@ -229,18 +229,18 @@ function setPlanSource(source) {
   planSource=source==='brochure'?'brochure':'drawing';
   const drawing=planSource==='drawing';
   const image=$('source-plan-image');image.src=drawing?'./assets/dimensioned-plan.jpeg':'./assets/source-plan.jpg';
-  image.alt=drawing?'Dimensioned VV8 architectural drawing with room spans, wall offsets, door openings and balcony dimensions.':'Original VV8 furnished perspective brochure with printed room areas and furniture arrangement.';
-  $('reference-source-heading').textContent=drawing?'The measurement reference':'The original furniture & area reference';
-  $('reference-source-note').textContent=drawing?'Dimensions are read from the annotations. Unlabelled details are interpreted separately; image pixels are not treated as survey measurements.':'The perspective illustration informs room identity and arrangement. Its area labels remain reference figures alongside the dimensioned drawing.';
+  image.alt=drawing?'VV8-ի ճարտարապետական գծագիրը՝ սենյակների չափերով, պատերի ելուստներով, դռների բացվածքներով և պատշգամբների չափերով։':'VV8-ի սկզբնական բուկլետը՝ կահավորված բնակարանի տարածական պատկերով, սենյակների մակերեսներով և կահույքի դասավորությամբ։';
+  $('reference-source-heading').textContent=drawing?'Չափերի սկզբնաղբյուրը':'Կահավորման և մակերեսների սկզբնական աղբյուրը';
+  $('reference-source-note').textContent=drawing?'Չափերը վերցված են գծագրի չափանշումներից։ Չնշված մանրամասները մեկնաբանվում են առանձին, իսկ պատկերի պիքսելները չեն ընդունվում որպես տեղում կատարված չափագրում։':'Տարածական պատկերը տեղեկություն է տալիս սենյակների նշանակության և դասավորության մասին։ Դրա մակերեսների նշումները պահպանված են որպես տեղեկանք՝ չափերով գծագրի կողքին։';
   $('reference-open-image').href=image.src;
-  $('reference-open-image').setAttribute('aria-label',drawing?'Open dimensioned drawing at full size':'Open original brochure at full size');
+  $('reference-open-image').setAttribute('aria-label',drawing?'Բացել չափերով գծագիրը լրիվ չափով':'Բացել սկզբնական բուկլետը լրիվ չափով');
   $('source-plan-panel').setAttribute('aria-labelledby',drawing?'source-tab-drawing':'source-tab-brochure');
   document.querySelectorAll('[data-plan-source]').forEach(button=>{const selected=button.dataset.planSource===planSource;button.setAttribute('aria-selected',String(selected));button.tabIndex=selected?0:-1;});
   setPlanZoom('fit');
 }
 
 function setStudioView(view) {
-  const views={dollhouse:{name:'The whole apartment',alt:'Rendered dollhouse view of the apartment from its updated 3D model.'},living:{name:'The living room',alt:'Rendered interior view of the living room from the apartment model, showing the selected furniture and materials.'},primary:{name:'The primary bedroom',alt:'Rendered interior view of the primary bedroom from the apartment model, showing the selected bed, furniture and materials.'}};
+  const views={dollhouse:{name:'Ամբողջ բնակարանը',alt:'Բնակարանի ամբողջական տեսքը վերևից՝ ստեղծված թարմացված 3D մոդելից։'},living:{name:'Հյուրասենյակ',alt:'Հյուրասենյակի իրատեսական պատկերը՝ ստեղծված բնակարանի մոդելից՝ ընտրված կահույքով և նյութերով։'},primary:{name:'Հիմնական ննջասենյակ',alt:'Հիմնական ննջասենյակի իրատեսական պատկերը՝ ստեղծված բնակարանի մոդելից՝ ընտրված մահճակալով, կահույքով և նյութերով։'}};
   studioView=Object.hasOwn(views,view)?view:'dollhouse';
   const current=views[studioView],path=`./assets/render-${studioView}.jpg`;
   $('studio-view-image').src=path;$('studio-view-image').alt=current.alt;
@@ -255,35 +255,35 @@ function renderEvidence() {
   const sourceRoom=currentRoom||geometryData.rooms?.living;
   const sourceNote=sourceRoom?.note||geometryData.rooms?.[evidenceRoom]?.note||'';
   const zoneArea=roomList.filter(room=>room.id==='living'||room.id==='hall').reduce((sum,room)=>sum+Number(room.area||0),0);
-  $('evidence-room-note').textContent=sourceNote ? `${evidenceRoom==='all'?`Living + hall: ${areaText(zoneArea)} m² combined. `:''}${sourceNote}` : '';
+  $('evidence-room-note').textContent=sourceNote ? `${evidenceRoom==='all'?`Հյուրասենյակն ու միջանցքը՝ ընդհանուր ${areaText(zoneArea)} մ²։ `:''}${sourceNote}` : '';
   $('evidence-room-note').hidden=!sourceNote;
-  $('measurement-evidence-count').textContent=`${rows.length} dimension check${rows.length===1?'':'s'}`;
+  $('measurement-evidence-count').textContent=`${rows.length} չափի ստուգում`;
   $('evidence-room-filter').value=evidenceRoom;
-  if(!rows.length){$('measurement-evidence').innerHTML='<p class="evidence-empty">No separate dimension checks are recorded for this selection. Open the source drawing to inspect the annotations.</p>';return;}
-  $('measurement-evidence').innerHTML=`<table class="evidence-table"><thead><tr><th scope="col">Span</th><th scope="col">Drawing</th><th scope="col">Model</th><th scope="col">Basis</th></tr></thead><tbody>${rows.map(check=>{
+  if(!rows.length){$('measurement-evidence').innerHTML='<p class="evidence-empty">Այս ընտրության համար առանձին չափերի ստուգումներ գրանցված չեն։ Չափանշումները դիտելու համար բացեք սկզբնական գծագիրը։</p>';return;}
+  $('measurement-evidence').innerHTML=`<table class="evidence-table"><thead><tr><th scope="col">Չափվող հատված</th><th scope="col">Գծագրից</th><th scope="col">Մոդելում</th><th scope="col">Հիմք</th></tr></thead><tbody>${rows.map(check=>{
     const source=finite(check.sourceMM)?Number(check.sourceMM)/1000:null;
     const model=check.id==='ceiling'?Number(state.height):finite(check.modelMetres)?Number(check.modelMetres):null;
     const difference=source!==null&&model!==null?Math.round((model-source)*1000):null;
     const hasDifference=difference!==null&&Math.abs(difference)>=1;
-    const basis=basisOf(check),name=basis==='provided'?'User specified':basis[0].toUpperCase()+basis.slice(1);
+    const basis=basisOf(check),name={drawing:'Գծագրից',derived:'Հաշվարկված',assumed:'Ենթադրված',provided:'Ձեր նշած'}[basis];
     const ceilingEdited=check.id==='ceiling'&&finite(check.modelMetres)&&Math.abs(model-Number(check.modelMetres))>.0001;
-    const note=[check.note,ceilingEdited?`The current display height has been edited to ${model.toFixed(2)} m; saved studio views retain the supplied 3.00 m ceiling.`:''].filter(Boolean).join(' ');
-    return `<tr class="${hasDifference?'has-difference':''}"><th scope="row">${escape(check.label||check.id||'Dimension')}</th><td>${source===null?'—':metres(source)}</td><td>${model===null?'—':metres(model)}${hasDifference?`<small class="evidence-delta">${difference>0?'+':''}${difference} mm</small>`:''}</td><td><span class="basis-badge ${basis}">${name}</span></td></tr>${note?`<tr class="evidence-note-row"><td colspan="4">${escape(note)}</td></tr>`:''}`;
+    const note=[check.note,ceilingEdited?`Ցուցադրվող բարձրությունը փոխվել է ${model.toFixed(2)} մ-ի։ Պահպանված իրատեսական պատկերներում առաստաղը մնում է ձեր նշած 3.00 մ բարձրությամբ։`:''].filter(Boolean).join(' ');
+    return `<tr class="${hasDifference?'has-difference':''}"><th scope="row">${escape(check.label||check.id||'Չափ')}</th><td>${source===null?'—':metres(source)}</td><td>${model===null?'—':metres(model)}${hasDifference?`<small class="evidence-delta">${difference>0?'+':''}${difference} մմ</small>`:''}</td><td><span class="basis-badge ${basis}">${name}</span></td></tr>${note?`<tr class="evidence-note-row"><td colspan="4">${escape(note)}</td></tr>`:''}`;
   }).join('')}</tbody></table>`;
 }
 
 export function updateMeasurementEvidence(data = {}) {
   geometryData=data||{};
   const filter=$('evidence-room-filter');
-  filter.innerHTML='<option value="all">Whole apartment</option>'+roomList.map(room=>`<option value="${escape(room.id)}">${escape(room.name)}</option>`).join('');
+  filter.innerHTML='<option value="all">Ամբողջ բնակարանը</option>'+roomList.map(room=>`<option value="${escape(room.id)}">${escape(room.name)}</option>`).join('');
   if(evidenceRoom!=='all'&&!roomList.some(room=>room.id===evidenceRoom))evidenceRoom='all';
-  $('evidence-model-area').innerHTML=`${areaText(modelArea())} <small>m²</small>`;
-  $('plan-status-text').textContent=checks().length?'Dimensions traced to your drawing':'Dimensioned drawing supplied';
+  $('evidence-model-area').innerHTML=`${areaText(modelArea())} <small>մ²</small>`;
+  $('plan-status-text').textContent=checks().length?'Չափերը համադրված են ձեր գծագրի հետ':'Չափերով գծագիրը տրամադրված է';
   if(typeof geometryData.areaBasis==='string')$('evidence-area-basis').textContent=geometryData.areaBasis;
   const conflicts=Array.isArray(geometryData.dimensionalConflicts)?geometryData.dimensionalConflicts:[];
-  const conflictNames={'kitchen-horizontal-chain':'Kitchen dimension chain','lower-horizontal-chain':'Lower dimension chain','living-east-glazing':'Living-room glazing','primary-east-glazing':'Primary-bedroom glazing'};
+  const conflictNames={'kitchen-horizontal-chain':'Խոհանոցի չափային շղթա','lower-horizontal-chain':'Ստորին չափային շղթա','living-east-glazing':'Հյուրասենյակի ապակեպատում','primary-east-glazing':'Հիմնական ննջասենյակի ապակեպատում'};
   $('drawing-conflicts').hidden=!conflicts.length;
-  $('drawing-conflict-list').innerHTML=conflicts.map(conflict=>`<article class="drawing-conflict"><div><strong>${escape(conflict.label||conflictNames[conflict.id]||String(conflict.id||'Drawing interpretation').replaceAll('-',' '))}</strong>${finite(conflict.differenceMM)?`<span>${Math.abs(Number(conflict.differenceMM))} mm difference</span>`:''}</div><p>${escape(conflict.message||conflict.note||'Endpoints require clarification.')}</p></article>`).join('');
+  $('drawing-conflict-list').innerHTML=conflicts.map(conflict=>`<article class="drawing-conflict"><div><strong>${escape(conflict.label||conflictNames[conflict.id]||String(conflict.id||'Գծագրի մեկնաբանություն').replaceAll('-',' '))}</strong>${finite(conflict.differenceMM)?`<span>${Math.abs(Number(conflict.differenceMM))} մմ տարբերություն</span>`:''}</div><p>${escape(conflict.message||conflict.note||'Վերջնակետերը ճշտման կարիք ունեն։')}</p></article>`).join('');
   renderEvidence();
 }
 

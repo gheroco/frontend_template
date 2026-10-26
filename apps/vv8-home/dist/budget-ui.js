@@ -12,7 +12,7 @@ const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const itemTotal = item => number(item.qty) * number(item.unitAMD);
 const modelRooms = new Set(['living','kitchen','primary','bedroom','hall','bathroom','balcony-kitchen','balcony-bedroom']);
-const formatNumber = value => new Intl.NumberFormat('en-US', {maximumFractionDigits: 0}).format(value);
+const formatNumber = value => new Intl.NumberFormat('hy-AM', {maximumFractionDigits: 0}).format(value);
 const safeURL = value => {
   try { const url = new URL(String(value)); return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : ''; }
   catch { return ''; }
@@ -34,11 +34,11 @@ function amount(amd, currency = activeCurrency) {
 
 function dateLabel(value) {
   const date = new Date(String(value) + 'T12:00:00+04:00');
-  return Number.isFinite(date.getTime()) ? new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'Asia/Yerevan'}).format(date) : String(value || '');
+  return Number.isFinite(date.getTime()) ? new Intl.DateTimeFormat('hy-AM',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Yerevan'}).format(date) : String(value || '');
 }
 
 function roomName(id) {
-  return budgetData.rooms.find(room => room.id === id)?.name || 'Whole home';
+  return budgetData.rooms.find(room => room.id === id)?.name || 'Ամբողջ բնակարանը';
 }
 
 function closeRoomSheet() {
@@ -56,7 +56,7 @@ function openBudget(room = 'all') {
   dialog.querySelector('.budget-scroll').scrollTop = 0;
 }
 
-function sourceLink(source, label = 'Price source') {
+function sourceLink(source, label = 'Գնի աղբյուրը') {
   const url = safeURL(source?.url);
   return url ? `<a href="${escape(url)}" target="_blank" rel="noopener noreferrer" class="budget-source-link">${escape(label)}<span aria-hidden="true">↗</span></a>` : '';
 }
@@ -68,13 +68,13 @@ function itemCard(item) {
   const dimensionText = typeof item.dimensions === 'object' ? Object.entries(item.dimensions).map(([key,value]) => `${key}: ${value}`).join(' · ') : item.dimensions;
   return `<article class="budget-item" data-budget-item="${escape(item.id)}">
     <div class="budget-item-main">
-      <div class="budget-item-eyebrow"><span>${escape(roomName(item.room))}</span><span class="budget-price-kind ${isRetail ? 'listed' : 'allowance'}">${isRetail ? 'Listed online' : 'Planning allowance'}</span></div>
+      <div class="budget-item-eyebrow"><span>${escape(roomName(item.room))}</span><span class="budget-price-kind ${isRetail ? 'listed' : 'allowance'}">${isRetail ? 'Կայքում նշված գին' : 'Նախահաշվային գումար'}</span></div>
       <h3>${escape(item.name)}</h3>
-      <p class="budget-item-supplier">${escape(item.supplier || (isRetail ? 'Armenian retailer' : 'Custom furniture'))}${quantity > 1 ? `<span>Quantity ${formatNumber(quantity)}</span>` : ''}</p>
+      <p class="budget-item-supplier">${escape(item.supplier || (isRetail ? 'Հայաստանյան վաճառող' : 'Պատվերով կահույք'))}${quantity > 1 ? `<span>Քանակ՝ ${formatNumber(quantity)}</span>` : ''}</p>
       ${dimensionText ? `<p class="budget-item-size">${icon('ruler')}<span>${escape(dimensionText)}</span></p>` : ''}
       ${item.note ? `<p class="budget-item-note">${escape(item.note)}</p>` : ''}
       ${item.availability ? `<p class="budget-item-availability">${escape(item.availability)}</p>` : ''}
-      <div class="budget-item-links">${sourceLink(source,isRetail ? 'Retail listing' : 'Price benchmark')}${modelRooms.has(item.room) ? `<button type="button" data-budget-view-room="${escape(item.room)}">View room ${icon('arrow')}</button>` : ''}</div>
+      <div class="budget-item-links">${sourceLink(source,isRetail ? 'Ապրանքի էջը' : 'Գնի համեմատության աղբյուրը')}${modelRooms.has(item.room) ? `<button type="button" data-budget-view-room="${escape(item.room)}">Դիտել սենյակը ${icon('arrow')}</button>` : ''}</div>
     </div>
     <div class="budget-item-price"><strong>${amount(itemTotal(item))}</strong><small>${formatNumber(quantity)} × ${amount(number(item.unitAMD))}</small>${activeCurrency === 'USD' ? `<span>${amount(itemTotal(item),'AMD')}</span>` : `<span>~ ${amount(itemTotal(item),'USD')}</span>`}</div>
   </article>`;
@@ -85,8 +85,8 @@ function updateSidebar() {
   const totals = getBudgetTotals();
   const items = selectedModelRoom ? budgetData.items.filter(item => item.room === selectedModelRoom) : budgetData.items;
   const sum = items.reduce((total,item) => total + itemTotal(item),0);
-  sidebarButton.innerHTML = `<span class="budget-sidebar-heading"><span class="budget-sidebar-dot"></span>${selectedModelRoom ? 'Furniture in this room' : 'Your furniture plan'}${icon('chevron')}</span><span class="budget-sidebar-values"><strong>${amount(sum,'USD')}</strong><span>${selectedModelRoom ? escape(roomName(selectedModelRoom)) : `of $${formatNumber(budgetData.budgetUSD)} ceiling`}</span></span><span class="budget-sidebar-note">${selectedModelRoom ? 'View items, dimensions & prices' : `${amount(Math.max(0,totals.unallocated),'USD')} unallocated after reserve`}</span>`;
-  sidebarButton.setAttribute('aria-label', selectedModelRoom ? `View ${roomName(selectedModelRoom)} furniture budget` : 'Open furniture budget and Armenian price sources');
+  sidebarButton.innerHTML = `<span class="budget-sidebar-heading"><span class="budget-sidebar-dot"></span>${selectedModelRoom ? 'Այս սենյակի կահույքը' : 'Կահույքի նախահաշիվը'}${icon('chevron')}</span><span class="budget-sidebar-values"><strong>${amount(sum,'USD')}</strong><span>${selectedModelRoom ? escape(roomName(selectedModelRoom)) : `$${formatNumber(budgetData.budgetUSD)} սահմանաչափից`}</span></span><span class="budget-sidebar-note">${selectedModelRoom ? 'Դիտել կահույքը, չափերն ու գները' : `${amount(Math.max(0,totals.unallocated),'USD')} չբաշխված՝ պահուստից բացի`}</span>`;
+  sidebarButton.setAttribute('aria-label', selectedModelRoom ? `Դիտել կահույքի բյուջեն․ ${roomName(selectedModelRoom)}` : 'Բացել կահույքի բյուջեն և հայաստանյան գների աղբյուրները');
 }
 
 function render() {
@@ -98,30 +98,30 @@ function render() {
   const retailCount = budgetData.items.filter(item => item.kind === 'retail').length;
   const allowanceCount = budgetData.items.length - retailCount;
   const date = dateLabel(budgetData.asOf);
-  dialog.innerHTML = `<div class="dialog-heading budget-dialog-heading"><div><p class="eyebrow">FURNITURE · ARMENIAN PRICES</p><h2 id="budget-title">${escape(budgetData.title || 'A considered home.')}</h2></div><button type="button" class="icon-button" data-budget-close aria-label="Close furniture budget">${icon('close')}</button></div>
+  dialog.innerHTML = `<div class="dialog-heading budget-dialog-heading"><div><p class="eyebrow">ԿԱՀՈՒՅՔ · ՀԱՅԱՍՏԱՆՅԱՆ ԳՆԵՐ</p><h2 id="budget-title">${escape(budgetData.title || 'Խնամքով կահավորված տուն։')}</h2></div><button type="button" class="icon-button" data-budget-close aria-label="Փակել կահույքի բյուջեն">${icon('close')}</button></div>
     <div class="budget-scroll">
-      <section class="budget-intro"><div><p class="budget-lead">${escape(budgetData.summary || 'A complete furniture plan, with room to choose carefully.')}</p><p class="budget-scope">${escape(budgetData.scope || 'Furniture, fitted cabinetry and soft furnishings. Renovation and appliances are outside this budget.')}</p></div><div class="budget-currency-switch" role="group" aria-label="Display currency"><button type="button" data-budget-currency="USD" aria-pressed="${activeCurrency === 'USD'}">USD $</button><button type="button" data-budget-currency="AMD" aria-pressed="${activeCurrency === 'AMD'}">AMD ֏</button></div></section>
-      <div class="budget-materials"><span class="budget-materials-name">Warm contemporary</span><span class="budget-swatch" style="--swatch:#e9e2d2" title="Ivory and oat upholstery"><i></i>Ivory & oat</span><span class="budget-swatch" style="--swatch:#82694f" title="Smoked oak"><i></i>Smoked oak</span><span class="budget-swatch" style="--swatch:#d9d5c8" title="Pale stone"><i></i>Pale stone</span><span class="budget-swatch" style="--swatch:#a8aaa0" title="Dove grey"><i></i>Dove grey</span><span class="budget-swatch" style="--swatch:#b49a65" title="Warm bronze"><i></i>Warm bronze</span></div>
-      <section class="budget-overview" aria-label="Furniture budget overview">
-        <div class="budget-metric ceiling"><span>Budget ceiling</span><strong>${amount(totals.cap)}</strong><small>${activeCurrency === 'USD' ? amount(totals.cap,'AMD') : amount(totals.cap,'USD')}</small></div>
-        <div class="budget-metric planned"><span>Planned furniture</span><strong>${amount(totals.planned)}</strong><small>Listed prices + allowances</small></div>
-        <div class="budget-metric reserve"><span>Contingency reserve</span><strong>${amount(totals.reserve)}</strong><small>Held for changes & final quotes</small></div>
-        <div class="budget-metric remaining ${overBudget ? 'over-budget' : ''}"><span>${overBudget ? 'Over budget' : 'Unallocated'}</span><strong>${amount(Math.abs(totals.unallocated))}</strong><small>${overBudget ? 'Reduce selections before ordering' : 'Available for upgrades or savings'}</small></div>
+      <section class="budget-intro"><div><p class="budget-lead">${escape(budgetData.summary || 'Կահույքի ամբողջական նախահաշիվ՝ ընտրությունը հանգիստ կատարելու հնարավորությամբ։')}</p><p class="budget-scope">${escape(budgetData.scope || 'Կահույք, ներկառուցվող պահարաններ և տան տեքստիլ։ Վերանորոգումն ու կենցաղային տեխնիկան այս բյուջեում ներառված չեն։')}</p></div><div class="budget-currency-switch" role="group" aria-label="Ցուցադրվող արժույթը"><button type="button" data-budget-currency="USD" aria-pressed="${activeCurrency === 'USD'}">ԱՄՆ դոլար $</button><button type="button" data-budget-currency="AMD" aria-pressed="${activeCurrency === 'AMD'}">Դրամ ֏</button></div></section>
+      <div class="budget-materials"><span class="budget-materials-name">Ժամանակակից ոճ՝ տաք երանգներով</span><span class="budget-swatch" style="--swatch:#e9e2d2" title="Փղոսկրագույն և բաց բեժ պաստառ"><i></i>Փղոսկրագույն և բեժ</span><span class="budget-swatch" style="--swatch:#82694f" title="Ապխտած կաղնի"><i></i>Ապխտած կաղնի</span><span class="budget-swatch" style="--swatch:#d9d5c8" title="Բաց գույնի քար"><i></i>Բաց գույնի քար</span><span class="budget-swatch" style="--swatch:#a8aaa0" title="Բաց մոխրագույն"><i></i>Բաց մոխրագույն</span><span class="budget-swatch" style="--swatch:#b49a65" title="Տաք երանգի բրոնզ"><i></i>Տաք երանգի բրոնզ</span></div>
+      <section class="budget-overview" aria-label="Կահույքի բյուջեի ամփոփում">
+        <div class="budget-metric ceiling"><span>Բյուջեի սահմանաչափ</span><strong>${amount(totals.cap)}</strong><small>${activeCurrency === 'USD' ? amount(totals.cap,'AMD') : amount(totals.cap,'USD')}</small></div>
+        <div class="budget-metric planned"><span>Նախատեսված կահույք</span><strong>${amount(totals.planned)}</strong><small>Կայքի գներ + նախահաշվային գումարներ</small></div>
+        <div class="budget-metric reserve"><span>Պահուստ</span><strong>${amount(totals.reserve)}</strong><small>Փոփոխությունների և վերջնական առաջարկների համար</small></div>
+        <div class="budget-metric remaining ${overBudget ? 'over-budget' : ''}"><span>${overBudget ? 'Սահմանաչափի գերազանցում' : 'Չբաշխված գումար'}</span><strong>${amount(Math.abs(totals.unallocated))}</strong><small>${overBudget ? 'Մինչ պատվիրելը կրճատեք ընտրված կահույքը' : 'Բարելավումների կամ խնայողության համար'}</small></div>
       </section>
-      <div class="budget-allocation"><div class="budget-track" role="img" aria-label="${escape(`${amount(totals.planned)} planned; ${amount(totals.reserve)} contingency; ${amount(Math.abs(totals.unallocated))} ${overBudget ? 'over budget' : 'unallocated'}`)}"><span class="budget-track-planned" style="width:${proportion(totals.planned)}%"></span><span class="budget-track-reserve" style="width:${proportion(totals.reserve)}%"></span></div><div class="budget-allocation-note"><span><i class="planned"></i>Planned</span><span><i class="reserve"></i>Reserve</span><span><i class="remaining"></i>Unallocated</span><p>A ceiling, not a spending target.</p></div></div>
-      <div class="budget-price-basis"><div><strong>${formatNumber(retailCount)} listed price${retailCount === 1 ? '' : 's'}</strong><span>${amount(totals.retail)}</span></div><div><strong>${formatNumber(allowanceCount)} allowance${allowanceCount === 1 ? '' : 's'}</strong><span>${amount(totals.allowances)}</span></div><p>Allowances are planning estimates, not supplier quotes. Online prices and stock should be reconfirmed before ordering.</p></div>
-      <section class="budget-plan-section" aria-label="Room furniture selections"><div class="budget-section-heading"><div><p class="eyebrow">YOUR SELECTIONS</p><h3>Room by room.</h3></div><a class="budget-csv" href="./assets/VV8-furniture-budget.csv" download="VV8-furniture-budget.csv">${icon('download')}Download budget</a></div>
-        <div class="budget-room-filters" role="group" aria-label="Filter furniture by room"><button type="button" data-budget-room="all" aria-pressed="${activeRoom === 'all'}">Whole home<span>${amount(totals.planned)}</span></button>${budgetData.rooms.filter(room => budgetData.items.some(item => item.room === room.id)).map(room => {const sum=budgetData.items.filter(item=>item.room===room.id).reduce((total,item)=>total+itemTotal(item),0);return `<button type="button" data-budget-room="${escape(room.id)}" aria-pressed="${activeRoom===room.id}">${escape(room.name)}<span>${amount(sum)}</span></button>`;}).join('')}</div>
-        <div class="budget-list-heading" aria-live="polite"><span>${filtered.length} selection${filtered.length === 1 ? '' : 's'}${activeRoom === 'all' ? '' : ` · ${escape(roomName(activeRoom))}`}</span><strong>${amount(filteredTotal)}</strong></div>
-        <div class="budget-item-list">${filtered.length ? filtered.map(itemCard).join('') : '<p class="budget-empty">No separately priced furniture is assigned to this room.</p>'}</div>
+      <div class="budget-allocation"><div class="budget-track" role="img" aria-label="${escape(`Նախատեսված՝ ${amount(totals.planned)}․ պահուստ՝ ${amount(totals.reserve)}․ ${overBudget ? 'սահմանաչափի գերազանցում' : 'չբաշխված գումար'}՝ ${amount(Math.abs(totals.unallocated))}`)}"><span class="budget-track-planned" style="width:${proportion(totals.planned)}%"></span><span class="budget-track-reserve" style="width:${proportion(totals.reserve)}%"></span></div><div class="budget-allocation-note"><span><i class="planned"></i>Նախատեսված</span><span><i class="reserve"></i>Պահուստ</span><span><i class="remaining"></i>Չբաշխված</span><p>Պետք չէ ծախսել ամբողջ սահմանաչափը։</p></div></div>
+      <div class="budget-price-basis"><div><strong>${formatNumber(retailCount)} կայքում նշված գին</strong><span>${amount(totals.retail)}</span></div><div><strong>${formatNumber(allowanceCount)} նախահաշվային գումար</strong><span>${amount(totals.allowances)}</span></div><p>Նախահաշվային գումարները պլանավորման գնահատումներ են, ոչ թե մատակարարների գնային առաջարկներ։ Պատվիրելուց առաջ կրկին ճշտեք կայքերում նշված գներն ու առկայությունը։</p></div>
+      <section class="budget-plan-section" aria-label="Կահույքի ընտրությունն ըստ սենյակների"><div class="budget-section-heading"><div><p class="eyebrow">ՆԱԽԱՏԵՍՎԱԾ ԿԱՀՈՒՅՔ</p><h3>Ըստ սենյակների</h3></div><a class="budget-csv" href="./assets/VV8-furniture-budget.csv" download="VV8-furniture-budget.csv">${icon('download')}Ներբեռնել բյուջեն</a></div>
+        <div class="budget-room-filters" role="group" aria-label="Զտել կահույքն ըստ սենյակի"><button type="button" data-budget-room="all" aria-pressed="${activeRoom === 'all'}">Ամբողջ բնակարանը<span>${amount(totals.planned)}</span></button>${budgetData.rooms.filter(room => budgetData.items.some(item => item.room === room.id)).map(room => {const sum=budgetData.items.filter(item=>item.room===room.id).reduce((total,item)=>total+itemTotal(item),0);return `<button type="button" data-budget-room="${escape(room.id)}" aria-pressed="${activeRoom===room.id}">${escape(room.name)}<span>${amount(sum)}</span></button>`;}).join('')}</div>
+        <div class="budget-list-heading" aria-live="polite"><span>${formatNumber(filtered.length)} դիրք${activeRoom === 'all' ? '' : ` · ${escape(roomName(activeRoom))}`}</span><strong>${amount(filteredTotal)}</strong></div>
+        <div class="budget-item-list">${filtered.length ? filtered.map(itemCard).join('') : '<p class="budget-empty">Այս սենյակի համար առանձին գնով կահույք նախատեսված չէ։</p>'}</div>
       </section>
-      <details class="budget-notes"><summary>Price basis, scope & sources<span>${icon('plus')}</span></summary><div class="budget-notes-body"><p class="budget-rate">Prices checked ${escape(date)} · Reference conversion: <strong>$1 = ${escape(budgetData.usdToAmd)} ֏</strong>.</p><p>Dollar figures are rounded for display. The budget is calculated in drams at this fixed reference rate.</p><ul>${(budgetData.notes || []).map(note => `<li>${escape(note)}</li>`).join('')}</ul><p>Furniture in the 3D view is a design representation. Check each supplier's external dimensions against a measured floor plan before ordering.</p><h4>Sources</h4><ol class="budget-source-list">${budgetData.sources.map(source=>`<li>${sourceLink(source,source.title)}${source.checked ? `<small>Checked ${escape(dateLabel(source.checked))}</small>` : ''}</li>`).join('')}</ol></div></details>
-      <p class="budget-bottom-note">${escape(date)} price snapshot · Nothing has been ordered.</p>
+      <details class="budget-notes"><summary>Գների հիմքը, ընդգրկումը և աղբյուրները<span>${icon('plus')}</span></summary><div class="budget-notes-body"><p class="budget-rate">Գները ստուգվել են՝ ${escape(date)} · Հաշվարկային փոխարժեք՝ <strong>$1 = ${escape(new Intl.NumberFormat('hy-AM',{maximumFractionDigits:2}).format(budgetData.usdToAmd))} ֏</strong>։</p><p>Դոլարով գումարները ցուցադրման համար կլորացված են։ Բյուջեն հաշվարկվում է դրամով՝ այս հաստատուն հաշվարկային փոխարժեքով։</p><ul>${(budgetData.notes || []).map(note => `<li>${escape(note)}</li>`).join('')}</ul><p>Եռաչափ տեսքում կահույքը ներկայացված է նախագծային ձևով։ Պատվիրելուց առաջ յուրաքանչյուր մատակարարի նշած արտաքին չափերը համեմատեք տեղում չափագրված հատակագծի հետ։</p><h4>Աղբյուրներ</h4><ol class="budget-source-list">${budgetData.sources.map(source=>`<li>${sourceLink(source,source.title)}${source.checked ? `<small>Ստուգվել է՝ ${escape(dateLabel(source.checked))}</small>` : ''}</li>`).join('')}</ol></div></details>
+      <p class="budget-bottom-note">Գները՝ ${escape(date)} դրությամբ · Պատվերներ չեն կատարվել։</p>
     </div>`;
 }
 
 export function initBudgetUI({data, onRoom: roomHandler}) {
-  if (!data || !Array.isArray(data.items) || !Array.isArray(data.rooms) || !Number.isFinite(Number(data.usdToAmd)) || Number(data.usdToAmd) <= 0) throw new Error('The furniture budget requires items, rooms and a valid exchange rate.');
+  if (!data || !Array.isArray(data.items) || !Array.isArray(data.rooms) || !Number.isFinite(Number(data.usdToAmd)) || Number(data.usdToAmd) <= 0) throw new Error('Կահույքի բյուջեի համար անհրաժեշտ են կահույքի ցանկը, սենյակները և վավեր փոխարժեքը։');
   budgetData = {...data,sources:Array.isArray(data.sources)?data.sources:[]};
   onRoom = typeof roomHandler === 'function' ? roomHandler : () => {};
   document.getElementById('furniture-budget-dialog')?.remove();
@@ -129,9 +129,9 @@ export function initBudgetUI({data, onRoom: roomHandler}) {
   document.getElementById('furniture-budget-summary')?.remove();
   const trigger = document.createElement('button');
   trigger.type = 'button';trigger.id = 'furniture-budget-button';trigger.className = 'budget-topbar-button';
-  trigger.setAttribute('aria-label',`Open $${formatNumber(budgetData.budgetUSD)} furniture budget`);
+  trigger.setAttribute('aria-label',`Բացել կահույքի $${formatNumber(budgetData.budgetUSD)} բյուջեն`);
   trigger.setAttribute('aria-haspopup','dialog');
-  trigger.innerHTML = `${icon('grid')}<span>Furniture</span><strong>$${formatNumber(number(data.budgetUSD)/1000)}k</strong>`;
+  trigger.innerHTML = `${icon('grid')}<span>Կահույք</span><strong>$${formatNumber(number(data.budgetUSD)/1000)} հազ․</strong>`;
   trigger.addEventListener('click',()=>openBudget());
   const actions = document.querySelector('.topbar-actions');
   actions?.insertBefore(trigger,actions.querySelector('.export-button'));

@@ -1,67 +1,67 @@
 {
-  "title": "Your $80,000 furniture plan.",
+  "title": "Կահույքի ձեր $80,000 բյուջեն",
   "asOf": "2026-10-26",
   "currency": "AMD",
   "usdToAmd": 360.88,
   "budgetUSD": 80000,
   "reserveAMD": 2887040,
-  "summary": "Warm, carefully fitted furniture for your VV8 home. Your $80,000 is a maximum; the unused balance stays available.",
-  "scope": "Furniture, fitted cabinetry, mattresses, rugs, curtains and portable lamps, with delivery allowances. Renovation, appliances, sanitaryware and building services are outside this budget.",
+  "summary": "Տաք երանգներով, ձեր VV8 բնակարանին հարմարեցված կահույք։ $80,000-ը առավելագույն սահմանաչափն է․ չօգտագործված գումարը մնում է ազատ։",
+  "scope": "Կահույք, ներկառուցվող պահարաններ, ներքնակներ, գորգեր, վարագույրներ և շարժական լուսատուներ՝ առաքման նախահաշվային գումարով։ Վերանորոգումը, կենցաղային տեխնիկան, սանտեխնիկան և շինության ինժեներական համակարգերի աշխատանքներն այս բյուջեում ներառված չեն։",
   "notes": [
-    "This is a planning schedule, not a supplier quotation or a completed purchase. Listed retail prices and stock statements were checked online on 26 October 2026; stock is not reserved.",
-    "The conversion uses the Central Bank of Armenia reference rate for 26 October 2026: 1 USD = 360.88 AMD. Bank or card conversion and delivery-day prices can differ.",
-    "Custom amounts are deliberately generous design allowances for premium finishes and compact made-to-measure furniture. They are not verified market quotes. Request itemised quotations using measured dimensions before committing.",
-    "Links on allowance rows are comparative price benchmarks; they do not offer the custom design at the allowance price. Retail products are never resized and presented as the same purchasable SKU.",
-    "Retail prices are recorded as displayed. No extra VAT or discount has been assumed. Supplier quotes should explicitly confirm taxes, materials, hardware, carrying, assembly and warranty.",
-    "The 8,000 USD reserve is held separately for final quotes, stock substitutions, measurements and exchange-rate variation. Unallocated funds are additional to this reserve.",
-    "Room geometry now follows the supplied dimensioned architectural drawing. Areas are calculated from its reconstructed clear polygons (81.8975 m² total including balconies); the original 81.4 m² brochure total and 81.6 m² label sum remain separate references. Unresolved dimension chains, recess endpoints and assumed heights are documented in Dimensions & source.",
-    "The model shows schematic furniture forms, not manufacturer CAD. Retail footprints are based on listed external dimensions where verified; mattress heights, cabinetry and other custom dimensions are planning estimates.",
-    "Kitchen pricing includes furniture and its worktop. Appliances, sink and tap, permanent electrical work, plumbing, tiles, floors, doors, windows, heating and air conditioning are not charged to this furniture budget.",
-    "Delivery and assembly are allowances. Remove overlapping services where retailers or furniture makers already include them.",
-    "Totals are calculated from the original AMD amounts. Individually rounded USD line items may differ from converted totals by a few cents."
+    "Սա պլանավորման նախահաշիվ է, ոչ թե մատակարարի գնային առաջարկ կամ կատարված գնում։ Մանրածախ գներն ու առկայության մասին տեղեկությունները կայքերում ստուգվել են 26 հոկտեմբերի 2026 թ․ դրությամբ․ ապրանքները ամրագրված չեն։",
+    "Փոխարկման համար կիրառվում է Հայաստանի կենտրոնական բանկի 26 հոկտեմբերի 2026 թ․ հաշվարկային փոխարժեքը՝ 1 ԱՄՆ դոլար = 360.88 դրամ։ Բանկային կամ քարտային փոխարկման փոխարժեքը և առաքման օրվա գները կարող են տարբերվել։",
+    "Պատվերով կահույքի համար նախատեսված են բարձրակարգ նյութերի և անհատական չափերով կոմպակտ լուծումների համեմատաբար մեծ նախահաշվային գումարներ։ Դրանք շուկայում հաստատված գնային առաջարկներ չեն։ Պատվերը հաստատելուց առաջ պահանջեք տեղում չափագրված չափերի հիման վրա կազմված մանրամասն գնային առաջարկներ։",
+    "Նախահաշվային դիրքերի հղումները գների համեմատության համար են․ դրանք չեն նշանակում, որ առաջարկվող անհատական նախագիծը վաճառվում է այդ գումարով։ Մանրածախ ապրանքների չափերը չեն փոխվում՝ դրանք նույն ապրանքային կոդով գնվող ապրանք ներկայացնելու համար։",
+    "Մանրածախ գները գրանցված են այնպես, ինչպես ցուցադրված են կայքերում։ Լրացուցիչ ԱԱՀ կամ զեղչ չի ավելացվել։ Մատակարարների առաջարկներում պետք է հստակ նշվեն հարկերը, նյութերը, կահույքի մեխանիզմները, տեղափոխումը, հավաքումը և երաշխիքը։",
+    "8,000 ԱՄՆ դոլարի պահուստն առանձնացված է վերջնական առաջարկների, առկայությամբ պայմանավորված փոխարինումների, չափագրումների և փոխարժեքի տատանումների համար։ Չբաշխված գումարը այս պահուստից բացի է։",
+    "Սենյակների երկրաչափությունը հետևում է տրամադրված չափագրված ճարտարապետական գծագրին։ Մակերեսները հաշվարկված են վերակառուցված ներքին ուրվագծերից՝ ընդհանուր 81.8975 մ², ներառյալ պատշգամբները։ Բուկլետի սկզբնական 81.4 մ² ընդհանուր մակերեսը և սենյակների 81.6 մ² գումարը պահպանված են որպես առանձին տեղեկություններ։ Չլուծված չափաշղթաները, խորացումների եզրակետերը և չնշված բարձրությունների ենթադրությունները ներկայացված են «Չափեր և աղբյուրներ» բաժնում։",
+    "Մոդելում կահույքի ձևերը պայմանական են․ դրանք արտադրողի CAD մոդելները չեն։ Մանրածախ ապրանքների զբաղեցրած տարածքը հիմնված է հրապարակված արտաքին չափերի վրա, երբ դրանք ստուգված են։ Ներքնակների բարձրությունները, պահարանների և այլ պատվերով կահույքի չափերը նախնական նախագծային գնահատումներ են։",
+    "Խոհանոցի գումարը ներառում է կահույքն ու աշխատանքային սեղանածածկը։ Կենցաղային տեխնիկան, լվացարանը, ծորակը, մշտական էլեկտրական և ջրամատակարարման աշխատանքները, սալիկները, հատակները, դռները, պատուհանները, ջեռուցումն ու օդորակումը կահույքի այս բյուջեից չեն վճարվում։",
+    "Առաքման և հավաքման գումարները նախահաշվային են։ Հանեք կրկնվող ծառայությունները, եթե դրանք արդեն ներառված են վաճառողի կամ կահույք արտադրողի առաջարկում։",
+    "Ընդհանուր գումարները հաշվարկվում են սկզբնական դրամային արժեքներից։ Դոլարով առանձին կլորացված դիրքերի գումարը կարող է մի քանի ցենտով տարբերվել փոխարկված ընդհանուր գումարից։"
   ],
   "rooms": [
     {
       "id": "living",
-      "name": "Living & dining"
+      "name": "Հյուրասենյակ"
     },
     {
       "id": "kitchen",
-      "name": "Kitchen"
+      "name": "Խոհանոց"
     },
     {
       "id": "primary",
-      "name": "Primary bedroom"
+      "name": "Հիմնական ննջասենյակ"
     },
     {
       "id": "bedroom",
-      "name": "Bedroom 2"
+      "name": "Երկրորդ ննջասենյակ"
     },
     {
       "id": "hall",
-      "name": "Entrance & hall"
+      "name": "Մուտք և միջանցք"
     },
     {
       "id": "bathroom",
-      "name": "Bathroom furniture"
+      "name": "Սանհանգույց"
     },
     {
       "id": "balcony-kitchen",
-      "name": "Kitchen balcony"
+      "name": "Խոհանոցի պատշգամբ"
     },
     {
       "id": "balcony-bedroom",
-      "name": "Bedroom balcony"
+      "name": "Ննջասենյակի պատշգամբ"
     },
     {
       "id": "whole",
-      "name": "Textiles & services"
+      "name": "Տեքստիլ և ծառայություններ"
     }
   ],
   "sources": [
     {
       "id": "cba",
-      "title": "Central Bank of Armenia · exchange archive",
+      "title": "Հայաստանի կենտրոնական բանկ · փոխարժեքների արխիվ",
       "url": "https://www.cba.am/en/exchange-rates-archive/",
       "checked": "2026-10-26"
     },
@@ -91,13 +91,13 @@
     },
     {
       "id": "altari-benchmark",
-      "title": "Ashley Armenia · Altari price benchmark, out of stock",
+      "title": "Ashley Armenia · Altari-ի համեմատական գին․ առկա չէ",
       "url": "https://ashleyhome.am/en/products/altari-sofa",
       "checked": "2026-10-26"
     },
     {
       "id": "lyncott-benchmark",
-      "title": "Ashley Armenia · Lyncott set price benchmark",
+      "title": "Ashley Armenia · Lyncott հավաքածուի համեմատական գին",
       "url": "https://ashleyhome.am/en/collections/kitchen-tables/products/lyncott-dining-table-and-chairs-set",
       "checked": "2026-10-26"
     },
@@ -115,7 +115,7 @@
     },
     {
       "id": "shelter",
-      "title": "NERA · Normann Copenhagen Shelter table lamp",
+      "title": "NERA · Normann Copenhagen Shelter սեղանի լամպ",
       "url": "https://www.nera.am/product-page/shelter-table-lamp-eu-white",
       "checked": "2026-10-26"
     },
@@ -127,43 +127,43 @@
     },
     {
       "id": "lucerne200",
-      "title": "JYSK Armenia · LUCERNE rug 200×300",
+      "title": "JYSK Armenia · LUCERNE գորգ՝ 200×300",
       "url": "https://jysk.am/en/product/gorg-lucerne-200x300-bezh_118906",
       "checked": "2026-10-26"
     },
     {
       "id": "lucerne160",
-      "title": "JYSK Armenia · LUCERNE rug 160×230",
+      "title": "JYSK Armenia · LUCERNE գորգ՝ 160×230",
       "url": "https://jysk.am/en/product/gorg-lucerne-160x230-bezh_118432",
       "checked": "2026-10-26"
     },
     {
       "id": "rypestarr",
-      "title": "JYSK Armenia · RYPESTARR rug 200×300",
+      "title": "JYSK Armenia · RYPESTARR գորգ՝ 200×300",
       "url": "https://jysk.am/en/product/gorg-rypestarr-200x300-bezh_121033",
       "checked": "2026-10-26"
     },
     {
       "id": "kitchen-benchmark",
-      "title": "AllDecor · MDF kitchen price basis, code 2602",
+      "title": "AllDecor · ՄԴՖ խոհանոցի համեմատական գին, կոդ՝ 2602",
       "url": "https://alldecor.am/product/khvohanvoci-kahvouyq/xohanoci-kahuyq-mdf/xohanoci-kahuyq-mdf-kwe",
       "checked": "2026-10-26"
     },
     {
       "id": "bed-benchmark",
-      "title": "JYSK Armenia · KONGSBERG 160×200 frame benchmark",
+      "title": "JYSK Armenia · KONGSBERG 160×200 մահճակալի կարկասի համեմատական գին",
       "url": "https://jysk.am/hy/product/mahchakali-karkas-kongsberg-160x200-bezh-gortsvatsq_120712",
       "checked": "2026-10-26"
     },
     {
       "id": "wardrobe-benchmark",
-      "title": "JYSK Armenia · LINTRUP wardrobe benchmark",
+      "title": "JYSK Armenia · LINTRUP զգեստապահարանի համեմատական գին",
       "url": "https://jysk.am/hy/product/zgestapaharan-lintrup-157x220-3-dur-gujn-kaxnu_118421",
       "checked": "2026-10-26"
     },
     {
       "id": "curtain-benchmark",
-      "title": "JYSK Armenia · LEKA ready-made blackout curtain benchmark",
+      "title": "JYSK Armenia · LEKA պատրաստի մթնեցնող վարագույրի համեմատական գին",
       "url": "https://jysk.am/en/product/varagujr-mtnecnox-leka-1x140x300-taq-moxragujn_117800",
       "checked": "2026-10-26"
     }
@@ -172,197 +172,197 @@
     {
       "id": "living-sofa",
       "room": "living",
-      "name": "Compact sofa · ivory performance upholstery",
+      "name": "Կոմպակտ բազմոց՝ փղոսկրագույն դիմացկուն պաստառով",
       "qty": 1,
       "unitAMD": 1200000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": "altari-benchmark",
-      "dimensions": "~226 W × 86 D cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Premium custom design allowance including cushions. Altari is a 780,000 ֏ retail comparison only; it is out of stock and has a different footprint."
+      "dimensions": "~226 լայն. × 86 խոր. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Բարձրակարգ պատվերով բազմոցի նախահաշվային գումար՝ բարձերով։ Altari-ի 780,000 ֏ գինը միայն մանրածախ համեմատություն է․ այն առկա չէ և այլ չափեր ունի։"
     },
     {
       "id": "living-chairs",
       "room": "living",
-      "name": "Ashley Novelda accent chair · A3000081",
+      "name": "Ashley Novelda բազկաթոռ · A3000081",
       "qty": 2,
       "unitAMD": 480000,
       "kind": "retail",
       "supplier": "Ashley HomeStore Armenia",
       "sourceId": "novelda",
-      "dimensions": "65 W × 84 D × 81 H cm",
-      "availability": "Listed in stock; quantity of two to confirm",
-      "note": "Neutral upholstery and exposed timber. The viewer uses the listed envelope with a schematic shape."
+      "dimensions": "65 լայն. × 84 խոր. × 81 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ առկա է․ երկու հատի առկայությունը պետք է ճշտել",
+      "note": "Չեզոք երանգի պաստառ և տեսանելի փայտյա մասեր։ Տեսքում պահպանված են հրապարակված արտաքին չափերը, իսկ ձևը պայմանական է։"
     },
     {
       "id": "living-coffee",
       "room": "living",
-      "name": "Ashley Isanti marble coffee table · T652-8",
+      "name": "Ashley Isanti մարմարե սուրճի սեղան · T652-8",
       "qty": 1,
       "unitAMD": 389000,
       "kind": "retail",
       "supplier": "Ashley HomeStore Armenia",
       "sourceId": "isanti-coffee",
-      "dimensions": "Ø83 × 46 H cm",
-      "availability": "Listed in stock",
-      "note": "White marble and mango wood. The lounge zone is retained; the table is positioned for approximately 40 cm clear space in front of the sofa."
+      "dimensions": "Ø83 × 46 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ առկա է",
+      "note": "Սպիտակ մարմար և մանգոյի փայտ։ Հանգստի հատվածը պահպանված է․ սեղանն այնպես է տեղադրված, որ բազմոցի առջև մոտ 40 սմ ազատ տարածք մնա։"
     },
     {
       "id": "living-side",
       "room": "living",
-      "name": "Ashley Isanti marble end table · T652-6",
+      "name": "Ashley Isanti մարմարե կողասեղան · T652-6",
       "qty": 1,
       "unitAMD": 280000,
       "kind": "retail",
       "supplier": "Ashley HomeStore Armenia",
       "sourceId": "isanti-side",
-      "dimensions": "Ø56 × 57 H cm",
-      "availability": "Listed in stock",
-      "note": "Placed beside the sofa; this is a taller end table, not a nested coffee table."
+      "dimensions": "Ø56 × 57 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ առկա է",
+      "note": "Տեղադրված է բազմոցի կողքին։ Սա ավելի բարձր կողասեղան է, ոչ թե իրար տակ մտնող սուրճի սեղանների մաս։"
     },
     {
       "id": "living-dining",
       "room": "living",
-      "name": "Compact dining table + four upholstered chairs",
+      "name": "Կոմպակտ ճաշասեղան և չորս փափուկ աթոռ",
       "qty": 1,
       "unitAMD": 950000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": "lyncott-benchmark",
-      "dimensions": "Table ~123 W × 80 D cm; 4 compact chairs",
-      "availability": "Made to measure · quotation required",
-      "note": "One complete custom set, sized for the existing dining zone. Lyncott's 698,000 ֏ five-piece set is a price benchmark; the model is not a resized Lyncott product."
+      "dimensions": "Սեղան՝ ~123 լայն. × 80 խոր. սմ․ 4 կոմպակտ աթոռ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Մեկ ամբողջական պատվերով հավաքածու՝ հարմարեցված առկա ճաշելու հատվածին։ Lyncott-ի 698,000 ֏ արժողությամբ հինգ մասից հավաքածուն գնի համեմատություն է․ մոդելը Lyncott ապրանքի չափափոխված տարբերակը չէ։"
     },
     {
       "id": "living-media",
       "room": "living",
-      "name": "Floating media console + timber furniture back panel",
+      "name": "Պատից կախովի հեռուստապահարան և փայտյա հետնապատ",
       "qty": 1,
       "unitAMD": 800000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "Console ~237 W × 40 D cm; back panel ~235 W cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Smoked oak veneer, ivory fronts and concealed hardware. Includes furniture back panel; TV, wiring and building work are excluded."
+      "dimensions": "Պահարան՝ ~237 լայն. × 40 խոր. սմ․ հետնապատ՝ ~235 լայն. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Ապխտած կաղնու երեսպատում, փղոսկրագույն ճակատներ և թաքնված կահույքային մեխանիզմներ։ Կահույքի հետնապատը ներառված է, իսկ հեռուստացույցը, լարերն ու շինարարական աշխատանքները՝ ոչ։"
     },
     {
       "id": "living-rug",
       "room": "living",
-      "name": "JYSK RYPESTARR beige rug",
+      "name": "JYSK RYPESTARR բեժ գորգ",
       "qty": 1,
       "unitAMD": 101090,
       "kind": "retail",
       "supplier": "JYSK Armenia",
       "sourceId": "rypestarr",
-      "dimensions": "200 × 300 cm",
-      "availability": "Page lists one at Megamall",
-      "note": "Polypropylene pile; no wool claim. Oriented with the 3 m side across the lounge."
+      "dimensions": "200 × 300 սմ",
+      "availability": "Կայքում նշված է մեկ հատ՝ Megamall մասնաճյուղում",
+      "note": "Պոլիպրոպիլենային խավով է․ բրդյա լինելու պնդում չկա։ 3 մ կողմն ուղղված է հանգստի հատվածի լայնքով։"
     },
     {
       "id": "living-lamp",
       "room": "living",
-      "name": "Normann Copenhagen Shelter table lamp",
+      "name": "Normann Copenhagen Shelter սեղանի լամպ",
       "qty": 1,
       "unitAMD": 189000,
       "kind": "retail",
       "supplier": "NERA Yerevan",
       "sourceId": "shelter",
-      "dimensions": "Ø41 × 41 H cm",
-      "availability": "Page lists one remaining",
-      "note": "Portable white steel lamp on the living end table. Electrical installation is outside scope."
+      "dimensions": "Ø41 × 41 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ մնացել է մեկ հատ",
+      "note": "Շարժական սպիտակ պողպատե լամպ՝ հյուրասենյակի կողասեղանի վրա։ Էլեկտրական տեղադրման աշխատանքները ներառված չեն։"
     },
     {
       "id": "kitchen-cabinetry",
       "room": "kitchen",
-      "name": "Bespoke kitchen furniture + worktop",
+      "name": "Պատվերով խոհանոցի կահույք և սեղանածածկ",
       "qty": 1,
       "unitAMD": 3000000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": "kitchen-benchmark",
-      "dimensions": "Base run ~353 W × 62 D cm; tall housing ~72 W cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Premium allowance for fitted carcasses, ivory fronts, oak shelves, quality hardware, worktop and furniture fitting. Appliances, sink, tap, splashback tiling and service work excluded. AllDecor's 85,000 ֏/m² MDF listing is a basic benchmark only; its measurement basis and inclusions require confirmation, and it is not multiplied by floor area."
+      "dimensions": "Ստորին պահարանների շարք՝ ~353 լայն. × 62 խոր. սմ․ բարձր պահարան՝ ~72 լայն. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Բարձրակարգ լուծման նախահաշվային գումար՝ ներկառուցվող կարկասներով, փղոսկրագույն ճակատներով, կաղնու դարակներով, որակյալ մեխանիզմներով, սեղանածածկով և կահույքի տեղադրմամբ։ Կենցաղային տեխնիկան, լվացարանը, ծորակը, պատի սալիկապատումը և ինժեներական աշխատանքները ներառված չեն։ AllDecor-ի 85,000 ֏/մ² ՄԴՖ կահույքի գինը միայն պարզ լուծման համեմատություն է․ չափման հիմքն ու ներառված բաղադրիչները պետք է ճշտել, և այդ գինը չի բազմապատկվում հատակի մակերեսով։"
     },
     {
       "id": "kitchen-breakfast",
       "room": "kitchen",
-      "name": "Breakfast table + two compact chairs",
+      "name": "Նախաճաշի սեղան և երկու կոմպակտ աթոռ",
       "qty": 1,
       "unitAMD": 500000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "Table ~128 W × 56 D cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Complete custom furniture set with pale stone-look top and timber frame; compact footprint kept."
+      "dimensions": "Սեղան՝ ~128 լայն. × 56 խոր. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Ամբողջական պատվերով հավաքածու՝ բաց գույնի քարի տեսքով սեղանածածկով և փայտյա կարկասով։ Կոմպակտ չափերը պահպանված են։"
     },
     {
       "id": "primary-bed",
       "room": "primary",
-      "name": "Compact upholstered king bed frame",
+      "name": "Լայն երկտեղանոց մահճակալի կոմպակտ փափուկ կարկաս",
       "qty": 1,
       "unitAMD": 700000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "Mattress 180 × 200 cm; compact outer frame ~197 × 211 cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Custom headboard, frame and slatted support included. Mattress priced separately. Long imported bed frames were avoided to preserve the foot clearance."
+      "dimensions": "Ներքնակ՝ 180 × 200 սմ․ կոմպակտ արտաքին կարկաս՝ ~197 × 211 սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Պատվերով գլխամասը, կարկասը և շերտաձողերով հիմքը ներառված են։ Ներքնակի գինը հաշվարկված է առանձին։ Ոտքերի կողմում ազատ անցումը պահպանելու համար երկար ներկրված կարկասներ չեն ընտրվել։"
     },
     {
       "id": "primary-mattress",
       "room": "primary",
-      "name": "DUSON Opera Diva mattress · 00-00022136",
+      "name": "DUSON Opera Diva ներքնակ · 00-00022136",
       "qty": 1,
       "unitAMD": 474200,
       "kind": "retail",
       "supplier": "DUSON Armenia",
       "sourceId": "duson180",
-      "dimensions": "180 × 200 cm",
-      "availability": "Orderable listing; stock quantity not stated",
-      "note": "Price is the direct product-page amount; no additional discount applied. Mattress thickness is unverified and schematic in the model."
+      "dimensions": "180 × 200 սմ",
+      "availability": "Կայքում հնարավոր է պատվիրել․ առկա քանակը նշված չէ",
+      "note": "Գինը վերցված է անմիջապես ապրանքի էջից․ լրացուցիչ զեղչ կիրառված չէ։ Ներքնակի հաստությունը հաստատված չէ և մոդելում պայմանական է։"
     },
     {
       "id": "primary-wardrobe",
       "room": "primary",
-      "name": "Fitted smoked-oak wardrobe",
+      "name": "Ներկառուցվող զգեստապահարան՝ ապխտած կաղնու երեսպատմամբ",
       "qty": 1,
       "unitAMD": 950000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": "wardrobe-benchmark",
-      "dimensions": "~170 W × 64 D × 220 H cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Premium veneer, fitted internals and soft-close hardware. Design allowance, not a quote. JYSK's 255,990 ֏ LINTRUP is a foil-finished retail comparison of different dimensions."
+      "dimensions": "~170 լայն. × 64 խոր. × 220 բարձ. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Բարձրակարգ երեսպատում, հարմարեցված ներքին բաժանում և մեղմ փակման մեխանիզմներ։ Նախագծային նախահաշիվ է, ոչ թե գնային առաջարկ։ JYSK-ի 255,990 ֏ արժողությամբ LINTRUP-ը թաղանթապատ մանրածախ համեմատություն է՝ այլ չափերով։"
     },
     {
       "id": "primary-bedsides",
       "room": "primary",
-      "name": "Compact oak bedside table",
+      "name": "Կաղնու կոմպակտ մահճակալամերձ սեղանիկ",
       "qty": 2,
       "unitAMD": 140000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~Ø41 × 48 H cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Two bespoke pieces with pale tops and fine fluted oak detail. Lamps are separate."
+      "dimensions": "~Ø41 × 48 բարձ. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Երկու պատվերով սեղանիկ՝ բաց գույնի սեղանածածկով և կաղնու նուրբ ակոսավոր հարդարանքով։ Լամպերը հաշվարկված են առանձին։"
     },
     {
       "id": "primary-vanity",
       "room": "primary",
-      "name": "Dressing table with round mirror",
+      "name": "Զարդասեղան՝ կլոր հայելիով",
       "qty": 1,
       "unitAMD": 400000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~114 W × 48 D cm; mirror Ø64 cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Custom furniture and mirror; chair priced separately."
+      "dimensions": "~114 լայն. × 48 խոր. սմ․ հայելի՝ Ø64 սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Պատվերով կահույք և հայելի․ աթոռի գինը հաշվարկված է առանձին։"
     },
     {
       "id": "primary-chair",
@@ -373,269 +373,269 @@
       "kind": "retail",
       "supplier": "NERA Yerevan",
       "sourceId": "hay-layout",
-      "dimensions": "47.5 W × 55 D × 79 H cm",
-      "availability": "Page lists one remaining",
-      "note": "Single compact vanity chair; schematic model with the listed external envelope."
+      "dimensions": "47.5 լայն. × 55 խոր. × 79 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ մնացել է մեկ հատ",
+      "note": "Մեկ կոմպակտ աթոռ՝ զարդասեղանի համար։ Մոդելի ձևը պայմանական է, արտաքին չափերը՝ ըստ հրապարակված տվյալների։"
     },
     {
       "id": "primary-rug",
       "room": "primary",
-      "name": "JYSK LUCERNE beige rug",
+      "name": "JYSK LUCERNE բեժ գորգ",
       "qty": 1,
       "unitAMD": 84000,
       "kind": "retail",
       "supplier": "JYSK Armenia",
       "sourceId": "lucerne200",
-      "dimensions": "200 × 300 cm",
-      "availability": "Page lists one at Erebuni",
-      "note": "Displayed offer 84,000 ֏; crossed-out regular price 119,990 ֏. 40% wool / 60% polyester face. Reconfirm offer before ordering."
+      "dimensions": "200 × 300 սմ",
+      "availability": "Կայքում նշված է մեկ հատ՝ Erebuni մասնաճյուղում",
+      "note": "Ցուցադրված առաջարկը՝ 84,000 ֏, ջնջված սովորական գինը՝ 119,990 ֏։ Մակերեսային շերտը՝ 40% բուրդ / 60% պոլիեսթեր։ Պատվիրելուց առաջ կրկին ճշտեք առաջարկը։"
     },
     {
       "id": "primary-lamps",
       "room": "primary",
-      "name": "Portable bedside lamp",
+      "name": "Շարժական մահճակալամերձ լամպ",
       "qty": 2,
       "unitAMD": 120000,
       "kind": "allowance",
-      "supplier": "Local retail selection · allowance",
+      "supplier": "Ընտրություն տեղական խանութներից · նախահաշվային գումար",
       "sourceId": null,
-      "dimensions": "Compact lamps to suit Ø41 cm tables",
-      "availability": "Final product selection and price required",
-      "note": "Design allowance for two matching bedside lamps, including bulbs."
+      "dimensions": "Կոմպակտ լամպեր՝ Ø41 սմ սեղանիկների համար",
+      "availability": "Պետք է ընտրել վերջնական ապրանքը և ճշտել գինը",
+      "note": "Երկու համադրված մահճակալամերձ լամպի նախահաշվային գումար՝ լամպիկներով։"
     },
     {
       "id": "primary-bedding",
       "room": "primary",
-      "name": "King bedding, pillows and throw",
+      "name": "Լայն մահճակալի անկողնային հավաքածու, բարձեր և ծածկոց",
       "qty": 1,
       "unitAMD": 180000,
       "kind": "allowance",
-      "supplier": "Local retail selection · allowance",
+      "supplier": "Ընտրություն տեղական խանութներից · նախահաշվային գումար",
       "sourceId": null,
-      "dimensions": "For 180 × 200 cm mattress",
-      "availability": "Final product selection and price required",
-      "note": "Coordinated ivory and warm-grey bedding package; final textile selection pending."
+      "dimensions": "180 × 200 սմ ներքնակի համար",
+      "availability": "Պետք է ընտրել վերջնական ապրանքը և ճշտել գինը",
+      "note": "Փղոսկրագույն և տաք մոխրագույն երանգներով համադրված անկողնային հավաքածու․ տեքստիլի վերջնական ընտրությունը դեռ կատարված չէ։"
     },
     {
       "id": "bedroom-bed",
       "room": "bedroom",
-      "name": "Compact upholstered double bed frame",
+      "name": "Երկտեղանոց մահճակալի կոմպակտ փափուկ կարկաս",
       "qty": 1,
       "unitAMD": 600000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": "bed-benchmark",
-      "dimensions": "Mattress 160 × 200 cm; compact outer frame ~177 × 211 cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Custom headboard, frame and slatted support included. Mattress separate. JYSK KONGSBERG 147,890 ֏ is an entry-price frame benchmark only, not the custom item."
+      "dimensions": "Ներքնակ՝ 160 × 200 սմ․ կոմպակտ արտաքին կարկաս՝ ~177 × 211 սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Պատվերով գլխամասը, կարկասը և շերտաձողերով հիմքը ներառված են։ Ներքնակն առանձին է։ JYSK KONGSBERG-ի 147,890 ֏ գինը միայն ավելի մատչելի կարկասի համեմատություն է, ոչ թե պատվերով այս ապրանքի գինը։"
     },
     {
       "id": "bedroom-mattress",
       "room": "bedroom",
-      "name": "DUSON Opera Diva mattress · 00-00022132",
+      "name": "DUSON Opera Diva ներքնակ · 00-00022132",
       "qty": 1,
       "unitAMD": 420400,
       "kind": "retail",
       "supplier": "DUSON Armenia",
       "sourceId": "duson160",
-      "dimensions": "160 × 200 cm",
-      "availability": "Orderable listing; stock quantity not stated",
-      "note": "Direct product-page amount. Mattress thickness is unverified and schematic in the model."
+      "dimensions": "160 × 200 սմ",
+      "availability": "Կայքում հնարավոր է պատվիրել․ առկա քանակը նշված չէ",
+      "note": "Գինը վերցված է անմիջապես ապրանքի էջից։ Ներքնակի հաստությունը հաստատված չէ և մոդելում պայմանական է։"
     },
     {
       "id": "bedroom-wardrobe",
       "room": "bedroom",
-      "name": "Compact fitted smoked-oak wardrobe",
+      "name": "Կոմպակտ ներկառուցվող զգեստապահարան՝ ապխտած կաղնու երեսպատմամբ",
       "qty": 1,
       "unitAMD": 500000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~95 W × 50 D × 212 H cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Sliding fronts and shallow storage sized to the drawing-based corner. Internal rail layout and final joinery survey required; the planning allowance is unchanged."
+      "dimensions": "~95 լայն. × 50 խոր. × 212 բարձ. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Սահող դռներով ոչ խոր պահարան՝ գծագրի անկյունային հատվածին համապատասխան չափերով։ Պետք է ճշտել կախիչների ներքին դասավորությունը և վերջնական չափագրումը․ նախահաշվային գումարը չի փոխվել։"
     },
     {
       "id": "bedroom-bedsides",
       "room": "bedroom",
-      "name": "Compact oak bedside table",
+      "name": "Կաղնու կոմպակտ մահճակալամերձ սեղանիկ",
       "qty": 2,
       "unitAMD": 140000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~Ø41 × 48 H cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Two bespoke pieces; lamps separate."
+      "dimensions": "~Ø41 × 48 բարձ. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Երկու պատվերով սեղանիկ․ լամպերն առանձին են։"
     },
     {
       "id": "bedroom-rug",
       "room": "bedroom",
-      "name": "JYSK LUCERNE beige rug",
+      "name": "JYSK LUCERNE բեժ գորգ",
       "qty": 1,
       "unitAMD": 87290,
       "kind": "retail",
       "supplier": "JYSK Armenia",
       "sourceId": "lucerne160",
-      "dimensions": "160 × 230 cm",
-      "availability": "Page lists one at Dalma",
-      "note": "40% wool / 60% polyester face. Smaller footprint keeps the bedroom's circulation clear."
+      "dimensions": "160 × 230 սմ",
+      "availability": "Կայքում նշված է մեկ հատ՝ Dalma մասնաճյուղում",
+      "note": "Մակերեսային շերտը՝ 40% բուրդ / 60% պոլիեսթեր։ Ավելի փոքր չափերը ննջասենյակում ազատ անցում են պահպանում։"
     },
     {
       "id": "bedroom-lamps",
       "room": "bedroom",
-      "name": "Portable bedside lamp",
+      "name": "Շարժական մահճակալամերձ լամպ",
       "qty": 2,
       "unitAMD": 120000,
       "kind": "allowance",
-      "supplier": "Local retail selection · allowance",
+      "supplier": "Ընտրություն տեղական խանութներից · նախահաշվային գումար",
       "sourceId": null,
-      "dimensions": "Compact lamps to suit Ø41 cm tables",
-      "availability": "Final product selection and price required",
-      "note": "Design allowance for two matching bedside lamps, including bulbs."
+      "dimensions": "Կոմպակտ լամպեր՝ Ø41 սմ սեղանիկների համար",
+      "availability": "Պետք է ընտրել վերջնական ապրանքը և ճշտել գինը",
+      "note": "Երկու համադրված մահճակալամերձ լամպի նախահաշվային գումար՝ լամպիկներով։"
     },
     {
       "id": "bedroom-bedding",
       "room": "bedroom",
-      "name": "Double bedding, pillows and throw",
+      "name": "Երկտեղանոց անկողնային հավաքածու, բարձեր և ծածկոց",
       "qty": 1,
       "unitAMD": 180000,
       "kind": "allowance",
-      "supplier": "Local retail selection · allowance",
+      "supplier": "Ընտրություն տեղական խանութներից · նախահաշվային գումար",
       "sourceId": null,
-      "dimensions": "For 160 × 200 cm mattress",
-      "availability": "Final product selection and price required",
-      "note": "Coordinated ivory and warm-grey textile package; selection pending."
+      "dimensions": "160 × 200 սմ ներքնակի համար",
+      "availability": "Պետք է ընտրել վերջնական ապրանքը և ճշտել գինը",
+      "note": "Փղոսկրագույն և տաք մոխրագույն երանգներով համադրված տեքստիլի հավաքածու․ ընտրությունը դեռ կատարված չէ։"
     },
     {
       "id": "hall-console",
       "room": "hall",
-      "name": "Entry console with mirror",
+      "name": "Նախամուտքի սեղանիկ՝ հայելիով",
       "qty": 1,
       "unitAMD": 300000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~116 L × 45 D cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Custom shallow console and wall mirror, sized for the entrance."
+      "dimensions": "~116 երկ. × 45 խոր. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Պատվերով ոչ խոր սեղանիկ և պատի հայելի՝ նախամուտքին հարմարեցված չափերով։"
     },
     {
       "id": "hall-storage",
       "room": "hall",
-      "name": "Fitted entry storage",
+      "name": "Նախամուտքի ներկառուցվող պահարան",
       "qty": 1,
       "unitAMD": 550000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~115 W × 43 D × 212 H cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Shallow shoe/coat storage positioned before the narrow corridor, with fitted internal shelving."
+      "dimensions": "~115 լայն. × 43 խոր. × 212 բարձ. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Ոչ խոր կոշիկի և վերարկուի պահարան՝ նեղ միջանցքից առաջ, հարմարեցված ներքին դարակներով։"
     },
     {
       "id": "bathroom-vanity",
       "room": "bathroom",
-      "name": "Floating bathroom cabinet + mirror",
+      "name": "Սանհանգույցի պատից կախովի պահարան և հայելի",
       "qty": 1,
       "unitAMD": 250000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "Cabinet ~49 W × 61 D cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Furniture carcass, top and mirror only. Basin, tap, shower, toilet and plumbing excluded."
+      "dimensions": "Պահարան՝ ~49 լայն. × 61 խոր. սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Միայն կահույքի կարկասը, սեղանածածկը և հայելին։ Լվացարանը, ծորակը, ցնցուղը, զուգարանակոնքը և ջրամատակարարման աշխատանքները ներառված չեն։"
     },
     {
       "id": "balcony-kitchen-chair",
       "room": "balcony-kitchen",
-      "name": "Oriengo outdoor chair · 171144C",
+      "name": "Oriengo բացօթյա աթոռ · 171144C",
       "qty": 1,
       "unitAMD": 110000,
       "kind": "retail",
       "supplier": "Ashley HomeStore Armenia",
       "sourceId": "oriengo",
-      "dimensions": "62 W × 56 D × 75 H cm",
-      "availability": "Listed in stock; two total to confirm",
-      "note": "One chair for this balcony. Metal base and grey finish; source arrangement retained."
+      "dimensions": "62 լայն. × 56 խոր. × 75 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ առկա է․ ընդհանուր երկու հատի առկայությունը պետք է ճշտել",
+      "note": "Այս պատշգամբի համար մեկ աթոռ։ Մետաղական հիմք և մոխրագույն հարդարանք․ աղբյուրում պատկերված դասավորությունը պահպանված է։"
     },
     {
       "id": "balcony-kitchen-table",
       "room": "balcony-kitchen",
-      "name": "Small outdoor side table",
+      "name": "Փոքր բացօթյա կողասեղան",
       "qty": 1,
       "unitAMD": 80000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~Ø44 cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Weather-suitable table allowance, preserving the existing compact table footprint."
+      "dimensions": "~Ø44 սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Բացօթյա պայմաններին հարմար սեղանի նախահաշվային գումար՝ առկա կոմպակտ չափերի պահպանմամբ։"
     },
     {
       "id": "balcony-bedroom-chair",
       "room": "balcony-bedroom",
-      "name": "Oriengo outdoor chair · 171144C",
+      "name": "Oriengo բացօթյա աթոռ · 171144C",
       "qty": 1,
       "unitAMD": 110000,
       "kind": "retail",
       "supplier": "Ashley HomeStore Armenia",
       "sourceId": "oriengo",
-      "dimensions": "62 W × 56 D × 75 H cm",
-      "availability": "Listed in stock; two total to confirm",
-      "note": "One chair for this balcony. Metal base and grey finish; source arrangement retained."
+      "dimensions": "62 լայն. × 56 խոր. × 75 բարձ. սմ",
+      "availability": "Կայքում նշված է՝ առկա է․ ընդհանուր երկու հատի առկայությունը պետք է ճշտել",
+      "note": "Այս պատշգամբի համար մեկ աթոռ։ Մետաղական հիմք և մոխրագույն հարդարանք․ աղբյուրում պատկերված դասավորությունը պահպանված է։"
     },
     {
       "id": "balcony-bedroom-table",
       "room": "balcony-bedroom",
-      "name": "Small outdoor side table",
+      "name": "Փոքր բացօթյա կողասեղան",
       "qty": 1,
       "unitAMD": 80000,
       "kind": "allowance",
-      "supplier": "Local workshop · quote required",
+      "supplier": "Տեղական արտադրամաս · անհրաժեշտ է գնային առաջարկ",
       "sourceId": null,
-      "dimensions": "~Ø42 cm",
-      "availability": "Made to measure · quotation required",
-      "note": "Weather-suitable table allowance, preserving the existing compact table footprint."
+      "dimensions": "~Ø42 սմ",
+      "availability": "Անհատական չափերով · անհրաժեշտ է գնային առաջարկ",
+      "note": "Բացօթյա պայմաններին հարմար սեղանի նախահաշվային գումար՝ առկա կոմպակտ չափերի պահպանմամբ։"
     },
     {
       "id": "whole-curtains",
       "room": "whole",
-      "name": "Made-to-measure sheers, drapes and tracks",
+      "name": "Չափերով կարված թափանցիկ և խիտ վարագույրներ՝ ուղեգծերով",
       "qty": 1,
       "unitAMD": 950000,
       "kind": "allowance",
-      "supplier": "Local textile studio · quote required",
+      "supplier": "Տեղական տեքստիլի սրահ · անհրաժեշտ է գնային առաջարկ",
       "sourceId": "curtain-benchmark",
-      "dimensions": "Window widths and drops to be surveyed",
-      "availability": "Quotation required",
-      "note": "Planning allowance for made-to-measure sheers, lined drapes, tracks and fitting across the glazed rooms. LEKA at 18,690 ֏ per 140×300 cm ready-made panel is a lower-cost benchmark, not a quote for custom drapery."
+      "dimensions": "Պետք է չափագրել պատուհանների լայնություններն ու վարագույրների երկարությունները",
+      "availability": "Անհրաժեշտ է գնային առաջարկ",
+      "note": "Ապակեպատ սենյակների համար անհատական չափերով կարված թափանցիկ և աստառով խիտ վարագույրների, ուղեգծերի ու տեղադրման նախահաշվային գումար։ LEKA-ի 18,690 ֏ գինը մեկ պատրաստի 140×300 սմ վարագույրի համար ավելի մատչելի համեմատություն է, ոչ թե պատվերով վարագույրների գնային առաջարկ։"
     },
     {
       "id": "whole-decor",
       "room": "whole",
-      "name": "Cushions, ceramics and plants",
+      "name": "Բարձեր, կերամիկա և բույսեր",
       "qty": 1,
       "unitAMD": 300000,
       "kind": "allowance",
-      "supplier": "Local selection · allowance",
+      "supplier": "Տեղական ընտրություն · նախահաշվային գումար",
       "sourceId": null,
-      "dimensions": "Whole apartment",
-      "availability": "Selection pending",
-      "note": "Allowance for the decorative accessories represented in the model."
+      "dimensions": "Ամբողջ բնակարանի համար",
+      "availability": "Ընտրությունը դեռ կատարված չէ",
+      "note": "Մոդելում ներկայացված դեկորատիվ պարագաների նախահաշվային գումար։"
     },
     {
       "id": "whole-delivery",
       "room": "whole",
-      "name": "Furniture delivery, carrying and assembly",
+      "name": "Կահույքի առաքում, տեղափոխում և հավաքում",
       "qty": 1,
       "unitAMD": 450000,
       "kind": "allowance",
-      "supplier": "Service allowance · confirm with suppliers",
+      "supplier": "Ծառայությունների նախահաշվային գումար · ճշտել մատակարարների հետ",
       "sourceId": null,
-      "dimensions": "One apartment",
-      "availability": "Final delivery terms required",
-      "note": "Budget buffer for transport, carrying and loose-furniture assembly. Deduct free retailer services and any fitting already included in a joinery quote; do not pay twice."
+      "dimensions": "Մեկ բնակարանի համար",
+      "availability": "Պետք է ճշտել առաքման վերջնական պայմանները",
+      "note": "Տրանսպորտի, բնակարան հասցնելու և առանձին կահույքի հավաքման համար նախատեսված լրացուցիչ գումար։ Հանեք վաճառողի անվճար ծառայությունները և պատվերով կահույքի առաջարկում արդեն ներառված տեղադրումը՝ կրկնակի վճարումից խուսափելու համար։"
     }
   ]
 }

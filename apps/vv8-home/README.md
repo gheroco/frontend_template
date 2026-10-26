@@ -1,5 +1,7 @@
 # VV8 Home — interactive Three.js apartment
 
+The public interface is in Eastern Armenian (`hy`). Room labels and dimension annotations are hidden on initial load; enable labels through **Տեսք → Սենյակների պիտակներ**. The ceiling remains user-specified at **3.00 m**.
+
 An interactive reconstruction of the supplied VV8 Residence dimensioned plan,
 with the earlier furnished brochure retained as a separate visual reference.
 The browser application is buildless and includes a pinned, local copy of

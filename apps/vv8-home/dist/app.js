@@ -11,7 +11,7 @@ import { createSceneQuality } from './scene-quality.js';
 
 const $ = id => document.getElementById(id);
 const areaText = n => (Math.round((Number(n)+1e-8)*10)/10).toFixed(1);
-const state = {mode:'dollhouse',dimensions:false,labels:true,furniture:true,walls:'cutaway',height:3,measuring:false,selected:null,lighting:'daylight'};
+const state = {mode:'dollhouse',dimensions:false,labels:false,furniture:true,walls:'cutaway',height:3,measuring:false,selected:null,lighting:'daylight'};
 const viewport=$('viewport'), labelRoot=$('labels');
 let renderer,scene,camera,ortho,perspective,controls,architecture,furnishings,model,data,rooms,budgetData,sceneQuality;
 let dimGroup=new THREE.Group(),selectionGroup=new THREE.Group(),measurementGroup=new THREE.Group();
@@ -22,14 +22,14 @@ const plane=new THREE.Plane(new THREE.Vector3(0,1,0),-.025);
 const center=new THREE.Vector3();
 const hasReducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const roomDescriptions={
-  living:['Living room','Հյուրասենյակ','#97a98f','Lounge and dining zone with the drawing’s 3.30 m main depth, structural piers and recessed glazing.'],
-  kitchen:['Kitchen','Խոհանոց','#b3aa90','Separate kitchen following the 4.68 m main span and 2.50 m depth in the dimensioned drawing.'],
-  primary:['Primary bedroom','Ննջասենյակ','#baaa98','L-shaped bedroom with a 6.50 m main span, 2.70 m main depth and a separate entrance arm.'],
-  bedroom:['Bedroom 2','Ննջասենյակ','#a6b4aa','2.80 m deep bedroom with a 3.20 m span to the column face and an additional glazing recess.'],
-  hall:['Entrance & hall','Միջանցք','#c5b48e','Entrance, service recess and bedroom circulation reconstructed from the drawing’s door and wall chains.'],
-  bathroom:['Bathroom','Սանհանգույց','#98b1b8','1.70 m main width, service recess and 0.80 m doorway. Fixture positions remain a design interpretation.'],
-  'balcony-kitchen':['Kitchen balcony','Պատշգամբ','#b4ba9e','Inset balcony with structural stubs and the 1.35 m north span shown on the drawing.'],
-  'balcony-bedroom':['Bedroom balcony','Պատշգամբ','#a2b9a1','Stepped balcony following the drawing’s piers, glazing, and local 1.10 / 1.15 m spans.']
+  living:['Հյուրասենյակ','Հյուրասենյակ','#97a98f','Հանգստի և ճաշի գոտի՝ գծագրում նշված 3.30 մ հիմնական խորությամբ, կրող մույթերով ու ներս ընկած ապակեպատ հատվածներով։'],
+  kitchen:['Խոհանոց','Խոհանոց','#b3aa90','Առանձին խոհանոց՝ չափագրված գծագրի 4.68 մ հիմնական լայնությամբ և 2.50 մ խորությամբ։'],
+  primary:['Հիմնական ննջասենյակ','Հիմնական ննջասենյակ','#baaa98','Անկյունաձև ննջասենյակ՝ 6.50 մ հիմնական լայնությամբ, 2.70 մ հիմնական խորությամբ և մուտքի առանձին հատվածով։'],
+  bedroom:['Երկրորդ ննջասենյակ','Երկրորդ ննջասենյակ','#a6b4aa','2.80 մ խորությամբ ննջասենյակ՝ մինչև սյան եզրը 3.20 մ լայնությամբ և ապակեպատ լրացուցիչ խորշով։'],
+  hall:['Մուտք և միջանցք','Մուտք և միջանցք','#c5b48e','Մուտքը, սպասարկման խորշը և ննջասենյակներ տանող անցումները վերակազմված են գծագրի դռների ու պատերի չափերից։'],
+  bathroom:['Սանհանգույց','Սանհանգույց','#98b1b8','1.70 մ հիմնական լայնություն, սպասարկման խորշ և 0.80 մ դռնանցք։ Սարքավորումների տեղադրությունը նախագծային առաջարկ է։'],
+  'balcony-kitchen':['Խոհանոցի պատշգամբ','Խոհանոցի պատշգամբ','#b4ba9e','Ներս ընկած պատշգամբ՝ կրող պատերի հատվածներով և գծագրում նշված վերին 1.35 մ հատվածով։'],
+  'balcony-bedroom':['Ննջասենյակի պատշգամբ','Ննջասենյակի պատշգամբ','#a2b9a1','Աստիճանաձև պատշգամբ՝ ըստ գծագրի մույթերի, ապակեպատման և 1.10 / 1.15 մ տեղային չափերի։']
 };
 
 function line(points,color='#678472',opacity=1,parent=dimGroup){
@@ -47,10 +47,10 @@ function removeGroup(group){
 function removeLabels(list){for(const label of list)label.el.remove();list.length=0;}
 
 async function start(){
-  const response=await fetch('./geometry.json');if(!response.ok)throw new Error('The apartment geometry could not be loaded.');
+  const response=await fetch('./geometry.json');if(!response.ok)throw new Error('Չհաջողվեց բեռնել բնակարանի երկրաչափությունը։');
   data=await response.json();
   const budgetResponse=await fetch('./budget.json');
-  if(!budgetResponse.ok)throw new Error('The furniture budget could not be loaded.');
+  if(!budgetResponse.ok)throw new Error('Չհաջողվեց բեռնել կահույքի բյուջեն։');
   budgetData=await budgetResponse.json();
   rooms=Object.entries(data.rooms).map(([id,r])=>{
     const [name,armenian,color,description]=roomDescriptions[id];
@@ -71,7 +71,7 @@ async function start(){
   renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;
   renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;
   renderer.localClippingEnabled=true;
-  renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','Interactive 3D apartment. Use the controls to explore rooms.');
+  renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','Բնակարանի ինտերակտիվ 3D մոդել։ Օգտագործեք կառավարման կոճակները՝ սենյակներն ուսումնասիրելու համար։');
   viewport.prepend(renderer.domElement);
 
   if(!renderer.isSoftwareRenderer){
@@ -164,9 +164,10 @@ function createRoomLabels(){
   };
   for(const room of rooms){
     const el=document.createElement('button');el.className='room-label';el.dataset.labelRoom=room.id;
-    el.setAttribute('aria-label',`Select ${room.name}, ${areaText(room.area)} calculated square metres`);
-    el.title='Area calculated from the current drawing-based model';
-    el.innerHTML=`<span>${room.name}</span><strong>${areaText(room.area)} <small>m²</small></strong>`;
+    el.setAttribute('aria-label',`${room.name}՝ ${areaText(room.area)} մ² հաշվարկված մակերեսով։ Ընտրել սենյակը։`);
+    el.title='Մակերեսը հաշվարկված է գծագրի հիման վրա կառուցված մոդելից';
+    el.style.display=state.labels?'':'none';
+    el.innerHTML=`<span>${room.name}</span><strong>${areaText(room.area)} <small>մ²</small></strong>`;
     el.addEventListener('click',event=>{event.stopPropagation();if(!state.measuring)selectRoom(room.id);});
     const anchor=room.labelAnchor;
     const location=anchor?[anchor[0],.85,anchor[1]]:locations[room.id];
@@ -212,8 +213,8 @@ function dimension(p,q,offset,labelText,basis='derived'){
   const tick=new THREE.Vector3(-d.z,0,d.x).normalize().multiplyScalar(.075);
   line([a.clone().sub(tick),a.clone().add(tick)]);line([b.clone().sub(tick),b.clone().add(tick)]);
   const c=a.clone().add(b).multiplyScalar(.5);c.y=.08;
-  const label=makeLabel(labelText||`${basis==='drawing'?'':'~ '}${len.toFixed(2)} m`,c.toArray());
-  label.el.dataset.basis=basis;label.el.title=basis==='drawing'?'Dimension printed on the supplied drawing':'Derived distance in the model';
+  const label=makeLabel(labelText||`${basis==='drawing'?'':'~ '}${len.toFixed(2)} մ`,c.toArray());
+  label.el.dataset.basis=basis;label.el.title=basis==='drawing'?'Չափը նշված է տրամադրված գծագրում':'Մոդելից հաշվարկված հեռավորություն';
   dimensionLabels.push(label);
 }
 function rebuildDimensions(){
@@ -222,12 +223,12 @@ function rebuildDimensions(){
   if(checks.length){
     const shown=checks.filter(c=>state.selected?(c.roomId===state.selected):(c.showOverview||c.overview||['kitchen-width','kitchen-depth','living-depth','bedroom-width','bedroom-depth','primary-width','primary-depth'].includes(c.id)));
     const fallback=shown.length?shown:checks.filter(c=>state.selected?c.roomId===state.selected:c.basis==='drawing').slice(0,state.selected?8:7);
-    for(const c of fallback){const m=c.basis==='drawing'&&c.sourceMM!=null?Number(c.sourceMM)/1000:Number(c.modelMetres);dimension(c.from,c.to,c.offset??.17,`${c.basis==='drawing'?'':'~ '}${m.toFixed(2)} m`,c.basis||'derived');}
+    for(const c of fallback){const m=c.basis==='drawing'&&c.sourceMM!=null?Number(c.sourceMM)/1000:Number(c.modelMetres);dimension(c.from,c.to,c.offset??.17,`${c.basis==='drawing'?'':'~ '}${m.toFixed(2)} մ`,c.basis||'derived');}
     dimGroup.visible=state.dimensions&&state.mode!=='walk';return;
   }
   const a=data.axes;
-  dimension([-.12,a.bottomY+.12],[a.rightX+.12,a.bottomY+.12],.65,`~ ${(a.rightX+.24).toFixed(2)} m overall`);
-  dimension([a.rightX+.12,-.12],[a.rightX+.12,a.bottomY+.12],-1.0,`~ ${(a.bottomY+.24).toFixed(2)} m overall`);
+  dimension([-.12,a.bottomY+.12],[a.rightX+.12,a.bottomY+.12],.65,`~ ${(a.rightX+.24).toFixed(2)} մ ընդհանուր`);
+  dimension([a.rightX+.12,-.12],[a.rightX+.12,a.bottomY+.12],-1.0,`~ ${(a.bottomY+.24).toFixed(2)} մ ընդհանուր`);
   if(state.selected){
     const room=rooms.find(r=>r.id===state.selected),p=room.polygon;
     for(let i=0;i<p.length;i++)dimension(p[i],p[(i+1)%p.length],.16);
@@ -258,11 +259,11 @@ function addMeasurement(point){
   if(measurementPoints.length===2)clearMeasurement(false);
   const p=snapPoint(point);measurementPoints.push(p);
   const dot=new THREE.Mesh(new THREE.SphereGeometry(.055,12,8),new THREE.MeshBasicMaterial({color:'#2e6c50',depthTest:false}));dot.position.copy(p);dot.renderOrder=8;measurementGroup.add(dot);
-  if(measurementPoints.length===1){ui.setStatus('Select the second point. Nearby corners snap automatically.');return;}
+  if(measurementPoints.length===1){ui.setStatus('Ընտրեք երկրորդ կետը։ Կետն ավտոմատ կկապվի մոտակա անկյանը։');return;}
   const [p1,p2]=measurementPoints,dist=p1.distanceTo(p2);line([p1,p2],'#2e6c50',1,measurementGroup);
   const middle=p1.clone().add(p2).multiplyScalar(.5);middle.y=.12;
-  measurementLabels.push(makeLabel(`${dist.toFixed(2)} m · model`,middle.toArray(),'measurement-label'));
-  ui.setStatus(`${dist.toFixed(2)} m model distance · select two new points to measure again.`);
+  measurementLabels.push(makeLabel(`${dist.toFixed(2)} մ · մոդել`,middle.toArray(),'measurement-label'));
+  ui.setStatus(`${dist.toFixed(2)} մ հեռավորություն մոդելում։ Նոր չափման համար ընտրեք ևս երկու կետ։`);
 }
 function clearMeasurement(stop=true){
   measurementPoints=[];removeGroup(measurementGroup);removeLabels(measurementLabels);
@@ -317,8 +318,8 @@ function moveWalk(forward,right,dt){
   if(!architecture.blocked(p.x,p.z+dz))p.z+=dz;
 }
 function createWalkPad(){
-  const pad=document.createElement('div');pad.id='walk-pad';pad.className='walk-pad';pad.setAttribute('aria-label','Walk controls');
-  const actions=[['ArrowUp','Move forward','↑'],['ArrowLeft','Step left','←'],['ArrowDown','Move backward','↓'],['ArrowRight','Step right','→']];
+  const pad=document.createElement('div');pad.id='walk-pad';pad.className='walk-pad';pad.setAttribute('aria-label','Տեղաշարժի կառավարում');
+  const actions=[['ArrowUp','Քայլ առաջ','↑'],['ArrowLeft','Քայլ ձախ','←'],['ArrowDown','Քայլ հետ','↓'],['ArrowRight','Քայլ աջ','→']];
   for(const [key,label,txt] of actions){const b=document.createElement('button');b.textContent=txt;b.setAttribute('aria-label',label);b.dataset.walk=key;
     b.addEventListener('pointerdown',e=>{e.preventDefault();downKeys.add(key);b.setPointerCapture(e.pointerId);});
     for(const event of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(event,()=>downKeys.delete(key));pad.append(b);}
@@ -329,16 +330,16 @@ function showExportDialog(url,size){
   let dialog=$('export-dialog');
   if(!dialog){
     dialog=document.createElement('dialog');dialog.id='export-dialog';dialog.className='export-dialog';
-    dialog.innerHTML='<div class="dialog-heading"><div><p class="eyebrow">TAKE YOUR HOME WITH YOU</p><h2>Your 3D model is ready.</h2></div><button class="icon-button" aria-label="Close export">×</button></div><div class="export-body"><p>Full-height walls, detailed furniture and embedded materials. One unit equals one metre.</p><p id="export-file-size"></p><a id="download-glb" class="primary-button" download="VV8-home-area-calibrated.glb">Download 3D model (.glb)</a><small>Room outlines follow the dimensioned drawing. The user-specified ceiling, derived recesses and conflicting dimension chains are documented in Dimensions & source.</small></div>';
+    dialog.innerHTML='<div class="dialog-heading"><div><p class="eyebrow">Պահպանեք ձեր տան մոդելը</p><h2>Ձեր 3D մոդելը պատրաստ է։</h2></div><button class="icon-button" aria-label="Փակել ներբեռնման պատուհանը">×</button></div><div class="export-body"><p>Ամբողջ բարձրությամբ պատեր, մանրամասն կահույք և ներկառուցված նյութեր։ Մեկ միավորը հավասար է մեկ մետրի։</p><p id="export-file-size"></p><a id="download-glb" class="primary-button" download="VV8-home-area-calibrated.glb">Ներբեռնել 3D մոդելը (.glb)</a><small>Սենյակների ուրվագծերը հետևում են չափագրված գծագրին։ Ձեր նշած առաստաղի բարձրությունը, հաշվարկված խորշերն ու իրար չհամապատասխանող չափերը ներկայացված են «Չափեր և աղբյուրներ» բաժնում։</small></div>';
     document.body.append(dialog);dialog.querySelector('button').addEventListener('click',()=>dialog.close());
   }
   const link=$('download-glb');if(link.href.startsWith('blob:'))URL.revokeObjectURL(link.href);
   link.href=url;link.download='VV8-home-area-calibrated.glb';
-  $('export-file-size').textContent=`GLB · ${(size/1048576).toFixed(1)} MB · ${state.height.toFixed(2)} m ceiling · 8 room outlines`;
+  $('export-file-size').textContent=`GLB · ${(size/1048576).toFixed(1)} ՄԲ · ${state.height.toFixed(2)} մ առաստաղ · 8 տարածքի ուրվագիծ`;
   dialog.showModal();
 }
 async function exportModel(){
-  ui.toast('Preparing your complete model in metres…');
+  ui.toast('Պատրաստվում է ամբողջական մոդելը՝ մետրերով…');
   const exportButton=document.querySelector('[data-action="export"]');exportButton.disabled=true;
   try{
     if(Math.abs(state.height-3)<.0001){
@@ -350,7 +351,7 @@ async function exportModel(){
     const exported=await new GLTFExporter().parseAsync(model,{binary:true,onlyVisible:true,maxTextureSize:1024});
     const blob=new Blob([exported],{type:'model/gltf-binary'}),url=URL.createObjectURL(blob);
     showExportDialog(url,blob.size);
-  }catch(error){console.error(error);ui.toast('The export could not finish. Please try again.');}
+  }catch(error){console.error(error);ui.toast('Չհաջողվեց ավարտել մոդելի արտահանումը։ Խնդրում ենք կրկին փորձել։');}
   finally{applySettings();exportButton.disabled=false;}
 }
 function handleAction({action,value}){
@@ -374,7 +375,7 @@ function handleAction({action,value}){
       break;
     case 'measure':
       state.measuring=!state.measuring;
-      if(state.measuring){if(state.mode!=='plan')setMode('plan');state.measuring=true;ui.setStatus('Select two floor points. Nearby corners snap automatically.');}
+      if(state.measuring){if(state.mode!=='plan')setMode('plan');state.measuring=true;ui.setStatus('Ընտրեք հատակի երկու կետ։ Կետերն ավտոմատ կկապվեն մոտակա անկյուններին։');}
       else ui.setStatus('');
       applySettings();break;
     case 'clear-measure':clearMeasurement();break;
@@ -401,5 +402,5 @@ function animate(now){
 
 start().catch(error=>{
   console.error('Home model initialization failed:',error);
-  $('loader').innerHTML=`<div class="load-error"><strong>The 3D view could not open.</strong><p>${error.message?.includes('WebGL')?'This browser could not create a WebGL view. Try opening the link in Safari or Chrome.':'Please reload the page to load the home model.'}</p><button onclick="location.reload()">Try again</button><button onclick="document.getElementById('reference-dialog').showModal()">See original plan</button></div>`;
+  $('loader').innerHTML=`<div class="load-error"><strong>Չհաջողվեց բացել 3D տեսքը։</strong><p>${error.message?.includes('WebGL')?'Այս դիտարկիչը չկարողացավ ստեղծել WebGL տեսք։ Փորձեք հղումը բացել Safari կամ Chrome դիտարկիչով։':'Մոդելը բեռնելու համար խնդրում ենք թարմացնել էջը։'}</p><button onclick="location.reload()">Կրկին փորձել</button><button onclick="document.getElementById('reference-dialog').showModal()">Դիտել սկզբնական հատակագիծը</button></div>`;
 });
