@@ -3,7 +3,21 @@ export const $=id=>document.getElementById(id);
 export function clampPage(v,total){const n=Number(v);return Math.max(1,Math.min(total,Number.isFinite(n)?Math.trunc(n):1));}
 export function validatePdf(bytes){if(!bytes.byteLength)throw Error('Файл пуст. Выберите PDF-документ.');if(bytes.byteLength>200*1024*1024)throw Error('Файл больше 200 МБ.');const head=new TextDecoder('ascii').decode(new Uint8Array(bytes,0,Math.min(1024,bytes.byteLength)));if(!head.includes('%PDF-'))throw Error('Этот файл не похож на PDF. Выберите файл .pdf.');}
 export function normalize(s){return s.normalize('NFKC').toLocaleLowerCase('ru').replace(/\s+/g,' ').trim();}
-export function findSnippet(text,query){const t=normalize(text),q=normalize(query);if(!q)return null;const i=t.indexOf(q);if(i<0)return null;const a=Math.max(0,i-45),b=Math.min(t.length,i+q.length+95);return `${a?'…':''}${t.slice(a,b)}${b<t.length?'…':''}`;}
+export function findSnippet(text,query){
+ const q=normalize(query);if(!q)return null;
+ // Normalize only the search index; display the exact source characters.
+ let t='';const starts=[],ends=[];
+ for(const {segment,index} of new Intl.Segmenter('ru',{granularity:'grapheme'}).segment(text)){
+  for(const character of segment.normalize('NFKC').toLocaleLowerCase('ru')){
+   const c=/\s/.test(character)?' ':character;
+   if(c===' '&&t.endsWith(' '))continue;
+   t+=c;for(let k=0;k<c.length;k++){starts.push(index);ends.push(index+segment.length);}
+  }
+ }
+ const i=t.indexOf(q);if(i<0)return null;
+ const a=starts[Math.max(0,i-45)],b=ends[Math.min(t.length,i+q.length+95)-1];
+ return `${a?'…':''}${text.slice(a,b)}${b<text.length?'…':''}`;
+}
 export function safeProgress(raw,total){return {page:clampPage(raw?.page??1,total),bookmarks:[...new Set((Array.isArray(raw?.bookmarks)?raw.bookmarks:[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=total))].sort((a,b)=>a-b)};}
 export async function fingerprint(bytes){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(b=>b.toString(16).padStart(2,'0')).join('');}
 export function readStorage(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f;}catch{return f;}}

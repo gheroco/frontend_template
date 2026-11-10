@@ -39,7 +39,7 @@ No secrets, database, or application server are required.
 
 ## Validation
 
-JavaScript syntax checks, production build, and five unit tests cover input rejection, navigation bounds, Cyrillic search, bookmark validation and fingerprint byte preservation. Browser verification is performed against the actual built site before deployment.
+JavaScript syntax checks, production build, and six unit tests cover input rejection, navigation bounds, Cyrillic search, original-symbol preservation in search results, bookmark validation and fingerprint byte preservation. Browser verification covers PDF rendering, page navigation, search, bookmarks, saved progress, zoom, themes and a 390 px mobile layout using an original three-page test fixture.
 
 ## Attribution
 
