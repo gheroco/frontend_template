@@ -3,6 +3,11 @@
   "edition": "Эволюция физики",
   "sourcePdfSha256": "51141147ada93e987752990cc8f8594928f0d34983a912fb78a99577c974f391",
   "baselineCommit": "3f17c3ae4e69ced0a1675ce45ff5d613b4b902c7",
+  "defectReinspection": {
+    "page": 268,
+    "blockId": "p268-b004",
+    "scope": "Original page image inspected again during redesign; damaged letter area remains unresolved; no change to canonical text."
+  },
   "ok": true,
   "scope": "Structural coverage, retained extraction hashes, exact original figure pixels, original/search parity, passage anchors and companion coverage. No new complete character proofreading and no fresh PDF extraction.",
   "counts": {

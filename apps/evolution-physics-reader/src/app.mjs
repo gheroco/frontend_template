@@ -20,8 +20,8 @@ function updateResume(progress){const p=progress||getProgress(book.totalPages);i
 function figureHTML(f,index,small=false){const src=assetPath(f.src);if(!src)return '';return `<button class="${small?'figure-preview':'gallery-card'}" data-figure="${index}" aria-label="Рассмотреть: ${esc(f.caption||`иллюстрация, ${pageLabel(f.page)}`)}"><span class="figure-image"><img src="${src}" alt="${esc(f.caption||`Иллюстрация, ${pageLabel(f.page)}`)}" loading="lazy" decoding="async" ${f.width?`width="${Number(f.width)}"`:''} ${f.height?`height="${Number(f.height)}"`:''}><span class="figure-plus">${icon('plus')}</span></span><span class="figure-caption"><span>${esc(f.caption||'Иллюстрация из книги')}</span><small>${esc(pageLabel(f.page))}</small></span></button>`;}
 function renderLanding(){
  $('page-stat').textContent=book.totalPages;$('figure-stat').textContent=book.figures.length;
- $('chapter-cards').innerHTML=chapterNames.map((title,i)=>{const sections=book.sections.filter(s=>chapterNumber(s)===i+1),start=sections[0]?.startPage;return `<a class="chapter-card" href="#read/${start||1}"><div class="chapter-top"><span>ГЛАВА ${chapterRoman[i]}</span><span>${sections.length} РАЗДЕЛОВ</span></div><svg class="chapter-art" viewBox="0 0 220 180" aria-hidden="true">${chapterArt[i]}</svg><span class="chapter-title">${esc(title)}</span><div class="chapter-bottom"><small>${start?esc(pageLabel(start)):'Открыть'}</small><span>${icon('arrow')}</span></div></a>`;}).join('');
- $('full-contents').innerHTML=book.sections.map(s=>`<a href="#read/${s.startPage}"><span>${esc(s.title)}</span><span>${esc(pageLabel(s.startPage))}</span>${icon('arrow')}</a>`).join('');
+ $('chapter-cards').innerHTML=chapterNames.map((title,i)=>{const sections=book.sections.filter(s=>chapterNumber(s)===i+1),start=sections[0]?.startPage;return `<a class="chapter-card" href="#section/${sections[0]?.id||'title-pages'}"><div class="chapter-top"><span>ГЛАВА ${chapterRoman[i]}</span><span>${sections.length} РАЗДЕЛОВ</span></div><svg class="chapter-art" viewBox="0 0 220 180" aria-hidden="true">${chapterArt[i]}</svg><span class="chapter-title">${esc(title)}</span><div class="chapter-bottom"><small>${start?esc(pageLabel(start)):'Открыть'}</small><span>${icon('arrow')}</span></div></a>`;}).join('');
+ $('full-contents').innerHTML=book.sections.map(s=>`<a href="#section/${s.id}"><span>${esc(s.title)}</span><span>${esc(pageLabel(s.startPage))}</span>${icon('arrow')}</a>`).join('');
  const select=[];for(const n of [1,2,3,4]){const i=book.figures.findIndex(f=>chapterNumber(sectionForPage(book,Number(f.page)))===n&&Number(f.width||1)/Number(f.height||1)<4);if(i>=0&&!select.includes(i))select.push(i);}for(let i=0;select.length<4&&i<book.figures.length;i++)if(!select.includes(i))select.push(i);
  $('figure-previews').innerHTML=select.map(i=>figureHTML(book.figures[i],i,true)).join('');$('illustrations-preview').hidden=!book.figures.length;
  updateResume();
@@ -93,7 +93,7 @@ async function route(){
  lastNonFigureHash=hash||'#';if(imageDialog.open)imageDialog.close();
  const teaching=hash.match(/^#(learn|experiment)\/(.+)$/);
  if(teaching){
-  try{await observatory.ready;let id=teaching[2];if(teaching[1]==='experiment'){const {EXPERIMENTS}=await import('./experiments.mjs');id=EXPERIMENTS[id]?.lesson;}const entry=observatory.getEntry(id);if(!entry)throw Error('Материал не найден.');if(serial!==routeSerial)return;
+  try{await observatory.ensureReady();let id=teaching[2];if(teaching[1]==='experiment'){const {EXPERIMENTS}=await import('./experiments.mjs');id=EXPERIMENTS[id]?.lesson;}const entry=observatory.getEntry(id);if(!entry)throw Error('Материал не найден.');if(serial!==routeSerial)return;
    $('landing').hidden=true;$('gallery-page').hidden=true;$('atlas-page').hidden=true;
    await reader.open(entry.source.page,entry.source.blockId);if(serial!==routeSerial)return;await observatory.open(id,teaching[1]==='experiment'?'experiment':'explain');history.replaceState(null,'',hash);document.title=entry.title+' — Эволюция физики';
   }catch(e){toast(e.message);}return;
@@ -103,7 +103,7 @@ async function route(){
   let blockId=null,n=Number(hash.split('/')[1]),saved=null;
   try{blockId=hash.split('/')[2]?decodeURIComponent(hash.split('/')[2]):null;}catch{}
   if(hash==='#resume'){saved=readStorage(ANCHOR_STORAGE,null);n=saved?.page||getProgress(book.totalPages).page;blockId=saved?.blockId||null;}
-  if(hash.startsWith('#section/')){const section=book.sections.find(s=>s.id===hash.split('/')[1]);if(!section){toast('Раздел не найден.');return;}n=section.startPage;}
+  if(hash.startsWith('#section/')){const section=book.sections.find(s=>s.id===hash.split('/')[1]);if(!section){toast('Раздел не найден.');return;}n=section.startPage;try{await observatory.ensureReady();blockId=observatory.getEntry(section.id)?.source.blockId||null;}catch{}if(serial!==routeSerial)return;}
   await reader.open(n||getProgress(book.totalPages).page,blockId);if(serial!==routeSerial)return;if(saved)requestAnimationFrame(()=>reader.restoreAnchor(saved));document.title='Эволюция физики — '+pageLabel(reader.currentPage);
  }else if(hash==='#atlas'||hash==='#lab'){
   observatory.close(false);reader.close();$('landing').hidden=true;$('gallery-page').hidden=true;

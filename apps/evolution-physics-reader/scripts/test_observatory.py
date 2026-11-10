@@ -39,7 +39,7 @@ def run(page, name, fn):
 
 def ready(page, route=''):
     page.goto(BASE + '/' + route)
-    page.locator('#chapter-cards .chapter-card').first.wait_for()
+    page.locator('#chapter-cards .chapter-card').first.wait_for(state='attached')
     page.evaluate('document.fonts.ready')
     if route.startswith(('#read', '#learn', '#experiment', '#section')):
         page.locator('#reader-content .source-page').first.wait_for()
@@ -51,6 +51,14 @@ def ready(page, route=''):
 def route(page, target):
     page.evaluate('(hash)=>location.hash=hash', target)
     page.wait_for_timeout(250)
+
+def set_range(locator, value):
+    minimum=float(locator.get_attribute('min') or 0)
+    step=float(locator.get_attribute('step') or 1)
+    locator.focus()
+    locator.press('Home')
+    for _ in range(round((float(value)-minimum)/step)):
+        locator.press('ArrowRight')
 
 def screenshot(page, name):
     page.screenshot(path=str(OUT / (name + '.png')))
@@ -76,11 +84,12 @@ try:
                 ready(page)
                 expect(page.locator('.hero h1')).to_contain_text('Эволюция')
                 expect(page.locator('.authors')).to_contain_text('ИНФЕЛЬД')
+                expect(page.locator('.site-header .brand')).to_contain_text('ЭВОЛЮЦИЯ')
                 assert page.evaluate('document.documentElement.dataset.motion') == 'off'
-                page.locator('#hero-frequency').fill('2')
+                set_range(page.locator('#hero-frequency'), 2)
                 expect(page.locator('#hero-wavelength')).to_contain_text('2')
                 page.locator('#hero-reset').click()
-                no_overflow(page);screenshot(page,size+'-entrance')
+                page.evaluate('window.scrollTo(0,0)');no_overflow(page);screenshot(page,size+'-entrance')
             run(page,size+'-entrance',entrance)
             def reader():
                 ready(page,'#read/88')
@@ -106,6 +115,11 @@ try:
                 assert before['id']==after['id'] and abs(before['offset']-after['offset'])<4,(before,after)
                 no_overflow(page);screenshot(page,size+'-explanation')
                 page.locator('#close-companion').click();page.wait_for_timeout(200)
+                page.locator('#focus-toggle').click()
+                expect(page.locator('#focus-toggle')).to_have_attribute('aria-pressed','true')
+                page.keyboard.press('Escape')
+                expect(page.locator('#focus-toggle')).to_have_attribute('aria-pressed','false')
+                page.wait_for_timeout(100)
                 before=anchor(page)
                 route(page,'#');route(page,'#resume')
                 page.locator('#reader-content .source-page').first.wait_for();page.wait_for_timeout(300)
@@ -129,10 +143,19 @@ try:
                     ready(page,'#experiment/'+exp)
                     control=page.locator('[data-param="'+param+'"]')
                     if exp=='fields':control.select_option(value)
-                    else:control.fill(value)
+                    else:set_range(control,value)
                     expect(page.locator('.experiment-result')).to_contain_text(expected)
                     no_overflow(page)
-                    if exp=='waves':screenshot(page,size+'-experiment')
+                    if exp=='waves':
+                        screenshot(page,size+'-experiment')
+                        if size=='wide':
+                            page.locator('#reader [data-motion]').click()
+                            page.wait_for_timeout(250)
+                            page.locator('.experiment-pause').click()
+                            frozen=page.locator('.experiment-visual canvas').screenshot()
+                            page.wait_for_timeout(150)
+                            assert frozen==page.locator('.experiment-visual canvas').screenshot()
+                            page.locator('#reader [data-motion]').click()
                     if size=='wide':screenshot(page,'wide-experiment-'+exp)
                     if exp!='fields':expect(page.locator('.experiment-pause span')).to_have_text('Запустить')
                     page.locator('.experiment-reset').click()
