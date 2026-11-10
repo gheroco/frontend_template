@@ -2,6 +2,7 @@
 """Browser acceptance checks and real screenshots, Chromium + mobile WebKit."""
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -80,6 +81,19 @@ try:
             runtime_errors, failed_responses = [], []
             page.on('pageerror', lambda e: runtime_errors.append(str(e)))
             page.on('response', lambda r: failed_responses.append(str(r.status)+' '+r.url) if r.status>=400 else None)
+            # Reproduce a returning browser's stale pre-redesign module cache.
+            # The release must never request these unversioned modules, including
+            # the lazily imported experiment module.
+            stale_requests=[]
+            def stale_module(request):
+                stale_requests.append(request.request.url)
+                request.fulfill(status=200,content_type='text/javascript',body='export const legacy=true;')
+            page.route(re.compile(r'/[a-z-]+\.mjs(?:\?.*)?$'),stale_module)
+            def cached_release():
+                ready(page,'#experiment/waves')
+                expect(page.locator('.experiment-result')).to_contain_text('м')
+                assert not stale_requests,stale_requests
+            run(page,size+'-cache-safe-release',cached_release)
             def entrance():
                 ready(page)
                 expect(page.locator('.hero h1')).to_contain_text('Эволюция')
@@ -200,6 +214,7 @@ try:
             def runtime():
                 assert not runtime_errors, runtime_errors
                 assert not failed_responses, failed_responses
+                assert not stale_requests, stale_requests
             run(page,size+'-runtime-and-assets',runtime)
             context.close();browser.close()
 finally:

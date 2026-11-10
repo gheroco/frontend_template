@@ -81,3 +81,10 @@ source access, models, search, bookmarks, stable links and resume are checked.
 The Render service remains `evolution-physics-reader`; its build and publish
 paths and deployment branch are preserved. Deploy only the reviewed commit to
 `apps/evolution-physics-reader`, then inspect deployment status and live routes.
+
+The build fingerprints the complete module graph, styles, favicon and companion
+data with one deterministic release identity. Dependency-only changes also
+invalidate the entry URL, so cached modules from an older visit cannot break
+startup. Browser acceptance checks deliberately serve incompatible legacy
+modules at the old unversioned URLs and verify that the current release never
+requests them, including the lazy experiment module.
