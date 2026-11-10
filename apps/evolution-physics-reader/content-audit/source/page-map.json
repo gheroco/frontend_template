@@ -1,0 +1,3596 @@
+{
+  "review_scope": "All 345 pages visually inspected as labeled contact sheets for layout, pagination, figures, plates, blank/duplicate scans; not character-by-character proofreading. Representative full-resolution pages inspected.",
+  "pdf_pages": 345,
+  "distinct_printed_pages": 327,
+  "duplicate_scans": 10,
+  "plate_pages": 3,
+  "blank_pages": 5,
+  "numbered_figures": 75,
+  "pages": [
+    {
+      "pdf_page": 1,
+      "printed_page": 1,
+      "kind": "title",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 2,
+      "printed_page": 2,
+      "kind": "title",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 3,
+      "printed_page": 3,
+      "kind": "contents",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 4,
+      "printed_page": 4,
+      "kind": "contents",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 5,
+      "printed_page": 5,
+      "kind": "preface",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 6,
+      "printed_page": 6,
+      "kind": "preface",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 7,
+      "printed_page": 7,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 8,
+      "printed_page": 6,
+      "kind": "preface",
+      "duplicate_of": 6,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 9,
+      "printed_page": 7,
+      "kind": "body",
+      "duplicate_of": 7,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 10,
+      "printed_page": 8,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 11,
+      "printed_page": 9,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 12,
+      "printed_page": 10,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 13,
+      "printed_page": 11,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 14,
+      "printed_page": 12,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 15,
+      "printed_page": 13,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 16,
+      "printed_page": 14,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 17,
+      "printed_page": 15,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 18,
+      "printed_page": 16,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        1
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 19,
+      "printed_page": 17,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        2,
+        3,
+        4
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 20,
+      "printed_page": 18,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        5,
+        6,
+        7
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 21,
+      "printed_page": 19,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 22,
+      "printed_page": 20,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        8
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 23,
+      "printed_page": 21,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        9,
+        10
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 24,
+      "printed_page": 22,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        11,
+        12
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 25,
+      "printed_page": 23,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 26,
+      "printed_page": 24,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        13,
+        14
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 27,
+      "printed_page": 25,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        15,
+        16
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 28,
+      "printed_page": 26,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 29,
+      "printed_page": 27,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 30,
+      "printed_page": 28,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        17
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 31,
+      "printed_page": 29,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 32,
+      "printed_page": 30,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 33,
+      "printed_page": 31,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 34,
+      "printed_page": 32,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 35,
+      "printed_page": 33,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 36,
+      "printed_page": 34,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 37,
+      "printed_page": 35,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 38,
+      "printed_page": 36,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 39,
+      "printed_page": 37,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 40,
+      "printed_page": 38,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 41,
+      "printed_page": 39,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 42,
+      "printed_page": 40,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 43,
+      "printed_page": 41,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        18
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 44,
+      "printed_page": 42,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 45,
+      "printed_page": 43,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        19
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 46,
+      "printed_page": 44,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 47,
+      "printed_page": 45,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 48,
+      "printed_page": 46,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        20
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 49,
+      "printed_page": 47,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 50,
+      "printed_page": 48,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 51,
+      "printed_page": null,
+      "kind": "plate",
+      "duplicate_of": null,
+      "plate": "I",
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 52,
+      "printed_page": null,
+      "kind": "blank",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 53,
+      "printed_page": 49,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        21
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 54,
+      "printed_page": 50,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 55,
+      "printed_page": 51,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 56,
+      "printed_page": 52,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        22
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 57,
+      "printed_page": 53,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 58,
+      "printed_page": 54,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 59,
+      "printed_page": 55,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 60,
+      "printed_page": 56,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 61,
+      "printed_page": 57,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 62,
+      "printed_page": 58,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 63,
+      "printed_page": 59,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        23
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 64,
+      "printed_page": 60,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        24
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 65,
+      "printed_page": 61,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        25
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 66,
+      "printed_page": 62,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 67,
+      "printed_page": 63,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        26
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 68,
+      "printed_page": 64,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 69,
+      "printed_page": 65,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 70,
+      "printed_page": 66,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 71,
+      "printed_page": 67,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        27
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 72,
+      "printed_page": 68,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        28
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 73,
+      "printed_page": 69,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        29
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 74,
+      "printed_page": 70,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        30
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 75,
+      "printed_page": 71,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 76,
+      "printed_page": 72,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 77,
+      "printed_page": 73,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 78,
+      "printed_page": 74,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 79,
+      "printed_page": 75,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        31
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 80,
+      "printed_page": 76,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        32
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 81,
+      "printed_page": 77,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 82,
+      "printed_page": 78,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 83,
+      "printed_page": 79,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 84,
+      "printed_page": 80,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        33,
+        34
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 85,
+      "printed_page": 81,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        35
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 86,
+      "printed_page": 82,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 87,
+      "printed_page": 83,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 88,
+      "printed_page": 84,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 89,
+      "printed_page": 85,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        36
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 90,
+      "printed_page": 86,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 91,
+      "printed_page": 87,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        37
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 92,
+      "printed_page": 88,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        38
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 93,
+      "printed_page": 89,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 94,
+      "printed_page": 90,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 95,
+      "printed_page": 91,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 96,
+      "printed_page": 92,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        39
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 97,
+      "printed_page": 93,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        40
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 98,
+      "printed_page": 94,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 99,
+      "printed_page": 95,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 100,
+      "printed_page": 96,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 101,
+      "printed_page": null,
+      "kind": "plate",
+      "duplicate_of": null,
+      "plate": "II",
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 102,
+      "printed_page": null,
+      "kind": "blank",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 103,
+      "printed_page": 97,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 104,
+      "printed_page": 98,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        41
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 105,
+      "printed_page": 99,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 106,
+      "printed_page": 100,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 107,
+      "printed_page": 101,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 108,
+      "printed_page": 102,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 109,
+      "printed_page": 103,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        42
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 110,
+      "printed_page": 104,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 111,
+      "printed_page": 105,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        43
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 112,
+      "printed_page": 106,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        44
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 113,
+      "printed_page": 107,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 114,
+      "printed_page": 108,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        45,
+        46
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 115,
+      "printed_page": 109,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 116,
+      "printed_page": 110,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        47
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 117,
+      "printed_page": 111,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        48
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 118,
+      "printed_page": 112,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 119,
+      "printed_page": 113,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        49
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 120,
+      "printed_page": 114,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        50,
+        51
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 121,
+      "printed_page": 115,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 122,
+      "printed_page": 116,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 123,
+      "printed_page": 117,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 124,
+      "printed_page": 118,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        52
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 125,
+      "printed_page": 119,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 126,
+      "printed_page": 120,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 127,
+      "printed_page": 121,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 128,
+      "printed_page": 122,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 129,
+      "printed_page": 123,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 130,
+      "printed_page": 124,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 131,
+      "printed_page": 125,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 132,
+      "printed_page": 126,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 133,
+      "printed_page": 127,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 134,
+      "printed_page": 128,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 135,
+      "printed_page": 129,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 136,
+      "printed_page": 130,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 137,
+      "printed_page": 131,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 138,
+      "printed_page": 132,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        53
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 139,
+      "printed_page": 133,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        54
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 140,
+      "printed_page": 134,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        55
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 141,
+      "printed_page": 135,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 142,
+      "printed_page": 136,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 143,
+      "printed_page": 137,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 144,
+      "printed_page": 138,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 145,
+      "printed_page": 139,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 146,
+      "printed_page": 140,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 147,
+      "printed_page": 141,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 148,
+      "printed_page": 142,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 149,
+      "printed_page": 143,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 150,
+      "printed_page": 144,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 151,
+      "printed_page": 145,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 152,
+      "printed_page": 146,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 153,
+      "printed_page": 147,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 154,
+      "printed_page": 148,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 155,
+      "printed_page": 149,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 156,
+      "printed_page": 150,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 157,
+      "printed_page": 151,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 158,
+      "printed_page": 152,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        56
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 159,
+      "printed_page": 153,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 160,
+      "printed_page": 154,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 161,
+      "printed_page": 155,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 162,
+      "printed_page": 156,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 163,
+      "printed_page": 157,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 164,
+      "printed_page": 158,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        57,
+        58
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 165,
+      "printed_page": 159,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 166,
+      "printed_page": 160,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 167,
+      "printed_page": 161,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 168,
+      "printed_page": 160,
+      "kind": "body",
+      "duplicate_of": 166,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 169,
+      "printed_page": 161,
+      "kind": "body",
+      "duplicate_of": 167,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 170,
+      "printed_page": 162,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 171,
+      "printed_page": 163,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 172,
+      "printed_page": 164,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 173,
+      "printed_page": 165,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 174,
+      "printed_page": 166,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        59
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 175,
+      "printed_page": 167,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        60
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 176,
+      "printed_page": 168,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        61,
+        62
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 177,
+      "printed_page": 169,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        63
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 178,
+      "printed_page": 170,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 179,
+      "printed_page": 171,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 180,
+      "printed_page": 172,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 181,
+      "printed_page": 173,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 182,
+      "printed_page": 174,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 183,
+      "printed_page": 175,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 184,
+      "printed_page": 176,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 185,
+      "printed_page": 177,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 186,
+      "printed_page": 178,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 187,
+      "printed_page": 179,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 188,
+      "printed_page": 180,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 189,
+      "printed_page": 181,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        64
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 190,
+      "printed_page": 182,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 191,
+      "printed_page": 183,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        65
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 192,
+      "printed_page": 184,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 193,
+      "printed_page": 185,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 194,
+      "printed_page": 186,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 195,
+      "printed_page": 187,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 196,
+      "printed_page": 188,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        66
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 197,
+      "printed_page": 189,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 198,
+      "printed_page": 190,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 199,
+      "printed_page": 191,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        67
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 200,
+      "printed_page": 192,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        68
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 201,
+      "printed_page": 193,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 202,
+      "printed_page": 194,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 203,
+      "printed_page": 195,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 204,
+      "printed_page": 196,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 205,
+      "printed_page": 197,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 206,
+      "printed_page": 198,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        69
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 207,
+      "printed_page": 199,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 208,
+      "printed_page": 200,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 209,
+      "printed_page": 201,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 210,
+      "printed_page": 202,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 211,
+      "printed_page": 203,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 212,
+      "printed_page": 204,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 213,
+      "printed_page": 205,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 214,
+      "printed_page": 206,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 215,
+      "printed_page": 207,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 216,
+      "printed_page": 208,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        70
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 217,
+      "printed_page": 209,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 218,
+      "printed_page": 210,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 219,
+      "printed_page": 211,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 220,
+      "printed_page": 212,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 221,
+      "printed_page": 213,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 222,
+      "printed_page": 214,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 223,
+      "printed_page": 215,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 224,
+      "printed_page": 216,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 225,
+      "printed_page": 217,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 226,
+      "printed_page": 218,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 227,
+      "printed_page": 219,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 228,
+      "printed_page": 220,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        71
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 229,
+      "printed_page": 221,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 230,
+      "printed_page": 222,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        72
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 231,
+      "printed_page": 223,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [
+        73,
+        74,
+        75
+      ],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 232,
+      "printed_page": 224,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 233,
+      "printed_page": null,
+      "kind": "plate",
+      "duplicate_of": null,
+      "plate": "III",
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 234,
+      "printed_page": null,
+      "kind": "blank",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 235,
+      "printed_page": 225,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 236,
+      "printed_page": 226,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 237,
+      "printed_page": 227,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 238,
+      "printed_page": 228,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 239,
+      "printed_page": 229,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 240,
+      "printed_page": 230,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 241,
+      "printed_page": 231,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 242,
+      "printed_page": 232,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 243,
+      "printed_page": 233,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 244,
+      "printed_page": 234,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 245,
+      "printed_page": 235,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 246,
+      "printed_page": 236,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 247,
+      "printed_page": 237,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 248,
+      "printed_page": 238,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 249,
+      "printed_page": 239,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 250,
+      "printed_page": 240,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 251,
+      "printed_page": 241,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 252,
+      "printed_page": 242,
+      "kind": "body",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 253,
+      "printed_page": 243,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 254,
+      "printed_page": 242,
+      "kind": "body",
+      "duplicate_of": 252,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 255,
+      "printed_page": 243,
+      "kind": "afterword",
+      "duplicate_of": 253,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 256,
+      "printed_page": 244,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 257,
+      "printed_page": 245,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 258,
+      "printed_page": 246,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 259,
+      "printed_page": 247,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 260,
+      "printed_page": 248,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 261,
+      "printed_page": 249,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 262,
+      "printed_page": 250,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 263,
+      "printed_page": 251,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 264,
+      "printed_page": 252,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 265,
+      "printed_page": 253,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 266,
+      "printed_page": 254,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 267,
+      "printed_page": 255,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 268,
+      "printed_page": 256,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 269,
+      "printed_page": 257,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 270,
+      "printed_page": 258,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 271,
+      "printed_page": 259,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 272,
+      "printed_page": 260,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 273,
+      "printed_page": 261,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 274,
+      "printed_page": 262,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 275,
+      "printed_page": 263,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 276,
+      "printed_page": 264,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 277,
+      "printed_page": 265,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 278,
+      "printed_page": 264,
+      "kind": "afterword",
+      "duplicate_of": 276,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 279,
+      "printed_page": 265,
+      "kind": "afterword",
+      "duplicate_of": 277,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 280,
+      "printed_page": 266,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 281,
+      "printed_page": 267,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 282,
+      "printed_page": 268,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 283,
+      "printed_page": 269,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 284,
+      "printed_page": 270,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 285,
+      "printed_page": 271,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 286,
+      "printed_page": 272,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 287,
+      "printed_page": 273,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 288,
+      "printed_page": 274,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 289,
+      "printed_page": 275,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 290,
+      "printed_page": 276,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 291,
+      "printed_page": 277,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 292,
+      "printed_page": 278,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 293,
+      "printed_page": 279,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 294,
+      "printed_page": 280,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 295,
+      "printed_page": 281,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 296,
+      "printed_page": 282,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 297,
+      "printed_page": 283,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 298,
+      "printed_page": 284,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 299,
+      "printed_page": 285,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 300,
+      "printed_page": 286,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 301,
+      "printed_page": 287,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 302,
+      "printed_page": 288,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 303,
+      "printed_page": 289,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 304,
+      "printed_page": 290,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 305,
+      "printed_page": 291,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 306,
+      "printed_page": 292,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 307,
+      "printed_page": 293,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 308,
+      "printed_page": 294,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 309,
+      "printed_page": 295,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 310,
+      "printed_page": 296,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 311,
+      "printed_page": 297,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 312,
+      "printed_page": 296,
+      "kind": "afterword",
+      "duplicate_of": 310,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 313,
+      "printed_page": 297,
+      "kind": "afterword",
+      "duplicate_of": 311,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 314,
+      "printed_page": 298,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 315,
+      "printed_page": 299,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 316,
+      "printed_page": 300,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 317,
+      "printed_page": 301,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 318,
+      "printed_page": 302,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 319,
+      "printed_page": 303,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 320,
+      "printed_page": 304,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 321,
+      "printed_page": 305,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 322,
+      "printed_page": 306,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 323,
+      "printed_page": 307,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 324,
+      "printed_page": 308,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 325,
+      "printed_page": 309,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 326,
+      "printed_page": 310,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 327,
+      "printed_page": 311,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 328,
+      "printed_page": 312,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 329,
+      "printed_page": 313,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 330,
+      "printed_page": 314,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 331,
+      "printed_page": 315,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 332,
+      "printed_page": 316,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 333,
+      "printed_page": 317,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 334,
+      "printed_page": 318,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 335,
+      "printed_page": 319,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 336,
+      "printed_page": 320,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 337,
+      "printed_page": 321,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 338,
+      "printed_page": 322,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 339,
+      "printed_page": 323,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 340,
+      "printed_page": 324,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 341,
+      "printed_page": 325,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 342,
+      "printed_page": 326,
+      "kind": "afterword",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 343,
+      "printed_page": null,
+      "kind": "blank",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 344,
+      "printed_page": null,
+      "kind": "blank",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    },
+    {
+      "pdf_page": 345,
+      "printed_page": 327,
+      "kind": "name_index",
+      "duplicate_of": null,
+      "plate": null,
+      "figure_numbers": [],
+      "visual_review": "layout_and_pagination_only",
+      "text_proofread": false
+    }
+  ]
+}

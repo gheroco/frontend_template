@@ -1,1 +1,16 @@
-import {cp,mkdir,rm,copyFile,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';const root=resolve(import.meta.dirname,'..'),dist=resolve(root,'dist');await rm(dist,{recursive:true,force:true});await mkdir(dist,{recursive:true});await cp(resolve(root,'src'),dist,{recursive:true});const pdf=resolve(root,'node_modules/pdfjs-dist');for(const p of ['build/pdf.mjs','build/pdf.worker.mjs','web/pdf_viewer.css','cmaps','standard_fonts','wasm','LICENSE']){const dest=resolve(dist,'vendor/pdfjs',p);await mkdir(resolve(dest,'..'),{recursive:true});await cp(resolve(pdf,p),dest,{recursive:true});}await mkdir(resolve(dist,'fonts'),{recursive:true});const manrope=resolve(root,'node_modules/@fontsource-variable/manrope');for(const lang of ['latin','cyrillic'])await copyFile(resolve(manrope,`files/manrope-${lang}-wght-normal.woff2`),resolve(dist,'fonts',`manrope-${lang}.woff2`));await copyFile(resolve(manrope,'LICENSE'),resolve(dist,'fonts/MANROPE-LICENSE.txt'));const mono=resolve(root,'node_modules/@fontsource/ibm-plex-mono');await copyFile(resolve(mono,'files/ibm-plex-mono-latin-400-normal.woff2'),resolve(dist,'fonts/mono.woff2'));await copyFile(resolve(mono,'LICENSE'),resolve(dist,'fonts/IBM-PLEX-LICENSE.txt'));await writeFile(resolve(dist,'version.json'),JSON.stringify({version:'1.0.0',pdfjs:'6.5.438'}));console.log('Built self-contained static reader in dist/');
+import {cp,mkdir,rm,copyFile,writeFile,readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const root=resolve(import.meta.dirname,'..'),dist=resolve(root,'dist');
+await rm(dist,{recursive:true,force:true});
+await mkdir(dist,{recursive:true});
+await cp(resolve(root,'src'),dist,{recursive:true});
+await mkdir(resolve(dist,'fonts'),{recursive:true});
+const manrope=resolve(root,'node_modules/@fontsource-variable/manrope');
+for(const lang of ['latin','cyrillic'])await copyFile(resolve(manrope,`files/manrope-${lang}-wght-normal.woff2`),resolve(dist,'fonts',`manrope-${lang}.woff2`));
+await copyFile(resolve(manrope,'LICENSE'),resolve(dist,'fonts/MANROPE-LICENSE.txt'));
+const mono=resolve(root,'node_modules/@fontsource/ibm-plex-mono');
+await copyFile(resolve(mono,'files/ibm-plex-mono-latin-400-normal.woff2'),resolve(dist,'fonts/mono.woff2'));
+await copyFile(resolve(mono,'LICENSE'),resolve(dist,'fonts/IBM-PLEX-LICENSE.txt'));
+let book=null;try{book=JSON.parse(await readFile(resolve(root,'src/content/book.json'),'utf8'));}catch{}
+await writeFile(resolve(dist,'version.json'),JSON.stringify({version:'2.0.0',reader:'native-html',pages:book?.totalPages??null,sourceSha256:book?.source?.sha256??null}));
+console.log(`Built native HTML reader in dist/ (${book?.totalPages??'content pending'} source pages)`);

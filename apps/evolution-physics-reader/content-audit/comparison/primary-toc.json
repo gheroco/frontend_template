@@ -1,0 +1,405 @@
+{
+  "chapters": [
+    "ПРЕДИСЛОВИЕ",
+    "I. РАСЦВЕТ МЕХАНИСТИЧЕСКОГО ВОЗЗРЕНИЯ",
+    "II. УПАДОК МЕХАНИСТИЧЕСКОГО ВОЗЗРЕНИЯ",
+    "III. ПОЛЕ И ОТНОСИТЕЛЬНОСТЬ",
+    "IV. КВАНТЫ"
+  ],
+  "entries": [
+    {
+      "webSection": "ei_00.htm",
+      "chapter": 0,
+      "sourceTitle": "Предисловие",
+      "printedStartPage": 5,
+      "printedEndPage": 7,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "Предисловие"
+    },
+    {
+      "webSection": "ei_11.htm",
+      "chapter": 1,
+      "sourceTitle": "Великая повесть о тайнах природы",
+      "printedStartPage": 7,
+      "printedEndPage": 9,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "1. Великая повесть о тайнах природы"
+    },
+    {
+      "webSection": "ei_12.htm",
+      "chapter": 1,
+      "sourceTitle": "Первая руководящая идея",
+      "printedStartPage": 9,
+      "printedEndPage": 14,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "2. Первая руководящая идея"
+    },
+    {
+      "webSection": "ei_13.htm",
+      "chapter": 1,
+      "sourceTitle": "Векторы",
+      "printedStartPage": 14,
+      "printedEndPage": 19,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "3. Векторы"
+    },
+    {
+      "webSection": "ei_14.htm",
+      "chapter": 1,
+      "sourceTitle": "Загадка движения",
+      "printedStartPage": 19,
+      "printedEndPage": 30,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "4. Загадка движения"
+    },
+    {
+      "webSection": "ei_15.htm",
+      "chapter": 1,
+      "sourceTitle": "Еще одна руководящая идея",
+      "printedStartPage": 30,
+      "printedEndPage": 34,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "5. Еще одна нить"
+    },
+    {
+      "webSection": "ei_16.htm",
+      "chapter": 1,
+      "sourceTitle": "Является ли теплота субстанцией?",
+      "printedStartPage": 34,
+      "printedEndPage": 40,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "6. Является ли теплота субстанцией?"
+    },
+    {
+      "webSection": "ei_17.htm",
+      "chapter": 1,
+      "sourceTitle": "Увеселительная горка",
+      "printedStartPage": 40,
+      "printedEndPage": 44,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "7. Аттракцион \"горка\""
+    },
+    {
+      "webSection": "ei_18.htm",
+      "chapter": 1,
+      "sourceTitle": "Мера превращения",
+      "printedStartPage": 44,
+      "printedEndPage": 47,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "8. Мера превращения"
+    },
+    {
+      "webSection": "ei_19.htm",
+      "chapter": 1,
+      "sourceTitle": "Философские воззрения",
+      "printedStartPage": 47,
+      "printedEndPage": 50,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "9. Философские воззрения"
+    },
+    {
+      "webSection": "ei_110.htm",
+      "chapter": 1,
+      "sourceTitle": "Кинетическая теория вещества",
+      "printedStartPage": 50,
+      "printedEndPage": 58,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "10. Кинетическая теория вещества"
+    },
+    {
+      "webSection": "ei_21.htm",
+      "chapter": 2,
+      "sourceTitle": "Две электрические жидкости",
+      "printedStartPage": 58,
+      "printedEndPage": 68,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "1. Две электрические жидкости"
+    },
+    {
+      "webSection": "ei_22.htm",
+      "chapter": 2,
+      "sourceTitle": "Магнитные жидкости",
+      "printedStartPage": 68,
+      "printedEndPage": 72,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "2. Магнитные жидкости"
+    },
+    {
+      "webSection": "ei_23.htm",
+      "chapter": 2,
+      "sourceTitle": "Первая серьезная трудность",
+      "printedStartPage": 72,
+      "printedEndPage": 77,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "3. Первая серьезная трудность"
+    },
+    {
+      "webSection": "ei_24.htm",
+      "chapter": 2,
+      "sourceTitle": "Скорость света",
+      "printedStartPage": 77,
+      "printedEndPage": 79,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "4. Скорость света"
+    },
+    {
+      "webSection": "ei_25.htm",
+      "chapter": 2,
+      "sourceTitle": "Свет как субстанция",
+      "printedStartPage": 79,
+      "printedEndPage": 81,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "5. Свет как субстанция"
+    },
+    {
+      "webSection": "ei_26.htm",
+      "chapter": 2,
+      "sourceTitle": "Загадка цвета",
+      "printedStartPage": 81,
+      "printedEndPage": 84,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "6. Загадка цвета"
+    },
+    {
+      "webSection": "ei_27.htm",
+      "chapter": 2,
+      "sourceTitle": "Что такое волна?",
+      "printedStartPage": 84,
+      "printedEndPage": 88,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "7. Что такое волна?"
+    },
+    {
+      "webSection": "ei_28.htm",
+      "chapter": 2,
+      "sourceTitle": "Волновая теория света",
+      "printedStartPage": 88,
+      "printedEndPage": 96,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "8. Волновая теория света"
+    },
+    {
+      "webSection": "ei_29.htm",
+      "chapter": 2,
+      "sourceTitle": "Продольны или поперечны световые волны?",
+      "printedStartPage": 96,
+      "printedEndPage": 98,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "9. Продольны или поперечны чветовые волны?"
+    },
+    {
+      "webSection": "ei_210.htm",
+      "chapter": 2,
+      "sourceTitle": "Эфир и механистическое воззрение",
+      "printedStartPage": 98,
+      "printedEndPage": 102,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "10. Эфир и механистическое мировоззрение"
+    },
+    {
+      "webSection": "ei_31.htm",
+      "chapter": 3,
+      "sourceTitle": "Поле как представление",
+      "printedStartPage": 102,
+      "printedEndPage": 112,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "1. Представление о поле"
+    },
+    {
+      "webSection": "ei_32.htm",
+      "chapter": 3,
+      "sourceTitle": "Две основы теории поля",
+      "printedStartPage": 112,
+      "printedEndPage": 117,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "2. Два столпа теории поля"
+    },
+    {
+      "webSection": "ei_33.htm",
+      "chapter": 3,
+      "sourceTitle": "Реальность поля",
+      "printedStartPage": 117,
+      "printedEndPage": 123,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "3. Реальность поля"
+    },
+    {
+      "webSection": "ei_34.htm",
+      "chapter": 3,
+      "sourceTitle": "Поле и эфир",
+      "printedStartPage": 123,
+      "printedEndPage": 126,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "4. Поле и эфир"
+    },
+    {
+      "webSection": "ei_35.htm",
+      "chapter": 3,
+      "sourceTitle": "Механические леса",
+      "printedStartPage": 126,
+      "printedEndPage": 135,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "5. Механические леса"
+    },
+    {
+      "webSection": "ei_36.htm",
+      "chapter": 3,
+      "sourceTitle": "Эфир и движение",
+      "printedStartPage": 135,
+      "printedEndPage": 147,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "6. Эфир и движение"
+    },
+    {
+      "webSection": "ei_37.htm",
+      "chapter": 3,
+      "sourceTitle": "Время, пространство, относительность",
+      "printedStartPage": 147,
+      "printedEndPage": 160,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "7. Время, пространство, относительность"
+    },
+    {
+      "webSection": "ei_38.htm",
+      "chapter": 3,
+      "sourceTitle": "Относительность и механика",
+      "printedStartPage": 160,
+      "printedEndPage": 165,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "8. Относительность и механика"
+    },
+    {
+      "webSection": "ei_39.htm",
+      "chapter": 3,
+      "sourceTitle": "Пространственно-временно́й континуум",
+      "printedStartPage": 165,
+      "printedEndPage": 173,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "9. Пространственно-временной континуум"
+    },
+    {
+      "webSection": "ei_310.htm",
+      "chapter": 3,
+      "sourceTitle": "Общая относительность",
+      "printedStartPage": 173,
+      "printedEndPage": 178,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "10. Общая теория относительности"
+    },
+    {
+      "webSection": "ei_311.htm",
+      "chapter": 3,
+      "sourceTitle": "Вне и внутри лифта",
+      "printedStartPage": 178,
+      "printedEndPage": 184,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "11. Вне и внутри лифта"
+    },
+    {
+      "webSection": "ei_312.htm",
+      "chapter": 3,
+      "sourceTitle": "Геометрия и опыт",
+      "printedStartPage": 184,
+      "printedEndPage": 195,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "12. Геометрия и опыт"
+    },
+    {
+      "webSection": "ei_313.htm",
+      "chapter": 3,
+      "sourceTitle": "Общая относительность и ее экспериментальная проверка",
+      "printedStartPage": 195,
+      "printedEndPage": 199,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "13. Общая теория относительности и ее экспериментальная проверка"
+    },
+    {
+      "webSection": "ei_314.htm",
+      "chapter": 3,
+      "sourceTitle": "Поле и вещество",
+      "printedStartPage": 199,
+      "printedEndPage": 204,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "14. Поле и вещество"
+    },
+    {
+      "webSection": "ei_41.htm",
+      "chapter": 4,
+      "sourceTitle": "Непрерывность—прерывность",
+      "printedStartPage": 204,
+      "printedEndPage": 206,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "1. Непрерывность-прерывность"
+    },
+    {
+      "webSection": "ei_42.htm",
+      "chapter": 4,
+      "sourceTitle": "Элементарные кванты вещества и электричества",
+      "printedStartPage": 206,
+      "printedEndPage": 211,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "2. Элементарные кванты вещества и электричества"
+    },
+    {
+      "webSection": "ei_43.htm",
+      "chapter": 4,
+      "sourceTitle": "Кванты света",
+      "printedStartPage": 211,
+      "printedEndPage": 217,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "3. Кванты света"
+    },
+    {
+      "webSection": "ei_44.htm",
+      "chapter": 4,
+      "sourceTitle": "Световые спектры",
+      "printedStartPage": 217,
+      "printedEndPage": 221,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "4. Световые спектры"
+    },
+    {
+      "webSection": "ei_45.htm",
+      "chapter": 4,
+      "sourceTitle": "Волны вещества",
+      "printedStartPage": 221,
+      "printedEndPage": 228,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "5. Волны вещества"
+    },
+    {
+      "webSection": "ei_46.htm",
+      "chapter": 4,
+      "sourceTitle": "Волны вероятности",
+      "printedStartPage": 228,
+      "printedEndPage": 239,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "6. Волны вероятности"
+    },
+    {
+      "webSection": "ei_47.htm",
+      "chapter": 4,
+      "sourceTitle": "Физика и реальность",
+      "printedStartPage": 239,
+      "printedEndPage": 243,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed.",
+      "secondaryWebTitle": "7. Физика и реальность"
+    },
+    {
+      "webSection": null,
+      "chapter": 5,
+      "sourceTitle": "С. Г. Суворов. ЭВОЛЮЦИЯ ФИЗИКИ В ПРЕДСТАВЛЕНИИ ЭЙНШТЕЙНА",
+      "printedStartPage": 243,
+      "printedEndPage": 327,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed."
+    },
+    {
+      "webSection": null,
+      "chapter": 6,
+      "sourceTitle": "Именной указатель",
+      "printedStartPage": 327,
+      "printedEndPage": 327,
+      "source": "Uploaded PDF, table of contents, physical pages 3–4; visually transcribed."
+    }
+  ]
+}

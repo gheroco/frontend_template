@@ -1,0 +1,2205 @@
+{
+  "scope": {
+    "pdfPages": [
+      253,
+      284
+    ],
+    "method": "Direct visual comparison of complete original page images with native block text; source-specific corrections only.",
+    "fullyProofreadClaim": false,
+    "uniquePagesVisuallyInspected": [
+      253,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      280,
+      281,
+      282,
+      283,
+      284
+    ],
+    "duplicatesNotSeparatelyProofread": [
+      {
+        "page": 254,
+        "duplicateOf": 252
+      },
+      {
+        "page": 255,
+        "duplicateOf": 253
+      },
+      {
+        "page": 278,
+        "duplicateOf": 276
+      },
+      {
+        "page": 279,
+        "duplicateOf": 277
+      }
+    ],
+    "reviewLimit": "Все 28 уникальных листов указанного диапазона просмотрены целиком с сопоставлением абзацев и формул. Найденные ошибки записаны ниже. Это один визуальный проход, не гарантия отсутствия остаточных посимвольных ошибок; неполная разборчивость поврежденного слова на листе 268 отмечена отдельно."
+  },
+  "pages": {
+    "256": [
+      {
+        "before": "с выводами, что",
+        "after": "с выводом, что",
+        "source": {
+          "pdfPage": 256,
+          "bbox": [
+            167,
+            324,
+            1535,
+            604
+          ],
+          "blockId": "p256-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "Все это ванятие",
+        "after": "Все это занятие",
+        "source": {
+          "pdfPage": 256,
+          "bbox": [
+            165,
+            892,
+            1534,
+            1502
+          ],
+          "blockId": "p256-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "результатах п методах",
+        "after": "результатах и методах",
+        "source": {
+          "pdfPage": 256,
+          "bbox": [
+            165,
+            892,
+            1534,
+            1502
+          ],
+          "blockId": "p256-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "книги Для народа",
+        "after": "книги для народа",
+        "source": {
+          "pdfPage": 256,
+          "bbox": [
+            165,
+            892,
+            1534,
+            1502
+          ],
+          "blockId": "p256-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "простого челове-ка",
+        "after": "простого человека",
+        "source": {
+          "pdfPage": 256,
+          "bbox": [
+            166,
+            1505,
+            1535,
+            2248
+          ],
+          "blockId": "p256-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "257": [],
+    "258": [
+      {
+        "before": "научную рабету",
+        "after": "научную работу",
+        "source": {
+          "pdfPage": 258,
+          "bbox": [
+            164,
+            321,
+            1540,
+            1214
+          ],
+          "blockId": "p258-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "259": [
+      {
+        "before": "В рамках по-ставленной задачи",
+        "after": "В рамках поставленной задачи",
+        "source": {
+          "pdfPage": 259,
+          "bbox": [
+            167,
+            324,
+            1539,
+            886
+          ],
+          "blockId": "p259-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "общедоступной, а Для",
+        "after": "общедоступной, а для",
+        "source": {
+          "pdfPage": 259,
+          "bbox": [
+            163,
+            889,
+            1532,
+            1499
+          ],
+          "blockId": "p259-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "непосредствённом участии",
+        "after": "непосредственном участии",
+        "source": {
+          "pdfPage": 259,
+          "bbox": [
+            159,
+            1504,
+            1525,
+            2161
+          ],
+          "blockId": "p259-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "сам Эйнптиейн",
+        "after": "сам Эйнштейн",
+        "source": {
+          "pdfPage": 259,
+          "bbox": [
+            159,
+            1504,
+            1525,
+            2161
+          ],
+          "blockId": "p259-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "260": [
+      {
+        "before": "теоретической мысли, Среди",
+        "after": "теоретической мысли. Среди",
+        "source": {
+          "pdfPage": 260,
+          "bbox": [
+            167,
+            411,
+            1539,
+            832
+          ],
+          "blockId": "p260-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "уже по-казала",
+        "after": "уже показала",
+        "source": {
+          "pdfPage": 260,
+          "bbox": [
+            162,
+            836,
+            1539,
+            1540
+          ],
+          "blockId": "p260-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "выдающиеся физики: того",
+        "after": "выдающиеся физики того",
+        "source": {
+          "pdfPage": 260,
+          "bbox": [
+            160,
+            1544,
+            1536,
+            1824
+          ],
+          "blockId": "p260-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "точки звре",
+        "after": "точки зре",
+        "source": {
+          "pdfPage": 260,
+          "bbox": [
+            160,
+            1829,
+            1534,
+            2250
+          ],
+          "blockId": "p260-b005"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "261": [],
+    "262": [
+      {
+        "before": "специфическом носителе — электромагнитных",
+        "after": "специфическом носителе электромагнитных",
+        "source": {
+          "pdfPage": 262,
+          "bbox": [
+            166,
+            515,
+            1543,
+            936
+          ],
+          "blockId": "p262-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "в Х1Х веке",
+        "after": "в XIX веке",
+        "source": {
+          "pdfPage": 262,
+          "bbox": [
+            166,
+            515,
+            1543,
+            936
+          ],
+          "blockId": "p262-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "через из-менение",
+        "after": "через изменение",
+        "source": {
+          "pdfPage": 262,
+          "bbox": [
+            162,
+            938,
+            1537,
+            1361
+          ],
+          "blockId": "p262-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "с обычной квайтовой",
+        "after": "с обычной квантовой",
+        "source": {
+          "pdfPage": 262,
+          "bbox": [
+            153,
+            1840,
+            1528,
+            2171
+          ],
+          "blockId": "p262-b005"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "263": [
+      {
+        "before": "обобщенной теория тяготения",
+        "after": "обобщенной теории тяготения",
+        "source": {
+          "pdfPage": 263,
+          "bbox": [
+            168,
+            509,
+            1533,
+            1026
+          ],
+          "blockId": "p263-b002"
+        },
+        "note": "Entire page inspected. Planck formulas ε = hν, h = 2πℏ and 6,63·10⁻²⁷ эрг·сек checked directly against source scan."
+      },
+      {
+        "before": "Известно, что Планк, проанализировав условия, при которых так называемое излучение абсолютно черного тела должно находиться в равновесном состоянии, установил (1900) связь энергии (#8) и частоты (у) света: в == Йу, где В = длй— планковская постоянная, которая равна 6,63.10-*! эрг- сек. Наличие такой связи удивляло физиков, поскольку она была необычной в аспекте классической физики, согласно которой энергия волны связана © ее амплитудой, а не частотой.",
+        "after": "Известно, что Планк, проанализировав условия, при которых так называемое излучение абсолютно черного тела должно находиться в равновесном состоянии, установил (1900) связь энергии (ε) и частоты (ν) света: ε = hν, где h = 2πℏ — планковская постоянная, которая равна 6,63·10⁻²⁷ эрг·сек. Наличие такой связи удивляло физиков, поскольку она была необычной в аспекте классической физики, согласно которой энергия волны связана с ее амплитудой, а не частотой.",
+        "source": {
+          "pdfPage": 263,
+          "bbox": [
+            166,
+            1126,
+            1530,
+            1547
+          ],
+          "blockId": "p263-b004"
+        },
+        "note": "Entire page inspected. Planck formulas ε = hν, h = 2πℏ and 6,63·10⁻²⁷ эрг·сек checked directly against source scan."
+      },
+      {
+        "before": "Теоретиков зта странная",
+        "after": "Теоретиков эта странная",
+        "source": {
+          "pdfPage": 263,
+          "bbox": [
+            164,
+            1552,
+            1530,
+            2257
+          ],
+          "blockId": "p263-b005"
+        },
+        "note": "Entire page inspected. Planck formulas ε = hν, h = 2πℏ and 6,63·10⁻²⁷ эрг·сек checked directly against source scan."
+      },
+      {
+        "before": "Особенчые затруднения",
+        "after": "Особенные затруднения",
+        "source": {
+          "pdfPage": 263,
+          "bbox": [
+            164,
+            1552,
+            1530,
+            2257
+          ],
+          "blockId": "p263-b005"
+        },
+        "note": "Entire page inspected. Planck formulas ε = hν, h = 2πℏ and 6,63·10⁻²⁷ эрг·сек checked directly against source scan."
+      },
+      {
+        "before": "механизма поглощения. поскольку",
+        "after": "механизма поглощения, поскольку",
+        "source": {
+          "pdfPage": 263,
+          "bbox": [
+            164,
+            1552,
+            1530,
+            2257
+          ],
+          "blockId": "p263-b005"
+        },
+        "note": "Entire page inspected. Planck formulas ε = hν, h = 2πℏ and 6,63·10⁻²⁷ эрг·сек checked directly against source scan."
+      }
+    ],
+    "264": [
+      {
+        "before": "формулы из-лучения",
+        "after": "формулы излучения",
+        "source": {
+          "pdfPage": 264,
+          "bbox": [
+            164,
+            330,
+            1542,
+            692
+          ],
+          "blockId": "p264-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "Как из-вестно,",
+        "after": "Как известно,",
+        "source": {
+          "pdfPage": 264,
+          "bbox": [
+            160,
+            886,
+            1539,
+            1686
+          ],
+          "blockId": "p264-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "в == йУу,",
+        "after": "ε = hν,",
+        "source": {
+          "pdfPage": 264,
+          "bbox": [
+            161,
+            1692,
+            1539,
+            2114
+          ],
+          "blockId": "p264-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "У Эйгтитейна были к этому своп основания",
+        "after": "У Эйнштейна были к этому свои основания",
+        "source": {
+          "pdfPage": 264,
+          "bbox": [
+            162,
+            2177,
+            1542,
+            2251
+          ],
+          "blockId": "p264-b005"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "265": [
+      {
+        "before": "взаимодействие света © веществом",
+        "after": "взаимодействие света с веществом",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            323,
+            1530,
+            741
+          ],
+          "blockId": "p265-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "возникновения и — превращения",
+        "after": "возникновения и превращения",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            740,
+            1533,
+            1214
+          ],
+          "blockId": "p265-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "применил квантовые идей",
+        "after": "применил квантовые идеи",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            740,
+            1533,
+            1214
+          ],
+          "blockId": "p265-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "постоянной ЙА.",
+        "after": "постоянной h.",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            740,
+            1533,
+            1214
+          ],
+          "blockId": "p265-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "фотонную тесрию",
+        "after": "фотонную теорию",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            1216,
+            1533,
+            2165
+          ],
+          "blockId": "p265-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "он послал. статью",
+        "after": "он послал статью",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            1216,
+            1533,
+            2165
+          ],
+          "blockId": "p265-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "по-знакомившись с моей",
+        "after": "познакомившись с моей",
+        "source": {
+          "pdfPage": 265,
+          "bbox": [
+            166,
+            1216,
+            1533,
+            2165
+          ],
+          "blockId": "p265-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "266": [
+      {
+        "before": "пвизких температур",
+        "after": "низких температур",
+        "source": {
+          "pdfPage": 266,
+          "bbox": [
+            161,
+            331,
+            1540,
+            1548
+          ],
+          "blockId": "p266-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "тенеральной линией",
+        "after": "генеральной линией",
+        "source": {
+          "pdfPage": 266,
+          "bbox": [
+            159,
+            1552,
+            1534,
+            1974
+          ],
+          "blockId": "p266-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "Эйнштейча этих лет",
+        "after": "Эйнштейна этих лет",
+        "source": {
+          "pdfPage": 266,
+          "bbox": [
+            160,
+            1977,
+            1535,
+            2259
+          ],
+          "blockId": "p266-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "267": [
+      {
+        "before": "в болышом числе",
+        "after": "в большом числе",
+        "source": {
+          "pdfPage": 267,
+          "bbox": [
+            168,
+            325,
+            1539,
+            840
+          ],
+          "blockId": "p267-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "применить квантовые идей",
+        "after": "применить квантовые идеи",
+        "source": {
+          "pdfPage": 267,
+          "bbox": [
+            159,
+            1222,
+            1529,
+            2212
+          ],
+          "blockId": "p267-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "268": [
+      {
+        "before": "ученыйноватор",
+        "after": "ученый-новатор",
+        "source": {
+          "pdfPage": 268,
+          "bbox": [
+            162,
+            322,
+            1541,
+            1166
+          ],
+          "blockId": "p268-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "болышим проблемам",
+        "after": "большим проблемам",
+        "source": {
+          "pdfPage": 268,
+          "bbox": [
+            162,
+            322,
+            1541,
+            1166
+          ],
+          "blockId": "p268-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "васлуживает снисхождения",
+        "after": "заслуживает снисхождения",
+        "source": {
+          "pdfPage": 268,
+          "bbox": [
+            162,
+            322,
+            1541,
+            1166
+          ],
+          "blockId": "p268-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "Планком -—",
+        "after": "Планком —",
+        "source": {
+          "pdfPage": 268,
+          "bbox": [
+            162,
+            322,
+            1541,
+            1166
+          ],
+          "blockId": "p268-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "статистических. методов",
+        "after": "статистических методов",
+        "source": {
+          "pdfPage": 268,
+          "bbox": [
+            163,
+            1454,
+            1532,
+            1593
+          ],
+          "blockId": "p268-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "неза! симо",
+        "after": "независимо",
+        "source": {
+          "pdfPage": 268,
+          "bbox": [
+            157,
+            1597,
+            1535,
+            2256
+          ],
+          "blockId": "p268-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "269": [
+      {
+        "before": "Эйнштейна болыше",
+        "after": "Эйнштейна больше",
+        "source": {
+          "pdfPage": 269,
+          "bbox": [
+            167,
+            790,
+            1530,
+            1778
+          ],
+          "blockId": "p269-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "статистические вакономерности отражают. новый",
+        "after": "статистические закономерности отражают новый",
+        "source": {
+          "pdfPage": 269,
+          "bbox": [
+            168,
+            1779,
+            1528,
+            2014
+          ],
+          "blockId": "p269-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "энтропию © замкнутой",
+        "after": "энтропию S замкнутой",
+        "source": {
+          "pdfPage": 269,
+          "bbox": [
+            168,
+            2017,
+            1531,
+            2249
+          ],
+          "blockId": "p269-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "271": [
+      {
+        "before": "как частипам",
+        "after": "как частицам",
+        "source": {
+          "pdfPage": 271,
+          "bbox": [
+            168,
+            415,
+            1536,
+            1071
+          ],
+          "blockId": "p271-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "альфачастицы",
+        "after": "альфа-частицы",
+        "source": {
+          "pdfPage": 271,
+          "bbox": [
+            168,
+            415,
+            1536,
+            1071
+          ],
+          "blockId": "p271-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "он выскавал",
+        "after": "он высказал",
+        "source": {
+          "pdfPage": 271,
+          "bbox": [
+            164,
+            1169,
+            1535,
+            1826
+          ],
+          "blockId": "p271-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "лишь :разработал",
+        "after": "лишь разработал",
+        "source": {
+          "pdfPage": 271,
+          "bbox": [
+            164,
+            1169,
+            1535,
+            1826
+          ],
+          "blockId": "p271-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "272": [
+      {
+        "before": "свой задачи",
+        "after": "свои задачи",
+        "source": {
+          "pdfPage": 272,
+          "bbox": [
+            162,
+            843,
+            1538,
+            2058
+          ],
+          "blockId": "p272-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "обобщенной. теории",
+        "after": "обобщенной теории",
+        "source": {
+          "pdfPage": 272,
+          "bbox": [
+            165,
+            2070,
+            1537,
+            2256
+          ],
+          "blockId": "p272-b004"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "273": [
+      {
+        "before": "понимание ‹«состояния",
+        "after": "понимание «состояния",
+        "source": {
+          "pdfPage": 273,
+          "bbox": [
+            166,
+            1130,
+            1529,
+            2025
+          ],
+          "blockId": "p273-b005"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "физиками и Шшколамя.",
+        "after": "физиками и школами.",
+        "source": {
+          "pdfPage": 273,
+          "bbox": [
+            165,
+            2188,
+            1528,
+            2263
+          ],
+          "blockId": "p273-b007"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "275": [
+      {
+        "before": "таков-то ия что",
+        "after": "таков-то и что",
+        "source": {
+          "pdfPage": 275,
+          "bbox": [
+            169,
+            319,
+            1537,
+            553
+          ],
+          "blockId": "p275-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ],
+    "284": [
+      {
+        "before": "образом доляны",
+        "after": "образом должны",
+        "source": {
+          "pdfPage": 284,
+          "bbox": [
+            165,
+            320,
+            1536,
+            690
+          ],
+          "blockId": "p284-b001"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "за то, ва что",
+        "after": "за то, за что",
+        "source": {
+          "pdfPage": 284,
+          "bbox": [
+            165,
+            695,
+            1537,
+            1814
+          ],
+          "blockId": "p284-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "прямо вачисляет",
+        "after": "прямо зачисляет",
+        "source": {
+          "pdfPage": 284,
+          "bbox": [
+            165,
+            695,
+            1537,
+            1814
+          ],
+          "blockId": "p284-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "спедиальной теории",
+        "after": "специальной теории",
+        "source": {
+          "pdfPage": 284,
+          "bbox": [
+            165,
+            695,
+            1537,
+            1814
+          ],
+          "blockId": "p284-b002"
+        },
+        "note": "Verified against complete original source-page image."
+      },
+      {
+        "before": "действия. 'Гому",
+        "after": "действия. Тому",
+        "source": {
+          "pdfPage": 284,
+          "bbox": [
+            163,
+            1827,
+            1537,
+            2248
+          ],
+          "blockId": "p284-b003"
+        },
+        "note": "Verified against complete original source-page image."
+      }
+    ]
+  },
+  "fullPageOverrides": {
+    "253": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "С. Г. СУВОРОВ",
+          "sourceText": "С. Г. СУВОРОВ",
+          "source": {
+            "bbox": [
+              1191,
+              225,
+              1533,
+              256
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p253-b001",
+          "align": "right"
+        },
+        {
+          "type": "heading",
+          "text": "ЭВОЛЮЦИЯ ФИЗИКИ В ПРЕДСТАВЛЕНИИ ЭЙНШТЕЙНА",
+          "sourceText": "ЭВОЛЮЦИЯ ФИЗИКИ\nВ ПРЕДСТАВЛЕНИИ ЭЙНШТЕЙНА",
+          "source": {
+            "bbox": [
+              270,
+              318,
+              1430,
+              419
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p253-b002"
+        },
+        {
+          "type": "paragraph",
+          "text": "I. Эйнштейн о популяризации науки. Эволюция физики как «драма идей». — Вклад Эйнштейна в современную физику. — Отход от идей квантовой теории. II. Какая же философия вела Эйнштейна? — Методологические выводы из разработки теории относительности. Отклонение позитивизма и операционализма. — Проблема реформы классической физики под углом зрения ее целостности. Теория тяготения Эйнштейна. — Оценка дифференциального закона как единственной формы причинности. — Рациональные пути построения физической теории. — Рационализм и кантианство в гносеологии Эйнштейна. III. Гносеология Эйнштейна и реальный процесс познания. Опыт и теория у Эйнштейна. — Метод Эйнштейна в действии. Общая теория относительности или обобщенная теория тяготения? — Квантовая теория и гносеология Эйнштейна. — Единая теория поля как генеральная линия развития физики. — Заключение.",
+          "sourceText": "1. Эйнштейн о популяризации науки. Эволюция физики\nкак «драма идей». — Вклад Эбнштейна в современную\nфизику. — Отгход от идей квантовой теории.\n11. Какая же философия вела Эйнштейна? — Методоло-\nгические выводы из равработки теории относительности.\nОтклонение позитивизма и операционализма. — Про-\nблема реформы классической физики под углом зрения\nее целостности. Теория тяготения Эйнлитейна. —\nОценка дифференциального вакона как единственной\nформы причинности. — Рациональные пути построения.\nфизической теории. — Рационализм и кантианство в\nгносеологии Эйнштейна.\n111. Гносеология Эйнштейна и реальный процесс позна-\nния. Опыт и теория у Эйнштейна. — Метод Эйн-\nзатейна в действии. Общая теория относительности\nили обобщенная теория тяготения? — Квантовая тео-\nрия и гносвология Эйнштейна. — Единая теория поля\nкак генеральная линия развития физики. — Заключение.",
+          "source": {
+            "bbox": [
+              287,
+              528,
+              1412,
+              1214
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 77.02,
+            "lowConfidenceWords": 16
+          },
+          "proofread": true,
+          "id": "p253-b003",
+          "html": "<em>I. Эйнштейн о популяризации науки. Эволюция физики как «драма идей». — Вклад Эйнштейна в современную физику. — Отход от идей квантовой теории. II. Какая же философия вела Эйнштейна? — Методологические выводы из разработки теории относительности. Отклонение позитивизма и операционализма. — Проблема реформы классической физики под углом зрения ее целостности. Теория тяготения Эйнштейна. — Оценка дифференциального закона как единственной формы причинности. — Рациональные пути построения физической теории. — Рационализм и кантианство в гносеологии Эйнштейна. III. Гносеология Эйнштейна и реальный процесс познания. Опыт и теория у Эйнштейна. — Метод Эйнштейна в действии. Общая теория относительности или обобщенная теория тяготения? — Квантовая теория и гносеология Эйнштейна. — Единая теория поля как генеральная линия развития физики. — Заключение.</em>"
+        },
+        {
+          "type": "heading",
+          "text": "I",
+          "sourceText": "1",
+          "source": {
+            "bbox": [
+              841,
+              1299,
+              856,
+              1333
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 96,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p253-b004"
+        },
+        {
+          "type": "heading",
+          "text": "ЭЙНШТЕЙН О ПОПУЛЯРИЗАЦИИ НАУКИ. ЭВОЛЮЦИЯ ФИЗИКИ КАК «ДРАМА ИДЕЙ»",
+          "sourceText": "ЭЙНШТЕЙН О ПОПУЛЯРИЗАЦИИ НАУКИ,\nЭВОЛЮЦИЯ ФИЗИКИ КАК «ДРАМА ИДЕЙ»",
+          "source": {
+            "bbox": [
+              351,
+              1371,
+              1348,
+              1467
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 86.44,
+            "lowConfidenceWords": 1
+          },
+          "proofread": true,
+          "id": "p253-b005"
+        },
+        {
+          "type": "paragraph",
+          "text": "Великий физик нашего времени Альберт Эйнштейн высоко ценил дело популяризации науки. В своей «Творческой автобиографии», написанной им к 70-летию (1949), Эйнштейн рассказывал, какое огромное влияние оказала на него научно-популярная литература еще в детские и юношеские годы *).",
+          "sourceText": "Великий физик нашего времени Альберт Эйнштейн\nвысоко ценил дело популяризации науки. В своей «Твор-\nческой автобиографии», написанной им к 70-летию (1949),\nЭйнштейн рассказывал, какое огромное влияние оказала\nна него научно-популярная литература еще в детские и\nюношеские годы *).",
+          "source": {
+            "bbox": [
+              165,
+              1497,
+              1535,
+              1778
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94.39,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p253-b006"
+        },
+        {
+          "type": "paragraph",
+          "text": "До 12 лет он был глубоко религиозным, но в эти же годы религия разочаровала его. Что же было тому причиной? «Чтение научно-популярных книжек, — писал он, — привело меня вскоре к убеждению, что в библейских рассказах многое не может быть верным. Следствием этого было",
+          "sourceText": "До 12 лет он был глубоко религиозным, но в эти же\nгоды религия разочаровала его. Что же было тому при-\nчиной? «Чтение научно-популярных книжек, — писал он, —\nпривело меня вскоре к убеждению, что в библейских расска-\nзах многое не может быть верным. Следствием этого было",
+          "source": {
+            "bbox": [
+              165,
+              1783,
+              1534,
+              2016
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88.93,
+            "lowConfidenceWords": 3
+          },
+          "proofread": true,
+          "id": "p253-b007"
+        },
+        {
+          "type": "note",
+          "text": "*) Перевод опубликован в журнале «Успехи физических наук», т. LIX, в. 1, 1956.",
+          "sourceText": "*) Перевод опубликован в журнале «Успехи физических наук»,\nт. 1Х, в. 1, 1956.",
+          "source": {
+            "bbox": [
+              167,
+              2064,
+              1535,
+              2139
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 91.08,
+            "lowConfidenceWords": 1
+          },
+          "proofread": true,
+          "id": "p253-b008"
+        },
+        {
+          "type": "note",
+          "text": "Заглавие «Творческая автобиография» дано переводчиками — В. А. Фоком и А. В. Лермантовой; сам автор озаглавил эту работу скромнее: «Autobiographisches» — «Нечто автобиографическое».",
+          "sourceText": "Заглавие «Творческая автобиография» дано переводчиками —\nВ. А. Фоком и А. В. Лермантовой; сам автор озаглавил эту работу\nскромнее: «Ац!боБюостарЫ в сБез» — «Нечто автобиографическое».",
+          "source": {
+            "bbox": [
+              165,
+              2141,
+              1536,
+              2259
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 78.88,
+            "lowConfidenceWords": 5
+          },
+          "proofread": true,
+          "id": "p253-b009"
+        }
+      ],
+      "reason": "Full page verified against original scan, including italic contents, Roman numeral I, heading punctuation and German footnote."
+    },
+    "255": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "С. Г. СУВОРОВ",
+          "sourceText": "С. Г. СУВОРОВ",
+          "source": {
+            "bbox": [
+              1191,
+              225,
+              1533,
+              256
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p255-b001",
+          "align": "right"
+        },
+        {
+          "type": "heading",
+          "text": "ЭВОЛЮЦИЯ ФИЗИКИ В ПРЕДСТАВЛЕНИИ ЭЙНШТЕЙНА",
+          "sourceText": "ЭВОЛЮЦИЯ ФИЗИКИ\nВ ПРЕДСТАВЛЕНИИ ЭЙНШТЕЙНА",
+          "source": {
+            "bbox": [
+              270,
+              318,
+              1430,
+              419
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p255-b002"
+        },
+        {
+          "type": "paragraph",
+          "text": "I. Эйнштейн о популяризации науки. Эволюция физики как «драма идей». — Вклад Эйнштейна в современную физику. — Отход от идей квантовой теории. II. Какая же философия вела Эйнштейна? — Методологические выводы из разработки теории относительности. Отклонение позитивизма и операционализма. — Проблема реформы классической физики под углом зрения ее целостности. Теория тяготения Эйнштейна. — Оценка дифференциального закона как единственной формы причинности. — Рациональные пути построения физической теории. — Рационализм и кантианство в гносеологии Эйнштейна. III. Гносеология Эйнштейна и реальный процесс познания. Опыт и теория у Эйнштейна. — Метод Эйнштейна в действии. Общая теория относительности или обобщенная теория тяготения? — Квантовая теория и гносеология Эйнштейна. — Единая теория поля как генеральная линия развития физики. — Заключение.",
+          "sourceText": "1. Эйнштейн о популяризации науки. Эволюция физики\nкак «драма идей». — Вклад Эбнштейна в современную\nфизику. — Отгход от идей квантовой теории.\n11. Какая же философия вела Эйнштейна? — Методоло-\nгические выводы из равработки теории относительности.\nОтклонение позитивизма и операционализма. — Про-\nблема реформы классической физики под углом зрения\nее целостности. Теория тяготения Эйнлитейна. —\nОценка дифференциального вакона как единственной\nформы причинности. — Рациональные пути построения.\nфизической теории. — Рационализм и кантианство в\nгносеологии Эйнштейна.\n111. Гносеология Эйнштейна и реальный процесс позна-\nния. Опыт и теория у Эйнштейна. — Метод Эйн-\nзатейна в действии. Общая теория относительности\nили обобщенная теория тяготения? — Квантовая тео-\nрия и гносвология Эйнштейна. — Единая теория поля\nкак генеральная линия развития физики. — Заключение.",
+          "source": {
+            "bbox": [
+              287,
+              528,
+              1412,
+              1214
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 77.02,
+            "lowConfidenceWords": 16
+          },
+          "proofread": true,
+          "id": "p255-b003",
+          "html": "<em>I. Эйнштейн о популяризации науки. Эволюция физики как «драма идей». — Вклад Эйнштейна в современную физику. — Отход от идей квантовой теории. II. Какая же философия вела Эйнштейна? — Методологические выводы из разработки теории относительности. Отклонение позитивизма и операционализма. — Проблема реформы классической физики под углом зрения ее целостности. Теория тяготения Эйнштейна. — Оценка дифференциального закона как единственной формы причинности. — Рациональные пути построения физической теории. — Рационализм и кантианство в гносеологии Эйнштейна. III. Гносеология Эйнштейна и реальный процесс познания. Опыт и теория у Эйнштейна. — Метод Эйнштейна в действии. Общая теория относительности или обобщенная теория тяготения? — Квантовая теория и гносеология Эйнштейна. — Единая теория поля как генеральная линия развития физики. — Заключение.</em>"
+        },
+        {
+          "type": "heading",
+          "text": "I",
+          "sourceText": "1",
+          "source": {
+            "bbox": [
+              841,
+              1299,
+              856,
+              1333
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 96,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p255-b004"
+        },
+        {
+          "type": "heading",
+          "text": "ЭЙНШТЕЙН О ПОПУЛЯРИЗАЦИИ НАУКИ. ЭВОЛЮЦИЯ ФИЗИКИ КАК «ДРАМА ИДЕЙ»",
+          "sourceText": "ЭЙНШТЕЙН О ПОПУЛЯРИЗАЦИИ НАУКИ,\nЭВОЛЮЦИЯ ФИЗИКИ КАК «ДРАМА ИДЕЙ»",
+          "source": {
+            "bbox": [
+              351,
+              1371,
+              1348,
+              1467
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 86.44,
+            "lowConfidenceWords": 1
+          },
+          "proofread": true,
+          "id": "p255-b005"
+        },
+        {
+          "type": "paragraph",
+          "text": "Великий физик нашего времени Альберт Эйнштейн высоко ценил дело популяризации науки. В своей «Творческой автобиографии», написанной им к 70-летию (1949), Эйнштейн рассказывал, какое огромное влияние оказала на него научно-популярная литература еще в детские и юношеские годы *).",
+          "sourceText": "Великий физик нашего времени Альберт Эйнштейн\nвысоко ценил дело популяризации науки. В своей «Твор-\nческой автобиографии», написанной им к 70-летию (1949),\nЭйнштейн рассказывал, какое огромное влияние оказала\nна него научно-популярная литература еще в детские и\nюношеские годы *).",
+          "source": {
+            "bbox": [
+              165,
+              1497,
+              1535,
+              1778
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94.39,
+            "lowConfidenceWords": 0
+          },
+          "proofread": true,
+          "id": "p255-b006"
+        },
+        {
+          "type": "paragraph",
+          "text": "До 12 лет он был глубоко религиозным, но в эти же годы религия разочаровала его. Что же было тому причиной? «Чтение научно-популярных книжек, — писал он, — привело меня вскоре к убеждению, что в библейских рассказах многое не может быть верным. Следствием этого было",
+          "sourceText": "До 12 лет он был глубоко религиозным, но в эти же\nгоды религия разочаровала его. Что же было тому при-\nчиной? «Чтение научно-популярных книжек, — писал он, —\nпривело меня вскоре к убеждению, что в библейских расска-\nзах многое не может быть верным. Следствием этого было",
+          "source": {
+            "bbox": [
+              165,
+              1783,
+              1534,
+              2016
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88.93,
+            "lowConfidenceWords": 3
+          },
+          "proofread": true,
+          "id": "p255-b007"
+        },
+        {
+          "type": "note",
+          "text": "*) Перевод опубликован в журнале «Успехи физических наук», т. LIX, в. 1, 1956.",
+          "sourceText": "*) Перевод опубликован в журнале «Успехи физических наук»,\nт. 1Х, в. 1, 1956.",
+          "source": {
+            "bbox": [
+              167,
+              2064,
+              1535,
+              2139
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 91.08,
+            "lowConfidenceWords": 1
+          },
+          "proofread": true,
+          "id": "p255-b008"
+        },
+        {
+          "type": "note",
+          "text": "Заглавие «Творческая автобиография» дано переводчиками — В. А. Фоком и А. В. Лермантовой; сам автор озаглавил эту работу скромнее: «Autobiographisches» — «Нечто автобиографическое».",
+          "sourceText": "Заглавие «Творческая автобиография» дано переводчиками —\nВ. А. Фоком и А. В. Лермантовой; сам автор озаглавил эту работу\nскромнее: «Ац!боБюостарЫ в сБез» — «Нечто автобиографическое».",
+          "source": {
+            "bbox": [
+              165,
+              2141,
+              1536,
+              2259
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 78.88,
+            "lowConfidenceWords": 5
+          },
+          "proofread": true,
+          "id": "p255-b009"
+        }
+      ],
+      "reason": "Full page verified against original scan, including italic contents, Roman numeral I, heading punctuation and German footnote."
+    },
+    "270": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "с вероятностью W ее состояния: S = k ln W, откуда W = e^(S/k). Больцман вывел это соотношение для систем, подчиняющихся законам классической механики. Но статистические закономерности имеют то преимущество, что они обладают огромной общностью, не зависят от природы исследуемых объектов. Эйнштейн применил их к анализу структуры излучения абсолютно черного тела. Соотношение Больцмана он использовал для определения вероятности случайной концентрации полной энергии E в определенной части объема αV, вычислив энтропию S из найденного Вином закона излучения. Эта вероятность равна: W = α^(E/hν).",
+          "sourceText": "с вероятностью И/ ее состояния: $ = А10ИЙ, откуда И ==\n= е°!®. Больцман вывел это соотношение для систем, под-\nчиняющихся законам классической механики. Но статис-\nтические вакономерности имеют то преимущество, что\nони обладают огромной общностью, не зависят от природы\nисследуемых объектов. Эйнштейн применил их к анализу\nструктуры излучения абсолютно черного тела. Соотноше-\nние Больцмана он использовал для определения вероят-\nности случайной концентрации полной энергии В в опре-\nделенной части объема с\\, вычислив энтропию 5 из най-\nденного Вином закона излучения. Эта вероятность\nравна: И =”.",
+          "source": {
+            "bbox": [
+              163,
+              318,
+              1537,
+              881
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 86.65,
+            "lowConfidenceWords": 5
+          },
+          "proofread": false,
+          "id": "p270-b001",
+          "html": "с вероятностью W ее состояния: <i>S</i> = <i>k</i> ln <i>W</i>, откуда <i>W</i> = <i>e</i><sup><i>S/k</i></sup>. Больцман вывел это соотношение для систем, подчиняющихся законам классической механики. Но статистические закономерности имеют то преимущество, что они обладают огромной общностью, не зависят от природы исследуемых объектов. Эйнштейн применил их к анализу структуры излучения абсолютно черного тела. Соотношение Больцмана он использовал для определения вероятности случайной концентрации полной энергии E в определенной части объема αV, вычислив энтропию S из найденного Вином закона излучения. Эта вероятность равна: <i>W</i> = α<sup><i>E/hν</i></sup>."
+        },
+        {
+          "type": "paragraph",
+          "text": "Именно этот результат чисто статистических методов привел Эйнштейна к идее, что излучение ведет себя так, как будто оно состоит из совокупности N = E/(hν) независимых квантов энергии величины hν. Этот вывод был для Эйнштейна настолько убедителен, что он немедленно стал искать прямое его подтверждение в известных физических процессах. Так он пришел к рассмотрению с новой точки зрения уже описанного выше фотоэффекта, загадка которого была, наконец, разгадана.",
+          "sourceText": "Именно этот результат чисто статистических методов\nпривел Эйнштейна к идее, что излучение ведет себя так,",
+          "source": {
+            "bbox": [
+              165,
+              885,
+              1536,
+              1353
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 95.47,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p270-b002",
+          "html": "Именно этот результат чисто статистических методов привел Эйнштейна к идее, что излучение ведет себя так, как будто оно состоит из совокупности <i>N</i> = <i>E</i>/(<i>hν</i>) независимых квантов энергии величины <i>hν</i>. Этот вывод был для Эйнштейна настолько убедителен, что он немедленно стал искать прямое его подтверждение в известных физических процессах. Так он пришел к рассмотрению с новой точки зрения уже описанного выше фотоэффекта, загадка которого была, наконец, разгадана."
+        },
+        {
+          "type": "paragraph",
+          "text": "Эйнштейн расширял применение статистических методов и в дальнейшем. В статье «К квантовой теории излучения» (1917) он дал вывод закономерности излучения черного тела (формулы Планка), опираясь на картину излучения как чисто статистического процесса. Оказалось, что формула Планка может быть получена этим методом при условии допущения нового вида излучения, происходящего под воздействием окружающего излучатель электромагнитного поля («индуцированное излучение»). В течение ряда десятилетий индуцированное излучение существовало только как «теоретический факт». Лишь в начале пятидесятых годов был предложен способ усиления света и радиоволн, основанный на использовании индуцированного излучения, а в наши дни оно легло в основу конструирования квантовых генераторов и квантовых усилителей.",
+          "sourceText": "Эйнштейн расширял применение статистических мето-\nдов и в дальнейшем. В статье «К квантовой теории из-\nлучения» (1917) он дал вывод закономерности излучения\nчерного тела (формулы Планка), опираясь на картину\nизлучения как чисто статистического процесса. Оказа-\nлось, что формула Планка может быть получена этим\nметодом при условии допущения нового вида излучения,\nпроисходящего под воздействием окружающего излуча-\nтель электромагнитного поля («индуцированное излуче-\nние»). В течение ряда десятилетий индуцированное из-\nлучение существовало только как «теоретический факт».\nЛишь в начале пятидесятых годов был предложен спо-\nсоб усиления света и радиоволн, основанный на исполь-\nзовании индудированного излучения, а в наши дни оно\nлегло в основу конструирования квантовых генераторов\nи квантовых усилителей.",
+          "source": {
+            "bbox": [
+              166,
+              1357,
+              1536,
+              2106
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 93.46,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p270-b004"
+        },
+        {
+          "type": "paragraph",
+          "text": "Статистический вывод Эйнштейном формулы Планка и теоретическое открытие им индуцированного излучения не только соответствовали духу квантовой физики, но и",
+          "sourceText": "Статистический вывод Эйнштейном формулы Планка\nи теоретическое открытие им индуцированного излучения\nне только соответствовали духу квантовой физики, но и",
+          "source": {
+            "bbox": [
+              169,
+              2111,
+              1536,
+              2249
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 93.68,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p270-b005"
+        }
+      ],
+      "reason": "Весь лист визуально сверен; восстановлены формулы S = k ln W, W = exp(S/k), W = α^(E/hν), N = E/(hν), αV и исходная структура абзацев. Дробь N показана линейной записью с явными скобками без изменения значения."
+    },
+    "274": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Эйнштейн отказался от пути, по которому пошло большинство физиков, разработавших квантовую теорию.",
+          "sourceText": "Эйнштейн отказался от пути, по которому пошло\nбольшинство физиков, разработавших квантовую теорию.",
+          "source": {
+            "bbox": [
+              164,
+              321,
+              1535,
+              414
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 91,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p274-b001",
+          "html": "Эйнштейн <em>отказался</em> от пути, по которому пошло большинство физиков, разработавших квантовую теорию."
+        },
+        {
+          "type": "paragraph",
+          "text": "Он отказался от того пути, развитию которого, как мы видели выше, он сам в значительной мере способствовал, обосновывая квантовые воззрения во всех областях атомной физики, показывая, что квантовые задачи следует решать статистическими методами.",
+          "sourceText": "Он отказался от того пути, развитию которого, как мы\nвидели выше, он сам в значительной мере способствовал,\nобосновывая квантовые воззрения во всех областях атом-\nной физики, показывая, что квантовые задачи следует ре-\nшать статистическими методами.",
+          "source": {
+            "bbox": [
+              163,
+              418,
+              1530,
+              645
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 91.63,
+            "lowConfidenceWords": 1
+          },
+          "proofread": false,
+          "id": "p274-b002"
+        },
+        {
+          "type": "paragraph",
+          "text": "В книге «Эволюция физики» эти взгляды нашли лишь косвенное отражение. Отмечается, что если в классической физике мы встречаем статистические законы, «полученные на основе индивидуальных законов», то «в квантовой физике положение дел совершенно другое. Здесь статистические законы даны непосредственно. Индивидуальные законы исключены» (стр. 233). Ввиду этого оказывается невозможным ответить на ряд вопросов, например на рассматриваемый в книге вопрос о том, сквозь какую из щелей дифракционной решетки проходит «данный индивидуальный электрон».",
+          "sourceText": "В книге «Эволюция физики» эти взгляды нашли лишь\nкосвенное отражение. Отмечается, что если в классичес-\nкой физике мы встречаем статистические законы, «полу-\nченные на основе индивидуальных законов», то «в кван-\nтовой физике положение дел совершенно другое. Здесь\nстатистические законы даны непосредственно. Индиви-\nдуальные законы исключены» (стр. 233). Ввиду этого\nоказывается невозможным ответить на ряд вопросов,\nнапример на рассматриваемый в книге вопрос о том,\nсквозь какую из щелей дифракционной решетки прохо-\nдит «данный индивидуальный электрон».",
+          "source": {
+            "bbox": [
+              163,
+              651,
+              1532,
+              1167
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.96,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p274-b003"
+        },
+        {
+          "type": "paragraph",
+          "text": "В книге в тактичной форме читателю дается понять, что квантовая механика многие существенные и притом закономерные вопросы оставляет без ответа. «Мы должны были отказаться от описания индивидуальных случаев, как объективных явлений в пространстве и времени; мы должны были ввести законы статистического характера. Они являются основной характеристикой современной квантовой физики» (стр. 233) *).",
+          "sourceText": "В книге в тактичной форме читателю дается понять,\nчто квантовая механика многие существенные и притом\nзакономерные вопросы оставляет без ответа. «Мы должны\nбыли отказаться. от. описания. индивидуальных случаев, как\nобъективных явлений в пространстве и, времени; мы должны\nбыли ввести законы статистического характера. Они яв-\nляются основной характеристикой современной квантовой\nфизики» (стр. 233) *).",
+          "source": {
+            "bbox": [
+              165,
+              1171,
+              1535,
+              1546
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 91.64,
+            "lowConfidenceWords": 1
+          },
+          "proofread": false,
+          "id": "p274-b004",
+          "html": "В книге в тактичной форме читателю дается понять, что квантовая механика многие существенные и притом <em>закономерные</em> вопросы оставляет без ответа. «Мы должны были <em>отказаться от описания индивидуальных случаев, как объективных явлений в пространстве и времени</em>; мы должны были ввести законы статистического характера. Они являются основной характеристикой современной квантовой физики» (стр. 233) *)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Авторы не говорят о том, что квантовая теория с ее статистической закономерностью — это неизбежный этап развития физики, необходимая форма разрешения проблем, стоящих перед ней. Напротив, они подчеркивают стоящие перед ней трудности (необходимость прибегать к «волнам вероятностей с бесконечным числом измерений», трудности создания релятивистской квантовой механики), указывают на задачи, которые она еще не решила. Они пишут: «В квантовой физике нет места таким утверждениям, как: «этот объект таков-то, он имеет такое-то свойство». Вместо этого мы имеем утверждения такого рода: «Имеется такая-то вероятность того, что индивидуальный",
+          "sourceText": "Авторы не говорят о том, что квантовая теория с ее\nстатистической закономерностью — это неизбежный этап\nразвития физики, необходимая форма разрешения проб-\nлем, стоящих перед ней. Напротив, они подчеркивают\nстоящие перед ней трудности (необходимость прибегать\nк «волнам вероятностей с бесконечным числом измерений»,\nтрудности создания релятивистской квантовой механики),\nуказывают на задачи, которые она еще не решила. Они\nпишут: «В квантовой физике нет места таким утвержде-\nниям, как: «этот объект таков-то, он имеет такое-то свой-\nство». Вместо этого мы имеем утверждения такого рода:\n«Имеется такая-то вероятность того, что индивидуальный",
+          "source": {
+            "bbox": [
+              165,
+              1550,
+              1536,
+              2111
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94.57,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p274-b005"
+        },
+        {
+          "type": "note",
+          "text": "*) Здесь и повсюду в последующем, если нет оговорок, курсив принадлежит мне.",
+          "sourceText": "*) Здесь ин повсюду в последующем, если нет оговорок, курсив\nпринадлежит мне.",
+          "source": {
+            "bbox": [
+              172,
+              2181,
+              1536,
+              2255
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 90.67,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p274-b006"
+        }
+      ],
+      "reason": "Полный лист сверен. Исправлены ложные точки и запятая в курсивном цитируемом тексте; восстановлено выделение курсивом и тип сноски."
+    },
+    "276": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "творческих устремлений. В связи с выяснением этих причин поучительно рассмотреть упрек, брошенный самим Эйнштейном Маху по поводу отказа последнего признать существование атомов и молекул.",
+          "sourceText": "творческих устремлений. В связи с выяснением этих при-\nчин поучительно рассмотреть упрек, брошенный самим\nЭйнштейном Маху по поводу отказа последнего признать\nсуществование атомов и молекул.",
+          "source": {
+            "bbox": [
+              166,
+              321,
+              1534,
+              504
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 93,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p276-b001"
+        },
+        {
+          "type": "paragraph",
+          "text": "Известно, что Мах рассматривал науку как систему упорядочения наших чувственных восприятий, как экономную мнемоническую запись «фактов ощущений», а не как отражение внешнего мира. Именно такая трактовка предмета познания привела его к отрицанию существования атомов и молекул, которые ведь непосредственно в ощущениях не встречаются. Между тем все развитие науки приводило к выводу о повышении роли познания через абстракцию, которая образуется человеком на основе переработки ощущений. Вспомним, что к установлению ряда характеристик непосредственно ненаблюдаемых атомов и молекул самого Эйнштейна привели именно абстрактные статистические методы. Естественно, что он отлично понял причины отрицательной позиции Маха и не мог их принять. В своей «Творческой автобиографии» он писал: «Предубеждение этих ученых (Оствальда и Маха.— С. С.) против атомной теории можно несомненно отнести за счет их позитивистской философской установки. Это — интересный пример того, как философские предубеждения мешают правильной интерпретации фактов даже ученым со смелым мышлением и с тонкой интуицией».",
+          "sourceText": "Известно, что Мах рассматривал науку как систему\nупорядочения наших чувственных восприятий, как эко-\nномную мнемоническую запись «фактов ощущений», а\nне как отражение внешнего мира. Именно такая трактов-\nка предмета познания привела его к отрицанию существо-\nвания атомов и молекул, которые ведь непосредственно в\nощущениях не встречаются. Между тем все развитие нау-\nки приводило к выводу о повышении роли познания через\nабстракцию, которая образуется человеком на основе\nпереработки ощущений. Вспомним, что к установлению\nряда характеристик непосредственно ненаблюдаемых ато-\nмов и молекул самого Эйнштейна привели именно абстракт-\nные статистические методы. Естественно, что он отлично\nпонял причины отрицательной позиции Маха и не мог\nих принять. В своей «Творческой автобиографии» он пи-\nсал: «Предубеждение этих ученых (Оствальда и Маха.—\nС. С.) против атомной теории можно несомненно отнести\nза счет их позитивистской философской установки. Это —\nинтересный пример того, как философские предубеждения\nмешают. правильной интерпретации фактов даже ученым\nсо смелым мышлением и с тонкой интуицией».",
+          "source": {
+            "bbox": [
+              164,
+              509,
+              1535,
+              1497
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 93.53,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p276-b002",
+          "html": "Известно, что Мах рассматривал науку как систему упорядочения наших чувственных восприятий, как экономную мнемоническую запись «фактов ощущений», а не как отражение внешнего мира. Именно такая трактовка предмета познания привела его к отрицанию существования атомов и молекул, которые ведь непосредственно в ощущениях не встречаются. Между тем все развитие науки приводило к выводу о повышении роли познания через абстракцию, которая образуется человеком на основе переработки ощущений. Вспомним, что к установлению ряда характеристик непосредственно ненаблюдаемых атомов и молекул самого Эйнштейна привели именно абстрактные статистические методы. Естественно, что он отлично понял причины отрицательной позиции Маха и не мог их принять. В своей «Творческой автобиографии» он писал: «Предубеждение этих ученых (Оствальда и Маха.— С. С.) против атомной теории можно несомненно отнести за счет их позитивистской философской установки. Это — интересный пример того, как <em>философские предубеждения мешают правильной интерпретации фактов</em> даже ученым со смелым мышлением и с тонкой интуицией»."
+        },
+        {
+          "type": "paragraph",
+          "text": "Объяснение Эйнштейна справедливо. Но, увы, оно применимо и к негативной позиции самого Эйнштейна по отношению к квантовой механике. Это подметил уже Макс Борн, один из основателей квантовой теории, близкий друг Эйнштейна. В статье «Воспоминания об Эйнштейне», приведя процитированное выше объяснение Эйнштейна, Борн заметил: «Мне кажется, что в квантовой механике это оправдывается в отношении его самого».",
+          "sourceText": "Объяснение Эйнштейна справедливо. Но, увы, оно\nприменимо и к негативной позиции самого Эйнштейна по\nотношению к квантовой механике. Это подметил уже Макс\nБорн, один из основателей квантовой теории, близкий\nдруг Эйнштейна. В статье «Воспоминания об Эйнштейне»,\nприведя процитированное выше объяснение Эйнштейна,\nБорн заметил: «Мне кажется, что в квантовой механике\nэто оправдывается в отношении его самого».",
+          "source": {
+            "bbox": [
+              165,
+              1502,
+              1534,
+              1877
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94.05,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p276-b003"
+        },
+        {
+          "type": "paragraph",
+          "text": "И действительно, позицию Эйнштейна в физике можно понять только в свете его общефилософской концепции, в свете того, как этот великий ученый понимал единство законов природы и пути его познания, как он понимал связи, существующие в природе, а также предмет исследования физики.",
+          "sourceText": "И действительно, позицию Эйнштейна в физике можно\nпонять только в свете его общефилософской концепции, в\nсвете того, как этот великий ученый понимал единство\nзаконов природы и пути его познания, как он понимал\nсвязи, существующие в природе, а также предмет исследо-\nвания физики.",
+          "source": {
+            "bbox": [
+              165,
+              1881,
+              1532,
+              2161
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94.79,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p276-b004"
+        },
+        {
+          "type": "paragraph",
+          "text": "Однако вопрос о философских взглядах Эйнштейна не так прост.",
+          "sourceText": "Однако вопрос о философских взглядах Эйнштейна\nне так прост.",
+          "source": {
+            "bbox": [
+              166,
+              2166,
+              1530,
+              2255
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.56,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p276-b005"
+        }
+      ],
+      "reason": "Полный лист сверен; исправлена ложная точка в курсивном тексте и восстановлено выделение цитаты."
+    },
+    "277": {
+      "proofread": true,
+      "blocks": [
+        {
+          "id": "p277-section-numeral",
+          "type": "heading",
+          "text": "II",
+          "align": "center",
+          "source": {
+            "bbox": [
+              838,
+              332,
+              877,
+              369
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "КАКАЯ ЖЕ ФИЛОСОФИЯ ВЕЛА ЭЙНШТЕЙНА?",
+          "sourceText": "Н\nКАКАЯ ЖЕ ФИЛОСОФИЯ ВЕЛА ЭЙНШТЕЙНА?",
+          "source": {
+            "bbox": [
+              335,
+              415,
+              1386,
+              447
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 87.5,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p277-b001",
+          "align": "center"
+        },
+        {
+          "type": "paragraph",
+          "text": "Как ответить на вопрос о том, какая же философия вела Эйнштейна, кто он по своим философским взглядам — материалист, идеалист или позитивист? Если подойти к решению этого вопроса методом цитат, то в его трудах можно найти достаточно высказываний в пользу любого направления.",
+          "sourceText": "Как ответить на вопрос о том, какая же философия\nвела Эйнштейна, кто он по своим философским взглядам —\nматериалист, идеалист или позитивист? Если подойти к\nрешению этого вопроса методом цитат, то в его трудах\nможно найти достаточно высказываний в пользу любого\nнаправления.",
+          "source": {
+            "bbox": [
+              169,
+              512,
+              1539,
+              790
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.76,
+            "lowConfidenceWords": 1
+          },
+          "proofread": false,
+          "id": "p277-b002"
+        },
+        {
+          "type": "paragraph",
+          "text": "Известно, например, что Эйнштейн высоко оценивал критическую работу Маха в отношении априорных идей Канта или введения Ньютоном в обиход классической физики понятий абсолютного пространства, времени, движения, вообще «метафизических» понятий, которым в опыте, как его понимает Мах, ничего не сопоставляется. Эйнштейн неоднократно заявлял, что концепция Маха помогла ему критически осмыслить исходные положения классической физики.",
+          "sourceText": "Известно, например, что Эйнштейн высоко оценивал\nкритическую работу Маха в отношении априорных идей\nКанта или введения Ньютоном в обиход классической\nфизики понятий абсолютного пространства, времени, дви-\nжения, вообще «метафизических» понятий, которым в опы-\nте, как его понимает Мах, ничего не сопоставляется.\nЭйнштейн неоднократно заявлял, что концепция Маха\nпомогла ему критически осмыслить исходные положения\nклассической физики.",
+          "source": {
+            "bbox": [
+              167,
+              795,
+              1535,
+              1215
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.8,
+            "lowConfidenceWords": 1
+          },
+          "proofread": false,
+          "id": "p277-b003"
+        },
+        {
+          "type": "paragraph",
+          "text": "Неоднократно также Эйнштейн определял теорию как систему упорядочения наших чувственных восприятий, а не как отражение объективных закономерностей внешнего мира. Эти формулировки не случайны для Эйнштейна, они встречаются в его работах на протяжении всей его жизни. Так, в лекциях об основах теории относительности, читанных в Принстонском университете в 1921 году, он утверждал, что «понятие и системы понятий ценны для нас лишь постольку, поскольку они облегчают нам обозрение комплексов наших переживаний». В 1936 году в статье «Физика и реальность» Эйнштейн писал: «В противоположность психологии, физика истолковывает непосредственно только чувственные восприятия и «постижение» их связи». И далее: «Я считаю, что первый шаг в установлении «реального внешнего мира» состоит в образовании понятия телесных объектов различных видов. Из всего многообразия чувственных восприятий мы мысленно и произвольным образом выделяем постоянно повторяющиеся комплексы чувственных восприятий (частично в совпадении с чувственными восприятиями, которые могут истолковываться как знаки чувственного опыта других людей) и мы сопоставляем им понятие телесного",
+          "sourceText": "Неоднократно также Эйнштейн определял теорию как\nсистему упорядочения. наших чувственных восприятий, а\nне как отражение объективных вакономерностей внеш-\nнего мира. Эти формулировки не случайны для Эйнштейна,\nони встречаются в его работах на протяжении всей его\nжизни. Так, в лекциях об основах теории относительности,\nчитанных в Принстонском университете в 1921 году, он\nутверждал, что «понятие и системы понятий ценны для\nнас лишь постольку, поскольку они облегчают нам обоз-\nрение комплексов наших переживаний». В 1936 году в\nстатье «Физика и реальность» Эйнштейн писал: «В про-\nтивоположность психологии, физика истолковывает не-\nпосредственно только чувственные восприятия и «пости-\nжение» их связи». И далее: «Я считаю, что первый шаг\nв установлении «реального внешнего мира» состоит в\nобразовании понятия телесных объектов различных видов.\nИз всего многообразия чувственных восприятий мы\nмысленно и произвольным образом выделяем постоянно\nповторяющиеся комплексы чувственных восприятий (час-\nтично в совпадении с чувственными восприятиями, ко-\nторые могут истолковываться как знаки чувственного опы-\nта других людей) и мы сопоставляем им пбнятие телесного",
+          "source": {
+            "bbox": [
+              161,
+              1220,
+              1530,
+              2259
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.48,
+            "lowConfidenceWords": 3
+          },
+          "proofread": false,
+          "id": "p277-b004",
+          "html": "Неоднократно также Эйнштейн определял теорию как <em>систему упорядочения наших чувственных восприятий, а не как отражение объективных закономерностей внешнего мира</em>. Эти формулировки не случайны для Эйнштейна, они встречаются в его работах на протяжении всей его жизни. Так, в лекциях об основах теории относительности, читанных в Принстонском университете в 1921 году, он утверждал, что «понятие и системы понятий ценны для нас лишь постольку, поскольку они облегчают нам обозрение комплексов наших переживаний». В 1936 году в статье «Физика и реальность» Эйнштейн писал: «В противоположность психологии, физика истолковывает непосредственно только чувственные восприятия и «постижение» их связи». И далее: «Я считаю, что первый шаг в установлении «реального внешнего мира» состоит в образовании понятия телесных объектов различных видов. Из всего многообразия чувственных восприятий мы мысленно и произвольным образом выделяем постоянно повторяющиеся комплексы чувственных восприятий (частично в совпадении с чувственными восприятиями, которые могут истолковываться как знаки чувственного опыта других людей) и мы сопоставляем им понятие телесного"
+        }
+      ],
+      "reason": "Весь лист сверен; восстановлена римская цифра II отдельным заголовком, курсив и несколько OCR-ошибок."
+    },
+    "280": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "объекта». В книге «Эволюция физики» сказано: «С помощью физических теорий мы пытаемся найти себе путь сквозь лабиринт наблюденных фактов, упорядочить и постичь мир наших чувственных восприятий» (стр. 241).",
+          "sourceText": "объекта». В книге «Эволюция физики» сказано: «С по-\nмощью физических теорий мы пытаемся найти себе путь\nсквозь лабиринт наблюденных фактов, упорядочить и по-\nстичь мир наших чувственных восприятий» (стр. 241).",
+          "source": {
+            "bbox": [
+              166,
+              320,
+              1531,
+              506
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 93.6,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p280-b001"
+        },
+        {
+          "type": "paragraph",
+          "text": "Наконец, в его автобиографии мы встречаем: «...всякое наше мышление того же рода: оно представляет свободную игру с понятиями. Обоснование этой игры заключается в достижимой при помощи нее возможности обозреть чувственные восприятия. Понятие «истины» к такому образованию еще совсем неприменимо; это понятие может, по моему мнению, быть введено только тогда, когда имеется налицо условное соглашение относительно элементов и правил игры». И далее: «Система понятий есть творение человека, как и правила синтаксиса, определяющие ее структуру... Все понятия, даже и ближайшие к ощущениям и переживаниям, являются с логической точки зрения произвольными положениями, точно так же как и понятие причинности, о котором в первую очередь и шла речь».",
+          "sourceText": "Наконец, в его автобиографии мы встречаем: «...вся-\nкое наше мышление того же рода: оно представляет сво-\nбодную игру с понятиями. Обоснование этой игры заклю-\nчается в достижимой при помощи нее возможности обоз-\nреть чувственные восприятия. Понятие «истины» к такому\nобразованию еще совсем неприменимо; это понятие может,\nпо моему мнению, быть введено только тогда, когда име-\nется налицо условное соглашение относительно элемен-\nтов ия правил игры». Й далее: «Система понятий есть тво-\nрение человека, как и правила синтаксиса, определяющие\nее структуру... Все понятия, даже и ближайшие к ощу-\nщениям и переживаниям, являются с логической точки\nврения произвольными положениями, точно так же как\nи понятие причинности, о котором в первую очередь и\nшла речь».",
+          "source": {
+            "bbox": [
+              166,
+              510,
+              1531,
+              1213
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92,
+            "lowConfidenceWords": 2
+          },
+          "proofread": false,
+          "id": "p280-b002"
+        },
+        {
+          "type": "paragraph",
+          "text": "Таковы суждения Эйнштейна, в которых, несомненно, обнаруживается влияние позитивистской философии.",
+          "sourceText": "Таковы суждения Эйнштейна, в которых, несомнен-\nно, обнаруживается влияние позитивистской философии.",
+          "source": {
+            "bbox": [
+              167,
+              1218,
+              1529,
+              1310
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 94.73,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p280-b003"
+        },
+        {
+          "type": "paragraph",
+          "text": "Однако известно и другое. Мы помним, что позитивистские взгляды Оствальда и Маха Эйнштейн назвал философскими предубеждениями, помешавшими им найти правильное истолкование фактам, приводящим к признанию атомов и молекул. Далее, свое несогласие с идеями квантовой механики, в частности с введением ею статистической закономерности наряду с динамической, Эйнштейн мотивировал тем, что переход от описания самих вещей к описанию вероятностей появления вещей есть переход к позитивизму. Критикуя аргументацию в пользу квантовой механики, он в «Ответе на критику» (1949) писал: «Что́ мне не нравится в подобного рода аргументации, — это, по моему мнению, общая позитивистская позиция, которая, с моей точки зрения, является несостоятельной и которая, по моему мнению, ведет к тому же самому, что и принцип Беркли — esse est percipi (существовать — значит быть воспринимаемым)». Эйнштейн считал, что защита статистической трактовки квантовой механики есть защита позитивистских взглядов. Даже в дружеской переписке Эйнштейн выступает против позитивизма. В",
+          "sourceText": "Однако известно и другое. Мы помним, что позити-\nвистские взгляды Оствальда и Маха: Эйнштейн назвал\nфилософскими предубеждениями, помешавшими им найти\nправильное истолкование фактам, приводящим к призна-\nнию атомов и молекул. Далее, свое несогласие с идеями\nквантовой механики, в частности с введением ею статис-\nтической закономерности наряду с динамической, Эйнш-\nтейн мотивировал тем, что переход от описания самих ве-\nщей к описанию вероятностей появления вещей есть пе-\nреход к позитививму. Критикуя аргументацию в пользу\nквантовой механики, он в «Ответе на критику» (1949)\nписал: «Чтб мне не нравится в подобного рода аргумента-\nции, — это, по моему мнению, общая позитивистеская, по-\nзиция, которая, с моей точки врения, является несостоя-\nтельной и которая, по моему мнению, ведет к тому же\nсамому, что и принцип Беркли — еззе езб регс1р! (сущест-\nвовать — значит быть воспринимаемым)». Эйнштейн считал,\nчто защита статистической трактовки квантовой механики\nесть защита позитивистских взглядов. Даже в дружеской\nпереписке Эйнштейн выступает против позитивизма. В",
+          "source": {
+            "bbox": [
+              168,
+              1314,
+              1535,
+              2256
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88.99,
+            "lowConfidenceWords": 8
+          },
+          "proofread": false,
+          "id": "p280-b004",
+          "html": "Однако известно и другое. Мы помним, что позитивистские взгляды Оствальда и Маха Эйнштейн назвал философскими предубеждениями, помешавшими им найти правильное истолкование фактам, приводящим к признанию атомов и молекул. Далее, свое несогласие с идеями квантовой механики, в частности с введением ею статистической закономерности наряду с динамической, Эйнштейн мотивировал тем, что переход от описания самих вещей к описанию вероятностей появления вещей есть переход к позитивизму. Критикуя аргументацию в пользу квантовой механики, он в «Ответе на критику» (1949) писал: «<em>Что́ мне не нравится</em> в подобного рода аргументации, — это, по моему мнению, <em>общая позитивистская позиция</em>, которая, с моей точки зрения, <em>является несостоятельной</em> и которая, по моему мнению, ведет к тому же самому, что и принцип Беркли — esse est percipi (существовать — значит быть воспринимаемым)». Эйнштейн считал, что защита статистической трактовки квантовой механики есть защита позитивистских взглядов. Даже в дружеской переписке Эйнштейн выступает против позитивизма. В"
+        }
+      ],
+      "reason": "Весь лист сверен; исправлены OCR-ошибки, латинская цитата esse est percipi, восстановлено курсивное выделение. Сохранено исходное ударение в «Что́» (уточнено по увеличенному фрагменту скана)."
+    },
+    "281": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "конце сороковых годов, говоря о желательной встрече с Борном, он писал ему: «Хотя ты никогда не согласишься с моей точкой зрения, она тебя могла бы позабавить. Я бы тоже получил удовольствие, разбив твои позитивистские философские взгляды».",
+          "sourceText": "конце сороковых годов, говоря о желательной встрече с\nБорном, он писал ему: «Хотя ты никогда не согласишься\nс моей точкой врения, она тебя могла бы позабавить. Я\nбы тоже получил удовольствие, разбив твои позитивист-\nские философские взгляды».",
+          "source": {
+            "bbox": [
+              167,
+              335,
+              1536,
+              564
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.43,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p281-b001"
+        },
+        {
+          "type": "paragraph",
+          "text": "Впрочем, Макс Борн не был согласен с таким обвинением. Комментируя это письмо, Макс Борн говорил Зелигу, издателю и биографу Эйнштейна: «Эти строки касаются моих взглядов на основные вопросы физики. Я, как и Нильс Бор и Вернер Гейзенберг, защищаю статистическую квантовую механику, в то время как Эйнштейн стоит на позициях классического детерминизма. Вообще же я вовсе не последователь позитивизма». Как видим, к позитивистам не хочет быть причисленным и выдающийся физик нашего времени Макс Борн, и он действительно много сделал для того, чтобы развенчать позитивизм в глазах зарубежных ученых *).",
+          "sourceText": "Впрочем, Макс Борн не был согласен с таким обви-\nнением. Комментируя это письмо, Макс Борн говорил\nЗелигу, издателю и биографу Эйнштейна: «Эти строки\nкасаются моих взглядов на основные вопросы физики.\nЯ, как и Нильс Бор и Вернер Гейзенберг, защищаю ста-\nтистическую квантовую механику, в то время как Эйн-\nштейн стоит на позициях классического детерминизма.\nВообще же я вовсе не последователь позитивизма». Как\nвидим, к позитивистам не хочет быть причисленным и\nвыдающийся физик нашего времени Макс Борн, и он\nдействительно много сделал для того, чтобы развенчать\nпозитивизм в глазах зарубежных ученых *).",
+          "source": {
+            "bbox": [
+              164,
+              567,
+              1534,
+              1128
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 93.44,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p281-b002",
+          "html": "Впрочем, Макс Борн не был согласен с таким обвинением. Комментируя это письмо, Макс Борн говорил Зелигу, издателю и биографу Эйнштейна: «Эти строки касаются моих взглядов на основные вопросы физики. Я, как и Нильс Бор и Вернер Гейзенберг, защищаю статистическую квантовую механику, в то время как Эйнштейн стоит на позициях классического детерминизма. Вообще же <em>я вовсе не последователь позитивизма</em>». Как видим, к позитивистам не хочет быть причисленным и выдающийся физик нашего времени Макс Борн, и он действительно много сделал для того, чтобы развенчать позитивизм в глазах зарубежных ученых *)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Но вернемся к Эйнштейну. Это, конечно, серьезный довод, чтобы не признавать Эйнштейна позитивистом, если он отклонял целое направление в физике, огромное практическое значение которого он всегда и безоговорочно признавал, отклонял из-за того, что считал его основу позитивистской. Другое дело, прав ли Эйнштейн, толкуя квантовую физику как по существу своему позитивистскую; в данном случае существенно подчеркнуть, что, отклоняя ее, он руководствовался антипозитивистскими мотивами.",
+          "sourceText": "Но вернемся к Эйнштейну. Это, конечно, серьезный\nдовод, чтобы не признавать Эйнштейна позитивистом,\nесли он отклонял целое направление в физике, огромное\nпрактическое значение которого он всегда и безогово-\nрочно признавал, отклонял из-ва того, что считал его\nоснову позитивистской. Другое дело, прав ли Эйнштейн,\nтолкуя квантовую физику как по существу своему пози-\nтивистскую; в данном случае существенно подчеркнуть,\nчто, отклоняя ее, он руководствовался антипозвитивист-\nскими мотивами.",
+          "source": {
+            "bbox": [
+              163,
+              1131,
+              1532,
+              1589
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 90.43,
+            "lowConfidenceWords": 2
+          },
+          "proofread": false,
+          "id": "p281-b003",
+          "html": "Но вернемся к Эйнштейну. Это, конечно, серьезный довод, чтобы не признавать Эйнштейна позитивистом, если он отклонял целое направление в физике, огромное <em>практическое</em> значение которого он всегда и безоговорочно признавал, отклонял из-за того, что считал его основу позитивистской. Другое дело, прав ли Эйнштейн, толкуя квантовую физику как по существу своему позитивистскую; в данном случае существенно подчеркнуть, что, отклоняя ее, он руководствовался антипозитивистскими мотивами."
+        },
+        {
+          "type": "paragraph",
+          "text": "Крайне интересное понимание процесса познания высказано Эйнштейном в статье «Влияние Максвелла на эволюцию идей о физической реальности», написанной к столетию со дня рождения Максвелла в 1931 году. Эту статью он начинает со следующего утверждения: «Вера в существование внешнего мира, независимого от воспринимающего субъекта, есть основа всего естествознания. Но так как чувственное восприятие дает информацию об этом внешнем мире, или о «физической реальности», только",
+          "sourceText": "Крайне интересное понимание процесса познания выс-\nказано Эйнштейном в статье «Влияние Максвелла на эволю-\nцию идей о физической реальности», написанной к столе-\nтию со дня рождения Максвелла в 1931 году. Эту статью\nон начинает со следующего утверждения: «Вера в сущест»\nвование внешнего мира, независимого от воспринимающе-\nго субъекта, есть основа всего естествознания. Но так\nкак чувственное восприятие дает информацию об этом\nвнешнем мире, или о «физической реальности», только",
+          "source": {
+            "bbox": [
+              163,
+              1604,
+              1530,
+              2023
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 90.06,
+            "lowConfidenceWords": 4
+          },
+          "proofread": false,
+          "id": "p281-b004",
+          "html": "Крайне интересное понимание процесса познания высказано Эйнштейном в статье «Влияние Максвелла на эволюцию идей о физической реальности», написанной к столетию со дня рождения Максвелла в 1931 году. Эту статью он начинает со следующего утверждения: «<em>Вера в существование внешнего мира, независимого от воспринимающего субъекта, есть основа всего естествознания.</em> Но так как чувственное восприятие дает информацию об этом внешнем мире, или о «физической реальности», только"
+        },
+        {
+          "type": "note",
+          "text": "*) См. С. Суворов, Макс Борн и его философские взгляды, в книге: Макс Борн, Физика в жизни моего поколения, ИЛ, 1963, а также: С. Суворов, Проблема «физической реальности» в копенгагенской школе, Успехи физических наук, т. LXII, в. 2, июнь 1957.",
+          "sourceText": "*) См. С. Суворо в, Макс Борн и его философские взгляды,\nв книге: Макс Борн, Физика в жизни моего поколения, ИЛ,\n1963, а также: С. Су воров, Проблема «физической реальности»\nв копенгагенской школе, Успехи физических наук, т. СХП, в. 2,\nиюнь 1957.",
+          "source": {
+            "bbox": [
+              162,
+              2061,
+              1532,
+              2243
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 89.31,
+            "lowConfidenceWords": 1
+          },
+          "proofread": false,
+          "id": "p281-b005"
+        }
+      ],
+      "reason": "Полный лист сверен; восстановлены курсивные цитаты, библиографическая сноска (том LXII), исправлены OCR-ошибки."
+    },
+    "282": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "опосредованно, мы можем охватить последнюю только умозрительными средствами. Из этого следует, что наши представления о физической реальности никогда не могут быть окончательными. Мы всегда должны быть готовы изменить эти представления, то есть изменить аксиоматическую базу физики, — чтобы оправдать факты восприятия логически наиболее совершенным образом. И действительно, беглый взгляд на развитие физики показывает, что она испытывает глубокие изменения с течением времени».",
+          "sourceText": "опосредованно, мы можем охватить последнюю только умо-\nзрительными средствами. Из этого следует, что наши. пред-\nставления о физической ревльности никогда не могут\nбыть окончательными. Мы всегда должны быть готовы\nизменить эти представления, то есть изменить аксиомати-\nческую базу физики, — чтобы оправдать факты восприятия\nлогически наиболее совершенным образом. И действи-\nтельно, беглый взгляд на развитие физики показывает,\nчто она испытывает глубокие изменения с течением вре-\nмени».",
+          "source": {
+            "bbox": [
+              161,
+              339,
+              1533,
+              789
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88.76,
+            "lowConfidenceWords": 4
+          },
+          "proofread": false,
+          "id": "p282-b001",
+          "html": "опосредованно, мы можем охватить последнюю только умозрительными средствами. Из этого следует, что <em>наши представления о физической реальности никогда не могут быть окончательными.</em> Мы всегда должны быть готовы изменить эти представления, то есть изменить аксиоматическую базу физики, — чтобы оправдать факты восприятия логически наиболее совершенным образом. И действительно, беглый взгляд на развитие физики показывает, что она испытывает глубокие изменения с течением времени»."
+        },
+        {
+          "type": "paragraph",
+          "text": "Это высказывание вполне в духе материализма, и трудно понять, как Эйнштейн совмещает столь противоположные точки зрения.",
+          "sourceText": "Это высказывание вполне в духе материализма, и\nтрудно понять, как Эйнштейн совмещает столь противо-\nположные точки врения.",
+          "source": {
+            "bbox": [
+              164,
+              802,
+              1532,
+              939
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 90.18,
+            "lowConfidenceWords": 1
+          },
+          "proofread": false,
+          "id": "p282-b002"
+        },
+        {
+          "type": "paragraph",
+          "text": "Однако он не только их совмещает, но и отлично при этом сознает, какое недоумение может вызвать это совмещение. Но он относит это недоумение за счет философов, которые-де слишком жестки в своих концепциях, представляющих собой, правда, цельную, но все же абстрактную схему. Естествоиспытателя же невозможно уложить в какую-либо схему. Его положение, по Эйнштейну, сложнее потому, что он должен считаться с результатами своих исследований и принимать точки зрения, несовместимые в одной системе. В своем «Ответе на критику» он пишет, что философ, однажды додумавшийся до какой-то системы, «...будет склонен интерпретировать богатство идей точных наук в смысле своей системы и не признавать того, что под его систему не подходит. Ученый же не может себе позволить, чтобы устремления к теоретико-познавательной систематике заходили так далеко. Он с благодарностью принимает теоретико-познавательный анализ понятий, но внешние условия, которые поставлены ему фактами переживаний, не позволяют ему при построении своего мира понятий слишком сильно ограничивать себя установками одной теоретико-познавательной системы. В таком случае он должен систематизирующему философу-гносеологу показаться своего рода беспринципным оппортунистом. Он кажется реалистом (т. е. материалистом.—С. С.), поскольку старается представить не зависящий от актов ощущений мир; идеалистом — поскольку смотрит на понятия и на теории как на свободные изобретения человеческого духа (не выводимые логи-",
+          "sourceText": "° Однако он не только их совмещает, но и отлично при\nэтом сознает, какое недоумение может вызвать это совме-\nщение. Но он относит это недоумение за счет философов, ко-\nторые-де слишком жестки в своих концепциях, представ-\nляющих собой, правда, цельную, но все же абстрактную\nсхему. Естествоиспытателя же невозможно уложить в\nкакую-либо схему. Его положение, по Эйнштейну, слож-\nнее потому, что он должен считаться с результатами своих\nисследований и принимать точки зрения, несовместимые\nв одной системе. В своем «Ответе на критику» он пишет,\nчто философ, однажды додумавшийся до какой-то системы,\n«...будет склонен интерпретировать богатство идей точных\nнаук всмысле своей системы и не признавать того, что под\nего систему не подходит. Ученый же не может себе позво-\nлить, чтобы устремления к теоретико-познавательной\nсистематике заходили так далеко. Он с благодарностью\nпринимает теоретико-познавательный анализ понятий,\nно внешние условия, которые поставлены ему фактами\nпереживаний, неё позволяют ему при построении своего\nмира понятий слишком сильно ограничивать себя. установ-\nками одной теоретико-познавательной системы. В таком\nслучае он должен систематизирующему философу-гно-\nсеологу показаться своего рода беспринципным оппорту-\nнистом. Он кажется реа листом (т. е. материалис-\nтом.—С. ©С.), поскольку старается представить не\nзависящий от актов ощущений мир; и д еа лист о м -—\nпоскольку смотрит на понятия и на теории как на свобод-\nные изобретения человеческого духа (не выводимые логи-",
+          "source": {
+            "bbox": [
+              164,
+              945,
+              1539,
+              2263
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 88.24,
+            "lowConfidenceWords": 10
+          },
+          "proofread": false,
+          "id": "p282-b003",
+          "html": "Однако он не только их совмещает, но и отлично при этом сознает, какое недоумение может вызвать это совмещение. Но он относит это недоумение за счет философов, которые-де слишком жестки в своих концепциях, представляющих собой, правда, цельную, но все же абстрактную схему. Естествоиспытателя же невозможно уложить в какую-либо схему. Его положение, по Эйнштейну, сложнее потому, что он должен считаться с результатами своих исследований и принимать точки зрения, несовместимые в одной системе. В своем «Ответе на критику» он пишет, что философ, однажды додумавшийся до какой-то системы, «...будет склонен интерпретировать богатство идей точных наук в смысле своей системы и не признавать того, что под его систему не подходит. Ученый <em>же не может себе позволить</em>, чтобы устремления к теоретико-познавательной систематике заходили так далеко. Он с благодарностью принимает теоретико-познавательный анализ понятий, но внешние условия, которые поставлены ему фактами переживаний, <em>не позволяют ему при построении своего мира понятий слишком сильно ограничивать себя установками одной теоретико-познавательной системы.</em> В таком случае он должен систематизирующему философу-гносеологу показаться своего рода беспринципным оппортунистом. <em>Он кажется <span class=\"source-spaced\">реалистом</span></em> (т. е. материалистом.—С. С.), <em>поскольку старается представить не зависящий от актов ощущений мир; <span class=\"source-spaced\">идеалистом</span> — поскольку смотрит на понятия и на теории как на свободные изобретения человеческого духа</em> (не выводимые логи-"
+        }
+      ],
+      "reason": "Весь лист сверен, исправлены OCR-ошибки в курсивном тексте, лишние знаки, слитные/разорванные слова; восстановлено выделение."
+    },
+    "283": {
+      "proofread": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "чески из эмпирически данного); позитивистом — поскольку рассматривает свои понятия и теории лишь настолько обоснованными, насколько они доставляют логическое представление связей между чувственными переживаниями. Он может показаться даже платоником или пифагорейцем, поскольку рассматривает точку зрения логической простоты необходимым и действенным инструментом своего исследования» *).",
+          "sourceText": "чески из эмпирически данного); по з и ти в и сто м —\nпоскольку рассматривает свои понятия и теории лишь\nнастолько обосмованными, насколько они доставляют ло-\nгическое представление связей между чувственными пере-\nживаниями. Он может показаться даже пл атоником\nили пифагорейцем, поскольку рассматривает точ-\nку зрения логической простоты необходимым и действен-\nным инструментом своего исследования» *).",
+          "source": {
+            "bbox": [
+              163,
+              323,
+              1534,
+              694
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 82.82,
+            "lowConfidenceWords": 5
+          },
+          "proofread": false,
+          "id": "p283-b001",
+          "html": "чески из эмпирически данного); <em><span class=\"source-spaced\">позитивистом</span> — поскольку рассматривает свои понятия и теории лишь настолько обоснованными, насколько они доставляют логическое представление связей между чувственными переживаниями.</em> Он может показаться даже <em><span class=\"source-spaced\">платоником</span></em> или <em><span class=\"source-spaced\">пифагорейцем</span></em>, поскольку рассматривает точку зрения логической простоты необходимым и действенным инструментом своего исследования» *)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Эйнштейн по разным поводам подчеркивает невозможность для естествоиспытателя придерживаться какой-либо одной философской системы. Отвечая Маргенау по поводу его утверждения о том, что «позиция Эйнштейна... содержит черты рационализма, а также крайнего эмпиризма», Эйнштейн в «Ответе на критику» пишет: «Это замечание совершенно правильно. Откуда происходит эта флуктуация? Логическая система понятий является физикой постольку, поскольку ее понятия и утверждения необходимо приведены в связь с миром переживаний (experiences). Тот, кто желает установить такую систему, встретится с опасным препятствием в виде произвола выбора. Вот почему стараются по возможности прямо и необходимым образом связать свои понятия с миром переживаний. В этом случае взгляды исследователя эмпиричны. Этот путь часто плодотворен, но он всегда открыт для сомнений в силу того, что отдельное понятие и единичное утверждение может выражать нечто сопоставляемое с эмпирически данным в конечном счете только в связи с целостной системой. Тогда признают, что никакого пути от данного в опыте к миру понятий нет. Тогда взгляды исследователя становятся скорее рационалистическими, потому что он признает логическую независимость системы. В такой позиции возникает опасность того, что при поисках этой системы можно потерять всякий контакт с миром переживаний. Колебания между этими крайностями кажутся мне неустранимыми».",
+          "sourceText": "Эйнштейн по разным поводам подчеркивает невозмож-\nность для естествоиспытателя придерживаться какой-\nлибо одной философской системы. Отвечая Маргенау по\nповоду его утверждения о том, что «позиция Эйнштейна...\nсодержит черты рационализма, а также крайнего эмпи-\nризма», Эйнштейн в. «Ответе на критику» пишет: «Это\nзамечание совершенно правильно. Откуда происходит эта\nфлуктуация? Логическая система понятий является фи-\nзикой постольку, поскольку ее нонятия и утверждения\nнеобходимо приведены в связь с миром переживаний\n(ехрег!епсез). Тот, кто желает установить такую систему,\nвстретится с опасным препятствием в виде произвола вы-\nбора. Вот почему стараются по возможности прямо и\nнеобходимым образом связать свои понятия с миром пере-\nживаний. В этом случае взгляды исследователя эмпирич-\nны. Этот путь часто плодотворен, но он всегда открыт для\nсомнений в силу того, что отдельное понятие и единич-\nное утверждение может выражать нечто сопоставляемое\nс эмпирически данным в конечном счете только в связи,\nс целостной системой. Тогда признают, что никакого пути\nот. данного в опыте к миру понятий нет. Тогда взгляды\nисследователя становятся скорее рационалистическими,\nпотому что он признает логическую независимость сис-\nтемы. В такой позиции возникает опасность того, что\nпри поисках этой системы можно потерять всякий кон-\nтакт с миром переживаний. Колебания между этими. край-\nностями кажутся мне неустранимыми».",
+          "source": {
+            "bbox": [
+              166,
+              698,
+              1535,
+              1972
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.52,
+            "lowConfidenceWords": 2
+          },
+          "proofread": false,
+          "id": "p283-b002",
+          "html": "Эйнштейн по разным поводам подчеркивает невозможность для естествоиспытателя придерживаться какой-либо одной философской системы. Отвечая Маргенау по поводу его утверждения о том, что «позиция Эйнштейна... содержит черты рационализма, а также крайнего эмпиризма», Эйнштейн в «Ответе на критику» пишет: «Это замечание совершенно правильно. Откуда происходит эта флуктуация? Логическая система понятий является физикой постольку, поскольку ее понятия и утверждения необходимо приведены в связь с миром переживаний (experiences). Тот, кто желает установить такую систему, встретится с опасным препятствием в виде произвола выбора. Вот почему стараются по возможности прямо и необходимым образом связать свои понятия с миром переживаний. В этом случае взгляды исследователя эмпиричны. Этот путь часто плодотворен, но он всегда открыт для сомнений в силу того, что отдельное понятие и единичное утверждение может выражать нечто сопоставляемое с эмпирически данным в конечном счете <em>только в связи с целостной системой.</em> Тогда признают, что <em>никакого пути от данного в опыте к миру понятий нет.</em> Тогда взгляды исследователя становятся скорее рационалистическими, потому что он признает логическую независимость системы. В такой позиции возникает опасность того, что при поисках этой системы можно потерять всякий контакт с миром переживаний. <em>Колебания между этими крайностями кажутся мне неустранимыми</em>»."
+        },
+        {
+          "type": "paragraph",
+          "text": "Конечно, нельзя согласиться с неизбежностью для естествоиспытателя выглядеть в глазах философа «беспринципным оппортунистом» и находиться в вечном, неустранимом колебании между философскими «крайностями».",
+          "sourceText": "Конечно, нельзя согласиться с неизбежностью для\nестествоиспытателя выглядеть в глазах философа «бесприн-\nципным оппортунистом» и находиться в вечном, неустра-\nнимом колебании между философскими «крайностями».",
+          "source": {
+            "bbox": [
+              167,
+              1977,
+              1532,
+              2163
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 87.58,
+            "lowConfidenceWords": 2
+          },
+          "proofread": false,
+          "id": "p283-b003"
+        },
+        {
+          "type": "note",
+          "text": "*) Курсивная разрядка — выделение Эйнштейна.",
+          "sourceText": "®) Курсивная разрядка — выделение Эйнштейна.",
+          "source": {
+            "bbox": [
+              259,
+              2222,
+              1276,
+              2259
+            ]
+          },
+          "ocr": {
+            "meanConfidence": 92.17,
+            "lowConfidenceWords": 0
+          },
+          "proofread": false,
+          "id": "p283-b004"
+        }
+      ],
+      "reason": "Полный лист сверен; восстановлены латинское experiences, сноска, курсив/разрядка, исправлены OCR-ошибки."
+    }
+  },
+  "reviewedPages": [
+    253,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    280,
+    281,
+    282,
+    283,
+    284
+  ],
+  "notes": [
+    {
+      "page": 267,
+      "blockId": "p267-b004",
+      "issue": "Последняя строка «и другие).» является продолжением основного абзаца, а не сноской; объединить с p267-b003 либо изменить type с note на paragraph."
+    },
+    {
+      "page": 268,
+      "blockId": "p268-b004",
+      "issue": "В слове «независимо» на скане повреждены/вымылись буквы «ви»; исправление OCR «неза! симо» основано на читаемом контексте и фрагментах слова. Не утверждать посимвольную разборчивость дефектного оригинала."
+    },
+    {
+      "page": 273,
+      "blockId": "p273-b007",
+      "issue": "Блок *) расположен ниже разделительной линейки и является сноской; изменить paragraph→note."
+    }
+  ],
+  "structure": [
+    {
+      "page": 267,
+      "blockId": "p267-b004",
+      "text": "и другие).",
+      "type": "paragraph",
+      "mergeInto": "p267-b003"
+    },
+    {
+      "page": 273,
+      "blockId": "p273-b007",
+      "text": "*) В этой статье нет возможности и необходимости обсуждать трактовку этих проблем отдельными физиками и школами.",
+      "type": "note"
+    }
+  ],
+  "emphasis": {
+    "261": [
+      "относительно друг друга"
+    ],
+    "269": [
+      "наблюдаемых",
+      "ненаблюдаемыми",
+      "статистические закономерности отражают новый тип реальных связей в природе."
+    ],
+    "284": [
+      "как ее достоинство",
+      "не слушайте, что они говорят, а лучше изучайте их действия."
+    ]
+  }
+}

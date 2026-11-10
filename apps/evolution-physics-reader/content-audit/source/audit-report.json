@@ -1,0 +1,120 @@
+{
+  "source": "/workspace/scratch/7d304f2042d8/upload/EinsteinInfeld1965ru(2).pdf",
+  "sourceSha256": "51141147ada93e987752990cc8f8594928f0d34983a912fb78a99577c974f391",
+  "sourceUnchanged": true,
+  "pdfPages": 345,
+  "distinctPrintedPages": 327,
+  "duplicateScans": 10,
+  "photoPlates": 3,
+  "blankPages": 5,
+  "sourceFormat": {
+    "embeddedTextCharacters": 0,
+    "embeddedImages": 345,
+    "vectorDrawings": 0,
+    "embeddedFonts": 0,
+    "imageDimensions": {
+      "344pages": [
+        1700,
+        2565
+      ],
+      "page52": [
+        1700,
+        2576
+      ]
+    },
+    "imageHashesVerified": 345
+  },
+  "ocr": {
+    "filesPerFormat": {
+      "txt": 345,
+      "tsv": 345,
+      "hocr": 345
+    },
+    "model": "Tesseract tessdata_best rus; eng on PDF 2",
+    "languageMode": "rus-only except English title leaf",
+    "psm": 3,
+    "cleanPages": 68,
+    "cleanInputs": "Exact source copies with known illustration/table regions whitened for OCR only; original source images unchanged."
+  },
+  "illustrations": {
+    "total": 86,
+    "kinds": {
+      "numbered-figure": 75,
+      "plate": 10,
+      "publisher-mark": 1
+    },
+    "pixelExactCropsVerified": 86,
+    "bboxCoordinateSystem": "Original 1700 × 2565 source image pixels; x0,y0 inclusive, x1,y1 exclusive",
+    "captions": "All crops include source caption, and manifest carries native caption text."
+  },
+  "reviewScope": {
+    "allPdfPages": "All 345 source leaves visually inspected in contact sheets for pagination, layout, figures, blank leaves and duplicate scans. This is not full-text proofreading.",
+    "illustrations": "All 86 final asset boundaries and internal labels visually reviewed for completeness.",
+    "afterwordPages": [
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342
+    ],
+    "afterwordScope": "Full-page, one-pass comparison of source scan and OCR, including prose, punctuation, emphasis, footnotes and formulas. No full prose or footnote block omissions observed in reviewed pages. No independent double proofreading or character-perfect certification.",
+    "afterwordCorrections": 150,
+    "afterwordItalicSpans": 78
+  },
+  "materialFindings": [
+    "PDF is image-only and must be transcribed/OCRed for native content.",
+    "Ten duplicate scan leaves are separate PDF pages; canonical content should link duplicate leaves rather than be accidentally omitted.",
+    "Five blank source leaves require explicit accounting.",
+    "Web edition is not text-identical: PDF 15 has «Принципах», supplied website has «Началах».",
+    "OCR output contains high-confidence character substitutions, punctuation errors, formula failures and missing typography; manual source verification remains necessary.",
+    "Source notation may require source crop fallback, e.g. PDF 289 equals-above-tilde operator U+2A73.",
+    "Exact source scan illustrations cannot be regenerated or redrawn without changing the source."
+  ],
+  "artifacts": {
+    "pageInventory": "inventory.json",
+    "pageMap": "page-map.json",
+    "sourceImages": "images/page-NNN.png",
+    "ocr": "ocr/page-NNN.txt|tsv|hocr",
+    "figures": "figures.json",
+    "cleanOcr": "ocr-clean/page-NNN.txt|tsv|hocr",
+    "maskManifest": "ocr-clean-manifest.json",
+    "afterwordCorrections": "afterword-audit-corrections.json",
+    "correctedAfterword": "afterword-reviewed/page-NNN.txt|normalized.txt"
+  },
+  "reproductionScripts": [
+    "audit_pdf.py",
+    "create_page_map.py",
+    "crop_figures.py",
+    "ocr_clean.py",
+    "afterword_corrections.py"
+  ]
+}

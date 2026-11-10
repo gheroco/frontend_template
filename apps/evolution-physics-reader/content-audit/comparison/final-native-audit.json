@@ -1,0 +1,63 @@
+{
+  "scope": "Independent native main-book metadata and emphasis audit, PDF1–252.",
+  "findings": [
+    "11 corrected source headings/plate titles, including 3 accidentally duplicated running headers.",
+    "Complete exact translator notes on PDF37,39,48.",
+    "All four italic chapter conclusions manually read and transcribed; punctuation errors corrected.",
+    "Time-coordinate pages176/177 restored body paragraph boundaries, source accents, and text around figures.",
+    "PDF157 false margin-text block removed."
+  ],
+  "fullPagesProofread": [
+    61,
+    107,
+    211,
+    252
+  ],
+  "addedRegionPages": [
+    "11",
+    "21",
+    "62",
+    "81",
+    "101",
+    "108",
+    "173",
+    "203",
+    "212",
+    "225",
+    "233",
+    "37",
+    "39",
+    "48",
+    "60",
+    "106",
+    "210",
+    "251",
+    "176",
+    "177"
+  ],
+  "note": "No main-book paraphrase. Source wording, reference numbers, marks and quotations retained.",
+  "finalWordAndSymbolAudit": {
+    "reviewedCandidates": 795,
+    "activeCorrections": 511,
+    "newDecisions": 46,
+    "newCorrections": 39,
+    "scope": "Five original-versus-masked OCR regressions; 24 selected page-edge discrepancies; 17 additional letter/punctuation/scan-damage corrections. Each correction checked against original scan pixels. Remaining automatic page-edge candidates are ordinary word/page-break continuations and are not claimed visually proofread.",
+    "evidence": [
+      "clean-regression-review.png",
+      "edge-review-1.png",
+      "edge-review-2.png",
+      "final-symbol-review-1.png",
+      "final-symbol-review-2.png",
+      "153-end.png",
+      "082-seconds.png"
+    ],
+    "sourceDistinctionsPreserved": [
+      "Применяя (PDF90)",
+      "по (PDF98)",
+      "Чтобы избежать неопре- (PDF111)",
+      "веряться (continuation of проверяться; PDF205)",
+      "высокому (PDF213)",
+      "Развитие (PDF229)"
+    ]
+  }
+}
