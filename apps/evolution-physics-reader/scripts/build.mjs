@@ -15,5 +15,5 @@ await copyFile(resolve(mono,'files/ibm-plex-mono-cyrillic-400-normal.woff2'),res
 await copyFile(resolve(mono,'LICENSE'),resolve(dist,'fonts/IBM-PLEX-LICENSE.txt'));
 let book=null;try{book=JSON.parse(await readFile(resolve(root,'src/content/book.json'),'utf8'));}catch{}
 const release=await fingerprintRuntime(dist);
-await writeFile(resolve(dist,'version.json'),JSON.stringify({version:'3.0.0',release,experience:'observatory-2100',companionNotes:60,experiments:6,reader:'native-html',pages:book?.totalPages??null,sourceSha256:book?.source?.sha256??null}));
+await writeFile(resolve(dist,'version.json'),JSON.stringify({version:'4.0.0',release,experience:'observatory-2100-horizon',companionNotes:60,experiments:6,reader:'native-html',pages:book?.totalPages??null,sourceSha256:book?.source?.sha256??null}));
 console.log(`Built native HTML reader in dist/ (${book?.totalPages??'content pending'} source pages)`);

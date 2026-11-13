@@ -1,13 +1,13 @@
 {
   "name": "evolution-physics-reader",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/serve.mjs",
     "test": "node --test test/*.test.mjs",
-    "check": "node --check src/app.mjs && node --check src/reader.mjs && node --check src/orbit.mjs && node --check src/core.mjs && node --check src/observatory.mjs && node --check src/experiments.mjs && node --check src/models.mjs && node --check src/motion.mjs"
+    "check": "node --check src/app.mjs && node --check src/reader.mjs && node --check src/orbit.mjs && node --check src/core.mjs && node --check src/observatory.mjs && node --check src/experiments.mjs && node --check src/models.mjs && node --check src/motion.mjs && node --check src/instruments.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "5.2.8",

@@ -1,3 +1,4 @@
+import { instrumentArt } from './instruments.mjs';
 import { $, icon, escapeHTML as esc, assetPath, sectionForPage, readStorage, toast } from './core.mjs';
 import { motionEnabled, setMotion, subscribeMotion } from './motion.mjs';
 
@@ -20,7 +21,17 @@ export function createObservatory(book, reader, {openImage}) {
   const root=$('reader');
   const panel=document.createElement('aside');panel.id='companion-panel';panel.className='companion-panel';panel.hidden=true;panel.setAttribute('aria-label','Объяснения и эксперименты');
   panel.innerHTML=`<header class="companion-header"><span class="eyebrow">РЯДОМ С КНИГОЙ</span><button class="icon-button" id="close-companion" aria-label="Закрыть объяснение">${icon('close')}</button></header><nav class="companion-tabs" aria-label="Материал к разделу"><button data-companion-tab="explain" aria-current="page">Объяснение</button><button data-companion-tab="experiment" hidden>Эксперимент</button></nav><div id="companion-body" tabindex="0"></div>`;
-  root.querySelector('.reader-workspace').append(panel);
+  const scrim=document.createElement('button');scrim.className='companion-scrim';scrim.hidden=true;scrim.tabIndex=-1;scrim.setAttribute('aria-label','Закрыть объяснение');
+  root.querySelector('.reader-workspace').append(scrim,panel);
+  const mobilePanel=matchMedia('(max-width:900px)');
+  function syncPanelAccess(){
+    const modal=opened&&mobilePanel.matches;scrim.hidden=!modal;
+    root.querySelector('.reading-area').inert=modal;root.querySelector('.reader-header').inert=modal;
+    panel.setAttribute('role',modal?'dialog':'complementary');
+    if(modal)panel.setAttribute('aria-modal','true');else panel.removeAttribute('aria-modal');
+  }
+  mobilePanel.addEventListener('change',()=>{if(opened&&mobilePanel.matches)reader.collapseNav();syncPanelAccess();});
+  scrim.addEventListener('click',()=>close());
   const ensureReady=async()=>{data=await loadCompanion();if(!$('atlas-page').children.length)renderAtlas();return data;};
   const ready=ensureReady();
   function entryFor(n){const section=sectionForPage(book,n),topics=data?.entries.filter(e=>e.sectionId===section?.id&&e.id!==section?.id&&n>=e.source.page&&n<=e.source.endPage);return topics?.[0]||data?.entries.find(e=>e.id===section?.id);}
@@ -43,18 +54,22 @@ export function createObservatory(book, reader, {openImage}) {
     selected=(id&&data.entries.find(e=>e.id===id))||entryFor(reader.currentPage);mode=newMode;
     if(!selected){toast('Объяснение этого раздела не найдено.');return;}
     reader.preserveLayout(()=>{if(innerWidth<1350)reader.collapseNav();root.classList.remove('focus-reading');$('focus-toggle').setAttribute('aria-pressed','false');opened=true;panel.hidden=false;root.classList.add('has-companion');$('explain-current')?.setAttribute('aria-expanded','true');});
-    await render();$('close-companion').focus({preventScroll:true});
+    syncPanelAccess();await render();$('close-companion').focus({preventScroll:true});
   }
   function close(restoreFocus=true){
     renderSerial++;disposeExperiment?.();disposeExperiment=null;
     if(!opened)return;reader.preserveLayout(()=>{opened=false;panel.hidden=true;root.classList.remove('has-companion');$('explain-current')?.setAttribute('aria-expanded','false');});
+    syncPanelAccess();
     if(restoreFocus&&(lastFocus?.isConnected))lastFocus.focus({preventScroll:true});
   }
   panel.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='close-companion')close();if(b.dataset.companionTab){mode=b.dataset.companionTab;render();}if(b.hasAttribute('data-retry-experiment'))render();});
-  panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();close();}});
+  panel.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){e.stopPropagation();close();}
+    if(e.key==='Tab'&&mobilePanel.matches){const items=[...panel.querySelectorAll('a[href],button:not([disabled]),input,select,summary,[tabindex="0"]')].filter(el=>el.getClientRects().length&&el.tabIndex>=0),first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
+  });
   function renderAtlas(){
     const page=$('atlas-page');
-    page.innerHTML=`<header class="gallery-header wrap"><a class="brand" href="#"><img src="./favicon.svg" width="34" height="34" alt=""><span>ЭВОЛЮЦИЯ<small>ФИЗИКИ</small></span></a><a class="quiet-link" href="#resume">${icon('book')} Вернуться к чтению</a></header><main class="atlas-main wrap"><div class="section-heading"><div><span class="eyebrow">АТЛАС ИДЕЙ · ЧЕТЫРЕ ГЛАВЫ</span><h1>У каждой идеи<br><em>есть продолжение.</em></h1></div><p>Выберите понятие и вернитесь к его<br>исходному рассуждению в книге.</p></div><div class="atlas-switch"><button data-atlas-view="map" aria-pressed="true">Карта</button><button data-atlas-view="list" aria-pressed="false">Список</button></div><div id="concept-map" class="concept-map">${conceptGroups.map((g,i)=>`<section class="concept-lane"><span class="eyebrow">${g.label}</span><h2>${g.title}</h2>${g.nodes.map(([title,id,desc],j)=>`<a class="concept-node" href="#learn/${id}"><span class="concept-index">${i+1}.${j+1}</span><div><h3>${title}</h3><p>${desc}</p></div>${icon('arrow')}</a>`).join('')}</section>`).join('')}</div><div id="concept-list" class="concept-list" hidden>${conceptGroups.map(g=>`<section><h2>${g.label}</h2>${g.nodes.map(([title,id,desc])=>`<a href="#learn/${id}"><strong>${title}</strong><span>${desc}</span>${icon('arrow')}</a>`).join('')}</section>`).join('')}</div><section class="concept-connections"><span class="eyebrow">МОСТЫ МЕЖДУ ГЛАВАМИ</span><div>${connections.map(([a,b,desc,aid,bid])=>`<article><p><a href="#learn/${aid}">${a}</a><span>→</span><a href="#learn/${bid}">${b}</a></p><small>${desc}</small></article>`).join('')}</div></section><section class="laboratory" id="laboratory"><div class="section-heading"><div><span class="eyebrow">ЛАБОРАТОРИЯ · ШЕСТЬ МЫСЛЕННЫХ ОПЫТОВ</span><h2>Понять —<br><em>изменив условие.</em></h2></div><p>Расчётные модели, связанные с текстом.<br>У каждого опыта есть границы применимости.</p></div><div class="lab-grid">${[['frames','01','Системы отсчёта','Два наблюдателя. Одна скорость?'],['waves','02','Волна','Что движется вместе с гребнем?'],['fields','03','Электрическое поле','Один знак меняет всю картину.'],['lightclock','04','Световые часы','Почему расходятся интервалы?'],['elevator','05','Лифт Эйнштейна','Тяготение или ускорение?'],['photoelectric','06','Кванты света','Когда яркости недостаточно.']].map(([id,n,title,desc])=>`<a class="lab-card" href="#experiment/${id}"><span class="eyebrow">ОПЫТ ${n}</span><h3>${title}</h3><p>${desc}</p>${icon('arrow')}</a>`).join('')}</div></section></main>`;
+    page.innerHTML=`<header class="gallery-header wrap"><a class="brand" href="#"><img src="./favicon.svg" width="34" height="34" alt=""><span>ЭВОЛЮЦИЯ<small>ФИЗИКИ</small></span></a><a class="quiet-link" href="#resume">${icon('book')} Вернуться к чтению</a></header><main class="atlas-main wrap"><div class="section-heading"><div><span class="eyebrow">АТЛАС ИДЕЙ · ЧЕТЫРЕ ГЛАВЫ</span><h1>У каждой идеи<br><em>есть продолжение.</em></h1></div><p>Выберите понятие и вернитесь к его<br>исходному рассуждению в книге.</p></div><div class="atlas-switch"><button data-atlas-view="map" aria-pressed="true">Карта</button><button data-atlas-view="list" aria-pressed="false">Список</button></div><div id="concept-map" class="concept-map">${conceptGroups.map((g,i)=>`<section class="concept-lane"><span class="eyebrow">${g.label}</span><h2>${g.title}</h2>${g.nodes.map(([title,id,desc],j)=>`<a class="concept-node" href="#learn/${id}"><span class="concept-index">${i+1}.${j+1}</span><div><h3>${title}</h3><p>${desc}</p></div>${icon('arrow')}</a>`).join('')}</section>`).join('')}</div><div id="concept-list" class="concept-list" hidden>${conceptGroups.map(g=>`<section><h2>${g.label}</h2>${g.nodes.map(([title,id,desc])=>`<a href="#learn/${id}"><strong>${title}</strong><span>${desc}</span>${icon('arrow')}</a>`).join('')}</section>`).join('')}</div><section class="concept-connections"><span class="eyebrow">МОСТЫ МЕЖДУ ГЛАВАМИ</span><div>${connections.map(([a,b,desc,aid,bid])=>`<article><p><a href="#learn/${aid}">${a}</a><span>→</span><a href="#learn/${bid}">${b}</a></p><small>${desc}</small></article>`).join('')}</div></section><section class="laboratory" id="laboratory"><div class="section-heading"><div><span class="eyebrow">ЛАБОРАТОРИЯ · ШЕСТЬ МЫСЛЕННЫХ ОПЫТОВ</span><h2>Понять —<br><em>изменив условие.</em></h2></div><p>Расчётные модели, связанные с текстом.<br>У каждого опыта есть границы применимости.</p></div><div class="lab-grid">${[['frames','01','Системы отсчёта','Два наблюдателя. Одна скорость?'],['waves','02','Волна','Что движется вместе с гребнем?'],['fields','03','Электрическое поле','Один знак меняет всю картину.'],['lightclock','04','Световые часы','Почему расходятся интервалы?'],['elevator','05','Лифт Эйнштейна','Тяготение или ускорение?'],['photoelectric','06','Кванты света','Когда яркости недостаточно.']].map(([id,n,title,desc])=>`<a class="lab-card" href="#experiment/${id}"><span class="eyebrow">ОПЫТ ${n}</span>${instrumentArt(id)}<h3>${title}</h3><p>${desc}</p>${icon('arrow')}</a>`).join('')}</div></section></main>`;
     page.querySelectorAll('[data-atlas-view]').forEach(button=>button.addEventListener('click',()=>{const list=button.dataset.atlasView==='list';$('concept-map').hidden=list;$('concept-list').hidden=!list;page.querySelectorAll('[data-atlas-view]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));}));
   }
   document.addEventListener('click',e=>{const b=e.target.closest('button');if(b?.id==='explain-current')opened&&!root.classList.contains('focus-reading')?close():open();if(b?.matches('[data-motion]'))setMotion(!motionEnabled());});

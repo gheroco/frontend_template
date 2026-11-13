@@ -7,6 +7,7 @@ document.documentElement.dataset.theme=readStorage('evolution-theme','dark')==='
 initField();
 let book,reader,observatory,lastNonFigureHash='#',searchIndex,searchPromise,searchTimer,searchSerial=0,routeSerial=0;
 const chapterNames=['Расцвет механистического воззрения','Упадок механистического воззрения','Поле и относительность','Кванты'];
+const chapterDisplay=['Механика','Пределы механики','Поле и время','Кванты'];
 const chapterRoman=['I','II','III','IV'];
 const chapterArt=[
  '<circle cx="104" cy="82" r="44"/><ellipse cx="104" cy="82" rx="84" ry="29" transform="rotate(-28 104 82)"/><path d="M24 138 184 28M105 16v132M38 82h132" stroke-dasharray="2 5"/><circle cx="149" cy="44" r="4" class="art-dot"/>',
@@ -20,7 +21,7 @@ function updateResume(progress){const p=progress||getProgress(book.totalPages);i
 function figureHTML(f,index,small=false){const src=assetPath(f.src);if(!src)return '';return `<button class="${small?'figure-preview':'gallery-card'}" data-figure="${index}" aria-label="Рассмотреть: ${esc(f.caption||`иллюстрация, ${pageLabel(f.page)}`)}"><span class="figure-image"><img src="${src}" alt="${esc(f.caption||`Иллюстрация, ${pageLabel(f.page)}`)}" loading="lazy" decoding="async" ${f.width?`width="${Number(f.width)}"`:''} ${f.height?`height="${Number(f.height)}"`:''}><span class="figure-plus">${icon('plus')}</span></span><span class="figure-caption"><span>${esc(f.caption||'Иллюстрация из книги')}</span><small>${esc(pageLabel(f.page))}</small></span></button>`;}
 function renderLanding(){
  $('page-stat').textContent=book.totalPages;$('figure-stat').textContent=book.figures.length;
- $('chapter-cards').innerHTML=chapterNames.map((title,i)=>{const sections=book.sections.filter(s=>chapterNumber(s)===i+1),start=sections[0]?.startPage;return `<a class="chapter-card" href="#section/${sections[0]?.id||'title-pages'}"><div class="chapter-top"><span>ГЛАВА ${chapterRoman[i]}</span><span>${sections.length} РАЗДЕЛОВ</span></div><svg class="chapter-art" viewBox="0 0 220 180" aria-hidden="true">${chapterArt[i]}</svg><span class="chapter-title">${esc(title)}</span><div class="chapter-bottom"><small>${start?esc(pageLabel(start)):'Открыть'}</small><span>${icon('arrow')}</span></div></a>`;}).join('');
+ $('chapter-cards').innerHTML=chapterNames.map((title,i)=>{const sections=book.sections.filter(s=>chapterNumber(s)===i+1),start=sections[0]?.startPage;return `<a class="chapter-card" href="#section/${sections[0]?.id||'title-pages'}"><div class="chapter-top"><span>ГЛАВА ${chapterRoman[i]}</span><span>${sections.length} РАЗДЕЛОВ</span></div><svg class="chapter-art" viewBox="0 0 220 180" aria-hidden="true">${chapterArt[i]}</svg><span class="chapter-title">${chapterDisplay[i]}</span><span class="chapter-original">${esc(title)}</span><div class="chapter-bottom"><small>${start?esc(pageLabel(start)):'Открыть'}</small><span>${icon('arrow')}</span></div></a>`;}).join('');
  $('full-contents').innerHTML=book.sections.map(s=>`<a href="#section/${s.id}"><span>${esc(s.title)}</span><span>${esc(pageLabel(s.startPage))}</span>${icon('arrow')}</a>`).join('');
  const select=[];for(const n of [1,2,3,4]){const i=book.figures.findIndex(f=>chapterNumber(sectionForPage(book,Number(f.page)))===n&&Number(f.width||1)/Number(f.height||1)<4);if(i>=0&&!select.includes(i))select.push(i);}for(let i=0;select.length<4&&i<book.figures.length;i++)if(!select.includes(i))select.push(i);
  $('figure-previews').innerHTML=select.map(i=>figureHTML(book.figures[i],i,true)).join('');$('illustrations-preview').hidden=!book.figures.length;
@@ -87,6 +88,8 @@ document.addEventListener('click',event=>{const el=event.target.closest('button,
 document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}));
 document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();openSearch();}});
 async function route(){
+ const destination=location.hash==='#lab'?'lab':location.hash==='#atlas'?'atlas':/^#(?:read|resume|section|learn|experiment)/.test(location.hash)?'read':'home';
+ document.querySelectorAll('[data-dock]').forEach(a=>{if(a.dataset.dock===destination)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  const serial=++routeSerial,hash=location.hash;
  if(!book)return;
  if(hash.startsWith('#figure/')){const item=book.figures.find(f=>f.id===hash.slice(8));if(item)openImage({...item,title:item.caption||'Иллюстрация из книги'});else toast('Иллюстрация не найдена.');return;}
@@ -99,6 +102,7 @@ async function route(){
   }catch(e){toast(e.message);}return;
  }
  if(/^#read(?:\/|$)/.test(hash)||hash==='#resume'||hash.startsWith('#section/')){
+  observatory.close(false);
   $('landing').hidden=true;$('gallery-page').hidden=true;$('atlas-page').hidden=true;
   let blockId=null,n=Number(hash.split('/')[1]),saved=null;
   try{blockId=hash.split('/')[2]?decodeURIComponent(hash.split('/')[2]):null;}catch{}

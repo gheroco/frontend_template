@@ -1,0 +1,10 @@
+// Decorative schematic thumbnails. Numerical models live in models.mjs.
+const drawings={
+ frames:'<path d="M30 100h260M30 40h260M85 30v80M220 30v80" opacity=".18"/><rect x="92" y="49" width="120" height="36" rx="4"/><circle cx="115" cy="89" r="6"/><circle cx="190" cy="89" r="6"/><path d="M219 67h45m-9-8 9 8-9 8M100 60h100"/><path d="M40 110h235m-9-6 9 6-9 6" opacity=".5"/>',
+ waves:'<path d="M22 74h276" stroke-dasharray="3 6" opacity=".3"/><path d="M22 74c23-66 46-66 69 0s46 66 69 0 46-66 69 0 46 66 69 0"/><path d="M22 74c23-42 46-42 69 0s46 42 69 0 46-42 69 0 46 42 69 0" opacity=".3"/><circle cx="160" cy="74" r="4" fill="currentColor"/>',
+ fields:'<circle cx="90" cy="74" r="12"/><circle cx="230" cy="74" r="12"/><path d="M84 74h12m-6-6v12m134-6h12M102 74h116M99 65c40-55 82-55 122 0M99 83c40 55 82 55 122 0M94 61c20-80 112-80 132 0M94 87c20 80 112 80 132 0"/><path d="m153 29 8-3-5-6m-3 94 8 4-5 6"/>',
+ lightclock:'<path d="M52 30h70M52 112h70M200 30h70M200 112h70" stroke-width="2"/><path d="M87 32v78" stroke-dasharray="4 4"/><path d="m204 110 30-78 30 78"/><circle cx="87" cy="65" r="4" fill="currentColor"/><circle cx="245" cy="60" r="4" fill="currentColor"/><path d="M141 74h35m-7-6 7 6-7 6" opacity=".4"/>',
+ elevator:'<rect x="107" y="23" width="106" height="100" rx="5"/><path d="M116 115h88M116 31h88" opacity=".35"/><circle cx="160" cy="58" r="7"/><path d="M160 65v24m-15-17 15 7 15-7m-15 17-12 19m12-19 12 19M237 96V44m-7 8 7-8 7 8M83 45v51m-7-8 7 8 7-8"/>',
+ photoelectric:'<path d="M193 26v100M202 26v100" stroke-width="2"/><path d="m24 55 15-8 15 16 15-16 15 16 15-16 15 16 15-16 15 16 15-8h20m-8-7 8 7-8 7"/><path d="m210 77 65-35m-12-1 12 1-6 10m-49 39 65 20m-6-10 6 10-12 3" opacity=".5"/><circle cx="237" cy="62" r="4" fill="currentColor"/><circle cx="250" cy="103" r="4" fill="currentColor"/>'
+};
+export const instrumentArt=id=>`<svg class="lab-art" viewBox="0 0 320 150" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${drawings[id]||''}</svg>`;

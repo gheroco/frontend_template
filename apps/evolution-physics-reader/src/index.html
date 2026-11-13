@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#070e19">
+  <meta name="theme-color" content="#060b13">
   <meta name="description" content="Эйнштейн и Инфельд. Эволюция физики. Полное русское издание 1965 года: текст книги, оригинальные иллюстрации и удобное чтение.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Эволюция физики — Эйнштейн × Инфельд</title>
   <link rel="icon" href="./favicon.svg">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./observatory.css">
+  <link rel="stylesheet" href="./horizon.css">
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
@@ -23,30 +24,30 @@
   <main id="main">
     <section class="hero wrap">
       <div class="hero-copy">
-        <div class="eyebrow"><b class="dot"></b> НАУЧНАЯ ОБСЕРВАТОРИЯ <span class="edition-index">КНИГА / 1965</span></div>
+        <div class="eyebrow"><b class="dot"></b> ОБСЕРВАТОРИЯ ИДЕЙ <span class="edition-index">2100</span></div>
         <p class="authors">АЛЬБЕРТ ЭЙНШТЕЙН <span>×</span> ЛЕОПОЛЬД ИНФЕЛЬД</p>
-        <h1>Эволюция<br><span>физики</span><sup>↗</sup></h1>
-        <p class="hero-subtitle">От движения первого тела —<br>к новой картине реальности.</p>
-        <div class="hero-buttons"><a class="button primary hero-cta" id="start-reading" href="#read/1"><i data-icon="book"></i><span>Начать чтение</span><i data-icon="arrow"></i></a><a class="quiet-link" href="#chapters">Открыть содержание <i data-icon="down"></i></a></div>
+        <h1>Эволюция<br><span>физики<span class="title-period">.</span></span></h1>
+        <p class="hero-subtitle">Мир меняется,<br>когда меняется взгляд на него.</p>
+        <div class="hero-buttons"><a class="button primary hero-cta" id="start-reading" href="#read/1"><i data-icon="book"></i><span>Начать чтение</span><i data-icon="arrow"></i></a><a class="quiet-link" href="#atlas">Исследовать идеи <i data-icon="down"></i></a></div>
         <div id="resume-reading" class="resume-reading" hidden></div>
-        <div class="hero-meta">ОРИГИНАЛЬНЫЙ ТЕКСТ <span>ОБЪЯСНЕНИЯ · ИНТЕРАКТИВНЫЕ ОПЫТЫ</span></div>
+        <div class="hero-meta"><span class="edition-seal">1965</span><span>Классическая книга.<br>Новое пространство для мысли.</span></div>
       </div>
       <div class="hero-visual" aria-label="Учебная модель поперечной волны">
-        <div class="visual-label"><span>01 / ВОЛНА</span><span>ИЗМЕНИТЕ ЧАСТОТУ</span></div>
+        <div class="visual-label"><span><b class="dot"></b> МЫСЛЬ В ДВИЖЕНИИ</span><span>ОПЫТ / 01</span></div><div class="scene-orbit" aria-hidden="true"></div>
         <canvas id="field" aria-hidden="true"></canvas>
-        <div class="wave-equation">v = λf<span>Возмущение движется.<br>Среда колеблется.</span></div>
-        <div class="hero-instrument"><label for="hero-frequency">Частота <output id="hero-frequency-value">1 Гц</output></label><input id="hero-frequency" type="range" min="0.5" max="2" step="0.1" value="1" aria-label="Частота волны, Гц"><p>v = 4 м/с <span>λ = <output id="hero-wavelength">4 м</output></span></p><div><button id="motion-toggle" class="motion-toggle" aria-pressed="false"><i data-icon="pause"></i><span>Пауза</span></button><button id="hero-reset" aria-label="Сбросить волну">↺</button><a href="#experiment/waves">Исследовать <i data-icon="arrow"></i></a></div></div>
-        <span class="visual-footnote">ПОПЕРЕЧНАЯ ВОЛНА · УЧЕБНАЯ ВИЗУАЛИЗАЦИЯ</span>
+        <div class="wave-equation">v = λf<span>ФОРМА ДВИЖЕНИЯ</span></div><div class="wave-annotation"><span></span>Частица среды<br>остаётся на месте</div>
+        <div class="hero-instrument"><span class="instrument-heading">ПОПРОБУЙТЕ САМИ <i data-icon="down"></i></span><label for="hero-frequency">Частота <output id="hero-frequency-value">1 Гц</output></label><input id="hero-frequency" type="range" min="0.5" max="2" step="0.1" value="1" aria-label="Частота волны, Гц"><p>v = 4 м/с <span>λ = <output id="hero-wavelength">4 м</output></span></p><div><button id="motion-toggle" class="motion-toggle" aria-pressed="false"><i data-icon="pause"></i><span>Пауза</span></button><button id="hero-reset" aria-label="Сбросить волну">↺</button><a href="#experiment/waves">Исследовать <i data-icon="arrow"></i></a></div></div>
+        <span class="visual-footnote">ПОПЕРЕЧНАЯ ВОЛНА / УЧЕБНАЯ МОДЕЛЬ</span>
       </div>
     </section>
     <section class="book-stats wrap" aria-label="О книге"><div><span class="stat-number">04</span><span>главы<br><strong>одна история идей</strong></span></div><div><span class="stat-number" id="page-stat">345</span><span>листов<br><strong>исходного файла</strong></span></div><div><span class="stat-number" id="figure-stat">—</span><span>иллюстраций<br><strong>из оригинала</strong></span></div><div class="stat-read"><i data-icon="book"></i><span>Читайте, исследуйте,<br><strong>возвращайтесь к мысли.</strong></span></div></section>
-    <section class="observatory-intro wrap"><span class="eyebrow">ЧИТАТЬ. ПОНИМАТЬ. ПРОВЕРЯТЬ.</span><p>Одна книга.<br><span>Новый способ увидеть её идеи.</span></p><a class="quiet-link" href="#atlas">Исследовать атлас <i data-icon="arrow"></i></a></section>
+    <section class="observatory-intro wrap"><span class="eyebrow">01 — ПРОСТРАНСТВО ДЛЯ ИССЛЕДОВАНИЯ</span><p>Не просто прочитать.<br><span>Увидеть, как устроена мысль.</span></p><div class="experience-path"><a href="#resume"><span class="path-icon"><i data-icon="book"></i></span><div><strong>Войти в книгу</strong><p>Оригинальный текст, ваше место и ваши закладки.</p></div><i data-icon="arrow"></i></a><a href="#atlas"><span class="path-icon"><i data-icon="atlas"></i></span><div><strong>Связать идеи</strong><p>От инерции к квантам — через понятные объяснения.</p></div><i data-icon="arrow"></i></a><a href="#lab"><span class="path-icon"><i data-icon="lab"></i></span><div><strong>Проверить самому</strong><p>Шесть опытов. Измените условие и увидьте результат.</p></div><i data-icon="arrow"></i></a></div></section>
     <section id="chapters" class="chapters wrap">
-      <div class="section-heading"><div><span class="eyebrow">ПУТЬ ОТКРЫТИЙ / СОДЕРЖАНИЕ</span><h2>Как менялась<br><em>картина мира.</em></h2></div><p>Четыре главы. От движения тел<br>до вероятностной природы материи.</p></div>
+      <div class="section-heading"><div><span class="eyebrow">02 — ЧЕТЫРЕ ГЛАВЫ, ОДНА РЕВОЛЮЦИЯ</span><h2>Маршрут<br><em>сквозь реальность.</em></h2></div><p>Четыре главы. От движения тел<br>до вероятностной природы материи.</p></div>
       <div id="chapter-cards" class="chapter-cards" aria-live="polite"><p class="loading-inline">Загружаем содержание книги…</p></div>
       <details class="full-contents"><summary><span>Все разделы и материалы издания</span><i data-icon="plus"></i></summary><div id="full-contents"></div></details>
     </section>
-    <section id="illustrations-preview" class="illustrations-section wrap"><div class="section-heading compact"><div><span class="eyebrow">РИСУНКИ ИЗ КНИГИ</span><h2>Увидеть <em>идею.</em></h2></div><a class="quiet-link" href="#gallery">Все иллюстрации <i data-icon="arrow"></i></a></div><div id="figure-previews" class="figure-previews"></div></section>
+    <section id="illustrations-preview" class="illustrations-section wrap"><div class="section-heading compact"><div><span class="eyebrow">03 — ВИЗУАЛЬНЫЙ АРХИВ</span><h2>Увидеть <em>идею.</em></h2></div><a class="quiet-link" href="#gallery">Все иллюстрации <i data-icon="arrow"></i></a></div><div id="figure-previews" class="figure-previews"></div></section>
     <section id="edition" class="edition wrap"><div><span class="eyebrow">ОБ ИЗДАНИИ / 1965</span><h2>Внимание —<br><em>книге.</em></h2></div><div class="edition-body"><p class="lead">Текст, который можно читать.<br>Рисунки, которые можно рассмотреть.</p><p>Чтение по разделам, поиск по всей книге, личные закладки и возможность свериться с исходной страницей. Иллюстрации открываются отдельно: приближайте и перемещайте изображение, чтобы увидеть детали.</p><dl><div><dt>Авторы</dt><dd>Альберт Эйнштейн · Леопольд Инфельд</dd></div><div><dt>Издание</dt><dd>Москва, «Наука», 1965</dd></div><div><dt>Перевод и послесловие</dt><dd>С. Г. Суворов</dd></div><div><dt>Материалы издания</dt><dd id="edition-materials">Текст книги, предисловия, послесловие и указатели</dd></div></dl><div class="source-note"><i data-icon="source"></i><div><p id="transcription-summary">Текст подготовлен по сканам издания. О происхождении материалов и проверке транскрипции — в описании цифровой версии.</p><button class="quiet-link" data-provenance>Источники и проверка текста <i data-icon="arrow"></i></button></div></div></div></section>
     <section class="closing wrap"><div><span class="eyebrow">ВАШЕ ВРЕМЯ ДЛЯ МЫСЛИ</span><h2>Большие идеи.<br><span>В вашем темпе.</span></h2></div><a class="round-cta" href="#read/1" aria-label="Начать чтение"><i data-icon="arrow"></i></a></section>
   </main>
@@ -58,6 +59,7 @@
 <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title"><div class="dialog-heading"><h2 id="search-title">Поиск по книге</h2><button class="icon-button" data-close-dialog aria-label="Закрыть поиск"><i data-icon="close"></i></button></div><form id="search-form" role="search"><label class="search-input-wrap"><i data-icon="search"></i><input id="book-search" name="q" type="search" placeholder="Слово, фраза или идея…" autocomplete="off" aria-label="Поиск по полному тексту"><kbd>ESC</kbd></label><button class="button primary sr-only" type="submit">Найти</button></form><div class="search-scope"><label><input type="radio" name="search-scope" value="all" checked> Всё</label><label><input type="radio" name="search-scope" value="original"> Текст книги</label><label><input type="radio" name="search-scope" value="companion"> Объяснения</label></div><div id="search-status" class="search-status" role="status">Введите слово или фразу. Поиск охватывает все страницы.</div><div id="search-results" class="search-results"></div></dialog>
 <dialog id="image-dialog" class="image-dialog" aria-labelledby="image-title"><div class="image-header"><div><span class="eyebrow" id="image-kicker">ОРИГИНАЛ ИЛЛЮСТРАЦИИ</span><h2 id="image-title">Иллюстрация</h2></div><div class="image-tools"><button class="icon-button" id="image-minus" aria-label="Уменьшить"><i data-icon="minus"></i></button><button class="zoom-label" id="image-reset" aria-label="Вписать изображение">100%</button><button class="icon-button" id="image-plus" aria-label="Увеличить"><i data-icon="plus"></i></button><button class="icon-button" id="image-fullscreen" aria-label="Развернуть изображение на весь экран"><i data-icon="focus"></i></button><button class="icon-button" data-close-dialog aria-label="Закрыть изображение"><i data-icon="close"></i></button></div></div><div class="image-body"><div id="image-stage" class="image-stage" tabindex="0" aria-label="Изображение. Стрелки перемещают, плюс и минус меняют масштаб, ноль сбрасывает."><img id="zoom-image" alt="" draggable="false"><div id="image-error" hidden>Не удалось загрузить изображение.</div></div><aside id="compare-text" class="compare-text" hidden></aside></div><div class="image-footer"><p id="image-caption"></p><span>Колесо / + − — масштаб · стрелки — перемещение · 0 — сброс</span><button class="quiet-link" id="image-read" hidden>Открыть в книге <i data-icon="arrow"></i></button></div></dialog>
 <dialog id="provenance-dialog" class="provenance-dialog" aria-labelledby="provenance-title"><div class="dialog-heading"><div><span class="eyebrow">О ЦИФРОВОЙ ВЕРСИИ</span><h2 id="provenance-title">Источники и транскрипция</h2></div><button class="icon-button" data-close-dialog aria-label="Закрыть сведения"><i data-icon="close"></i></button></div><div id="provenance-content"></div></dialog>
+<nav class="mobile-dock" aria-label="Быстрый переход"><a href="#" data-dock="home"><i data-icon="home"></i><span>Главная</span></a><a href="#resume" data-dock="read"><i data-icon="book"></i><span>Читать</span></a><a href="#atlas" data-dock="atlas"><i data-icon="atlas"></i><span>Атлас</span></a><a href="#lab" data-dock="lab"><i data-icon="lab"></i><span>Опыты</span></a></nav>
 <div id="toast" role="status" hidden></div>
 <noscript><p class="no-js">Для навигации по цифровой книге нужен JavaScript. <a href="https://ikfia.ysn.ru/wp-content/uploads/2018/01/EinsteinInfeld1965ru.pdf">Открыть исходное издание</a>.</p></noscript>
 </body></html>
