@@ -60,9 +60,9 @@ export function createObservatory(book, reader, {openImage}) {
     renderSerial++;disposeExperiment?.();disposeExperiment=null;
     if(!opened)return;reader.preserveLayout(()=>{opened=false;panel.hidden=true;root.classList.remove('has-companion');$('explain-current')?.setAttribute('aria-expanded','false');});
     syncPanelAccess();
-    if(restoreFocus&&(lastFocus?.isConnected))lastFocus.focus({preventScroll:true});
+    if(restoreFocus){const target=lastFocus?.isConnected&&lastFocus!==document.body&&lastFocus.getClientRects().length?lastFocus:$('explain-current');target?.focus({preventScroll:true});}
   }
-  panel.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='close-companion')close();if(b.dataset.companionTab){mode=b.dataset.companionTab;render();}if(b.hasAttribute('data-retry-experiment'))render();});
+  panel.addEventListener('click',e=>{const source=e.target.closest('a[href^="#read/"]');if(source){const hash=source.getAttribute('href'),[,page,block]=hash.split('/');close(false);if(location.hash===hash)reader.open(Number(page),block?decodeURIComponent(block):null);return;}const b=e.target.closest('button');if(!b)return;if(b.id==='close-companion')close();if(b.dataset.companionTab){mode=b.dataset.companionTab;render();}if(b.hasAttribute('data-retry-experiment'))render();});
   panel.addEventListener('keydown',e=>{
     if(e.key==='Escape'){e.stopPropagation();close();}
     if(e.key==='Tab'&&mobilePanel.matches){const items=[...panel.querySelectorAll('a[href],button:not([disabled]),input,select,summary,[tabindex="0"]')].filter(el=>el.getClientRects().length&&el.tabIndex>=0),first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
