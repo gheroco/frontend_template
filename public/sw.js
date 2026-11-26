@@ -1,5 +1,5 @@
-const CACHE='fluent30-v1.0.1';
-const SHELL=['./','./index.html','./styles.css','./details.css','./app.js','./store.js','./recorder.js','./course.json','./assets/favicon.svg','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png'];
+const CACHE='fluent30-v1.0.2';
+const SHELL=['./','./index.html','./styles.css','./details.css','./app.js','./store.js','./recorder.js','./course.json','./assets/favicon.svg','./manifest.json','./assets/icon-192.png','./assets/icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('fluent30-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
