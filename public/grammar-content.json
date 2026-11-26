@@ -1,0 +1,901 @@
+{
+  "version": 1,
+  "attribution": "Original Fluent /30 grammar companion. Not book content.",
+  "lessons": [
+    {
+      "id": "be",
+      "title": "Say who you are with be",
+      "level": "A1",
+      "category": "Present",
+      "summary_en": "Introduce yourself and describe people, places, and situations with am, is, and are.",
+      "explanation_hy": "Անգլերենում ներկայանալիս կամ վիճակ նկարագրելիս սովորաբար պետք է be բայի ձևը՝ am, is կամ are։ I-ի հետ օգտագործիր am, he/she/it-ի հետ՝ is, իսկ you/we/they-ի հետ՝ are։ Ժխտելու համար ավելացրու not․ խոսքում հաճախ օգտագործվում են I'm not, isn't և aren't կրճատ ձևերը։",
+      "pattern": "I am … · he/she/it is … · you/we/they are …",
+      "examples": [
+        {
+          "en": "I am an engineer from Armenia.",
+          "hy": "Ես Հայաստանից ինժեներ եմ։"
+        },
+        {
+          "en": "My teammate is available today.",
+          "hy": "Իմ թիմակիցն այսօր հասանելի է։"
+        },
+        {
+          "en": "We are ready for the meeting.",
+          "hy": "Մենք պատրաստ ենք հանդիպմանը։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "My name Georgi.",
+        "correct": "My name is Georgi.",
+        "why_hy": "My name-ը եզակի է․ անունը ներկայացնելիս անհրաժեշտ է is։"
+      },
+      "exercises": [
+        {
+          "prompt": "I ___ ready to begin. (am / is / are)",
+          "answer": "am",
+          "alternatives": [],
+          "explanation_hy": "I-ի հետ be բայի ճիշտ ձևը am է։"
+        },
+        {
+          "prompt": "Our manager ___ in another meeting. (am / is / are)",
+          "answer": "is",
+          "alternatives": [],
+          "explanation_hy": "Our manager-ը մեկ մարդ է․ օգտագործիր is։"
+        },
+        {
+          "prompt": "The documents ___ on my laptop. (am / is / are)",
+          "answer": "are",
+          "alternatives": [],
+          "explanation_hy": "Documents-ը հոգնակի է․ պետք է are։"
+        },
+        {
+          "prompt": "Make negative: 'She is available.' She ___ available.",
+          "answer": "is not",
+          "alternatives": [
+            "isn't"
+          ],
+          "explanation_hy": "Is not և isn't ձևերն ունեն նույն իմաստը։"
+        }
+      ],
+      "speaking_prompts": [
+        "Introduce yourself: name, country, job, and one current feeling.",
+        "Describe your team using is and are."
+      ],
+      "related_days": [
+        1,
+        7,
+        30
+      ],
+      "book_keywords": [
+        "be",
+        "am is are",
+        "describing people"
+      ]
+    },
+    {
+      "id": "present-simple",
+      "title": "Describe your usual day",
+      "level": "A1",
+      "category": "Present",
+      "summary_en": "Use the present simple for routines, repeated actions, and facts about your work.",
+      "explanation_hy": "Present simple-ն օգտագործիր սովորությունների, կրկնվող գործողությունների և ընդհանուր փաստերի համար։ I/you/we/they-ի հետ բայը մնում է հիմնական ձևով, իսկ he/she/it-ի հետ սովորաբար ավելանում է -s կամ -es։ Ժխտման մեջ գործածիր don't կամ doesn't և բայի հիմնական ձևը՝ առանց -s-ի։",
+      "pattern": "I work … · she works … · I don't work … · she doesn't work …",
+      "examples": [
+        {
+          "en": "I check the results every morning.",
+          "hy": "Ամեն առավոտ ստուգում եմ արդյունքները։"
+        },
+        {
+          "en": "Ani manages the release calendar.",
+          "hy": "Անին կառավարում է թողարկումների օրացույցը։"
+        },
+        {
+          "en": "Our office doesn't open on Sundays.",
+          "hy": "Մեր գրասենյակը կիրակի օրերին չի բացվում։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "He check the logs every day.",
+        "correct": "He checks the logs every day.",
+        "why_hy": "He-ի հետ հաստատական present simple-ում check-ը դառնում է checks։"
+      },
+      "exercises": [
+        {
+          "prompt": "Every weekday, I ___ work at nine. (start; present simple)",
+          "answer": "start",
+          "alternatives": [],
+          "explanation_hy": "I-ի հետ start-ը չի ստանում -s վերջավորություն։"
+        },
+        {
+          "prompt": "My colleague ___ the dashboard every morning. (check; present simple)",
+          "answer": "checks",
+          "alternatives": [],
+          "explanation_hy": "My colleague-ը եզակի է, ուստի check-ին ավելանում է -s։"
+        },
+        {
+          "prompt": "We ___ meetings on Saturdays. (not have; present simple)",
+          "answer": "do not have",
+          "alternatives": [
+            "don't have"
+          ],
+          "explanation_hy": "We-ի ժխտական ձևում պետք է do not կամ don't և have։"
+        },
+        {
+          "prompt": "She doesn't ___ the bus to work. (take; correct form)",
+          "answer": "take",
+          "alternatives": [],
+          "explanation_hy": "Doesn't-ից հետո հիմնական բայը գործածվում է առանց -s-ի։"
+        }
+      ],
+      "speaking_prompts": [
+        "Describe three things you do during a normal workday.",
+        "Describe a colleague's routine and one thing they don't do."
+      ],
+      "related_days": [
+        2,
+        7,
+        9,
+        10,
+        11
+      ],
+      "book_keywords": [
+        "present simple",
+        "routines",
+        "third person s"
+      ]
+    },
+    {
+      "id": "present-continuous",
+      "title": "Explain what is happening now",
+      "level": "A1",
+      "category": "Present",
+      "summary_en": "Use am, is, or are with an -ing form to describe an action in progress.",
+      "explanation_hy": "Այս պահին կամ ժամանակավորապես ընթացող գործողությունը նկարագրելու համար գործածիր am/is/are և բայի -ing ձևը։ Մի բաց թող am/is/are-ը․ միայն -ing ձևը բավարար չէ։ Սովորական գործողությունը ներկայացրու present simple-ով, իսկ հենց հիմա ընթացողը՝ present continuous-ով։",
+      "pattern": "Subject + am/is/are + verb-ing",
+      "examples": [
+        {
+          "en": "I am preparing a short demonstration.",
+          "hy": "Ես կարճ ցուցադրություն եմ պատրաստում։"
+        },
+        {
+          "en": "The engineers are reviewing the error now.",
+          "hy": "Ինժեներները հիմա ուսումնասիրում են սխալը։"
+        },
+        {
+          "en": "I usually work at the office, but today I am working from home.",
+          "hy": "Սովորաբար աշխատում եմ գրասենյակում, բայց այսօր աշխատում եմ տնից։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "I learning English.",
+        "correct": "I am learning English.",
+        "why_hy": "I-ի և learning-ի միջև անհրաժեշտ է am։ Կարող ես նաև ասել I'm learning English։"
+      },
+      "exercises": [
+        {
+          "prompt": "Right now, I ___ checking the report. (am / is / are)",
+          "answer": "am",
+          "alternatives": [],
+          "explanation_hy": "I-ի հետ present continuous-ը կառուցվում է am + -ing ձևով։"
+        },
+        {
+          "prompt": "Our clients ___ waiting outside. (am / is / are)",
+          "answer": "are",
+          "alternatives": [],
+          "explanation_hy": "Clients-ը հոգնակի է, հետևաբար պետք է are waiting։"
+        },
+        {
+          "prompt": "The technician is ___ a cable. (install; -ing form)",
+          "answer": "installing",
+          "alternatives": [],
+          "explanation_hy": "Install բային ավելացրու -ing՝ installing։"
+        },
+        {
+          "prompt": "Make negative: 'We are testing it.' We ___ testing it.",
+          "answer": "are not",
+          "alternatives": [
+            "aren't"
+          ],
+          "explanation_hy": "Ժխտման մեջ not-ը դրվում է are-ից հետո։"
+        }
+      ],
+      "speaking_prompts": [
+        "Describe three things happening around you now.",
+        "Compare your usual routine with what you are doing this week."
+      ],
+      "related_days": [
+        3,
+        11,
+        15
+      ],
+      "book_keywords": [
+        "present continuous",
+        "actions in progress",
+        "present tense contrast"
+      ]
+    },
+    {
+      "id": "questions",
+      "title": "Ask questions that get clear answers",
+      "level": "A1",
+      "category": "Questions",
+      "summary_en": "Choose the right question structure when asking about people, routines, and current actions.",
+      "explanation_hy": "Be բայով հարց կազմելիս am/is/are-ը դիր ենթակայից առաջ՝ Are you ready?։ Present simple-ի մյուս բայերով օգտագործիր do կամ does, ապա ենթական և բայի հիմնական ձևը։ Who, what, where կամ when բառը սովորաբար դրվում է հարցի սկզբում։",
+      "pattern": "Are you …? · Do you work …? · Where does she work?",
+      "examples": [
+        {
+          "en": "Are you free after lunch?",
+          "hy": "Ճաշից հետո ազա՞տ ես։"
+        },
+        {
+          "en": "What does this button do?",
+          "hy": "Ի՞նչ է անում այս կոճակը։"
+        },
+        {
+          "en": "Why are they checking the same file again?",
+          "hy": "Ինչո՞ւ են նրանք նորից ստուգում նույն ֆայլը։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "Where you work?",
+        "correct": "Where do you work?",
+        "why_hy": "Work-ը be բայը չէ․ present simple-ի այս հարցին անհրաժեշտ է do։"
+      },
+      "exercises": [
+        {
+          "prompt": "___ you available at ten? (Is / Are / Do / Does)",
+          "answer": "Are",
+          "alternatives": [],
+          "explanation_hy": "Available-ը վիճակ է նկարագրում․ you-ի հետ հարցը սկսիր Are-ով։"
+        },
+        {
+          "prompt": "___ your teammate work remotely? (Is / Are / Do / Does)",
+          "answer": "Does",
+          "alternatives": [],
+          "explanation_hy": "Your teammate-ը եզակի է, իսկ հիմնական բայը work է․ պետք է Does։"
+        },
+        {
+          "prompt": "Where does the meeting ___ place? (take; correct form)",
+          "answer": "take",
+          "alternatives": [],
+          "explanation_hy": "Does-ից հետո հիմնական բայը take է՝ առանց -s-ի։"
+        },
+        {
+          "prompt": "___ are you going: to the office or the hotel? (Where / When)",
+          "answer": "Where",
+          "alternatives": [],
+          "explanation_hy": "Հարցը վայրի մասին է․ օգտագործիր Where։"
+        }
+      ],
+      "speaking_prompts": [
+        "Ask three questions about a teammate's work and today's plans.",
+        "Ask when, where, and why a meeting will happen."
+      ],
+      "related_days": [
+        4,
+        12,
+        17,
+        22,
+        24,
+        28
+      ],
+      "book_keywords": [
+        "questions",
+        "do and does",
+        "question word order"
+      ]
+    },
+    {
+      "id": "past-simple",
+      "title": "Tell someone what happened",
+      "level": "A2",
+      "category": "Past",
+      "summary_en": "Use the past simple to describe completed events at a finished time.",
+      "explanation_hy": "Past simple-ն օգտագործիր անցյալում ավարտված դեպքերի համար, օրինակ՝ yesterday կամ last week ժամանակային նշումներով։ Կանոնավոր բայերը հաճախ ստանում են -ed, իսկ անկանոն բայերն ունեն առանձին ձևեր՝ go → went։ Հարցերում և ժխտումներում did կամ didn't-ից հետո հիմնական բայը վերադառնում է սկզբնական ձևին։",
+      "pattern": "I checked / I went … · Did you check …? · I didn't check …",
+      "examples": [
+        {
+          "en": "Yesterday, I reviewed the test results.",
+          "hy": "Երեկ ես ուսումնասիրեցի թեստերի արդյունքները։"
+        },
+        {
+          "en": "We went to a small restaurant after work.",
+          "hy": "Աշխատանքից հետո գնացինք մի փոքր ռեստորան։"
+        },
+        {
+          "en": "The team didn't change the deadline.",
+          "hy": "Թիմը չփոխեց վերջնաժամկետը։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "Did you checked the report?",
+        "correct": "Did you check the report?",
+        "why_hy": "Անցյալը արդեն ցույց է տալիս did-ը․ check-ին -ed ավելացնել պետք չէ։"
+      },
+      "exercises": [
+        {
+          "prompt": "Yesterday, we ___ the release notes. (review; past simple)",
+          "answer": "reviewed",
+          "alternatives": [],
+          "explanation_hy": "Review-ը կանոնավոր բայ է․ անցյալում՝ reviewed։"
+        },
+        {
+          "prompt": "Last Friday, I ___ to work by bus. (go; past simple)",
+          "answer": "went",
+          "alternatives": [],
+          "explanation_hy": "Go-ի past simple ձևը went է։"
+        },
+        {
+          "prompt": "Did they ___ the updated file? (receive; correct form)",
+          "answer": "receive",
+          "alternatives": [],
+          "explanation_hy": "Did-ից հետո receive-ը մնում է հիմնական ձևով։"
+        },
+        {
+          "prompt": "Make negative: 'She called yesterday.' She ___ yesterday.",
+          "answer": "did not call",
+          "alternatives": [
+            "didn't call"
+          ],
+          "explanation_hy": "Ժխտման համար գործածիր did not կամ didn't և call։"
+        }
+      ],
+      "speaking_prompts": [
+        "Tell a short story about yesterday: first, then, finally.",
+        "Describe your last free evening and answer two follow-up questions."
+      ],
+      "related_days": [
+        8,
+        14,
+        21,
+        25
+      ],
+      "book_keywords": [
+        "past simple",
+        "did questions",
+        "irregular verbs"
+      ]
+    },
+    {
+      "id": "present-perfect",
+      "title": "Connect past work to the present",
+      "level": "B1",
+      "category": "Past",
+      "summary_en": "Use have or has with a past participle for experience and results relevant now.",
+      "explanation_hy": "Present perfect-ը կապում է անցյալը ներկայի հետ՝ արդյունք, փորձ կամ մինչև հիմա շարունակվող ժամանակաշրջան։ Կառուցվածքը have/has + past participle է՝ I have finished, she has written։ Ավարտված հստակ ժամանակի հետ, օրինակ՝ yesterday, սովորաբար գործածիր past simple։",
+      "pattern": "I/you/we/they have + past participle · he/she/it has + past participle",
+      "examples": [
+        {
+          "en": "I have updated the checklist, so we can use it now.",
+          "hy": "Ես թարմացրել եմ ստուգաթերթը, ուստի հիմա կարող ենք օգտագործել այն։"
+        },
+        {
+          "en": "She has worked with international teams before.",
+          "hy": "Նա նախկինում աշխատել է միջազգային թիմերի հետ։"
+        },
+        {
+          "en": "We haven't received the final answer yet.",
+          "hy": "Մենք դեռ չենք ստացել վերջնական պատասխանը։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "I have sent it yesterday.",
+        "correct": "I sent it yesterday.",
+        "why_hy": "Yesterday-ը ավարտված հստակ ժամանակ է․ այստեղ օգտագործիր past simple։"
+      },
+      "exercises": [
+        {
+          "prompt": "We ___ finished the review; the report is ready. (have / has)",
+          "answer": "have",
+          "alternatives": [],
+          "explanation_hy": "We-ի հետ գործածվում է have։"
+        },
+        {
+          "prompt": "My manager ___ already approved the plan. (have / has)",
+          "answer": "has",
+          "alternatives": [],
+          "explanation_hy": "My manager-ը եզակի է, ուստի պետք է has։"
+        },
+        {
+          "prompt": "She has ___ the instructions twice. (write; past participle)",
+          "answer": "written",
+          "alternatives": [],
+          "explanation_hy": "Write-ի past participle ձևը written է։"
+        },
+        {
+          "prompt": "I ___ the report yesterday. (sent / have sent)",
+          "answer": "sent",
+          "alternatives": [],
+          "explanation_hy": "Yesterday-ի հետ այս ավարտված գործողությունը ներկայացրու past simple-ով։"
+        }
+      ],
+      "speaking_prompts": [
+        "Give an update: two completed tasks and one unfinished task.",
+        "Describe an experience, then use the past simple to say when."
+      ],
+      "related_days": [
+        11,
+        16,
+        21,
+        29,
+        30
+      ],
+      "book_keywords": [
+        "present perfect",
+        "past participles",
+        "present perfect and past simple"
+      ]
+    },
+    {
+      "id": "future-plans",
+      "title": "Make plans and respond to changes",
+      "level": "A2",
+      "category": "Future",
+      "summary_en": "Use going to for intentions and will for offers or decisions made as you speak.",
+      "explanation_hy": "Նախապես որոշած մտադրության համար հաճախ օգտագործվում է am/is/are going to և բայի հիմնական ձևը։ Հենց խոսելիս ընդունած որոշման կամ առաջարկի համար հաճախ գործածվում է will։ Ձևերի իմաստները երբեմն համընկնում են․ ընտրությունը կախված է նրանից, թե ինչ ես շեշտում։",
+      "pattern": "I am going to + verb · she is going to + verb · I will + verb",
+      "examples": [
+        {
+          "en": "I am going to practise English after dinner.",
+          "hy": "Պատրաստվում եմ ընթրիքից հետո անգլերեն պարապել։"
+        },
+        {
+          "en": "We are going to discuss the deadline tomorrow.",
+          "hy": "Վաղը պատրաստվում ենք քննարկել վերջնաժամկետը։"
+        },
+        {
+          "en": "You need a copy? I will send it now.",
+          "hy": "Պատճե՞ն է պետք։ Հիմա կուղարկեմ այն։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "I will to call you.",
+        "correct": "I will call you.",
+        "why_hy": "Will-ից հետո բայի հիմնական ձևն է՝ առանց to-ի։"
+      },
+      "exercises": [
+        {
+          "prompt": "I ___ going to practise before the call. (am / is / are)",
+          "answer": "am",
+          "alternatives": [],
+          "explanation_hy": "I am going to-ը ներկայացնում է քո մտադրությունը։"
+        },
+        {
+          "prompt": "Our team ___ going to review the schedule. (am / is / are; team = one group)",
+          "answer": "is",
+          "alternatives": [],
+          "explanation_hy": "Այստեղ team-ը դիտում ենք որպես մեկ խումբ, հետևաբար՝ is։"
+        },
+        {
+          "prompt": "I will ___ the notes after the meeting. (send; correct form)",
+          "answer": "send",
+          "alternatives": [],
+          "explanation_hy": "Will-ից հետո send-ը մնում է հիմնական ձևով։"
+        },
+        {
+          "prompt": "Make negative: 'We will forget.' We ___ forget.",
+          "answer": "will not",
+          "alternatives": [
+            "won't"
+          ],
+          "explanation_hy": "Will not-ի սովորական կրճատ ձևը won't է։"
+        }
+      ],
+      "speaking_prompts": [
+        "Describe two plans using going to and make an offer using will.",
+        "Your meeting time changes. Explain your revised plan."
+      ],
+      "related_days": [
+        5,
+        20,
+        26,
+        28
+      ],
+      "book_keywords": [
+        "future plans",
+        "going to",
+        "will"
+      ]
+    },
+    {
+      "id": "modals",
+      "title": "Request, advise, and explain limits",
+      "level": "A2",
+      "category": "Structures",
+      "summary_en": "Use modal verbs to ask politely, give advice, and distinguish rules from optional actions.",
+      "explanation_hy": "Can, could, should և must-ից հետո գործածիր բայի հիմնական ձևը՝ առանց to-ի կամ -s-ի։ Could you …? ձևը քաղաքավարի խնդրանք է, իսկ should-ը՝ խորհուրդ։ Mustn't-ը նշանակում է արգելք, իսկ don't have to-ն՝ պարտադիր չէ։",
+      "pattern": "Could you + verb? · You should + verb · You mustn't + verb",
+      "examples": [
+        {
+          "en": "Could you repeat the last number, please?",
+          "hy": "Կխնդրե՞մ կրկնել վերջին թիվը։"
+        },
+        {
+          "en": "We should check the result before we continue.",
+          "hy": "Շարունակելուց առաջ լավ կլինի ստուգենք արդյունքը։"
+        },
+        {
+          "en": "You don't have to join this optional session.",
+          "hy": "Պարտադիր չէ մասնակցել այս ընտրովի հանդիպմանը։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "Could you to explain the problem?",
+        "correct": "Could you explain the problem?",
+        "why_hy": "Could-ից հետո explain-ը գործածվում է առանց to-ի։"
+      },
+      "exercises": [
+        {
+          "prompt": "Could you ___ me the address? (send; correct form)",
+          "answer": "send",
+          "alternatives": [],
+          "explanation_hy": "Could-ից հետո պետք է բայի հիմնական ձևը։"
+        },
+        {
+          "prompt": "Sharing passwords is forbidden. You ___ share yours. (mustn't / don't have to)",
+          "answer": "mustn't",
+          "alternatives": [
+            "must not"
+          ],
+          "explanation_hy": "Արգելքը փոխանցելու համար գործածիր mustn't կամ must not։"
+        },
+        {
+          "prompt": "Attendance is optional. You ___ attend. (mustn't / don't have to)",
+          "answer": "don't have to",
+          "alternatives": [
+            "do not have to"
+          ],
+          "explanation_hy": "Optional-ը նշանակում է՝ մասնակցելը պարտադիր չէ։"
+        },
+        {
+          "prompt": "Give advice: You ___ take a break. (should / mustn't)",
+          "answer": "should",
+          "alternatives": [],
+          "explanation_hy": "Should-ը խորհուրդ է տալիս, ոչ թե արգելում գործողությունը։"
+        }
+      ],
+      "speaking_prompts": [
+        "Ask a colleague for help politely, then offer a suggestion.",
+        "Explain one rule and one optional action to a new teammate."
+      ],
+      "related_days": [
+        6,
+        13,
+        15,
+        17,
+        23,
+        27
+      ],
+      "book_keywords": [
+        "modal verbs",
+        "polite requests",
+        "must not and do not have to"
+      ]
+    },
+    {
+      "id": "articles",
+      "title": "Make nouns clear with a, an, and the",
+      "level": "A2",
+      "category": "Structures",
+      "summary_en": "Introduce one countable thing with a or an and use the when the listener can identify it.",
+      "explanation_hy": "Եզակի հաշվելի առարկան առաջին անգամ ներկայացնելիս հաճախ պետք է a կամ an․ an-ն ընտրիր ձայնավոր հնչյունից առաջ։ The-ն օգտագործիր, երբ զրուցակիցը հասկանում է՝ կոնկրետ որ առարկայի մասին ես խոսում։ Ընդհանուր իմաստով հոգնակի կամ անհաշվելի գոյականը կարող է լինել առանց հոդի։",
+      "pattern": "a new report · an engineer · the report we discussed · useful information",
+      "examples": [
+        {
+          "en": "I found a problem in the report you sent.",
+          "hy": "Քո ուղարկած հաշվետվության մեջ մի խնդիր գտա։"
+        },
+        {
+          "en": "She is an engineer on our team.",
+          "hy": "Նա մեր թիմի ինժեներներից է։"
+        },
+        {
+          "en": "We need more information before deciding.",
+          "hy": "Որոշում ընդունելուց առաջ մեզ ավելի շատ տեղեկություն է պետք։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "He gave me an advice.",
+        "correct": "He gave me some advice.",
+        "why_hy": "Advice-ը անգլերենում անհաշվելի է․ սովորաբար չենք ասում an advice։"
+      },
+      "exercises": [
+        {
+          "prompt": "She is ___ engineer. (a / an)",
+          "answer": "an",
+          "alternatives": [],
+          "explanation_hy": "Engineer-ը սկսվում է ձայնավոր հնչյունով, հետևաբար՝ an։"
+        },
+        {
+          "prompt": "I need ___ new notebook. (a / an)",
+          "answer": "a",
+          "alternatives": [],
+          "explanation_hy": "New-ը սկսվում է բաղաձայն հնչյունով, ուստի օգտագործիր a։"
+        },
+        {
+          "prompt": "I bought a notebook. ___ notebook is blue. (A / The)",
+          "answer": "The",
+          "alternatives": [],
+          "explanation_hy": "Արդեն նշված նույն տետրի մասին ենք խոսում․ հիմա պետք է The։"
+        },
+        {
+          "prompt": "The guide gave us ___ useful advice. (an / some)",
+          "answer": "some",
+          "alternatives": [],
+          "explanation_hy": "Advice-ը անհաշվելի է․ այս նախադասության մեջ ճիշտ է some։"
+        }
+      ],
+      "speaking_prompts": [
+        "Introduce an object with a/an, then describe it using the.",
+        "Describe your job and the information you need."
+      ],
+      "related_days": [
+        1,
+        10,
+        12,
+        19,
+        29
+      ],
+      "book_keywords": [
+        "articles",
+        "a an the",
+        "countable and uncountable nouns"
+      ]
+    },
+    {
+      "id": "comparisons",
+      "title": "Compare options and recommend one",
+      "level": "A2",
+      "category": "Structures",
+      "summary_en": "Compare two choices with comparative adjectives and identify a top choice with a superlative.",
+      "explanation_hy": "Երկու տարբերակ համեմատելիս կարճ ածականները հաճախ ստանում են -er, օրինակ՝ faster, իսկ շատ երկար ածականներից առաջ դրվում է more։ Համեմատության երկրորդ մասը կապիր than բառով։ Միաժամանակ մի օգտագործիր more և -er․ որոշ ածականներ ունեն անկանոն ձևեր՝ good → better → best։",
+      "pattern": "faster than … · more reliable than … · the fastest · the best",
+      "examples": [
+        {
+          "en": "The train is faster than the bus today.",
+          "hy": "Այսօր գնացքն ավտոբուսից ավելի արագ է։"
+        },
+        {
+          "en": "This option is more expensive but easier to maintain.",
+          "hy": "Այս տարբերակն ավելի թանկ է, բայց ավելի հեշտ է սպասարկել։"
+        },
+        {
+          "en": "Of the three routes, this is the shortest.",
+          "hy": "Երեք երթուղիներից սա ամենակարճն է։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "This method is more faster.",
+        "correct": "This method is faster.",
+        "why_hy": "Faster-ն արդեն համեմատական ձև է․ more ավելացնելու կարիք չկա։"
+      },
+      "exercises": [
+        {
+          "prompt": "This laptop is ___ than mine. (fast; comparative)",
+          "answer": "faster",
+          "alternatives": [],
+          "explanation_hy": "Fast-ի համեմատական ձևը faster է։"
+        },
+        {
+          "prompt": "This plan is ___ reliable than the old one. (more / most)",
+          "answer": "more",
+          "alternatives": [],
+          "explanation_hy": "Երկու պլան համեմատելիս օգտագործիր more reliable than։"
+        },
+        {
+          "prompt": "This solution is ___ than the previous one. (good; comparative)",
+          "answer": "better",
+          "alternatives": [],
+          "explanation_hy": "Good-ի համեմատական ձևը better է։"
+        },
+        {
+          "prompt": "Of all three routes, this is the ___. (short; superlative)",
+          "answer": "shortest",
+          "alternatives": [],
+          "explanation_hy": "Ամբողջ խմբում ամենակարճը նշելու համար պետք է shortest։"
+        }
+      ],
+      "speaking_prompts": [
+        "Compare two tools or travel routes: cost, speed, and convenience.",
+        "Recommend one option, explaining a benefit and a disadvantage."
+      ],
+      "related_days": [
+        18,
+        19,
+        24,
+        26
+      ],
+      "book_keywords": [
+        "comparative adjectives",
+        "superlatives",
+        "than"
+      ]
+    },
+    {
+      "id": "conditionals",
+      "title": "Connect a condition to a result",
+      "level": "B1",
+      "category": "Future",
+      "summary_en": "Explain a possible future result with if and distinguish it from an imagined situation.",
+      "explanation_hy": "Հնարավոր ապագա պայմանը հաճախ կառուցվում է if + present simple, իսկ արդյունքը՝ will + բայ։ Այդ կառուցվածքում if-ից հետո ապագայի իմաստով will մի ավելացրու։ Երևակայական իրավիճակի համար օգտագործիր if + past simple և would՝ If we had time, we would check։",
+      "pattern": "If + present simple, will + verb · If + past simple, would + verb",
+      "examples": [
+        {
+          "en": "If the test passes, we will continue.",
+          "hy": "Եթե թեստը հաջող անցնի, մենք կշարունակենք։"
+        },
+        {
+          "en": "We will move the meeting if the client is unavailable.",
+          "hy": "Եթե հաճախորդը հասանելի չլինի, մենք կտեղափոխենք հանդիպումը։"
+        },
+        {
+          "en": "If I had an extra hour, I would practise speaking.",
+          "hy": "Եթե լրացուցիչ մեկ ժամ ունենայի, կպարապեի խոսելը։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "If the test will pass, we will continue.",
+        "correct": "If the test passes, we will continue.",
+        "why_hy": "Հնարավոր ապագա պայման ներկայացնող if մասում այստեղ օգտագործիր present simple։"
+      },
+      "exercises": [
+        {
+          "prompt": "If the client ___, we will confirm the date. (reply; present simple)",
+          "answer": "replies",
+          "alternatives": [],
+          "explanation_hy": "Client-ը եզակի է․ reply-ի համապատասխան ձևը replies է։"
+        },
+        {
+          "prompt": "If we have time, we ___ review another example. (will / would; first conditional)",
+          "answer": "will",
+          "alternatives": [],
+          "explanation_hy": "Այս first conditional-ի արդյունքի մասում օգտագործիր will։"
+        },
+        {
+          "prompt": "If I ___ more time, I would join the course. (have; past simple)",
+          "answer": "had",
+          "alternatives": [],
+          "explanation_hy": "Այս երևակայական պայմանում have-ը դառնում է had։"
+        },
+        {
+          "prompt": "If we had space, we ___ invite more people. (will / would; second conditional)",
+          "answer": "would",
+          "alternatives": [],
+          "explanation_hy": "Second conditional-ի արդյունքի մասում գործածվում է would։"
+        }
+      ],
+      "speaking_prompts": [
+        "If something goes wrong tomorrow, what will you do?",
+        "If you had two extra hours weekly, how would you use them?"
+      ],
+      "related_days": [
+        13,
+        16,
+        18,
+        26,
+        27
+      ],
+      "book_keywords": [
+        "conditionals",
+        "if and will",
+        "imagined situations"
+      ]
+    },
+    {
+      "id": "passive",
+      "title": "Describe a process or a result",
+      "level": "B1",
+      "category": "Structures",
+      "summary_en": "Use the passive when an action's result or the thing affected matters more than the person doing it.",
+      "explanation_hy": "Passive կառուցվածքում ուշադրության կենտրոնում գործողությունը կրող առարկան է։ Կառուցվածքը be բայի համապատասխան ձևն է և past participle-ը, օրինակ՝ The report is checked։ Գործողությունը կատարողին կարող ես նշել by-ով, եթե այդ տեղեկությունը կարևոր է։",
+      "pattern": "am/is/are + past participle · was/were + past participle",
+      "examples": [
+        {
+          "en": "Each request is reviewed by a team member.",
+          "hy": "Յուրաքանչյուր հարցում ստուգվում է թիմի անդամներից մեկի կողմից։"
+        },
+        {
+          "en": "The final report was sent this morning.",
+          "hy": "Վերջնական հաշվետվությունն ուղարկվել է այսօր առավոտյան։"
+        },
+        {
+          "en": "The files are stored in a shared folder.",
+          "hy": "Ֆայլերը պահվում են ընդհանուր թղթապանակում։"
+        }
+      ],
+      "common_mistake": {
+        "incorrect": "The report was send yesterday.",
+        "correct": "The report was sent yesterday.",
+        "why_hy": "Passive-ում was-ից հետո անհրաժեշտ է sent՝ send-ի past participle ձևը։"
+      },
+      "exercises": [
+        {
+          "prompt": "Every request ___ reviewed before approval. (is / are)",
+          "answer": "is",
+          "alternatives": [],
+          "explanation_hy": "Every request-ը եզակի է․ ճիշտ ձևը is reviewed է։"
+        },
+        {
+          "prompt": "The documents ___ checked every morning. (is / are)",
+          "answer": "are",
+          "alternatives": [],
+          "explanation_hy": "Documents-ը հոգնակի է․ օգտագործիր are checked։"
+        },
+        {
+          "prompt": "The email was ___ before lunch. (send; past participle)",
+          "answer": "sent",
+          "alternatives": [],
+          "explanation_hy": "Send-ի past participle ձևը sent է։"
+        },
+        {
+          "prompt": "The two windows ___ repaired yesterday. (was / were)",
+          "answer": "were",
+          "alternatives": [],
+          "explanation_hy": "Two windows-ը հոգնակի է․ անցյալում պետք է were repaired։"
+        }
+      ],
+      "speaking_prompts": [
+        "Explain what is checked, stored, and sent in a familiar process.",
+        "Describe a completed change using two passive sentences."
+      ],
+      "related_days": [
+        9,
+        15,
+        20,
+        21,
+        28
+      ],
+      "book_keywords": [
+        "passive voice",
+        "be and past participle",
+        "process descriptions"
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": "essential-grammar-in-use",
+      "title": "Essential Grammar in Use",
+      "authors": "Raymond Murphy",
+      "edition": "Fourth edition",
+      "level": "A1–B1",
+      "variety": "British English",
+      "description": "Elementary grammar reference and practice for independent study. Cambridge's official ebook includes audio and answer keys, with access through Cambridge One.",
+      "official_url": "https://shop.cambridge.org/english/product/2800506037",
+      "preview_url": "https://assets.cambridge.org/97811074/80537/frontmatter/9781107480537_frontmatter.pdf"
+    },
+    {
+      "id": "english-grammar-in-use",
+      "title": "English Grammar in Use",
+      "authors": "Raymond Murphy",
+      "edition": "Fifth edition",
+      "level": "B1–B2",
+      "variety": "British English",
+      "description": "Intermediate grammar reference and practice. Cambridge's official interactive ebook provides audio, answer keys, and automatically marked exercises through Cambridge One.",
+      "official_url": "https://shop.cambridge.org/english/product/2800506028",
+      "preview_url": "https://assets.cambridge.org/97811084/57651/frontmatter/9781108457651_frontmatter.pdf"
+    },
+    {
+      "id": "basic-grammar-in-use",
+      "title": "Basic Grammar in Use",
+      "authors": "Raymond Murphy, William R. Smalzer, Joseph Chapple",
+      "edition": "Fourth edition",
+      "level": "A1–B1",
+      "variety": "American English",
+      "description": "Elementary grammar reference and practice in American English. The official ebook includes audio and answer keys and is accessed through Cambridge One.",
+      "official_url": "https://shop.cambridge.org/english/product/2800506025",
+      "preview_url": null
+    },
+    {
+      "id": "grammar-in-use-intermediate",
+      "title": "Grammar in Use Intermediate",
+      "authors": "Raymond Murphy, William R. Smalzer, Joseph Chapple",
+      "edition": "Fourth edition",
+      "level": "B1–B2",
+      "variety": "American English",
+      "description": "Intermediate grammar reference and practice in American English. The official ebook includes audio and answer keys and is accessed through Cambridge One.",
+      "official_url": "https://shop.cambridge.org/english/product/2800506038",
+      "preview_url": "https://assets.cambridge.org/97811086/17611/frontmatter/9781108617611_frontmatter.pdf"
+    }
+  ]
+}

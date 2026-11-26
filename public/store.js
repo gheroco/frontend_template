@@ -1,10 +1,16 @@
 const KEY = 'fluent30.progress.v1';
-const clean = () => ({ version: 1, updatedAt: null, lastDay: 1, lastStep: 'recall', settings: { difficulty: 'standard' }, days: {}, phrases: {}, activity: {} });
+const clean = () => ({ version: 1, updatedAt: null, lastDay: 1, lastStep: 'recall', settings: { difficulty: 'standard' }, days: {}, phrases: {}, activity: {}, grammar: {} });
 let available = true;
 const numeric = (v, fallback, min, max) => Number.isFinite(Number(v)) ? Math.min(max, Math.max(min, Number(v))) : fallback;
 const text = v => typeof v === 'string' ? v.slice(0, 10000) : '';
 const steps = new Set(['recall', 'listen', 'language', 'conversation', 'transfer', 'record']);
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+const grammarIds = new Set(['be','present-simple','present-continuous','questions','past-simple','present-perfect','future-plans','modals','articles','comparisons','conditionals','passive']);
+function grammarRecord(value) {
+  const v=record(value)?value:{}, answers={};
+  for(const [key,answer] of Object.entries(record(v.answers)?v.answers:{})) if(/^[0-3]$/.test(key)) answers[key]=text(answer).slice(0,400);
+  return {answers,checked:!!v.checked,practised:!!v.practised,saved:!!v.saved};
+}
 
 export function validateState(raw) {
   if (!record(raw) || raw.version !== 1 || !record(raw.days)) throw new Error('This is not a Fluent /30 progress backup.');
@@ -22,6 +28,7 @@ export function validateState(raw) {
   }
   for(const [k,v] of Object.entries(record(raw.phrases) ? raw.phrases : {})) if (/^([1-9]|[12][0-9]|30)-[0-4]$/.test(k) && record(v)) next.phrases[k]={saved:!!v.saved,known:!!v.known};
   for(const [k,v] of Object.entries(record(raw.activity) ? raw.activity : {})) if (/^\d{4}-\d{2}-\d{2}$/.test(k)) next.activity[k]=numeric(v,0,0,100000);
+  for(const [id,v] of Object.entries(record(raw.grammar)?raw.grammar:{})) if(grammarIds.has(id)&&record(v)) next.grammar[id]=grammarRecord(v);
   return next;
 }
 
@@ -39,6 +46,8 @@ export function setAnswer(n,key,value) {return setDay(n,{answers:{...dayState(n)
 export function setLast(n,step) {state.lastDay=n;state.lastStep=step;return save();}
 export function setDifficulty(value) {if(['standard','easier','harder'].includes(value)){state.settings.difficulty=value;return save();}return false;}
 export function setPhrase(key,patch) {state.phrases[key]={...state.phrases[key],...patch};return save();}
+export function grammarState(id) {return state.grammar[id]||grammarRecord({});}
+export function setGrammar(id,patch) {if(!grammarIds.has(id))return false;state.grammar[id]=grammarRecord({...grammarState(id),...patch});return save();}
 export function setStep(n,step,complete=true) {
   const d=dayState(n);const done=new Set(d.steps);complete?done.add(step):done.delete(step);
   const date=new Date();const localDate=[date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('-');

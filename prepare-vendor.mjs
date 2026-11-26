@@ -1,0 +1,11 @@
+import {cp,mkdir,readFile,rm} from 'node:fs/promises';
+const source='node_modules/pdfjs-dist';
+const target='public/vendor/pdfjs';
+const pkg=JSON.parse(await readFile(`${source}/package.json`,'utf8'));
+if(pkg.version!=='6.5.438')throw new Error('Unexpected PDF.js version. Use the locked dependency.');
+await rm(target,{recursive:true,force:true});
+await mkdir(target,{recursive:true});
+for(const name of ['pdf','pdf.worker'])await cp(`${source}/legacy/build/${name}.mjs`,`${target}/${name}.js`);
+for(const folder of ['cmaps','standard_fonts','wasm'])await cp(`${source}/${folder}`,`${target}/${folder}`,{recursive:true});
+await cp(`${source}/LICENSE`,`${target}/LICENSE`);
+console.log(`Prepared PDF.js ${pkg.version} for local-only book reading.`);

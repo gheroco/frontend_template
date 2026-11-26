@@ -3,3 +3,4 @@ dist/
 .DS_Store
 qa/
 public/qa-preview.html
+public/vendor/
