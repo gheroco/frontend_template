@@ -1,0 +1,2927 @@
+{
+  "schema_version": 1,
+  "title_en": "30 Days of Spoken English",
+  "title_hy": "Անգլերեն խոսելու 30 օրվա ամբողջական աշխատանքային տետր",
+  "daily_minutes": 120,
+  "weeks": [
+    {
+      "id": 1,
+      "title_en": "Start speaking",
+      "title_hy": "Առօրյա խոսքի հիմքեր",
+      "description_en": "Introduce yourself, ask clear questions and handle everyday plans and requests.",
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 2,
+      "title_en": "Explain your work",
+      "title_hy": "Պատմել և բացատրել աշխատանքը",
+      "description_en": "Tell stories, explain a process, give updates and clarify what someone needs.",
+      "days": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": 3,
+      "title_en": "Work through problems",
+      "title_hy": "Քննարկել խնդիրներ և լուծումներ",
+      "description_en": "Describe problems, compare options, adapt your explanation and handle new questions.",
+      "days": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "id": 4,
+      "title_en": "Speak more independently",
+      "title_hy": "Ավելի ինքնուրույն զրույց",
+      "description_en": "Keep conversations going, lead a meeting and measure your progress in new situations.",
+      "days": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title_hy": "Մեկնարկային ձայնագրություն և ծանոթություն",
+      "goal_hy": "Պահել քո իրական մեկնարկային խոսքը և սովորել ներկայանալ 4–6 կապակցված նախադասությամբ։ Սկզբնական փորձը կատարիր մինչև տեսանյութը դիտելը։",
+      "primary": {
+        "title": "Meeting new people",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a1/meeting-new-people",
+        "type": "Տեսանյութ և տեքստային վերծանում",
+        "level": "A1",
+        "verified_note": "Պաշտոնական էջում բացվել են տեսանյութի նկարագրությունը և ամբողջ զրույցի տեքստը․ Vanya-ն ծանոթանում է Emir-ի և Yuna-ի հետ։"
+      },
+      "support": {
+        "title": "Present simple: 'to be'",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple-be",
+        "type": "Քերականության բացատրություն և վարժություններ",
+        "level": "A1–A2",
+        "verified_note": "Ստուգված են am/is/are ձևերի աղյուսակը, կարճ ձևերը և հարցերը։ Այսօր կարդա միայն սկզբնական բացատրությունն ու կարճ ձևերը։"
+      },
+      "input_tasks": [
+        "20 րոպեի առաջին դիտման ժամանակ տեքստը փակիր։ Who meets Vanya before Yuna appears? Պատասխանիր մեկ նախադասությամբ։",
+        "Երկրորդ դիտման ժամանակ ստուգիր վերծանումը։ Where are the people meeting: at an office or in a restaurant? Նշիր միջավայրի մեկ ապացույց։",
+        "What drink does Emir offer? Հետո ընտրիր քեզ օգտակար երկու կարճ հատված և բարձրաձայն կրկնիր։ Մի սովորիր ամբողջ երկխոսությունն անգիր։"
+      ],
+      "input_answers": [
+        "Emir meets her.",
+        "They are at an office; Emir offers to show Vanya around it.",
+        "He offers coffee."
+      ],
+      "chunks": [
+        {
+          "en": "Hello, my name is Georgi.",
+          "hy": "Բարև, իմ անունը Գեորգի է։"
+        },
+        {
+          "en": "I am from Armenia.",
+          "hy": "Ես Հայաստանից եմ։"
+        },
+        {
+          "en": "I work in software engineering.",
+          "hy": "Աշխատում եմ ծրագրային ինժեներիայի ոլորտում։"
+        },
+        {
+          "en": "It is good to meet everyone.",
+          "hy": "Ուրախ եմ բոլորիդ հետ ծանոթանալու համար։"
+        },
+        {
+          "en": "Could you tell me your name?",
+          "hy": "Կասե՞ք ձեր անունը։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ կարդա օժանդակ բացատրությունը, լրացրու am/is/are-ը, ստուգիր պատասխանները և յուրաքանչյուր նախադասության համար ստեղծիր մեկ անձնական տարբերակ։",
+        "items": [
+          "I ___ an engineer.",
+          "My colleagues ___ in different countries.",
+          "My main goal ___ to speak more clearly."
+        ],
+        "answers": [
+          "I am an engineer.",
+          "My colleagues are in different countries.",
+          "My main goal is to speak more clearly."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ նոր թիմին միացող աշխատակից ես։ Ներկայացիր, հարցրու մյուսի դերի մասին և փոխեք դերերը։ Կատարեք երեք փուլ՝ ծանոթություն, թիմի մասին հարցեր, նոր գործընկերոջ ներկայացում։ Ամեն փուլից հետո ուղղեք առավելագույնը երկու սխալ։",
+      "questions": [
+        "What do you work on?",
+        "What do you enjoy outside work?",
+        "Why do you want to improve your English?",
+        "Now we are meeting at a hotel, not at work. How would you introduce yourself?"
+      ],
+      "transfer_hy": "20 րոպե․ սկզբում նույն ներկայացումը կրկնիր ուղղումներով։ Հետո ներկայացիր մեկին, ով տեխնոլոգիաների ոլորտում չի աշխատում, և պատասխանիր զրուցակցի հորինած երկու նոր հարցի։",
+      "recording_hy": "Պահիր առաջին չուղղված ձայնագրությունը և վերջում 60 վայրկյանի նոր ներկայացումը։ Վերջին 10 րոպեում գրանցիր երկու կրկնվող դժվարություն ու մեկ հասկանալի նախադասություն։",
+      "easier_hy": "Օգտագործիր name / country / job / goal հենաբառերը և խոսիր 30 վայրկյան։",
+      "harder_hy": "Ներկայացիր 90 վայրկյան, բացատրիր դերդ և ինքդ տուր երկու շարունակող հարց։",
+      "retrieval_hy": "Այսօր առաջին 10 րոպեն մեկնարկային ստուգում է․ մինչև նյութերը բացելը 1-ական րոպե պատմիր քո մասին, երեկվա մասին և աշխատանքիդ մասին։ Զրուցակիցը թող հենց այդ պահին հորինի հինգ նոր հարց։ Ուղղումները թողնեք ավելի ուշ։",
+      "source_refs": [
+        "turn172062295view0",
+        "turn101850712view0"
+      ],
+      "primary_scope_hy": "Դիտիր հիմնական տեսանյութը և երկրորդ անգամ՝ ծանոթության երկխոսությունը։ Transcript-ը բացիր առաջին փորձից հետո։",
+      "support_scope_hy": "Առավելագույնը 5 րոպե․ Grammar explanation-ի աղյուսակը և Contractions բաժինը։ Մնացած բաժիններն այսօր պարտադիր չեն։",
+      "title_en": "Introduce yourself",
+      "short_en": "Record your starting point and introduce yourself to a new team.",
+      "week": 1,
+      "category_en": "Foundations",
+      "icon": "wave"
+    },
+    {
+      "day": 2,
+      "title_hy": "Ես և իմ սովորական օրը",
+      "goal_hy": "Բացատրել, թե որտեղ ես աշխատում, ինչ ես անում սովորաբար և ինչպես է անցնում քո օրը։ Տարբերել I am-ը և I work-ը։",
+      "primary": {
+        "title": "Meeting a new team member",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-new-team-member",
+        "type": "Ձայնագրություն և տեքստային վերծանում",
+        "level": "A1",
+        "verified_note": "Բացված տեքստում Peter-ը և Carla-ն խոսում են իրենց թիմերի, գործի և ծագման մասին։"
+      },
+      "support": {
+        "title": "Present simple",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
+        "type": "Քերականության բացատրություն",
+        "level": "A1–A2",
+        "verified_note": "Ստուգված են սովորական գործողությունների, he/she/it-ի և do/does հարցերի բացատրությունները։ Այսօր կարդա հիմնական ձևերն ու հարցերի հատվածը։"
+      },
+      "input_tasks": [
+        "Առաջին լսումից հետո պատասխանիր․ Which team does Peter work in? Սկզբում պատասխանիր առանց տեքստի, հետո ստուգիր։",
+        "What kind of events does Carla plan? Երկրորդ լսման ժամանակ ուշադրություն դարձրու նրա աշխատանքի գործողությանը, ոչ միայն պաշտոնի անվանը։",
+        "Where are Carla and Peter from? Գրիր երկու կարճ պատասխան, հետո փակիր տեքստը և քո բառերով ներկայացրու նրանց։"
+      ],
+      "input_answers": [
+        "He works in the design team.",
+        "She plans marketing events for new products.",
+        "Carla is from Brazil; Peter is from the UK."
+      ],
+      "chunks": [
+        {
+          "en": "I usually start work at nine.",
+          "hy": "Սովորաբար աշխատանքը սկսում եմ իննին։"
+        },
+        {
+          "en": "I check the test results every morning.",
+          "hy": "Ամեն առավոտ ստուգում եմ թեստերի արդյունքները։"
+        },
+        {
+          "en": "Our team helps other engineers.",
+          "hy": "Մեր թիմն օգնում է մյուս ինժեներներին։"
+        },
+        {
+          "en": "What time do you start work?",
+          "hy": "Ո՞ր ժամին ես սկսում աշխատանքը։"
+        },
+        {
+          "en": "After work, I usually…",
+          "hy": "Աշխատանքից հետո սովորաբար…"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ լրացրու փակագծի բայը ներկա պարզ ձևով։ Ապա առաջին նախադասությունը դարձրու հարց՝ I-ն պահպանելով, երկրորդը՝ ժխտական, և սեփական օրվանից երեք օրինակ ասա։",
+        "items": [
+          "I ___ the build results every morning. (check)",
+          "My colleague ___ the morning meeting. (lead)",
+          "___ your team work with other departments? (do)"
+        ],
+        "answers": [
+          "I check the build results every morning. Question: Do I check the build results every morning?",
+          "My colleague leads the morning meeting. Negative: My colleague does not / doesn't lead the morning meeting.",
+          "Does your team work with other departments?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ծանոթացրու նոր գործընկերոջը քո սովորական աշխատանքային օրվա հետ։ Նա հարցնում է ժամերի, պարտականությունների և ընդմիջումների մասին։ Հետո դու հարցազրույց վարիր նրա հետ և ամփոփիր նրա սովորությունները՝ he/she ձևերով։",
+      "questions": [
+        "What do you do before your first meeting?",
+        "Which task do you do every day?",
+        "What do you usually do after work?",
+        "Today your work starts two hours later. What changes in your routine?"
+      ],
+      "transfer_hy": "20 րոպե․ պատմիր սովորական աշխատանքային օրը, ուղղումներից հետո կրկնիր։ Հետո պատմիր հանգստյան օրվա մասին՝ նույն կառուցվածքներն օգտագործելով այլ գործողությունների համար։",
+      "recording_hy": "Ձայնագրիր 60–90 վայրկյան՝ առավոտ, աշխատանք, երեկո։ Վերջին 10 րոպեում ստուգիր՝ I am-ը չե՞ս ավելացրել սովորական բայից առաջ, և պահիր երկու ուղղում։",
+      "easier_hy": "Սկսիր վեց նախադասությունից․ երեքը I-ով, երեքը my colleague-ով։",
+      "harder_hy": "Համեմատի՛ր երկու մարդու օրերը և բացատրիր առնվազն երկու տարբերության պատճառը։",
+      "retrieval_hy": "Առաջին 10 րոպեում առանց գրառման վերարտադրիր 1-ին օրվա ներկայացումը, հետո տուր երեք ծանոթանալու հարց։ Կրկնիր երեկվա երկու ուղղումները նոր օրինակներով։",
+      "source_refs": [
+        "turn334843784view0",
+        "turn101850712view1"
+      ],
+      "primary_scope_hy": "Լսիր ամբողջ կարճ ձայնագրությունը երկու անգամ․ առաջինը առանց Transcript-ի, երկրորդը՝ տեքստը ստուգելով։",
+      "support_scope_hy": "Առավելագույնը 5 րոպե․ Grammar explanation-ի սկզբից մինչև Short answers-ը։",
+      "title_en": "Your daily routine",
+      "short_en": "Describe your work, responsibilities and a typical day.",
+      "week": 1,
+      "category_en": "Foundations",
+      "icon": "calendar"
+    },
+    {
+      "day": 3,
+      "title_hy": "Սովորաբար և հենց հիմա",
+      "goal_hy": "Տարբերել կանոնավոր աշխատանքը և այս պահին կատարվող գործողությունը՝ I work / I am working։",
+      "primary": {
+        "title": "Talking about other people",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a1/talking-about-other-people",
+        "type": "Տեսանյութ և տեքստային վերծանում",
+        "level": "A1",
+        "verified_note": "Ստուգված զրույցում Noelia-ն օգնում է թվային թիմին կայքի հարցում, իսկ Yuna-ն պատմում է Anya-ի մասին։"
+      },
+      "support": {
+        "title": "Present continuous",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/present-continuous",
+        "type": "Քերականական տեղեկատու",
+        "level": "Էջի սկզբում՝ beginner, հետագա մասում՝ intermediate",
+        "verified_note": "Կարդա միայն սկզբի beginner բաժնի ձևակազմությունն ու activities at the moment of speaking մասը։ Հետագա կիրառությունները այսօրվա առաջադրանք չեն։"
+      },
+      "input_tasks": [
+        "Առաջին դիտումից հետո պատասխանիր․ What project is Noelia helping with? Փորձիր պատասխանել քո բառերով։",
+        "Does Yuna know Anya from her current job or an earlier job? Ստուգիր վերծանումը միայն քո առաջին պատասխանից հետո։",
+        "What does Noelia still need to discuss with Anya? Փակիր տեքստը և երեք պարզ նախադասությամբ ամփոփիր իրավիճակը։"
+      ],
+      "input_answers": [
+        "She is helping with a new website.",
+        "Yuna knows Anya from her previous job.",
+        "She needs to discuss the contract."
+      ],
+      "chunks": [
+        {
+          "en": "I normally work with the testing team.",
+          "hy": "Սովորաբար աշխատում եմ թեստավորման թիմի հետ։"
+        },
+        {
+          "en": "Right now, I am checking a failed test.",
+          "hy": "Հիմա ստուգում եմ չանցած թեստը։"
+        },
+        {
+          "en": "Today, we are testing a new feature.",
+          "hy": "Այսօր նոր հնարավորություն ենք փորձարկում։"
+        },
+        {
+          "en": "What are you doing at the moment?",
+          "hy": "Այս պահին ի՞նչ ես անում։"
+        },
+        {
+          "en": "This is different from my usual work.",
+          "hy": "Սա տարբերվում է իմ սովորական աշխատանքից։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ ընտրիր ճիշտ ձևը՝ ուշադրություն դարձնելով every day և right now հուշումներին։ Ստուգումից հետո բայերը փոխիր ու կազմիր երեք նոր զույգ։ Շարունակական ձևում մի բաց թող am/is/are-ը։",
+        "items": [
+          "I (review / am reviewing) logs every day.",
+          "Right now, I (check / am checking) a connection problem.",
+          "My colleague (helps / is helping) me at the moment."
+        ],
+        "answers": [
+          "I review logs every day.",
+          "Right now, I am checking a connection problem.",
+          "My colleague is helping me at the moment."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ գործընկերդ հարցնում է՝ սովորաբար ինչ ես անում և ինչով ես զբաղված հենց հիմա։ Սկզբում բացատրիր քո գործը, հետո հարցրու նրա մասին։ Երրորդ փուլում միասին նկարագրեք այսօր տեղի ունեցող արտասովոր աշխատանքային օրը։",
+      "questions": [
+        "What do you usually check first?",
+        "What are you working on right now?",
+        "Is anyone helping you today?",
+        "Your main tool is unavailable today. What are you doing instead?"
+      ],
+      "transfer_hy": "20 րոպե․ կրկնիր աշխատանքային համեմատությունը ուղղումներով։ Հետո անցիր ճամփորդության թեմային․ սովորաբար որտեղ ես ապրում և հիմա որտեղ ես մնում, սովորաբար ինչ ես ուտում և այսօր ինչ ես փորձում։",
+      "recording_hy": "Ձայնագրիր 60–90 վայրկյան՝ երեք սովորական և երեք ընթացիկ գործողությամբ։ Վերջին 10 րոպեում նշիր՝ որ նախադասությունում am/is/are-ը բաց թողեցիր կամ սխալ ձև ընտրեցիր։",
+      "easier_hy": "Օգտագործիր միայն I usually… / Right now, I am… զույգը և չորս նախադասություն։",
+      "harder_hy": "Ավելացրու why/because բացատրություններ և նույն գործողությունը նկարագրիր մեկ այլ մարդու անունից։",
+      "retrieval_hy": "10 րոպե․ կրկնիր 2-րդ օրվա երեք սովորական գործողություն և 1-ին օրվա երկու am/is/are նախադասություն։ Նոր չսովորած կառուցվածք մի ներմուծիր այս կրկնության մեջ։",
+      "source_refs": [
+        "turn172062295view3",
+        "turn334843784view1"
+      ],
+      "primary_scope_hy": "Դիտիր տեսանյութի երկխոսությունը և արտահայտությունների կրկնության մասը։ Երկրորդ դիտմանը կարող ես բացել Transcript-ը։",
+      "support_scope_hy": "Առավելագույնը 5 րոպե․ էջի սկզբի beginner բաժնի աղյուսակը և activities at the moment of speaking ենթաբաժինը։ Future plans, stative verbs և intermediate մասերն այսօր բաց թող։",
+      "title_en": "Usually vs right now",
+      "short_en": "Explain what you usually do and what you are doing at this moment.",
+      "week": 1,
+      "category_en": "Foundations",
+      "icon": "spark"
+    },
+    {
+      "day": 4,
+      "title_hy": "Հարցնել և ճշտել լսածը",
+      "goal_hy": "Չհասկացված խոսքին արձագանքել հստակ հարցով, խնդրել կրկնել և հաստատել կարևոր մանրամասները։",
+      "primary": {
+        "title": "Checking understanding",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a1/checking-understanding",
+        "type": "Տեսանյութ և վերծանում",
+        "level": "A1",
+        "verified_note": "Տեքստում Paul-ը դժվարությամբ է լսում Bob-ին և ճշտում է պահանջվող գործիքն ու դրա տեղը։"
+      },
+      "support": {
+        "title": "Question forms",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/question-forms",
+        "type": "Քերականության բացատրություն",
+        "level": "A1–A2",
+        "verified_note": "Բացված էջը բացատրում է be, can և do/does-ով հարցերի բառերի դասավորությունը։"
+      },
+      "primary_scope_hy": "Դիտիր Bob-ի և Paul-ի երկխոսությունը, ապա կրկնության հատվածը։ Տեքստը ստուգիր երկրորդ դիտմանը։",
+      "support_scope_hy": "Մինչև 5 րոպե․ Grammar explanation-ի առաջին երկու աղյուսակները և present simple-ի do/does բացատրությունը։ Անցյալն ու Subject questions-ը թող ավելի ուշ։",
+      "input_tasks": [
+        "Why does Paul ask Bob to repeat himself? Առաջին դիտումից հետո նշիր հիմնական դժվարությունը։",
+        "Which tool does Bob actually need? Երկրորդ դիտմամբ ստուգիր՝ ինչն էր սխալ հասկացել Paul-ը։",
+        "Where should Paul look for the tool? Հիշողությունից ասա տեղը, հետո ստուգիր վերծանման երեք տեղային հուշումները։"
+      ],
+      "input_answers": [
+        "He cannot hear Bob well; his ears are blocked.",
+        "Bob needs a hammer.",
+        "In the toolbox, on the left, under the scissors."
+      ],
+      "chunks": [
+        {
+          "en": "Could you repeat the time, please?",
+          "hy": "Կխնդրե՞մ ժամը կրկնել։"
+        },
+        {
+          "en": "Could you speak a little more slowly?",
+          "hy": "Կարո՞ղ եք մի փոքր ավելի դանդաղ խոսել։"
+        },
+        {
+          "en": "Do you mean Tuesday or Thursday?",
+          "hy": "Երեքշաբթի՞ն նկատի ունեք, թե՞ հինգշաբթին։"
+        },
+        {
+          "en": "Let me check the details.",
+          "hy": "Թույլ տվեք մանրամասները ճշտել։"
+        },
+        {
+          "en": "I understand the first part.",
+          "hy": "Առաջին մասը հասկանում եմ։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ բառերը դասավորիր չեզոք ուղիղ հարցի ձևով։ Հետո հարցերը տուր զրուցակցին և յուրաքանչյուրի վերջին բառը փոխելով՝ ստեղծիր մեկ նոր հարց։",
+        "items": [
+          "where / do / you / work / ?",
+          "what time / is / the meeting / ?",
+          "can / you / repeat / the number / ?"
+        ],
+        "answers": [
+          "Where do you work?",
+          "What time is the meeting?",
+          "Can you repeat the number?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ զրուցակիցը հեռախոսով տալիս է հանդիպման ժամը, սենյակը և մեկ առաջադրանք։ Դրանցից մեկը միտումնավոր չի նշում։ Դու ճշտող հարց տուր, ապա ամբողջ պայմանավորվածությունը սեփական բառերով կրկնիր։ Հետո փոխեք դերերը և նույնը խաղարկեք հյուրանոցի միջավայրում։",
+      "questions": [
+        "What time should we meet?",
+        "Which room should I go to?",
+        "What do I need to bring?",
+        "The room number has changed. How will you check the new details?"
+      ],
+      "transfer_hy": "20 րոպե․ կրկնիր զրույցը երկու ուղղումից հետո։ Հետո գործընկերոջ փոխարեն խոսիր տաքսու վարորդի հետ՝ ճշտելով հասցեն ու հանդիպման վայրը։ Զրուցակիցը թող նոր անուն կամ թիվ ասի։",
+      "recording_hy": "Պահիր մեկ ամբողջ պայմանավորվածության 45–60 վայրկյանի ամփոփում։ Վերջին 10 րոպեում գրանցիր քո ճշտող հարցերից երկուսը և բառերի հերթականության մեկ ուղղում։",
+      "easier_hy": "Զրուցակիցը թող միաժամանակ միայն մեկ թիվ կամ տեղ ասի, դու կրկնիր ու հաստատիր։",
+      "harder_hy": "Լսիր երեք մանրամասն միասին, ճշտիր միայն անորոշը և վերջում համառոտ հաստատիր բոլորը։",
+      "retrieval_hy": "10 րոպե․ վերականգնիր 1-ին օրվա am/is/are երկու օրինակ և 3-րդ օրվա ընթացիկ գործողության երկու նախադասություն։ Հետո դրանք դարձրու հարց։",
+      "source_refs": [
+        "turn172062295view1",
+        "turn334843784view2"
+      ],
+      "title_en": "Ask and clarify",
+      "short_en": "Ask for repetition, check what you heard and confirm important details.",
+      "week": 1,
+      "category_en": "Conversation",
+      "icon": "chat"
+    },
+    {
+      "day": 5,
+      "title_hy": "Պլանավորել և փոխել պայմանավորվածությունը",
+      "goal_hy": "Ասել վաղվա պլանը, պայմանավորվել ժամի շուրջ և առաջարկել այլ ժամանակ, երբ առաջին տարբերակը չի ստացվում։",
+      "primary": {
+        "title": "Changing a meeting time",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time",
+        "type": "Ձայնագրություն և վերծանում",
+        "level": "A2",
+        "verified_note": "Բացված զրույցում Lucy-ն և Anna-ն փոխում են երեքշաբթի հանդիպման ժամը․ վերջում Anna-ն հաստատման նամակ է ուղարկելու։"
+      },
+      "support": {
+        "title": "Text messages to a friend",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/a1/text-messages-friend",
+        "type": "Կարճ հաղորդագրությունների ընթերցում",
+        "level": "A1",
+        "verified_note": "Ստուգված հաղորդագրություններում ընկերները ճշտում են հանդիպման ժամն ու սրճարանը։"
+      },
+      "primary_scope_hy": "Լսիր ամբողջ կարճ զրույցը։ Եթե դժվար է, նախ աշխատիր Lucy-ի և Anna-ի առաջին վեց խոսքային հերթերի վրա, հետո տեքստով ավարտիր լսումը։",
+      "support_scope_hy": "Մինչև 5 րոպե․ կարդա միայն Reading text-ի հաղորդագրությունները և գտիր վերջնական ժամանակն ու վայրը։",
+      "input_tasks": [
+        "What was the original meeting time, and what time do they agree on? Լսելիս առանձին գրիր հին ու նոր ժամերը։",
+        "Why does Lucy need a different time? Պատասխանիր մեկ պարզ նախադասությամբ։",
+        "Who will tell everyone about the change? Վերջում ստուգիր վերծանումը և քո բառերով ամփոփիր նոր պայմանավորվածությունը։"
+      ],
+      "input_answers": [
+        "The meeting moves from 11 a.m. to 9 a.m. on Tuesday.",
+        "She has another important meeting at the central office at noon.",
+        "Anna will email everyone and update the invitation."
+      ],
+      "chunks": [
+        {
+          "en": "I am going to finish this tomorrow.",
+          "hy": "Պատրաստվում եմ սա վաղն ավարտել։"
+        },
+        {
+          "en": "Are you available on Thursday?",
+          "hy": "Հինգշաբթի ազա՞տ եք։"
+        },
+        {
+          "en": "Could we meet at ten instead?",
+          "hy": "Կարո՞ղ ենք դրա փոխարեն տասին հանդիպել։"
+        },
+        {
+          "en": "That time works for me.",
+          "hy": "Այդ ժամն ինձ հարմար է։"
+        },
+        {
+          "en": "I will send you the details.",
+          "hy": "Մանրամասները կուղարկեմ ձեզ։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ պատրաստի պլանի համար վարժիր am going to + բայ, իսկ առաջարկված գործողության համար՝ will + բայ։ Ընտրիր ճիշտ տարբերակը, հետո կազմիր քո վաղվա երեք նախադասությունը։",
+        "items": [
+          "I (am / is) going to meet a colleague tomorrow.",
+          "I will (call / calling) you after the meeting.",
+          "Are you free (on / in) Thursday afternoon?"
+        ],
+        "answers": [
+          "I am going to meet a colleague tomorrow.",
+          "I will call you after the meeting.",
+          "Are you free on Thursday afternoon?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ծրագրում եք կարճ աշխատանքային քննարկում։ Առաջարկիր ժամ, լսիր մյուսի սահմանափակումը, առաջարկիր այլ տարբերակ և հաստատիր վերջնական պլանը։ Երկրորդ փուլում կազմակերպեք ընթրիք, երրորդում՝ փոխեք արդեն որոշված ժամը։",
+      "questions": [
+        "What are you going to do tomorrow morning?",
+        "When are you available for a short meeting?",
+        "Who will confirm the final plan?",
+        "I cannot meet at the agreed time. What other time can you offer?"
+      ],
+      "transfer_hy": "20 րոպե․ կրկնիր պայմանավորվածությունը ավելի հստակ։ Հետո զրուցակիցը թող փոխի հանդիպման օրը և ավելացնի մեկ այլ մասնակցի։ Վերջում ասա՝ ով, երբ, որտեղ և ինչի համար է հանդիպում։",
+      "recording_hy": "Ձայնագրիր 60 վայրկյանի հրավեր և վերջնական հաստատում։ Վերջին 10 րոպեում ստուգիր՝ օրը և ժամը հստա՞կ են, going to-ից առաջ am/is/are կա՞։",
+      "easier_hy": "Աշխատիր միայն երկու ժամի ընտրությամբ․ 10 a.m. կամ 2 p.m.։",
+      "harder_hy": "Համաձայնեցրու երեք մարդու ժամանակները և բացատրիր, թե ինչու որոշ տարբերակներ չեն համապատասխանում։",
+      "retrieval_hy": "10 րոպե․ կրկնիր 2-րդ օրվա սովորական օրվա երկու նախադասություն և 4-րդ օրվա երկու ճշտող հարց։ Փոխիր ժամերը՝ հիշողության վրա հենվելու համար։",
+      "source_refs": [
+        "turn334843784view3",
+        "turn960867617view0"
+      ],
+      "title_en": "Make and change plans",
+      "short_en": "Arrange a time, respond to a change and confirm the new plan.",
+      "week": 1,
+      "category_en": "Conversation",
+      "icon": "calendar"
+    },
+    {
+      "day": 6,
+      "title_hy": "Ռեստորան և իրական խնդրանք",
+      "goal_hy": "Սեղան ամրագրել, պատվեր տալ և սխալ հասկացված մանրամասն ուղղել՝ քաղաքավարի ու հստակ։",
+      "primary": {
+        "title": "Booking a table",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/booking-table",
+        "type": "Ձայնագրություն և վերծանում",
+        "level": "A1",
+        "verified_note": "Ստուգված են երկու զանգերը․ Jamie-ն սկզբում ամրագրում է, հետո փոխում մարդկանց թիվն ու ժամը։"
+      },
+      "support": {
+        "title": "A restaurant menu",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/a1/restaurant-menu",
+        "type": "Ուսումնական ճաշացանկ",
+        "level": "A1",
+        "verified_note": "Պաշտոնական էջում հասանելի է ճաշացանկի ամբողջ տեքստը՝ ճաշատեսակներով և գներով։"
+      },
+      "primary_scope_hy": "Լսիր երկու զանգն էլ։ Առաջին լսմանը գրիր միայն մարդկանց թիվն ու ժամերը, երկրորդին ստուգիր վերծանումը։",
+      "support_scope_hy": "Մինչև 5 րոպե․ ճաշացանկից ընտրիր մեկ հիմնական ուտեստ և մեկ խմիչք։ Գները միայն ուսումնական տեքստի տվյալներ են։",
+      "input_tasks": [
+        "How many people are in the first booking, and what time is it for? Առաջին զանգից հետո լրացրու երկու տվյալը։",
+        "In the second call, does six mean a time or a number of people? Բացատրիր շփոթությունը մեկ պարզ նախադասությամբ։",
+        "What are the final number of guests and the final time? Քո պատասխանը համեմատի՛ր երկրորդ զանգի ավարտի հետ։"
+      ],
+      "input_answers": [
+        "Four people at 7:30 p.m. the following evening.",
+        "It means six people, not six o'clock.",
+        "Six people at 8 p.m."
+      ],
+      "chunks": [
+        {
+          "en": "I'd like a table for two this evening.",
+          "hy": "Այս երեկոյի համար երկու հոգու սեղան եմ ուզում։"
+        },
+        {
+          "en": "Could we come a little later?",
+          "hy": "Կարո՞ղ ենք մի փոքր ավելի ուշ գալ։"
+        },
+        {
+          "en": "I mean two people, not two o'clock.",
+          "hy": "Երկու հոգի նկատի ունեմ, ոչ ժամը երկուսը։"
+        },
+        {
+          "en": "Could I have the fish, please?",
+          "hy": "Կարո՞ղ եմ ձուկը պատվիրել։"
+        },
+        {
+          "en": "Could you bring the bill, please?",
+          "hy": "Կխնդրե՞մ հաշիվը բերել։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ ընտրիր ճիշտ բառը։ Այնուհետև մարդկանց թիվը, ժամը և ուտեստը երեք անգամ փոխիր ու ամբողջ խնդրանքը բարձրաձայն ասա։",
+        "items": [
+          "I'd like a table (for / from) three people.",
+          "Could we (change / changing) the booking?",
+          "Can I have a glass (of / at) water?"
+        ],
+        "answers": [
+          "I'd like a table for three people.",
+          "Could we change the booking?",
+          "Can I have a glass of water?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ սկզբում հեռախոսով ամրագրիր, հետո ռեստորանում պատվիրիր քո ընտրած ուսումնական ճաշացանկից։ Զրուցակիցը մեկ թիվ կամ ուտեստ սխալ է հասկանում, դու ուղղիր։ Վերջին փուլում փոխեք դերերը։",
+      "questions": [
+        "How many people is the booking for?",
+        "What time would you prefer?",
+        "What would you like to order?",
+        "Your first choice is unavailable. What will you choose instead?"
+      ],
+      "transfer_hy": "20 րոպե․ կրկնիր զրույցի դժվար հատվածը։ Հետո խնդրանքը տեղափոխիր հյուրանոց՝ լրացուցիչ սրբիչ կամ ավելի ուշ մաքրման ժամ խնդրելով։ Զրուցակիցը թող առաջին տարբերակը մերժի և այլընտրանք առաջարկի։",
+      "recording_hy": "Պահիր 60–90 վայրկյանի զրույց՝ խնդրանք, ճշտում, վերջնական հաստատում։ Վերջին 10 րոպեում գրանցիր այն երկու միտքը, որոնք սկզբում չէիր կարողանում ասել։",
+      "easier_hy": "Օգտագործիր միայն սեղանի ամրագրումը՝ երկու հարցով և վերջնական կրկնությամբ։",
+      "harder_hy": "Ավելացրու ժամի փոփոխություն, այլընտրանքային պատվեր և գնի կամ բաղադրիչի մասին մեկ հարց։",
+      "retrieval_hy": "10 րոպե․ վերականգնիր 3-րդ օրվա I am… ձևը, 4-րդ օրվա կրկնելու խնդրանքը և 5-րդ օրվա ժամ առաջարկելու նախադասությունը։ Օգտագործիր այսօրվա զրույցում։",
+      "source_refs": [
+        "turn101850712view2",
+        "turn334843784view4"
+      ],
+      "title_en": "Order and ask politely",
+      "short_en": "Book a table, place an order and correct a misunderstanding.",
+      "week": 1,
+      "category_en": "Conversation",
+      "icon": "chat"
+    },
+    {
+      "day": 7,
+      "title_hy": "Առաջին շաբաթվա անկախ ստուգում",
+      "goal_hy": "Ստուգել՝ կարողանո՞ւմ ես ծանոթ իրավիճակներում խոսել նոր մանրամասներով, ոչ միայն կրկնել պատրաստի խոսքը։ Նոր քերականություն այսօր չկա։",
+      "primary": {
+        "title": "Checking understanding",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a1/checking-understanding",
+        "type": "Նախկին տեսանյութի կրկնություն",
+        "level": "A1",
+        "verified_note": "4-րդ օրը կիրառված և ստուգված նյութը նորից օգտագործվում է ամրապնդման, ոչ որպես անծանոթ լսողական քննություն։"
+      },
+      "support": {
+        "title": "Present simple: 'to be'",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple-be",
+        "type": "Նախկին կանոնի կրկնություն",
+        "level": "A1–A2",
+        "verified_note": "1-ին օրվա նույն ստուգված էջն է․ այսօր ուշադրությունը հարցերին և կարճ պատասխաններին է։"
+      },
+      "primary_scope_hy": "Տեսանյութը վերաբացիր միայն առաջին անկախ փորձից հետո։ Դիտիր կրկնելու և իմաստը ճշտելու խոսքային հատվածները։",
+      "support_scope_hy": "Մինչև 5 րոպե․ միայն Questions և Short answers բաժինները։ Նոր բաժիններ մի ավելացրու։",
+      "input_tasks": [
+        "Անձնական անդրադարձ․ Which clarification phrase can you use without looking? Նախ ասա, հետո ստուգիր տեսանյութով։",
+        "Անձնական անդրադարձ․ What would you say if you heard the wrong time? Կազմիր քո նախադասությունը, ոչ հերոսի նույն օրինակը։",
+        "Անձնական անդրադարձ․ What information should you confirm before ending a booking call? Թվարկիր երեք տեղեկություն և բարձրաձայն օրինակ տուր։"
+      ],
+      "input_answers": [
+        "Անձնական պատասխան․ ցանկացած հասկանալի, քաղաքավարի ճշտող հարց ընդունելի է։",
+        "Անձնական պատասխան․ օրինակ՝ Could you repeat the time, please?",
+        "Օրինակելի պատասխան․ մարդկանց թիվը, օրը և ժամը։ Այլ համապատասխան մանրամասներ նույնպես ընդունելի են։"
+      ],
+      "chunks": [
+        {
+          "en": "I work in software engineering.",
+          "hy": "1-ին օրվա կառուցվածքի կրկնություն։"
+        },
+        {
+          "en": "I usually start work at nine.",
+          "hy": "2-րդ օրվա կառուցվածքի կրկնություն։"
+        },
+        {
+          "en": "Could you repeat the time, please?",
+          "hy": "4-րդ օրվա կառուցվածքի կրկնություն։"
+        },
+        {
+          "en": "That time works for me.",
+          "hy": "5-րդ օրվա կառուցվածքի կրկնություն։"
+        },
+        {
+          "en": "Could we come a little later?",
+          "hy": "6-րդ օրվա կառուցվածքի կրկնություն։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ ուղղիր յուրաքանչյուր նախադասության մեկ սխալը։ Պատասխանները բացիր միայն երեքն էլ փորձելուց հետո։ Սխալ եղած կառուցվածքով կազմիր երկու նոր նախադասություն։",
+        "items": [
+          "I am work with a small team.",
+          "Right now, I checking the results.",
+          "What time is you available?"
+        ],
+        "answers": [
+          "I work with a small team.",
+          "Right now, I am checking the results.",
+          "What time are you available?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ երեք իրավիճակ՝ նոր գործընկերոջ հետ ծանոթություն, օրակարգի պարզաբանում, ռեստորանի ամրագրում։ Զրուցակիցը թող նախապես չբացահայտված անուն, ժամ և սահմանափակում ընտրի։ Ստուգման առաջին փորձը մի ընդհատեք ուղղումներով։ Քննարկեք սխալները դրանից հետո։",
+      "questions": [
+        "What is your main responsibility?",
+        "What do you usually do before lunch?",
+        "Which details do you need to confirm?",
+        "The time I offered is no longer available. How can we agree on another time?"
+      ],
+      "transfer_hy": "20 րոպե․ ուղղումներից հետո զրուցակիցը թող նոր պայմաններով մեկ իրավիճակ տա, որը նախապես չես տեսել։ Առանց պատրաստվելու պատասխանիր նաև նրա հորինած երկու շարունակող հարցի։",
+      "recording_hy": "Պահիր առաջին անկախ ներկայացումը և նոր իրավիճակի զրույցը։ Վերջին 10 րոպեում գնահատիր հասկանալիությունը, առաջադրանքի կատարումը, ինքնուրույնությունը և երկխոսությունը՝ յուրաքանչյուրը 0–3։ Համեմատիր 1-ին օրվա հետ։",
+      "easier_hy": "Ամեն իրավիճակի համար օգտագործիր երեք հենաբառ, բայց ամբողջական նախադասություն մի կարդա։",
+      "harder_hy": "Խոսիր առանց հենաբառերի, խնդրիր զրուցակցին մեկ անգամ անսպասելի պարզաբանող հարց տալ։",
+      "retrieval_hy": "Առաջին 10 րոպեում առանց որևէ նյութի ներկայացրու քեզ մեկ րոպե և պատասխանիր զրուցակցի հորինած հինգ հարցի՝ օրեր 1–6-ի թեմաներից։ Միայն հետո անցիր կրկնությանը։",
+      "source_refs": [
+        "turn172062295view1",
+        "turn101850712view0"
+      ],
+      "title_en": "Your first checkpoint",
+      "short_en": "Try familiar situations with new details before reviewing the lessons.",
+      "week": 1,
+      "category_en": "Checkpoint",
+      "icon": "check"
+    },
+    {
+      "day": 8,
+      "title_hy": "Պատմել անցած դեպքը",
+      "goal_hy": "Կապակցված պատմել իրական անցած դեպք՝ որտեղ, երբ, ինչ եղավ և ինչպես ավարտվեց։",
+      "primary": {
+        "title": "Showing interest",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a2/showing-interest",
+        "type": "Տեսանյութ և վերծանում",
+        "level": "A2",
+        "verified_note": "Ստուգված զրույցում Bob-ը պատմում է Կանադայում տեղի ունեցած վնասվածքի և հիվանդանոցում կնոջը հանդիպելու մասին։"
+      },
+      "support": {
+        "title": "Past simple",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/past-simple",
+        "type": "Քերականական տեղեկատու",
+        "level": "Սկզբնական բաժին՝ beginner",
+        "verified_note": "Ստուգված են -ed ձևերը, անկանոն բայերի աղյուսակը և did/didn't կառուցվածքները։ Intermediate բաժինը չի հանձնարարվում։"
+      },
+      "primary_scope_hy": "Դիտիր Bob-ի պատմությունը և Noelia-ի արձագանքները։ Երկրորդ դիտման ժամանակ տեքստով ստուգիր դեպքերի հերթականությունը։",
+      "support_scope_hy": "Մինչև 5 րոպե․ -ed ձևի բացատրությունը, միայն go/went, meet/met, have/had, find/found զույգերը և Past simple questions and negatives-ը։ Ամբողջ աղյուսակը մի սովորիր։",
+      "input_tasks": [
+        "In which country did Bob have the accident? Առաջին դիտումից հետո անվանիր վայրը։",
+        "What caused Bob to fall, and what injury did he describe? Երկրորդ դիտմամբ ստուգիր երկու փաստը։",
+        "How did Bob meet his wife? Քո բառերով բացատրիր՝ ինչու պատմությունն ունի նաև դրական ավարտ։"
+      ],
+      "input_answers": [
+        "In Canada.",
+        "He fell on ice and broke his leg.",
+        "He met her at the hospital; she was the doctor who examined his leg."
+      ],
+      "chunks": [
+        {
+          "en": "Yesterday, something unexpected happened.",
+          "hy": "Երեկ անսպասելի մի բան տեղի ունեցավ։"
+        },
+        {
+          "en": "First, I checked the message.",
+          "hy": "Սկզբում ստուգեցի հաղորդագրությունը։"
+        },
+        {
+          "en": "Then I called a colleague.",
+          "hy": "Հետո զանգեցի գործընկերոջս։"
+        },
+        {
+          "en": "In the end, we solved the problem.",
+          "hy": "Վերջում խնդիրը լուծեցինք։"
+        },
+        {
+          "en": "What happened after that?",
+          "hy": "Դրանից հետո ի՞նչ եղավ։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ փակագծի բայը դիր անցյալ պարզ ձևով կամ did-ից հետո թող հիմնական ձևը։ Ստուգումից հետո քո երեկվա օրվանից երեք նոր նախադասություն ասա։",
+        "items": [
+          "Yesterday, I ___ a colleague. (call)",
+          "We ___ the problem after lunch. (find)",
+          "Did you ___ the message? (read)"
+        ],
+        "answers": [
+          "Yesterday, I called a colleague.",
+          "We found the problem after lunch.",
+          "Did you read the message?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ պատմիր մի փոքր իրական դեպք՝ ճամփորդությունից կամ աշխատանքից։ Զրուցակիցը լսում է և հետաքրքրություն ցույց տալիս, հետո հարցեր է տալիս։ Փոխեք դերերը․ հիմա դու լսիր նրա պատմությունը և երեք շարունակող հարց տուր։",
+      "questions": [
+        "Where were you when it happened?",
+        "What did you do first?",
+        "How did the situation end?",
+        "Now tell the same story to someone who has only one minute. Which details will you keep?"
+      ],
+      "transfer_hy": "20 րոպե․ կրկնիր պատմությունը ուղղումներով և ավելի հստակ հերթականությամբ։ Հետո զրուցակիցը թող ընտրի այլ օր կամ այլ դեպք, որի մասին նախապես չես պատրաստվել խոսել։",
+      "recording_hy": "Ձայնագրիր 90–120 վայրկյանի պատմություն՝ սկիզբ, հիմնական դեպք, ավարտ։ Վերջին 10 րոպեում պահիր երկու անցյալ ձև և մեկ հարց, որոնցում դժվարացար։",
+      "easier_hy": "Սկսիր հինգ նախադասությունից՝ yesterday / first / then / after that / in the end հուշումներով։",
+      "harder_hy": "Ավելացրու մարդկանց արձագանքը և քո որոշման պատճառը՝ առանց նոր քերականություն պարտադրելու։",
+      "retrieval_hy": "10 րոպե․ 5-րդ օրվա պլանի երկու նախադասությունը վերասա որպես արդեն կատարված գործողություն։ Եթե անցյալ ձևը չգիտես, նախ նշիր դժվարությունը և վերադարձիր դրան այսօրվա կանոնից հետո։",
+      "source_refs": [
+        "turn846948107view0",
+        "turn828970262view0"
+      ],
+      "title_en": "Tell a past story",
+      "short_en": "Describe what happened, add details and explain how the story ended.",
+      "week": 2,
+      "category_en": "Conversation",
+      "icon": "chat"
+    },
+    {
+      "day": 9,
+      "title_hy": "Բացատրել գործողության քայլերը",
+      "goal_hy": "Մեկ ծանոթ աշխատանքային գործողություն բացատրել հերթականությամբ և համոզվել, որ զրուցակիցը հասկացել է։",
+      "primary": {
+        "title": "Giving instructions",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a2/giving-instructions",
+        "type": "Տեսանյութ և վերծանում",
+        "level": "A2",
+        "verified_note": "Ստուգված տեսանյութում Vanya-ն Emir-ին սովորեցնում է օգտվել սուրճի մեքենայից, ապա նա ինքն է փորձում։"
+      },
+      "support": {
+        "title": "A poster for exam candidates",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/a1/poster-exam-candidates",
+        "type": "Կարճ հրահանգների ընթերցում",
+        "level": "A1",
+        "verified_note": "Բացված էջում երեք պաստառ են՝ քննությունից առաջ և ընթացքում անելիքների մասին։"
+      },
+      "primary_scope_hy": "Դիտիր ամբողջ գործնական ցուցադրությունը։ Երկրորդ անգամ ուշադրություն դարձրու քայլերի հերթականությանը և ստուգող հարցերին։",
+      "support_scope_hy": "Մինչև 5 րոպե․ կարդա Poster 2-ի BEFORE THE EXAM և Poster 3-ի կարճ հրահանգները։ Նկատիր գործողություն հուշող բայերը։",
+      "input_tasks": [
+        "What machine does Emir need help with? Առաջին դիտումից հետո մեկ նախադասությամբ բացատրիր նպատակը։",
+        "Does Vanya only explain, or does Emir also try the process? Նշիր՝ ինչպես է ստուգվում նրա ըմբռնումը։",
+        "What does Emir do at the end to make the machine work? Փորձիր նաև քո բառերով վերասել դրան նախորդող երկու քայլը։"
+      ],
+      "input_answers": [
+        "A coffee machine.",
+        "Emir also performs the steps himself while Vanya guides him.",
+        "He presses the button after putting the coffee in, pressing it down and attaching the part to the machine."
+      ],
+      "chunks": [
+        {
+          "en": "First, open the results page.",
+          "hy": "Սկզբում բացիր արդյունքների էջը։"
+        },
+        {
+          "en": "Next, choose the latest run.",
+          "hy": "Հաջորդը ընտրիր վերջին գործարկումը։"
+        },
+        {
+          "en": "After that, check the error message.",
+          "hy": "Դրանից հետո ստուգիր սխալի հաղորդագրությունը։"
+        },
+        {
+          "en": "Could you explain the next step?",
+          "hy": "Կբացատրե՞ք հաջորդ քայլը։"
+        },
+        {
+          "en": "Before you continue, check the date.",
+          "hy": "Շարունակելուց առաջ ստուգիր ամսաթիվը։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ փակագծերից ընտրիր հրահանգի ճիշտ ձևը։ Հետո գրիր միայն երեք գործողության անուն և դրանցով բարձրաձայն բացատրիր քո գործընթացը։",
+        "items": [
+          "First, (open / opens) the results page.",
+          "Next, (choose / choosing) the latest run.",
+          "Do not (share / shared) the report before checking it."
+        ],
+        "answers": [
+          "First, open the results page.",
+          "Next, choose the latest run.",
+          "Do not share the report before checking it."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ բացատրիր նոր գործընկերոջը՝ ինչպես գտնել թեստի արդյունքը կամ կատարել մեկ այլ ծանոթ գործողություն։ Զրուցակիցը սեփական բառերով կրկնում է քայլերը, դու պարզեցնում ես անհասկանալի մասը։ Հետո փոխեք դերերը։",
+      "questions": [
+        "What should I do first?",
+        "How do I know I have the correct result?",
+        "What should I check before I continue?",
+        "The button you mentioned is missing. How can you help me continue?"
+      ],
+      "transfer_hy": "20 րոպե․ նույն գործընթացը բացատրիր կարճ՝ ուղղումներից հետո։ Հետո աշխատանքային գործիքի փոխարեն բացատրիր՝ ինչպես հյուրանոցից հասնել մոտակա սրճարան կամ ինչպես օգտվել ծանոթ հավելվածից։",
+      "recording_hy": "Ձայնագրիր 90 վայրկյանի բացատրություն՝ 4–5 քայլով և մեկ ստուգող հարցով։ Վերջին 10 րոպեում ստուգիր՝ քայլերը հստա՞կ են, որևէ անհրաժեշտ քայլ բաց չե՞ս թողել։",
+      "easier_hy": "Օգտագործիր երեք քայլ՝ first / next / finally։ Զրուցակիցը ամեն քայլից հետո թող կրկնի հասկացածը։",
+      "harder_hy": "Ավելացրու սխալ քայլի օրինակ և բացատրիր՝ ինչ անել, եթե սպասված արդյունքը չի հայտնվում։",
+      "retrieval_hy": "10 րոպե․ վերհիշիր 8-րդ օրվա հերթականության բառերը և 4-րդ օրվա երկու ճշտող հարց։ Պատմիր երեկվա մեկ գործի ընթացքը երեք նախադասությամբ։",
+      "source_refs": [
+        "turn846948107view1",
+        "turn960867617view1"
+      ],
+      "title_en": "Explain the steps",
+      "short_en": "Guide someone through a familiar task and check their understanding.",
+      "week": 2,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 10,
+      "title_hy": "Աշխատանքդ բացատրել ոչ մասնագետին",
+      "goal_hy": "Պարզ բառերով բացատրել, թե ինչ ես անում և ում է դա օգնում՝ անհրաժեշտության դեպքում բացելով տեխնիկական բառի իմաստը։",
+      "primary": {
+        "title": "Talking about your job",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/a2/talking-about-your-job",
+        "type": "Տեսանյութ և վերծանում",
+        "level": "A2",
+        "verified_note": "Բացված զրույցում Emir-ը, Paul-ը և Vanya-ն ներկայացնում են իրենց աշխատանքային դերերը ուսուցման հանդիպման ընթացքում։"
+      },
+      "support": {
+        "title": "Job adverts",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/a1/job-adverts",
+        "type": "Չորս կարճ աշխատանքի հայտարարություն",
+        "level": "A1",
+        "verified_note": "Ստուգված էջում նկարագրված են վաճառքի, մարքեթինգի, դասավանդման և բուժքրոջ աշխատանքներ։"
+      },
+      "primary_scope_hy": "Դիտիր գլխավոր երկխոսությունը և պարտականությունների մասին արտահայտությունների հատվածը։ Երկրորդ դիտմանը ստուգիր Transcript-ը։",
+      "support_scope_hy": "Մինչև 5 րոպե․ կարդա միայն Groovy և LinguaFun ընկերությունների մասին երկու հայտարարությունները։ Գտիր՝ ով ինչ աշխատանք է կատարում։",
+      "input_tasks": [
+        "Which types of professionals does Emir manage? Լսիր նրա պարտականության բացատրությունը։",
+        "What is Paul responsible for? Պատասխանիր գործողությամբ, ոչ միայն պաշտոնի անունով։",
+        "What area does Vanya work in? Հետո փակիր տեքստը և քո բառերով ներկայացրու երեք դերերից մեկը։"
+      ],
+      "input_answers": [
+        "Artists and graphic designers.",
+        "Writing or producing written content.",
+        "Social media and marketing."
+      ],
+      "chunks": [
+        {
+          "en": "My work helps engineers find problems earlier.",
+          "hy": "Իմ աշխատանքն օգնում է ինժեներներին խնդիրներն ավելի շուտ գտնել։"
+        },
+        {
+          "en": "I am responsible for checking test results.",
+          "hy": "Պատասխանատու եմ թեստերի արդյունքները ստուգելու համար։"
+        },
+        {
+          "en": "It is a system that runs checks automatically.",
+          "hy": "Դա ստուգումներն ավտոմատ կատարող համակարգ է։"
+        },
+        {
+          "en": "In simple terms, it checks whether the software works.",
+          "hy": "Պարզ ասած՝ այն ստուգում է՝ ծրագիրն աշխատո՞ւմ է։"
+        },
+        {
+          "en": "Would an example help?",
+          "hy": "Օրինակը կօգնի՞ հասկանալ։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "15 րոպե․ ընտրիր ճիշտ ձևը։ Հետո հորինիր մեկ այլ սարքի կամ գործի բացատրություն՝ նույն կառուցվածքներով։ Կարդալու նյութից նկատիր, թե ինչպես են դերերը կապվում գործողությունների հետ։",
+        "items": [
+          "I am responsible for (check / checking) the results.",
+          "This tool (help / helps) engineers find errors.",
+          "It is a system that (runs / run) tests automatically."
+        ],
+        "answers": [
+          "I am responsible for checking the results.",
+          "This tool helps engineers find errors.",
+          "It is a system that runs tests automatically."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ զրուցակիցդ քո մասնագիտությունից հեռու մարդ է։ Բացատրիր pipeline-ը որպես քայլերի հերթականություն, բեր պարզ օրինակ և հարցրու՝ ինչն է դեռ անհասկանալի։ Երկրորդ փուլում նույնը ներկայացրու նոր ղեկավարին, երրորդում թող զրուցակիցը վերասի հասկացածը։",
+      "questions": [
+        "What problem does your work solve?",
+        "Who uses the results?",
+        "Can you give me a simple example?",
+        "I do not know what a pipeline is. How would you explain it without that word?"
+      ],
+      "transfer_hy": "20 րոպե․ վերապատմիր բացատրությունը ուղղումներով։ Հետո ընտրիր այլ ծանոթ բան՝ քարտեզի հավելված, առցանց ամրագրում կամ թեստավորման գործիք, և բացատրիր նույն պարզ կառուցվածքով։",
+      "recording_hy": "Ձայնագրիր 90–120 վայրկյանի բացատրություն՝ նպատակ, երեք քայլ, մեկ օրինակ։ Վերջին 10 րոպեում նշիր երկու տեխնիկական բառ, որոնք կարողացար փոխարինել հասկանալի բացատրությամբ։",
+      "easier_hy": "Օգտագործիր I help… / The system checks… / This is useful because… հենակառուցվածքները։",
+      "harder_hy": "Նույն աշխատանքը ներկայացրու ինժեներին և ոչ մասնագետին՝ յուրաքանչյուրին մեկ րոպե, ապա համեմատի՛ր ընտրած մանրամասները։",
+      "retrieval_hy": "10 րոպե․ կրկնիր 9-րդ օրվա երեք քայլը և 3-րդ օրվա սովորաբար/հիմա տարբերությունը։ Սկսիր՝ ինչ է անում համակարգը սովորաբար և ինչ ես ստուգում դու այսօր։",
+      "source_refs": [
+        "turn172062295view2",
+        "turn846948107view2"
+      ],
+      "title_en": "Make your work clear",
+      "short_en": "Explain your job in simple words to someone outside your field.",
+      "week": 2,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 11,
+      "title_hy": "Աշխատանքի մասին կարճ հաղորդում",
+      "goal_hy": "60–90 վայրկյանում հասկանալի ներկայացնել երեկվա արդյունքը, այսօրվա աշխատանքը, խոչընդոտը և հաջորդ քայլը։",
+      "primary": {
+        "title": "A morning briefing",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Պաշտոնական էջը բացված է․ հասանելի են ամբողջ տեքստը և A2 պիտակը։"
+      },
+      "support": {
+        "title": "Present continuous",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/present-continuous",
+        "type": "Քերականական տեղեկատու",
+        "level": "Beginner՝ ըստ էջի, CEFR նշված չէ",
+        "verified_note": "Բացված պաշտոնական էջի սկզբում կա Level: beginner և am/is/are + -ing բացատրություն։"
+      },
+      "primary_scope_hy": "20 րոպե․ լսիր ամբողջ կարճ ձայնագրությունը, երկրորդ անգամ ստուգիր տեքստով, հետո պատասխանիր ստորև։ Վերջում նույն բովանդակությունը ամփոփիր երեք նախադասությամբ։",
+      "support_scope_hy": "Լեզվական 15 րոպեից առավելագույնը 5-ը՝ էջի սկզբի Level: beginner մասից մինչև Present continuous 1։ Մնացած ժամանակը՝ երեք վարժությունն ու սեփական օրինակները։",
+      "input_tasks": [
+        "What will happen to the projects during the management change?",
+        "Where should an employee park after arriving at 9 a.m.?",
+        "What two payment methods can staff use in the canteen?"
+      ],
+      "input_answers": [
+        "The projects will carry on normally.",
+        "At the church's parking area.",
+        "A phone or an employee identification card."
+      ],
+      "chunks": [
+        {
+          "en": "Yesterday, I finished…",
+          "hy": "Երեկ ավարտեցի…"
+        },
+        {
+          "en": "Right now, I'm checking…",
+          "hy": "Այս պահին ստուգում եմ…"
+        },
+        {
+          "en": "The main blocker is…",
+          "hy": "Գլխավոր խոչընդոտը … է։"
+        },
+        {
+          "en": "I need access to…",
+          "hy": "Ինձ պետք է հասանելիություն դեպի…"
+        },
+        {
+          "en": "My next step is…",
+          "hy": "Իմ հաջորդ քայլը … է։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Լրացրու բացերը, բարձրաձայն ասա ամբողջ նախադասությունը, հետո նույն կառուցվածքով կազմիր մեկ իրական օրինակ։ Հուշում՝ այս պահին՝ am/is/are + -ing, երեկ՝ անցյալ, will-ից հետո՝ բայի հիմնական ձև։",
+        "items": [
+          "Right now, I ___ (check) the test report.",
+          "Yesterday, we ___ (complete) five checks.",
+          "Tomorrow, I ___ (share) the result. Use will."
+        ],
+        "answers": [
+          "Right now, I am checking the test report.",
+          "Yesterday, we completed five checks.",
+          "Tomorrow, I will share the result."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ առաջին 20-ին դու ինժեներն ես, զրուցակիցը՝ թիմի ղեկավարը։ Ուսումնական դեպք՝ երեկ ավարտել ես հինգ ստուգում, երկուսը ձախողվել են։ Այսօր ուսումնասիրում ես ընդհանուր հաշվետվությունը, բայց մանրամասն log-երի հասանելիություն չունես։ Պետք է նոր տեղեկություն հաղորդես ժամը 16։00-ին։ Տուր հաղորդումը և պատասխանիր հարցերին։ Հաջորդ 5 րոպեին ուղղեք երկու կրկնվող սխալ։ Վերջին 20-ին փոխեք դերերը, հետո դու նորից ներկայացրու՝ առանց գրած տեքստի։",
+      "questions": [
+        "Which checks did you finish yesterday?",
+        "What is stopping you from continuing?",
+        "Who could help you get access?",
+        "What will you do before the next update?"
+      ],
+      "transfer_hy": "20 րոպե․ նույն հաղորդումը ներկայացրու երկու անգամ՝ ուղղումից հետո։ Հետո պայմանը փոխիր․ հասանելիությունն արդեն կա, բայց պատճառը դեռ անհայտ է։ Թարմացրու խոչընդոտն ու հաջորդ քայլը։",
+      "recording_hy": "10 րոպե․ պահիր վերջնական 60–90 վայրկյանի հաղորդումը, նշիր երկու ուղղում և վաղը կրկնելու մեկ հարց։ Ստուգիր՝ չորս անհրաժեշտ կետերն ասվե՞լ են։",
+      "easier_hy": "Օգտագործիր չորս հենաբառ՝ yesterday, now, blocker, next։ Սկզբում յուրաքանչյուրի մասին ասա մեկ նախադասություն։",
+      "harder_hy": "Հաղորդումը տեղավորիր մեկ րոպեում, հետո երեք րոպե պատասխանիր հարցերի՝ տարբերելով հայտնի և անհայտ տեղեկությունը։",
+      "retrieval_hy": "10 րոպե․ առանց նշումների կրկնիր 3-րդ օրվա սովորական և ընթացիկ աշխատանքի տարբերությունը, ապա 8-րդ օրվա անցյալով պատմիր երեկվա երկու գործողությունը։",
+      "source_refs": [
+        "turn885180950view0",
+        "turn418863896view1"
+      ],
+      "title_en": "Give a work update",
+      "short_en": "Summarize yesterday, today's work, a blocker and your next step.",
+      "week": 2,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 12,
+      "title_hy": "Պահանջների ճշտում",
+      "goal_hy": "Անորոշ խնդրանքը վերածել հստակ պայմանավորվածության՝ արդյունք, վերջնաժամկետ, առաջնահերթություն և ստուգող անձ։",
+      "primary": {
+        "title": "Instructions for an assignment",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/instructions-assignment",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Բացված են ուսուցչի հրահանգների տեքստն ու A2 պիտակը։"
+      },
+      "support": {
+        "title": "Question forms",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/question-forms",
+        "type": "Քերականություն",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական էջում առկա են հարցերի ձևերը և երկու CEFR պիտակները։"
+      },
+      "primary_scope_hy": "20 րոպե․ ամբողջ ձայնագրությունից առաջին լսման ժամանակ գրիր միայն ժամկետն ու հանձնման ձևը։ Երկրորդ լսումից հետո պատասխանիր հարցերին, ապա տեքստով ստուգիր թվերը։",
+      "support_scope_hy": "15 րոպեի առաջին առավելագույնը 5 րոպեին կարդա Grammar explanation-ի աղյուսակները և Subject questions կարճ բաժինը։ Հետո կատարիր սեփական հարցերի վարժությունը։",
+      "input_tasks": [
+        "On which date must the essay arrive?",
+        "What should a student do if no confirmation arrives within a day?",
+        "How should the books on the final page be ordered?"
+      ],
+      "input_answers": [
+        "18 October.",
+        "Send the email again to check that it was received.",
+        "Alphabetically."
+      ],
+      "chunks": [
+        {
+          "en": "What should the report include?",
+          "hy": "Ի՞նչ պետք է ներառի հաշվետվությունը։"
+        },
+        {
+          "en": "When do you need it?",
+          "hy": "Մինչև ե՞րբ է պետք։"
+        },
+        {
+          "en": "Which part matters most?",
+          "hy": "Ո՞ր մասն է ամենակարևորը։"
+        },
+        {
+          "en": "Who will review the result?",
+          "hy": "Ո՞վ է ստուգելու արդյունքը։"
+        },
+        {
+          "en": "So you need… by…",
+          "hy": "Այսինքն՝ քեզ պետք է … մինչև …։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Բառերը դասավորիր հարցի ճիշտ հերթականությամբ։ Յուրաքանչյուր հարցից հետո պատասխանիր քո նախագծի մասին։ Do/does-ը մի ավելացրու, երբ who-ն հենց գործողություն կատարողին է հարցնում։",
+        "items": [
+          "Reorder: need / you / what / do / ?",
+          "Reorder: is / deadline / when / the / ?",
+          "Reorder: approves / report / the / who / ?"
+        ],
+        "answers": [
+          "What do you need?",
+          "When is the deadline?",
+          "Who approves the report?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ գործընկերը խնդրում է «բարելավել հաշվետվությունը»։ Նրա պահանջներն են՝ մեկ էջ, ձախողված թեստերի ցանկ, մեկ գծապատկեր, ուրբաթ ժամը 17։00-ի վերջնաժամկետ, լսարանը՝ QA ղեկավարը։ Առաջին 20 րոպեին այդ տեղեկությունները պարզիր հարցերով և վերասա պայմանավորվածությունը։ Հինգ րոպե ուղղեք հարցերի կառուցվածքը։ Հաջորդ 20-ին փոխեք դերերը և քննարկեք այլ հաշվետվություն՝ պահպանելով նույն չորս ճշտման կետերը։",
+      "questions": [
+        "What information is missing from the current report?",
+        "Which requirement is essential?",
+        "Who will read the report?",
+        "How will we know the task is complete?"
+      ],
+      "transfer_hy": "20 րոպե․ վերասա պայմանավորվածությունը, շտկիր այն, կրկնիր։ Հետո ժամկետը տեղափոխիր հինգշաբթի․ առաջարկիր՝ ինչն ավարտել առաջինը, ինչն ավելի ուշ։",
+      "recording_hy": "10 րոպե․ ձայնագրիր 60–90 վայրկյանի վերջնական ամփոփում՝ արդյունք, ժամկետ, առաջնահերթություն, ստուգող։ Գրանցիր երկու հարց, որոնք առաջին անգամ սխալ կազմեցիր։",
+      "easier_hy": "Կարդա միայն հարցերի հենակառուցվածքները։ Պատասխանը ստանալուց հետո մեկ պարզ նախադասությամբ հաստատիր հասկացածդ։",
+      "harder_hy": "Զրուցակիցը թող մեկ հակասական պահանջ տա։ Ճշտիր հակասությունը՝ առանց նրա փոխարեն որոշում կայացնելու։",
+      "retrieval_hy": "10 րոպե․ կրկնիր 4-րդ օրվա պարզաբանման երկու ձև։ 11-րդ օրվա խոչընդոտի վերաբերյալ կազմիր երեք հարց՝ what, when և who բառերով։",
+      "source_refs": [
+        "turn885180950view1",
+        "turn876528550view0",
+        "turn320086980view4"
+      ],
+      "title_en": "Clarify what is needed",
+      "short_en": "Turn a vague request into a clear result, deadline and priority.",
+      "week": 2,
+      "category_en": "Workplace",
+      "icon": "chat"
+    },
+    {
+      "day": 13,
+      "title_hy": "Օգնություն և քաղաքավարի անհամաձայնություն",
+      "goal_hy": "Խնդրել կոնկրետ օգնություն, բացատրել պատճառը, ընդունել մերժումը և առաջարկել գործնական այլընտրանք։",
+      "primary": {
+        "title": "Asking a favour",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/b1/asking-favour",
+        "type": "Խոսքի տեսադաս",
+        "level": "B1",
+        "verified_note": "Բացված են ամբողջ երկխոսությունը, տեսադասի առաջադրանքները և B1 պիտակը։"
+      },
+      "support": {
+        "title": "An email request for help",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/b1/email-request-help",
+        "type": "Կարճ ընթերցում",
+        "level": "B1",
+        "verified_note": "Կարդացվել է բաժինների միջև օգնության խնդրանքի նամակը․ B1-ը նշված է էջում։"
+      },
+      "primary_scope_hy": "20 րոպե․ դիտիր տեսադասը՝ ուշադրություն դարձնելով խնդրանքի փոփոխություններին։ Երկրորդ դիտման ընթացքում տեքստով պարզիր, թե ինչու առաջին առաջարկները չեն ստացվում։",
+      "support_scope_hy": "15 րոպեից առավելագույնը 5-ը հատկացրու միայն Reading text նամակին։ Նկատիր օգնության տեսակը, ցանկալի ժամկետը և պահանջվող ժամանակը։ Մնացածը՝ ներքևի վարժություններին։",
+      "input_tasks": [
+        "Why does Noelia need Paul's help again?",
+        "What prevents Paul from helping that afternoon and evening?",
+        "What time do they finally agree on for the next morning?"
+      ],
+      "input_answers": [
+        "The client has requested further revisions to finished work.",
+        "Another campaign is due that day, and he has arranged a birthday cinema trip.",
+        "6 a.m."
+      ],
+      "chunks": [
+        {
+          "en": "Could you check this with me?",
+          "hy": "Կարո՞ղ ես սա ինձ հետ ստուգել։"
+        },
+        {
+          "en": "It should take about ten minutes.",
+          "hy": "Դա մոտ տասը րոպե կտևի։"
+        },
+        {
+          "en": "I understand your point, but…",
+          "hy": "Հասկանում եմ քո միտքը, բայց…"
+        },
+        {
+          "en": "That time doesn't work for me.",
+          "hy": "Այդ ժամը ինձ հարմար չէ։"
+        },
+        {
+          "en": "Could we try another option?",
+          "hy": "Կարո՞ղ ենք այլ տարբերակ փորձել։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Ընտրիր բայի ճիշտ ձևը։ Could-ից հետո օգտագործիր բայի հիմնական ձևը, would you mind-ից հետո՝ -ing։ Վերջինում ընտրիր իմաստով ճիշտ կապակցիչը։",
+        "items": [
+          "Could you ___ (review / reviewing) these results?",
+          "Would you mind ___ (check / checking) the last section?",
+          "I can't help today, ___ I can help tomorrow. (but / because)"
+        ],
+        "answers": [
+          "Could you review these results?",
+          "Would you mind checking the last section?",
+          "I can't help today, but I can help tomorrow."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ մինչև ժամը 15։00 պետք է ստուգես հաշվետվությունը և գործընկերոջից 20 րոպե օգնություն ես խնդրում։ Նա մինչև 16։00 զբաղված է։ Առաջին 20 րոպեին հստակ բացատրիր, թե հատկապես ինչ ստուգում է պետք, ապա առաջարկիր կարճ նախնական ստուգում կամ այլ օգնող անձ։ Հինգ րոպե ուղղեք խնդրանքի ձևերը։ Վերջին 20-ին դու մերժող կողմն ես․ սահմանդ հստակ ասա, բայց առաջարկիր իրագործելի օգնություն։",
+      "questions": [
+        "What exactly would you like me to check?",
+        "Why do you need it today?",
+        "Which part can you complete without me?",
+        "What could we do if I am unavailable?"
+      ],
+      "transfer_hy": "20 րոպե․ սկզբնական խնդրանքը երկու անգամ վերաձևակերպիր։ Հետո աշխատանքային դեպքը փոխիր՝ հյուրանոցում ավելի ուշ դուրս գալու խնդրանք, որը հնարավոր չէ բավարարել։ Խնդրիր այլ լուծում։",
+      "recording_hy": "10 րոպե․ պահիր 90 վայրկյանի խնդրանք–մերժում–այլընտրանք խոսակցությունը։ Գրանցիր մեկ հաջող խնդրանք և մեկ ուղղված բայական ձև։",
+      "easier_hy": "Օգտագործիր can/could և կարճ պատճառ՝ because-ով։ Սկսիր երկու հերթափոխից՝ խնդրանք, պատասխան։",
+      "harder_hy": "Խնդրիր օգնություն այնպես, որ առաջարկես նաև դիմացինի ծանրաբեռնվածությունը նվազեցնող քայլ։ Քննարկիր երկու այլընտրանք։",
+      "retrieval_hy": "10 րոպե․ հիշողությունից կրկնիր 12-րդ օրվա վերջնաժամկետ ճշտելու հարցը և 11-րդ օրվա խոչընդոտը։ Դրանք միավորիր օգնության մեկ խնդրանքի մեջ։",
+      "source_refs": [
+        "turn885180950view2",
+        "turn418863896view6"
+      ],
+      "title_en": "Ask for help and find options",
+      "short_en": "Make a specific request, handle a refusal and suggest another option.",
+      "week": 2,
+      "category_en": "Workplace",
+      "icon": "chat"
+    },
+    {
+      "day": 14,
+      "title_hy": "Երկրորդ ստուգում",
+      "goal_hy": "Ստուգել՝ կարո՞ղ ես նախորդ օրերի լեզուն կիրառել նոր առօրյա և աշխատանքային իրավիճակներում՝ առանց պատրաստի խոսք կարդալու։",
+      "primary": {
+        "title": "Four conversations",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/four-conversations",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Բացված են չորս երկխոսությունների տեքստերը և A2 պիտակը։"
+      },
+      "support": {
+        "title": "An end of term report",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/a2/end-term-report",
+        "type": "Կարճ ընթերցում",
+        "level": "A2",
+        "verified_note": "Բացված են ուսումնական արդյունքների աղյուսակը, ուսուցչի մեկնաբանությունը և A2 պիտակը։"
+      },
+      "primary_scope_hy": "20 րոպե․ առաջին լսումը կատարիր առանց տեքստի։ Պատասխանիր երեք հարցին, նշիր սկզբնական արդյունքը, միայն հետո կրկին լսիր և ստուգիր տեքստով։",
+      "support_scope_hy": "Լեզվական 15 րոպեի առաջին մինչև 5 րոպեին կարդա գնահատականների աղյուսակն ու Comments հատվածը։ Ինքնանդրադարձ՝ քեզ մոտ ո՞ր հմտությունն է ավելի թույլ։ Մնացած ժամանակը՝ ծանոթ սխալների ուղղմանը։",
+      "input_tasks": [
+        "In conversation A, when does the woman expect an answer?",
+        "In conversation B, why was it difficult to see the painting?",
+        "In conversation D, what prevents the group from adding another person?"
+      ],
+      "input_answers": [
+        "After three or four days.",
+        "Photograph-taking visitors were blocking the view.",
+        "The teacher allows only four members, and the group already has four."
+      ],
+      "chunks": [
+        {
+          "en": "Yesterday, I finished…",
+          "hy": "Երեկ ավարտեցի…"
+        },
+        {
+          "en": "The main blocker is…",
+          "hy": "Գլխավոր խոչընդոտը … է։"
+        },
+        {
+          "en": "When do you need it?",
+          "hy": "Մինչև ե՞րբ է պետք։"
+        },
+        {
+          "en": "Could we try another option?",
+          "hy": "Կարո՞ղ ենք այլ տարբերակ փորձել։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Սրանք կրկնության առաջադրանքներ են։ Ուղղիր մեկ սխալ յուրաքանչյուր նախադասության մեջ, ապա ասա մեկ սեփական տարբերակ։ Այսօր նոր կառուցվածքներ ավելացնել պարտադիր չէ։",
+        "items": [
+          "Yesterday, I go to the office.",
+          "At the moment, I am work on the report.",
+          "What you need from me?"
+        ],
+        "answers": [
+          "Yesterday, I went to the office.",
+          "At the moment, I am working on the report.",
+          "What do you need from me?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ առաջին 20-ին կատարիր երկու չփորձարկված տեսարան։ Տուրդ սկսելու է ժամը 11։00-ին՝ 10։00-ի փոխարեն, իսկ դու պետք է վերադառնաս մինչև 15։00․ ճշտիր վերադարձը և այլընտրանքը։ Հետո տուր քո աշխատանքի 90 վայրկյանի հաղորդում։ Զրուցակիցը տալիս է ստորև չորս հարցերը և իր ընտրած մեկ նոր հարց։ Մի ընդհատեք առաջին փորձը։ Հաջորդ 5 րոպեին գնահատեք իմաստը, ամբողջականությունը, ինքնուրույնությունն ու փոխադարձ զրույցը՝ յուրաքանչյուրը 0–3։ Վերջին 20-ին ուղղեք երկու հիմնական դժվարություն։",
+      "questions": [
+        "What changed in your plan?",
+        "What is the most important constraint?",
+        "What did you complete yesterday?",
+        "What help do you need next?"
+      ],
+      "transfer_hy": "20 րոպե․ առաջին փորձից հետո նույն միտքը շտկիր ու կրկնիր։ Նոր իրավիճակ՝ հանդիպման վայրը փոխվել է, բայց ժամկետը նույնն է։ Ճշտիր այն և ամփոփիր նոր պայմանավորվածությունը։",
+      "recording_hy": "10 րոպե․ պահիր առաջին ու ուղղված փորձերը։ Համեմատի՛ր 1-ին օրվա հետ՝ նույն 12-միավորանոց սանդղակով։ Նշիր մեկ զարգացում և հաջորդ շաբաթվա երկու խնդիր։",
+      "easier_hy": "Թույլատրվում է մինչև հինգ հենաբառ և մեկ կրկնելու խնդրանք։ Խոսիր կարճ, բայց ամբողջական նախադասություններով։",
+      "harder_hy": "Զրուցակիցը թող փոխի հարցերի հերթականությունը և մեկ պատասխանից լրացուցիչ հարց բխեցնի։ Կարդալը չի թույլատրվում։",
+      "retrieval_hy": "Առաջին 10 րոպեում, առանց նյութերը բացելու, ձայնագրիր քո աշխատանքի մասին 90 վայրկյանի հաղորդում և պատասխանիր զրուցակցի հորինած հինգ նոր հարցի։ Միայն հետո անցիր այսօրվա լսմանը և վարժություններին։",
+      "source_refs": [
+        "turn885180950view3",
+        "turn320086980view1",
+        "turn114797335view0"
+      ],
+      "title_en": "Your second checkpoint",
+      "short_en": "Use familiar language in new everyday and workplace situations.",
+      "week": 2,
+      "category_en": "Checkpoint",
+      "icon": "check"
+    },
+    {
+      "day": 15,
+      "title_hy": "Խնդիր և ազդեցություն",
+      "goal_hy": "Հստակ բացատրել՝ ինչ է խափանվել, երբ է սկսվել, ինչ աշխատանք է կանգնեցրել և ինչ արձագանք է պետք։",
+      "primary": {
+        "title": "Missing a class",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/missing-class",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Բացված են ուսանողի և ուսուցչի ամբողջ երկխոսությունը և A2 պիտակը։"
+      },
+      "support": {
+        "title": "Past continuous and past simple",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/past-continuous-past-simple",
+        "type": "Քերականություն",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական էջի բացատրությունն ու A1/A2 պիտակները ստուգված են։"
+      },
+      "primary_scope_hy": "20 րոպե․ լսիր ամբողջ կարճ խոսակցությունը։ Առանձնացրու խնդիրը, դրա պատճառով փոխվող աշխատանքը և համաձայնեցված հաջորդ քայլը։ Երկրորդ լսումից հետո ստուգիր թվերն ու օրերը։",
+      "support_scope_hy": "15 րոպեից մինչև 5-ը՝ Grammar explanation-ի Past simple բաժնին և Past continuous-ի առաջին բացատրությանը։ Հետո համադրիր ընդհատվող գործողությունն ու տեղի ունեցած դեպքը։",
+      "input_tasks": [
+        "Why will Diana miss Wednesday's class?",
+        "Which three chapters should she read?",
+        "How will she receive the practice test, and when must she send it back?"
+      ],
+      "input_answers": [
+        "She has an appointment with a doctor.",
+        "Chapters 17, 19 and 20.",
+        "The teacher will email it on Wednesday; she must return it before Friday."
+      ],
+      "chunks": [
+        {
+          "en": "The problem started at…",
+          "hy": "Խնդիրը սկսվեց …-ին։"
+        },
+        {
+          "en": "This is preventing us from…",
+          "hy": "Սա խանգարում է մեզ … անել։"
+        },
+        {
+          "en": "We were testing when…",
+          "hy": "Մենք թեստավորում էինք, երբ…"
+        },
+        {
+          "en": "The cause is still unclear.",
+          "hy": "Պատճառը դեռ պարզ չէ։"
+        },
+        {
+          "en": "For now, we can…",
+          "hy": "Այս պահին կարող ենք…"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Լրացրու բայերը։ Ընթացքի մեջ եղած անցյալ գործողություն՝ was/were + -ing, տեղի ունեցած դեպք՝ past simple, didn't-ից հետո՝ հիմնական ձև։",
+        "items": [
+          "When the server stopped, we ___ (run) a test.",
+          "The problem ___ (start) at nine yesterday.",
+          "We didn't ___ (change) the settings."
+        ],
+        "answers": [
+          "When the server stopped, we were running a test.",
+          "The problem started at nine yesterday.",
+          "We didn't change the settings."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ուսումնական դեպք՝ ժամը 9։00-ից թեստերը չեն մեկնարկում, երեք ինժեներ սպասում է, իսկ արդյունքը պետք է մինչև 13։00։ Պատճառը հաստատված չէ։ Առաջին 20-ին աջակցող թիմին բացատրիր խնդիրը և դրա ազդեցությունը, խնդրիր հաջորդ ստուգումը։ Հինգ րոպե ուղղեք ժամանակաձևերը և չհիմնավորված պնդումները։ Վերջին 20-ին զրուցակիցը ղեկավարն է․ նույնը ներկայացրու ավելի կարճ՝ պահելով փաստերը։",
+      "questions": [
+        "When did you first notice the problem?",
+        "What were you doing at that moment?",
+        "Which work cannot continue?",
+        "What can the team do while it waits?"
+      ],
+      "transfer_hy": "20 րոպե․ խնդրի բացատրությունը կրկնիր ուղղումից հետո։ Հետո փոխիր պայմանը․ թեստերն արդեն աշխատում են, բայց կեսն է ավարտված։ Թարմացրու ազդեցությունը՝ հին խափանումը չներկայացնելով որպես ընթացիկ։",
+      "recording_hy": "10 րոպե․ պահիր 90 վայրկյանի վերջնական հաղորդումը։ Նշիր՝ ասե՞լ ես սկիզբը, ազդեցությունը, անորոշությունը և հաջորդ քայլը։ Գրանցիր երկու ուղղում։",
+      "easier_hy": "Սկսիր չորս կարճ նախադասությունից։ Եթե past continuous-ը դժվար է, նախ պատմիր երկու դեպքը past simple-ով, հետո համադրիր։",
+      "harder_hy": "Բացատրիր, թե ինչն է փոխվել վերջին հաղորդումից հետո, և պատասխանատվություն մի վերագրիր որևէ մեկին առանց տվյալների։",
+      "retrieval_hy": "10 րոպե․ 8-րդ օրվա անցյալով պատմությունից վերցրու երկու բայ։ 11-րդ օրվա հաղորդման կառուցվածքով մեկ րոպե պատմիր երեկվա խնդիրներից մեկի մասին։",
+      "source_refs": [
+        "turn876528550view1",
+        "turn418863896view5",
+        "turn320086980view6"
+      ],
+      "title_en": "Explain a problem",
+      "short_en": "Describe what went wrong, its impact and the help you need.",
+      "week": 3,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 16,
+      "title_hy": "Փաստ և ենթադրություն",
+      "goal_hy": "Լսած կամ ստուգած տեղեկությունը տարբերել հնարավոր բացատրությունից և բացահայտ ասել՝ ինչն է դեռ անհայտ։",
+      "primary": {
+        "title": "Facts and figures",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/facts-figures",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Բացված են Պանամայի ջրանցքի մասին ուսումնական ձայնագրության տեքստը և A2 պիտակը։ Թվերը օգտագործվում են որպես լսողական նյութի բովանդակություն, ոչ ներկա վիճակի հաստատում։"
+      },
+      "support": {
+        "title": "Modal verbs",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/modal-verbs",
+        "type": "Քերականական տեղեկատու",
+        "level": "Beginner՝ ըստ էջի, CEFR նշված չէ",
+        "verified_note": "Բացված է պաշտոնական ներածական բացատրությունը՝ հնարավորության, որոշակիության և խնդրանքների մասին։"
+      },
+      "primary_scope_hy": "20 րոպե․ լսիր ամբողջ հատվածը և գրիր թվերը՝ իրենց նշանակությամբ։ Երկրորդ անգամ ստուգիր տեքստով։ Պատասխանելիս ասա՝ ըստ ձայնագրության։ Թվերը նոր փաստերի աղբյուր մի համարիր։",
+      "support_scope_hy": "15 րոպեից մինչև 5-ը՝ Level: beginner-ի առաջին կարճ բացատրությանը՝ մինչև Modal verbs վարժությունը։ Այսօր կենտրոնացիր might/may + բայի հիմնական ձևի վրա։",
+      "input_tasks": [
+        "According to the recording, how long is the canal?",
+        "What range of crossing times does the speaker give?",
+        "Personal reflection: Which number would you verify before using it in a current presentation, and why?"
+      ],
+      "input_answers": [
+        "82 kilometres.",
+        "About 8–10 hours.",
+        "Անձնական պատասխան․ օրինակ՝ նավերի տարեկան թիվը, քանի որ այն կարող է փոփոխվել։ Պատասխանիր քո ընտրությամբ և հիմնավորիր։"
+      ],
+      "chunks": [
+        {
+          "en": "We know that…",
+          "hy": "Գիտենք, որ…"
+        },
+        {
+          "en": "The evidence shows…",
+          "hy": "Տվյալները ցույց են տալիս, որ…"
+        },
+        {
+          "en": "One possible reason is…",
+          "hy": "Հնարավոր պատճառներից մեկը … է։"
+        },
+        {
+          "en": "We haven't checked… yet.",
+          "hy": "Մենք դեռ չենք ստուգել…"
+        },
+        {
+          "en": "We need more information about…",
+          "hy": "Մեզ լրացուցիչ տեղեկություն է պետք …-ի մասին։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Ընտրիր ճիշտ կամ տվյալներով հիմնավորված տարբերակը։ Might/may-ից հետո բայը չի ստանում -s։ Մի վերածիր դիտարկումը հաստատված պատճառի։",
+        "items": [
+          "The logs ___ (show / shows) three failures.",
+          "The server might ___ (be / is) overloaded.",
+          "Given only three error messages, choose: The server is definitely broken. / The logs contain three errors."
+        ],
+        "answers": [
+          "The logs show three failures.",
+          "The server might be overloaded.",
+          "The logs contain three errors."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ուսումնական տվյալներ՝ երեք առաջադրանք ձախողվել է, առաջին սխալը գրանցվել է ժամը 9։10-ին, այլ առաջադրանք հաջողվել է 9։12-ին։ Սերվերի ծանրաբեռնվածության տվյալներ չունես։ Առաջին 20-ին ներկայացրու երեք փաստ, երկու հնարավոր բացատրություն և երկու բաց հարց։ Հինգ րոպե ստուգեք՝ ենթադրությունը փաստ ներկայացրե՞լ ես։ Վերջին 20-ին գործընկերը պահանջում է միանգամից անուն տալ պատճառին․ պատասխանիր հստակ, բայց պահպանելով անորոշությունը։",
+      "questions": [
+        "Which statements can you confirm?",
+        "What is still only a possible explanation?",
+        "What evidence would help you decide?",
+        "What have you not checked yet?"
+      ],
+      "transfer_hy": "20 րոպե․ կրկնիր բացատրությունը՝ ուղղելով չափազանց վստահ ձևակերպումները։ Հետո ավելացրու նոր փաստ՝ նույն սխալը եղել է նաև այլ սերվերի վրա։ Ասա՝ ինչպես է դա փոխում քո ենթադրությունը։",
+      "recording_hy": "10 րոպե․ պահիր երկու րոպեի բացատրությունը։ Գրառման մեջ առանձնացրու երեք փաստը և երկու ենթադրությունը, ապա ընտրիր վաղը ստուգելու մեկ լեզվական սխալ։",
+      "easier_hy": "Յուրաքանչյուր միտքը սկսիր We know…, Maybe… կամ We don't know… ձևով։ Մի նախադասության մեջ մեկ միտք ասա։",
+      "harder_hy": "Ներկայացրու երկու մրցակցող բացատրություն և նշիր՝ ինչ արդյունք կօգնի տարբերել դրանք։",
+      "retrieval_hy": "10 րոպե․ 15-րդ օրվա դեպքից վերասա սկիզբն ու ազդեցությունը։ Նշիր՝ դրանցից որը փաստ է, և ինչ պատճառ դեռ չգիտես։",
+      "source_refs": [
+        "turn160799761view0",
+        "turn418863896view2"
+      ],
+      "title_en": "Facts and possibilities",
+      "short_en": "Separate confirmed facts from possible explanations and unknowns.",
+      "week": 3,
+      "category_en": "Workplace",
+      "icon": "spark"
+    },
+    {
+      "day": 17,
+      "title_hy": "Անսպասելի հարցեր",
+      "goal_hy": "Պահպանել զրույցը, երբ հարցը պատրաստածդ խոսքի մաս չէ, և անհրաժեշտության դեպքում նախ ճշտել դրա իմաստը։",
+      "primary": {
+        "title": "Keeping a conversation going",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/b1/keeping-conversation-going",
+        "type": "Խոսքի տեսադաս",
+        "level": "B1",
+        "verified_note": "Բացված են Noelia-ի և Bob-ի զրույցի տեքստը և B1 պիտակը։"
+      },
+      "support": {
+        "title": "Question forms",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/question-forms",
+        "type": "Քերականություն",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական էջը բացված է․ հարցական բայերի և do/does/did-ի ձևերը ստուգված են։"
+      },
+      "primary_scope_hy": "20 րոպե․ դիտիր ամբողջ տեսադասը։ Նկատիր, թե ինչպես նոր տեղեկությունից հաջորդ հարց է առաջանում։ Կրկին դիտելիս կանգ առ յուրաքանչյուր հարցից հետո և կանխատեսիր պատասխանը։",
+      "support_scope_hy": "15 րոպեից մինչև 5-ը՝ Grammar explanation-ի սկզբի աղյուսակներին և Questions in the present simple and past simple բաժնին։ Կանոնը կիրառիր անմիջապես նոր հարցերում։",
+      "input_tasks": [
+        "Which Spanish city is Noelia from?",
+        "What business did Bob run in Spain?",
+        "What makes Bob's final remarks surprising after his answer about Spanish?"
+      ],
+      "input_answers": [
+        "Santander.",
+        "A small bar on the Costa Brava.",
+        "He says he speaks little Spanish, then delivers several sentences in Spanish."
+      ],
+      "chunks": [
+        {
+          "en": "Can I check one detail first?",
+          "hy": "Կարո՞ղ եմ նախ մի մանրուք ճշտել։"
+        },
+        {
+          "en": "Could you explain what you mean by…?",
+          "hy": "Կարո՞ղ ես բացատրել՝ … ասելով ինչ նկատի ունես։"
+        },
+        {
+          "en": "The short answer is…",
+          "hy": "Կարճ պատասխանը … է։"
+        },
+        {
+          "en": "For example, yesterday…",
+          "hy": "Օրինակ՝ երեկ…"
+        },
+        {
+          "en": "What would you do in that situation?",
+          "hy": "Դու ի՞նչ կանեիր այդ իրավիճակում։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Ընտրիր օժանդակ բայը։ Հետո պատասխանիր հարցին և նույն կառուցվածքով նոր հարց տուր զրուցակցիդ։ Present simple-ի team-ը այստեղ եզակի է։",
+        "items": [
+          "Where ___ your team work? (do / does)",
+          "What ___ you change yesterday? (do / did)",
+          "Why ___ the service unavailable now? (is / does)"
+        ],
+        "answers": [
+          "Where does your team work?",
+          "What did you change yesterday?",
+          "Why is the service unavailable now?"
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ընտրիր 9-րդ օրվա ծանոթ աշխատանքը։ Առաջին 20-ին զրուցակիցը խառը հերթականությամբ տալիս է ստորև չորս հարցերը և քո պատասխաններից բխող ևս չորս նոր հարց։ Այդ նոր հարցերը նախապես մի գրեք։ Պատասխանելուց առաջ մի պատրաստիր ամբողջ խոսքը։ Հինգ րոպե ուղղեք հարցերը հասկանալու և պատասխանը սկսելու դժվարությունները։ Վերջին 20-ին փոխեք դերերը․ հարցերը կազմիր դիմացինի պատասխանների հիման վրա։",
+      "questions": [
+        "Why did you choose that approach?",
+        "Can you give a recent example?",
+        "What happens if the first attempt fails?",
+        "How would you explain this to a new colleague?"
+      ],
+      "transfer_hy": "20 րոպե․ երկու դժվար պատասխանը շտկիր ու կրկնիր։ Հետո թեման փոխիր՝ վերջին ճանապարհորդությունդ։ Զրուցակիցը թող նույն հարցերի կառուցվածքներով հարցնի նոր մանրամասներ։",
+      "recording_hy": "10 րոպե․ պահիր չորս հարցով կարճ խոսակցություն։ Նշիր՝ որ հարցը ճիշտ չհասկացար և ինչպես պարզաբանեցիր։ Պահիր երկու օգտակար ուղղում։",
+      "easier_hy": "Թույլատրիր մեկ կրկնում, ապա տուր պատասխան + մեկ պատճառ։ Մի փորձիր երկար խոսել, եթե հիմնական միտքը դեռ պարզ չէ։",
+      "harder_hy": "Յուրաքանչյուր պատասխանից հետո զրուցակիցը թող մեկ նոր why/how հարց տա։ Անհայտ տեղեկության դեպքում բացահայտ ասա, որ չգիտես։",
+      "retrieval_hy": "10 րոպե․ կրկնիր 4-րդ և 12-րդ օրերի պարզաբանման հարցերը։ 16-րդ օրվա We don't know… գաղափարով ասա մի բան, որի պատասխանը դեռ չունես։",
+      "source_refs": [
+        "turn160799761view1",
+        "turn320086980view2",
+        "turn876528550view0"
+      ],
+      "title_en": "Handle unexpected questions",
+      "short_en": "Clarify a new question and answer without preparing a full script.",
+      "week": 3,
+      "category_en": "Conversation",
+      "icon": "chat"
+    },
+    {
+      "day": 18,
+      "title_hy": "Երկու տարբերակի համեմատություն",
+      "goal_hy": "Ներկայացնել երկու ընտրության տարբերությունը, յուրաքանչյուրի սահմանափակումը և հիմնավորված առաջարկը։",
+      "primary": {
+        "title": "Making a decision",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/making-decision",
+        "type": "Լսում",
+        "level": "B1",
+        "verified_note": "Բացված են նախագծի պլանավորման ամբողջ քննարկումը և B1 պիտակը։"
+      },
+      "support": {
+        "title": "Comparative adjectives",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/comparative-adjectives",
+        "type": "Քերականություն",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական էջի համեմատական ձևերն ու A1/A2 պիտակները ստուգված են։"
+      },
+      "primary_scope_hy": "20 րոպե․ լսիր ամբողջ քննարկումը։ Առաջին անգամ գրիր երկու մոտեցումները, երկրորդ անգամ՝ հիմնական առարկությունն ու վերջնական որոշումը։ Տեքստը բացիր երկրորդ լսումից հետո։",
+      "support_scope_hy": "15 րոպեից մինչև 5-ը՝ Adjectives with one syllable, Adjectives with two or more syllables և Irregular adjectives բաժինների հիմնական ձևերին։ Օրվա նպատակը երեք համեմատություն օգտագործելն է։",
+      "input_tasks": [
+        "What does David want to do before starting the first phase?",
+        "What approach does the group finally choose?",
+        "What additional allowance does David ask for in the schedule?"
+      ],
+      "input_answers": [
+        "Clarify the overall plan first.",
+        "Begin the first phase while developing and adjusting the later plans.",
+        "Time for extra work created by later changes."
+      ],
+      "chunks": [
+        {
+          "en": "Option A is faster to set up.",
+          "hy": "A տարբերակն ավելի արագ է պատրաստվում։"
+        },
+        {
+          "en": "Option B needs more time.",
+          "hy": "B տարբերակին ավելի շատ ժամանակ է պետք։"
+        },
+        {
+          "en": "The main advantage is…",
+          "hy": "Գլխավոր առավելությունը … է։"
+        },
+        {
+          "en": "One limitation is…",
+          "hy": "Սահմանափակումներից մեկը … է։"
+        },
+        {
+          "en": "I recommend… because…",
+          "hy": "Առաջարկում եմ …, որովհետև…"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Փակագծի ածականը դարձրու համեմատական։ Հետո քո երկու իրական տարբերակների մասին կազմիր նույն ձևերով նախադասություններ։",
+        "items": [
+          "This plan is ___ (clear) than the old one.",
+          "Option B is ___ (expensive) than Option A.",
+          "The new explanation is ___ (good) than the first version."
+        ],
+        "answers": [
+          "This plan is clearer than the old one.",
+          "Option B is more expensive than Option A.",
+          "The new explanation is better than the first version."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ուսումնական ընտրություն՝ A լուծումը մեկ օրում է պատրաստվում, բայց հաշվետվությունը պետք է ձեռքով կազմել։ B լուծումը երեք օր է պահանջում, հետո հաշվետվությունը կազմում է ինքնաշխատ։ Առաջին արդյունքը պետք է վաղը։ Առաջին 20-ին առաջարկիր տարբերակ՝ երկու պատճառով, և լսիր առարկությունը։ Հինգ րոպե ուղղեք համեմատական ձևերը։ Վերջին 20-ին փոխեք դերերը և քննարկեք, թե արդյոք արժե հետագայում փոխել ընտրված լուծումը։",
+      "questions": [
+        "Which option is quicker to prepare?",
+        "Which option reduces manual work later?",
+        "What is the main constraint today?",
+        "Why is your recommendation suitable for this situation?"
+      ],
+      "transfer_hy": "20 րոպե․ համեմատությունը կրկնիր 2, ապա 1 րոպեում՝ պահելով պատճառները։ Հետո ժամկետը փոխիր՝ մեկ շաբաթ։ Նոր պայմաններում վերանայիր առաջարկդ։",
+      "recording_hy": "10 րոպե․ պահիր երկու րոպեի համեմատությունը։ Նշիր՝ յուրաքանչյուր տարբերակի առնվազն մեկ առավելություն ու մեկ սահմանափակում ասե՞լ ես։ Ուղղիր երկու անճիշտ համեմատություն։",
+      "easier_hy": "Օգտագործիր faster, slower, easier և because։ Սկսիր յուրաքանչյուր տարբերակի մասին երկու պարզ նախադասությունից։",
+      "harder_hy": "Ընտրված լուծման թերությունն ինքդ նշիր և բացատրիր՝ ինչ պայմաններում կընտրեիր մյուսը։",
+      "retrieval_hy": "10 րոպե․ 13-րդ օրվա քաղաքավարի անհամաձայնության ձևով առարկիր մեկ առաջարկի։ 16-րդ օրվա նման առանձնացրու տրված փաստն ու քո գնահատականը։",
+      "source_refs": [
+        "turn114797335view1",
+        "turn418863896view3",
+        "turn320086980view5"
+      ],
+      "title_en": "Compare two options",
+      "short_en": "Explain each option's benefits and limits, then make a recommendation.",
+      "week": 3,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 19,
+      "title_hy": "Նույն դեպքը տարբեր լսարանների համար",
+      "goal_hy": "Միևնույն փաստերը պահպանելով՝ բացատրության մանրամասնությունն ու բառերը հարմարեցնել ինժեներին և ոչ տեխնիկական ղեկավարին։",
+      "primary": {
+        "title": "Leaving a message",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/leaving-message",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Բացված են հեռախոսային հաղորդագրության տեքստը և A2 պիտակը։"
+      },
+      "support": {
+        "title": "An email explaining a problem",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/writing/a2/email-explaining-problem",
+        "type": "Կարճ նամակի ընթերցում",
+        "level": "A2",
+        "verified_note": "Պաշտոնական A2 writing էջում հասանելի են նամակի տեքստն ու կազմակերպման խորհուրդները։"
+      },
+      "primary_scope_hy": "20 րոպե․ լսիր ամբողջ խոսակցությունը։ Առաջին անգամ առանձնացրու՝ ով է զանգում, ում և ինչի համար։ Երկրորդ անգամ նկատիր՝ ինչպես են ստուգում կարևոր մանրամասները։",
+      "support_scope_hy": "15 րոպեից առավելագույնը 5-ը՝ Reading text նամակին և Tips-ի 2-րդ ու 3-րդ կետերին։ Նկատիր՝ խնդիրը, մանրամասներն ու ցանկալի քայլը որտեղ են տեղադրված։",
+      "input_tasks": [
+        "Who is Peter trying to reach?",
+        "What information does Peter need about the project?",
+        "Why does he give an email address as well as a phone number?"
+      ],
+      "input_answers": [
+        "Maria Fernandez.",
+        "The project's latest figures.",
+        "He may be in a meeting when she returns his call."
+      ],
+      "chunks": [
+        {
+          "en": "In simple terms,…",
+          "hy": "Պարզ բառերով՝…"
+        },
+        {
+          "en": "What this means for the team is…",
+          "hy": "Թիմի համար սա նշանակում է…"
+        },
+        {
+          "en": "The detail you need is…",
+          "hy": "Քեզ անհրաժեշտ մանրամասնությունն այն է, որ…"
+        },
+        {
+          "en": "The current impact is…",
+          "hy": "Այս պահին ազդեցությունն այն է, որ…"
+        },
+        {
+          "en": "I'll give you the main points first.",
+          "hy": "Նախ կներկայացնեմ հիմնական կետերը։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Ընտրիր քերականորեն ճիշտ տարբերակը։ Հետո նույն իմաստը բացատրիր առանց build, job կամ timeout բառերից որևէ մեկի։",
+        "items": [
+          "In simple terms, the system ___ finish the check. (cannot / doesn't can)",
+          "That means the report ___ delayed. (is / are)",
+          "The test did not finish, ___ we cannot confirm the result. (so / because)"
+        ],
+        "answers": [
+          "In simple terms, the system cannot finish the check.",
+          "That means the report is delayed.",
+          "The test did not finish, so we cannot confirm the result."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ դեպք՝ ստուգումը կանգնել է connection timeout հաղորդագրությամբ, դու այն վերագործարկել ես, բայց արդյունք դեռ չկա։ Ժամը 15։00-ին ցուցադրություն կա։ Առաջին 20-ին բացատրիր ինժեներին՝ ինչ դիտարկեցիր և ինչ արեցիր։ Հինգ րոպե հանիր ավելորդ եզրերն ու չհաստատված պնդումները։ Վերջին 20-ին բացատրիր ղեկավարին՝ ինչն է ուշանում և երբ կտաս հաջորդ տեղեկությունը։ Սխալի հաղորդագրությունը ինքնաբերաբար հաստատված պատճառ մի անվանիր։",
+      "questions": [
+        "What does this mean for our deadline?",
+        "What have you already tried?",
+        "What information does the engineer need?",
+        "What decision does the manager need to make?"
+      ],
+      "transfer_hy": "20 րոպե․ պատրաստիր նույն դեպքի երկու տարբերակ՝ մեկական 60–90 վայրկյան։ Հետո բացատրիր նոր աշխատակցի, որը CI/CD բառը չգիտի։ Օգտագործիր պարզ գործողությունների նկարագրություն։",
+      "recording_hy": "10 րոպե․ պահիր երկու ձայնագրությունը։ Նշիր երեք փաստ, որոնք երկու տարբերակում էլ նույնն են, և երկու բառ, որոնք պարզեցրել ես։",
+      "easier_hy": "Պահիր երեք մաս՝ problem, impact, next step։ Յուրաքանչյուրի մասին ասա մեկ նախադասություն։",
+      "harder_hy": "Յուրաքանչյուր լսարան թող մեկ հարց տա։ Պատասխանիր միայն նրան անհրաժեշտ մանրամասնությամբ՝ չփոխելով փաստերը։",
+      "retrieval_hy": "10 րոպե․ 15-րդ օրվա ազդեցության հաղորդումը վերասա, հետո 16-րդ օրվա ձևերով նշիր՝ ինչն է հաստատված և ինչն անհայտ։",
+      "source_refs": [
+        "turn160799761view2",
+        "turn418863896view7"
+      ],
+      "title_en": "Adapt to your audience",
+      "short_en": "Keep the facts the same while changing the detail for your listener.",
+      "week": 3,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 20,
+      "title_hy": "Կարճ ցուցադրություն",
+      "goal_hy": "Պարզ հերթականությամբ ցույց տալ ծանոթ գործիք կամ գործողություն, բացատրել յուրաքանչյուր քայլի նպատակը և պատասխանել հարցերին։",
+      "primary": {
+        "title": "Understanding an explanation",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/understanding-explanation",
+        "type": "Լսում",
+        "level": "A2",
+        "verified_note": "Բացված են Fibonacci-ի մասին բացատրության տեքստը և A2 պիտակը։"
+      },
+      "support": {
+        "title": "Infinitive of purpose",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/infinitive-purpose",
+        "type": "Քերականություն",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական էջում բացված են to + infinitive-ի բացատրությունը և A1/A2 պիտակները։"
+      },
+      "primary_scope_hy": "20 րոպե․ լսիր ամբողջ խոսակցությունը։ Ուշադրություն դարձրու, թե ինչպես ուսանողի նոր հարցից հետո բացատրությունն ավելի կոնկրետ է դառնում։ Երկրորդ լսումից հետո ամփոփիր երեք նախադասությամբ։",
+      "support_scope_hy": "15 րոպեից մինչև 5-ը՝ Grammar explanation կարճ բաժնին։ Հետո երեք վարժությամբ կիրառիր նպատակը բացատրող to + բայի հիմնական ձևը։",
+      "input_tasks": [
+        "Who was Fibonacci, according to the professor?",
+        "After 1, 1, 2, 3 and 5, what number comes next?",
+        "Why does the professor leave further examples until another class?"
+      ],
+      "input_answers": [
+        "A European mathematician from the Middle Ages.",
+        "8.",
+        "There is not enough time in the current class."
+      ],
+      "chunks": [
+        {
+          "en": "I'll show you how to…",
+          "hy": "Ցույց կտամ՝ ինչպես…"
+        },
+        {
+          "en": "First, open…",
+          "hy": "Նախ բացիր…"
+        },
+        {
+          "en": "This button lets you…",
+          "hy": "Այս կոճակը թույլ է տալիս…"
+        },
+        {
+          "en": "You can use this to…",
+          "hy": "Սա կարող ես օգտագործել՝ … անելու համար։"
+        },
+        {
+          "en": "What would you like to see again?",
+          "hy": "Ո՞ր մասը կուզես նորից տեսնել։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Լրացրու կամ ուղղիր նպատակը բացատրող մասը։ To-ից հետո օգտագործիր բայի հիմնական ձևը։ Ամեն պատասխանից հետո քո ցուցադրությունից մեկ նման նախադասություն ասա։",
+        "items": [
+          "I open the dashboard ___ check the status. (to / for)",
+          "We use this filter to ___ failed tests. (find / finding)",
+          "Correct: I record the screen to showing the steps."
+        ],
+        "answers": [
+          "I open the dashboard to check the status.",
+          "We use this filter to find failed tests.",
+          "I record the screen to show the steps."
+        ]
+      },
+      "roleplay_hy": "45 րոպե․ ընտրիր քեզ ծանոթ պարզ գործողություն՝ ցուցակից արդյունք գտնելը, ֆայլը բացելը կամ թեստի հաշվետվությունը կարդալը։ Առաջին 20-ին ներկայացրու նպատակը, երեք քայլը և արդյունքը․ զրուցակիցը հարցեր է տալիս։ Հինգ րոպե ուղղեք անհասկանալի քայլերն ու to-ից հետո բայի ձևը։ Վերջին 20-ին նորից ցուցադրիր՝ այս անգամ կանգ առնելով յուրաքանչյուր քայլից հետո, որ զրուցակիցը կարողանա կրկնել գործողությունը։",
+      "questions": [
+        "What problem does this tool solve?",
+        "Why do we need this step?",
+        "What should I do if the expected result does not appear?",
+        "How can I check that I did it correctly?"
+      ],
+      "transfer_hy": "20 րոպե․ նույն ցուցադրությունը կրկնիր ուղղումից հետո։ Հետո պայմանը փոխիր․ զրուցակիցը չի տեսնում էկրանը։ Գործողությունը բացատրիր միայն բառերով և ստուգիր՝ ճիշտ է հասկացել։",
+      "recording_hy": "10 րոպե․ պահիր ցուցադրության վերջնական ձայնագրությունը՝ պարզ տարբերակով 1–2, ընդլայնվածով 3–5 րոպե։ Գրանցիր մեկ անհասկանալի քայլ և երկու ուղղում։",
+      "easier_hy": "Ներկայացրու միայն երեք քայլ, մեկ նպատակ և մեկ ստուգում։ Թույլատրվում է հինգ հենաբառ։",
+      "harder_hy": "Պատասխանիր երեք նոր հարցի՝ գործիքի սահմանափակման, սխալի և այլ տարբերակի մասին։ Չիմացած հնարավորությունը մի հորինիր։",
+      "retrieval_hy": "10 րոպե․ 9-րդ օրվա first/then/finally հերթականությամբ բացատրիր մեկ ընթացակարգ։ 12-րդ օրվա ձևով հարցրու՝ ինչ արդյունք է զրուցակիցն ուզում ստանալ։",
+      "source_refs": [
+        "turn160799761view3",
+        "turn320086980view3",
+        "turn418863896view4"
+      ],
+      "title_en": "Give a short demo",
+      "short_en": "Show three clear steps, explain their purpose and answer questions.",
+      "week": 3,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 21,
+      "title_hy": "Երրորդ ստուգում և խնդրի քննարկում",
+      "goal_hy": "Հստակ ներկայացնել խնդիրը, արձագանքել ընդհատմանը և ամփոփել հաջորդ քայլը։ Նախ կատարիր չնախապատրաստված խոսքային փորձը, հետո բացիր նյութերը։",
+      "primary": {
+        "title": "Making a decision",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/making-decision",
+        "type": "audio + transcript",
+        "level": "B1",
+        "verified_note": "Էջը բացված է․ հասանելի են հանդիպման տեքստը, առաջադրանքները և B1 նշումը։",
+        "source_ref": "turn457985978view0"
+      },
+      "support": {
+        "title": "An email request for help",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/b1/email-request-help",
+        "type": "reading",
+        "level": "B1",
+        "verified_note": "Բացված էջում կա բաժինների միջև օգնության խնդրանքի նամակը և B1 նշումը։",
+        "source_ref": "turn676837897view1"
+      },
+      "input_tasks": [
+        "Լսիր հանդիպումը՝ առաջին անգամ առանց տեքստի։ What does David want the team to decide before discussing the schedule?",
+        "Կրկին լսիր և գրանցիր կողմերի տարբերությունը։ Why does David hesitate to begin the project immediately?",
+        "Վերջում լսիր որոշման ամփոփումը։ What will the team start now, and what will they continue planning?"
+      ],
+      "input_answers": [
+        "He wants agreement on how the group will make its decision.",
+        "He thinks starting without a sufficiently clear overall plan could lead to mistakes and lost time.",
+        "They will start the first phase soon while continuing to plan and adjust the later phases."
+      ],
+      "chunks": [
+        {
+          "en": "Here's what we know.",
+          "hy": "Ահա՝ ինչ գիտենք։"
+        },
+        {
+          "en": "The problem affects…",
+          "hy": "Խնդիրն ազդում է…"
+        },
+        {
+          "en": "We still need to check…",
+          "hy": "Դեռ պետք է ստուգենք…"
+        },
+        {
+          "en": "I recommend starting with…",
+          "hy": "Առաջարկում եմ սկսել…"
+        },
+        {
+          "en": "Let's confirm the next step.",
+          "hy": "Եկեք հստակեցնենք հաջորդ քայլը։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Առաջին խոսքային փորձից հետո լրացրու և բարձրաձայն ասա ամբողջ նախադասությունը։ Յուրաքանչյուր ձևով ստեղծիր նաև քո օրինակը։",
+        "items": [
+          "Yesterday, one test ___ (fail).",
+          "We ___ (check) the logs right now.",
+          "Choose: We should / should to check the server first."
+        ],
+        "answers": [
+          "Yesterday, one test failed.",
+          "We are checking the logs right now.",
+          "We should check the server first."
+        ]
+      },
+      "roleplay_hy": "Նախ քննարկեք առանց լեզվական ուղղումների։ Հետո ընտրեք երկու կարևոր ուղղում և կրկնեք՝ դերերը փոխելով։",
+      "questions": [
+        "What happened?",
+        "What do you know for certain?",
+        "Why do you need another check?",
+        "What will you do if the next run passes?"
+      ],
+      "transfer_hy": "Զրուցակիցը ընդհատում է և ասում՝ ևս երկու թեստ էլ են ձախողվել։ Ճշտիր նոր տեղեկությունը, փոխիր առաջարկդ և կրկին ամփոփիր։",
+      "recording_hy": "Պահիր առաջին 2 րոպեանոց բացատրությունը և 5 րոպե հարցուպատասխանը։ Գնահատիր հասկանալիությունը, կատարումը, ինքնուրույնությունը և երկխոսությունը՝ յուրաքանչյուրն 0–3։",
+      "easier_hy": "Օգտագործիր մինչև հինգ հենաբառ և 30–60 վայրկյանի բացատրություն։ Հարցերը թող տրվեն մեկական՝ կրկնելու հնարավորությամբ։",
+      "harder_hy": "Առանց գրառման ներկայացրու երկու հնարավոր քայլ, համեմատի՛ր սահմանափակումները և խնդրիր զրուցակցին հակադարձել։",
+      "retrieval_hy": "Առաջին 10 րոպեում զրուցակիցը թող ներկայացնի նախկինում չքննարկված պարզ աշխատանքային խնդիր։ Առանց նյութերի տուր 2 րոպեանոց բացատրություն և մասնակցիր 5 րոպե հարցուպատասխանի։ Պահիր այս առաջին ձայնագրությունը։ Մնացած ժամանակում նշիր մեկ դժվարություն, ապա բացիր նյութերը։",
+      "source_refs": [
+        "turn457985978view0",
+        "turn676837897view1"
+      ],
+      "primary_scope_hy": "20 րոպեի ընթացքում դիտիր կամ լսիր հիմնական երկխոսությունը, պատասխանիր երեք հարցին և երկրորդ փորձից հետո ստուգիր տեքստը։",
+      "support_scope_hy": "Կառուցվածքների 15 րոպեից մինչև 5 րոպե հատկացրու ամբողջ նամակը կարդալուն։ Նկատիր, թե ինչպես է ձևակերպվում օգնության խնդրանքը, հետո անցիր վարժություններին։",
+      "scenario_en": "Yesterday, one test failed. Today, the same test passed. The cause is still unknown. You want another check, but your colleague wants to close the issue.",
+      "title_en": "Your third checkpoint",
+      "short_en": "Discuss a new problem, handle interruptions and confirm the next step.",
+      "week": 3,
+      "category_en": "Checkpoint",
+      "icon": "check"
+    },
+    {
+      "day": 22,
+      "title_hy": "Չնախապատրաստված առօրյա զրույց",
+      "goal_hy": "Պահել զրույցը մանրամասներով, հետաքրքրությամբ և փոխադարձ հարցերով՝ առանց պատրաստի խոսքի։",
+      "primary": {
+        "title": "Keeping a conversation going",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/b1/keeping-conversation-going",
+        "type": "video + transcript",
+        "level": "B1",
+        "verified_note": "Բացված էջում կան Noelia-ի և Bob-ի զրույցի տեքստը, վարժությունները և B1 նշումը։",
+        "source_ref": "turn457985978view1"
+      },
+      "support": {
+        "title": "A travel guide",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/b1/travel-guide",
+        "type": "reading",
+        "level": "B1",
+        "verified_note": "Բացված էջում կա Բանգկոկի մասին ուսումնական ընթերցանություն և B1 նշումը։",
+        "source_ref": "turn676837897view3"
+      },
+      "input_tasks": [
+        "Դիտիր հիմնական տեսանյութը։ What did Bob do when he lived in Spain?",
+        "Երկրորդ դիտումից հետո պատասխանիր։ Where is Noelia from?",
+        "Ուշադրություն դարձրու Noelia-ի արձագանքին։ What does she miss about the place where she grew up?"
+      ],
+      "input_answers": [
+        "He owned or ran a small bar on the Costa Brava.",
+        "She is from Santander.",
+        "She misses the sea."
+      ],
+      "chunks": [
+        {
+          "en": "What have you been enjoying recently?",
+          "hy": "Վերջերս ինչի՞ց ես հաճույք ստանում։"
+        },
+        {
+          "en": "What was that like?",
+          "hy": "Դա ինչպիսի՞ փորձ էր։"
+        },
+        {
+          "en": "Tell me a little more about…",
+          "hy": "Մի փոքր ավելին պատմիր…"
+        },
+        {
+          "en": "That reminds me of…",
+          "hy": "Դա ինձ հիշեցնում է…"
+        },
+        {
+          "en": "Have you had a similar experience?",
+          "hy": "Դու նման փորձ ունեցե՞լ ես։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Դասավորիր բառերը և բարձրաձայն տուր հարցը։ Հետո ինքդ պատասխանիր մեկ պատճառ և մեկ օրինակ ավելացնելով։",
+        "items": [
+          "usually / do / what / weekends / you / at / do?",
+          "you / did / enjoy / about / what / the trip?",
+          "would / where / to / you / go / like / next?"
+        ],
+        "answers": [
+          "What do you usually do at weekends?",
+          "What did you enjoy about the trip?",
+          "Where would you like to go next?"
+        ]
+      },
+      "roleplay_hy": "Թեման ընտրեք թերթիկներով։ Սկզբում խոսիր մեկ րոպե, հետո երկուսով շարունակեք։ Յուրաքանչյուր երկար պատասխանից հետո տուր մեկ իրական հարց։ Երկրորդ փուլում ընտրեք այլ թեմա։",
+      "questions": [
+        "What makes this interesting for you?",
+        "Can you describe one recent example?",
+        "Has your opinion changed over time?",
+        "What would you choose if your first option were unavailable?"
+      ],
+      "transfer_hy": "Զրուցակիցը փոխում է թեման՝ քո պատմության մեկ մանրամասից ելնելով։ Շարունակիր նոր ուղղությամբ՝ առանց սկզբնական խոսքիդ վերադառնալու։",
+      "recording_hy": "Ձայնագրիր 6–8 րոպեանոց երկխոսություն և նշիր՝ ինքդ քանի շարունակող հարց տվեցիր։ Պահիր մեկ 60 վայրկյանի ինքնուրույն հատված։",
+      "easier_hy": "Օգտագործիր միայն սննդի կամ ճանապարհորդության թեման, 3 հենաբառ և պարզ what/where/why հարցեր։",
+      "harder_hy": "Մի թեմայից անցիր մյուսին բնական կապով և խոսակցության վերջում ամփոփիր՝ ինչ իմացար զրուցակցիդ մասին։",
+      "retrieval_hy": "Առանց նայելու վերադարձրու 4-րդ օրվա հարցերը, 8-րդ օրվա անցյալով պատմելը և 13-րդ օրվա քաղաքավարի ձևերը։",
+      "source_refs": [
+        "turn457985978view1",
+        "turn676837897view3"
+      ],
+      "primary_scope_hy": "20 րոպեի ընթացքում դիտիր կամ լսիր հիմնական երկխոսությունը, պատասխանիր երեք հարցին և երկրորդ փորձից հետո ստուգիր տեքստը։",
+      "support_scope_hy": "Կարդա միայն «How to get around» բաժինը՝ մինչև 5 րոպե։ Այստեղ տրված տեղեկությունը լեզվական վարժության նյութ է։",
+      "scenario_en": "You meet a colleague during a break. Neither of you has prepared a topic. Choose food, travel, a work habit or a hobby, and keep the conversation going by asking questions.",
+      "title_en": "Keep a conversation going",
+      "short_en": "Follow an unplanned conversation with details and questions of your own.",
+      "week": 4,
+      "category_en": "Conversation",
+      "icon": "chat"
+    },
+    {
+      "day": 23,
+      "title_hy": "Մտնել քննարկման մեջ և անհամաձայնություն հայտնել",
+      "goal_hy": "Արտահայտել տեսակետդ, լսել հակափաստարկը և առաջարկել ընդհանուր լուծում։",
+      "primary": {
+        "title": "Agreeing and disagreeing",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/speaking/b1/agreeing-disagreeing",
+        "type": "video + transcript",
+        "level": "B1",
+        "verified_note": "Բացված էջում կան դիզայնի քննարկման տեքստը, վարժությունները և B1 նշումը։",
+        "source_ref": "turn457985978view2"
+      },
+      "support": {
+        "title": "Suggestions and obligations",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/suggestions-obligations",
+        "type": "grammar reading",
+        "level": "beginner section",
+        "verified_note": "Բացված էջում Suggestions բաժինը նշված է beginner․ սովորողի համար ընտրվում է միայն այդ բաժինը։",
+        "source_ref": "turn890871104view1"
+      },
+      "input_tasks": [
+        "Դիտիր տեսանյութը։ Why does Emir initially dislike Paul's design?",
+        "Կրկին դիտիր վերջնական տարբերակի քննարկումը։ Name one design change that helps them reach agreement.",
+        "Լսիր Paul-ի բացատրությունը։ What kind of design does he say the client requested?"
+      ],
+      "input_answers": [
+        "He considers the design too simple.",
+        "They remove the blue colour and change the circles; either example is sufficient.",
+        "The client requested a clean, minimal design."
+      ],
+      "chunks": [
+        {
+          "en": "Could I add one point?",
+          "hy": "Կարո՞ղ եմ մեկ միտք ավելացնել։"
+        },
+        {
+          "en": "My concern is the extra work.",
+          "hy": "Ինձ մտահոգում է լրացուցիչ աշխատանքը։"
+        },
+        {
+          "en": "I agree with the goal.",
+          "hy": "Նպատակի հետ համաձայն եմ։"
+        },
+        {
+          "en": "Could we try a smaller change?",
+          "hy": "Կարո՞ղ ենք ավելի փոքր փոփոխություն փորձել։"
+        },
+        {
+          "en": "Let's return to the main question.",
+          "hy": "Եկեք վերադառնանք հիմնական հարցին։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Յուրաքանչյուր նախադասության մեջ կա մեկ կառուցվածքային սխալ։ Ուղղիր այն և ասա քո նմանատիպ օրինակը։",
+        "items": [
+          "We should to review the logs.",
+          "I am agree with your suggestion.",
+          "Could we trying a smaller update?"
+        ],
+        "answers": [
+          "We should review the logs.",
+          "I agree with your suggestion.",
+          "Could we try a smaller update?"
+        ]
+      },
+      "roleplay_hy": "Նախ ընդունիր մյուս կողմի նպատակը, հետո բացատրիր մտահոգությունդ և առաջարկիր փորձնական տարբերակ։ Երկրորդ փուլում պաշտպանիր հակառակ դիրքորոշումը։",
+      "questions": [
+        "What problem are we trying to solve?",
+        "Why do you prefer your approach?",
+        "What is one disadvantage of your idea?",
+        "How would we know whether the new approach works?"
+      ],
+      "transfer_hy": "Զրուցակիցը ասում է՝ գրավոր տեղեկացումները չեն կարդում։ Տուր պարզաբանող հարց, հետո փոփոխիր առաջարկդ։",
+      "recording_hy": "Պահիր 90 վայրկյանի առաջարկ և 4 րոպե քննարկում։ Ստուգիր՝ նշե՞լ ես ընդհանուր նպատակը, պատճառը և կոնկրետ առաջարկը։",
+      "easier_hy": "Պահիր երկու տարբերակ՝ 15 րոպե հանդիպում կամ 60 րոպե հանդիպում։ Օգտագործիր I think / because / we could։",
+      "harder_hy": "Կազմակերպիր երեք հոգու դերերով քննարկում և մեկ անգամ քաղաքավարի ընդհատիր՝ հստակեցնող հարց տալու համար։",
+      "retrieval_hy": "Կրկնիր 13-րդ օրվա անհամաձայնությունը և 18-րդ օրվա տարբերակների համեմատությունը։ Վերադարձրու նախորդ օրվա երկու շարունակող հարց։",
+      "source_refs": [
+        "turn457985978view2",
+        "turn890871104view1"
+      ],
+      "primary_scope_hy": "20 րոպեի ընթացքում դիտիր կամ լսիր հիմնական երկխոսությունը, պատասխանիր երեք հարցին և երկրորդ փորձից հետո ստուգիր տեքստը։",
+      "support_scope_hy": "Կարդա միայն «Suggestions» բաժնի beginner բացատրությունը should և could ձևերի մասին՝ մինչև 5 րոպե։",
+      "scenario_en": "Your team wants to add a one-hour meeting every day. You prefer a shorter meeting and a written update. Discuss the goal, explain your concern and suggest a trial.",
+      "title_en": "Join in and disagree politely",
+      "short_en": "Explain your view, respond to an objection and suggest common ground.",
+      "week": 4,
+      "category_en": "Workplace",
+      "icon": "chat"
+    },
+    {
+      "day": 24,
+      "title_hy": "Նոր խոսնակին լսել և մանրամասները փոխանցել",
+      "goal_hy": "Լսածից տարբերել հիմնական միտքը, վայրերը և թվերը, հետո դրանց հիման վրա պարզ որոշում առաջարկել։",
+      "primary": {
+        "title": "A weather forecast",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/weather-forecast",
+        "type": "audio + transcript",
+        "level": "B1",
+        "verified_note": "Բացված էջում կա ուսումնական եղանակի հաղորդման տեքստը և B1 նշումը։",
+        "source_ref": "turn890871104view0"
+      },
+      "support": {
+        "title": "Comparative adjectives",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/comparative-adjectives",
+        "type": "grammar reading",
+        "level": "A1–A2",
+        "verified_note": "Բացված էջում կան համեմատական ածականների բացատրությունը և A1 ու A2 նշումները։",
+        "source_ref": "turn884730590view0"
+      },
+      "input_tasks": [
+        "Լսիր ուսումնական եղանակի հաղորդումը առանց տեքստի։ Which area is expected to be mostly dry until Thursday?",
+        "Երկրորդ լսումից հետո նշիր տարբերությունը։ Will Leeds have the same thunderstorms as Manchester?",
+        "Ո՞ր ջերմաստիճանն է նշվում շաբաթավերջի համար, և ավելի տա՞ք է այն շաբաթվա նշված 29–30 աստիճանից։ Պատասխանիր մեկ անգլերեն համեմատական նախադասությամբ։"
+      ],
+      "input_answers": [
+        "London and the area around Kent, with a few isolated showers.",
+        "No. Leeds is expected to have drizzle or light rain rather than the thunderstorms mentioned for Manchester.",
+        "Around 21 degrees. The weekend will be cooler than the warmer days during the week."
+      ],
+      "chunks": [
+        {
+          "en": "The main message is that…",
+          "hy": "Հիմնական միտքն այն է, որ…"
+        },
+        {
+          "en": "I heard two different numbers.",
+          "hy": "Երկու տարբեր թիվ լսեցի։"
+        },
+        {
+          "en": "Did you say fifteen or fifty?",
+          "hy": "Տասնհի՞նգ ասացիք, թե՞ հիսուն։"
+        },
+        {
+          "en": "The forecast suggests…",
+          "hy": "Կանխատեսումից կարելի է ենթադրել…"
+        },
+        {
+          "en": "We need an indoor alternative.",
+          "hy": "Փակ տարածքում այլընտրանք է պետք։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Կարդա համեմատական ածականների բացատրությունը, հետո ընտրիր ճիշտ ձևը։ Տրված նախադասությունները լեզվական վարժանք են։",
+        "items": [
+          "Friday is hoter / hotter than Sunday.",
+          "The second recording is clearer then / than the first.",
+          "This route is more better / better for us."
+        ],
+        "answers": [
+          "Friday is hotter than Sunday.",
+          "The second recording is clearer than the first.",
+          "This route is better for us."
+        ]
+      },
+      "roleplay_hy": "Ընկերդ սկզբում լսում է առանց քո գրառումները տեսնելու, հետո ճշտում է թվերն ու վայրերը։ Փոխեք դերերը՝ զրուցակիցը իր հորինված կարճ կանխատեսումն է ասում։",
+      "questions": [
+        "What is the main difference between the two days?",
+        "Which details are certain and which are only possible?",
+        "What would you choose for an outdoor activity?",
+        "What would you do if the weather changed?"
+      ],
+      "transfer_hy": "Նույն լսել-ճշտել-ամփոփել ձևը կիրառիր աշխատանքային հաղորդման համար՝ 15 և 50 րոպեանոց երկու առաջադրանքով։ Թվերը հաստատիր հարցով։",
+      "recording_hy": "Առանց տեքստի 60–90 վայրկյան ամփոփիր լսածդ՝ ներառելով երեք ճիշտ մանրամասն և մեկ քո առաջարկ։",
+      "easier_hy": "Լսիր մեկ պարբերություն միաժամանակ։ Նախ գրիր միայն տեղանուններն ու թվերը, հետո դրանք միացրու պարզ նախադասությունների։",
+      "harder_hy": "Լսիր ամբողջությամբ, գրիր առավելագույնը հինգ հենաբառ և ներկայացրու երկու տարբեր ծրագրի համեմատություն։",
+      "retrieval_hy": "Վերադարձրու 4-րդ օրվա պարզաբանող հարցերը և 18-րդ օրվա համեմատությունները։ Այս հաղորդումը ուսումնական նյութ է, ոչ ընթացիկ եղանակի տեղեկություն։",
+      "source_refs": [
+        "turn890871104view0",
+        "turn884730590view0"
+      ],
+      "primary_scope_hy": "Լսիր ամբողջ կարճ ուսումնական եղանակի հաղորդումը։ Առաջին անգամ տեքստը փակ պահիր, երկրորդ անգամ գրիր թվերը և տեղերը։",
+      "support_scope_hy": "Կարդա «Comparative adjectives» բացատրության հիմնական ձևերը և than-ի բաժինը՝ մինչև 5 րոպե։",
+      "scenario_en": "You have heard a practice weather forecast. Help a friend decide when to plan an outdoor activity and when to choose an indoor option. Your friend needs you to clarify the numbers.",
+      "title_en": "Listen for the details",
+      "short_en": "Catch the main point, places and numbers, then explain your recommendation.",
+      "week": 4,
+      "category_en": "Listening",
+      "icon": "headphones"
+    },
+    {
+      "day": 25,
+      "title_hy": "Ծանոթ պատմությունը ներկայացնել նոր լսարանի",
+      "goal_hy": "Նույն դեպքը պատմել երկու տարբեր մարդկանց՝ ընտրելով նրանց համար անհրաժեշտ մանրամասները։",
+      "primary": {
+        "title": "Meeting an old friend",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/meeting-old-friend",
+        "type": "audio + transcript",
+        "level": "B1",
+        "verified_note": "Հղումը վերցվել է պաշտոնական B1 ցանկից․ բացված էջում կան ամբողջ զրույցը և B1 նշումը։",
+        "source_ref": "turn371218459view0"
+      },
+      "support": {
+        "title": "Past continuous and past simple",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/past-continuous-past-simple",
+        "type": "grammar reading",
+        "level": "A1–A2",
+        "verified_note": "Բացված էջում կան երկու ձևերի բացատրությունը և A1 ու A2 նշումները։",
+        "source_ref": "turn890871104view2"
+      },
+      "input_tasks": [
+        "Լսիր զրույցը։ What two difficulties does Selina mention about her time in London?",
+        "Կրկին լսիր և նշիր Patrick-ի կյանքի փոփոխությունները։ What does he say about his family?",
+        "Անձնական կապ՝ պատմիր քո կյանքում կամ աշխատանքում տեղի ունեցած մեկ փոփոխություն։ Օգտագործիր անցյալ պարզ ձևը, իսկ շարունակվող գործողության համար՝ անհրաժեշտության դեպքում past continuous։"
+      ],
+      "input_answers": [
+        "The job did not meet her expectations, and living costs, especially rent, were very high.",
+        "He is married and has two children; he has recently celebrated ten years of marriage.",
+        "Անձնական պատասխան․ պետք է լինի հասկանալի անցյալ դեպք և համատեքստին համապատասխան ժամանակաձև։"
+      ],
+      "chunks": [
+        {
+          "en": "At that point, I was…",
+          "hy": "Այդ պահին ես… էի։"
+        },
+        {
+          "en": "The situation changed when…",
+          "hy": "Իրավիճակը փոխվեց, երբ…"
+        },
+        {
+          "en": "What mattered most was…",
+          "hy": "Ամենակարևորն այն էր, որ…"
+        },
+        {
+          "en": "The result was…",
+          "hy": "Արդյունքն այն էր, որ…"
+        },
+        {
+          "en": "Next time, I would…",
+          "hy": "Հաջորդ անգամ ես… կանեի։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Լրացրու փակագծի բայի ճիշտ ձևով։ 1-ինում ընթացքի մեջ եղած գործողություն է, 2-րդում՝ ավարտված դեպք, 3-րդում՝ անցյալ ժխտում։",
+        "items": [
+          "I ___ (check) the report when my colleague called.",
+          "We ___ (send) the update yesterday.",
+          "I ___ (not finish) the review last night."
+        ],
+        "answers": [
+          "I was checking the report when my colleague called.",
+          "We sent the update yesterday.",
+          "I did not finish the review last night. / I didn't finish the review last night."
+        ]
+      },
+      "roleplay_hy": "Օգտագործիր 19-րդ օրվա դեպքը, բայց մի բացիր հին տեքստը։ Առաջին լսարանին պատմիր 2 րոպե, երկրորդին՝ 1 րոպե։ Երկուսի վերջում ասա՝ ինչ սովորեցիր։",
+      "questions": [
+        "What was happening before the problem appeared?",
+        "What did you do first?",
+        "Which detail does this listener need most?",
+        "What would you do differently next time?"
+      ],
+      "transfer_hy": "Զրուցակիցը խնդրում է պատմությունը կրճատել մինչև երեք նախադասություն։ Պահիր խնդիրը, գործողությունը և արդյունքը։",
+      "recording_hy": "Պահիր նույն դեպքի երկու տարբերակ։ Լսիր և ստուգիր՝ փոխե՞լ ես բառերը և մանրամասները՝ առանց փաստերը փոխելու։",
+      "easier_hy": "Օգտագործիր միայն past simple և First / Then / Finally։ Երկու տարբերակն էլ կարող են լինել 45–60 վայրկյան։",
+      "harder_hy": "Ավելացրու մեկ շարունակվող ֆոնային գործողություն և մեկ անսպասելի իրադարձություն։ Պատասխանիր զրուցակցի հակադարձ հարցին։",
+      "retrieval_hy": "Վերադարձրու 8-րդ օրվա պատմության կառուցվածքը, 19-րդ օրվա երկու լսարանները և 22-րդ օրվա մեկ շարունակող հարց։",
+      "source_refs": [
+        "turn371218459view0",
+        "turn890871104view2"
+      ],
+      "primary_scope_hy": "Լսիր ամբողջ կարճ զրույցը։ Երկրորդ անգամ գրիր միայն անցյալի և ներկայի տարբերությունները։",
+      "support_scope_hy": "Կարդա «Past simple» և «Past continuous» բացատրությունները։ Եթե դրանք արդեն հեշտ են, ավելացրու համատեղ օգտագործման բաժինը։ Սահման՝ 5 րոպե։",
+      "scenario_en": "Tell a recent work story to a new engineer. Then explain the same event to a family member who does not know technical terms. Keep the facts the same, but change the details you include.",
+      "title_en": "Retell for a new audience",
+      "short_en": "Tell the same story to two different listeners without changing the facts.",
+      "week": 4,
+      "category_en": "Conversation",
+      "icon": "chat"
+    },
+    {
+      "day": 26,
+      "title_hy": "Ժամկետներ և իրատեսական պայմանավորվածություններ",
+      "goal_hy": "Պայմանավորվել՝ ինչն է պատրաստ լինելու, մինչև երբ և ինչ փոփոխություն է անհրաժեշտ։",
+      "primary": {
+        "title": "Changing a meeting time",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time",
+        "type": "audio + transcript",
+        "level": "A2",
+        "verified_note": "Բացված էջում կան հանդիպման ժամի փոփոխության տեքստը և A2 նշումը։",
+        "source_ref": "turn371218459view1"
+      },
+      "support": {
+        "title": "An invitation to a job interview",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/a2/invitation-job-interview",
+        "type": "reading",
+        "level": "A2",
+        "verified_note": "Բացված էջում կան հարցազրույցի հրավերը, ամսաթվերը և A2 նշումը։",
+        "source_ref": "turn371218459view2"
+      },
+      "input_tasks": [
+        "Լսիր գործընկերների զրույցը։ What are the original and the new meeting times?",
+        "Երկրորդ լսումից հետո պատասխանիր։ Who will tell the other participants about the change?",
+        "Ուշադրություն դարձրու փոփոխության պատճառին։ Why does Lucy need to move the meeting?"
+      ],
+      "input_answers": [
+        "The meeting moves from 11 a.m. to 9 a.m.",
+        "Anna will email everyone and update the invitation.",
+        "She has another important meeting at the central office at noon."
+      ],
+      "chunks": [
+        {
+          "en": "I can finish the first part by…",
+          "hy": "Առաջին մասը կարող եմ ավարտել մինչև…"
+        },
+        {
+          "en": "The remaining work will take…",
+          "hy": "Մնացած աշխատանքը կտևի…"
+        },
+        {
+          "en": "Which task should come first?",
+          "hy": "Ո՞ր առաջադրանքը պետք է առաջինը լինի։"
+        },
+        {
+          "en": "Could we move the deadline to…?",
+          "hy": "Կարո՞ղ ենք ժամկետը տեղափոխել…"
+        },
+        {
+          "en": "Let me confirm what we agreed.",
+          "hy": "Թույլ տվեք ամփոփել պայմանավորվածությունը։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Ընտրիր ճիշտ ձևը։ By-ն այստեղ վերջնաժամկետ է, until-ը՝ մինչև նշված պահը շարունակվող վիճակ։",
+        "items": [
+          "Please send the summary by / until Friday.",
+          "The help desk is open by / until 6 p.m.",
+          "We can move / moving the review to Tuesday."
+        ],
+        "answers": [
+          "Please send the summary by Friday.",
+          "The help desk is open until 6 p.m.",
+          "We can move the review to Tuesday."
+        ]
+      },
+      "roleplay_hy": "Ճշտիր առաջնահերթությունը և առաջարկիր կոնկրետ ավարտի ժամկետներ։ Հետո փոխեք դերերը։ Սա ուսումնական դեպք է․ որոշումը պետք է բխի տրված ժամանակից։",
+      "questions": [
+        "Which part is most urgent?",
+        "What can you finish today?",
+        "What information or help do you need?",
+        "What can we change if both tasks must be finished today?"
+      ],
+      "transfer_hy": "Զրուցակիցը նորից կրճատում է հասանելի ժամանակը մեկ ժամով։ Պարզաբանիր՝ որ աշխատանքի ծավալը կարելի է փոքրացնել կամ ում օգնությունն է պետք։",
+      "recording_hy": "Ձայնագրիր 90 վայրկյանի պայմանավորվածություն՝ առաջադրանք, պատասխանատու, ժամկետ և մեկ կախվածություն։ Վերջում հարցրու՝ ճիշտ հասկացա՞ր։",
+      "easier_hy": "Օգտագործիր միայն today / tomorrow / Friday և մեկական պարզ նախադասություն յուրաքանչյուր առաջադրանքի համար։",
+      "harder_hy": "Համեմատիր երկու տարբեր ծրագիր, նշիր յուրաքանչյուրի սահմանափակումը և բանակցիր՝ առանց անիրատեսական խոստման։",
+      "retrieval_hy": "Կրկնիր 5-րդ օրվա պայմանավորվածությունները, 12-րդ օրվա պահանջների ճշտումը և 23-րդ օրվա քաղաքավարի հակադարձումը։",
+      "source_refs": [
+        "turn371218459view1",
+        "turn371218459view2"
+      ],
+      "primary_scope_hy": "20 րոպեի ընթացքում դիտիր կամ լսիր հիմնական երկխոսությունը, պատասխանիր երեք հարցին և երկրորդ փորձից հետո ստուգիր տեքստը։",
+      "support_scope_hy": "Կարդա ամբողջ հրավերը՝ մինչև 5 րոպե, կենտրոնանալով ժամի, ամսաթվի և փոփոխություն խնդրելու վերջնաժամկետի վրա։",
+      "scenario_en": "You have two tasks: checking tests takes two hours, and updating a document takes one hour. You have only two free hours today. Your colleague wants both tasks today. Agree on priorities and realistic deadlines.",
+      "title_en": "Agree on realistic deadlines",
+      "short_en": "Discuss priorities, available time and a plan you can deliver.",
+      "week": 4,
+      "category_en": "Workplace",
+      "icon": "calendar"
+    },
+    {
+      "day": 27,
+      "title_hy": "Հստակ խոսել երբ ամեն ինչ դեռ հայտնի չէ",
+      "goal_hy": "Հայտնել փաստերը, հնարավոր բացատրությունը և հաջորդ տեղեկացման պահը՝ չշփոթելով դրանք։",
+      "primary": {
+        "title": "A morning briefing",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing",
+        "type": "audio + transcript",
+        "level": "A2",
+        "verified_note": "Բացված էջում կան աշխատանքային տեղեկացման տեքստը և A2 նշումը։",
+        "source_ref": "turn457985978view3"
+      },
+      "support": {
+        "title": "'may' and 'might'",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/may-might",
+        "type": "grammar reading",
+        "level": "beginner sections",
+        "verified_note": "Բացված էջում ներկայի և ապագայի հնարավորության հիմնական կիրառումները նշված են beginner։",
+        "source_ref": "turn799284899view2"
+      },
+      "input_tasks": [
+        "Լսիր աշխատանքային տեղեկացումը։ Does the new department head start immediately after the current one leaves?",
+        "Կրկին լսիր մեքենաների կայանման մասը։ Where should staff park if they arrive after 8.30 a.m.?",
+        "Լսիր վերջին փոփոխությունը։ What two payment methods are available in the canteen?"
+      ],
+      "input_answers": [
+        "No. The current head leaves at the end of this week; the replacement starts at the end of next month.",
+        "They should use the church car park.",
+        "A smartphone or the company ID card."
+      ],
+      "chunks": [
+        {
+          "en": "So far, we have found…",
+          "hy": "Մինչ այս պահը պարզել ենք…"
+        },
+        {
+          "en": "One possible explanation is…",
+          "hy": "Հնարավոր բացատրություններից մեկն է…"
+        },
+        {
+          "en": "We do not have enough information yet.",
+          "hy": "Դեռ բավարար տեղեկություն չունենք։"
+        },
+        {
+          "en": "I will confirm this after…",
+          "hy": "Սա կհաստատեմ… հետո։"
+        },
+        {
+          "en": "The next update will be at…",
+          "hy": "Հաջորդ տեղեկացումը կլինի…։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Կարդա may/might էջի հիմնական՝ ներկայի և ապագայի հնարավորության բաժինները։ Հետո լրացրու կամ ընտրիր ճիշտ ձևը։",
+        "items": [
+          "The delay might (be / is) caused by a connection problem.",
+          "Use present perfect: We ___ (not confirm) the cause yet.",
+          "Choose uncertainty: The service is definitely down. / The service may be down."
+        ],
+        "answers": [
+          "The delay might be caused by a connection problem.",
+          "We have not confirmed the cause yet. / We haven't confirmed the cause yet.",
+          "The service may be down."
+        ]
+      },
+      "roleplay_hy": "Առանձնացրու փաստերը, հնարավոր բացատրությունը և հաջորդ ստուգումը։ Թիմի հարցին պատասխանիր տրված տեղեկության սահմաններում։",
+      "questions": [
+        "What do we know at the moment?",
+        "What is only a possibility?",
+        "What will you check next?",
+        "When can the team expect another update?"
+      ],
+      "transfer_hy": "Ավելանում է նոր փաստ՝ երկրորդ միջավայրում նույն թեստը անցնում է։ Ասա՝ դա ինչ է հուշում և ինչ դեռ չի ապացուցում։",
+      "recording_hy": "Պահիր 60–90 վայրկյանի տեղեկացում՝ երկու փաստ, մեկ հնարավոր բացատրություն և մեկ հաջորդ քայլով։ Առանձին նշիր խոստացած հաջորդ տեղեկացման պահը։",
+      "easier_hy": "Օգտագործիր պարզ ձևերը՝ We know… / Maybe… / We will check… / I will update you…։ May/might-ի բարդ ձևերը պարտադիր չեն։",
+      "harder_hy": "Պատասխանիր՝ ինչ տվյալը կփոխեր կարծիքդ, և բացատրիր՝ ինչու դեռ չի կարելի պատճառը հաստատված համարել։",
+      "retrieval_hy": "Հիշողությունից վերադարձրու 16-րդ օրվա փաստ/ենթադրությունը, 21-րդ օրվա ամփոփումը և 26-րդ օրվա հստակ ժամկետը։",
+      "source_refs": [
+        "turn457985978view3",
+        "turn799284899view2"
+      ],
+      "primary_scope_hy": "Լսիր ամբողջ կարճ տեղեկացումը։ Նշիր երեք փոփոխությունները, հետո ստուգիր տեքստով։",
+      "support_scope_hy": "Կարդա միայն beginner բաժինների ներկայի/ապագայի հնարավորության կիրառումները։ May have / might have հատվածը այսօր պետք չէ։ Սահման՝ 5 րոպե։",
+      "scenario_en": "Three builds failed and two builds passed. The logs contain a timeout, but the cause is not confirmed. Give the team an update. A colleague asks whether the whole environment is broken.",
+      "title_en": "Speak clearly about uncertainty",
+      "short_en": "Share the facts, a possible cause and the time of your next update.",
+      "week": 4,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 28,
+      "title_hy": "Ամբողջական աշխատանքային հանդիպում",
+      "goal_hy": "Միավորել հաղորդումը, հարցերը, առաջարկը, գործերի բաշխումը և ավարտական ամփոփումը։",
+      "primary": {
+        "title": "Making a decision",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/making-decision",
+        "type": "audio + transcript",
+        "level": "B1",
+        "verified_note": "Էջը բացված է․ հասանելի են հանդիպման տեքստը, առաջադրանքները և B1 նշումը։",
+        "source_ref": "turn457985978view0"
+      },
+      "support": {
+        "title": "Planning an event",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/reading/b1/planning-event",
+        "type": "reading",
+        "level": "B1",
+        "verified_note": "Բացված էջում կա միջոցառման գործերի բաշխման զրույցը և B1 նշումը։",
+        "source_ref": "turn676837897view2"
+      },
+      "input_tasks": [
+        "Կրկին լսիր 21-րդ օրվա հանդիպումը՝ այս անգամ ուշադրություն դարձնելով ամփոփմանը։ What does Carolina say about even well-made plans?",
+        "What additional allowance does David want in the schedule?",
+        "Ուշադրություն դարձրու David-ի վերջին արձագանքին։ Does he fully agree with the decision, or does he accept it despite his doubts?"
+      ],
+      "input_answers": [
+        "They can change, so the team needs flexibility.",
+        "He wants extra time for the additional work that changes may require.",
+        "He still thinks it is the wrong decision, but he accepts the majority’s choice."
+      ],
+      "chunks": [
+        {
+          "en": "The purpose of this meeting is…",
+          "hy": "Այս հանդիպման նպատակը… է։"
+        },
+        {
+          "en": "Before we decide, I have a question.",
+          "hy": "Մինչ որոշելը մեկ հարց ունեմ։"
+        },
+        {
+          "en": "Who can take responsibility for…?",
+          "hy": "Ո՞վ կարող է պատասխանատվություն վերցնել… համար։"
+        },
+        {
+          "en": "We have agreed on two actions.",
+          "hy": "Երկու գործողության շուրջ համաձայնվել ենք։"
+        },
+        {
+          "en": "Is anything still unclear?",
+          "hy": "Դեռ անհասկանալի բան կա՞։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Լրացրու համատեքստին համապատասխան ձևով, հետո յուրաքանչյուր նախադասությունը օգտագործիր քո հանդիպման մեջ։",
+        "items": [
+          "One colleague ___ (check) the report every morning.",
+          "We agreed ___ (to meet / meet) again tomorrow.",
+          "Turn into a question: You can review the results today."
+        ],
+        "answers": [
+          "One colleague checks the report every morning.",
+          "We agreed to meet again tomorrow.",
+          "Can you review the results today?"
+        ]
+      },
+      "roleplay_hy": "Անցկացրու 10–15 րոպեանոց հանդիպում՝ նպատակ, ներկա վիճակ, խնդիր, երկու առաջարկ, պատասխանատուներ և ժամկետներ։ Առաջին փորձից հետո ուղղիր երկու խնդիր և կրկնիր՝ դերերը փոխելով։",
+      "questions": [
+        "What must be ready before the demonstration?",
+        "Which task has the biggest uncertainty?",
+        "Who will do each task?",
+        "What is our fallback if the tool is not ready?"
+      ],
+      "transfer_hy": "Հանդիպման կեսին զրուցակիցը հայտնում է՝ ցուցադրությունը տեղափոխվել է մեկ օր շուտ։ Վերանայիր գործողությունները և նոր ամփոփում տուր։",
+      "recording_hy": "Պահիր ամբողջ հանդիպումը և առանձին 60 վայրկյանի վերջնական ամփոփումը։ Ստուգիր՝ յուրաքանչյուր գործողություն ունի՞ պատասխանատու և ժամկետ։",
+      "easier_hy": "Ընտրիր միայն երկու առաջադրանք և 5–7 րոպեանոց հանդիպում՝ երեք հենաբառով։",
+      "harder_hy": "Վարի՛ր հանդիպումը երեք դերերով՝ ինժեներ, ղեկավար, նոր գործընկեր։ Ստուգիր, որ լուռ մասնակիցն էլ կարծիք հայտնի։",
+      "retrieval_hy": "Վերադարձրու 11-րդ օրվա տեղեկացումը, 20-րդ օրվա ցուցադրությունը, 23-րդ օրվա քննարկումը և 26-րդ օրվա ժամկետները։ Նյութը դիտիր որպես կրկնում։",
+      "source_refs": [
+        "turn457985978view0",
+        "turn676837897view2"
+      ],
+      "primary_scope_hy": "20 րոպեի ընթացքում դիտիր կամ լսիր հիմնական երկխոսությունը, պատասխանիր երեք հարցին և երկրորդ փորձից հետո ստուգիր տեքստը։",
+      "support_scope_hy": "Կարդա ամբողջ կարճ խմբային զրույցը՝ մինչև 5 րոպե։ Եթե բոլորը չես հասցնում, հետևիր միայն սենյակների և հրավերների վերջնական բաշխմանը։",
+      "scenario_en": "Your team will demonstrate a new tool next week. You need to check the tests, prepare three slides and rehearse the demonstration. Lead a meeting and agree on responsibilities, deadlines and a fallback plan.",
+      "title_en": "Lead a full meeting",
+      "short_en": "Bring together updates, questions, decisions, responsibilities and deadlines.",
+      "week": 4,
+      "category_en": "Workplace",
+      "icon": "briefcase"
+    },
+    {
+      "day": 29,
+      "title_hy": "Քո երկու կրկնվող դժվարությունների ուղղում",
+      "goal_hy": "Առաջին և վերջին ձայնագրություններից ընտրել երկու խնդիր և նոր իրավիճակում ցույց տալ ավելի ինքնուրույն կիրառություն։",
+      "primary": {
+        "title": "Understanding an explanation",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/understanding-explanation",
+        "type": "audio + transcript",
+        "level": "A2",
+        "verified_note": "Բացված էջում կան դասախոսի բացատրությունը, ուսանողի հարցերը և A2 նշումը։",
+        "source_ref": "turn371218459view3"
+      },
+      "support": {
+        "title": "Present simple",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
+        "type": "grammar reading",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական A1–A2 էջը բացված է․ կան ներկա պարզ ժամանակի օրինակներ և վարժություններ։",
+        "source_ref": "turn799284899view1"
+      },
+      "input_tasks": [
+        "Լսիր բացատրությունը։ Is Fibonacci the name of a person or a place?",
+        "Պատմիր հիմնական կանոնը սեփական բառերով։ How is the next number in the sequence formed?",
+        "Why does the professor postpone giving more examples?"
+      ],
+      "input_answers": [
+        "It is a person's name: a mathematician.",
+        "Add the two previous numbers to obtain the next one in the sequence.",
+        "There is not enough time; more examples can be brought to the next class."
+      ],
+      "chunks": [
+        {
+          "en": "Let me correct that sentence.",
+          "hy": "Թույլ տվեք ուղղել այդ նախադասությունը։"
+        },
+        {
+          "en": "What I meant was…",
+          "hy": "Ուզում էի ասել, որ…"
+        },
+        {
+          "en": "I need a simpler example.",
+          "hy": "Ավելի պարզ օրինակ է պետք։"
+        },
+        {
+          "en": "I can explain it in another way.",
+          "hy": "Կարող եմ այլ կերպ բացատրել։"
+        },
+        {
+          "en": "Please ask me a different question.",
+          "hy": "Խնդրում եմ այլ հարց տվեք։"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Սրանք ընդհանուր ախտորոշիչ օրինակներ են։ Ուղղիր դրանք, հետո ընտրիր քո ձայնագրությունների երկու իրական սխալը։ Յուրաքանչյուր քո սխալի համար ասա հինգ նոր ճիշտ օրինակ։ Եթե խնդիրը ներկա պարզ ձևն է, կարդա լրացուցիչ էջի բացատրությունը։",
+        "items": [
+          "My colleague check the dashboard every day.",
+          "I am work on the report now.",
+          "Why you changed the setting yesterday?"
+        ],
+        "answers": [
+          "My colleague checks the dashboard every day.",
+          "I am working on the report now.",
+          "Why did you change the setting yesterday?"
+        ]
+      },
+      "roleplay_hy": "Զրուցակցին ասա քո երկու թիրախային կառուցվածքը։ Սկզբում պատասխանիր կարճ։ Հետո դրանք օգտագործիր հինգ րոպե բնական զրույցում՝ առանց ամեն նախադասությունից հետո կանգ առնելու։",
+      "questions": [
+        "What do you usually do before starting work?",
+        "What are you working on this week?",
+        "What changed yesterday?",
+        "What would you like to ask your colleague?"
+      ],
+      "transfer_hy": "Վերցրու նույն երկու կառուցվածքը և օգտագործիր բոլորովին այլ թեմայում՝ հյուրանոց, գնումներ կամ ճանապարհորդություն։ Հաջող կրկնումը պետք է լինի նոր բովանդակությամբ։",
+      "recording_hy": "Պահիր ուղղումներից առաջ և հետո մեկական 60–90 վայրկյանի պատասխան։ Գրիր՝ որ կառուցվածքը կիրառեցիր առանց հուշման։",
+      "easier_hy": "Մի փուլում աշխատիր միայն մեկ կառուցվածքի վրա։ Բարդ հարցի փոխարեն զրուցակիցը թող տա երկու պարզ հարց։",
+      "harder_hy": "Նոր սցենարի ընթացքում զրուցակիցը չասի՝ որ կառուցվածքն է ստուգվում։ Վերլուծեք միայն ավարտից հետո։",
+      "retrieval_hy": "Համեմատիր 1-ին, 14-րդ և 28-րդ օրերի ձայնագրությունները։ Ընտրիր հաճախ կրկնվող խնդիրները, ոչ մեկանգամյա անհաջող բառը։ Այսօր նոր արտահայտությունների քանակի նպատակ չկա։",
+      "source_refs": [
+        "turn371218459view3",
+        "turn799284899view1"
+      ],
+      "primary_scope_hy": "Լսիր ամբողջ կարճ բացատրությունը։ Ուշադրություն դարձրու՝ ինչպես է ուսանողը հայտնում, որ դեռ չի հասկանում։",
+      "support_scope_hy": "Կարդա Present simple-ի բացատրությունից միայն քո սխալին համապատասխան բաժինը՝ դրական ձև, ժխտում կամ հարց։ Սահման՝ 5 րոպե։",
+      "scenario_en": "Your partner will ask new everyday and work questions. Use two language patterns you have found difficult. Answer naturally, then ask your partner a question of your own.",
+      "title_en": "Fix recurring difficulties",
+      "short_en": "Use your two most difficult language patterns in fresh situations.",
+      "week": 4,
+      "category_en": "Review",
+      "icon": "spark"
+    },
+    {
+      "day": 30,
+      "title_hy": "Վերջնական ստուգում և հաջորդ ամսվա ուղղությունը",
+      "goal_hy": "Նույն պայմաններում համեմատել առաջին օրվա հետ և ստուգել՝ կարողանո՞ւմ ես սովորածը տեղափոխել նոր իրավիճակ։ Սկզբում կատարիր խոսքային ստուգումը՝ առանց նյութերը բացելու։",
+      "primary": {
+        "title": "A phone call from a customer",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/phone-call-customer",
+        "type": "audio + transcript",
+        "level": "B1",
+        "verified_note": "Բացված էջում կան վճարման ժամկետի քննարկման ամբողջ տեքստը և B1 նշումը։",
+        "source_ref": "turn799284899view3"
+      },
+      "support": {
+        "title": "Question forms",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/question-forms",
+        "type": "grammar reading",
+        "level": "A1–A2",
+        "verified_note": "Պաշտոնական A1–A2 էջը բացված է․ կան հարցերի կազմման բացատրություններ և վարժություններ։",
+        "source_ref": "turn799284899view0"
+      },
+      "input_tasks": [
+        "Խոսքային ստուգումից հետո լսիր այս նոր դասը՝ առանց տեքստի։ What change to the payment deadline does Andrea request?",
+        "Երկրորդ լսումից հետո պատասխանիր։ Why is Junko initially unsure whether she can agree?",
+        "What does Andrea request in writing at the end? Հետո միայն բացիր տեքստը և ստուգիր պատասխաններդ։"
+      ],
+      "input_answers": [
+        "She asks to increase the payment period from 30 days to 60 days.",
+        "Her company has rules and its own cash-flow needs.",
+        "An email confirming the extended payment terms."
+      ],
+      "chunks": [
+        {
+          "en": "My main responsibility is…",
+          "hy": "Իմ հիմնական պարտականությունն է…"
+        },
+        {
+          "en": "A recent example is…",
+          "hy": "Վերջին օրինակներից մեկն է…"
+        },
+        {
+          "en": "The most useful change was…",
+          "hy": "Ամենաօգտակար փոփոխությունն էր…"
+        },
+        {
+          "en": "Could you clarify the last point?",
+          "hy": "Կարո՞ղ եք վերջին միտքը պարզաբանել։"
+        },
+        {
+          "en": "My next priority is…",
+          "hy": "Իմ հաջորդ առաջնահերթությունն է…"
+        }
+      ],
+      "drill": {
+        "instruction_hy": "Կատարիր վերջնական խոսքային փորձից հետո՝ որպես վերանայում։ Հարցերի էջում կարդա միայն քեզ դժվարացած ձևի բացատրությունը։",
+        "items": [
+          "Make a yes/no question: She works with the testing team.",
+          "Make a past yes/no question: They finished the review yesterday.",
+          "Make a yes/no question about the current activity: You are checking the logs."
+        ],
+        "answers": [
+          "Does she work with the testing team?",
+          "Did they finish the review yesterday?",
+          "Are you checking the logs?"
+        ]
+      },
+      "roleplay_hy": "Առաջին 10 րոպեում կրկնիր Օր 1-ի առաջադրանքների ձևաչափը՝ նույն տևողությամբ և հենաբառերի նույն թույլտվությամբ։ Զրուցակիցը տալիս է հինգ նոր հարց։ Հաջորդ 15-ին խաղարկեք հավելվածի մեկ փակ քարտը՝ առանց ուղղումների։ Պահիր առաջին փորձերը։ Հաջորդ 10-ին գնահատեք նույն չորս չափանիշով, վերջին 10-ին քննարկեք երկու կարևոր ուղղում։ Միայն հետո բացիր օրվա լսելու և լեզվական նյութերը։",
+      "questions": [
+        "What do you do in your role?",
+        "Can you describe something that happened recently?",
+        "What part of your work needs explanation for a new colleague?",
+        "What would you like to improve next?"
+      ],
+      "transfer_hy": "Սկզբում կրկնիր երկու դժվար պատասխան՝ ուղղումները կիրառելով։ Հետո զրուցակիցը թող փոխի իրավիճակի երկու պայմանը կամ տա հավելվածի երկրորդ փակ քարտը։ Եթե մենակ ես, խնդրիր ձայնային զրուցակցին հորինել համարժեք նոր դեպք։ Ամբողջ բլոկը պահիր 20 րոպեի սահմանում։",
+      "recording_hy": "Պահիր առաջին փորձերը՝ առանց դրանք փոխարինելու։ Վերջին 10 րոպեում համեմատիր 1-ին և 30-րդ օրերի համարժեք հատվածները նույն չորս չափանիշով՝ 0–3։ Գրիր երեք զարգացում և հաջորդ ամսվա երկու նպատակ։",
+      "easier_hy": "Առաջին օրվա պես թույլատրիր կարճ պատասխաններ, հարցի կրկնում և առավելագույնը հինգ հենաբառ։ Լսողական մասը կարող ես անել փոքր հատվածներով․ այդ արդյունքը նշիր առանձին, ոչ որպես նույն պայմաններով քննություն։",
+      "harder_hy": "Ավելացրու 3–5 րոպեանոց աշխատանքային ներկայացում և 5 րոպե չնախապատրաստված հարցուպատասխան՝ որպես լրացուցիչ փորձ, ոչ առաջին օրվա համեմատության փոխարինում։",
+      "retrieval_hy": "Այսօր բլոկների հերթը փոխիր՝ 10 րոպե նախապատրաստում, 45՝ խոսքային ստուգում, 20՝ լսում, 15՝ կառուցվածքներ, 20՝ կրկնում, 10՝ ամփոփում։ Առաջին 10 րոպեում պատրաստիր ձայնագրումը և զրուցակցի հրահանգները։ Մինչ առաջին խոսքային փորձը մի սովորիր այսօրվա արտահայտություններն ու նյութերը։",
+      "partner_only": [
+        "Քարտ A — միայն զրուցակցի համար, մինչև փորձը սովորողը չի կարդում։ You and the learner are preparing a demonstration for tomorrow at 14:00. Today's test results are not available yet. Ask the learner to clarify the situation and propose a plan. After the first proposal, reveal that the demonstration has moved to 10:00. Ask five follow-up questions, including at least one based on the learner's actual answer. Do not supply sentences.",
+        "Քարտ B — միայն զրուցակցի համար, մինչև փորձը սովորողը չի կարդում։ The learner needs a quiet hotel room for a work call. A smaller room is available now; another room will be ready in two hours. Ask the learner to clarify the choices and make a decision. Then reveal that the call will begin an hour earlier. Ask five follow-up questions. Evaluate communication, not which room the learner chooses."
+      ],
+      "source_refs": [
+        "turn799284899view3",
+        "turn799284899view0"
+      ],
+      "primary_scope_hy": "Բացիր միայն առաջին խոսքային ստուգումն ավարտելուց հետո։ Լսիր ամբողջ նոր կարճ զանգը մինչև երկու անգամ՝ առանց տեքստի, ապա ստուգիր պատասխաններդ։",
+      "support_scope_hy": "Խոսքային ստուգումից հետո կարդա միայն քեզ դժվարացած հարցի ձևի բաժինը։ Նախապես մի կատարիր էջի վարժությունները։",
+      "scenario_en": "Introduce yourself, describe a recent event and explain your work using the same preparation rules as on Day 1. Then answer new follow-up questions and complete a new scenario chosen by your partner.",
+      "title_en": "Final check and next steps",
+      "short_en": "Compare your first and final recordings, then choose two goals to work on next.",
+      "week": 4,
+      "category_en": "Checkpoint",
+      "icon": "check"
+    }
+  ],
+  "extras": {
+    "title": "Անգլերեն խոսելու 30 օրվա ամբողջական աշխատանքային տետր",
+    "subtitle": "Ամենօրյա նյութեր վարժություններ խոսակցություններ և պատասխաններ",
+    "checked_date": "26 նոյեմբերի 2026",
+    "guide": [
+      {
+        "title": "Ինչպես սկսել և ինչի հասնել",
+        "paragraphs": [
+          "Այս տետրը օրական 120 րոպեով 30 օրվա գործնական դասընթաց է։ Յուրաքանչյուր օրվա համար կան կոնկրետ նյութերի հղումներ, ըմբռնման հարցեր, լեզվական վարժություններ, երկխոսություն և ձայնագրվող արդյունք։ Հրահանգները հայերեն են, իսկ վարժություններն ու օրինակները՝ անգլերեն։ Դասանյութերը բացվում են հղումներով. արտաքին էջերի համար պետք է ինտերնետ։",
+          "Սկսիր Օր 1-ից և առաջին ձայնագրությունն արա մինչև նյութերը բացելը։ Թիրախը ծանոթ առօրյա և աշխատանքային իրավիճակներում ավելի ինքնուրույն ու հասկանալի խոսքն է։ Մեկ ամիսը պաշտոնական լեզվական մակարդակի կամ լիարժեք մասնագիտական ազատ խոսքի երաշխիք չէ։ Օրվա իրական բարձրաձայն խոսքը հասցրու մոտ 45–60 րոպեի՝ հաշվելով միայն քո խոսքը։",
+          "Պարզ տարբերակով սկսիր 30–60 վայրկյանի պատասխաններից և աստիճանաբար հասիր ծանոթ թեմայով մի քանի րոպեանոց զրույցի։ Եթե արդեն կարողանում ես 1–2 րոպե խոսել, կատարիր ընդլայնված առաջադրանքները՝ պատճառներով, օրինակներով և նոր հարցերով։ Աղբյուրների A1/A2/B1 պիտակները նյութի մակարդակն են, ոչ քո անհատական գնահատականը։"
+        ],
+        "time_rows": [
+          [
+            "10 րոպե",
+            "Հիշել",
+            "Առանց նայելու վերարտադրել նախորդ նյութը կամ կատարել ստուգումը։"
+          ],
+          [
+            "20 րոպե",
+            "Լսել և կարդալ",
+            "Բացել հիմնական հղումը, լսել, ստուգել տեքստը և պատասխանել երեք հարցի։"
+          ],
+          [
+            "15 րոպե",
+            "Կառուցվածքներ",
+            "Օժանդակ նյութին հատկացնել մինչև 5 րոպե, հետո կատարել վարժություններն ու անձնական օրինակները։"
+          ],
+          [
+            "45 րոպե",
+            "Երկխոսություն",
+            "Խաղարկել իրավիճակը, հարցեր տալ, փոխել դերերը և ուղղել կարևոր սխալները։"
+          ],
+          [
+            "20 րոպե",
+            "Կրկնել և փոխել",
+            "Նույն միտքն ասել ուղղումներից հետո, ապա կիրառել նոր իրավիճակում։"
+          ],
+          [
+            "10 րոպե",
+            "Պահել արդյունքը",
+            "Ձայնագրել վերջնական պատասխանը և գրանցել երկու ուղղում։"
+          ]
+        ],
+        "closing": "Առավոտյան՝ 30 րոպե, օրվա ընթացքում՝ 15, երեկոյան՝ 75։ Շաբաթական երեք անգամ 45 րոպեանոց երկխոսությունը ցանկալի է անցկացնել անհատական ուսուցչի հետ. դա նույն օրվա բլոկի փոխարինումն է։ Մեկժամանոց տարբերակը՝ 10 րոպե կրկնում, 10 լսում, 30 զրույց և 10 ուղղված վերապատմում։"
+      },
+      {
+        "title": "Ինչպես աշխատել նյութի և զրուցակցի հետ",
+        "paragraphs": [
+          "Լսիր մեկ անգամ առանց տեքստի, երկրորդ անգամ՝ տեքստով։ Կարճ հատվածները կրկնիր բարձրաձայն և հետո պատմիր իմաստը սեփական բառերով։ Եթե ընդհանուր իմաստը չի հասկացվում, օգտագործիր տեքստի առաջին կարճ մասը և օրվա «Պարզ տարբերակը»։ Եթե նյութը կրկնվում է հետագա օրերին, նպատակը նոր իրավիճակում կիրառելն է։",
+          "Օրվա արտահայտությունների հավաքածուն ընդհանուր է բոլոր բլոկների համար։ Մի ավելացրու ևս հինգ նոր արտահայտություն յուրաքանչյուր բաժնում։ Լեզվական երեք առաջադրանքը լրացնելուց հետո յուրաքանչյուր ճիշտ օրինակը փոխիր քո կյանքի կամ աշխատանքի մասին նախադասության, հարցի և ժխտման։ Սկզբում փորձիր ինքնուրույն, հետո բացիր պատասխանները։",
+          "45 րոպեանոց զրույցը բաժանիր այսպես՝ 5 րոպե ազատ մեկնարկ, 12 րոպե հիմնական դերախաղ, 5 րոպե երկու կարևոր ուղղում, 12 րոպե դերերի կամ պայմանի փոփոխություն, 8 րոպե նոր հարցեր, 3 րոպե ամփոփում։ Քո խոսքին թող մնա առնվազն մոտ 25 րոպե։ Չորս տպված հարցերը մեկնարկն են. զրուցակիցը յուրաքանչյուր պատասխանից հետո թող տա «Why?», «Can you give an example?» կամ մեկ նոր հարց։",
+          "Ազատ խոսքի ժամանակ ավարտիր միտքդ։ Հետո ուղղիր 2–3 կարևոր սխալ, իսկ առանձին կառուցվածքի վարժանքի ժամանակ ընդունիր անմիջական ուղղումներ։ Ճիշտ նախադասության ավելի բնական տարբերակը ընտրություն է, ոչ պարտադիր ուղղում։ Արտասանությունը գնահատելու համար պետք է լսել իրական ձայնը. միայն վերծանումը բավարար չէ։",
+          "Ստուգման օրերին առաջին չնախապատրաստված փորձը կատարիր մինչև օրվա հղումները բացելը։ Պատասխանների և զրուցակցի քարտերի բաժինը սկզբում փակ պահիր։ Գրավոր վարժություններում կարող են լինել նաև այլ ճիշտ ձևակերպումներ. նայիր ոչ միայն բառերի համընկնմանը, այլ նաև պահանջված կառուցվածքին ու իմաստին։"
+        ],
+        "coach": "Act as my English conversation partner. Use the current day of this workbook. Ask one question at a time and let me finish. Give me most of the speaking time. During the first attempt, interrupt only if my meaning is unclear. Afterwards, correct two important mistakes and ask me to use each correction in a different sentence. Distinguish actual errors from optional style improvements. Ask follow-up questions that are not printed in the workbook. Change one condition in the roleplay. On assessment days, invent a comparable new situation before showing any model answer. If you only have a transcript, do not claim to assess my pronunciation.",
+        "closing": "Միայնակ աշխատելիս գրիր 4 հարց, փակիր դրանք և հերթով բարձրաձայն պատասխանիր։ Հետո նկարագրիր հակառակ կողմի պահանջը և փոխիր իրավիճակի պայմանը։ Սա նախապատրաստում է երկխոսությանը. շաբաթվա ընթացքում պահիր նաև իրական զրուցակցի հետ հանդիպումները։"
+      }
+    ],
+    "movies": [
+      {
+        "day": 6,
+        "title": "Paddington",
+        "year": 2014,
+        "purpose_hy": "Ծանոթություն, քաղաքավարի խնդրանքներ և անծանոթ քաղաքում օգնություն խնդրելը։",
+        "trailer": {
+          "title": "Պաշտոնական թրեյլեր StudioCanal UK",
+          "url": "https://www.youtube.com/watch?v=qFuzMlfZGWM"
+        },
+        "full": {
+          "title": "Ֆիլմի էջը Apple TV-ում",
+          "url": "https://tv.apple.com/sg/movie/paddington/umc.cmc.759zk34s47omthqjyvc9i6pgo"
+        },
+        "level_hy": "Ընտրովի հավելում։ Սկսնակ տարբերակով աշխատիր տեսանելի իրավիճակի ու 30–60 վայրկյանի հատվածի հետ։",
+        "prompts": [
+          "Where are the characters, and what can you see?",
+          "What help would a newcomer need in this situation?",
+          "How would you politely ask a local person for help?"
+        ],
+        "task_hy": "Ընտրիր մեկ տեսանելի իրավիճակ և նկարագրիր այն հինգ պարզ նախադասությամբ։ Հետո խաղարկիր զբոսաշրջիկի ու տեղաբնակի զրույցը՝ ուղղություն, վայր և կրկնել խնդրելու արտահայտությամբ։",
+        "output_hy": "60–90 վայրկյանի ձայնագրություն՝ իրավիճակի նկարագրություն և քո երեք քաղաքավարի խնդրանքը։",
+        "stretch_hy": "Ավելացրու նոր պայման՝ մարդը չի ճանաչում քո փնտրած վայրը։ Գտիր զրույցը շարունակելու ձև։",
+        "source_refs": [
+          "turn748968357youtube37",
+          "turn963498177search0"
+        ]
+      },
+      {
+        "day": 13,
+        "title": "Finding Nemo",
+        "year": 2003,
+        "purpose_hy": "Դեպքերի հաջորդականություն, օգնություն խնդրելը և խնդիրը պարզ բացատրելը։",
+        "trailer": {
+          "title": "Պաշտոնական թրեյլեր Disney Video-ում",
+          "url": "https://video.disney.com/watch/finding-nemo-trailer-54895f79c9fb6fbe3c75ea63"
+        },
+        "full": {
+          "title": "Ֆիլմի պաշտոնական էջը և դիտման հղումը",
+          "url": "https://movies.disney.com/finding-nemo"
+        },
+        "level_hy": "Ընտրովի հավելում։ Պատկերները կարող են օգնել իմաստը հասկանալուն, իսկ խոսքը կարող է արագ լինել։",
+        "prompts": [
+          "What problem can you identify from the segment or the official description?",
+          "What happens first, and what happens next?",
+          "What would you say if you needed help finding someone?"
+        ],
+        "task_hy": "Դիտիր թրեյլերը կամ քո օրինական հասանելի ֆիլմի կարճ հատվածը։ Պատմիր խնդիրը first / then / because / finally կապակցող բառերից առնվազն երեքով։ Հետո խաղարկիր օգնություն խնդրելու զրույցը։",
+        "output_hy": "Մինչև երկու րոպե պատմություն և օգնություն խնդրող երկու նոր հարց։",
+        "stretch_hy": "Նույն պատմությունը ներկայացրու մեկ րոպեում՝ պահպանելով հիմնական իմաստը։ Պատասխանիր «What would you do differently?» հարցին։",
+        "source_refs": [
+          "turn534526812view0",
+          "turn748968357view0"
+        ]
+      },
+      {
+        "day": 20,
+        "title": "The Intern",
+        "year": 2015,
+        "purpose_hy": "Նոր աշխատակցի ներկայացում, աշխատանքի մասին հարցեր և գործընկերոջն աջակցելը։",
+        "trailer": {
+          "title": "Պաշտոնական թրեյլեր Warner Bros",
+          "url": "https://www.youtube.com/watch?v=ZU3Xban0Y6A"
+        },
+        "full": {
+          "title": "2015 թվականի ֆիլմի էջը Apple TV-ում",
+          "url": "https://tv.apple.com/us/movie/the-intern/umc.cmc.1wsp9hqbc6n1c87rb9wrudikf"
+        },
+        "level_hy": "Ընտրովի բարդացում։ Կարճ հատվածով աշխատիր, եթե արագ երկխոսությունը դժվար է։ Ընտրիր 2015 թվականի անգլալեզու ֆիլմը։",
+        "prompts": [
+          "How would you introduce yourself on the first day in a new team?",
+          "What would you ask a new colleague about their work?",
+          "How could you offer help without sounding too direct?"
+        ],
+        "task_hy": "Դիտումից հետո պատկերացրու՝ նոր թիմի անդամ ես։ Տուր մեկ րոպեանոց ներկայացում, հարցրու առաջնահերթությունների մասին և առաջարկիր կոնկրետ օգնություն։ Ֆիլմից մի պատճենիր երկար խոսք. կազմիր քո սեփական տարբերակը։",
+        "output_hy": "Երկու րոպե՝ քո դերը, փորձը, սովորելու նպատակը և թիմին ուղղված երկու հարցը։",
+        "stretch_hy": "Զրուցակիցը թող բացատրի, որ թիմը շատ զբաղված է։ Առաջարկիր ինքնուրույն սկսելու և ավելի ուշ տեղեկացնելու տարբերակ։",
+        "source_refs": [
+          "turn748968357youtube36",
+          "turn205878048view3"
+        ]
+      },
+      {
+        "day": 27,
+        "title": "The Terminal",
+        "year": 2004,
+        "purpose_hy": "Չհասկացվածը պարզաբանել, նկարագրել սահմանափակումը և առաջարկել հաջորդ քայլը։",
+        "trailer": {
+          "title": "Amblin-ի պաշտոնական էջը թրեյլերներով",
+          "url": "https://amblin.com/movie/the-terminal/"
+        },
+        "full": {
+          "title": "Ֆիլմի դիտման էջը Paramount Plus-ում",
+          "url": "https://www.paramountplus.com/movies/video/su_xGwT3O9XmeI_R0Y9_KSZt5TWeHByI/"
+        },
+        "level_hy": "Ընտրովի բարդացում։ Արտասանության կրկնության համար ընտրիր հստակ ստանդարտ անգլերենով խոսող աշխատակցի պատասխանը։",
+        "prompts": [
+          "What information would you need to understand this problem?",
+          "Which two clarification questions would you ask?",
+          "How would you explain what you know and what you still need to confirm?"
+        ],
+        "task_hy": "Դիտիր թրեյլերը կամ ընտրիր կարճ տեսարան։ Ստեղծիր քո իրավիճակը՝ չեղարկված ամրագրում կամ փոխված հանդիպում։ Բացատրիր խնդիրը, տուր երկու պարզաբանող հարց և համաձայնեցրու հաջորդ գործողությունը։",
+        "output_hy": "Երկու րոպեանոց խնդիր–պարզաբանում–հաջորդ քայլ զրույց։",
+        "stretch_hy": "Զրուցակիցը թող չկարողանա անմիջապես լուծել խնդիրը։ Պայմանավորվեք՝ ով, երբ և ինչպես է հաջորդ տեղեկացումը տալու։",
+        "source_refs": [
+          "turn205878048view2",
+          "turn205878048view4"
+        ]
+      }
+    ],
+    "movie_method": [
+      "Ֆիլմային աշխատանքը ընտրովի է։ Նշված օրը կարող ես դրանով փոխարինել հիմնական լսելու 20 րոպեն և այդ օրվա աղբյուրի երեք հարցերի փոխարեն պատասխանել ֆիլմային էջի հարցերին։ Մնացած օրվա լեզվական և խոսակցական աշխատանքը մնում է իր ժամանակային բլոկում։",
+      "20 րոպեի ընթացք՝ 3 րոպե դիտել 30–60 վայրկյանի հատվածը մի քանի անգամ, 4 րոպե պարզել իմաստը, 4 րոպե կրկնել երկու կարճ նախադասություն, 5 րոպե վերապատմել, 4 րոպե նույն լեզվով պատասխանել նոր իրավիճակի։ Ենթագրերի առկայության դեպքում երկրորդ դիտմանը ընտրիր անգլերենը։",
+      "Ամբողջ ֆիլմ դիտելը լրացուցիչ հանգստի տարբերակ է և պարտադիր չէ։ Ֆիլմի էջը կամ թրեյլերի հղումը ամբողջ ֆիլմի անվճար դիտման խոստում չէ. հասանելիությունը, ենթագրերը և վճարումը կախված են հարթակից ու տարածաշրջանից։ Եթե տեսանյութը չի բացվում, վերադարձիր տվյալ օրվա հիմնական ուսումնական հղմանը։",
+      "Ֆիլմերի հարցերը դիտարկման և անձնական պատասխանի համար են. դրանց համար մեկ պարտադիր պատասխան չկա։ Լավ պատասխանը հենվում է դիտածի վրա, ունի հստակ միտք և առնվազն մեկ պատճառ կամ օրինակ։ Հղումների էջերն ու նկարագրությունները ստուգվել են, իսկ քո տարածաշրջանում նվագարկումն ու գնումը չեն փորձարկվել։"
+    ],
+    "assessment": {
+      "title": "Շաբաթական ստուգում և առաջընթացի չափում",
+      "intro": "Օրեր 1, 7, 14, 21 և 30։ Պահիր նույն մոտավոր բարդությունը և նախապատրաստման նույն պայմանները։ Դասանյութը բացելուց առաջ արա առաջին փորձը։ Նախորդ ու նոր ձայնագրությունները համեմատիր ըստ հետևյալ չորս չափանիշի։",
+      "criteria": [
+        [
+          "Հասկանալիություն",
+          "Լսողը հասկանում է հիմնական միտքը։"
+        ],
+        [
+          "Կատարում",
+          "Ասված է իրավիճակին անհրաժեշտ տեղեկությունը։"
+        ],
+        [
+          "Ինքնուրույնություն",
+          "Պատասխանը կազմվում է առանց ամբողջական տեքստի կամ մշտական հուշման։"
+        ],
+        [
+          "Երկխոսություն",
+          "Սովորողը պատասխանում է, հարց է տալիս և անհրաժեշտության դեպքում պարզաբանում է խնդրում։"
+        ]
+      ],
+      "scale": "Յուրաքանչյուր չափանիշ՝ 0–3 միավոր։ 0՝ չստացվեց նույնիսկ օգնությամբ, 1՝ մեծ օգնությամբ, 2՝ փոքր օգնությամբ, 3՝ ինքնուրույն ու հասկանալի։ Առավելագույնը 12 միավոր։ Սա անհատական աշխատանքային սանդղակ է, ոչ CEFR քննություն։",
+      "review": "Սխալների ընդհանուր թիվը միայնակ մի օգտագործիր որպես առաջընթացի չափանիշ։ Ավելի բարդ միտք արտահայտելիս նոր սխալներ կարող են լինել։ Համեմատիր՝ նույն միտքն այժմ ավելի հեշտ ես փոխանցո՞ւմ, պատասխանում ես նոր հարցերի՞, և կրկնվող կառուցվածքը կիրառո՞ւմ ես ինքնուրույն։",
+      "after": "Օր 30-ից հետո գրիր երեք իրավիճակ, որտեղ ավելի ինքնուրույն ես, և երկու հմտություն, որոնք դեռ օգնություն են պահանջում։ Հաջորդ ամսվա ծրագիրը կառուցիր այդ երկու հմտությունների շուրջ։"
+    }
+  },
+  "counts": {
+    "days": 30,
+    "drills": 90,
+    "input_questions": 90,
+    "conversation_questions": 120,
+    "chunks": 149,
+    "movies": 4
+  }
+}

@@ -1,10 +1,5 @@
 node_modules/
 dist/
-coverage/
-playwright-report/
-test-results/
-.env
-.runtime/
-*.log
 .DS_Store
-
+qa/
+public/qa-preview.html
