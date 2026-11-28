@@ -316,6 +316,146 @@
       "excerpt": "Follow the story beneath the postcard—from an ancient seabed to the communities and living reefs of today.",
       "vocabularyCount": 40,
       "questionCount": 10
+    },
+    {
+      "slug": "ko-panyi-village-between-stone-and-sea",
+      "title": "Ko Panyi: A Village Between Stone and Sea",
+      "subtitle": "The people, limestone, faith, football, and everyday ingenuity of Thailand’s remarkable village on stilts",
+      "description": "Explore Ko Panyi in depth: its limestone setting, remembered founders, Thai Muslim community, stilt architecture, school, fishing economy, football story, and changing future. Includes real credited photographs, two maps, an explanatory diagram, Armenian vocabulary support, grammar, exercises, and speaking practice.",
+      "category": "Places & culture",
+      "level": "B1–B2",
+      "language": "en",
+      "estimatedMinutes": 35,
+      "tags": [
+        "Thailand",
+        "Ko Panyi",
+        "Phang Nga Bay",
+        "Culture",
+        "Geography",
+        "Football",
+        "Travel English",
+        "Conservation"
+      ],
+      "media": [
+        {
+          "id": "ko-panyi-village-and-karst",
+          "url": "/media/ko-panyi-village-and-karst.jpg",
+          "alt": "Ko Panyi stilt village beneath a steep green limestone cliff across blue-green water.",
+          "caption": "Stilt houses at the foot of Ko Panyi’s limestone island, photographed in 2012.",
+          "credit": "Deror Avi / Wikimedia Commons",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ao_Phang_Nga_National_Park_P1120291.JPG",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "id": "ko-panyi-thailand-locator",
+          "url": "/media/ko-panyi-thailand-locator.png",
+          "alt": "Map of Thailand and neighboring countries showing Ko Panyi near the northern end of Phang Nga Bay, north of Phuket, with coordinates 8.3355 degrees north and 98.5032 degrees east.",
+          "caption": "Ko Panyi on Thailand’s Andaman coast. The dashed rectangle identifies the area shown in the bay map. Country borders and coastlines are generalized; the map is not for navigation.",
+          "credit": "Original map by Story Atlas; coastline and country data: Natural Earth (public domain); Ko Panyi coordinates: Sirindhorn Anthropology Centre.",
+          "license": "Original Story Atlas map; Natural Earth base data public domain",
+          "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+          "sourceUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+          "changes": "Original map design using generalized Natural Earth polygons and a verified location marker. No boat routes added.",
+          "width": 1600,
+          "height": 1100
+        },
+        {
+          "id": "ko-panyi-phang-nga-bay-map",
+          "url": "/media/ko-panyi-phang-nga-bay-map.png",
+          "alt": "Geographic map showing Ko Panyi at the north of Phang Nga Bay, Phuket Island to its southwest, Ko Yao Noi and Ko Yao Yai farther south, and the mainland to the north and east. A north arrow, coordinate grid, and 10-kilometer scale are included.",
+          "caption": "Ko Panyi lies in northern Phang Nga Bay, northeast of Phuket Island and north of Ko Yao Noi and Ko Yao Yai. Generalized Natural Earth coastlines omit some small islands; the location marker uses the Sirindhorn Anthropology Centre’s coordinates. No boat route is shown.",
+          "credit": "Original map by Story Atlas; coastline and country data: Natural Earth (public domain); Ko Panyi coordinates: Sirindhorn Anthropology Centre.",
+          "license": "Original Story Atlas map; Natural Earth base data public domain",
+          "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+          "sourceUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+          "changes": "Original map design using generalized Natural Earth polygons and a verified location marker. No boat routes added.",
+          "width": 1600,
+          "height": 1100
+        },
+        {
+          "id": "ko-panyi-stilts-and-floating-platforms",
+          "url": "/media/ko-panyi-stilts-and-floating-platforms.png",
+          "alt": "Side-by-side conceptual cross-sections of a house on fixed stilts reaching into the ground and a buoyant floating platform secured by a mooring.",
+          "caption": "Why a stilt village is different from a floating platform. This original diagram explains the principles; it does not survey a particular Ko Panyi building or football pitch.",
+          "credit": "Original educational diagram by Story Atlas.",
+          "license": "Original work created for this Story Atlas lesson.",
+          "changes": "Original vector construction, exported as PNG for the reader. Not to scale.",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "id": "ko-panyi-stilts-low-tide",
+          "url": "/media/ko-panyi-stilts-low-tide.jpg",
+          "alt": "Wooden stilts support village buildings above exposed tidal mud.",
+          "caption": "Exposed wooden supports beneath Ko Panyi houses at low tide, photographed in 2012.",
+          "credit": "Deror Avi / Wikimedia Commons",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ao_Phang_Nga_National_Park_P1120478.JPG",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "id": "ko-panyi-longtail-boats",
+          "url": "/media/ko-panyi-longtail-boats.jpg",
+          "alt": "Colorful long-tail boats on the water beside Ko Panyi with limestone towers in the distance.",
+          "caption": "Long-tail boats beside the village, with Phang Nga Bay’s limestone scenery beyond, photographed in 2013.",
+          "credit": "Diego Delso / delso.photo / Wikimedia Commons",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Isla_Panyee,_Phuket,_Tailandia,_2013-08-20,_DD_09.JPG",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 842
+        },
+        {
+          "id": "ko-panyi-football-court",
+          "url": "/media/ko-panyi-football-court.jpg",
+          "alt": "Blue-and-green football court beside the water at Ko Panyi with a goal and limestone hills beyond.",
+          "caption": "A later football court at Ko Panyi, photographed in 2012; this is not the boys’ original makeshift wooden pitch.",
+          "credit": "Michelle Maria / Wikimedia Commons",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kohpanyee_Fishing_Village,_Thailand_-_panoramio_(12).jpg",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 1131
+        },
+        {
+          "id": "ko-panyi-mosque",
+          "url": "/media/ko-panyi-mosque.jpg",
+          "alt": "Yellow arches, patterned columns, and minarets of Panyee Darussalam Mosque in Ko Panyi.",
+          "caption": "The facade of Panyee Darussalam Mosque, photographed in January 2023.",
+          "credit": "Aken Arin / Wikimedia Commons",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panyee_Darussalam_Mosque_2023.jpg",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "id": "ko-panyi-school",
+          "url": "/media/ko-panyi-school.jpg",
+          "alt": "Bright blue school courtyard with a Thai flag and classroom buildings at Ko Panyi.",
+          "caption": "Ko Panyi’s school courtyard and surrounding buildings, photographed in 2012.",
+          "credit": "Michelle Maria / Wikimedia Commons",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kohpanyee_Fishing_Village,_Thailand_-_panoramio_(8).jpg",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 678
+        }
+      ],
+      "createdAt": "2026-11-28T10:22:17.491Z",
+      "vocabularyCount": 36,
+      "questionCount": 10
     }
   ]
 }
