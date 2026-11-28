@@ -338,17 +338,17 @@
       ],
       "media": [
         {
-          "id": "ko-panyi-village-and-karst",
-          "url": "/media/ko-panyi-village-and-karst.jpg",
-          "alt": "Ko Panyi stilt village beneath a steep green limestone cliff across blue-green water.",
-          "caption": "Stilt houses at the foot of Ko Panyi’s limestone island, photographed in 2012.",
-          "credit": "Deror Avi / Wikimedia Commons",
+          "id": "ko-panyi-longtail-boats",
+          "url": "/media/ko-panyi-longtail-boats.jpg",
+          "alt": "Colorful long-tail boats on the water beside Ko Panyi with limestone towers in the distance.",
+          "caption": "Long-tail boats beside the village, with Phang Nga Bay’s limestone scenery beyond, photographed in 2013.",
+          "credit": "Diego Delso / delso.photo / Wikimedia Commons",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ao_Phang_Nga_National_Park_P1120291.JPG",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Isla_Panyee,_Phuket,_Tailandia,_2013-08-20,_DD_09.JPG",
           "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
           "width": 1600,
-          "height": 1200
+          "height": 842
         },
         {
           "id": "ko-panyi-thailand-locator",
@@ -388,6 +388,19 @@
           "height": 1000
         },
         {
+          "id": "ko-panyi-village-and-karst",
+          "url": "/media/ko-panyi-village-and-karst.jpg",
+          "alt": "Ko Panyi stilt village beneath a steep green limestone cliff across blue-green water.",
+          "caption": "Stilt houses at the foot of Ko Panyi’s limestone island, photographed in 2012.",
+          "credit": "Deror Avi / Wikimedia Commons",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ao_Phang_Nga_National_Park_P1120291.JPG",
+          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
+          "width": 1600,
+          "height": 1200
+        },
+        {
           "id": "ko-panyi-stilts-low-tide",
           "url": "/media/ko-panyi-stilts-low-tide.jpg",
           "alt": "Wooden stilts support village buildings above exposed tidal mud.",
@@ -399,19 +412,6 @@
           "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
           "width": 1600,
           "height": 1200
-        },
-        {
-          "id": "ko-panyi-longtail-boats",
-          "url": "/media/ko-panyi-longtail-boats.jpg",
-          "alt": "Colorful long-tail boats on the water beside Ko Panyi with limestone towers in the distance.",
-          "caption": "Long-tail boats beside the village, with Phang Nga Bay’s limestone scenery beyond, photographed in 2013.",
-          "credit": "Diego Delso / delso.photo / Wikimedia Commons",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Isla_Panyee,_Phuket,_Tailandia,_2013-08-20,_DD_09.JPG",
-          "changes": "Resized proportionally and JPEG-compressed for web delivery; no content edits.",
-          "width": 1600,
-          "height": 842
         },
         {
           "id": "ko-panyi-football-court",
