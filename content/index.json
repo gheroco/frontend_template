@@ -1,4 +1,49 @@
 {
   "version": 1,
-  "stories": []
+  "stories": [
+    {
+      "slug": "thailand-limestone-islands",
+      "title": "How Thailand’s Limestone Islands Formed",
+      "subtitle": "From an ancient seabed to the dramatic towers of Phang Nga Bay",
+      "description": "Discover how ancient sea sediments became limestone, how rainwater carved tall rock towers, and why those towers now rise from the sea. Practise useful English with Armenian vocabulary support, reading questions, and speaking prompts.",
+      "category": "Nature & science",
+      "level": "B1–B2",
+      "language": "en",
+      "estimatedMinutes": 8,
+      "tags": [
+        "Thailand",
+        "Phang Nga Bay",
+        "Geology",
+        "Travel English",
+        "Nature"
+      ],
+      "media": [
+        {
+          "id": "phang-nga-bay",
+          "url": "/media/phang-nga-bay.jpg",
+          "alt": "Ko Tapu limestone sea stack surrounded by the green waters and cliffs of Phang Nga Bay, Thailand.",
+          "caption": "The limestone towers of Phang Nga Bay began as sediments beneath an ancient sea.",
+          "credit": "Wolfgang Holzem / Wikimedia Commons",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phangnga_Bay_(75).jpg",
+          "changes": "Wikimedia thumbnail; displayed with responsive cropping."
+        },
+        {
+          "id": "limestone-tower",
+          "url": "/media/limestone-tower.jpg",
+          "alt": "A steep, vegetation-covered limestone tower rises from the sea in Phang Nga Bay.",
+          "caption": "Water gradually widened cracks and removed surrounding limestone, leaving steep towers.",
+          "credit": "Vyacheslav Argenberg / Wikimedia Commons",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ethereal_vertical_karst_formation_in_Phang_Nga_Bay,_Thailand.jpg",
+          "changes": "Wikimedia thumbnail; displayed responsively."
+        }
+      ],
+      "createdAt": "2026-11-28T00:00:00.000Z",
+      "vocabularyCount": 24,
+      "questionCount": 8
+    }
+  ]
 }
