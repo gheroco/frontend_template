@@ -45,6 +45,134 @@
       "vocabularyCount": 24,
       "questionCount": 8,
       "updatedAt": "2026-11-28T09:23:52.815Z"
+    },
+    {
+      "slug": "maya-bay-stone-cinema-and-a-second-chance",
+      "title": "Maya Bay: Stone, Cinema, and a Second Chance",
+      "subtitle": "An illustrated journey through ancient limestone, a famous film, a living sea, and the work of recovery.",
+      "description": "Explore the complete story of Maya Bay: its ancient cliffs, turquoise water, people and film history, the 2018 closure, the latest 2026 conservation evidence, and how to visit thoughtfully. Includes five real photographs, two maps, a geology diagram, and a full English lesson with Armenian vocabulary.",
+      "category": "Nature, history & travel",
+      "level": "B1–B2",
+      "language": "en",
+      "estimatedMinutes": 32,
+      "tags": [
+        "Thailand",
+        "Maya Bay",
+        "Phi Phi Leh",
+        "Geology",
+        "Conservation",
+        "Travel English",
+        "Marine life",
+        "Film history"
+      ],
+      "media": [
+        {
+          "alt": "Turquoise water at Maya Bay framed by steep green limestone cliffs and coastal vegetation in March 2026.",
+          "caption": "Maya Bay photographed on 17 March 2026. The limestone walls frame a real opening to the Andaman Sea.",
+          "credit": "Nnthurber / Wikimedia Commons",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maya_Bay_enclosed_limestone_cliffs_and_turquoise_water_Ko_Phi_Phi_Le.jpg",
+          "changes": "Wikimedia-generated 960-pixel thumbnail; no content alteration.",
+          "width": 960,
+          "height": 720,
+          "id": "maya-bay-2026",
+          "url": "/media/maya-bay-2026.jpg"
+        },
+        {
+          "alt": "White sand and translucent shallow water in Maya Bay, with boats near the rocky opening, photographed in 2007.",
+          "caption": "White sand and shallow water at Maya Bay, 2 March 2007. This historical photograph predates the 2018 closure and later visitor rules.",
+          "credit": "© Vyacheslav Argenberg / Wikimedia Commons",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maya_Bay,_Koh_Phi_Phi,_Krabi,_Thailand.jpg",
+          "changes": "Wikimedia-generated 1280-pixel thumbnail; no content alteration.",
+          "width": 1280,
+          "height": 853,
+          "id": "maya-bay-2007",
+          "url": "/media/maya-bay-2007.jpg"
+        },
+        {
+          "alt": "A 2017 view from beneath a rock overhang showing many boats in Maya Bay.",
+          "caption": "Boats in Maya Bay on 11 June 2017, before the 2018 closure. The image records an earlier pattern of tourism, not current access arrangements.",
+          "credit": "Puripant / Wikimedia Commons",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_View_from_Maya_Bay,_Phi_Phi_Le.jpg",
+          "changes": "Wikimedia-generated 1280-pixel thumbnail; no content alteration.",
+          "width": 1280,
+          "height": 904,
+          "id": "maya-bay-2017",
+          "url": "/media/maya-bay-2017.jpg"
+        },
+        {
+          "alt": "Steep weathered limestone cliffs above the pale beach and blue-green water of Maya Bay.",
+          "caption": "The limestone walls and pale beach of Maya Bay, photographed on 11 March 2007. The rock is far older than the present shoreline.",
+          "credit": "Entropy1963 / Wikimedia Commons",
+          "license": "Public domain (released by the photographer)",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/File:Maya_Bay_Thailand_Phi_Phi_Ley.jpg#Licensing",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maya_Bay_Thailand_Phi_Phi_Ley.jpg",
+          "changes": "Wikimedia-generated 960-pixel thumbnail; no content alteration.",
+          "width": 960,
+          "height": 720,
+          "id": "maya-bay-limestone-2007",
+          "url": "/media/maya-bay-limestone-2007.jpg"
+        },
+        {
+          "alt": "Boats inside Pileh Lagoon among tall green limestone walls, photographed in 2018.",
+          "caption": "Pileh Lagoon on Phi Phi Leh, 6 June 2018. This is a different inlet from Maya Bay; the two places are often included in the same island excursion.",
+          "credit": "Christophe95 / Wikimedia Commons",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pileh_Lagoon.jpg",
+          "changes": "Wikimedia-generated 960-pixel thumbnail; no content alteration.",
+          "width": 960,
+          "height": 720,
+          "id": "maya-pileh-lagoon",
+          "url": "/media/maya-pileh-lagoon.jpg"
+        },
+        {
+          "alt": "Regional map placing Maya Bay on Phi Phi Leh southeast of Phuket and south of Krabi, with separate markers for Phi Phi Don, Karon, Phuket Town, Ao Nang and Krabi Town.",
+          "caption": "Maya Bay in its regional setting. Coastlines use Natural Earth data; place markers are approximate. This orientation map is not for navigation.",
+          "credit": "Original map for Story Atlas; coastline made with Natural Earth",
+          "license": "Original cartography; Natural Earth source data are public domain",
+          "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+          "sourceUrl": "https://www.naturalearthdata.com/",
+          "changes": "Original cartographic rendering from publicly available geographic data.",
+          "width": 1600,
+          "height": 760,
+          "id": "maya-regional-map",
+          "url": "/media/maya-regional-map.svg"
+        },
+        {
+          "alt": "Detailed north-up map of Phi Phi Leh showing Maya Bay on its west coast, Loh Sama Bay to the south, Pileh Lagoon to the east and Viking Cave farther north.",
+          "caption": "Different bays on one island. The actual island outline and named feature positions come from OpenStreetMap. Orientation only; check permitted access with park staff.",
+          "credit": "© OpenStreetMap contributors; original rendering for Story Atlas",
+          "license": "Map based on OpenStreetMap data, ODbL 1.0",
+          "licenseUrl": "https://www.openstreetmap.org/copyright",
+          "sourceUrl": "https://www.openstreetmap.org/relation/6099533",
+          "changes": "Original map rendering of OSM coastline and selected feature positions; no hand-drawn coastline.",
+          "width": 1600,
+          "height": 760,
+          "id": "maya-bay-access-map",
+          "url": "/media/maya-bay-access-map.svg"
+        },
+        {
+          "alt": "Four-step explanatory diagram showing carbonate sediment on an ancient seabed, rock formation and uplift, water dissolving cracks, and limestone towers beside the sea.",
+          "caption": "A simplified explanation of limestone and coastal karst. This original diagram compresses geological time and is not an exact cross-section or reconstruction of Maya Bay.",
+          "credit": "Original diagram for Story Atlas; processes informed by USGS and regional geology research",
+          "license": "Original educational illustration created for Story Atlas",
+          "sourceUrl": "https://pubs.usgs.gov/ha/ha730/ch_a/A-text5.html",
+          "changes": "Original schematic; no source image copied.",
+          "width": 1600,
+          "height": 760,
+          "id": "maya-karst-formation",
+          "url": "/media/maya-karst-formation.svg"
+        }
+      ],
+      "createdAt": "2026-11-28T10:00:00.000Z",
+      "vocabularyCount": 40,
+      "questionCount": 10
     }
   ]
 }
