@@ -2,7 +2,7 @@
 
 Story Atlas turns complete English articles into reading lessons with Armenian vocabulary support, comprehension practice, and speaking prompts.
 
-**Deployment target:** https://story-atlas-gk.onrender.com  
+**Live app:** https://story-atlas-gk.onrender.com  
 **Content repository:** gheroco/frontend_template  
 **Dedicated branch:** apps/story-atlas
 
@@ -56,11 +56,13 @@ Read [PUBLISHING.md](PUBLISHING.md). The durable publication flow is:
 1. Prepare a complete lesson and its image files.
 2. Merge its summary into the latest catalogue, preserving other stories.
 3. Commit the lesson, images, and catalogue together on **apps/story-atlas** through the connected GitHub account.
-4. POST the exact lesson JSON to **/api/stories**, then verify the entire served lesson and every image.
+4. POST the exact lesson JSON to **/api/stories**, check the returned **source.commit** against the new GitHub commit, then verify the entire served lesson and every image.
 
 The POST endpoint verifies content that already exists in the configured repository branch. It cannot write arbitrary material to the repository. GitHub’s authenticated write is the authorization step, so the app does not need a new publishing secret.
 
-Production reads content from the configured raw GitHub branch. The app’s source cache lasts approximately 60 seconds, and upstream caching can add delay. An explicit publication POST requests fresh source reads. Content additions do not require a Render deployment.
+For publication, the server resolves the configured branch’s current head through the GitHub API and reads the catalogue and lesson at that immutable commit SHA. The successful receipt identifies this commit in **source.commit**. Check that SHA against the commit you just created; if the branch legitimately advanced, inspect the newer commit before accepting it.
+
+After successful publication, the server pins that verified revision for six minutes, so immediate catalogue, story, and image reads use the same source revision and identify it in **X-Story-Commit**. Every new publication POST resolves branch HEAD again, even while a revision is pinned; normal GET requests do not make that GitHub API lookup. The ordinary source cache lasts approximately 60 seconds; upstream caching can also affect reads outside the pin. The pin is temporary server memory, while the content remains durably committed in GitHub. Content additions do not require a Render deployment or a separate database.
 
 Application code changes require a manual Render deployment because this service uses **autoDeploy=no**.
 
@@ -85,13 +87,13 @@ In GitHub mode, the server reads public raw content without storing GitHub crede
 | GET /api/schema | Lesson JSON Schema |
 | GET /api/stories | Published catalogue |
 | GET /api/stories/<slug> | Complete lesson JSON |
-| POST /api/stories | Verify a full submitted lesson against the fresh committed source |
+| POST /api/stories | Resolve branch HEAD and verify a full lesson against that immutable commit |
 | POST /api/publish | Verify a committed lesson by sending an object containing its slug |
 | GET /media/<filename> | Read a committed image file |
 
-Both publication routes require catalogue membership. The full-lesson route additionally requires semantic equality with the committed JSON: object key order and whitespace may differ, but values and array order must match. Successful receipts contain a SHA-256 revision and counts for all lesson collections.
+Both publication routes require catalogue membership at the resolved commit. The full-lesson route additionally requires semantic equality with that committed JSON: object key order and whitespace may differ, but values and array order must match. In GitHub mode, successful receipts contain the Git commit SHA in **source.commit** and **revision**, a separate content digest in **sha256**, and counts for all lesson collections. The content digest and Git commit SHA identify different things and must not be compared with each other.
 
-Reader responses may use previously retrieved or deployment-snapshot content when the remote source is unavailable. Such responses carry **X-Content-Stale: true**. Publication verification requires a fresh source read and fails when that source cannot be verified.
+Reader responses may use previously retrieved or deployment-snapshot content when the remote source is unavailable. Such responses carry **X-Content-Stale: true**. Publication verification requires a successful branch-head lookup and fresh reads at the resolved commit; it fails when that revision or its content cannot be verified.
 
 ## Content and image credits
 

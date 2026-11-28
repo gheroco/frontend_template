@@ -2,7 +2,7 @@
 
 This guide is for a future ChatGPT session with the user’s connected GitHub account, or a developer with authorized Git access.
 
-**Planned deployment URL:** https://story-atlas-gk.onrender.com  
+**Deployment URL:** https://story-atlas-gk.onrender.com  
 Use the actual deployed origin if it differs. Read **/api/config** and **/api/publishing-guide** on that origin to confirm the configured repository and branch before writing.
 
 **Repository:** gheroco/frontend_template  
@@ -18,9 +18,9 @@ This application is isolated on its own branch. Do not write to main or to anoth
 
 A lesson is durably saved by an authenticated GitHub commit. The application then reads that committed content.
 
-**POST /api/stories is a verification and refresh endpoint.** It accepts a complete lesson only when that JSON matches the version already committed to the server’s configured upstream and the lesson is present in the committed catalogue. It does not create files, edit the repository, or authorize a different source. No new API key or bearer secret is required.
+**POST /api/stories is a verification and refresh endpoint.** The server resolves the configured branch’s current head through the GitHub API, then reads the catalogue and lesson at that immutable Git commit SHA. It accepts a complete lesson only when the JSON matches the lesson at that commit and the catalogue includes its slug. It does not create files, edit the repository, or authorize a different source. No new API key or bearer secret is required.
 
-The alternate **POST /api/publish** accepts a slug and verifies the corresponding committed lesson. Prefer the complete-JSON route when publishing from ChatGPT, because it also checks that the exact prepared lesson is the one being served.
+The alternate **POST /api/publish** accepts a slug, resolves the same authoritative branch head, and verifies the corresponding committed lesson. Prefer the complete-JSON route when publishing from ChatGPT, because it also checks that the exact prepared lesson is the one being served. In either case, check the successful receipt’s **source.commit** against the commit created for this publication.
 
 A user request to add or publish a lesson supplies the relevant task authorization. Complete the preparation and verification within that scope; do not introduce an extra approval step for an already authorized publication.
 
@@ -170,6 +170,8 @@ Discover the current connected GitHub tool shapes. Use its authenticated Git Dat
 5. Create one commit with that new tree and **parents: [CURRENT_HEAD_SHA]**.
 6. Update **refs/heads/apps/story-atlas** to the new commit with **force: false** and **expected_sha: CURRENT_HEAD_SHA** through the connector’s compare-and-swap support.
 
+Record the successfully published commit SHA as **PUBLISHED_COMMIT_SHA**. This is the value to compare with the app’s later **source.commit** receipt field; it is distinct from the lesson’s SHA-256 content digest.
+
 Do not use separate file commits for the lesson and catalogue. The branch must move once, making the complete publication visible together.
 
 The expected SHA protects work that arrives while you are preparing the publication. If the branch moved, reread the latest head and catalogue, merge your one entry again, and create a new commit on that head. Do not force the old tree onto the newer branch.
@@ -208,23 +210,31 @@ A successful response includes:
 
 - **ok: true** and the correct slug.
 - A reader URL under **/story/<slug>**.
-- A SHA-256 revision/hash.
+- **source.commit**, the GitHub branch-head commit SHA used for the verification, and the same SHA in **revision** when running in GitHub mode.
+- **sha256**, a separate digest of the complete lesson JSON after canonicalizing object keys.
 - Counts for sections, vocabulary, quiz, cloze, speaking, grammar, media, and sources.
 - **persisted: true**, storage information, configured source information, and a verification timestamp.
 
-Check the repository, branch, slug, and every count. For the full-JSON route, matching semantics mean that object key order and whitespace do not matter, while all values and array order do.
+Check the repository, branch, slug, and every count. Require **source.commit === PUBLISHED_COMMIT_SHA** for the normal case. Do not compare the Git commit SHA with **sha256**: the first identifies a repository snapshot, while the second identifies the lesson’s JSON content.
 
-Both routes require the story to be in the committed catalogue. They fetch from the server’s configured source; a request cannot supply a different repository, branch, URL, or persistence location.
+If the branch legitimately advanced between your commit and the POST, inspect the current branch head through the connected GitHub account. Confirm that it is the intended continuation of your commit and that the lesson, catalogue entry, and image files remain correct. Only then accept that newer SHA as the expected revision and reverify the full served lesson. Do not silently accept an older or unrelated SHA, or overwrite newer work to make the receipt match.
+
+For the full-JSON route, matching semantics mean that object key order and whitespace do not matter, while all values and array order do. In local development mode, **source.commit** is null and **revision** falls back to a content-hash identifier; local verification is not proof of a production GitHub publication.
+
+Both routes require the story to be in the catalogue at the same resolved commit as the lesson. The server uses GitHub’s branch-reference API and immutable raw-content URLs for this verification. The receipt identifies HEAD at the start of verification; the branch may legitimately move afterward. Every new POST resolves HEAD again, even during an existing pin. A request cannot supply a different repository, branch, commit, URL, or persistence location.
 
 ## 8. Verify the complete reader result and every image
 
-After the receipt, fetch **GET /api/stories/<slug>** and compare the entire JSON with the prepared lesson. Compare recursively with sorted object keys; do not compare only title, excerpt, or counts.
+After checking the receipt’s commit SHA, fetch **GET /api/stories/<slug>** and compare the entire JSON with the prepared lesson. Compare recursively with sorted object keys; do not compare only title, excerpt, or counts. The server pins a successful publication’s verified revision for six minutes; immediate catalogue, lesson, and image reads use that revision unless another successful publication pins a newer one. Their **X-Story-Commit** header must match the accepted receipt commit during this verification.
+
+Receipt counts describe the stored lesson fields. In particular, the media count counts image references; it does not prove that image bytes have been retrieved. Verify the image requests separately.
 
 Fetch every media URL and confirm:
 
 - HTTP 200.
 - An image content type and nonempty bytes.
 - No stale-source header.
+- **X-Story-Commit** equal to the accepted Git commit for local **/media/** URLs.
 - The image is available in the actual reader and its visible subject matches its alt text and caption.
 
 Also check the catalogue entry and open **/story/<slug>**. On a narrow mobile viewport, inspect article text, images, word definitions, exercise controls, and horizontal overflow.
@@ -238,24 +248,64 @@ For an automated semantic comparison from this repository, adapt the slug below:
 
     const origin = 'https://story-atlas-gk.onrender.com';
     const slug = 'your-story-slug';
+    const expectedCommit = 'REPLACE_WITH_PUBLISHED_GITHUB_COMMIT_SHA';
+    assert.match(expectedCommit, /^[0-9a-f]{40}$/i, 'Set the actual expected Git commit SHA.');
     const wanted = JSON.parse(await readFile('content/stories/' + slug + '.json', 'utf8'));
+    const published = await fetch(origin + '/api/stories', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(wanted)
+    });
+    assert.equal(published.status, 200);
+    const receipt = await published.json();
+    assert.equal(receipt.ok, true);
+    assert.equal(receipt.persisted, true);
+    assert.equal(receipt.storage, 'github');
+    assert.equal(receipt.source.repository, 'gheroco/frontend_template');
+    assert.equal(receipt.source.branch, 'apps/story-atlas');
+    assert.equal(receipt.source.commit, expectedCommit);
+    assert.equal(receipt.revision, expectedCommit);
+    for (const key of ['sections','vocabulary','quiz','cloze','speaking','grammar','media','sources']) {
+      assert.equal(receipt.counts[key], wanted[key].length, key);
+    }
     const response = await fetch(origin + '/api/stories/' + slug, {cache:'no-store'});
     assert.equal(response.status, 200);
     assert.notEqual(response.headers.get('x-content-stale'), 'true');
+    assert.equal(response.headers.get('x-story-commit'), expectedCommit);
     const actual = await response.json();
     assert.equal(canonicalJson(actual), canonicalJson(wanted));
 
+    const catalogue = await fetch(origin + '/api/stories', {cache:'no-store'});
+    assert.equal(catalogue.status, 200);
+    assert.notEqual(catalogue.headers.get('x-content-stale'), 'true');
+    assert.equal(catalogue.headers.get('x-story-commit'), expectedCommit);
+    const entry = (await catalogue.json()).stories.find(item => item.slug === slug);
+    assert.ok(entry, 'The catalogue must include the lesson.');
+    assert.equal(entry.vocabularyCount, wanted.vocabulary.length);
+    assert.equal(entry.questionCount, wanted.quiz.length);
+    for (const key of ['slug','title','subtitle','description','category','level','language','estimatedMinutes','tags','media','createdAt']) {
+      assert.equal(canonicalJson(entry[key]), canonicalJson(wanted[key]), key);
+    }
+
     for (const image of actual.media) {
-      const result = await fetch(new URL(image.url, origin), {cache:'no-store'});
+      const imageUrl = new URL(image.url, origin);
+      const result = await fetch(imageUrl, {cache:'no-store'});
       assert.equal(result.status, 200, image.url);
       assert.match(result.headers.get('content-type') || '', /^image\//);
       assert.notEqual(result.headers.get('x-content-stale'), 'true');
+      if (imageUrl.origin === origin && imageUrl.pathname.startsWith('/media/')) {
+        assert.equal(result.headers.get('x-story-commit'), expectedCommit);
+      }
       assert.ok((await result.arrayBuffer()).byteLength > 0, image.url);
     }
-    console.log('Complete lesson and all images verified.');
+    console.log('Commit ' + expectedCommit + ', complete lesson, and all images verified.');
     NODE
 
-The app’s source cache is approximately 60 seconds. GitHub raw-content propagation or edge caching can add delay. Publication POST requests fresh reads; if the new commit is not yet visible upstream, verify the branch commit and retry after propagation. Do not claim success while the server reports a mismatch or unavailable source.
+The app’s ordinary source cache is approximately 60 seconds. Publication POST resolves branch HEAD through the GitHub API and requests files at the immutable SHA, then pins that verified revision for six minutes. This keeps immediate follow-up reads together and avoids relying on a branch-name URL for publication verification. Normal GET requests do not perform the GitHub API head lookup. The pin is temporary server memory and does not replace GitHub persistence; it can end on server restart, expire, or be replaced by a later successful publication.
+
+If the commit header is missing or differs during follow-up verification, perform a new publication POST, inspect its returned commit, and repeat the complete checks. A missing header on an ordinary unpinned reader response is not itself a statement that the GitHub content was deleted.
+
+Upstream availability and caching can still affect ordinary reads and image delivery. If verification fails, inspect the current GitHub branch head and the files at that exact SHA. Do not claim success while the server reports a mismatched commit, mismatched content, or an unavailable source. No separate database or Render deployment is required to publish lesson content.
 
 Images are also cacheable. New filenames for changed images make verification and reader updates more reliable.
 
@@ -265,12 +315,13 @@ Images are also cacheable. New filenames for changed images make verification an
 | --- | --- |
 | 400 invalid lesson / JSON | Fix the lesson structure or request body, validate, and commit the corrected version if needed |
 | 404 story not found | Check the slug and catalogue membership |
-| 409 not_committed | The current source does not yet contain both the lesson and its catalogue entry; inspect the committed branch and upstream propagation |
+| 409 not_committed | Inspect the current GitHub branch head and confirm that both the lesson and catalogue entry exist at that exact commit |
 | 409 content_mismatch | Compare the submitted JSON with the committed file; commit the intended exact version or submit the actual committed version |
 | 413 body_too_large | Keep lesson JSON within 1 MiB; store image bytes as files rather than base64 inside the lesson |
 | 415 unsupported_media_type | Send Content-Type: application/json |
 | 429 rate_limited | Respect Retry-After and avoid repeated verification loops |
 | 502 invalid_source | Inspect and fix malformed committed catalogue or lesson data |
+| 503 revision_unavailable | The GitHub branch head could not be authoritatively resolved; preserve the commit and retry verification when that lookup is available |
 | 503 source_unavailable | The upstream cannot be freshly verified; preserve the commit and retry later |
 
 Cached reader content can remain available during a source outage and is marked **X-Content-Stale: true**. A publication receipt is never issued from that fallback.
@@ -289,10 +340,10 @@ Read-aloud uses browser speech synthesis and available device voices. The ChatGP
 
 ## Completion report
 
-Report the live lesson URL, the saved collection counts, and the result of full-JSON and media verification. Mention any substituted image accurately. If publication or verification failed, say which step failed and what is already committed.
+Report the live lesson URL, the verified Git commit SHA, the saved collection counts, and the result of full-JSON and media verification. Mention any substituted image accurately. If publication or verification failed, say which step failed and what is already committed.
 
 Do not report the work complete based only on a prepared local file, a GitHub commit, a title appearing in the catalogue, or a successful POST without checking the served lesson.
 
 ## Reusable instruction for a future ChatGPT session
 
-> Add the complete explanation from this conversation as a new Story Atlas English lesson. Use my connected GitHub account and the app’s publishing guide. Preserve the entire article, convert citations to source links, keep or accurately replace the images with permitted credited copies, and add useful English vocabulary with Armenian translations, exercises, and speaking practice. Merge the latest catalogue without losing other stories, commit the lesson, media, and catalogue atomically on apps/story-atlas, POST the exact JSON for verification, and check the full served lesson and every image. Return the working lesson link and verified counts.
+> Add the complete explanation from this conversation as a new Story Atlas English lesson. Use my connected GitHub account and the app’s publishing guide. Preserve the entire article, convert citations to source links, keep or accurately replace the images with permitted credited copies, and add useful English vocabulary with Armenian translations, exercises, and speaking practice. Merge the latest catalogue without losing other stories, commit the lesson, media, and catalogue atomically on apps/story-atlas, POST the exact JSON for verification, check source.commit against the published GitHub commit, and check the full served lesson and every image. Return the working lesson link, verified commit, and counts.

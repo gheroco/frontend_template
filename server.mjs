@@ -88,7 +88,34 @@ function counts(story) {
 }
 
 class ContentSource {
-  constructor(config) { this.config = config; this.cache = new Map(); this.pending = new Map(); this.active = 0; this.waiting = []; this.maxEntries = 250; this.cachedBytes = 0; this.maxCacheBytes = 32 * 1024 * 1024; }
+  constructor(config) { this.config = config; this.cache = new Map(); this.pending = new Map(); this.active = 0; this.waiting = []; this.maxEntries = 250; this.cachedBytes = 0; this.maxCacheBytes = 32 * 1024 * 1024; this.pinnedRevision = null; this.revisionExpiresAt = 0; }
+  currentRevision() { return Date.now() < this.revisionExpiresAt ? this.pinnedRevision : null; }
+  pinRevision(revision) {
+    if (!revision) return;
+    this.pinnedRevision = revision;
+    this.revisionExpiresAt = Date.now() + this.config.revisionTtlMs;
+  }
+  async resolveRevision() {
+    if (this.config.mode !== 'github' || !this.config.refApiUrl) return null;
+    return this.slot(async () => {
+      try {
+        const response = await fetch(this.config.refApiUrl, { signal: AbortSignal.timeout(this.config.sourceTimeoutMs), redirect: 'error', headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'Story-Atlas/1.0', 'Cache-Control': 'no-cache' } });
+        if (!response.ok) throw new Error('GitHub ref lookup failed');
+        const chunks = []; let size = 0;
+        for await (const chunk of response.body) {
+          size += chunk.length;
+          if (size > 128 * 1024) throw new Error('GitHub ref response is too large');
+          chunks.push(chunk);
+        }
+        const data = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+        const revision = data?.object?.sha;
+        if (!/^[a-f0-9]{40}$/.test(revision ?? '')) throw new Error('Invalid GitHub commit SHA');
+        return revision;
+      } catch {
+        throw new ApiError(503, 'The current GitHub branch revision could not be verified. Please try publishing again shortly.', 'revision_unavailable');
+      }
+    });
+  }
   async slot(fn) {
     if (this.active >= 6) {
       if (this.waiting.length >= 30) throw new ApiError(503, 'The content source is busy. Please try again shortly.', 'source_busy');
@@ -110,9 +137,10 @@ class ContentSource {
       throw new ApiError(error.code === 'ENOENT' ? 404 : 503, error.code === 'ENOENT' ? 'Story or media was not found in the content source.' : 'The content source is unavailable.', 'source_unavailable');
     }
   }
-  async remote(relative, force, limit) {
+  async remote(relative, force, limit, revision = null) {
     return this.slot(async () => {
-      const url = new URL('content/' + relative, this.config.sourceBaseUrl);
+      const base = revision ? new URL(revision + '/', this.config.sourceRevisionRoot) : this.config.sourceBaseUrl;
+      const url = new URL('content/' + relative, base);
       if (force) url.searchParams.set('publish', Date.now().toString());
       let response;
       try {
@@ -142,20 +170,23 @@ class ContentSource {
       this.cache.delete(oldest);
     }
   }
-  async read(relative, { force = false, binary = false } = {}) {
-    const previous = this.cache.get(relative);
+  async read(relative, { force = false, binary = false, revision = undefined } = {}) {
+    const targetRevision = revision === undefined ? this.currentRevision() : revision;
+    // A branch read already in flight cannot overwrite a verified immutable revision.
+    const cacheKey = (targetRevision ?? 'branch') + ':' + relative;
+    const previous = this.cache.get(cacheKey);
     if (!force && this.config.mode === 'github' && previous && Date.now() - previous.time < this.config.cacheTtlMs) return previous;
-    const key = relative + (force ? ':fresh' : ':regular');
+    const key = cacheKey + (force ? ':fresh' : ':regular');
     if (this.pending.has(key)) return this.pending.get(key);
     const operation = (async () => {
       try {
-        const data = this.config.mode === 'local' ? await this.local(relative, binary ? MAX_IMAGE : MAX_JSON) : await this.remote(relative, force, binary ? MAX_IMAGE : MAX_JSON);
+        const data = this.config.mode === 'local' ? await this.local(relative, binary ? MAX_IMAGE : MAX_JSON) : await this.remote(relative, force, binary ? MAX_IMAGE : MAX_JSON, targetRevision);
         let value = data;
         if (!binary) {
           try { value = JSON.parse(data.toString('utf8')); } catch { throw new ApiError(502, 'The content source returned invalid JSON.', 'invalid_source'); }
         }
-        const entry = { value, bytes: data.length, time: Date.now(), stale: false, origin: this.config.mode };
-        this.save(relative, entry); return entry;
+        const entry = { value, bytes: data.length, time: Date.now(), stale: false, origin: this.config.mode, revision: targetRevision };
+        this.save(cacheKey, entry); return entry;
       } catch (error) {
         // A publish receipt always requires an actual fresh source read.
         if (force || this.config.mode === 'local') throw error;
@@ -172,11 +203,11 @@ class ContentSource {
     this.pending.set(key, operation);
     try { return await operation; } finally { this.pending.delete(key); }
   }
-  async index(force = false) { const result = await this.read('index.json', { force }); validateIndex(result.value); return result; }
-  async story(slug, { force = false, index = null } = {}) {
-    const manifest = index ?? await this.index(force);
+  async index(force = false, revision = undefined) { const result = await this.read('index.json', { force, revision }); validateIndex(result.value); return result; }
+  async story(slug, { force = false, index = null, revision = undefined } = {}) {
+    const manifest = index ?? await this.index(force, revision);
     if (!manifest.value.stories.some(s => s.slug === slug)) throw new ApiError(404, 'This story is not in the published catalogue.', 'story_not_found');
-    const result = await this.read('stories/' + slug + '.json', { force });
+    const result = await this.read('stories/' + slug + '.json', { force, revision: revision === undefined ? manifest.revision : revision });
     try { validateStory(result.value); } catch { throw new ApiError(502, 'The saved lesson does not pass validation.', 'invalid_source'); }
     if (result.value.slug !== slug) throw new ApiError(502, 'The source lesson slug does not match its path.', 'invalid_source');
     return { ...result, stale: result.stale || manifest.stale };
@@ -191,11 +222,12 @@ function securityHeaders(res) {
   res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'");
 }
 
-function json(res, status, body, { stale = false, origin = null } = {}) {
+function json(res, status, body, { stale = false, origin = null, revision = null } = {}) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   if (origin) res.setHeader('X-Story-Source', origin);
+  if (revision) res.setHeader('X-Story-Commit', revision);
   if (stale) { res.setHeader('X-Content-Stale', 'true'); res.setHeader('Warning', '110 - "Serving a previously retrieved story"'); }
   res.end(JSON.stringify(body));
 }
@@ -221,24 +253,28 @@ export function createServer(options = {}) {
     publicDir: options.publicDir ?? path.join(ROOT, 'public'),
     projectDir: options.projectDir ?? ROOT,
     cacheTtlMs: options.cacheTtlMs ?? 60000,
+    revisionTtlMs: options.revisionTtlMs ?? 360000,
     sourceTimeoutMs: options.sourceTimeoutMs ?? 8000,
     allowSnapshotFallback: options.allowSnapshotFallback ?? true,
     publishLimit: options.publishLimit ?? 20,
-    version: options.version ?? '1.0.0',
+    version: options.version ?? '1.0.1',
   };
   if (!['local', 'github'].includes(config.mode)) throw new Error('SOURCE_MODE must be local or github');
   if (!/^[\w.-]+\/[\w.-]+$/.test(config.repository)) throw new Error('Invalid CONTENT_REPO');
   // Test fixtures can inject their source at construction. This is never a request parameter.
   config.sourceBaseUrl = options.sourceBaseUrl ?? `https://raw.githubusercontent.com/${config.repository}/${encodeURIComponent(config.branch)}/`;
+  config.sourceRevisionRoot = options.sourceRevisionRoot ?? `https://raw.githubusercontent.com/${config.repository}/`;
+  // An injected fixture source has no implicit connection to the public GitHub API.
+  config.refApiUrl = options.refApiUrl ?? (options.sourceBaseUrl ? null : `https://api.github.com/repos/${config.repository}/git/ref/heads/${config.branch.split('/').map(encodeURIComponent).join('/')}`);
   const source = new ContentSource(config);
   let publicationWindow = { start: Date.now(), count: 0 };
   const rate = () => {
     if (Date.now() - publicationWindow.start >= 60000) publicationWindow = { start: Date.now(), count: 0 };
     if (++publicationWindow.count > config.publishLimit) throw new ApiError(429, 'Please wait a minute before verifying another publication.', 'rate_limited');
   };
-  const receipt = story => {
+  const receipt = (story, commit = null) => {
     const digest = storyHash(story);
-    return { ok: true, slug: story.slug, url: '/story/' + story.slug, revision: 'sha256:' + digest, sha256: digest, counts: counts(story), persisted: true, storage: config.mode === 'github' ? 'github' : 'local-files', source: { mode: config.mode, repository: config.repository, branch: config.branch, path: 'content/stories/' + story.slug + '.json' }, verifiedAt: new Date().toISOString() };
+    return { ok: true, slug: story.slug, url: '/story/' + story.slug, revision: commit ?? 'sha256:' + digest, sha256: digest, counts: counts(story), persisted: true, storage: config.mode === 'github' ? 'github' : 'local-files', source: { mode: config.mode, repository: config.repository, branch: config.branch, commit, path: 'content/stories/' + story.slug + '.json' }, verifiedAt: new Date().toISOString() };
   };
   const server = http.createServer(async (req, res) => {
     securityHeaders(res);
@@ -277,6 +313,7 @@ export function createServer(options = {}) {
           res.setHeader('Content-Type', MIME[path.extname(relative).toLowerCase()]);
           res.setHeader('Cache-Control', 'public, max-age=300');
           res.setHeader('X-Story-Source', result.origin);
+          if (result.revision) res.setHeader('X-Story-Commit', result.revision);
           if (result.stale) res.setHeader('X-Content-Stale', 'true');
           res.setHeader('Content-Length', result.value.length);
           return res.end(req.method === 'HEAD' ? undefined : result.value);
@@ -305,15 +342,17 @@ export function createServer(options = {}) {
         const slug = submitted ? validateStory(submitted).slug : body?.slug;
         if (!validSlug(slug)) throw new ApiError(400, 'A valid story slug is required.', 'invalid_slug');
         let saved;
+        const commit = await source.resolveRevision();
         try {
-          const manifest = await source.index(true);
-          saved = (await source.story(slug, { force: true, index: manifest })).value;
+          const manifest = await source.index(true, commit);
+          saved = (await source.story(slug, { force: true, index: manifest, revision: commit })).value;
         } catch (error) {
           if (error.status === 404) throw new ApiError(409, 'Commit this lesson and its catalogue entry through your connected GitHub account first.', 'not_committed');
           throw error;
         }
         if (submitted && storyHash(submitted) !== storyHash(saved)) throw new ApiError(409, 'The submitted lesson does not match the saved repository version. Commit this exact lesson through your connected GitHub account first.', 'content_mismatch');
-        return json(res, 200, receipt(saved));
+        source.pinRevision(commit);
+        return json(res, 200, receipt(saved, commit));
       }
       res.setHeader('Allow', pathname.startsWith('/api/') ? 'GET, HEAD, POST' : 'GET, HEAD');
       throw new ApiError(405, 'Method not allowed.', 'method_not_allowed');

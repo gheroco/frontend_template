@@ -140,3 +140,60 @@ test('publication force refreshes are bounded and browser cross-origin requests 
   const cross = await fetch(f.base + '/api/stories', { method: 'POST', headers: { Origin: 'https://other.example', 'Content-Type': 'application/json' }, body: JSON.stringify(f.story) });
   assert.equal(cross.status, 403);
 });
+
+test('publication bypasses stale branch CDN data and pins lesson, catalogue and images to the verified commit', async t => {
+  const revisionOne = '1'.repeat(40), revisionTwo = '2'.repeat(40);
+  const original = fixtureStory(), updated = { ...original, title: 'A later authorized revision' };
+  let head = revisionOne, refReads = 0, unavailable = false;
+  const upstream = http.createServer((req, res) => {
+    const pathname = new URL(req.url, 'http://fixture').pathname;
+    if (pathname === '/refs/current') {
+      refReads++;
+      if (unavailable) { res.statusCode = 503; return res.end('Cannot resolve HEAD'); }
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify({ object: { type: 'commit', sha: head } }));
+    }
+    // The branch CDN remains stale forever, even for query-string cache busters.
+    if (pathname === '/branch/content/index.json') return res.end(JSON.stringify({ version: 1, stories: [] }));
+    const match = pathname.match(/^\/commits\/([12]{40})\/content\/(.+)$/);
+    if (match) {
+      const story = match[1] === revisionOne ? original : updated;
+      if (match[2] === 'index.json') return res.end(JSON.stringify({ version: 1, stories: [{ slug: story.slug, title: story.title }] }));
+      if (match[2] === 'stories/island-story.json') return res.end(JSON.stringify(story));
+      if (match[2] === 'media/cover.svg') return res.end('<svg xmlns="http://www.w3.org/2000/svg"><title>' + match[1] + '</title></svg>');
+    }
+    res.statusCode = 404; res.end('Not found');
+  });
+  await new Promise(resolve => upstream.listen(0, '127.0.0.1', resolve));
+  t.after(async () => { upstream.closeAllConnections(); await new Promise(resolve => upstream.close(resolve)); });
+  const origin = 'http://127.0.0.1:' + upstream.address().port;
+  const f = await fixture(t, { mode: 'github', sourceBaseUrl: origin + '/branch/', sourceRevisionRoot: origin + '/commits/', refApiUrl: origin + '/refs/current', cacheTtlMs: 0, revisionTtlMs: 360000 });
+  assert.equal((await (await fetch(f.base + '/api/stories')).json()).total, 0);
+  const published = await post(f.base, original);
+  assert.equal(published.status, 200);
+  const receipt = await published.json();
+  assert.equal(receipt.source.commit, revisionOne);
+  assert.equal(receipt.revision, revisionOne);
+  assert.equal(receipt.sha256, storyHash(original));
+  const catalogue = await fetch(f.base + '/api/stories');
+  assert.equal(catalogue.headers.get('x-story-commit'), revisionOne);
+  assert.equal((await catalogue.json()).total, 1);
+  const lesson = await fetch(f.base + '/api/stories/island-story');
+  assert.equal(lesson.headers.get('x-story-commit'), revisionOne);
+  assert.deepEqual(await lesson.json(), original);
+  const image = await fetch(f.base + '/media/cover.svg');
+  assert.equal(image.headers.get('x-story-commit'), revisionOne);
+  assert.match(await image.text(), new RegExp(revisionOne));
+  assert.equal(refReads, 1, 'ordinary reads must not spend GitHub API quota');
+  // A new publication must re-resolve HEAD, ignoring the previous revision pin.
+  head = revisionTwo;
+  const republished = await post(f.base, updated);
+  assert.equal(republished.status, 200);
+  assert.equal((await republished.json()).source.commit, revisionTwo);
+  assert.deepEqual(await (await fetch(f.base + '/api/stories/island-story')).json(), updated);
+  assert.equal(refReads, 2);
+  unavailable = true;
+  const failed = await post(f.base, updated);
+  assert.equal(failed.status, 503);
+  assert.equal((await failed.json()).code, 'revision_unavailable');
+});
