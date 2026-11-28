@@ -1,10 +1,7 @@
 node_modules/
-dist/
-coverage/
-playwright-report/
-test-results/
 .env
-.runtime/
-*.log
+.env.*
+!.env.example
 .DS_Store
-
+*.log
+coverage/

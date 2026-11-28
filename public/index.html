@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123d38">
+  <meta name="description" content="Learn English through stories you are curious about. Read, discover words, listen, and practise with Story Atlas.">
+  <title>Story Atlas — Learn English through what you love</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#library" aria-label="Story Atlas home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 6.5c4.6-1.6 8.2-.7 11 1.8 2.8-2.5 6.4-3.4 11-1.8v18c-4.5-1.6-8.2-.6-11 1.9-2.8-2.5-6.5-3.5-11-1.9z"/><path d="M16 8.3v18M10 11h2M21 11h2M10 15h2M21 15h2"/></svg></span><span>Story Atlas<small>ENGLISH, THROUGH DISCOVERY</small></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#library" data-nav="library">Stories</a><a href="#words" data-nav="words">My words</a><a href="#progress" data-nav="progress">My progress</a></nav>
+      <a class="button button-small header-publish" href="#publish"><span aria-hidden="true">+</span> Add a story</a>
+    </div>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading-screen"><span class="loading-orbit"></span><p>Opening your atlas…</p></div></main>
+  <nav class="mobile-nav" aria-label="Mobile navigation"><a href="#library" data-nav="library"><span data-icon="book"></span>Stories</a><a href="#words" data-nav="words"><span data-icon="bookmark"></span>My words</a><a href="#progress" data-nav="progress"><span data-icon="chart"></span>Progress</a><a href="#publish" data-nav="publish"><span data-icon="plus"></span>Add story</a></nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="word-dialog" class="word-dialog" aria-labelledby="word-dialog-title"></dialog>
+  <div id="audio-player" class="audio-player" hidden></div>
+</body>
+</html>

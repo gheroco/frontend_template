@@ -1,0 +1,619 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://story-atlas-gk.onrender.com/api/schema",
+  "title": "Story Atlas lesson",
+  "description": "A complete English-learning lesson committed to content/stories/<slug>.json. The authoring validator also checks prose parity, references, images, answer keys, and catalogue summaries.",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "$ref": "#/$defs/slug"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240,
+      "description": "Reader-facing lesson title."
+    },
+    "subtitle": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Short supporting title."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 3000,
+      "description": "Catalogue description and lesson overview."
+    },
+    "excerpt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "description": "Optional short editorial excerpt."
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "description": "Human-readable category, for example Nature & science."
+    },
+    "level": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "Suggested CEFR level or range, for example B1–B2."
+    },
+    "language": {
+      "type": "string",
+      "const": "en",
+      "description": "The reading and instruction language. Armenian appears in vocabulary translations."
+    },
+    "estimatedMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 240,
+      "description": "Estimated reading time, in minutes."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/text"
+      },
+      "maxItems": 30,
+      "description": "Searchable lesson topics.",
+      "uniqueItems": true
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 creation timestamp, including a timezone."
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional ISO 8601 timestamp for a substantive revision."
+    },
+    "originalMarkdown": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600000,
+      "description": "Complete original article prose with ordinary Markdown source links. Preserve wording; put image files and credits in media."
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 200,
+      "items": {
+        "$ref": "#/$defs/section"
+      },
+      "description": "Article sections in reading order. Ordered blocks preserve paragraphs before and after lists."
+    },
+    "vocabulary": {
+      "type": "array",
+      "maxItems": 2000,
+      "items": {
+        "$ref": "#/$defs/vocabulary"
+      }
+    },
+    "quiz": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    },
+    "cloze": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/cloze"
+      }
+    },
+    "speaking": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/speaking"
+      }
+    },
+    "grammar": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/grammar"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "media": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/media"
+      }
+    }
+  },
+  "required": [
+    "slug",
+    "title",
+    "subtitle",
+    "description",
+    "category",
+    "level",
+    "language",
+    "estimatedMinutes",
+    "tags",
+    "createdAt",
+    "originalMarkdown",
+    "sections",
+    "vocabulary",
+    "quiz",
+    "cloze",
+    "speaking",
+    "grammar",
+    "sources",
+    "media"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100000
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable lowercase identifier, unique within its array."
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable lowercase filename and URL identifier."
+    },
+    "httpsUrl": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 3000,
+      "format": "uri",
+      "pattern": "^https://",
+      "description": "Absolute HTTPS URL without embedded credentials."
+    },
+    "mediaUrl": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        {
+          "type": "string",
+          "maxLength": 1000,
+          "pattern": "^/media/[A-Za-z0-9][A-Za-z0-9_./-]*$"
+        }
+      ],
+      "description": "Prefer /media/<filename> backed by content/media/<filename>. Local path segments must not begin with a dot."
+    },
+    "block": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "paragraph"
+            },
+            "text": {
+              "$ref": "#/$defs/text"
+            }
+          },
+          "required": [
+            "type",
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "bullets",
+                "list"
+              ]
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/text"
+              },
+              "maxItems": 1000,
+              "description": "List items, in order.",
+              "minItems": 1
+            }
+          },
+          "required": [
+            "type",
+            "items"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "section": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Section heading."
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 1000,
+          "description": "Plain article paragraphs, in order. These mirror paragraph blocks."
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 1000,
+          "description": "Optional flattened list items; these mirror list blocks."
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1200,
+          "items": {
+            "$ref": "#/$defs/block"
+          },
+          "description": "Preferred rendering order. Use paragraph and bullets blocks; list is accepted as an alias for bullets."
+        },
+        "sourceIds": {
+          "type": "array",
+          "maxItems": 500,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "description": "IDs of supporting entries in the lesson sources array."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "paragraphs",
+        "sourceIds"
+      ],
+      "additionalProperties": false
+    },
+    "vocabulary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "term": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "description": "Dictionary headword or useful phrase."
+        },
+        "partOfSpeech": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "For example noun, adjective, verb, or noun phrase."
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3000,
+          "description": "Accessible English definition for the sense used in the article."
+        },
+        "armenian": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3000,
+          "description": "Accurate Eastern Armenian translation for this context."
+        },
+        "example": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
+          "description": "An original example sentence using the term."
+        },
+        "pronunciation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Optional pronunciation or IPA."
+        },
+        "dictionaryUrl": {
+          "$ref": "#/$defs/httpsUrl",
+          "pattern": "^https://(?:www\\.)?merriam-webster\\.com/dictionary/",
+          "description": "Merriam-Webster dictionary entry for the term or the relevant headword."
+        },
+        "forms": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": "Optional inflections and variants that should match in the article."
+        }
+      },
+      "required": [
+        "id",
+        "term",
+        "partOfSpeech",
+        "definition",
+        "armenian",
+        "example",
+        "dictionaryUrl"
+      ],
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3000,
+          "description": "One unambiguous reading-comprehension question."
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          }
+        },
+        "correctIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9,
+          "description": "Zero-based index of the one correct option. Must be smaller than options.length."
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
+          "description": "Why the correct option follows from the article."
+        }
+      },
+      "required": [
+        "id",
+        "question",
+        "options",
+        "correctIndex",
+        "explanation"
+      ],
+      "additionalProperties": false
+    },
+    "cloze": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "sentence": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
+          "pattern": "____",
+          "description": "Sentence containing exactly one ____ blank."
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "Expected word or phrase, without the blank marker."
+        },
+        "hint": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "description": "Useful clue that does not merely give the answer."
+        }
+      },
+      "required": [
+        "id",
+        "sentence",
+        "answer",
+        "hint"
+      ],
+      "additionalProperties": false
+    },
+    "speaking": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
+          "description": "A clear speaking task."
+        },
+        "tip": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3000,
+          "description": "A short scaffold or vocabulary suggestion."
+        }
+      },
+      "required": [
+        "id",
+        "prompt",
+        "tip"
+      ],
+      "additionalProperties": false
+    },
+    "grammar": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Grammar concept."
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "description": "Accessible explanation."
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 50,
+          "description": "Correct examples tied to the lesson.",
+          "minItems": 1
+        },
+        "exercise": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
+          "description": "Optional short practice question."
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000,
+          "description": "Answer to the optional exercise."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "explanation",
+        "examples"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "Specific source title and attribution."
+        },
+        "url": {
+          "$ref": "#/$defs/httpsUrl"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url"
+      ],
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "url": {
+          "$ref": "#/$defs/mediaUrl"
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "description": "Accurate descriptive alternative text."
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3000,
+          "description": "Reader-facing image caption."
+        },
+        "credit": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "Creator and/or rights-holder attribution."
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "Actual license or documented permission; do not invent it."
+        },
+        "licenseUrl": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "sourceUrl": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "changes": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "description": "Disclose resizing, cropping, or other changes when relevant."
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "alt",
+        "caption",
+        "credit",
+        "license"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

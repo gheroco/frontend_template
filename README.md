@@ -1,164 +1,98 @@
-# Atlas Runtime Service Portal
+# Story Atlas
 
-Atlas is a working Kubernetes-native portal in which independently released services may contribute tabs at runtime. API-only services can register without contributing UI. The portal shell is never rebuilt when a service is registered, upgraded, disabled, or removed.
+Story Atlas turns complete English articles into reading lessons with Armenian vocabulary support, comprehension practice, and speaking prompts.
 
-The repository includes the authenticated React shell/BFF, a Kubernetes-backed extension registry, a versioned extension contract, Inventory, Audit, and GitHub webhook services, self-contained Web Component microfrontends, five independent component images and charts, Gateway API routing, local lifecycle demonstrations, CI/CD, observability assets, and automated tests.
+**Deployment target:** https://story-atlas-gk.onrender.com  
+**Content repository:** gheroco/frontend_template  
+**Dedicated branch:** apps/story-atlas
 
-## What works
+Confirm the deployed address and configured source at **/api/config** before publishing. The app occupies this dedicated branch; the repository’s main branch and other app branches are separate projects.
 
-- The shell discovers tabs from the registry every five seconds and supports deep links and refreshes.
-- Inventory and Audit ship as independent backends, microfrontends, images, charts, versions, pipelines, and rollback units.
-- Inventory can declaratively add a second Suppliers tab without a shell change.
-- A service can be upgraded from `inventory-overview-v1` to `inventory-overview-v2`, rolled back, disabled, unregistered, and restored while the shell stays running.
-- Development authentication provides Viewer, Operator, and Administrator identities. Production uses OIDC Authorization Code with PKCE and encrypted, `HttpOnly`, `SameSite` session cookies.
-- The BFF filters tabs for usability; every backend validates the bearer token and required permissions again.
-- Remote entries require an allowlisted HTTPS/same-origin URL and SHA-384 Subresource Integrity metadata.
-- Remote script failures, unavailable services, and render failures are isolated to the active tab.
+## Learning features
 
-## Architecture
+- Read the complete article with source links and credited photographs.
+- Explore useful words, contextual definitions, Armenian translations, and Merriam-Webster entries.
+- Practise comprehension questions, missing-word exercises, grammar, and speaking.
+- Use the browser’s read-aloud voices when available.
+- Save learning progress in the current browser and export or import it.
+- Copy a practice prompt and open ChatGPT for a separate conversation.
 
-```mermaid
-flowchart TB
-  B[Browser] -->|HTTPS + secure cookie| G[Gateway API]
-  G -->|shell and BFF| P[Portal shell]
-  G -->|versioned remote entry| M[Service microfrontend]
-  P -->|internal catalog API| R[Extension registry]
-  R -->|list and watch-equivalent poll| K[PortalService CRDs]
-  P -->|scoped bearer token| S[Service backend]
-  M -->|same-origin service API| P
-```
+Read-aloud uses browser speech synthesis. Available voices depend on the device and browser. The app does not use a paid speech API or connect to a ChatGPT subscription. Opening ChatGPT starts a separate interaction; the website does not receive that conversation.
 
-The browser never accesses Kubernetes. Gateway routes are owned by each service release. The registry has read-only RBAC for `PortalService` resources. Browser-facing service APIs use the BFF so tokens never enter frontend JavaScript. Protocol-authenticated machine endpoints, such as `/webhooks/github`, may use a dedicated service-owned Gateway route.
+Learning progress stays in this browser’s local storage. It is not an account-backed cloud record; use export/import when moving to another browser or device.
 
-See [architecture](docs/architecture.md), [service boundaries and future evolution](docs/service-boundaries-and-evolution.md), [extension contract](docs/extension-contract.md), and [ADRs](docs/adr/README.md).
+## Run locally
 
-## Quick start
+Use Node.js 22 or newer. The app has no third-party runtime dependencies.
 
-Prerequisites: Node.js 24+ and npm 11+.
+    npm run dev
 
-```bash
-npm ci
-npm run dev
-```
+Open http://localhost:3000. Local development reads the files in **content/** directly.
 
-Open `http://localhost:4000`. `npm run dev` generates random local-only secrets in ignored `.env`, builds every workspace, computes remote-entry SRI values, and starts all five component processes.
+    npm run check
+    npm test
 
-Docker is an alternative:
+The check command validates JavaScript syntax and content. The test command exercises server behavior. A catalogue containing no stories is valid, which supports deploying the application before the first content publication.
 
-```bash
-npm run setup
-docker compose up --build --wait
-```
+## Project layout
 
-### Live lifecycle demonstration
+| Path | Purpose |
+| --- | --- |
+| public/ | Browser application, styles, and static assets |
+| server.mjs | HTTP server, content reader, and publication verification API |
+| content/index.json | Versioned catalogue of story summaries |
+| content/stories/<slug>.json | Complete lesson, original article, vocabulary, exercises, sources, and image metadata |
+| content/media/ | Authorized image files served through /media/ |
+| schema/lesson.schema.json | Draft 2020-12 lesson schema |
+| scripts/validate-content.mjs | Offline authoring and catalogue validation |
+| test/ | Server tests |
+| PUBLISHING.md | Complete instructions for future ChatGPT or human publishers |
+| AGENTS.md | Repository-specific working instructions |
 
-Run these in another terminal while `npm run dev` is active. The UI updates within five seconds.
+## Add or update a lesson
 
-```bash
-node scripts/demo-lifecycle.mjs suppliers   # adds a third tab
-node scripts/demo-lifecycle.mjs upgrade     # Inventory 1.0.0 -> 1.1.0 / v2 element
-node scripts/demo-lifecycle.mjs rollback    # returns to 1.0.0 / v1 element
-node scripts/demo-lifecycle.mjs disable     # tab disappears; service process stays up
-node scripts/demo-lifecycle.mjs delete      # unregisters the service
-node scripts/demo-lifecycle.mjs register    # restores the service
-```
+Read [PUBLISHING.md](PUBLISHING.md). The durable publication flow is:
 
-## Validation
+1. Prepare a complete lesson and its image files.
+2. Merge its summary into the latest catalogue, preserving other stories.
+3. Commit the lesson, images, and catalogue together on **apps/story-atlas** through the connected GitHub account.
+4. POST the exact lesson JSON to **/api/stories**, then verify the entire served lesson and every image.
 
-```bash
-npm run typecheck
-npm run test:unit
-npm run build
-npm run integrity:check
-npm run test:e2e
-npm run validate
-```
+The POST endpoint verifies content that already exists in the configured repository branch. It cannot write arbitrary material to the repository. GitHub’s authenticated write is the authorization step, so the app does not need a new publishing secret.
 
-The test inventory includes contract, unit, component, BFF integration, backend authorization, idempotency, SRI/origin security, catalog failure isolation, and lifecycle tests. Playwright exercises desktop/mobile login, permission-aware tabs, remote loading, deep-link refresh, and removed routes. CI also lints/renders every Helm chart, validates Kubernetes objects, scans dependencies/images, and produces SBOMs.
+Production reads content from the configured raw GitHub branch. The app’s source cache lasts approximately 60 seconds, and upstream caching can add delay. An explicit publication POST requests fresh source reads. Content additions do not require a Render deployment.
 
-## Kubernetes
+Application code changes require a manual Render deployment because this service uses **autoDeploy=no**.
 
-Required cluster capabilities:
+## Configuration
 
-- Kubernetes 1.30+
-- a Gateway API v1 controller (the Kind workflow installs Envoy Gateway)
-- Metrics Server when HPA is enabled
-- an existing TLS Secret for staging/production
-- an existing `atlas-platform-secrets` Secret; no chart creates credentials
+| Environment variable | Default / behavior |
+| --- | --- |
+| PORT | 3000 locally; Render supplies the production port |
+| SOURCE_MODE | local normally; github when RENDER is set |
+| CONTENT_REPO | gheroco/frontend_template |
+| CONTENT_BRANCH | apps/story-atlas |
 
-Create a local cluster and install six independent Helm releases:
+In GitHub mode, the server reads public raw content without storing GitHub credentials. The configured content branch must therefore remain readable by that server. Changing the repository, branch, or application code is a deployment/configuration change, not a lesson publication.
 
-```bash
-npm run kind:create
-npm run kind:install
-scripts/port-forward.sh
-```
+## API
 
-For an existing cluster, create the secret from your secret manager and run:
+| Method and path | Behavior |
+| --- | --- |
+| GET /api/health | Service status and source mode |
+| GET /api/config | Current application and source configuration |
+| GET /api/publishing-guide | Discoverable publishing instructions and paths |
+| GET /api/schema | Lesson JSON Schema |
+| GET /api/stories | Published catalogue |
+| GET /api/stories/<slug> | Complete lesson JSON |
+| POST /api/stories | Verify a full submitted lesson against the fresh committed source |
+| POST /api/publish | Verify a committed lesson by sending an object containing its slug |
+| GET /media/<filename> | Read a committed image file |
 
-```bash
-scripts/install-platform.sh staging
-```
+Both publication routes require catalogue membership. The full-lesson route additionally requires semantic equality with the committed JSON: object key order and whitespace may differ, but values and array order must match. Successful receipts contain a SHA-256 revision and counts for all lesson collections.
 
-Environment overlays are under `deploy/environments/{dev,staging,production}`. Replace the example hostnames and issuer/client IDs in your environment repository before production reconciliation.
+Reader responses may use previously retrieved or deployment-snapshot content when the remote source is unavailable. Such responses carry **X-Content-Stale: true**. Publication verification requires a fresh source read and fails when that source cannot be verified.
 
-### Independent operations
+## Content and image credits
 
-```bash
-# Scale only Inventory
-kubectl -n atlas-platform scale deployment/inventory --replicas=5
-
-# Enable its optional second tab
-scripts/extension.sh suppliers
-
-# Atomic upgrade; Helm restores the previous release if readiness fails
-INVENTORY_IMAGE_TAG=1.1.0 INVENTORY_SRI='sha384-…' scripts/extension.sh upgrade
-
-# Roll back only Inventory
-scripts/extension.sh rollback 1
-
-# Hide or restore its tabs without touching the shell
-scripts/extension.sh disable
-scripts/extension.sh enable
-
-# Unregister its tabs, or uninstall its full release
-scripts/extension.sh delete
-helm uninstall atlas-inventory -n atlas-platform
-```
-
-## Repository structure
-
-| Path | Responsibility | Release unit |
-|---|---|---|
-| `apps/portal-shell` | React shell, OIDC session handling, catalog filtering, service BFF | `portal-shell` image/chart |
-| `apps/extension-registry` | Filesystem/Kubernetes catalog adapters, health, audit lifecycle events | `extension-registry` image/chart |
-| `services/inventory` | Inventory API and two versioned Web Component tabs | `inventory` image/chart |
-| `services/audit` | Protected audit API and tab | `audit` image/chart |
-| `services/github-webhooks` | Direct GitHub receiver, RabbitMQ worker, delivery store/recovery, and portal tab | `github-webhooks` image/chart |
-| `packages/contracts` | Versioned manifest and browser element contract | shared build-time package |
-| `packages/service-kit` | auth, metrics, traces, retries, circuit breaker, health | shared build-time package |
-| `deploy/charts/platform` | Gateway and namespace default-deny policy only | foundation Helm release |
-| `deploy/observability` | Prometheus alerts, ServiceMonitor, Grafana dashboard, OTel example | operations assets |
-| `catalog` / `examples/catalog` | Local source-of-truth and lifecycle variants | development only |
-
-Shared packages are bundled into each deployable. Microfrontends do not import shared runtime libraries from the shell, so a shared dependency cannot couple their releases.
-
-## Security and operations
-
-- OIDC code flow + PKCE, encrypted cookies, state validation, secure defaults, origin-bound CSRF checks
-- backend JWT issuer/audience/algorithm validation and permission enforcement
-- CSP, no framing, no object sources, no frontend tokens, output escaping, one-megabyte request limits
-- SSRF-safe catalog upstream validation, path normalization, response limits, timeouts, bounded retries, circuit breakers
-- SRI, origin allowlists, immutable image tags/digests, restricted containers, dedicated ServiceAccounts, read-only filesystems
-- default-deny and per-workload NetworkPolicies, PDBs, HPA, topology spreading, rolling updates, startup/readiness/liveness probes
-- structured redacted logs, correlation IDs, Prometheus metrics, OTLP traces, build metadata, audit lifecycle events, alerts and SLOs
-- CI dependency/image scanning, CodeQL, SBOM, keyless image signing and GitHub build provenance on releases
-
-Detailed runbooks are in [operations](docs/operations.md), [testing](docs/testing.md), [threat model](docs/threat-model.md), and [SLOs](docs/slo.md).
-
-## Deliberate limitations
-
-- Example business data is immutable process data so the reference platform does not prescribe a database. A real service must own its database and backward-compatible migrations.
-- Production identity claim names vary by provider; `PERMISSIONS_CLAIM` and `ROLES_CLAIM` are configurable and must be mapped in the IdP.
-- The reference uses a five-second Kubernetes catalog poll instead of a long-lived watch. This bounds reconnect complexity and API load for a low-churn catalog; an informer can replace the adapter without changing the public contract.
-- Cross-origin remote entries are supported for local development. Production examples use same-origin Gateway routes, which simplify CSP, SRI, cookies, and operations.
+The first lesson preserves the supplied explanation of Thailand’s limestone islands and includes its source URLs. Image-specific creators, source pages, licenses, and modification notes are stored in each lesson’s **media** array and must remain with the images when content is updated.
