@@ -18,7 +18,7 @@ This application is isolated on its own branch. Do not write to main or to anoth
 
 A lesson is durably saved by an authenticated GitHub commit. The application then reads that committed content.
 
-**POST /api/stories is a verification and refresh endpoint.** The server resolves the configured branch’s current head through the GitHub API, then reads the catalogue and lesson at that immutable Git commit SHA. It accepts a complete lesson only when the JSON matches the lesson at that commit and the catalogue includes its slug. It does not create files, edit the repository, or authorize a different source. No new API key or bearer secret is required.
+**POST /api/stories is a verification and refresh endpoint.** The server resolves the configured branch’s current head through Git’s standard smart HTTP **info/refs** advertisement, with the GitHub REST branch-reference API as fallback. It then reads the catalogue and lesson at that immutable Git commit SHA. It accepts a complete lesson only when the JSON matches the lesson at that commit and the catalogue includes its slug. It does not create files, edit the repository, or authorize a different source. No new API key or bearer secret is required.
 
 The alternate **POST /api/publish** accepts a slug, resolves the same authoritative branch head, and verifies the corresponding committed lesson. Prefer the complete-JSON route when publishing from ChatGPT, because it also checks that the exact prepared lesson is the one being served. In either case, check the successful receipt’s **source.commit** against the commit created for this publication.
 
@@ -221,11 +221,13 @@ If the branch legitimately advanced between your commit and the POST, inspect th
 
 For the full-JSON route, matching semantics mean that object key order and whitespace do not matter, while all values and array order do. In local development mode, **source.commit** is null and **revision** falls back to a content-hash identifier; local verification is not proof of a production GitHub publication.
 
-Both routes require the story to be in the catalogue at the same resolved commit as the lesson. The server uses GitHub’s branch-reference API and immutable raw-content URLs for this verification. The receipt identifies HEAD at the start of verification; the branch may legitimately move afterward. Every new POST resolves HEAD again, even during an existing pin. A request cannot supply a different repository, branch, commit, URL, or persistence location.
+Both routes require the story to be in the catalogue at the same resolved commit as the lesson. The primary branch lookup uses **https://github.com/gheroco/frontend_template.git/info/refs?service=git-upload-pack** and selects **refs/heads/apps/story-atlas**. If that lookup fails, the server tries the GitHub REST branch-reference endpoint. Both paths lead to immutable raw-content URLs for the resolved SHA.
+
+Each lookup attempt has a 15-second bound; attempting both sources can take up to about 30 seconds before content retrieval. The receipt identifies HEAD at the start of verification, and the branch may legitimately move afterward. Every explicit POST resolves HEAD afresh regardless of the reader’s current revision. A request cannot supply a different repository, branch, commit, URL, or persistence location.
 
 ## 8. Verify the complete reader result and every image
 
-After checking the receipt’s commit SHA, fetch **GET /api/stories/<slug>** and compare the entire JSON with the prepared lesson. Compare recursively with sorted object keys; do not compare only title, excerpt, or counts. The server pins a successful publication’s verified revision for six minutes; immediate catalogue, lesson, and image reads use that revision unless another successful publication pins a newer one. Their **X-Story-Commit** header must match the accepted receipt commit during this verification.
+After checking the receipt’s commit SHA, fetch **GET /api/stories/<slug>** and compare the entire JSON with the prepared lesson. Compare recursively with sorted object keys; do not compare only title, excerpt, or counts. Successful publication sets the reader’s verified source revision and its six-minute refresh interval. Immediate catalogue, lesson, and image reads use that revision unless another successful publication selects a newer one. Their **X-Story-Commit** header must match the accepted receipt commit during this verification.
 
 Receipt counts describe the stored lesson fields. In particular, the media count counts image references; it does not prove that image bytes have been retrieved. Verify the image requests separately.
 
@@ -301,11 +303,15 @@ For an automated semantic comparison from this repository, adapt the slug below:
     console.log('Commit ' + expectedCommit + ', complete lesson, and all images verified.');
     NODE
 
-The app’s ordinary source cache is approximately 60 seconds. Publication POST resolves branch HEAD through the GitHub API and requests files at the immutable SHA, then pins that verified revision for six minutes. This keeps immediate follow-up reads together and avoids relying on a branch-name URL for publication verification. Normal GET requests do not perform the GitHub API head lookup. The pin is temporary server memory and does not replace GitHub persistence; it can end on server restart, expire, or be replaced by a later successful publication.
+The reader resolves branch HEAD on its first content request, including after restart, and validates the catalogue at that immutable SHA. After a successful resolution, reader requests reuse the revision for six minutes. The next reader request after that interval attempts a new head lookup. Requests share a refresh in progress instead of independently repeating it.
 
-If the commit header is missing or differs during follow-up verification, perform a new publication POST, inspect its returned commit, and repeat the complete checks. A missing header on an ordinary unpinned reader response is not itself a statement that the GitHub content was deleted.
+The six-minute interval controls rechecking; it does not discard the verified commit. If refresh fails, the server keeps the last verified SHA indefinitely within that running process, continues using available files at that immutable revision, and marks the responses **X-Content-Stale: true** while retaining **X-Story-Commit**. It retries an ordinary reader refresh after about one minute. It never switches back to a mutable branch-name URL merely because a refresh interval elapsed.
 
-Upstream availability and caching can still affect ordinary reads and image delivery. If verification fails, inspect the current GitHub branch head and the files at that exact SHA. Do not claim success while the server reports a mismatched commit, mismatched content, or an unavailable source. No separate database or Render deployment is required to publish lesson content.
+An explicit publication POST always performs a fresh lookup. If neither smart HTTP nor REST can establish HEAD, the POST fails with **503 revision_unavailable** and returns no success receipt. Cached reader content cannot satisfy this publication gate.
+
+The retained revision is server memory; GitHub is the durable store. After restart, the first reader resolves HEAD again. Only when no verified revision is available yet may the app serve the deployment snapshot, explicitly marked stale and identified as **X-Story-Source: deployment-snapshot**. Such a response has no verified Git commit header and cannot demonstrate a successful publication. Once a revision has been verified, unavailable files are not silently replaced with an older deployment snapshot.
+
+If the commit header is missing, differs, or accompanies a stale header during follow-up publication verification, perform a new POST, inspect its returned commit, and repeat the complete checks. If verification fails, inspect the current GitHub branch head and the files at that exact SHA. Do not claim success while the server reports a mismatched commit, mismatched content, or an unavailable source. No separate database or Render deployment is required to publish lesson content.
 
 Images are also cacheable. New filenames for changed images make verification and reader updates more reliable.
 
@@ -321,10 +327,10 @@ Images are also cacheable. New filenames for changed images make verification an
 | 415 unsupported_media_type | Send Content-Type: application/json |
 | 429 rate_limited | Respect Retry-After and avoid repeated verification loops |
 | 502 invalid_source | Inspect and fix malformed committed catalogue or lesson data |
-| 503 revision_unavailable | The GitHub branch head could not be authoritatively resolved; preserve the commit and retry verification when that lookup is available |
+| 503 revision_unavailable | Neither Git smart HTTP nor the REST fallback could establish the current branch head; preserve the commit and retry fresh verification |
 | 503 source_unavailable | The upstream cannot be freshly verified; preserve the commit and retry later |
 
-Cached reader content can remain available during a source outage and is marked **X-Content-Stale: true**. A publication receipt is never issued from that fallback.
+Available reader content from the last verified commit can remain readable during a refresh failure, marked **X-Content-Stale: true** and still identified by **X-Story-Commit**. A deployment snapshot is eligible only before any commit has been verified in the current process. A publication receipt is never issued from either fallback.
 
 ## Content updates versus application deployments
 

@@ -149,7 +149,37 @@ document.addEventListener('change',async event=>{const el=event.target;if(el.id=
 document.addEventListener('submit',event=>{const form=event.target;if(!form.classList.contains('cloze-form'))return;event.preventDefault();const c=activeStory?.cloze?.find(c=>c.id===form.dataset.id);if(!c)return;const input=new FormData(form).get('answer').toString().trim();const normal=s=>String(s).trim().toLowerCase().replace(/[.,!?;:]/g,'').replace(/\s+/g,' ');const accepted=[c.answer,...(c.acceptedAnswers||[])];const correct=accepted.some(a=>normal(a)===normal(input));progress.cloze[activeStory.slug]||={};progress.cloze[activeStory.slug][c.id]={input,correct};persist();document.getElementById(`cloze-feedback-${c.id}`).innerHTML=clozeFeedback(c,correct);});
 $('#word-dialog').addEventListener('click',event=>{if(event.target===$('#word-dialog')){const r=event.target.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.target.close();}});
 
-async function route(){const token=++renderVersion;const raw=location.hash.replace(/^#\/?/,'')||(location.pathname.startsWith('/story/')?location.pathname.replace(/^\//,''):'library');if(raw.startsWith('section-')||['quiz-section','cloze-section','grammar-section'].includes(raw))return;const parts=raw.split('/');const view=parts[0];$$('[data-nav]').forEach(a=>{const active=a.dataset.nav===(view==='story'?'library':view);a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});if($('#word-dialog').open)$('#word-dialog').close();window.scrollTo(0,0);try{if(view==='story'&&parts[1]){const slug=decodeURIComponent(parts[1]);const tab=['read','words','practice','speak'].includes(parts[2])?parts[2]:'read';if(!storyCache.has(slug))setMain('<div class="loading-screen"><span class="loading-orbit"></span><p>Opening your story…</p></div>');const story=await loadStory(slug);if(token!==renderVersion)return;visit(slug);wordQuery='';wordFilter='all';flashIndex=0;flashFlipped=false;renderReader(story,tab);}else if(view==='words'){wordQuery='';flashIndex=0;flashFlipped=false;renderWords();}else if(view==='progress')renderProgress();else if(view==='publish')renderPublish();else renderLibrary();}catch(e){if(token!==renderVersion)return;setMain(`<div class="page">${emptyState('We couldn’t open this story.',e.message,`<a href="#library" class="button button-secondary">Back to stories</a>`)}</div>`);}}
+async function route(){
+  const token=++renderVersion;
+  const raw=location.hash.replace(/^#\/?/,'')||(location.pathname.startsWith('/story/')?location.pathname.replace(/^\//,''):'library');
+  if(raw.startsWith('section-')||['quiz-section','cloze-section','grammar-section'].includes(raw))return;
+  const parts=raw.split('/');
+  const view=parts[0];
+  $$('[data-nav]').forEach(a=>{const active=a.dataset.nav===(view==='story'?'library':view);a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  if($('#word-dialog').open)$('#word-dialog').close();
+  let scrollWorkspace=false;
+  try{
+    if(view==='story'&&parts[1]){
+      const slug=decodeURIComponent(parts[1]);
+      const tab=['read','words','practice','speak'].includes(parts[2])?parts[2]:'read';
+      scrollWorkspace=activeStory?.slug===slug;
+      if(!storyCache.has(slug))setMain('<div class="loading-screen"><span class="loading-orbit"></span><p>Opening your story…</p></div>');
+      const story=await loadStory(slug);
+      if(token!==renderVersion)return;
+      visit(slug);wordQuery='';wordFilter='all';flashIndex=0;flashFlipped=false;
+      renderReader(story,tab);
+    }else if(view==='words'){wordQuery='';flashIndex=0;flashFlipped=false;renderWords();}
+    else if(view==='progress')renderProgress();
+    else if(view==='publish')renderPublish();
+    else renderLibrary();
+    requestAnimationFrame(()=>{
+      if(token!==renderVersion)return;
+      const workspace=scrollWorkspace?$('#story-workspace'):null;
+      const top=workspace?Math.max(0,workspace.getBoundingClientRect().top+window.scrollY-($('.site-header')?.getBoundingClientRect().height||0)-($('.reader-toolbar')?.getBoundingClientRect().height||0)-18):0;
+      window.scrollTo({top,left:0,behavior:'instant'});
+    });
+  }catch(e){if(token!==renderVersion)return;setMain(`<div class="page">${emptyState('We couldn’t open this story.',e.message,`<a href="#library" class="button button-secondary">Back to stories</a>`)}</div>`);}
+}
 window.addEventListener('hashchange',route);
 async function init(){try{const results=await Promise.allSettled([api('/api/stories'),api('/api/config'),api('/api/publishing-guide')]);if(results[0].status==='rejected')throw results[0].reason;const data=results[0].value;stories=Array.isArray(data)?data:data.stories||[];stories.forEach(s=>{if(Array.isArray(s.sections)&&Array.isArray(s.vocabulary))storyCache.set(s.slug,s);});if(results[1].status==='fulfilled')config=results[1].value;if(results[2].status==='fulfilled')publishingGuide=results[2].value;await route();}catch(e){setMain(`<div class="page">${emptyState('Your atlas is taking a moment.',e.message,`<button class="button" data-action="retry-load">Try again</button>`)}</div>`);}}
 init();

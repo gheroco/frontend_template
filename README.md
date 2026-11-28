@@ -60,9 +60,11 @@ Read [PUBLISHING.md](PUBLISHING.md). The durable publication flow is:
 
 The POST endpoint verifies content that already exists in the configured repository branch. It cannot write arbitrary material to the repository. GitHub’s authenticated write is the authorization step, so the app does not need a new publishing secret.
 
-For publication, the server resolves the configured branch’s current head through the GitHub API and reads the catalogue and lesson at that immutable commit SHA. The successful receipt identifies this commit in **source.commit**. Check that SHA against the commit you just created; if the branch legitimately advanced, inspect the newer commit before accepting it.
+For publication, the server resolves the configured branch’s current head through Git’s standard smart HTTP **info/refs** advertisement, with the GitHub REST branch-reference API as a fallback. It then reads the catalogue and lesson at that immutable commit SHA. The successful receipt identifies this commit in **source.commit**. Check that SHA against the commit you just created; if the branch legitimately advanced, inspect the newer commit before accepting it. Each lookup attempt is bounded to 15 seconds, so trying both sources can take up to about 30 seconds before content retrieval.
 
-After successful publication, the server pins that verified revision for six minutes, so immediate catalogue, story, and image reads use the same source revision and identify it in **X-Story-Commit**. Every new publication POST resolves branch HEAD again, even while a revision is pinned; normal GET requests do not make that GitHub API lookup. The ordinary source cache lasts approximately 60 seconds; upstream caching can also affect reads outside the pin. The pin is temporary server memory, while the content remains durably committed in GitHub. Content additions do not require a Render deployment or a separate database.
+Reader requests also resolve HEAD on first use, including after a server restart. A successful resolution is reused for six minutes; the next reader request after that interval rechecks the branch. The server retains the last verified commit when a refresh fails, marks the retained responses **X-Content-Stale: true**, and retries reader refresh after about one minute. It does not revert to mutable branch-name reads when the refresh interval ends. Catalogue, story, and local image responses identify their immutable revision in **X-Story-Commit**.
+
+Every explicit publication POST resolves HEAD afresh, independently of the reader refresh interval. Immutable file contents can be reused from the bounded memory cache, while the repository commit remains durable in GitHub. Content additions do not require a Render deployment or a separate database.
 
 Application code changes require a manual Render deployment because this service uses **autoDeploy=no**.
 
@@ -93,7 +95,7 @@ In GitHub mode, the server reads public raw content without storing GitHub crede
 
 Both publication routes require catalogue membership at the resolved commit. The full-lesson route additionally requires semantic equality with that committed JSON: object key order and whitespace may differ, but values and array order must match. In GitHub mode, successful receipts contain the Git commit SHA in **source.commit** and **revision**, a separate content digest in **sha256**, and counts for all lesson collections. The content digest and Git commit SHA identify different things and must not be compared with each other.
 
-Reader responses may use previously retrieved or deployment-snapshot content when the remote source is unavailable. Such responses carry **X-Content-Stale: true**. Publication verification requires a successful branch-head lookup and fresh reads at the resolved commit; it fails when that revision or its content cannot be verified.
+When a reader refresh fails, available content from the last verified commit can remain readable with **X-Content-Stale: true** and its **X-Story-Commit** intact. Only before the server has a verified commit can it fall back to deployment-snapshot content, also explicitly marked stale. Publication verification requires a successful fresh branch-head lookup and reads at the resolved commit; it fails without a receipt when that revision or its content cannot be verified.
 
 ## Content and image credits
 

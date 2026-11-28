@@ -15,7 +15,7 @@ These instructions apply to this application directory and its files.
 - The server uses Node.js built-ins and the browser uses native web APIs. Avoid adding dependencies without a concrete need.
 - Durable lesson content lives in the configured GitHub branch. The publication API verifies committed content; it does not write arbitrary requests to the repository.
 - Keep the configured content source under server control. Never accept a request-provided repository, branch, content URL, or filesystem destination.
-- Preserve exact semantic comparison for full lesson publication, catalogue membership at the same immutable Git commit, authoritative branch-head resolution through the GitHub API, revision pinning after verification, and honest stale-content headers.
+- Preserve exact semantic comparison for full lesson publication, catalogue membership at the same immutable Git commit, authoritative branch-head resolution through Git smart HTTP with REST fallback, retention of the last verified revision, and honest stale-content headers.
 - Do not add or embed credentials or a new publishing secret.
 - Personal learning progress lives in localStorage with export/import. Do not describe it as cloud-synced.
 - Read-aloud uses browser speech synthesis. ChatGPT practice is a copy/open handoff, not access to the user’s subscription.
@@ -40,7 +40,7 @@ These instructions apply to this application directory and its files.
 6. Use the connected GitHub Git Database flow with the current head as parent and an expected-SHA, non-forced ref update. If that safe operation is unavailable, use an authorized normal git fast-forward push.
 7. If the head changed, re-read and merge again. Never force an old catalogue over newer work.
 8. Record the published Git commit SHA. POST the exact JSON to **/api/stories** and require the receipt’s **source.commit** to match it. If the branch legitimately advanced, inspect the newer head and confirm the intended lesson, catalogue, and media before accepting that newer revision.
-9. Verify the whole served lesson, counts, catalogue, and every media URL before reporting success. Require **X-Story-Commit** on pinned catalogue, lesson, and local media responses to match the accepted receipt commit. Keep the receipt’s Git commit SHA distinct from its **sha256** lesson-content digest; media reference counts alone do not verify image bytes.
+9. Verify the whole served lesson, counts, catalogue, and every media URL before reporting success. Require **X-Story-Commit** on catalogue, lesson, and local media responses to match the accepted receipt commit, and reject stale responses as proof of publication. Keep the receipt’s Git commit SHA distinct from its **sha256** lesson-content digest; media reference counts alone do not verify image bytes.
 
 The catalogue may legitimately be empty during initial application deployment. A valid empty catalogue needs no story or media files.
 
@@ -52,8 +52,10 @@ The catalogue may legitimately be empty during initial application deployment. A
 - Inspect the reader on mobile when changing layout, media, or interactions.
 - Content updates are read from GitHub and need no redeployment.
 - Application code, styles, schema, and shipped documentation changes require a manual Render deploy because **autoDeploy=no**.
-- Publication resolves the configured branch head through the GitHub API and reads catalogue and lesson files at that immutable SHA. After success, the server pins the verified revision for six minutes so immediate GET and media reads stay on that revision. Every new POST resolves HEAD again, even during a pin; normal GETs do not perform that API lookup.
-- The ordinary source cache lasts approximately 60 seconds, and upstream reads may still be delayed. The revision pin is temporary server memory, while GitHub remains durable storage. Do not promise a hard visibility deadline or accept an unexpected receipt commit without inspection.
+- Publication resolves the configured branch head through standard Git smart HTTP info/refs, with the GitHub REST branch-reference API as fallback, and reads catalogue and lesson files at that immutable SHA. Each lookup attempt is bounded to 15 seconds; both attempts can total about 30 seconds before content retrieval.
+- The reader resolves HEAD on first use after startup. It reuses a successful resolution for six minutes and rechecks when a reader request arrives after that interval. Concurrent readers share the in-progress refresh. Explicit POST always resolves HEAD afresh.
+- A failed reader refresh retains the last verified SHA, marks available retained responses stale while preserving **X-Story-Commit**, and retries after about one minute. Never discard the verified revision or revert to mutable branch-name reads solely because the refresh interval elapsed.
+- Only before a revision is verified in the current process may a stale deployment snapshot be used. After restart, resolve HEAD again. GitHub remains durable storage; cached or snapshot responses cannot satisfy the fresh-publication gate. Do not promise a hard visibility deadline or accept an unexpected receipt commit without inspection.
 - If a fresh verification fails, report that accurately even when an older cached lesson is still readable.
 
 ## Completion

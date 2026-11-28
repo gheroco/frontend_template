@@ -87,34 +87,98 @@ function counts(story) {
   return { sections: story.sections.length, vocabulary: story.vocabulary.length, quiz: story.quiz.length, cloze: (story.cloze ?? []).length, speaking: (story.speaking ?? []).length, grammar: (story.grammar ?? []).length, media: (story.media ?? []).length, sources: (story.sources ?? []).length };
 }
 
+export function parseGitRefAdvertisement(data, branch) {
+  const target = 'refs/heads/' + branch;
+  let offset = 0;
+  while (offset < data.length) {
+    if (offset + 4 > data.length) throw new Error('Incomplete Git packet header');
+    const hex = data.subarray(offset, offset + 4).toString('ascii');
+    if (!/^[0-9a-f]{4}$/i.test(hex)) throw new Error('Invalid Git packet header');
+    const length = Number.parseInt(hex, 16);
+    offset += 4;
+    if (length === 0) continue;
+    if (length < 4 || offset + length - 4 > data.length) throw new Error('Incomplete Git packet');
+    const packet = data.subarray(offset, offset + length - 4).toString('utf8').split('\0')[0].trimEnd();
+    offset += length - 4;
+    const match = packet.match(/^([a-f0-9]{40}) ([^\s]+)$/);
+    if (match?.[2] === target) return match[1];
+  }
+  throw new Error('Configured branch is absent from Git advertisement');
+}
+
 class ContentSource {
-  constructor(config) { this.config = config; this.cache = new Map(); this.pending = new Map(); this.active = 0; this.waiting = []; this.maxEntries = 250; this.cachedBytes = 0; this.maxCacheBytes = 32 * 1024 * 1024; this.pinnedRevision = null; this.revisionExpiresAt = 0; }
-  currentRevision() { return Date.now() < this.revisionExpiresAt ? this.pinnedRevision : null; }
+  constructor(config) { this.config = config; this.cache = new Map(); this.pending = new Map(); this.active = 0; this.waiting = []; this.maxEntries = 250; this.cachedBytes = 0; this.maxCacheBytes = 32 * 1024 * 1024; this.pinnedRevision = null; this.revisionExpiresAt = 0; this.revisionStale = false; this.revisionError = null; this.revisionRefresh = null; this.revisionGeneration = 0; }
+  hasRevisionResolver() { return this.config.mode === 'github' && Boolean(this.config.smartGitUrl || this.config.refApiUrl); }
+  currentRevision() { return this.pinnedRevision; }
   pinRevision(revision) {
     if (!revision) return;
     this.pinnedRevision = revision;
-    this.revisionExpiresAt = Date.now() + this.config.revisionTtlMs;
+    this.revisionExpiresAt = this.config.now() + this.config.revisionTtlMs;
+    this.revisionStale = false;
+    this.revisionError = null;
+    this.revisionGeneration++;
   }
   async resolveRevision() {
-    if (this.config.mode !== 'github' || !this.config.refApiUrl) return null;
+    if (!this.hasRevisionResolver()) return null;
     return this.slot(async () => {
-      try {
-        const response = await fetch(this.config.refApiUrl, { signal: AbortSignal.timeout(this.config.sourceTimeoutMs), redirect: 'error', headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'Story-Atlas/1.0', 'Cache-Control': 'no-cache' } });
-        if (!response.ok) throw new Error('GitHub ref lookup failed');
-        const chunks = []; let size = 0;
-        for await (const chunk of response.body) {
-          size += chunk.length;
-          if (size > 128 * 1024) throw new Error('GitHub ref response is too large');
-          chunks.push(chunk);
+      const failures = [];
+      const candidates = [
+        { name: 'git', url: this.config.smartGitUrl, accept: 'application/x-git-upload-pack-advertisement', limit: 2 * 1024 * 1024 },
+        { name: 'rest', url: this.config.refApiUrl, accept: 'application/vnd.github+json', limit: 128 * 1024 },
+      ].filter(source => source.url);
+      for (const candidate of candidates) {
+        try {
+          const response = await fetch(candidate.url, { signal: AbortSignal.timeout(this.config.revisionTimeoutMs), redirect: 'error', headers: { Accept: candidate.accept, 'User-Agent': 'Story-Atlas/1.0', 'Cache-Control': 'no-cache' } });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          if (Number(response.headers.get('content-length')) > candidate.limit) throw new Error('Oversized ref response');
+          const chunks = []; let size = 0;
+          for await (const chunk of response.body) {
+            size += chunk.length;
+            if (size > candidate.limit) throw new Error('Oversized ref response');
+            chunks.push(chunk);
+          }
+          const data = Buffer.concat(chunks);
+          const revision = candidate.name === 'git' ? parseGitRefAdvertisement(data, this.config.branch) : JSON.parse(data.toString('utf8'))?.object?.sha;
+          if (!/^[a-f0-9]{40}$/.test(revision ?? '')) throw new Error('Invalid commit SHA');
+          return revision;
+        } catch (error) {
+          // Only bounded diagnostic labels are logged; no tokens, response bodies or request headers.
+          failures.push(candidate.name + ': ' + (error.name === 'TimeoutError' || error.name === 'AbortError' ? 'timeout' : /^HTTP \d+$/.test(error.message) ? error.message : 'invalid or unavailable response'));
         }
-        const data = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-        const revision = data?.object?.sha;
-        if (!/^[a-f0-9]{40}$/.test(revision ?? '')) throw new Error('Invalid GitHub commit SHA');
-        return revision;
-      } catch {
-        throw new ApiError(503, 'The current GitHub branch revision could not be verified. Please try publishing again shortly.', 'revision_unavailable');
       }
+      this.config.logger.warn('Story Atlas revision lookup failed (' + failures.join('; ') + ')');
+      throw new ApiError(503, 'The current GitHub branch revision could not be verified. Please try publishing again shortly.', 'revision_unavailable');
     });
+  }
+  async ensureCurrentRevision() {
+    if (!this.hasRevisionResolver()) return;
+    if (this.config.now() < this.revisionExpiresAt) {
+      if (this.revisionError) throw this.revisionError;
+      return;
+    }
+    if (this.revisionRefresh) return this.revisionRefresh;
+    const generation = this.revisionGeneration;
+    this.revisionRefresh = (async () => {
+      try {
+        const revision = await this.resolveRevision();
+        const manifest = await this.read('index.json', { force: true, revision });
+        validateIndex(manifest.value);
+        // A background reader cannot replace a newer explicit publication.
+        if (generation === this.revisionGeneration) this.pinRevision(revision);
+      } catch (error) {
+        if (generation === this.revisionGeneration) {
+          this.revisionStale = true;
+          this.revisionError = error;
+          this.revisionExpiresAt = this.config.now() + this.config.revisionRetryMs;
+        }
+        throw error;
+      }
+    })();
+    try { await this.revisionRefresh; } finally { this.revisionRefresh = null; }
+  }
+  async snapshot(relative, binary = false) {
+    const data = await this.local(relative, binary ? MAX_IMAGE : MAX_JSON);
+    return { value: binary ? data : JSON.parse(data.toString('utf8')), time: Date.now(), stale: true, origin: 'deployment-snapshot', revision: null };
   }
   async slot(fn) {
     if (this.active >= 6) {
@@ -175,7 +239,8 @@ class ContentSource {
     // A branch read already in flight cannot overwrite a verified immutable revision.
     const cacheKey = (targetRevision ?? 'branch') + ':' + relative;
     const previous = this.cache.get(cacheKey);
-    if (!force && this.config.mode === 'github' && previous && Date.now() - previous.time < this.config.cacheTtlMs) return previous;
+    const freshness = entry => this.revisionStale && targetRevision === this.pinnedRevision ? { ...entry, stale: true } : entry;
+    if (!force && this.config.mode === 'github' && previous && (targetRevision || Date.now() - previous.time < this.config.cacheTtlMs)) return freshness(previous);
     const key = cacheKey + (force ? ':fresh' : ':regular');
     if (this.pending.has(key)) return this.pending.get(key);
     const operation = (async () => {
@@ -186,15 +251,15 @@ class ContentSource {
           try { value = JSON.parse(data.toString('utf8')); } catch { throw new ApiError(502, 'The content source returned invalid JSON.', 'invalid_source'); }
         }
         const entry = { value, bytes: data.length, time: Date.now(), stale: false, origin: this.config.mode, revision: targetRevision };
-        this.save(cacheKey, entry); return entry;
+        this.save(cacheKey, entry); return freshness(entry);
       } catch (error) {
         // A publish receipt always requires an actual fresh source read.
         if (force || this.config.mode === 'local') throw error;
         if (previous) return { ...previous, stale: true };
-        if (this.config.allowSnapshotFallback) {
+        // Once a revision is known, never substitute older deployment content.
+        if (this.config.allowSnapshotFallback && !targetRevision) {
           try {
-            const data = await this.local(relative, binary ? MAX_IMAGE : MAX_JSON);
-            return { value: binary ? data : JSON.parse(data.toString('utf8')), time: Date.now(), stale: true, origin: 'deployment-snapshot' };
+            return await this.snapshot(relative, binary);
           } catch { /* Preserve the remote source error. */ }
         }
         throw error;
@@ -203,11 +268,34 @@ class ContentSource {
     this.pending.set(key, operation);
     try { return await operation; } finally { this.pending.delete(key); }
   }
-  async index(force = false, revision = undefined) { const result = await this.read('index.json', { force, revision }); validateIndex(result.value); return result; }
+  async index(force = false, revision = undefined) {
+    if (!force && revision === undefined) {
+      try { await this.ensureCurrentRevision(); }
+      catch (error) {
+        if (!this.pinnedRevision) {
+          if (!this.config.allowSnapshotFallback) throw error;
+          const result = await this.snapshot('index.json'); validateIndex(result.value); return result;
+        }
+      }
+    }
+    const result = await this.read('index.json', { force, revision }); validateIndex(result.value); return result;
+  }
+  async media(relative) {
+    try { await this.ensureCurrentRevision(); }
+    catch (error) {
+      if (!this.pinnedRevision) {
+        if (!this.config.allowSnapshotFallback) throw error;
+        return this.snapshot('media/' + relative, true);
+      }
+    }
+    return this.read('media/' + relative, { binary: true });
+  }
   async story(slug, { force = false, index = null, revision = undefined } = {}) {
     const manifest = index ?? await this.index(force, revision);
     if (!manifest.value.stories.some(s => s.slug === slug)) throw new ApiError(404, 'This story is not in the published catalogue.', 'story_not_found');
-    const result = await this.read('stories/' + slug + '.json', { force, revision: revision === undefined ? manifest.revision : revision });
+    const result = manifest.origin === 'deployment-snapshot' && !force
+      ? await this.snapshot('stories/' + slug + '.json')
+      : await this.read('stories/' + slug + '.json', { force, revision: revision === undefined ? manifest.revision : revision });
     try { validateStory(result.value); } catch { throw new ApiError(502, 'The saved lesson does not pass validation.', 'invalid_source'); }
     if (result.value.slug !== slug) throw new ApiError(502, 'The source lesson slug does not match its path.', 'invalid_source');
     return { ...result, stale: result.stale || manifest.stale };
@@ -254,10 +342,14 @@ export function createServer(options = {}) {
     projectDir: options.projectDir ?? ROOT,
     cacheTtlMs: options.cacheTtlMs ?? 60000,
     revisionTtlMs: options.revisionTtlMs ?? 360000,
+    revisionRetryMs: options.revisionRetryMs ?? 60000,
+    revisionTimeoutMs: options.revisionTimeoutMs ?? 15000,
     sourceTimeoutMs: options.sourceTimeoutMs ?? 8000,
     allowSnapshotFallback: options.allowSnapshotFallback ?? true,
     publishLimit: options.publishLimit ?? 20,
-    version: options.version ?? '1.0.1',
+    logger: options.logger ?? console,
+    now: options.now ?? Date.now,
+    version: options.version ?? '1.0.2',
   };
   if (!['local', 'github'].includes(config.mode)) throw new Error('SOURCE_MODE must be local or github');
   if (!/^[\w.-]+\/[\w.-]+$/.test(config.repository)) throw new Error('Invalid CONTENT_REPO');
@@ -266,6 +358,7 @@ export function createServer(options = {}) {
   config.sourceRevisionRoot = options.sourceRevisionRoot ?? `https://raw.githubusercontent.com/${config.repository}/`;
   // An injected fixture source has no implicit connection to the public GitHub API.
   config.refApiUrl = options.refApiUrl ?? (options.sourceBaseUrl ? null : `https://api.github.com/repos/${config.repository}/git/ref/heads/${config.branch.split('/').map(encodeURIComponent).join('/')}`);
+  config.smartGitUrl = options.smartGitUrl ?? (options.sourceBaseUrl ? null : `https://github.com/${config.repository}.git/info/refs?service=git-upload-pack`);
   const source = new ContentSource(config);
   let publicationWindow = { start: Date.now(), count: 0 };
   const rate = () => {
@@ -309,7 +402,7 @@ export function createServer(options = {}) {
         if (pathname.startsWith('/media/')) {
           const relative = pathname.slice(7);
           if (!/^[a-zA-Z0-9][a-zA-Z0-9_./-]*$/.test(relative) || relative.split('/').some(x => x.startsWith('.')) || !IMAGE_EXTENSIONS.has(path.extname(relative).toLowerCase())) throw new ApiError(404, 'Image not found.', 'not_found');
-          const result = await source.read('media/' + relative, { binary: true });
+          const result = await source.media(relative);
           res.setHeader('Content-Type', MIME[path.extname(relative).toLowerCase()]);
           res.setHeader('Cache-Control', 'public, max-age=300');
           res.setHeader('X-Story-Source', result.origin);
