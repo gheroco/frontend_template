@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">From ancient seabed to island cliffs</title>
+  <desc id="desc">Four conceptual cross sections explain limestone landscapes. Marine carbonate sediments accumulate and become limestone. Tectonic uplift and fracturing expose rock. Mildly acidic water dissolves cracks, forming caves and karst. Sea-level change and coastal erosion reshape the surviving hills into islands. Ancient rock and the much younger coastline have different ages. Processes overlap; this is not to scale and does not show every rock type on Phi Phi.</desc>
+  <defs>
+    <pattern id="beds" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="26" height="26" fill="#d8c8a8"/>
+      <path d="M0 1H26M0 25H26" stroke="#b6a282" stroke-width="2"/>
+    </pattern>
+    <marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d8735c"/></marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#167d86"/></marker>
+    <clipPath id="p1"><rect x="56" y="202" width="416" height="164" rx="14"/></clipPath>
+    <clipPath id="p2"><rect x="528" y="202" width="416" height="164" rx="14"/></clipPath>
+    <clipPath id="p3"><rect x="56" y="574" width="416" height="164" rx="14"/></clipPath>
+    <clipPath id="p4"><rect x="528" y="574" width="416" height="164" rx="14"/></clipPath>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #163f42; }
+      .heading { font-size: 29px; font-weight: 700; }
+      .body { font-size: 25px; }
+      .number { font-size: 27px; font-weight: 700; fill: #fffaf1; }
+      .label { font-size: 24px; font-weight: 700; }
+      .note { font-size: 24px; }
+    </style>
+  </defs>
+  <rect width="1000" height="1000" fill="#faf6ec"/>
+  <rect x="34" y="35" width="7" height="60" rx="3.5" fill="#d8735c"/>
+  <text x="58" y="65" font-size="42" font-weight="700">From ancient seabed</text>
+  <text x="58" y="111" font-size="42" font-weight="700">to island cliffs</text>
+  <text x="944" y="104" text-anchor="end" class="note" fill="#567475">THE LIMESTONE STORY</text>
+
+  <!-- 1: sediment accumulation and lithification -->
+  <rect x="34" y="140" width="460" height="350" rx="22" fill="#fffdf8" stroke="#e3dccb" stroke-width="2"/>
+  <circle cx="73" cy="174" r="21" fill="#d8735c"/><text x="73" y="183" text-anchor="middle" class="number">1</text>
+  <text x="108" y="184" class="heading">A seabed becomes rock</text>
+  <g clip-path="url(#p1)">
+    <rect x="56" y="202" width="416" height="164" fill="#bfe8e5"/>
+    <path d="M56 214Q82 202 108 214T160 214T212 214T264 214T316 214T368 214T420 214T472 214" fill="none" stroke="#4ba9ad" stroke-width="4"/>
+    <rect x="56" y="295" width="416" height="71" fill="url(#beds)"/>
+    <path d="M56 295Q115 285 170 295T285 295T400 295T490 295" fill="none" stroke="#b6a282" stroke-width="4"/>
+    <g fill="#fffaf1" stroke="#8a9e91" stroke-width="2">
+      <path d="M97 260Q112 239 127 260Z"/><path d="M254 253Q269 232 284 253Z"/><path d="M365 277Q380 256 395 277Z"/>
+      <circle cx="180" cy="266" r="4"/><circle cx="203" cy="245" r="3"/><circle cx="324" cy="263" r="4"/>
+    </g>
+    <g stroke="#167d86" stroke-width="4" marker-end="url(#arrow-teal)"><path d="M142 245V278"/><path d="M305 239V275"/></g>
+    <text x="262" y="344" text-anchor="middle" class="label">LIMESTONE</text>
+  </g>
+  <text x="56" y="402" class="body"><tspan x="56">Marine carbonate sediments</tspan><tspan x="56" dy="31">build up, compact and cement</tspan><tspan x="56" dy="31">into limestone.</tspan></text>
+
+  <!-- 2: uplift and fractures -->
+  <rect x="506" y="140" width="460" height="350" rx="22" fill="#fffdf8" stroke="#e3dccb" stroke-width="2"/>
+  <circle cx="545" cy="174" r="21" fill="#d8735c"/><text x="545" y="183" text-anchor="middle" class="number">2</text>
+  <text x="580" y="184" class="heading">The rock rises and cracks</text>
+  <g clip-path="url(#p2)">
+    <rect x="528" y="202" width="416" height="164" fill="#e0eeea"/>
+    <path d="M528 301L591 283L660 235L718 244L778 221L836 254L892 264L944 282V366H528Z" fill="url(#beds)" stroke="#a99373" stroke-width="3"/>
+    <path d="M660 235L672 270L663 297L684 339M778 221L762 254L781 283L766 322" fill="none" stroke="#536a60" stroke-width="5"/>
+    <g stroke="#d8735c" stroke-width="5" marker-end="url(#arrow-coral)"><path d="M586 349V306"/><path d="M739 350V300"/><path d="M891 348V299"/></g>
+  </g>
+  <text x="528" y="402" class="body"><tspan x="528">Tectonic movements lift and</tspan><tspan x="528" dy="31">fracture rock. Limestone is</tspan><tspan x="528" dy="31">exposed to air and water.</tspan></text>
+
+  <!-- 3: solution along cracks -->
+  <rect x="34" y="512" width="460" height="350" rx="22" fill="#fffdf8" stroke="#e3dccb" stroke-width="2"/>
+  <circle cx="73" cy="546" r="21" fill="#d8735c"/><text x="73" y="555" text-anchor="middle" class="number">3</text>
+  <text x="108" y="556" class="heading">Water slowly dissolves it</text>
+  <g clip-path="url(#p3)">
+    <rect x="56" y="574" width="416" height="164" fill="#e0eeea"/>
+    <path d="M56 632L109 625L159 606L193 627L234 619L276 630L323 605L370 616L421 628L472 622V738H56Z" fill="url(#beds)" stroke="#a99373" stroke-width="3"/>
+    <path d="M193 627L201 649L185 677C154 664 130 684 133 704C137 722 168 724 191 714L237 707C267 706 282 719 309 712C334 703 336 681 313 672L323 605" fill="none" stroke="#407b7c" stroke-width="11" stroke-linecap="round"/>
+    <path d="M193 627L201 649L185 677C154 664 130 684 133 704C137 722 168 724 191 714L237 707C267 706 282 719 309 712C334 703 336 681 313 672L323 605" fill="none" stroke="#72c9c4" stroke-width="5" stroke-linecap="round"/>
+    <g stroke="#167d86" stroke-width="4" stroke-linecap="round"><path d="M177 584L171 596M218 580L212 592M257 586L251 598M301 581L295 593M343 580L337 592"/></g>
+    <text x="375" y="703" class="label">CAVE</text>
+  </g>
+  <text x="56" y="774" class="body"><tspan x="56">Mildly acidic water widens</tspan><tspan x="56" dy="31">cracks into caves and shapes</tspan><tspan x="56" dy="31">the karst landscape.</tspan></text>
+
+  <!-- 4: coast and islands -->
+  <rect x="506" y="512" width="460" height="350" rx="22" fill="#fffdf8" stroke="#e3dccb" stroke-width="2"/>
+  <circle cx="545" cy="546" r="21" fill="#d8735c"/><text x="545" y="555" text-anchor="middle" class="number">4</text>
+  <text x="580" y="556" class="heading">A coastline takes shape</text>
+  <g clip-path="url(#p4)">
+    <rect x="528" y="574" width="416" height="164" fill="#e0eeea"/>
+    <path d="M586 738L601 654L609 615L632 598L653 611L670 661L679 738Z" fill="url(#beds)" stroke="#a99373" stroke-width="3"/>
+    <path d="M757 738L767 661L775 639L792 630L811 637L821 667L831 738Z" fill="url(#beds)" stroke="#a99373" stroke-width="3"/>
+    <path d="M608 618L632 598L653 611L658 629L634 620Z" fill="#4f8271"/>
+    <path d="M775 640L792 630L811 637L816 648L795 645Z" fill="#4f8271"/>
+    <path d="M528 689Q560 680 592 689T656 689T720 689T784 689T848 689T912 689T976 689V738H528Z" fill="#55b9b5" fill-opacity=".86"/>
+    <path d="M543 710Q561 701 579 710M692 714Q710 705 728 714M852 711Q870 702 888 711" fill="none" stroke="#def4ee" stroke-width="4"/>
+    <path d="M920 603V659" stroke="#167d86" stroke-width="4" marker-start="url(#arrow-coral)" marker-end="url(#arrow-teal)"/>
+  </g>
+  <text x="528" y="774" class="body"><tspan x="528">Sea-level change and coastal</tspan><tspan x="528" dy="31">erosion reshape surviving hills</tspan><tspan x="528" dy="31">into the islands we see.</tspan></text>
+
+  <text x="500" y="904" text-anchor="middle" font-size="27" font-weight="700">Ancient limestone. A much younger coastline.</text>
+  <text x="500" y="941" text-anchor="middle" class="note">Conceptual cross sections · Processes overlap · Not to scale</text>
+  <text x="500" y="974" text-anchor="middle" class="note">Phi Phi also contains other rock types.</text>
+</svg>

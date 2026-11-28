@@ -1,0 +1,1900 @@
+{
+  "slug": "phi-phi-islands-stone-sea-and-second-chances",
+  "title": "Phi Phi Islands: A Story Written in Stone and Sea",
+  "subtitle": "Ancient cliffs, island lives, living reefs, and the patient work of protecting a remarkable place.",
+  "description": "Explore Phi Phi through a complete illustrated story: all six islands, limestone and karst, local maritime heritage, Viking Cave, coral reefs, the 2004 tsunami, and Maya Bay’s conservation journey. Includes maps, credited photographs, Armenian vocabulary, grammar, and speaking practice.",
+  "excerpt": "Follow the story beneath the postcard—from an ancient seabed to the communities and living reefs of today.",
+  "category": "Places, nature & culture",
+  "level": "B1–B2",
+  "language": "en",
+  "estimatedMinutes": 38,
+  "tags": [
+    "Thailand",
+    "Phi Phi Islands",
+    "Krabi",
+    "Andaman Sea",
+    "Geology",
+    "Marine life",
+    "Conservation",
+    "Culture",
+    "Travel English"
+  ],
+  "createdAt": "2026-11-28T10:16:05Z",
+  "sections": [
+    {
+      "id": "arrival",
+      "title": "1. A first glimpse of Phi Phi",
+      "paragraphs": [
+        "Imagine approaching Phi Phi by boat. At first, the islands are dark shapes on the horizon. As the distance closes, those shapes separate into cliffs, green slopes, and bright lines of sand. The water changes colour beneath you. A long-tail boat crosses the view, its narrow hull suddenly very small against a wall of rock. For a moment, the landscape seems almost impossible: so much stone, standing so steeply, in so much sea.",
+        "This is an imagined journey through a real place. The geography, history, and science that follow are grounded in the linked sources; the descriptive passages invite you to look closely rather than claim that a particular conversation or personal visit took place. Practical information was checked on 28 November 2026. The photographs have their own dates, and some show conditions before modern visitor controls.",
+        "Phi Phi rewards more than a quick photograph. Look at a cliff and you can ask how a seabed became a mountain. Look through clear water and you can ask how living animals build a reef. Look at a village and you can ask whose home lies inside the holiday picture. The islands bring these questions together in a remarkably small space.",
+        "Our journey begins with the map, moves backwards into deep time, and then returns to the people and living sea of today. Along the way, you will meet useful English words for describing nature, change, responsibility, and travel. Let the story give those words a place in your memory."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine approaching Phi Phi by boat. At first, the islands are dark shapes on the horizon. As the distance closes, those shapes separate into cliffs, green slopes, and bright lines of sand. The water changes colour beneath you. A long-tail boat crosses the view, its narrow hull suddenly very small against a wall of rock. For a moment, the landscape seems almost impossible: so much stone, standing so steeply, in so much sea."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is an imagined journey through a real place. The geography, history, and science that follow are grounded in the linked sources; the descriptive passages invite you to look closely rather than claim that a particular conversation or personal visit took place. Practical information was checked on 28 November 2026. The photographs have their own dates, and some show conditions before modern visitor controls."
+        },
+        {
+          "type": "paragraph",
+          "text": "Phi Phi rewards more than a quick photograph. Look at a cliff and you can ask how a seabed became a mountain. Look through clear water and you can ask how living animals build a reef. Look at a village and you can ask whose home lies inside the holiday picture. The islands bring these questions together in a remarkably small space."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our journey begins with the map, moves backwards into deep time, and then returns to the people and living sea of today. Along the way, you will meet useful English words for describing nature, change, responsibility, and travel. Let the story give those words a place in your memory."
+        }
+      ],
+      "sourceIds": [
+        "tat-park"
+      ]
+    },
+    {
+      "id": "six-island-map",
+      "title": "2. Reading the map: six islands, several different worlds",
+      "paragraphs": [
+        "The Phi Phi Islands are an archipelago in the Andaman Sea, off Thailand’s southwestern coast. Southern Thailand stretches along a peninsula, and Phi Phi lies offshore from its mainland coast. The islands belong to Krabi province, although many visitors travel there from Phuket. The group lies within the wider setting of Hat Noppharat Thara–Mu Ko Phi Phi National Park. Phuket is a convenient departure point; it is not the province to which Phi Phi belongs.",
+        "The six principal islands are easiest to remember as two larger islands, two northern neighbours, and two small southern rocks:",
+        "Names vary between maps. Ko and Koh both represent the Thai word for island. You may see Leh written as Le or Ley, and Bida written as Pida. These are spelling differences, not additional islands. Ton Sai may appear as Tonsai; Loh Dalum may appear as Loh Dalam. Learning the relationship between places is more useful than memorizing one English spelling.",
+        "Use the [regional map](https://story-atlas-gk.onrender.com/media/phi-phi-regional-map.svg) to place Phi Phi between Phuket and the Krabi coast. Then open the [island map](https://story-atlas-gk.onrender.com/media/phi-phi-island-map.svg) to locate the six islands and the bays on Phi Phi Leh. Both are original educational maps made from credited geographic data. Open them at full size for the clearest labels; they are not nautical charts.",
+        "One distinction prevents a common misunderstanding: Phi Phi and Phang Nga Bay are separate destinations. Ko Panyi and the famous James Bond Island belong to the Phang Nga Bay story. The beautiful limestone scenery links these places in the imagination, but the islands are not interchangeable on a map."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The Phi Phi Islands are an archipelago in the Andaman Sea, off Thailand’s southwestern coast. Southern Thailand stretches along a peninsula, and Phi Phi lies offshore from its mainland coast. The islands belong to Krabi province, although many visitors travel there from Phuket. The group lies within the wider setting of Hat Noppharat Thara–Mu Ko Phi Phi National Park. Phuket is a convenient departure point; it is not the province to which Phi Phi belongs."
+        },
+        {
+          "type": "paragraph",
+          "text": "The six principal islands are easiest to remember as two larger islands, two northern neighbours, and two small southern rocks:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Phi Phi Don: the largest island and the main centre of settlement, accommodation, and visitor services.",
+            "Phi Phi Leh: the island of Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave, south of Phi Phi Don.",
+            "Ko Yung, often called Mosquito Island: one of the northern islands.",
+            "Ko Mai Phai, commonly called Bamboo Island: a northern island with a conspicuous sandy shore.",
+            "Bida Nai and Bida Nok: small rocky islands south of Phi Phi Leh, associated with the surrounding underwater landscape."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Names vary between maps. Ko and Koh both represent the Thai word for island. You may see Leh written as Le or Ley, and Bida written as Pida. These are spelling differences, not additional islands. Ton Sai may appear as Tonsai; Loh Dalum may appear as Loh Dalam. Learning the relationship between places is more useful than memorizing one English spelling."
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the [regional map](https://story-atlas-gk.onrender.com/media/phi-phi-regional-map.svg) to place Phi Phi between Phuket and the Krabi coast. Then open the [island map](https://story-atlas-gk.onrender.com/media/phi-phi-island-map.svg) to locate the six islands and the bays on Phi Phi Leh. Both are original educational maps made from credited geographic data. Open them at full size for the clearest labels; they are not nautical charts."
+        },
+        {
+          "type": "paragraph",
+          "text": "One distinction prevents a common misunderstanding: Phi Phi and Phang Nga Bay are separate destinations. Ko Panyi and the famous James Bond Island belong to the Phang Nga Bay story. The beautiful limestone scenery links these places in the imagination, but the islands are not interchangeable on a map."
+        }
+      ],
+      "sourceIds": [
+        "tat-islands",
+        "osm",
+        "natural-earth"
+      ],
+      "bullets": [
+        "Phi Phi Don: the largest island and the main centre of settlement, accommodation, and visitor services.",
+        "Phi Phi Leh: the island of Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave, south of Phi Phi Don.",
+        "Ko Yung, often called Mosquito Island: one of the northern islands.",
+        "Ko Mai Phai, commonly called Bamboo Island: a northern island with a conspicuous sandy shore.",
+        "Bida Nai and Bida Nok: small rocky islands south of Phi Phi Leh, associated with the surrounding underwater landscape."
+      ]
+    },
+    {
+      "id": "ancient-seas",
+      "title": "3. Before the islands: a world beneath the water",
+      "paragraphs": [
+        "To understand the cliffs, think far beyond the length of a holiday, a human life, or a civilization. Significant limestone formations in the Phi Phi area belong to Permian rock units: a chapter of Earth history hundreds of millions of years old. The stone is much older than the shoreline you see today. A rock’s age and the age of its present shape are different questions.",
+        "Limestone commonly begins with material accumulating in a marine environment. Calcium carbonate can come from the skeletal remains of organisms and from other carbonate material. Layer after layer collects as sediment. With burial and geological change, loose deposits become solid rock. The huge cliff that now seems completely separate from life can therefore contain a record of ancient living systems.",
+        "Try a small thought experiment. Imagine placing a thin sheet of paper on a table each day. One sheet looks insignificant. A long accumulation becomes a stack. Now replace paper with sediment, days with vast stretches of time, and the table with an ancient seabed. The comparison is imperfect, but it makes one idea visible: a large structure can emerge through the accumulation of very small contributions.",
+        "Phi Phi Don also has a more complicated geological story than the phrase ‘old coral island’ suggests. Researchers have studied sandstone, mudstone, and shale there, including deposits interpreted in relation to ancient cooler-water environments. These rocks preserve evidence different from that of the towering limestone. Scientific interpretation comes from the layers, fossils, and structures together; one attractive explanation cannot replace all that evidence.",
+        "The regional landscape was also affected by tectonic movements. Rock layers were deformed, fractured, and raised. Uplift helped expose material that had formed in older marine settings. The result was a landscape that rain, groundwater, gravity, and eventually the present sea could continue to reshape. Phi Phi’s cliffs are pages in a long history, with several processes written over one another."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "To understand the cliffs, think far beyond the length of a holiday, a human life, or a civilization. Significant limestone formations in the Phi Phi area belong to Permian rock units: a chapter of Earth history hundreds of millions of years old. The stone is much older than the shoreline you see today. A rock’s age and the age of its present shape are different questions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Limestone commonly begins with material accumulating in a marine environment. Calcium carbonate can come from the skeletal remains of organisms and from other carbonate material. Layer after layer collects as sediment. With burial and geological change, loose deposits become solid rock. The huge cliff that now seems completely separate from life can therefore contain a record of ancient living systems."
+        },
+        {
+          "type": "paragraph",
+          "text": "Try a small thought experiment. Imagine placing a thin sheet of paper on a table each day. One sheet looks insignificant. A long accumulation becomes a stack. Now replace paper with sediment, days with vast stretches of time, and the table with an ancient seabed. The comparison is imperfect, but it makes one idea visible: a large structure can emerge through the accumulation of very small contributions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Phi Phi Don also has a more complicated geological story than the phrase ‘old coral island’ suggests. Researchers have studied sandstone, mudstone, and shale there, including deposits interpreted in relation to ancient cooler-water environments. These rocks preserve evidence different from that of the towering limestone. Scientific interpretation comes from the layers, fossils, and structures together; one attractive explanation cannot replace all that evidence."
+        },
+        {
+          "type": "paragraph",
+          "text": "The regional landscape was also affected by tectonic movements. Rock layers were deformed, fractured, and raised. Uplift helped expose material that had formed in older marine settings. The result was a landscape that rain, groundwater, gravity, and eventually the present sea could continue to reshape. Phi Phi’s cliffs are pages in a long history, with several processes written over one another."
+        }
+      ],
+      "sourceIds": [
+        "nasa-geology",
+        "ratburi",
+        "phi-phi-geology"
+      ]
+    },
+    {
+      "id": "water-sculpts-stone",
+      "title": "4. How water learns to carve stone",
+      "paragraphs": [
+        "Solid rock looks permanent because we compare it with the short timescale of our own lives. Limestone becomes easier to understand when we change the clock. Water that seems harmless in your hand can transform a limestone landscape when it acts repeatedly over enormous periods.",
+        "Rainwater takes up carbon dioxide, especially as it passes through soil. This produces a weak acid. As the water moves into cracks and along the boundaries between rock layers, it can dissolve calcium carbonate. Small passages widen. Some openings develop into caves. Water follows existing weaknesses, so the shape of the original fractures helps guide the shape of the later landscape.",
+        "A landscape strongly shaped by the dissolution of soluble rock is called karst. In southern Thailand, some surviving masses form steep hills and towers. Chemical dissolution works alongside physical erosion: material is loosened, carried away, and sometimes lost when sections collapse. Vegetation grows wherever roots can find enough space and moisture, softening the colour of the rock without removing its steepness.",
+        "Imagine a thick piece of ice with several cracks in it. Water finds the cracks first, and the block changes unevenly. Limestone is not ice, and the chemistry and timescale are different, but the comparison helps explain why a landscape does not simply wear down into one smooth surface. Weaknesses matter. Some parts disappear faster than others.",
+        "Along the coast, waves, salt, organisms, and changes in sea level continue to alter the surviving rock. A cave mouth, an overhang, or a narrow notch near the water can record processes that remain active. Present islands are the result of a long history of rock formation, exposure, weathering, and coastal change. They did not suddenly appear in a single dramatic event.",
+        "The [limestone diagram](https://story-atlas-gk.onrender.com/media/phi-phi-limestone-story.svg) separates four ideas: sediment becomes rock; tectonic movement exposes it; water enlarges cracks and sculpts karst; coastal processes reshape the remaining hills. The drawing is deliberately simplified. In the real world, processes overlap, and each cliff has its own history."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Solid rock looks permanent because we compare it with the short timescale of our own lives. Limestone becomes easier to understand when we change the clock. Water that seems harmless in your hand can transform a limestone landscape when it acts repeatedly over enormous periods."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rainwater takes up carbon dioxide, especially as it passes through soil. This produces a weak acid. As the water moves into cracks and along the boundaries between rock layers, it can dissolve calcium carbonate. Small passages widen. Some openings develop into caves. Water follows existing weaknesses, so the shape of the original fractures helps guide the shape of the later landscape."
+        },
+        {
+          "type": "paragraph",
+          "text": "A landscape strongly shaped by the dissolution of soluble rock is called karst. In southern Thailand, some surviving masses form steep hills and towers. Chemical dissolution works alongside physical erosion: material is loosened, carried away, and sometimes lost when sections collapse. Vegetation grows wherever roots can find enough space and moisture, softening the colour of the rock without removing its steepness."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagine a thick piece of ice with several cracks in it. Water finds the cracks first, and the block changes unevenly. Limestone is not ice, and the chemistry and timescale are different, but the comparison helps explain why a landscape does not simply wear down into one smooth surface. Weaknesses matter. Some parts disappear faster than others."
+        },
+        {
+          "type": "paragraph",
+          "text": "Along the coast, waves, salt, organisms, and changes in sea level continue to alter the surviving rock. A cave mouth, an overhang, or a narrow notch near the water can record processes that remain active. Present islands are the result of a long history of rock formation, exposure, weathering, and coastal change. They did not suddenly appear in a single dramatic event."
+        },
+        {
+          "type": "paragraph",
+          "text": "The [limestone diagram](https://story-atlas-gk.onrender.com/media/phi-phi-limestone-story.svg) separates four ideas: sediment becomes rock; tectonic movement exposes it; water enlarges cracks and sculpts karst; coastal processes reshape the remaining hills. The drawing is deliberately simplified. In the real world, processes overlap, and each cliff has its own history."
+        }
+      ],
+      "sourceIds": [
+        "nps-karst",
+        "tower-karst",
+        "nasa-geology"
+      ]
+    },
+    {
+      "id": "phi-phi-don",
+      "title": "5. Phi Phi Don: the island with two faces of the sea",
+      "paragraphs": [
+        "Phi Phi Don’s central geography is especially memorable. Two larger areas of higher ground are connected by a low, narrow strip of land. Ton Sai Bay lies on one side and Loh Dalum Bay on the other. This strip is an isthmus. From a viewpoint, you can see how close the two shores are, with the settlement between them.",
+        "At ground level, the same arrangement feels different. A visitor experiences paths, buildings, luggage, meals, and the search for a particular pier. From above, those details become part of a clear shape. A viewpoint changes your perspective: it helps you understand the island as a whole instead of a sequence of small tasks.",
+        "Look carefully at the panorama in this lesson. First identify the two bays. Then find the low connecting land. Finally follow the higher ground away from the settlement. You are reading a landscape, rather than merely admiring it. The photograph also helps explain why a beautiful location can be vulnerable: a low strip bordered by water has different risks from the surrounding hills.",
+        "The main inhabited island is also the practical centre of a wider network. A bed, a meal, a boat trip, and a bag of supplies all depend on people doing ordinary work. It is useful to imagine the activities that a holiday photograph leaves outside its frame: equipment being repaired, goods being unloaded, rooms being cleaned, and someone getting ready for another shift. This is a way of seeing a destination as a working community.",
+        "Do not let one busy bay stand for the whole of Phi Phi Don. The map shows other stretches of coast, headlands, and bays, while the island’s northern end includes Laem Tong. Equally, do not assume that an apparently nearby place is easily reached on foot. Hills and broken coastlines make straight-line distance a poor guide to the effort of a journey. Ask locally about the actual route."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Phi Phi Don’s central geography is especially memorable. Two larger areas of higher ground are connected by a low, narrow strip of land. Ton Sai Bay lies on one side and Loh Dalum Bay on the other. This strip is an isthmus. From a viewpoint, you can see how close the two shores are, with the settlement between them."
+        },
+        {
+          "type": "paragraph",
+          "text": "At ground level, the same arrangement feels different. A visitor experiences paths, buildings, luggage, meals, and the search for a particular pier. From above, those details become part of a clear shape. A viewpoint changes your perspective: it helps you understand the island as a whole instead of a sequence of small tasks."
+        },
+        {
+          "type": "paragraph",
+          "text": "Look carefully at the panorama in this lesson. First identify the two bays. Then find the low connecting land. Finally follow the higher ground away from the settlement. You are reading a landscape, rather than merely admiring it. The photograph also helps explain why a beautiful location can be vulnerable: a low strip bordered by water has different risks from the surrounding hills."
+        },
+        {
+          "type": "paragraph",
+          "text": "The main inhabited island is also the practical centre of a wider network. A bed, a meal, a boat trip, and a bag of supplies all depend on people doing ordinary work. It is useful to imagine the activities that a holiday photograph leaves outside its frame: equipment being repaired, goods being unloaded, rooms being cleaned, and someone getting ready for another shift. This is a way of seeing a destination as a working community."
+        },
+        {
+          "type": "paragraph",
+          "text": "Do not let one busy bay stand for the whole of Phi Phi Don. The map shows other stretches of coast, headlands, and bays, while the island’s northern end includes Laem Tong. Equally, do not assume that an apparently nearby place is easily reached on foot. Hills and broken coastlines make straight-line distance a poor guide to the effort of a journey. Ask locally about the actual route."
+        }
+      ],
+      "sourceIds": [
+        "osm",
+        "tsunami-isthmus"
+      ]
+    },
+    {
+      "id": "home-and-community",
+      "title": "6. Before a postcard, a home",
+      "paragraphs": [
+        "The word ‘paradise’ can hide people. It encourages us to imagine a place made entirely for visitors: empty beaches, friendly service, and an uninterrupted view. A fuller story asks who already belongs to the place, what they value, and how their lives change when the rest of the world arrives.",
+        "Historical research documents an Urak Lawoi community at Laem Tong on Phi Phi Don. The Urak Lawoi are one of the maritime peoples of Thailand’s Andaman coast, with histories connected to fishing, gathering, movement between islands, and settled communities. A 1984 study of Laem Tong is part of that record. It establishes historical presence; it does not give permission to describe every resident today through the circumstances of forty years ago.",
+        "Older tourism writing sometimes uses the label ‘sea gypsies’. That expression can flatten different peoples into a single romantic image. Urak Lawoi, Moken, and Moklen are distinct names and communities, and their histories should not be treated as interchangeable. Where a community’s own name is known, using it is a small but meaningful act of accuracy.",
+        "There is also a difference between learning about a culture and treating people as an attraction. A person standing outside a home has not automatically agreed to become part of a visitor’s photograph. Asking permission, listening without demanding a performance, and accepting an answer of ‘no’ make curiosity more respectful. These principles matter as much on a famous island as anywhere else.",
+        "Tourism raises questions of livelihood: how people earn enough to support themselves and their families. Visitors may bring income and opportunities while also increasing pressure on space, services, and natural resources. The useful question is how a destination can support both residents and the environment over time. A sustainable island economy needs more than beautiful water in its advertisements.",
+        "As you read, keep a simple sentence in mind: ‘This place is someone’s home.’ It changes the way you interpret noise, rubbish, photographs, prices, and requests from local staff. It also gives the story human depth. The island continues after your boat leaves."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The word ‘paradise’ can hide people. It encourages us to imagine a place made entirely for visitors: empty beaches, friendly service, and an uninterrupted view. A fuller story asks who already belongs to the place, what they value, and how their lives change when the rest of the world arrives."
+        },
+        {
+          "type": "paragraph",
+          "text": "Historical research documents an Urak Lawoi community at Laem Tong on Phi Phi Don. The Urak Lawoi are one of the maritime peoples of Thailand’s Andaman coast, with histories connected to fishing, gathering, movement between islands, and settled communities. A 1984 study of Laem Tong is part of that record. It establishes historical presence; it does not give permission to describe every resident today through the circumstances of forty years ago."
+        },
+        {
+          "type": "paragraph",
+          "text": "Older tourism writing sometimes uses the label ‘sea gypsies’. That expression can flatten different peoples into a single romantic image. Urak Lawoi, Moken, and Moklen are distinct names and communities, and their histories should not be treated as interchangeable. Where a community’s own name is known, using it is a small but meaningful act of accuracy."
+        },
+        {
+          "type": "paragraph",
+          "text": "There is also a difference between learning about a culture and treating people as an attraction. A person standing outside a home has not automatically agreed to become part of a visitor’s photograph. Asking permission, listening without demanding a performance, and accepting an answer of ‘no’ make curiosity more respectful. These principles matter as much on a famous island as anywhere else."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tourism raises questions of livelihood: how people earn enough to support themselves and their families. Visitors may bring income and opportunities while also increasing pressure on space, services, and natural resources. The useful question is how a destination can support both residents and the environment over time. A sustainable island economy needs more than beautiful water in its advertisements."
+        },
+        {
+          "type": "paragraph",
+          "text": "As you read, keep a simple sentence in mind: ‘This place is someone’s home.’ It changes the way you interpret noise, rubbish, photographs, prices, and requests from local staff. It also gives the story human depth. The island continues after your boat leaves."
+        }
+      ],
+      "sourceIds": [
+        "urak-history",
+        "urak-culture",
+        "maritime-peoples"
+      ]
+    },
+    {
+      "id": "phi-phi-leh",
+      "title": "7. Around Phi Phi Leh: four places to keep separate",
+      "paragraphs": [
+        "South of Phi Phi Don, Phi Phi Leh offers another arrangement of stone and water. It is the island most closely associated with the dramatic image of a bay enclosed by high limestone walls. To understand a boat trip around it, learn four names before you arrive: Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave.",
+        "Maya Bay opens on the western side of the island. Pileh Lagoon is a separate inlet on the eastern side. Loh Samah lies near the southern end and is important in the managed approach to Maya Bay. Viking Cave is farther north along the eastern coast. The detailed map shows why these names can appear together on an excursion while referring to different places.",
+        "Imagine rounding a headland here. One wall of rock slides out of sight and another comes forward. From one angle the island seems solid; from another, an opening becomes visible. The boat’s movement reveals the geography in stages. A photograph taken from a single position can rarely explain the whole shape.",
+        "Pileh’s enclosed water and tall cliffs make it especially useful for noticing scale. The boat in the photograph gives your eye something familiar to compare with the rock. Without it, a cliff may appear much smaller than it is. Pay attention, too, to shadows. A shaded wall can make the water beneath it appear dramatically darker than sunlit water only a short distance away.",
+        "Keep the rules for each place separate. Permission to swim at one approved stop does not create permission to swim in Maya Bay. Boat access, visitor movement, and temporary restrictions are managed locally and can change. The most useful travel question is precise: ‘Is swimming permitted at this particular stop today?’ That question serves you better than a general promise that the tour includes swimming."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "South of Phi Phi Don, Phi Phi Leh offers another arrangement of stone and water. It is the island most closely associated with the dramatic image of a bay enclosed by high limestone walls. To understand a boat trip around it, learn four names before you arrive: Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave."
+        },
+        {
+          "type": "paragraph",
+          "text": "Maya Bay opens on the western side of the island. Pileh Lagoon is a separate inlet on the eastern side. Loh Samah lies near the southern end and is important in the managed approach to Maya Bay. Viking Cave is farther north along the eastern coast. The detailed map shows why these names can appear together on an excursion while referring to different places."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagine rounding a headland here. One wall of rock slides out of sight and another comes forward. From one angle the island seems solid; from another, an opening becomes visible. The boat’s movement reveals the geography in stages. A photograph taken from a single position can rarely explain the whole shape."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pileh’s enclosed water and tall cliffs make it especially useful for noticing scale. The boat in the photograph gives your eye something familiar to compare with the rock. Without it, a cliff may appear much smaller than it is. Pay attention, too, to shadows. A shaded wall can make the water beneath it appear dramatically darker than sunlit water only a short distance away."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the rules for each place separate. Permission to swim at one approved stop does not create permission to swim in Maya Bay. Boat access, visitor movement, and temporary restrictions are managed locally and can change. The most useful travel question is precise: ‘Is swimming permitted at this particular stop today?’ That question serves you better than a general promise that the tour includes swimming."
+        }
+      ],
+      "sourceIds": [
+        "osm",
+        "tat-park",
+        "maya-rules"
+      ]
+    },
+    {
+      "id": "viking-cave",
+      "title": "8. Viking Cave and the memory of passing boats",
+      "paragraphs": [
+        "Viking Cave has a name that can start the wrong story. It may suggest northern European explorers arriving on a tropical shore, but the popular English nickname is not evidence of a Viking settlement. The more carefully supported story is about maritime contact and the images people left on cave walls.",
+        "Researchers studying Phrayanaga, the cave’s other name, recorded at least 76 depictions of watercraft. Their comparative work connects the images with several vessel traditions, including Thai, Chinese, European, Indonesian, and Arabian examples. Much of the art was assigned an approximate range from the late sixteenth to the early twentieth century through comparison and relative dating. These are scholarly interpretations, not exact dates written beside every boat.",
+        "Think about what a drawn vessel can preserve. Its outline may hold the memory of a sail, a hull, or an unfamiliar shape passing through the region. For an archaeologist, such details become evidence. For a reader, they open a different perspective on the sea: water that seems to separate islands can also connect them through travel, exchange, and work.",
+        "It is tempting to complete the picture with a dramatic invented sailor. We do not need to. The surviving marks are already interesting, and the gaps in our knowledge deserve to remain visible. We can ask who made a particular drawing without pretending that we know the person’s name, language, or reason for drawing it.",
+        "The cave photograph in this lesson shows the opening from the water, not the paintings inside. A boat-side view should not be described as a complete archaeological visit, and an excursion should not be assumed to include entry. What you can see from outside is still part of the story: a dark opening in a cliff, holding evidence that asks for closer and more careful interpretation."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Viking Cave has a name that can start the wrong story. It may suggest northern European explorers arriving on a tropical shore, but the popular English nickname is not evidence of a Viking settlement. The more carefully supported story is about maritime contact and the images people left on cave walls."
+        },
+        {
+          "type": "paragraph",
+          "text": "Researchers studying Phrayanaga, the cave’s other name, recorded at least 76 depictions of watercraft. Their comparative work connects the images with several vessel traditions, including Thai, Chinese, European, Indonesian, and Arabian examples. Much of the art was assigned an approximate range from the late sixteenth to the early twentieth century through comparison and relative dating. These are scholarly interpretations, not exact dates written beside every boat."
+        },
+        {
+          "type": "paragraph",
+          "text": "Think about what a drawn vessel can preserve. Its outline may hold the memory of a sail, a hull, or an unfamiliar shape passing through the region. For an archaeologist, such details become evidence. For a reader, they open a different perspective on the sea: water that seems to separate islands can also connect them through travel, exchange, and work."
+        },
+        {
+          "type": "paragraph",
+          "text": "It is tempting to complete the picture with a dramatic invented sailor. We do not need to. The surviving marks are already interesting, and the gaps in our knowledge deserve to remain visible. We can ask who made a particular drawing without pretending that we know the person’s name, language, or reason for drawing it."
+        },
+        {
+          "type": "paragraph",
+          "text": "The cave photograph in this lesson shows the opening from the water, not the paintings inside. A boat-side view should not be described as a complete archaeological visit, and an excursion should not be assumed to include entry. What you can see from outside is still part of the story: a dark opening in a cliff, holding evidence that asks for closer and more careful interpretation."
+        }
+      ],
+      "sourceIds": [
+        "viking-research"
+      ]
+    },
+    {
+      "id": "smaller-islands",
+      "title": "9. Beyond the famous bay: the smaller islands",
+      "paragraphs": [
+        "A famous destination often becomes reduced to one image. For Phi Phi, that image is frequently Maya Bay. The smaller islands remind us to widen the frame. They are part of the same archipelago, but their appearance and role in a journey can be quite different.",
+        "North of Phi Phi Don lie Ko Yung and Ko Mai Phai. Ko Mai Phai is widely known as Bamboo Island. In the photograph, the shore offers a broad meeting of pale sand, water, and vegetation. The visual rhythm is gentler than the high walls of Phi Phi Leh: a long horizontal beach replaces the sudden vertical face of a cliff.",
+        "Farther south, beyond Phi Phi Leh, lie Bida Nai and Bida Nok. On a map they are small, but the land above water is only part of what makes an island significant. For anyone interested in marine habitats, the shape and condition of the submerged environment matter too. A tiny rock can help you remember that the visible world is not the whole world.",
+        "A place appearing on a map does not guarantee access. Park authorities may restrict a site for recovery, conditions may make a landing unsuitable, and an operator may choose a different route. Treat the six-island list as an explanation of geography rather than a checklist that must be completed. A good visit can be rich without reaching every named place.",
+        "Try comparing the images in English: ‘Phi Phi Leh has steep cliffs, whereas Bamboo Island has a more open sandy shore.’ Comparisons make vocabulary useful because they give you a reason to choose words such as steep, sheltered, narrow, wide, and exposed."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A famous destination often becomes reduced to one image. For Phi Phi, that image is frequently Maya Bay. The smaller islands remind us to widen the frame. They are part of the same archipelago, but their appearance and role in a journey can be quite different."
+        },
+        {
+          "type": "paragraph",
+          "text": "North of Phi Phi Don lie Ko Yung and Ko Mai Phai. Ko Mai Phai is widely known as Bamboo Island. In the photograph, the shore offers a broad meeting of pale sand, water, and vegetation. The visual rhythm is gentler than the high walls of Phi Phi Leh: a long horizontal beach replaces the sudden vertical face of a cliff."
+        },
+        {
+          "type": "paragraph",
+          "text": "Farther south, beyond Phi Phi Leh, lie Bida Nai and Bida Nok. On a map they are small, but the land above water is only part of what makes an island significant. For anyone interested in marine habitats, the shape and condition of the submerged environment matter too. A tiny rock can help you remember that the visible world is not the whole world."
+        },
+        {
+          "type": "paragraph",
+          "text": "A place appearing on a map does not guarantee access. Park authorities may restrict a site for recovery, conditions may make a landing unsuitable, and an operator may choose a different route. Treat the six-island list as an explanation of geography rather than a checklist that must be completed. A good visit can be rich without reaching every named place."
+        },
+        {
+          "type": "paragraph",
+          "text": "Try comparing the images in English: ‘Phi Phi Leh has steep cliffs, whereas Bamboo Island has a more open sandy shore.’ Comparisons make vocabulary useful because they give you a reason to choose words such as steep, sheltered, narrow, wide, and exposed."
+        }
+      ],
+      "sourceIds": [
+        "tat-islands",
+        "osm"
+      ]
+    },
+    {
+      "id": "colours-of-water",
+      "title": "10. Why the sea has so many colours",
+      "paragraphs": [
+        "Around tropical islands, the sea can look deep blue, emerald green, pale turquoise, or grey within a short journey. Some of that variation comes from the changing sky and the angle at which you look. But the colour of the sea is not simply a reflection of the sky.",
+        "Water absorbs different colours of light differently. Red wavelengths are absorbed more readily, while blue light remains more visible in clear water. In shallow places, light can reach a pale sandy seabed and return upward, helping create a bright turquoise appearance. Suspended sediment, tiny organisms, depth, and surface conditions all affect the result.",
+        "Now return to the boat in your imagination. Beneath it, the bottom changes, the depth changes, and the cliffs throw moving shadows. A cloud passes in front of the sun. The water has not been replaced, yet the view can alter in seconds. What looks like one stable colour in a photograph is part of an active relationship between light, water, and the seabed.",
+        "The practical lesson is an inference from that science: colour cannot tell you everything you need to know. Clear, beautiful water does not prove that a current is weak, that the depth is suitable, or that swimming is permitted. A still photograph cannot show the force that may be moving through it. Enjoy the colour while using local guidance for decisions about entering the water.",
+        "For English practice, move beyond ‘The sea is beautiful.’ Try ‘The shallow water is pale turquoise, while the water beside the cliff looks much darker.’ The second sentence shows what you actually noticed. Precise observation gives you more to say."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Around tropical islands, the sea can look deep blue, emerald green, pale turquoise, or grey within a short journey. Some of that variation comes from the changing sky and the angle at which you look. But the colour of the sea is not simply a reflection of the sky."
+        },
+        {
+          "type": "paragraph",
+          "text": "Water absorbs different colours of light differently. Red wavelengths are absorbed more readily, while blue light remains more visible in clear water. In shallow places, light can reach a pale sandy seabed and return upward, helping create a bright turquoise appearance. Suspended sediment, tiny organisms, depth, and surface conditions all affect the result."
+        },
+        {
+          "type": "paragraph",
+          "text": "Now return to the boat in your imagination. Beneath it, the bottom changes, the depth changes, and the cliffs throw moving shadows. A cloud passes in front of the sun. The water has not been replaced, yet the view can alter in seconds. What looks like one stable colour in a photograph is part of an active relationship between light, water, and the seabed."
+        },
+        {
+          "type": "paragraph",
+          "text": "The practical lesson is an inference from that science: colour cannot tell you everything you need to know. Clear, beautiful water does not prove that a current is weak, that the depth is suitable, or that swimming is permitted. A still photograph cannot show the force that may be moving through it. Enjoy the colour while using local guidance for decisions about entering the water."
+        },
+        {
+          "type": "paragraph",
+          "text": "For English practice, move beyond ‘The sea is beautiful.’ Try ‘The shallow water is pale turquoise, while the water beside the cliff looks much darker.’ The second sentence shows what you actually noticed. Precise observation gives you more to say."
+        }
+      ],
+      "sourceIds": [
+        "water-colour",
+        "noaa-colour"
+      ]
+    },
+    {
+      "id": "living-reef",
+      "title": "11. The living city beneath the surface",
+      "paragraphs": [
+        "A reef may look like an underwater garden, but the corals that build much of it are animals. Tiny organisms called polyps live together in colonies. Many reef-building corals produce hard calcium-carbonate skeletons. Over time, their growth helps create a structure that supports many other forms of marine life.",
+        "Many shallow-water corals also depend on a close partnership with microscopic algae living in their tissues. The algae use sunlight to make food and provide important benefits to their hosts. The coral provides a protected environment and materials the algae can use. This relationship helps explain why suitable light and water conditions matter so much to a reef.",
+        "A reef is a habitat, a place where organisms live and find the conditions they need. Crevices offer shelter. Different surfaces provide different opportunities for feeding, hiding, and growing. Biodiversity describes the variety of living things and the wider variety of life within such systems. The value of a reef is therefore much larger than the colour of one coral or the appearance of one fish.",
+        "This is also a fragile environment. An anchor can damage a coral structure, and repeated contact from visitors can add pressure. Pollution and poor water quality introduce other stresses. The underwater landscape may seem strong because it is hard, yet hardness does not mean that every part of it can withstand careless contact.",
+        "Coral bleaching is another important process. Under stress, including excessive heat, a coral can lose the algae that normally live in its tissues. Its pale skeleton then becomes more visible. A bleached coral is stressed, but it is not necessarily already dead. Recovery is possible if conditions improve; severe or prolonged stress can kill it. Calling all white coral ‘dead’ would miss an important distinction.",
+        "Local conservation can reduce direct damage, while warming seas create pressures on a much wider scale. A restriction on boats does not change global ocean temperature. This is why a successful local project and an ongoing climate threat can both be real at the same time. The island’s future depends on several kinds of action working together.",
+        "There is an extraordinary connection here. The cliffs record ancient marine material, and living corals are still making carbonate structures today. They are different systems separated by immense time, yet they help us see how life and stone can be related. If you snorkel at an approved site, observing without touching is already a way to respect that long process."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A reef may look like an underwater garden, but the corals that build much of it are animals. Tiny organisms called polyps live together in colonies. Many reef-building corals produce hard calcium-carbonate skeletons. Over time, their growth helps create a structure that supports many other forms of marine life."
+        },
+        {
+          "type": "paragraph",
+          "text": "Many shallow-water corals also depend on a close partnership with microscopic algae living in their tissues. The algae use sunlight to make food and provide important benefits to their hosts. The coral provides a protected environment and materials the algae can use. This relationship helps explain why suitable light and water conditions matter so much to a reef."
+        },
+        {
+          "type": "paragraph",
+          "text": "A reef is a habitat, a place where organisms live and find the conditions they need. Crevices offer shelter. Different surfaces provide different opportunities for feeding, hiding, and growing. Biodiversity describes the variety of living things and the wider variety of life within such systems. The value of a reef is therefore much larger than the colour of one coral or the appearance of one fish."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is also a fragile environment. An anchor can damage a coral structure, and repeated contact from visitors can add pressure. Pollution and poor water quality introduce other stresses. The underwater landscape may seem strong because it is hard, yet hardness does not mean that every part of it can withstand careless contact."
+        },
+        {
+          "type": "paragraph",
+          "text": "Coral bleaching is another important process. Under stress, including excessive heat, a coral can lose the algae that normally live in its tissues. Its pale skeleton then becomes more visible. A bleached coral is stressed, but it is not necessarily already dead. Recovery is possible if conditions improve; severe or prolonged stress can kill it. Calling all white coral ‘dead’ would miss an important distinction."
+        },
+        {
+          "type": "paragraph",
+          "text": "Local conservation can reduce direct damage, while warming seas create pressures on a much wider scale. A restriction on boats does not change global ocean temperature. This is why a successful local project and an ongoing climate threat can both be real at the same time. The island’s future depends on several kinds of action working together."
+        },
+        {
+          "type": "paragraph",
+          "text": "There is an extraordinary connection here. The cliffs record ancient marine material, and living corals are still making carbonate structures today. They are different systems separated by immense time, yet they help us see how life and stone can be related. If you snorkel at an approved site, observing without touching is already a way to respect that long process."
+        }
+      ],
+      "sourceIds": [
+        "coral-animals",
+        "coral-partners",
+        "coral-habitat",
+        "coral-bleaching"
+      ]
+    },
+    {
+      "id": "tsunami-and-memory",
+      "title": "12. The morning that changed the islands",
+      "paragraphs": [
+        "On 26 December 2004, a magnitude 9.1 earthquake occurred off northern Sumatra. The movement of the seabed generated a tsunami that devastated communities around the Indian Ocean. Phi Phi Don was among the places severely affected. Any honest story of the islands needs room for this history, even when the view today is bright and welcoming.",
+        "The shape we admired from the viewpoint helps explain the island’s vulnerability. The central settlement occupied a low sandy isthmus between higher limestone areas. Scientific studies describe tsunami water entering through the northern and southern bays and inundating the narrow connecting strip. The surrounding hills and the low settlement did not face the same conditions.",
+        "A tsunami behaves differently from the small wind-driven waves familiar at a beach. It can arrive as a rapid rise or powerful rush of water and as a succession of waves. In some cases, the water first withdraws unusually far, exposing the seabed. Such behaviour is a warning, not an invitation to walk out and investigate. The first arrival also does not mean that the danger has ended.",
+        "The loss was human before it was architectural. People lost family members, friends, homes, and livelihoods. Rebuilding a guesthouse or reopening a path is a visible achievement, but grief does not follow a construction schedule. A visitor should not turn this history into a dramatic background for photographs or ask a resident to recount a painful experience for entertainment.",
+        "Resilience is the ability to recover and adapt after difficulty. In a place affected by disaster, it includes practical work, relationships, memory, and preparation. The word should not become a demand that people always appear strong. A rebuilt community can hold both daily joy and lasting sorrow.",
+        "For a present-day visitor, the useful response is calm preparation: notice the marked evacuation routes and know how to reach higher ground. Natural warnings include strong or prolonged shaking, a sudden unusual change in the sea, or a loud ocean roar. If one occurs, evacuate to higher ground along marked routes as soon as you can move safely; do not wait for an official warning. Crossing the low isthmus to the opposite beach is not the same as reaching safety. Stay outside the hazard area until local authorities give the all-clear.",
+        "When you look again at the twin bays, allow the view to hold more than one meaning. It can be beautiful, geographically remarkable, and connected to a difficult human past. Understanding all three gives the landscape depth."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "On 26 December 2004, a magnitude 9.1 earthquake occurred off northern Sumatra. The movement of the seabed generated a tsunami that devastated communities around the Indian Ocean. Phi Phi Don was among the places severely affected. Any honest story of the islands needs room for this history, even when the view today is bright and welcoming."
+        },
+        {
+          "type": "paragraph",
+          "text": "The shape we admired from the viewpoint helps explain the island’s vulnerability. The central settlement occupied a low sandy isthmus between higher limestone areas. Scientific studies describe tsunami water entering through the northern and southern bays and inundating the narrow connecting strip. The surrounding hills and the low settlement did not face the same conditions."
+        },
+        {
+          "type": "paragraph",
+          "text": "A tsunami behaves differently from the small wind-driven waves familiar at a beach. It can arrive as a rapid rise or powerful rush of water and as a succession of waves. In some cases, the water first withdraws unusually far, exposing the seabed. Such behaviour is a warning, not an invitation to walk out and investigate. The first arrival also does not mean that the danger has ended."
+        },
+        {
+          "type": "paragraph",
+          "text": "The loss was human before it was architectural. People lost family members, friends, homes, and livelihoods. Rebuilding a guesthouse or reopening a path is a visible achievement, but grief does not follow a construction schedule. A visitor should not turn this history into a dramatic background for photographs or ask a resident to recount a painful experience for entertainment."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resilience is the ability to recover and adapt after difficulty. In a place affected by disaster, it includes practical work, relationships, memory, and preparation. The word should not become a demand that people always appear strong. A rebuilt community can hold both daily joy and lasting sorrow."
+        },
+        {
+          "type": "paragraph",
+          "text": "For a present-day visitor, the useful response is calm preparation: notice the marked evacuation routes and know how to reach higher ground. Natural warnings include strong or prolonged shaking, a sudden unusual change in the sea, or a loud ocean roar. If one occurs, evacuate to higher ground along marked routes as soon as you can move safely; do not wait for an official warning. Crossing the low isthmus to the opposite beach is not the same as reaching safety. Stay outside the hazard area until local authorities give the all-clear."
+        },
+        {
+          "type": "paragraph",
+          "text": "When you look again at the twin bays, allow the view to hold more than one meaning. It can be beautiful, geographically remarkable, and connected to a difficult human past. Understanding all three gives the landscape depth."
+        }
+      ],
+      "sourceIds": [
+        "tsunami-event",
+        "tsunami-isthmus",
+        "tsunami-waves",
+        "tsunami-safety"
+      ]
+    },
+    {
+      "id": "cinema-and-demand",
+      "title": "13. When a beach becomes a worldwide image",
+      "paragraphs": [
+        "The film The Beach, released in 2000 and directed by Danny Boyle, helped make Maya Bay internationally recognizable. Leonardo DiCaprio’s presence and the striking scenery brought the location to a large audience. Tourism existed before the film, so it would be inaccurate to treat the movie as the beginning of all interest in Phi Phi. It did, however, become an important part of the bay’s global image.",
+        "A film can create a powerful expectation. Viewers remember a curve of sand or a wall of cliffs, then imagine finding the same feeling in person. Yet the film is a selected and constructed experience. A real destination includes other visitors, local work, weather, rules, and the time needed to get there. Expecting a place to reproduce a scene can make it harder to appreciate the place itself.",
+        "In Maya Bay, rising demand became an environmental management problem. Official accounts describe very large numbers of visitors before the 2018 closure and the need to allow damaged ecosystems to recover. The lesson reaches beyond this one location: when many people seek the same small space, individually understandable choices can add up to overcrowding.",
+        "Picture one boat arriving at a quiet beach. Now imagine another, then another, and then the repeated arrivals of a whole day. The issue is the combined pressure: movement, noise, landing, waste, and contact with the environment. A place does not need a malicious visitor to be damaged. Sometimes it needs a better way to manage the total number and behaviour of ordinary visitors.",
+        "That is why popularity and quality are different measures. A beach can be widely desired while struggling to accommodate the demand. For the next chapter of Maya Bay, managers had to ask a difficult question: what should access look like if the place is to remain alive and worth visiting?"
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The film The Beach, released in 2000 and directed by Danny Boyle, helped make Maya Bay internationally recognizable. Leonardo DiCaprio’s presence and the striking scenery brought the location to a large audience. Tourism existed before the film, so it would be inaccurate to treat the movie as the beginning of all interest in Phi Phi. It did, however, become an important part of the bay’s global image."
+        },
+        {
+          "type": "paragraph",
+          "text": "A film can create a powerful expectation. Viewers remember a curve of sand or a wall of cliffs, then imagine finding the same feeling in person. Yet the film is a selected and constructed experience. A real destination includes other visitors, local work, weather, rules, and the time needed to get there. Expecting a place to reproduce a scene can make it harder to appreciate the place itself."
+        },
+        {
+          "type": "paragraph",
+          "text": "In Maya Bay, rising demand became an environmental management problem. Official accounts describe very large numbers of visitors before the 2018 closure and the need to allow damaged ecosystems to recover. The lesson reaches beyond this one location: when many people seek the same small space, individually understandable choices can add up to overcrowding."
+        },
+        {
+          "type": "paragraph",
+          "text": "Picture one boat arriving at a quiet beach. Now imagine another, then another, and then the repeated arrivals of a whole day. The issue is the combined pressure: movement, noise, landing, waste, and contact with the environment. A place does not need a malicious visitor to be damaged. Sometimes it needs a better way to manage the total number and behaviour of ordinary visitors."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is why popularity and quality are different measures. A beach can be widely desired while struggling to accommodate the demand. For the next chapter of Maya Bay, managers had to ask a difficult question: what should access look like if the place is to remain alive and worth visiting?"
+        }
+      ],
+      "sourceIds": [
+        "film",
+        "maya-closure"
+      ]
+    },
+    {
+      "id": "maya-repair",
+      "title": "14. Maya Bay and the patient work of repair",
+      "paragraphs": [
+        "Maya Bay closed to visitors in June 2018 and remained closed for about three and a half years. Visitors returned on 1 January 2022 under a changed management approach. The interruption was a recognition that keeping a place available every day can conflict with keeping it healthy over the long term.",
+        "The new approach changed how people entered and used the area. Access was organized through Loh Samah on the opposite side of the island, with movement toward Maya Bay managed from there. Swimming in Maya Bay was prohibited. The photograph of boats pulled onto Maya’s beach in 2013 belongs to the earlier period; it should not be used to infer what is allowed now.",
+        "Recovery also involves active work. A government report on the 2026 Save Maya, Save Pakarang project describes cooperation among park authorities, conservation groups, and local networks. Activities included education, planting shoreline trees, and installing mooring buoys to help organize boats and reduce anchor damage. Conservation happens through practical decisions as well as through a closed gate.",
+        "It helps to distinguish conservation from restoration. Conservation protects a place and reduces damage. Restoration tries to help a damaged system regain important features or functions. The two can overlap. Preventing new damage is often necessary for repair to have a chance, while a repair project cannot make unlimited future pressure harmless.",
+        "The idea of capacity is useful here. It means the amount that something can reasonably hold or handle. For a small bay, capacity is not just the number of people who physically fit on the sand. It also concerns ecological disturbance, safe movement, staff, facilities, and the quality of the experience. Different conditions may require different limits.",
+        "This creates a difficult conversation because restrictions affect livelihoods as well as visitors. Boat operators, guides, and other workers are part of the system. A thoughtful conservation story considers how rules are communicated, how local knowledge is included, and how a healthier environment can support future work. It does not pretend that every choice is easy.",
+        "The most hopeful part of the story is that management can change. Human decisions contributed to pressure; human decisions can also reduce it. The outcome still needs observation, honest evaluation, and adjustment. ‘We have started to repair the damage’ is a more useful promise than ‘Everything is fixed forever.’"
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Maya Bay closed to visitors in June 2018 and remained closed for about three and a half years. Visitors returned on 1 January 2022 under a changed management approach. The interruption was a recognition that keeping a place available every day can conflict with keeping it healthy over the long term."
+        },
+        {
+          "type": "paragraph",
+          "text": "The new approach changed how people entered and used the area. Access was organized through Loh Samah on the opposite side of the island, with movement toward Maya Bay managed from there. Swimming in Maya Bay was prohibited. The photograph of boats pulled onto Maya’s beach in 2013 belongs to the earlier period; it should not be used to infer what is allowed now."
+        },
+        {
+          "type": "paragraph",
+          "text": "Recovery also involves active work. A government report on the 2026 Save Maya, Save Pakarang project describes cooperation among park authorities, conservation groups, and local networks. Activities included education, planting shoreline trees, and installing mooring buoys to help organize boats and reduce anchor damage. Conservation happens through practical decisions as well as through a closed gate."
+        },
+        {
+          "type": "paragraph",
+          "text": "It helps to distinguish conservation from restoration. Conservation protects a place and reduces damage. Restoration tries to help a damaged system regain important features or functions. The two can overlap. Preventing new damage is often necessary for repair to have a chance, while a repair project cannot make unlimited future pressure harmless."
+        },
+        {
+          "type": "paragraph",
+          "text": "The idea of capacity is useful here. It means the amount that something can reasonably hold or handle. For a small bay, capacity is not just the number of people who physically fit on the sand. It also concerns ecological disturbance, safe movement, staff, facilities, and the quality of the experience. Different conditions may require different limits."
+        },
+        {
+          "type": "paragraph",
+          "text": "This creates a difficult conversation because restrictions affect livelihoods as well as visitors. Boat operators, guides, and other workers are part of the system. A thoughtful conservation story considers how rules are communicated, how local knowledge is included, and how a healthier environment can support future work. It does not pretend that every choice is easy."
+        },
+        {
+          "type": "paragraph",
+          "text": "The most hopeful part of the story is that management can change. Human decisions contributed to pressure; human decisions can also reduce it. The outcome still needs observation, honest evaluation, and adjustment. ‘We have started to repair the damage’ is a more useful promise than ‘Everything is fixed forever.’"
+        }
+      ],
+      "sourceIds": [
+        "maya-closure",
+        "maya-reopened",
+        "maya-project",
+        "maya-rules",
+        "maya-2026"
+      ]
+    },
+    {
+      "id": "sharks-and-evidence",
+      "title": "15. What the returning sharks can tell us",
+      "paragraphs": [
+        "In November 2026, an official report offered an encouraging piece of evidence from Maya Bay. A research team, including students from Prince of Songkhla University, surveyed blacktip reef sharks during 3–9 November using drones, underwater cameras, and water-quality testing. The government reported a peak count of 451 sharks, the highest in the monitoring series that began in 2023, with adults and young observed.",
+        "This is a survey result. It does not mean that exactly 451 individual sharks permanently live in the bay, and it does not promise that a visitor will see that number. Animals move; observations depend on timing, conditions, and method. Being precise about a number makes the conservation story more trustworthy, not less interesting.",
+        "The authorities interpreted the findings as encouraging evidence for ongoing closures and tourism management. We can welcome that interpretation while keeping its limits clear. A shark observation does not measure every coral colony, every water-quality problem, or the experience of every local resident. Different questions need different kinds of evidence.",
+        "Imagine listening to an orchestra through a partly open door. Hearing one instrument clearly tells you something real, but it does not tell you everything about the performance. In the same way, one positive indicator can be valuable without becoming a certificate that an entire ecosystem has fully recovered.",
+        "For a visitor, the best response is to give wildlife space. Seeing an animal should not become a reason to chase it, feed it, or enter a restricted area. The possibility of observing a living place is itself a privilege. Sometimes the most responsible photograph is the one taken from farther away."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In November 2026, an official report offered an encouraging piece of evidence from Maya Bay. A research team, including students from Prince of Songkhla University, surveyed blacktip reef sharks during 3–9 November using drones, underwater cameras, and water-quality testing. The government reported a peak count of 451 sharks, the highest in the monitoring series that began in 2023, with adults and young observed."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is a survey result. It does not mean that exactly 451 individual sharks permanently live in the bay, and it does not promise that a visitor will see that number. Animals move; observations depend on timing, conditions, and method. Being precise about a number makes the conservation story more trustworthy, not less interesting."
+        },
+        {
+          "type": "paragraph",
+          "text": "The authorities interpreted the findings as encouraging evidence for ongoing closures and tourism management. We can welcome that interpretation while keeping its limits clear. A shark observation does not measure every coral colony, every water-quality problem, or the experience of every local resident. Different questions need different kinds of evidence."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagine listening to an orchestra through a partly open door. Hearing one instrument clearly tells you something real, but it does not tell you everything about the performance. In the same way, one positive indicator can be valuable without becoming a certificate that an entire ecosystem has fully recovered."
+        },
+        {
+          "type": "paragraph",
+          "text": "For a visitor, the best response is to give wildlife space. Seeing an animal should not become a reason to chase it, feed it, or enter a restricted area. The possibility of observing a living place is itself a privilege. Sometimes the most responsible photograph is the one taken from farther away."
+        }
+      ],
+      "sourceIds": [
+        "shark-survey",
+        "coral-bleaching"
+      ]
+    },
+    {
+      "id": "seasons-and-motion",
+      "title": "16. The sea has a calendar of its own",
+      "paragraphs": [
+        "Thailand’s climate is influenced by monsoons: large seasonal patterns of wind. The southwest monsoon generally brings moist air from the Indian Ocean from around mid-May to mid-October. The northeast monsoon follows, usually from around mid-October to mid-February. The timing varies, and the effects differ between the country’s coasts.",
+        "For Phi Phi, this matters because a boat journey takes place on an exposed sea, not on a painted blue background. A season often described as favourable can still include rain, wind, or an unsuitable crossing. A sheltered-looking bay and the open water outside it can feel very different. Seasonal guidance is useful for planning, but the forecast and local decisions matter for the particular day.",
+        "The tide changes water levels; currents move water through and around the landscape. These are related to the conditions a visitor experiences, yet they are not interchangeable words. Saying ‘The tide is low’ does not by itself describe the strength of a current. A skilled boat crew reads several conditions together.",
+        "This is a good place to practise flexible language: ‘We were planning to visit the lagoon, but we may change the route if the sea becomes rough.’ The sentence leaves room for reality. Flexibility is especially valuable on an island journey, where a responsible decision may be to delay, skip a stop, or turn back.",
+        "As of the information checked for this lesson on 28 November 2026, TAT had confirmed that Maya Bay reopened on 1 October 2026. That dated statement describes a documented reopening; it is not a promise of access on every future day. Park announcements, weather, and operational conditions can change after publication."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Thailand’s climate is influenced by monsoons: large seasonal patterns of wind. The southwest monsoon generally brings moist air from the Indian Ocean from around mid-May to mid-October. The northeast monsoon follows, usually from around mid-October to mid-February. The timing varies, and the effects differ between the country’s coasts."
+        },
+        {
+          "type": "paragraph",
+          "text": "For Phi Phi, this matters because a boat journey takes place on an exposed sea, not on a painted blue background. A season often described as favourable can still include rain, wind, or an unsuitable crossing. A sheltered-looking bay and the open water outside it can feel very different. Seasonal guidance is useful for planning, but the forecast and local decisions matter for the particular day."
+        },
+        {
+          "type": "paragraph",
+          "text": "The tide changes water levels; currents move water through and around the landscape. These are related to the conditions a visitor experiences, yet they are not interchangeable words. Saying ‘The tide is low’ does not by itself describe the strength of a current. A skilled boat crew reads several conditions together."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is a good place to practise flexible language: ‘We were planning to visit the lagoon, but we may change the route if the sea becomes rough.’ The sentence leaves room for reality. Flexibility is especially valuable on an island journey, where a responsible decision may be to delay, skip a stop, or turn back."
+        },
+        {
+          "type": "paragraph",
+          "text": "As of the information checked for this lesson on 28 November 2026, TAT had confirmed that Maya Bay reopened on 1 October 2026. That dated statement describes a documented reopening; it is not a promise of access on every future day. Park announcements, weather, and operational conditions can change after publication."
+        }
+      ],
+      "sourceIds": [
+        "monsoons",
+        "andaman-2026",
+        "tides-currents"
+      ]
+    },
+    {
+      "id": "responsible-visit",
+      "title": "17. Visiting well: choices that belong to the story",
+      "paragraphs": [
+        "A thoughtful visit begins before you step into a boat. Ask which stops are actually included, whether landings depend on conditions, what conservation rules apply, and how the operator manages safety. Clear answers help you understand the trip you are buying and the place you are about to enter.",
+        "The visitor arrangements checked for this lesson include the prohibition on swimming in Maya Bay and the managed approach through Loh Samah. Official guidance also addresses litter, feeding wildlife, collecting marine material, and damaging coral. Follow the latest park signs and staff instructions if they differ from an old photograph, a remembered itinerary, or a social-media post.",
+        "Electronic national-park admission is another practical detail to check. TAT’s October 2026 guidance says that Phi Phi is among the marine parks using electronic tickets and advises visitors to have passport information ready. Confirm the latest process with your operator before departure. Exact fees, departure times, and daily visitor limits are deliberately not fixed in this story because they can change.",
+        "Wastewater is part of the larger tourism question. Every destination must manage what happens after a shower, a meal, or a visit to a toilet. Visitors do not see most of that infrastructure, yet it affects the environment they came to enjoy. Asking whether an accommodation or operator can explain its practices is more useful than trusting a vague green label.",
+        "These choices can also improve the experience. Watching a fish behave naturally is more revealing than attracting it with food. Hearing a guide explain a restriction can teach you something that a hurried photograph cannot. The island becomes more interesting when you understand why a particular action matters."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A thoughtful visit begins before you step into a boat. Ask which stops are actually included, whether landings depend on conditions, what conservation rules apply, and how the operator manages safety. Clear answers help you understand the trip you are buying and the place you are about to enter."
+        },
+        {
+          "type": "paragraph",
+          "text": "The visitor arrangements checked for this lesson include the prohibition on swimming in Maya Bay and the managed approach through Loh Samah. Official guidance also addresses litter, feeding wildlife, collecting marine material, and damaging coral. Follow the latest park signs and staff instructions if they differ from an old photograph, a remembered itinerary, or a social-media post."
+        },
+        {
+          "type": "paragraph",
+          "text": "Electronic national-park admission is another practical detail to check. TAT’s October 2026 guidance says that Phi Phi is among the marine parks using electronic tickets and advises visitors to have passport information ready. Confirm the latest process with your operator before departure. Exact fees, departure times, and daily visitor limits are deliberately not fixed in this story because they can change."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Observe wildlife without feeding, touching, cornering, or chasing it.",
+            "Keep fins, hands, feet, and equipment away from coral; enter the water only where the activity is permitted and suitable.",
+            "Keep rubbish secure and take it to the proper collection point. A lightweight wrapper can travel much farther than you intend.",
+            "Respect a closed area. A boundary can protect recovery that is difficult to see from the boat.",
+            "Ask before photographing people or private spaces, and accept refusals politely.",
+            "Listen to the crew’s briefing, wear the provided appropriate safety equipment, and accept route changes when conditions require them."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Wastewater is part of the larger tourism question. Every destination must manage what happens after a shower, a meal, or a visit to a toilet. Visitors do not see most of that infrastructure, yet it affects the environment they came to enjoy. Asking whether an accommodation or operator can explain its practices is more useful than trusting a vague green label."
+        },
+        {
+          "type": "paragraph",
+          "text": "These choices can also improve the experience. Watching a fish behave naturally is more revealing than attracting it with food. Hearing a guide explain a restriction can teach you something that a hurried photograph cannot. The island becomes more interesting when you understand why a particular action matters."
+        }
+      ],
+      "sourceIds": [
+        "maya-rules",
+        "maya-2026",
+        "andaman-2026",
+        "coral-habitat"
+      ],
+      "bullets": [
+        "Observe wildlife without feeding, touching, cornering, or chasing it.",
+        "Keep fins, hands, feet, and equipment away from coral; enter the water only where the activity is permitted and suitable.",
+        "Keep rubbish secure and take it to the proper collection point. A lightweight wrapper can travel much farther than you intend.",
+        "Respect a closed area. A boundary can protect recovery that is difficult to see from the boat.",
+        "Ask before photographing people or private spaces, and accept refusals politely.",
+        "Listen to the crew’s briefing, wear the provided appropriate safety equipment, and accept route changes when conditions require them."
+      ]
+    },
+    {
+      "id": "unhurried-journey",
+      "title": "18. An unhurried way to experience the islands",
+      "paragraphs": [
+        "Imagine organizing a visit around three aims: understand the landscape, notice something living, and learn something from the people who work there. This is a suggested way of paying attention, not a fixed route or a promise that every stop will be available.",
+        "Begin with orientation. On a map, find your departure coast, Phi Phi Don, and Phi Phi Leh. Ask the crew to point out the island you are approaching. The first reward is simple: the scenery acquires names, and the names acquire relationships. You no longer need to call every spectacular place ‘the famous beach’.",
+        "At a permitted landing or viewpoint, choose one detail to study. It might be the curve of an isthmus, a layer in a cliff, the difference between two bays, or the position of a village. Give yourself a minute to look before reaching for the camera. Then photograph the detail you actually want to remember.",
+        "During an approved water activity, let your attention become quieter. Notice movement and shelter rather than searching only for a large animal. If conditions or rules keep you on the boat, use the time to compare the shapes of the coastline. A changed plan can still provide something worth noticing.",
+        "Ask one respectful question: ‘What changes most between the seasons?’ or ‘What do visitors often misunderstand about this place?’ These are example questions, not quotations from a real conversation. Listen to the answer without expecting one person to speak for an entire island community.",
+        "Before leaving, put the day into three English sentences. One can describe a place, one can explain a process, and one can express a thought. For example: ‘The cliffs rise sharply from the sea. Slightly acidic water has helped shape the limestone. I understand why a beautiful bay sometimes needs limits.’ This turns a visit into both a memory and a speaking exercise."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine organizing a visit around three aims: understand the landscape, notice something living, and learn something from the people who work there. This is a suggested way of paying attention, not a fixed route or a promise that every stop will be available."
+        },
+        {
+          "type": "paragraph",
+          "text": "Begin with orientation. On a map, find your departure coast, Phi Phi Don, and Phi Phi Leh. Ask the crew to point out the island you are approaching. The first reward is simple: the scenery acquires names, and the names acquire relationships. You no longer need to call every spectacular place ‘the famous beach’."
+        },
+        {
+          "type": "paragraph",
+          "text": "At a permitted landing or viewpoint, choose one detail to study. It might be the curve of an isthmus, a layer in a cliff, the difference between two bays, or the position of a village. Give yourself a minute to look before reaching for the camera. Then photograph the detail you actually want to remember."
+        },
+        {
+          "type": "paragraph",
+          "text": "During an approved water activity, let your attention become quieter. Notice movement and shelter rather than searching only for a large animal. If conditions or rules keep you on the boat, use the time to compare the shapes of the coastline. A changed plan can still provide something worth noticing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ask one respectful question: ‘What changes most between the seasons?’ or ‘What do visitors often misunderstand about this place?’ These are example questions, not quotations from a real conversation. Listen to the answer without expecting one person to speak for an entire island community."
+        },
+        {
+          "type": "paragraph",
+          "text": "Before leaving, put the day into three English sentences. One can describe a place, one can explain a process, and one can express a thought. For example: ‘The cliffs rise sharply from the sea. Slightly acidic water has helped shape the limestone. I understand why a beautiful bay sometimes needs limits.’ This turns a visit into both a memory and a speaking exercise."
+        }
+      ],
+      "sourceIds": [
+        "osm"
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "19. A timeline to keep the story in order",
+      "paragraphs": [
+        "The islands bring together timescales so different that it helps to place them beside one another. This timeline records selected events and periods, rather than every stage of Phi Phi’s history.",
+        "Notice the verbs: rocks formed, water carved, people travelled, a film was released, a bay was closed, and scientists have continued to observe. English lets us move between completed events and processes that still matter now. That is why this story is also useful practice for the passive voice, the past simple, and the present perfect."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The islands bring together timescales so different that it helps to place them beside one another. This timeline records selected events and periods, rather than every stage of Phi Phi’s history."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Hundreds of millions of years ago: ancient marine environments contributed to rock formations now exposed in the area; important limestone units are Permian.",
+            "Over later geological time: tectonic movement, weathering, erosion, and coastal change shaped the landscape. The age of the rock is not the age of the present beach.",
+            "Approximately late 1500s to early 1900s: the comparative date range proposed for much of the vessel imagery studied in Phrayanaga or Viking Cave.",
+            "2000: The Beach was released, helping make Maya Bay globally recognizable.",
+            "26 December 2004: the Indian Ocean tsunami devastated Phi Phi Don and many other coastal communities.",
+            "June 2018: Maya Bay closed to visitors for ecological recovery.",
+            "1 January 2022: Maya Bay reopened under a changed visitor-management approach.",
+            "1 October 2026: the latest reopening confirmed in the official October 2026 guidance used for this lesson.",
+            "3–9 November 2026: the survey period behind the official report of a peak count of 451 blacktip reef sharks."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Notice the verbs: rocks formed, water carved, people travelled, a film was released, a bay was closed, and scientists have continued to observe. English lets us move between completed events and processes that still matter now. That is why this story is also useful practice for the passive voice, the past simple, and the present perfect."
+        }
+      ],
+      "sourceIds": [
+        "ratburi",
+        "viking-research",
+        "film",
+        "tsunami-event",
+        "maya-closure",
+        "maya-reopened",
+        "andaman-2026",
+        "shark-survey"
+      ],
+      "bullets": [
+        "Hundreds of millions of years ago: ancient marine environments contributed to rock formations now exposed in the area; important limestone units are Permian.",
+        "Over later geological time: tectonic movement, weathering, erosion, and coastal change shaped the landscape. The age of the rock is not the age of the present beach.",
+        "Approximately late 1500s to early 1900s: the comparative date range proposed for much of the vessel imagery studied in Phrayanaga or Viking Cave.",
+        "2000: The Beach was released, helping make Maya Bay globally recognizable.",
+        "26 December 2004: the Indian Ocean tsunami devastated Phi Phi Don and many other coastal communities.",
+        "June 2018: Maya Bay closed to visitors for ecological recovery.",
+        "1 January 2022: Maya Bay reopened under a changed visitor-management approach.",
+        "1 October 2026: the latest reopening confirmed in the official October 2026 guidance used for this lesson.",
+        "3–9 November 2026: the survey period behind the official report of a peak count of 451 blacktip reef sharks."
+      ]
+    },
+    {
+      "id": "departure",
+      "title": "20. What you carry away",
+      "paragraphs": [
+        "Imagine the islands growing smaller behind the boat. The cliffs become silhouettes again, and individual beaches disappear into the distance. The view resembles the one you saw on arrival, but your understanding has changed. You can now recognize an archipelago, distinguish two main islands, and connect a bright beach with a much longer story.",
+        "The stone holds evidence of older seas. The cave paintings suggest journeys and encounters. The inhabited island carries ordinary work, belonging, loss, and recovery. Beneath the surface, living systems continue their own demanding work. None of these stories needs to cancel the beauty of the place. Together, they make that beauty more substantial.",
+        "Perhaps the most useful thing to take away is a better kind of attention. You can enjoy a landscape while asking how it formed. You can admire a destination while remembering the people who live there. You can welcome signs of recovery while asking what the evidence does and does not show.",
+        "For your English, choose five words from the lesson and use them to retell what you found most interesting. You do not need to repeat every fact. Start with one idea that matters to you: the patient power of water, the life inside a reef, the history hidden in a cave, or the decision to give a famous bay time to recover.",
+        "A photograph can preserve the shape of Phi Phi. A story can help you understand what you are looking at. When you can tell that story in your own words, you carry away something that lasts beyond the journey home."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine the islands growing smaller behind the boat. The cliffs become silhouettes again, and individual beaches disappear into the distance. The view resembles the one you saw on arrival, but your understanding has changed. You can now recognize an archipelago, distinguish two main islands, and connect a bright beach with a much longer story."
+        },
+        {
+          "type": "paragraph",
+          "text": "The stone holds evidence of older seas. The cave paintings suggest journeys and encounters. The inhabited island carries ordinary work, belonging, loss, and recovery. Beneath the surface, living systems continue their own demanding work. None of these stories needs to cancel the beauty of the place. Together, they make that beauty more substantial."
+        },
+        {
+          "type": "paragraph",
+          "text": "Perhaps the most useful thing to take away is a better kind of attention. You can enjoy a landscape while asking how it formed. You can admire a destination while remembering the people who live there. You can welcome signs of recovery while asking what the evidence does and does not show."
+        },
+        {
+          "type": "paragraph",
+          "text": "For your English, choose five words from the lesson and use them to retell what you found most interesting. You do not need to repeat every fact. Start with one idea that matters to you: the patient power of water, the life inside a reef, the history hidden in a cave, or the decision to give a famous bay time to recover."
+        },
+        {
+          "type": "paragraph",
+          "text": "A photograph can preserve the shape of Phi Phi. A story can help you understand what you are looking at. When you can tell that story in your own words, you carry away something that lasts beyond the journey home."
+        }
+      ],
+      "sourceIds": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "tat-islands",
+      "title": "Tourism Authority of Thailand — Ko Phi Phi: geography and the six islands",
+      "url": "https://www.tourismthailand.org/Destinations/Provinces/Ko-Pha-Ngan/359"
+    },
+    {
+      "id": "tat-park",
+      "title": "Tourism Authority of Thailand — Hat Noppharat Thara–Mu Ko Phi Phi National Park",
+      "url": "https://trustedthailand.tourismthailand.org/en/establishments/detail/1440"
+    },
+    {
+      "id": "phi-phi-geology",
+      "title": "Elzner (2023) — Permian clastic rocks on Ko Phi Phi Don, Bulletin of Earth Sciences of Thailand",
+      "url": "https://ph01.tci-thaijo.org/index.php/bestjournal/article/view/253133"
+    },
+    {
+      "id": "ratburi",
+      "title": "Indonesian Petroleum Association — Krabi outcrops and Phi Phi’s karstified Permian limestone",
+      "url": "https://www.ipa.or.id/index.php/id/publications/paleozoic-and-mesozoic-outcrops-in-krabi-area-new-insights-for-the-pre-tertiary-petroleum-system-in-the-western-basins-gulf-of-thailand"
+    },
+    {
+      "id": "nasa-geology",
+      "title": "NASA Earth Observatory — Thailand’s Krabi Coast",
+      "url": "https://science.nasa.gov/earth/earth-observatory/thailands-krabi-coast/"
+    },
+    {
+      "id": "nps-karst",
+      "title": "U.S. National Park Service — Solution caves and limestone dissolution",
+      "url": "https://www.nps.gov/subjects/caves/solution-caves.htm"
+    },
+    {
+      "id": "tower-karst",
+      "title": "Marcus Gillespie, university geography field explanation — Tower Karst of Peninsular Thailand",
+      "url": "https://www.siue.edu/GEOGRAPHY/ONLINE/Gillespie.htm"
+    },
+    {
+      "id": "urak-history",
+      "title": "Sirindhorn Anthropology Centre — Historical research on the Urak Lawoi community at Laem Tong",
+      "url": "https://ethnicredb.sac.or.th/en/research_detail.php?id=586"
+    },
+    {
+      "id": "urak-culture",
+      "title": "Journal of International Studies, Prince of Songkla University — Urak Lawoi maritime communities",
+      "url": "https://so03.tci-thaijo.org/index.php/jis/article/view/246582"
+    },
+    {
+      "id": "maritime-peoples",
+      "title": "Sirindhorn Anthropology Centre — Moken, Moklen and Urak Lawoi cultural histories",
+      "url": "https://ethnicredb.sac.or.th/en/research_detail.php?id=2090"
+    },
+    {
+      "id": "viking-research",
+      "title": "Sukkham, Taçon and Tan (2011) — Rock art of Phrayanaga (Viking) Cave",
+      "url": "https://apconf.omeka.net/exhibits/show/apconfproceedings/item/1190"
+    },
+    {
+      "id": "water-colour",
+      "title": "Woods Hole Oceanographic Institution — Why is the ocean blue?",
+      "url": "https://www.whoi.edu/ocean-learning-hub/ocean-facts/why-is-the-ocean-blue/"
+    },
+    {
+      "id": "noaa-colour",
+      "title": "NOAA National Ocean Service — Why is the ocean blue?",
+      "url": "https://oceanservice.noaa.gov/facts/oceanblue.html"
+    },
+    {
+      "id": "coral-animals",
+      "title": "NOAA National Ocean Service — Are corals animals or plants?",
+      "url": "https://oceanservice.noaa.gov/facts/coral.html"
+    },
+    {
+      "id": "coral-partners",
+      "title": "NOAA — Corals and zooxanthellae: a mutually beneficial relationship",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_corals/coral02_zooxanthellae.html"
+    },
+    {
+      "id": "coral-habitat",
+      "title": "NOAA Fisheries — Shallow coral reef habitat and threats",
+      "url": "https://www.fisheries.noaa.gov/national/habitat-conservation/shallow-coral-reef-habitat"
+    },
+    {
+      "id": "coral-bleaching",
+      "title": "NOAA National Ocean Service — What is coral bleaching?",
+      "url": "https://oceanservice.noaa.gov/facts/coral_bleach.html"
+    },
+    {
+      "id": "tsunami-event",
+      "title": "U.S. Geological Survey — M9.1 Sumatra–Andaman earthquake, 26 December 2004",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official20041226005853450_30/executive"
+    },
+    {
+      "id": "tsunami-isthmus",
+      "title": "Ioualalen and colleagues (2007), Journal of Geophysical Research — Modelling the 2004 tsunami in Thailand",
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006JC003850"
+    },
+    {
+      "id": "tsunami-waves",
+      "title": "NOAA — Tsunami inundation and successive waves",
+      "url": "https://www.noaa.gov/jetstream/tsunamis/tsunami-inundation"
+    },
+    {
+      "id": "tsunami-safety",
+      "title": "U.S. National Weather Service — Responding to natural and official tsunami warnings",
+      "url": "https://www.weather.gov/safety/tsunami-during"
+    },
+    {
+      "id": "film",
+      "title": "British Film Institute — The Beach (2000)",
+      "url": "https://www.bfi.org.uk/film/7c55e717-ae1a-5d5b-be49-389ae86b22da/the-beach"
+    },
+    {
+      "id": "maya-closure",
+      "title": "TAT Newsroom, November 2021 — Maya Bay’s closure, restoration and reopening preparations",
+      "url": "https://www.tatnews.org/2021/11/krabis-world-famous-maya-bay-eyeing-1-january-2022-reopening/"
+    },
+    {
+      "id": "maya-reopened",
+      "title": "The Nation, 2 January 2022 — Maya Bay reopens after three and a half years",
+      "url": "https://www.nationthailand.com/in-focus/40010682"
+    },
+    {
+      "id": "maya-project",
+      "title": "Thailand Government Public Relations Department, February 2026 — Save Maya, Save Pakarang",
+      "url": "https://thailand.prd.go.th/en/content/category/detail/id/52/iid/479004"
+    },
+    {
+      "id": "shark-survey",
+      "title": "Thailand Government Public Relations Department, 13 November 2026 — Maya Bay blacktip reef shark survey",
+      "url": "https://thailand.prd.go.th/en/content/category/detail/id/2078/iid/560044"
+    },
+    {
+      "id": "monsoons",
+      "title": "Thailand Government — Monsoon winds and the climate of Thailand",
+      "url": "https://thailand.go.th/useful-information-detail/099_143"
+    },
+    {
+      "id": "tides-currents",
+      "title": "NOAA National Ocean Service — The difference between tides and currents",
+      "url": "https://oceanservice.noaa.gov/facts/tidescurrents.html"
+    },
+    {
+      "id": "maya-rules",
+      "title": "Government Radio Krabi, October 2024 — Maya Bay visitor and conservation rules (Thai)",
+      "url": "https://radiokrabi.prd.go.th/th/content/category/detail/id/57/iid/329518"
+    },
+    {
+      "id": "andaman-2026",
+      "title": "TAT Newsroom, 20 October 2026 — The Andaman opens its doors again",
+      "url": "https://www.tatnews.org/2026/10/the-andaman-opens-its-doors-again/"
+    },
+    {
+      "id": "maya-2026",
+      "title": "The Thaiger, 1 October 2026 — Maya Bay reopening and visitor arrangements",
+      "url": "https://thethaiger.com/news/krabi/maya-bay-reopens-after-two-month-conservation-closure"
+    },
+    {
+      "id": "osm",
+      "title": "OpenStreetMap contributors — Phi Phi geographic data and interactive map",
+      "url": "https://www.openstreetmap.org/#map=12/7.7390/98.7750"
+    },
+    {
+      "id": "natural-earth",
+      "title": "Natural Earth — Public-domain geographic data and terms of use",
+      "url": "https://www.naturalearthdata.com/about/terms-of-use/"
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "archipelago",
+      "term": "archipelago",
+      "partOfSpeech": "noun",
+      "definition": "A group of islands in the same area of sea.",
+      "armenian": "կղզեխումբ, արշիպելագ",
+      "example": "Phi Phi is an archipelago, so the name refers to a group of islands.",
+      "forms": [
+        "archipelago",
+        "archipelagos"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/archipelago"
+    },
+    {
+      "id": "limestone",
+      "term": "limestone",
+      "partOfSpeech": "noun",
+      "definition": "A rock made mainly of calcium carbonate, often from material deposited in water long ago.",
+      "armenian": "կրաքար",
+      "example": "The limestone cliffs preserve a much older story than the beaches below them.",
+      "forms": [
+        "limestone"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/limestone"
+    },
+    {
+      "id": "karst",
+      "term": "karst",
+      "partOfSpeech": "noun",
+      "definition": "A landscape shaped when water dissolves rock, creating features such as caves, hollows, and steep towers.",
+      "armenian": "կարստ՝ ջրում լուծվող ապարների քայքայումից առաջացած ռելիեֆ",
+      "example": "Rainwater helped shape the karst landscape over a very long time.",
+      "forms": [
+        "karst"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/karst"
+    },
+    {
+      "id": "sediment",
+      "term": "sediment",
+      "partOfSpeech": "noun",
+      "definition": "Small pieces of material that settle and build up on the bottom of water or on land.",
+      "armenian": "նստվածք",
+      "example": "Layers of sediment accumulated on an ancient seabed.",
+      "forms": [
+        "sediment",
+        "sediments"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/sediment"
+    },
+    {
+      "id": "seabed",
+      "term": "seabed",
+      "partOfSpeech": "noun",
+      "definition": "The ground at the bottom of the sea.",
+      "armenian": "ծովի հատակ",
+      "example": "Some material in the cliffs was once part of the seabed.",
+      "forms": [
+        "seabed"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/seabed"
+    },
+    {
+      "id": "uplift",
+      "term": "uplift",
+      "partOfSpeech": "noun",
+      "definition": "The geological process in which part of the ground or rock rises.",
+      "armenian": "երկրակեղևի բարձրացում",
+      "example": "Uplift brought ancient rock above sea level.",
+      "forms": [
+        "uplift"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/uplift"
+    },
+    {
+      "id": "erosion",
+      "term": "erosion",
+      "partOfSpeech": "noun",
+      "definition": "The wearing away and removal of rock or soil by water, wind, or other natural forces.",
+      "armenian": "էրոզիա, ապարների կամ հողի քայքայում և հեռացում",
+      "example": "Erosion continues to reshape the coast.",
+      "forms": [
+        "erosion"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/erosion"
+    },
+    {
+      "id": "dissolve",
+      "term": "dissolve",
+      "partOfSpeech": "verb",
+      "definition": "To become mixed into a liquid so that the original solid is no longer separate.",
+      "armenian": "լուծվել",
+      "example": "Limestone can slowly dissolve in slightly acidic water.",
+      "forms": [
+        "dissolve",
+        "dissolves",
+        "dissolved",
+        "dissolving"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/dissolve"
+    },
+    {
+      "id": "cliff",
+      "term": "cliff",
+      "partOfSpeech": "noun",
+      "definition": "A high, steep face of rock.",
+      "armenian": "ժայռապատ, զառիթափ ժայռ",
+      "example": "A tall cliff rises behind the beach.",
+      "forms": [
+        "cliff",
+        "cliffs"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/cliff"
+    },
+    {
+      "id": "lagoon",
+      "term": "lagoon",
+      "partOfSpeech": "noun",
+      "definition": "An area of coastal water that is largely separated from the open sea by a natural barrier.",
+      "armenian": "լագունա՝ բաց ծովից բնական պատնեշով մեծ մասամբ առանձնացված ջրատարածք",
+      "example": "The lagoon looks sheltered, but conditions can change.",
+      "forms": [
+        "lagoon",
+        "lagoons"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/lagoon"
+    },
+    {
+      "id": "bay",
+      "term": "bay",
+      "partOfSpeech": "noun",
+      "definition": "An area of sea where the coast curves inward around the water.",
+      "armenian": "ծովածոց",
+      "example": "The boat approached a bay surrounded by high cliffs.",
+      "forms": [
+        "bay",
+        "bays"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/bay"
+    },
+    {
+      "id": "isthmus",
+      "term": "isthmus",
+      "partOfSpeech": "noun",
+      "definition": "A narrow strip of land connecting two larger areas of land, with water on both sides.",
+      "armenian": "պարանոց՝ երկու ավելի մեծ ցամաքային հատվածներ միացնող նեղ ցամաքաշերտ",
+      "example": "The isthmus between the two bays is easy to recognize from a viewpoint.",
+      "forms": [
+        "isthmus",
+        "isthmuses"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/isthmus"
+    },
+    {
+      "id": "tide",
+      "term": "tide",
+      "partOfSpeech": "noun",
+      "definition": "The regular rise and fall of sea level, mainly caused by the gravitational pull of the Moon and Sun.",
+      "armenian": "մակընթացություն և տեղատվություն",
+      "example": "The tide changes how much sand is exposed.",
+      "forms": [
+        "tide",
+        "tides"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/tide"
+    },
+    {
+      "id": "current",
+      "term": "current",
+      "partOfSpeech": "noun",
+      "definition": "Water moving in a particular direction within the sea or another body of water.",
+      "armenian": "ջրի հոսանք",
+      "example": "A current can be strong even when the surface looks calm.",
+      "forms": [
+        "current",
+        "currents"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/current"
+    },
+    {
+      "id": "monsoon",
+      "term": "monsoon",
+      "partOfSpeech": "noun",
+      "definition": "A seasonal wind pattern that changes direction and strongly influences rainfall.",
+      "armenian": "մուսոն՝ սեզոնային ուղղությունը փոխող և տեղումների վրա ազդող քամի",
+      "example": "The monsoon influences sea conditions and rainfall.",
+      "forms": [
+        "monsoon",
+        "monsoons"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/monsoon"
+    },
+    {
+      "id": "shelter",
+      "term": "shelter",
+      "partOfSpeech": "noun",
+      "definition": "Protection from wind, waves, weather, or danger.",
+      "armenian": "պաշտպանություն, ապաստան",
+      "example": "The cliffs provide some shelter from the wind.",
+      "forms": [
+        "shelter"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/shelter"
+    },
+    {
+      "id": "coral",
+      "term": "coral",
+      "partOfSpeech": "noun",
+      "definition": "A small marine animal that often lives in colonies; many kinds build hard skeletons.",
+      "armenian": "մարջան",
+      "example": "A coral is an animal, even though it may look like a plant or a rock.",
+      "forms": [
+        "coral",
+        "corals"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/coral"
+    },
+    {
+      "id": "reef",
+      "term": "reef",
+      "partOfSpeech": "noun",
+      "definition": "A ridge of rock or coral at or near the surface of the sea.",
+      "armenian": "խութ",
+      "example": "A coral reef provides shelter for many marine animals.",
+      "forms": [
+        "reef",
+        "reefs"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/reef"
+    },
+    {
+      "id": "habitat",
+      "term": "habitat",
+      "partOfSpeech": "noun",
+      "definition": "The natural place where a particular animal or plant lives.",
+      "armenian": "բնական բնակավայր, կենսամիջավայր",
+      "example": "A reef is an important habitat for small fish.",
+      "forms": [
+        "habitat",
+        "habitats"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/habitat"
+    },
+    {
+      "id": "biodiversity",
+      "term": "biodiversity",
+      "partOfSpeech": "noun",
+      "definition": "The variety of living things in a place or across the Earth.",
+      "armenian": "կենսաբազմազանություն",
+      "example": "Protecting different habitats helps protect biodiversity.",
+      "forms": [
+        "biodiversity"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/biodiversity"
+    },
+    {
+      "id": "fragile",
+      "term": "fragile",
+      "partOfSpeech": "adjective",
+      "definition": "Easily damaged or harmed.",
+      "armenian": "փխրուն, հեշտ վնասվող",
+      "example": "The reef is beautiful but fragile.",
+      "forms": [
+        "fragile"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/fragile"
+    },
+    {
+      "id": "bleaching",
+      "term": "bleaching",
+      "partOfSpeech": "noun",
+      "definition": "The loss of colour that occurs when stressed corals lose the tiny algae living in their tissues.",
+      "armenian": "մարջանների սպիտակեցում՝ սթրեսի պատճառով դրանց հյուսվածքներում ապրող ջրիմուռների կորստից",
+      "example": "Coral bleaching is a sign of stress, not proof that every affected coral has died.",
+      "forms": [
+        "bleaching"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/bleach"
+    },
+    {
+      "id": "recover",
+      "term": "recover",
+      "partOfSpeech": "verb",
+      "definition": "To return toward a healthier or stronger condition after damage or difficulty.",
+      "armenian": "վերականգնվել",
+      "example": "A damaged ecosystem may need a long time to recover.",
+      "forms": [
+        "recover",
+        "recovers",
+        "recovered",
+        "recovering"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/recover"
+    },
+    {
+      "id": "conservation",
+      "term": "conservation",
+      "partOfSpeech": "noun",
+      "definition": "The protection and careful management of nature and natural resources.",
+      "armenian": "բնության պահպանություն",
+      "example": "Conservation includes protecting habitats before they are damaged.",
+      "forms": [
+        "conservation"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/conservation"
+    },
+    {
+      "id": "restoration",
+      "term": "restoration",
+      "partOfSpeech": "noun",
+      "definition": "Work that helps return a damaged place or system toward a healthier condition.",
+      "armenian": "վերականգնում",
+      "example": "Habitat restoration requires more than removing visible rubbish.",
+      "forms": [
+        "restoration"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/restoration"
+    },
+    {
+      "id": "sustainable",
+      "term": "sustainable",
+      "partOfSpeech": "adjective",
+      "definition": "Able to continue over time without using up resources or causing unacceptable damage.",
+      "armenian": "կայուն՝ երկարաժամկետ շարունակելի և ռեսուրսները չսպառող",
+      "example": "Sustainable tourism should support local people and protect the environment.",
+      "forms": [
+        "sustainable"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/sustainable"
+    },
+    {
+      "id": "livelihood",
+      "term": "livelihood",
+      "partOfSpeech": "noun",
+      "definition": "The way a person earns money or gets what they need to live.",
+      "armenian": "ապրուստի միջոց",
+      "example": "Tourism is part of the livelihood of many island families.",
+      "forms": [
+        "livelihood",
+        "livelihoods"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/livelihood"
+    },
+    {
+      "id": "community",
+      "term": "community",
+      "partOfSpeech": "noun",
+      "definition": "The people who live in a place or share a way of life.",
+      "armenian": "համայնք",
+      "example": "Visitors enter a living community, not just a holiday destination.",
+      "forms": [
+        "community",
+        "communities"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/community"
+    },
+    {
+      "id": "mainland",
+      "term": "mainland",
+      "partOfSpeech": "noun",
+      "definition": "The main continuous area of land, compared with the islands near it.",
+      "armenian": "հիմնական ցամաքամաս",
+      "example": "Supplies reach the islands by boat from the mainland.",
+      "forms": [
+        "mainland"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/mainland"
+    },
+    {
+      "id": "peninsula",
+      "term": "peninsula",
+      "partOfSpeech": "noun",
+      "definition": "An area of land surrounded by water on most sides but still connected to a larger land area.",
+      "armenian": "թերակղզի",
+      "example": "Southern Thailand extends along a peninsula between seas.",
+      "forms": [
+        "peninsula",
+        "peninsulas"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/peninsula"
+    },
+    {
+      "id": "evacuate",
+      "term": "evacuate",
+      "partOfSpeech": "verb",
+      "definition": "To leave a dangerous place for safety, or to move other people away from danger.",
+      "armenian": "տարհանվել, տարհանել",
+      "example": "Officials may evacuate a coastal area when there is a serious warning.",
+      "forms": [
+        "evacuate",
+        "evacuates",
+        "evacuated",
+        "evacuating"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/evacuate"
+    },
+    {
+      "id": "tsunami",
+      "term": "tsunami",
+      "partOfSpeech": "noun",
+      "definition": "A series of waves caused by a sudden movement of a large amount of water, often after an undersea earthquake.",
+      "armenian": "ցունամի",
+      "example": "A tsunami is different from an ordinary wave driven by wind.",
+      "forms": [
+        "tsunami",
+        "tsunamis"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/tsunami"
+    },
+    {
+      "id": "resilience",
+      "term": "resilience",
+      "partOfSpeech": "noun",
+      "definition": "The ability to withstand difficulty and recover or adapt afterward.",
+      "armenian": "դիմակայունություն, դժվարություններից հետո վերականգնվելու կամ հարմարվելու կարողություն",
+      "example": "Community resilience grows through preparation, cooperation, and support.",
+      "forms": [
+        "resilience"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/resilience"
+    },
+    {
+      "id": "overcrowding",
+      "term": "overcrowding",
+      "partOfSpeech": "noun",
+      "definition": "A situation in which too many people are in a place for its space or resources.",
+      "armenian": "մարդկանց չափազանց մեծ կուտակում",
+      "example": "Overcrowding can reduce both visitor enjoyment and the quality of local life.",
+      "forms": [
+        "overcrowding"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/overcrowd"
+    },
+    {
+      "id": "wastewater",
+      "term": "wastewater",
+      "partOfSpeech": "noun",
+      "definition": "Used water that contains waste from homes, businesses, or other activities.",
+      "armenian": "կեղտաջուր",
+      "example": "Treating wastewater is essential for protecting coastal water.",
+      "forms": [
+        "wastewater"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/wastewater"
+    },
+    {
+      "id": "anchor",
+      "term": "anchor",
+      "partOfSpeech": "noun",
+      "definition": "A heavy object used to keep a boat in one place by holding onto the bottom.",
+      "armenian": "խարիսխ",
+      "example": "An anchor dropped onto a reef can damage living coral.",
+      "forms": [
+        "anchor",
+        "anchors"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/anchor"
+    },
+    {
+      "id": "marine",
+      "term": "marine",
+      "partOfSpeech": "adjective",
+      "definition": "Connected with the sea and the life in it.",
+      "armenian": "ծովային",
+      "example": "Marine habitats are connected to the land through water and human activity.",
+      "forms": [
+        "marine"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/marine"
+    },
+    {
+      "id": "restrict",
+      "term": "restrict",
+      "partOfSpeech": "verb",
+      "definition": "To limit what is allowed or how much of something can happen.",
+      "armenian": "սահմանափակել",
+      "example": "Park managers may restrict access to a sensitive habitat.",
+      "forms": [
+        "restrict",
+        "restricts",
+        "restricted",
+        "restricting"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/restrict"
+    },
+    {
+      "id": "capacity",
+      "term": "capacity",
+      "partOfSpeech": "noun",
+      "definition": "The amount or number that a place or system can accommodate or handle.",
+      "armenian": "տարողունակություն, ընդունելու կամ սպասարկելու հնարավոր ծավալ",
+      "example": "Visitor capacity depends on environmental limits as well as physical space.",
+      "forms": [
+        "capacity"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/capacity"
+    },
+    {
+      "id": "perspective",
+      "term": "perspective",
+      "partOfSpeech": "noun",
+      "definition": "A particular way of seeing or understanding something.",
+      "armenian": "տեսանկյուն",
+      "example": "Learning about local life gives a visitor a different perspective on the islands.",
+      "forms": [
+        "perspective",
+        "perspectives"
+      ],
+      "dictionaryUrl": "https://www.merriam-webster.com/dictionary/perspective"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "phi-phi-q1",
+      "question": "What does the name Phi Phi refer to in this lesson?",
+      "options": [
+        "A single beach on Phuket",
+        "A group of six islands",
+        "A lake on the mainland",
+        "A city in northern Thailand"
+      ],
+      "correctIndex": 1,
+      "explanation": "Phi Phi is an archipelago: a group of six islands. Phi Phi Don and Phi Phi Leh are its best-known members."
+    },
+    {
+      "id": "phi-phi-q2",
+      "question": "Which island contains the main settlement and the narrow strip of land between two bays?",
+      "options": [
+        "Phi Phi Leh",
+        "Bamboo Island",
+        "Phi Phi Don",
+        "Bida Nok"
+      ],
+      "correctIndex": 2,
+      "explanation": "Phi Phi Don is the main inhabited island. Its familiar viewpoint looks over the narrow isthmus between Ton Sai Bay and Loh Dalum Bay."
+    },
+    {
+      "id": "phi-phi-q3",
+      "question": "Which sequence best explains the broad geological story of the limestone landscape?",
+      "options": [
+        "A recent volcano erupted, and its lava became beach sand.",
+        "Tourist boats cut the cliffs out of solid rock.",
+        "Coral reefs appeared above water in a single year.",
+        "Marine material accumulated, rock formed, and uplift and weathering helped shape the landscape."
+      ],
+      "correctIndex": 3,
+      "explanation": "The story connects ancient marine deposits, the formation and uplift of rock, and later weathering and erosion. The rock is far older than its present coastal shape."
+    },
+    {
+      "id": "phi-phi-q4",
+      "question": "What is especially important in the formation of karst?",
+      "options": [
+        "Water slowly dissolving soluble rock along cracks",
+        "Snow building up into glaciers",
+        "Hot lava cooling beside the shore",
+        "Wind turning coral into granite"
+      ],
+      "correctIndex": 0,
+      "explanation": "Karst develops where water dissolves soluble rock such as limestone. Cracks can widen into caves, hollows, and other features."
+    },
+    {
+      "id": "phi-phi-q5",
+      "question": "What is a coral?",
+      "options": [
+        "A kind of plastic found on beaches",
+        "A sea plant with ordinary roots",
+        "An animal that may live in a colony",
+        "A rock that never contained life"
+      ],
+      "correctIndex": 2,
+      "explanation": "Corals are animals. Many reef-building species live in colonies and make hard calcium-carbonate skeletons."
+    },
+    {
+      "id": "phi-phi-q6",
+      "question": "Which statement about coral bleaching is correct?",
+      "options": [
+        "It always means the coral is already dead.",
+        "It can happen when stressed coral loses its symbiotic algae.",
+        "It makes coral stronger immediately.",
+        "It is caused only by people touching coral."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bleaching involves the loss of the tiny algae living in coral tissues, often during heat stress. A bleached coral is vulnerable but may recover if conditions improve."
+    },
+    {
+      "id": "phi-phi-q7",
+      "question": "What broader lesson does the story draw from Maya Bay?",
+      "options": [
+        "A famous place can receive unlimited visitors without consequences.",
+        "Closing a beach automatically solves every environmental problem forever.",
+        "Wildlife and tourism never affect each other.",
+        "Tourism needs limits and management to protect the place people come to see."
+      ],
+      "correctIndex": 3,
+      "explanation": "Maya Bay illustrates the relationship between visitor pressure, habitat protection, restoration, and management. Recovery is an ongoing process, not a permanent guarantee."
+    },
+    {
+      "id": "phi-phi-q8",
+      "question": "Why is the 2004 tsunami included in the story?",
+      "options": [
+        "To recognize the human loss, understand coastal vulnerability, and discuss recovery and preparedness",
+        "To suggest that ordinary daily tides are the same as tsunamis",
+        "To claim that the islands were created in 2004",
+        "To describe an event caused by tourism"
+      ],
+      "correctIndex": 0,
+      "explanation": "The tsunami belongs to the islands’ human history. Remembering it respectfully also helps explain the importance of evacuation routes, warnings, and preparedness."
+    },
+    {
+      "id": "phi-phi-q9",
+      "question": "Which choice best supports responsible tourism?",
+      "options": [
+        "Feeding wildlife to make it approach the boat",
+        "Standing on coral for a better photograph",
+        "Following park guidance, avoiding reef damage, and supporting local livelihoods",
+        "Assuming every advertised stop must remain open in all conditions"
+      ],
+      "correctIndex": 2,
+      "explanation": "Responsible tourism combines care for habitats with respect for residents and their livelihoods. Conditions and access can change, so local guidance matters."
+    },
+    {
+      "id": "phi-phi-q10",
+      "question": "Why should a visitor avoid judging swimming conditions only by the colour or smoothness of the water?",
+      "options": [
+        "Blue water always means there are no currents.",
+        "Currents, tides, and weather can create risks that are not obvious from appearance.",
+        "A sheltered bay never changes.",
+        "All places in the archipelago have identical conditions."
+      ],
+      "correctIndex": 1,
+      "explanation": "Beautiful or calm-looking water is not a complete safety assessment. Tides, currents, wind, and local conditions must also be considered."
+    }
+  ],
+  "cloze": [
+    {
+      "id": "phi-phi-c1",
+      "sentence": "A group of islands is called an ____.",
+      "answer": "archipelago",
+      "hint": "Use the geography word beginning with a; Phi Phi is one."
+    },
+    {
+      "id": "phi-phi-c2",
+      "sentence": "A narrow strip of land that connects two larger land areas is an ____.",
+      "answer": "isthmus",
+      "hint": "This geography word begins with i and describes the land between two bays on Phi Phi Don."
+    },
+    {
+      "id": "phi-phi-c3",
+      "sentence": "Limestone can slowly ____ in slightly acidic water.",
+      "answer": "dissolve",
+      "hint": "Use a verb beginning with d that means a solid becomes mixed into a liquid."
+    },
+    {
+      "id": "phi-phi-c4",
+      "sentence": "The natural place where an animal lives is its ____.",
+      "answer": "habitat",
+      "hint": "A reef can be this for many small fish; the word begins with h."
+    },
+    {
+      "id": "phi-phi-c5",
+      "sentence": "For many families, tourism provides a ____.",
+      "answer": "livelihood",
+      "hint": "Use the noun beginning with l that means a way of earning a living."
+    },
+    {
+      "id": "phi-phi-c6",
+      "sentence": "Used water from homes and businesses is called ____.",
+      "answer": "wastewater",
+      "hint": "Use the compound noun beginning with w, not the general word pollution."
+    },
+    {
+      "id": "phi-phi-c7",
+      "sentence": "Work that helps return a damaged habitat toward a healthier condition is called ____.",
+      "answer": "restoration",
+      "hint": "Use the noun beginning with r that focuses on repairing previous damage."
+    },
+    {
+      "id": "phi-phi-c8",
+      "sentence": "The ability to recover and adapt after difficulty is called ____.",
+      "answer": "resilience",
+      "hint": "Use the noun beginning with r that describes a strength of communities as well as ecosystems."
+    }
+  ],
+  "speaking": [
+    {
+      "id": "phi-phi-s1",
+      "prompt": "Describe the Phi Phi Islands to a friend who has never visited Thailand. Speak for 60–90 seconds. Explain where the islands are, what the landscape looks like, and the difference between Phi Phi Don and Phi Phi Leh.",
+      "tip": "Use at least five words: archipelago, mainland, cliff, bay, lagoon, isthmus. Try: “Phi Phi is a group of…”, “The main inhabited island is…”, and “What makes the landscape special is…”."
+    },
+    {
+      "id": "phi-phi-s2",
+      "prompt": "Be a nature guide. Explain in 90 seconds how material from an ancient sea can become a limestone cliff above the modern sea. Finish by explaining why the age of the rock is different from the age of the present landscape.",
+      "tip": "Organize the explanation with first, over time, later, and today. Include at least two passive forms: “was deposited”, “was lifted”, or “was shaped”. Avoid giving an exact age unless you can support it."
+    },
+    {
+      "id": "phi-phi-s3",
+      "prompt": "Look at one photograph or map in the lesson. Describe what you can observe for one minute, then spend 30 seconds identifying two things the image cannot tell you.",
+      "tip": "Separate observation from inference: “I can see…”, “This may suggest…”, and “The photograph does not show…”. Consider currents, water quality, local livelihoods, or seasonal access."
+    },
+    {
+      "id": "phi-phi-s4",
+      "prompt": "Role-play a conversation with a boat operator. Ask about the planned route, weather, life jackets, authorized swimming areas, park restrictions, and what happens if a stop is closed. Then repeat the conversation while playing the operator.",
+      "tip": "Practise polite questions: “Could you explain…?”, “Are we allowed to…?”, “Does the price include…?”, and “What will we do if…?”. Give clear, realistic answers instead of promising that every stop is guaranteed."
+    },
+    {
+      "id": "phi-phi-s5",
+      "prompt": "Discuss this question for two minutes: “How can an island protect nature while supporting the people who depend on tourism?” Give one benefit of tourism, one problem, two possible actions, and one trade-off.",
+      "tip": "Use livelihood, conservation, capacity, and sustainable. Connect ideas with although, because, as a result, and on the other hand. A useful structure is: “Tourism helps… However… One solution is… The difficulty is…”."
+    },
+    {
+      "id": "phi-phi-s6",
+      "prompt": "Retell the story of Phi Phi through three time scales: the ancient formation of the landscape, the changes within human memory, and the choices a visitor can make today. Speak for two to three minutes, then give a 30-second version.",
+      "tip": "Use past simple for dated events (“In 2004…”), present perfect for change connected to now (“Tourism has…”), and present simple for general facts (“Corals are…”). Record yourself, listen once, and improve one grammar point and one pronunciation point."
+    }
+  ],
+  "grammar": [
+    {
+      "id": "phi-phi-passive",
+      "title": "The passive voice: explain processes and management",
+      "explanation": "Use the passive when the thing affected is the main focus, or when the person doing the action is unknown or less important. The basic pattern is be + past participle. Change be to show the tense: is/are for a present fact or regular process; was/were for a completed past event; has/have been for a result connected to the present. With a modal, use modal + be + past participle: can be damaged, must be protected. Use by when the cause or agent helps explain the action. Compare the active “Slightly acidic water dissolves limestone” with the passive “Limestone is dissolved by slightly acidic water.” Keep the subject and verb in agreement: the rock was, the rocks were. Do not confuse “was formed” (passive) with “formed” (active past simple).",
+      "examples": [
+        "Present passive: Limestone is slowly dissolved by slightly acidic water.",
+        "Past passive: Ancient rock was lifted above sea level.",
+        "Plural subject: Some low-lying areas were flooded during the tsunami.",
+        "Modal passive: Living coral can be damaged by anchors.",
+        "Modal passive: Sensitive habitats must be protected.",
+        "Present perfect passive: The shoreline has been shaped by many natural processes."
+      ],
+      "exercise": "Rewrite in the passive, keeping the meaning and tense: 1) Slightly acidic water dissolves limestone. 2) Geological forces lifted the rock. 3) Anchors can damage coral. Then choose the correct form: 4) The islands was/were affected. 5) The habitat must protected/must be protected.",
+      "answer": "1) Limestone is dissolved by slightly acidic water. 2) The rock was lifted by geological forces. 3) Coral can be damaged by anchors. 4) The islands were affected. 5) The habitat must be protected."
+    },
+    {
+      "id": "phi-phi-past-present-perfect",
+      "title": "Past simple or present perfect? Date an event or connect it to today",
+      "explanation": "Use the past simple for a completed event at a finished time: “The tsunami struck in 2004.” Common time expressions include in 2004, yesterday, and last year. Use the present perfect (has/have + past participle) for a past change, experience, or continuing situation that you connect to the present, when you are not placing it at a finished past time: “Tourism has changed the islands.” This sentence emphasizes the present result. “Visitor management has become an important issue” similarly describes change relevant now. Do not combine the present perfect with a finished-time expression: say “The film was released in 2000,” not “has been released in 2000.” For personal experience, ask “Have you ever visited Phi Phi?” and answer with a specific date in the past simple: “Yes, I visited it last year.” Use since for a starting point and for for a duration when a situation continues to now: “I have lived here since 2022 / for four years.” These final examples practise grammar; they do not claim facts about the reader.",
+      "examples": [
+        "Past simple, dated event: The Indian Ocean tsunami struck in 2004.",
+        "Past simple, completed event: Maya Bay closed to tourists in 2018.",
+        "Present perfect, result now: Tourism has changed the islands.",
+        "Present perfect, experience: Have you ever explored a limestone cave?",
+        "Past simple, specific answer: I visited a cave last year.",
+        "Continuing situation, model sentence: I have worked on the island since 2022."
+      ],
+      "exercise": "Choose or supply the requested form and explain why: 1) The tsunami struck/has struck in 2004. 2) Use the present perfect to emphasize a result visible now: “Tourism ____ (change) the islands.” 3) Complete a question about experience up to now using the present perfect: “____ you ever ____ (visit) Phi Phi?” 4) Yes, I have visited/visited it last year. 5) In 2018, Maya Bay closed/has closed to tourists.",
+      "answer": "1) struck: in 2004 is a finished past time. 2) has changed: has + past participle emphasizes the result connected to now. 3) Have you ever visited Phi Phi?: have + subject + past participle asks about experience up to now. 4) visited: last year is a finished past time. 5) closed: in 2018 dates the completed event."
+    }
+  ],
+  "media": [
+    {
+      "id": "phi-phi-don-panorama",
+      "url": "/media/phi-phi-don-panorama.jpg",
+      "alt": "View from the hillside over Phi Phi Don, with two curved bays separated by a narrow inhabited strip of land.",
+      "caption": "Phi Phi Don from its eastern viewpoint, photographed in March 2010. The narrow low-lying strip between Ton Sai Bay and Loh Dalum Bay connects the island’s larger limestone masses.",
+      "credit": "Amitparikh / Wikimedia Commons — Public domain (released by the photographer)",
+      "license": "Public domain (released by the photographer)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:KohPhiPhiDon_FromLookoutPoint.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:KohPhiPhiDon_FromLookoutPoint.jpg",
+      "changes": "Downloaded the existing Wikimedia thumbnail; no content edits.",
+      "width": 1280,
+      "height": 857
+    },
+    {
+      "id": "phi-phi-regional-map",
+      "url": "/media/phi-phi-regional-map.svg",
+      "alt": "Regional map locating the Phi Phi Islands southeast of Phuket and south of mainland Krabi in the Andaman Sea.",
+      "caption": "Phi Phi in the Andaman Sea: southeast of Phuket and offshore from mainland Krabi. Generalized regional coastlines; approximate scale. Open the full-size map from section 2 for larger labels.",
+      "credit": "Story Atlas; Natural Earth; © OpenStreetMap contributors (ODbL 1.0)",
+      "license": "Original educational cartography; Natural Earth data are public domain; OpenStreetMap data are under ODbL 1.0.",
+      "licenseUrl": "https://www.openstreetmap.org/copyright",
+      "sourceUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "changes": "Original map rendered from credited geographic data with simplified labels and educational annotations; not for navigation.",
+      "width": 1000,
+      "height": 900
+    },
+    {
+      "id": "phi-phi-island-map",
+      "url": "/media/phi-phi-island-map.svg",
+      "alt": "Map of all six Phi Phi islands with a larger Phi Phi Leh inset showing Maya Bay, Pileh Lagoon, Loh Samah Bay and Viking Cave.",
+      "caption": "The six-island archipelago, with a larger Phi Phi Leh inset locating Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave. North is up. Open the full-size map from section 2 for larger labels.",
+      "credit": "Story Atlas; map data © OpenStreetMap contributors (ODbL 1.0)",
+      "license": "Original educational cartography; OpenStreetMap data are under ODbL 1.0.",
+      "licenseUrl": "https://www.openstreetmap.org/copyright",
+      "sourceUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Original map rendered from credited geographic data with simplified labels and educational annotations; not for navigation.",
+      "width": 1000,
+      "height": 900
+    },
+    {
+      "id": "phi-phi-limestone-story",
+      "url": "/media/phi-phi-limestone-story.svg",
+      "alt": "Four labelled scientific cross sections show marine carbonate sediments becoming limestone, tectonic uplift and fracturing, water dissolving cracks into caves and karst, and sea-level change and coastal erosion shaping islands.",
+      "caption": "A simplified model for Phi Phi’s limestone cliffs. The rock formed long before the present coastline; tectonics, dissolution, sea-level change and erosion overlap in time. Conceptual cross sections, not to scale. Phi Phi also contains other rock types.",
+      "credit": "Original educational diagram created for Story Atlas",
+      "license": "Original artwork created for Story Atlas",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/thailands-krabi-coast/",
+      "changes": "Original self-contained SVG, not a reproduction or adaptation of a source illustration.",
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "id": "maya-bay-longtail-historic",
+      "url": "/media/phi-phi-maya-bay-2013.jpg",
+      "alt": "Long-tail boats lined up on the sand at Maya Bay, with turquoise water and limestone cliffs beyond.",
+      "caption": "Long-tail boats on Maya Beach in August 2013. This historical photograph shows the earlier beach-landing pattern; it does not describe present visitor rules.",
+      "credit": "Diego Delso, delso.photo — License CC BY-SA 3.0",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa_Maya,_Ko_Phi_Phi,_Tailandia,_2013-08-19,_DD_13.JPG",
+      "changes": "Downloaded the existing Wikimedia thumbnail; no content edits.",
+      "width": 1280,
+      "height": 788
+    },
+    {
+      "id": "pileh-lagoon",
+      "url": "/media/phi-phi-pileh-lagoon.jpg",
+      "alt": "Towering wooded limestone cliffs around the dark blue water and small boats at Pileh Lagoon on Phi Phi Leh.",
+      "caption": "Pileh Lagoon on Phi Phi Leh, June 2018. Cliffs, enclosed water and tropical vegetation make the island’s limestone landscape easy to recognize.",
+      "credit": "Christophe95 / Wikimedia Commons — CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pileh_Lagoon.jpg",
+      "changes": "Downloaded the existing Wikimedia thumbnail; no content edits.",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "pileh-longtail",
+      "url": "/media/phi-phi-longtail-boat.jpg",
+      "alt": "A Thai long-tail boat on clear turquoise water beneath the steep green cliffs of Pileh Lagoon.",
+      "caption": "A long-tail boat in Pileh Lagoon, June 2017. Boats connect the visitor experience to the island’s geography and to the people who work on the water.",
+      "credit": "Puripant / Wikimedia Commons — CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_Long-tail_Boat_in_Pileh_Lagoon,_Phi_Phi_Le.jpg",
+      "changes": "Downloaded the existing Wikimedia thumbnail; no content edits.",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "bamboo-island",
+      "url": "/media/phi-phi-bamboo-shore.jpg",
+      "alt": "Pale sand and a line of slender trees in front of dense green forest on Ko Mai Phai, or Bamboo Island.",
+      "caption": "Ko Mai Phai, or Bamboo Island, in July 2018: forest and pale sand form a gentler contrast to the high cliffs of Phi Phi Leh.",
+      "credit": "MarkBA / Wikimedia Commons — CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ko_Mai_Phai_3.jpg",
+      "changes": "Downloaded the existing Wikimedia thumbnail; no content edits.",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "viking-cave",
+      "url": "/media/phi-phi-viking-cave.jpg",
+      "alt": "The dark opening of Viking Cave at the base of a limestone cliff on Phi Phi Leh.",
+      "caption": "Viking Cave on Phi Phi Leh, June 2018. Its popular name should not be taken as proof that Scandinavian Vikings visited the island.",
+      "credit": "Christophe95 / Wikimedia Commons — CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viking_Cave.jpg",
+      "changes": "Downloaded the existing Wikimedia thumbnail; no content edits.",
+      "width": 1280,
+      "height": 960
+    }
+  ],
+  "originalMarkdown": "# Phi Phi Islands: A Story Written in Stone and Sea\n\n## 1. A first glimpse of Phi Phi\n\nImagine approaching Phi Phi by boat. At first, the islands are dark shapes on the horizon. As the distance closes, those shapes separate into cliffs, green slopes, and bright lines of sand. The water changes colour beneath you. A long-tail boat crosses the view, its narrow hull suddenly very small against a wall of rock. For a moment, the landscape seems almost impossible: so much stone, standing so steeply, in so much sea.\n\nThis is an imagined journey through a real place. The geography, history, and science that follow are grounded in the linked sources; the descriptive passages invite you to look closely rather than claim that a particular conversation or personal visit took place. Practical information was checked on 28 November 2026. The photographs have their own dates, and some show conditions before modern visitor controls.\n\nPhi Phi rewards more than a quick photograph. Look at a cliff and you can ask how a seabed became a mountain. Look through clear water and you can ask how living animals build a reef. Look at a village and you can ask whose home lies inside the holiday picture. The islands bring these questions together in a remarkably small space.\n\nOur journey begins with the map, moves backwards into deep time, and then returns to the people and living sea of today. Along the way, you will meet useful English words for describing nature, change, responsibility, and travel. Let the story give those words a place in your memory.\n\n[Tourism Authority of Thailand — Hat Noppharat Thara–Mu Ko Phi Phi National Park](https://trustedthailand.tourismthailand.org/en/establishments/detail/1440)\n\n![Phi Phi Don from its eastern viewpoint, photographed in March 2010. The narrow low-lying strip between Ton Sai Bay and Loh Dalum Bay connects the island’s larger limestone masses.](https://story-atlas-gk.onrender.com/media/phi-phi-don-panorama.jpg)\n\n## 2. Reading the map: six islands, several different worlds\n\nThe Phi Phi Islands are an archipelago in the Andaman Sea, off Thailand’s southwestern coast. Southern Thailand stretches along a peninsula, and Phi Phi lies offshore from its mainland coast. The islands belong to Krabi province, although many visitors travel there from Phuket. The group lies within the wider setting of Hat Noppharat Thara–Mu Ko Phi Phi National Park. Phuket is a convenient departure point; it is not the province to which Phi Phi belongs.\n\nThe six principal islands are easiest to remember as two larger islands, two northern neighbours, and two small southern rocks:\n\n- Phi Phi Don: the largest island and the main centre of settlement, accommodation, and visitor services.\n- Phi Phi Leh: the island of Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave, south of Phi Phi Don.\n- Ko Yung, often called Mosquito Island: one of the northern islands.\n- Ko Mai Phai, commonly called Bamboo Island: a northern island with a conspicuous sandy shore.\n- Bida Nai and Bida Nok: small rocky islands south of Phi Phi Leh, associated with the surrounding underwater landscape.\n\nNames vary between maps. Ko and Koh both represent the Thai word for island. You may see Leh written as Le or Ley, and Bida written as Pida. These are spelling differences, not additional islands. Ton Sai may appear as Tonsai; Loh Dalum may appear as Loh Dalam. Learning the relationship between places is more useful than memorizing one English spelling.\n\nUse the [regional map](https://story-atlas-gk.onrender.com/media/phi-phi-regional-map.svg) to place Phi Phi between Phuket and the Krabi coast. Then open the [island map](https://story-atlas-gk.onrender.com/media/phi-phi-island-map.svg) to locate the six islands and the bays on Phi Phi Leh. Both are original educational maps made from credited geographic data. Open them at full size for the clearest labels; they are not nautical charts.\n\nOne distinction prevents a common misunderstanding: Phi Phi and Phang Nga Bay are separate destinations. Ko Panyi and the famous James Bond Island belong to the Phang Nga Bay story. The beautiful limestone scenery links these places in the imagination, but the islands are not interchangeable on a map.\n\n[Tourism Authority of Thailand — Ko Phi Phi: geography and the six islands](https://www.tourismthailand.org/Destinations/Provinces/Ko-Pha-Ngan/359)\n\n[OpenStreetMap contributors — Phi Phi geographic data and interactive map](https://www.openstreetmap.org/#map=12/7.7390/98.7750)\n\n[Natural Earth — Public-domain geographic data and terms of use](https://www.naturalearthdata.com/about/terms-of-use/)\n\n![Phi Phi in the Andaman Sea: southeast of Phuket and offshore from mainland Krabi. Generalized regional coastlines; approximate scale. Open the full-size map from section 2 for larger labels.](https://story-atlas-gk.onrender.com/media/phi-phi-regional-map.svg)\n\n![The six-island archipelago, with a larger Phi Phi Leh inset locating Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave. North is up. Open the full-size map from section 2 for larger labels.](https://story-atlas-gk.onrender.com/media/phi-phi-island-map.svg)\n\n## 3. Before the islands: a world beneath the water\n\nTo understand the cliffs, think far beyond the length of a holiday, a human life, or a civilization. Significant limestone formations in the Phi Phi area belong to Permian rock units: a chapter of Earth history hundreds of millions of years old. The stone is much older than the shoreline you see today. A rock’s age and the age of its present shape are different questions.\n\nLimestone commonly begins with material accumulating in a marine environment. Calcium carbonate can come from the skeletal remains of organisms and from other carbonate material. Layer after layer collects as sediment. With burial and geological change, loose deposits become solid rock. The huge cliff that now seems completely separate from life can therefore contain a record of ancient living systems.\n\nTry a small thought experiment. Imagine placing a thin sheet of paper on a table each day. One sheet looks insignificant. A long accumulation becomes a stack. Now replace paper with sediment, days with vast stretches of time, and the table with an ancient seabed. The comparison is imperfect, but it makes one idea visible: a large structure can emerge through the accumulation of very small contributions.\n\nPhi Phi Don also has a more complicated geological story than the phrase ‘old coral island’ suggests. Researchers have studied sandstone, mudstone, and shale there, including deposits interpreted in relation to ancient cooler-water environments. These rocks preserve evidence different from that of the towering limestone. Scientific interpretation comes from the layers, fossils, and structures together; one attractive explanation cannot replace all that evidence.\n\nThe regional landscape was also affected by tectonic movements. Rock layers were deformed, fractured, and raised. Uplift helped expose material that had formed in older marine settings. The result was a landscape that rain, groundwater, gravity, and eventually the present sea could continue to reshape. Phi Phi’s cliffs are pages in a long history, with several processes written over one another.\n\n[NASA Earth Observatory — Thailand’s Krabi Coast](https://science.nasa.gov/earth/earth-observatory/thailands-krabi-coast/)\n\n[Indonesian Petroleum Association — Krabi outcrops and Phi Phi’s karstified Permian limestone](https://www.ipa.or.id/index.php/id/publications/paleozoic-and-mesozoic-outcrops-in-krabi-area-new-insights-for-the-pre-tertiary-petroleum-system-in-the-western-basins-gulf-of-thailand)\n\n[Elzner (2023) — Permian clastic rocks on Ko Phi Phi Don, Bulletin of Earth Sciences of Thailand](https://ph01.tci-thaijo.org/index.php/bestjournal/article/view/253133)\n\n## 4. How water learns to carve stone\n\nSolid rock looks permanent because we compare it with the short timescale of our own lives. Limestone becomes easier to understand when we change the clock. Water that seems harmless in your hand can transform a limestone landscape when it acts repeatedly over enormous periods.\n\nRainwater takes up carbon dioxide, especially as it passes through soil. This produces a weak acid. As the water moves into cracks and along the boundaries between rock layers, it can dissolve calcium carbonate. Small passages widen. Some openings develop into caves. Water follows existing weaknesses, so the shape of the original fractures helps guide the shape of the later landscape.\n\nA landscape strongly shaped by the dissolution of soluble rock is called karst. In southern Thailand, some surviving masses form steep hills and towers. Chemical dissolution works alongside physical erosion: material is loosened, carried away, and sometimes lost when sections collapse. Vegetation grows wherever roots can find enough space and moisture, softening the colour of the rock without removing its steepness.\n\nImagine a thick piece of ice with several cracks in it. Water finds the cracks first, and the block changes unevenly. Limestone is not ice, and the chemistry and timescale are different, but the comparison helps explain why a landscape does not simply wear down into one smooth surface. Weaknesses matter. Some parts disappear faster than others.\n\nAlong the coast, waves, salt, organisms, and changes in sea level continue to alter the surviving rock. A cave mouth, an overhang, or a narrow notch near the water can record processes that remain active. Present islands are the result of a long history of rock formation, exposure, weathering, and coastal change. They did not suddenly appear in a single dramatic event.\n\nThe [limestone diagram](https://story-atlas-gk.onrender.com/media/phi-phi-limestone-story.svg) separates four ideas: sediment becomes rock; tectonic movement exposes it; water enlarges cracks and sculpts karst; coastal processes reshape the remaining hills. The drawing is deliberately simplified. In the real world, processes overlap, and each cliff has its own history.\n\n[U.S. National Park Service — Solution caves and limestone dissolution](https://www.nps.gov/subjects/caves/solution-caves.htm)\n\n[Marcus Gillespie, university geography field explanation — Tower Karst of Peninsular Thailand](https://www.siue.edu/GEOGRAPHY/ONLINE/Gillespie.htm)\n\n[NASA Earth Observatory — Thailand’s Krabi Coast](https://science.nasa.gov/earth/earth-observatory/thailands-krabi-coast/)\n\n![A simplified model for Phi Phi’s limestone cliffs. The rock formed long before the present coastline; tectonics, dissolution, sea-level change and erosion overlap in time. Conceptual cross sections, not to scale. Phi Phi also contains other rock types.](https://story-atlas-gk.onrender.com/media/phi-phi-limestone-story.svg)\n\n## 5. Phi Phi Don: the island with two faces of the sea\n\nPhi Phi Don’s central geography is especially memorable. Two larger areas of higher ground are connected by a low, narrow strip of land. Ton Sai Bay lies on one side and Loh Dalum Bay on the other. This strip is an isthmus. From a viewpoint, you can see how close the two shores are, with the settlement between them.\n\nAt ground level, the same arrangement feels different. A visitor experiences paths, buildings, luggage, meals, and the search for a particular pier. From above, those details become part of a clear shape. A viewpoint changes your perspective: it helps you understand the island as a whole instead of a sequence of small tasks.\n\nLook carefully at the panorama in this lesson. First identify the two bays. Then find the low connecting land. Finally follow the higher ground away from the settlement. You are reading a landscape, rather than merely admiring it. The photograph also helps explain why a beautiful location can be vulnerable: a low strip bordered by water has different risks from the surrounding hills.\n\nThe main inhabited island is also the practical centre of a wider network. A bed, a meal, a boat trip, and a bag of supplies all depend on people doing ordinary work. It is useful to imagine the activities that a holiday photograph leaves outside its frame: equipment being repaired, goods being unloaded, rooms being cleaned, and someone getting ready for another shift. This is a way of seeing a destination as a working community.\n\nDo not let one busy bay stand for the whole of Phi Phi Don. The map shows other stretches of coast, headlands, and bays, while the island’s northern end includes Laem Tong. Equally, do not assume that an apparently nearby place is easily reached on foot. Hills and broken coastlines make straight-line distance a poor guide to the effort of a journey. Ask locally about the actual route.\n\n[OpenStreetMap contributors — Phi Phi geographic data and interactive map](https://www.openstreetmap.org/#map=12/7.7390/98.7750)\n\n[Ioualalen and colleagues (2007), Journal of Geophysical Research — Modelling the 2004 tsunami in Thailand](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006JC003850)\n\n## 6. Before a postcard, a home\n\nThe word ‘paradise’ can hide people. It encourages us to imagine a place made entirely for visitors: empty beaches, friendly service, and an uninterrupted view. A fuller story asks who already belongs to the place, what they value, and how their lives change when the rest of the world arrives.\n\nHistorical research documents an Urak Lawoi community at Laem Tong on Phi Phi Don. The Urak Lawoi are one of the maritime peoples of Thailand’s Andaman coast, with histories connected to fishing, gathering, movement between islands, and settled communities. A 1984 study of Laem Tong is part of that record. It establishes historical presence; it does not give permission to describe every resident today through the circumstances of forty years ago.\n\nOlder tourism writing sometimes uses the label ‘sea gypsies’. That expression can flatten different peoples into a single romantic image. Urak Lawoi, Moken, and Moklen are distinct names and communities, and their histories should not be treated as interchangeable. Where a community’s own name is known, using it is a small but meaningful act of accuracy.\n\nThere is also a difference between learning about a culture and treating people as an attraction. A person standing outside a home has not automatically agreed to become part of a visitor’s photograph. Asking permission, listening without demanding a performance, and accepting an answer of ‘no’ make curiosity more respectful. These principles matter as much on a famous island as anywhere else.\n\nTourism raises questions of livelihood: how people earn enough to support themselves and their families. Visitors may bring income and opportunities while also increasing pressure on space, services, and natural resources. The useful question is how a destination can support both residents and the environment over time. A sustainable island economy needs more than beautiful water in its advertisements.\n\nAs you read, keep a simple sentence in mind: ‘This place is someone’s home.’ It changes the way you interpret noise, rubbish, photographs, prices, and requests from local staff. It also gives the story human depth. The island continues after your boat leaves.\n\n[Sirindhorn Anthropology Centre — Historical research on the Urak Lawoi community at Laem Tong](https://ethnicredb.sac.or.th/en/research_detail.php?id=586)\n\n[Journal of International Studies, Prince of Songkla University — Urak Lawoi maritime communities](https://so03.tci-thaijo.org/index.php/jis/article/view/246582)\n\n[Sirindhorn Anthropology Centre — Moken, Moklen and Urak Lawoi cultural histories](https://ethnicredb.sac.or.th/en/research_detail.php?id=2090)\n\n## 7. Around Phi Phi Leh: four places to keep separate\n\nSouth of Phi Phi Don, Phi Phi Leh offers another arrangement of stone and water. It is the island most closely associated with the dramatic image of a bay enclosed by high limestone walls. To understand a boat trip around it, learn four names before you arrive: Maya Bay, Pileh Lagoon, Loh Samah Bay, and Viking Cave.\n\nMaya Bay opens on the western side of the island. Pileh Lagoon is a separate inlet on the eastern side. Loh Samah lies near the southern end and is important in the managed approach to Maya Bay. Viking Cave is farther north along the eastern coast. The detailed map shows why these names can appear together on an excursion while referring to different places.\n\nImagine rounding a headland here. One wall of rock slides out of sight and another comes forward. From one angle the island seems solid; from another, an opening becomes visible. The boat’s movement reveals the geography in stages. A photograph taken from a single position can rarely explain the whole shape.\n\nPileh’s enclosed water and tall cliffs make it especially useful for noticing scale. The boat in the photograph gives your eye something familiar to compare with the rock. Without it, a cliff may appear much smaller than it is. Pay attention, too, to shadows. A shaded wall can make the water beneath it appear dramatically darker than sunlit water only a short distance away.\n\nKeep the rules for each place separate. Permission to swim at one approved stop does not create permission to swim in Maya Bay. Boat access, visitor movement, and temporary restrictions are managed locally and can change. The most useful travel question is precise: ‘Is swimming permitted at this particular stop today?’ That question serves you better than a general promise that the tour includes swimming.\n\n[OpenStreetMap contributors — Phi Phi geographic data and interactive map](https://www.openstreetmap.org/#map=12/7.7390/98.7750)\n\n[Tourism Authority of Thailand — Hat Noppharat Thara–Mu Ko Phi Phi National Park](https://trustedthailand.tourismthailand.org/en/establishments/detail/1440)\n\n[Government Radio Krabi, October 2024 — Maya Bay visitor and conservation rules (Thai)](https://radiokrabi.prd.go.th/th/content/category/detail/id/57/iid/329518)\n\n![Pileh Lagoon on Phi Phi Leh, June 2018. Cliffs, enclosed water and tropical vegetation make the island’s limestone landscape easy to recognize.](https://story-atlas-gk.onrender.com/media/phi-phi-pileh-lagoon.jpg)\n\n![A long-tail boat in Pileh Lagoon, June 2017. Boats connect the visitor experience to the island’s geography and to the people who work on the water.](https://story-atlas-gk.onrender.com/media/phi-phi-longtail-boat.jpg)\n\n## 8. Viking Cave and the memory of passing boats\n\nViking Cave has a name that can start the wrong story. It may suggest northern European explorers arriving on a tropical shore, but the popular English nickname is not evidence of a Viking settlement. The more carefully supported story is about maritime contact and the images people left on cave walls.\n\nResearchers studying Phrayanaga, the cave’s other name, recorded at least 76 depictions of watercraft. Their comparative work connects the images with several vessel traditions, including Thai, Chinese, European, Indonesian, and Arabian examples. Much of the art was assigned an approximate range from the late sixteenth to the early twentieth century through comparison and relative dating. These are scholarly interpretations, not exact dates written beside every boat.\n\nThink about what a drawn vessel can preserve. Its outline may hold the memory of a sail, a hull, or an unfamiliar shape passing through the region. For an archaeologist, such details become evidence. For a reader, they open a different perspective on the sea: water that seems to separate islands can also connect them through travel, exchange, and work.\n\nIt is tempting to complete the picture with a dramatic invented sailor. We do not need to. The surviving marks are already interesting, and the gaps in our knowledge deserve to remain visible. We can ask who made a particular drawing without pretending that we know the person’s name, language, or reason for drawing it.\n\nThe cave photograph in this lesson shows the opening from the water, not the paintings inside. A boat-side view should not be described as a complete archaeological visit, and an excursion should not be assumed to include entry. What you can see from outside is still part of the story: a dark opening in a cliff, holding evidence that asks for closer and more careful interpretation.\n\n[Sukkham, Taçon and Tan (2011) — Rock art of Phrayanaga (Viking) Cave](https://apconf.omeka.net/exhibits/show/apconfproceedings/item/1190)\n\n![Viking Cave on Phi Phi Leh, June 2018. Its popular name should not be taken as proof that Scandinavian Vikings visited the island.](https://story-atlas-gk.onrender.com/media/phi-phi-viking-cave.jpg)\n\n## 9. Beyond the famous bay: the smaller islands\n\nA famous destination often becomes reduced to one image. For Phi Phi, that image is frequently Maya Bay. The smaller islands remind us to widen the frame. They are part of the same archipelago, but their appearance and role in a journey can be quite different.\n\nNorth of Phi Phi Don lie Ko Yung and Ko Mai Phai. Ko Mai Phai is widely known as Bamboo Island. In the photograph, the shore offers a broad meeting of pale sand, water, and vegetation. The visual rhythm is gentler than the high walls of Phi Phi Leh: a long horizontal beach replaces the sudden vertical face of a cliff.\n\nFarther south, beyond Phi Phi Leh, lie Bida Nai and Bida Nok. On a map they are small, but the land above water is only part of what makes an island significant. For anyone interested in marine habitats, the shape and condition of the submerged environment matter too. A tiny rock can help you remember that the visible world is not the whole world.\n\nA place appearing on a map does not guarantee access. Park authorities may restrict a site for recovery, conditions may make a landing unsuitable, and an operator may choose a different route. Treat the six-island list as an explanation of geography rather than a checklist that must be completed. A good visit can be rich without reaching every named place.\n\nTry comparing the images in English: ‘Phi Phi Leh has steep cliffs, whereas Bamboo Island has a more open sandy shore.’ Comparisons make vocabulary useful because they give you a reason to choose words such as steep, sheltered, narrow, wide, and exposed.\n\n[Tourism Authority of Thailand — Ko Phi Phi: geography and the six islands](https://www.tourismthailand.org/Destinations/Provinces/Ko-Pha-Ngan/359)\n\n[OpenStreetMap contributors — Phi Phi geographic data and interactive map](https://www.openstreetmap.org/#map=12/7.7390/98.7750)\n\n![Ko Mai Phai, or Bamboo Island, in July 2018: forest and pale sand form a gentler contrast to the high cliffs of Phi Phi Leh.](https://story-atlas-gk.onrender.com/media/phi-phi-bamboo-shore.jpg)\n\n## 10. Why the sea has so many colours\n\nAround tropical islands, the sea can look deep blue, emerald green, pale turquoise, or grey within a short journey. Some of that variation comes from the changing sky and the angle at which you look. But the colour of the sea is not simply a reflection of the sky.\n\nWater absorbs different colours of light differently. Red wavelengths are absorbed more readily, while blue light remains more visible in clear water. In shallow places, light can reach a pale sandy seabed and return upward, helping create a bright turquoise appearance. Suspended sediment, tiny organisms, depth, and surface conditions all affect the result.\n\nNow return to the boat in your imagination. Beneath it, the bottom changes, the depth changes, and the cliffs throw moving shadows. A cloud passes in front of the sun. The water has not been replaced, yet the view can alter in seconds. What looks like one stable colour in a photograph is part of an active relationship between light, water, and the seabed.\n\nThe practical lesson is an inference from that science: colour cannot tell you everything you need to know. Clear, beautiful water does not prove that a current is weak, that the depth is suitable, or that swimming is permitted. A still photograph cannot show the force that may be moving through it. Enjoy the colour while using local guidance for decisions about entering the water.\n\nFor English practice, move beyond ‘The sea is beautiful.’ Try ‘The shallow water is pale turquoise, while the water beside the cliff looks much darker.’ The second sentence shows what you actually noticed. Precise observation gives you more to say.\n\n[Woods Hole Oceanographic Institution — Why is the ocean blue?](https://www.whoi.edu/ocean-learning-hub/ocean-facts/why-is-the-ocean-blue/)\n\n[NOAA National Ocean Service — Why is the ocean blue?](https://oceanservice.noaa.gov/facts/oceanblue.html)\n\n## 11. The living city beneath the surface\n\nA reef may look like an underwater garden, but the corals that build much of it are animals. Tiny organisms called polyps live together in colonies. Many reef-building corals produce hard calcium-carbonate skeletons. Over time, their growth helps create a structure that supports many other forms of marine life.\n\nMany shallow-water corals also depend on a close partnership with microscopic algae living in their tissues. The algae use sunlight to make food and provide important benefits to their hosts. The coral provides a protected environment and materials the algae can use. This relationship helps explain why suitable light and water conditions matter so much to a reef.\n\nA reef is a habitat, a place where organisms live and find the conditions they need. Crevices offer shelter. Different surfaces provide different opportunities for feeding, hiding, and growing. Biodiversity describes the variety of living things and the wider variety of life within such systems. The value of a reef is therefore much larger than the colour of one coral or the appearance of one fish.\n\nThis is also a fragile environment. An anchor can damage a coral structure, and repeated contact from visitors can add pressure. Pollution and poor water quality introduce other stresses. The underwater landscape may seem strong because it is hard, yet hardness does not mean that every part of it can withstand careless contact.\n\nCoral bleaching is another important process. Under stress, including excessive heat, a coral can lose the algae that normally live in its tissues. Its pale skeleton then becomes more visible. A bleached coral is stressed, but it is not necessarily already dead. Recovery is possible if conditions improve; severe or prolonged stress can kill it. Calling all white coral ‘dead’ would miss an important distinction.\n\nLocal conservation can reduce direct damage, while warming seas create pressures on a much wider scale. A restriction on boats does not change global ocean temperature. This is why a successful local project and an ongoing climate threat can both be real at the same time. The island’s future depends on several kinds of action working together.\n\nThere is an extraordinary connection here. The cliffs record ancient marine material, and living corals are still making carbonate structures today. They are different systems separated by immense time, yet they help us see how life and stone can be related. If you snorkel at an approved site, observing without touching is already a way to respect that long process.\n\n[NOAA National Ocean Service — Are corals animals or plants?](https://oceanservice.noaa.gov/facts/coral.html)\n\n[NOAA — Corals and zooxanthellae: a mutually beneficial relationship](https://oceanservice.noaa.gov/education/tutorial_corals/coral02_zooxanthellae.html)\n\n[NOAA Fisheries — Shallow coral reef habitat and threats](https://www.fisheries.noaa.gov/national/habitat-conservation/shallow-coral-reef-habitat)\n\n[NOAA National Ocean Service — What is coral bleaching?](https://oceanservice.noaa.gov/facts/coral_bleach.html)\n\n## 12. The morning that changed the islands\n\nOn 26 December 2004, a magnitude 9.1 earthquake occurred off northern Sumatra. The movement of the seabed generated a tsunami that devastated communities around the Indian Ocean. Phi Phi Don was among the places severely affected. Any honest story of the islands needs room for this history, even when the view today is bright and welcoming.\n\nThe shape we admired from the viewpoint helps explain the island’s vulnerability. The central settlement occupied a low sandy isthmus between higher limestone areas. Scientific studies describe tsunami water entering through the northern and southern bays and inundating the narrow connecting strip. The surrounding hills and the low settlement did not face the same conditions.\n\nA tsunami behaves differently from the small wind-driven waves familiar at a beach. It can arrive as a rapid rise or powerful rush of water and as a succession of waves. In some cases, the water first withdraws unusually far, exposing the seabed. Such behaviour is a warning, not an invitation to walk out and investigate. The first arrival also does not mean that the danger has ended.\n\nThe loss was human before it was architectural. People lost family members, friends, homes, and livelihoods. Rebuilding a guesthouse or reopening a path is a visible achievement, but grief does not follow a construction schedule. A visitor should not turn this history into a dramatic background for photographs or ask a resident to recount a painful experience for entertainment.\n\nResilience is the ability to recover and adapt after difficulty. In a place affected by disaster, it includes practical work, relationships, memory, and preparation. The word should not become a demand that people always appear strong. A rebuilt community can hold both daily joy and lasting sorrow.\n\nFor a present-day visitor, the useful response is calm preparation: notice the marked evacuation routes and know how to reach higher ground. Natural warnings include strong or prolonged shaking, a sudden unusual change in the sea, or a loud ocean roar. If one occurs, evacuate to higher ground along marked routes as soon as you can move safely; do not wait for an official warning. Crossing the low isthmus to the opposite beach is not the same as reaching safety. Stay outside the hazard area until local authorities give the all-clear.\n\nWhen you look again at the twin bays, allow the view to hold more than one meaning. It can be beautiful, geographically remarkable, and connected to a difficult human past. Understanding all three gives the landscape depth.\n\n[U.S. Geological Survey — M9.1 Sumatra–Andaman earthquake, 26 December 2004](https://earthquake.usgs.gov/earthquakes/eventpage/official20041226005853450_30/executive)\n\n[Ioualalen and colleagues (2007), Journal of Geophysical Research — Modelling the 2004 tsunami in Thailand](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006JC003850)\n\n[NOAA — Tsunami inundation and successive waves](https://www.noaa.gov/jetstream/tsunamis/tsunami-inundation)\n\n[U.S. National Weather Service — Responding to natural and official tsunami warnings](https://www.weather.gov/safety/tsunami-during)\n\n## 13. When a beach becomes a worldwide image\n\nThe film The Beach, released in 2000 and directed by Danny Boyle, helped make Maya Bay internationally recognizable. Leonardo DiCaprio’s presence and the striking scenery brought the location to a large audience. Tourism existed before the film, so it would be inaccurate to treat the movie as the beginning of all interest in Phi Phi. It did, however, become an important part of the bay’s global image.\n\nA film can create a powerful expectation. Viewers remember a curve of sand or a wall of cliffs, then imagine finding the same feeling in person. Yet the film is a selected and constructed experience. A real destination includes other visitors, local work, weather, rules, and the time needed to get there. Expecting a place to reproduce a scene can make it harder to appreciate the place itself.\n\nIn Maya Bay, rising demand became an environmental management problem. Official accounts describe very large numbers of visitors before the 2018 closure and the need to allow damaged ecosystems to recover. The lesson reaches beyond this one location: when many people seek the same small space, individually understandable choices can add up to overcrowding.\n\nPicture one boat arriving at a quiet beach. Now imagine another, then another, and then the repeated arrivals of a whole day. The issue is the combined pressure: movement, noise, landing, waste, and contact with the environment. A place does not need a malicious visitor to be damaged. Sometimes it needs a better way to manage the total number and behaviour of ordinary visitors.\n\nThat is why popularity and quality are different measures. A beach can be widely desired while struggling to accommodate the demand. For the next chapter of Maya Bay, managers had to ask a difficult question: what should access look like if the place is to remain alive and worth visiting?\n\n[British Film Institute — The Beach (2000)](https://www.bfi.org.uk/film/7c55e717-ae1a-5d5b-be49-389ae86b22da/the-beach)\n\n[TAT Newsroom, November 2021 — Maya Bay’s closure, restoration and reopening preparations](https://www.tatnews.org/2021/11/krabis-world-famous-maya-bay-eyeing-1-january-2022-reopening/)\n\n## 14. Maya Bay and the patient work of repair\n\nMaya Bay closed to visitors in June 2018 and remained closed for about three and a half years. Visitors returned on 1 January 2022 under a changed management approach. The interruption was a recognition that keeping a place available every day can conflict with keeping it healthy over the long term.\n\nThe new approach changed how people entered and used the area. Access was organized through Loh Samah on the opposite side of the island, with movement toward Maya Bay managed from there. Swimming in Maya Bay was prohibited. The photograph of boats pulled onto Maya’s beach in 2013 belongs to the earlier period; it should not be used to infer what is allowed now.\n\nRecovery also involves active work. A government report on the 2026 Save Maya, Save Pakarang project describes cooperation among park authorities, conservation groups, and local networks. Activities included education, planting shoreline trees, and installing mooring buoys to help organize boats and reduce anchor damage. Conservation happens through practical decisions as well as through a closed gate.\n\nIt helps to distinguish conservation from restoration. Conservation protects a place and reduces damage. Restoration tries to help a damaged system regain important features or functions. The two can overlap. Preventing new damage is often necessary for repair to have a chance, while a repair project cannot make unlimited future pressure harmless.\n\nThe idea of capacity is useful here. It means the amount that something can reasonably hold or handle. For a small bay, capacity is not just the number of people who physically fit on the sand. It also concerns ecological disturbance, safe movement, staff, facilities, and the quality of the experience. Different conditions may require different limits.\n\nThis creates a difficult conversation because restrictions affect livelihoods as well as visitors. Boat operators, guides, and other workers are part of the system. A thoughtful conservation story considers how rules are communicated, how local knowledge is included, and how a healthier environment can support future work. It does not pretend that every choice is easy.\n\nThe most hopeful part of the story is that management can change. Human decisions contributed to pressure; human decisions can also reduce it. The outcome still needs observation, honest evaluation, and adjustment. ‘We have started to repair the damage’ is a more useful promise than ‘Everything is fixed forever.’\n\n[TAT Newsroom, November 2021 — Maya Bay’s closure, restoration and reopening preparations](https://www.tatnews.org/2021/11/krabis-world-famous-maya-bay-eyeing-1-january-2022-reopening/)\n\n[The Nation, 2 January 2022 — Maya Bay reopens after three and a half years](https://www.nationthailand.com/in-focus/40010682)\n\n[Thailand Government Public Relations Department, February 2026 — Save Maya, Save Pakarang](https://thailand.prd.go.th/en/content/category/detail/id/52/iid/479004)\n\n[Government Radio Krabi, October 2024 — Maya Bay visitor and conservation rules (Thai)](https://radiokrabi.prd.go.th/th/content/category/detail/id/57/iid/329518)\n\n[The Thaiger, 1 October 2026 — Maya Bay reopening and visitor arrangements](https://thethaiger.com/news/krabi/maya-bay-reopens-after-two-month-conservation-closure)\n\n![Long-tail boats on Maya Beach in August 2013. This historical photograph shows the earlier beach-landing pattern; it does not describe present visitor rules.](https://story-atlas-gk.onrender.com/media/phi-phi-maya-bay-2013.jpg)\n\n## 15. What the returning sharks can tell us\n\nIn November 2026, an official report offered an encouraging piece of evidence from Maya Bay. A research team, including students from Prince of Songkhla University, surveyed blacktip reef sharks during 3–9 November using drones, underwater cameras, and water-quality testing. The government reported a peak count of 451 sharks, the highest in the monitoring series that began in 2023, with adults and young observed.\n\nThis is a survey result. It does not mean that exactly 451 individual sharks permanently live in the bay, and it does not promise that a visitor will see that number. Animals move; observations depend on timing, conditions, and method. Being precise about a number makes the conservation story more trustworthy, not less interesting.\n\nThe authorities interpreted the findings as encouraging evidence for ongoing closures and tourism management. We can welcome that interpretation while keeping its limits clear. A shark observation does not measure every coral colony, every water-quality problem, or the experience of every local resident. Different questions need different kinds of evidence.\n\nImagine listening to an orchestra through a partly open door. Hearing one instrument clearly tells you something real, but it does not tell you everything about the performance. In the same way, one positive indicator can be valuable without becoming a certificate that an entire ecosystem has fully recovered.\n\nFor a visitor, the best response is to give wildlife space. Seeing an animal should not become a reason to chase it, feed it, or enter a restricted area. The possibility of observing a living place is itself a privilege. Sometimes the most responsible photograph is the one taken from farther away.\n\n[Thailand Government Public Relations Department, 13 November 2026 — Maya Bay blacktip reef shark survey](https://thailand.prd.go.th/en/content/category/detail/id/2078/iid/560044)\n\n[NOAA National Ocean Service — What is coral bleaching?](https://oceanservice.noaa.gov/facts/coral_bleach.html)\n\n## 16. The sea has a calendar of its own\n\nThailand’s climate is influenced by monsoons: large seasonal patterns of wind. The southwest monsoon generally brings moist air from the Indian Ocean from around mid-May to mid-October. The northeast monsoon follows, usually from around mid-October to mid-February. The timing varies, and the effects differ between the country’s coasts.\n\nFor Phi Phi, this matters because a boat journey takes place on an exposed sea, not on a painted blue background. A season often described as favourable can still include rain, wind, or an unsuitable crossing. A sheltered-looking bay and the open water outside it can feel very different. Seasonal guidance is useful for planning, but the forecast and local decisions matter for the particular day.\n\nThe tide changes water levels; currents move water through and around the landscape. These are related to the conditions a visitor experiences, yet they are not interchangeable words. Saying ‘The tide is low’ does not by itself describe the strength of a current. A skilled boat crew reads several conditions together.\n\nThis is a good place to practise flexible language: ‘We were planning to visit the lagoon, but we may change the route if the sea becomes rough.’ The sentence leaves room for reality. Flexibility is especially valuable on an island journey, where a responsible decision may be to delay, skip a stop, or turn back.\n\nAs of the information checked for this lesson on 28 November 2026, TAT had confirmed that Maya Bay reopened on 1 October 2026. That dated statement describes a documented reopening; it is not a promise of access on every future day. Park announcements, weather, and operational conditions can change after publication.\n\n[Thailand Government — Monsoon winds and the climate of Thailand](https://thailand.go.th/useful-information-detail/099_143)\n\n[TAT Newsroom, 20 October 2026 — The Andaman opens its doors again](https://www.tatnews.org/2026/10/the-andaman-opens-its-doors-again/)\n\n[NOAA National Ocean Service — The difference between tides and currents](https://oceanservice.noaa.gov/facts/tidescurrents.html)\n\n## 17. Visiting well: choices that belong to the story\n\nA thoughtful visit begins before you step into a boat. Ask which stops are actually included, whether landings depend on conditions, what conservation rules apply, and how the operator manages safety. Clear answers help you understand the trip you are buying and the place you are about to enter.\n\nThe visitor arrangements checked for this lesson include the prohibition on swimming in Maya Bay and the managed approach through Loh Samah. Official guidance also addresses litter, feeding wildlife, collecting marine material, and damaging coral. Follow the latest park signs and staff instructions if they differ from an old photograph, a remembered itinerary, or a social-media post.\n\nElectronic national-park admission is another practical detail to check. TAT’s October 2026 guidance says that Phi Phi is among the marine parks using electronic tickets and advises visitors to have passport information ready. Confirm the latest process with your operator before departure. Exact fees, departure times, and daily visitor limits are deliberately not fixed in this story because they can change.\n\n- Observe wildlife without feeding, touching, cornering, or chasing it.\n- Keep fins, hands, feet, and equipment away from coral; enter the water only where the activity is permitted and suitable.\n- Keep rubbish secure and take it to the proper collection point. A lightweight wrapper can travel much farther than you intend.\n- Respect a closed area. A boundary can protect recovery that is difficult to see from the boat.\n- Ask before photographing people or private spaces, and accept refusals politely.\n- Listen to the crew’s briefing, wear the provided appropriate safety equipment, and accept route changes when conditions require them.\n\nWastewater is part of the larger tourism question. Every destination must manage what happens after a shower, a meal, or a visit to a toilet. Visitors do not see most of that infrastructure, yet it affects the environment they came to enjoy. Asking whether an accommodation or operator can explain its practices is more useful than trusting a vague green label.\n\nThese choices can also improve the experience. Watching a fish behave naturally is more revealing than attracting it with food. Hearing a guide explain a restriction can teach you something that a hurried photograph cannot. The island becomes more interesting when you understand why a particular action matters.\n\n[Government Radio Krabi, October 2024 — Maya Bay visitor and conservation rules (Thai)](https://radiokrabi.prd.go.th/th/content/category/detail/id/57/iid/329518)\n\n[The Thaiger, 1 October 2026 — Maya Bay reopening and visitor arrangements](https://thethaiger.com/news/krabi/maya-bay-reopens-after-two-month-conservation-closure)\n\n[TAT Newsroom, 20 October 2026 — The Andaman opens its doors again](https://www.tatnews.org/2026/10/the-andaman-opens-its-doors-again/)\n\n[NOAA Fisheries — Shallow coral reef habitat and threats](https://www.fisheries.noaa.gov/national/habitat-conservation/shallow-coral-reef-habitat)\n\n## 18. An unhurried way to experience the islands\n\nImagine organizing a visit around three aims: understand the landscape, notice something living, and learn something from the people who work there. This is a suggested way of paying attention, not a fixed route or a promise that every stop will be available.\n\nBegin with orientation. On a map, find your departure coast, Phi Phi Don, and Phi Phi Leh. Ask the crew to point out the island you are approaching. The first reward is simple: the scenery acquires names, and the names acquire relationships. You no longer need to call every spectacular place ‘the famous beach’.\n\nAt a permitted landing or viewpoint, choose one detail to study. It might be the curve of an isthmus, a layer in a cliff, the difference between two bays, or the position of a village. Give yourself a minute to look before reaching for the camera. Then photograph the detail you actually want to remember.\n\nDuring an approved water activity, let your attention become quieter. Notice movement and shelter rather than searching only for a large animal. If conditions or rules keep you on the boat, use the time to compare the shapes of the coastline. A changed plan can still provide something worth noticing.\n\nAsk one respectful question: ‘What changes most between the seasons?’ or ‘What do visitors often misunderstand about this place?’ These are example questions, not quotations from a real conversation. Listen to the answer without expecting one person to speak for an entire island community.\n\nBefore leaving, put the day into three English sentences. One can describe a place, one can explain a process, and one can express a thought. For example: ‘The cliffs rise sharply from the sea. Slightly acidic water has helped shape the limestone. I understand why a beautiful bay sometimes needs limits.’ This turns a visit into both a memory and a speaking exercise.\n\n[OpenStreetMap contributors — Phi Phi geographic data and interactive map](https://www.openstreetmap.org/#map=12/7.7390/98.7750)\n\n## 19. A timeline to keep the story in order\n\nThe islands bring together timescales so different that it helps to place them beside one another. This timeline records selected events and periods, rather than every stage of Phi Phi’s history.\n\n- Hundreds of millions of years ago: ancient marine environments contributed to rock formations now exposed in the area; important limestone units are Permian.\n- Over later geological time: tectonic movement, weathering, erosion, and coastal change shaped the landscape. The age of the rock is not the age of the present beach.\n- Approximately late 1500s to early 1900s: the comparative date range proposed for much of the vessel imagery studied in Phrayanaga or Viking Cave.\n- 2000: The Beach was released, helping make Maya Bay globally recognizable.\n- 26 December 2004: the Indian Ocean tsunami devastated Phi Phi Don and many other coastal communities.\n- June 2018: Maya Bay closed to visitors for ecological recovery.\n- 1 January 2022: Maya Bay reopened under a changed visitor-management approach.\n- 1 October 2026: the latest reopening confirmed in the official October 2026 guidance used for this lesson.\n- 3–9 November 2026: the survey period behind the official report of a peak count of 451 blacktip reef sharks.\n\nNotice the verbs: rocks formed, water carved, people travelled, a film was released, a bay was closed, and scientists have continued to observe. English lets us move between completed events and processes that still matter now. That is why this story is also useful practice for the passive voice, the past simple, and the present perfect.\n\n[Indonesian Petroleum Association — Krabi outcrops and Phi Phi’s karstified Permian limestone](https://www.ipa.or.id/index.php/id/publications/paleozoic-and-mesozoic-outcrops-in-krabi-area-new-insights-for-the-pre-tertiary-petroleum-system-in-the-western-basins-gulf-of-thailand)\n\n[Sukkham, Taçon and Tan (2011) — Rock art of Phrayanaga (Viking) Cave](https://apconf.omeka.net/exhibits/show/apconfproceedings/item/1190)\n\n[British Film Institute — The Beach (2000)](https://www.bfi.org.uk/film/7c55e717-ae1a-5d5b-be49-389ae86b22da/the-beach)\n\n[U.S. Geological Survey — M9.1 Sumatra–Andaman earthquake, 26 December 2004](https://earthquake.usgs.gov/earthquakes/eventpage/official20041226005853450_30/executive)\n\n[TAT Newsroom, November 2021 — Maya Bay’s closure, restoration and reopening preparations](https://www.tatnews.org/2021/11/krabis-world-famous-maya-bay-eyeing-1-january-2022-reopening/)\n\n[The Nation, 2 January 2022 — Maya Bay reopens after three and a half years](https://www.nationthailand.com/in-focus/40010682)\n\n[TAT Newsroom, 20 October 2026 — The Andaman opens its doors again](https://www.tatnews.org/2026/10/the-andaman-opens-its-doors-again/)\n\n[Thailand Government Public Relations Department, 13 November 2026 — Maya Bay blacktip reef shark survey](https://thailand.prd.go.th/en/content/category/detail/id/2078/iid/560044)\n\n## 20. What you carry away\n\nImagine the islands growing smaller behind the boat. The cliffs become silhouettes again, and individual beaches disappear into the distance. The view resembles the one you saw on arrival, but your understanding has changed. You can now recognize an archipelago, distinguish two main islands, and connect a bright beach with a much longer story.\n\nThe stone holds evidence of older seas. The cave paintings suggest journeys and encounters. The inhabited island carries ordinary work, belonging, loss, and recovery. Beneath the surface, living systems continue their own demanding work. None of these stories needs to cancel the beauty of the place. Together, they make that beauty more substantial.\n\nPerhaps the most useful thing to take away is a better kind of attention. You can enjoy a landscape while asking how it formed. You can admire a destination while remembering the people who live there. You can welcome signs of recovery while asking what the evidence does and does not show.\n\nFor your English, choose five words from the lesson and use them to retell what you found most interesting. You do not need to repeat every fact. Start with one idea that matters to you: the patient power of water, the life inside a reef, the history hidden in a cave, or the decision to give a famous bay time to recover.\n\nA photograph can preserve the shape of Phi Phi. A story can help you understand what you are looking at. When you can tell that story in your own words, you carry away something that lasts beyond the journey home.\n"
+}
